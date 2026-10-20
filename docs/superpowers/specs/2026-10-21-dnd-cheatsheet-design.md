@@ -37,7 +37,7 @@ The look matters to the owner. It should feel like Baldur's Gate 3 in Faerûn: d
 - **Hosting:** GitHub Pages, from a public repo. Static files only. Hosting must stay free.
 - **Storage:** the browser's local storage only.
 - **Connectivity:** players have internet at the table. Offline support is not required.
-- **Content source:** the owner's PDF of the 2014 Player's Handbook, at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf` (*assumed*: a second file, `DnD5E.pdf`, sits next to it. Confirm with the owner which is the PHB before extracting).
+- **Content source:** the owner's PDF of the 2014 Player's Handbook, at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf` (confirmed by the owner; `DnD5E.pdf` next to it is the Dungeon Master's Guide and is not a source).
 - **Legal posture:** publishing Player's Handbook text outside the SRD is redistribution of WotC IP. The owner was told this, including that the realistic worst case is a DMCA takedown of the repo, and chose to accept the risk. The site must be free, non-commercial and carry WotC's Fan Content Policy notice (section 11).
 
 ## 4. Content and data
