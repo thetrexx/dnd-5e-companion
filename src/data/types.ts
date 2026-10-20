@@ -8,7 +8,7 @@ export interface Spell {
   components: { v: boolean; s: boolean; m?: { text: string; costGp?: number; consumed: boolean } };
   description: string[]; higherLevels?: string; classes: ClassId[]; page: number;
   icon?: string;
-  summary?: { damage?: { dice: string; count?: number; type: string; healing?: boolean }; resolution: 'attack'|'save'|'auto'|'none'; save?: Ability; upcast?: string };
+  summary?: { damage?: { dice: string; count?: number; unit?: string; type: string; healing?: boolean }; resolution: 'attack'|'save'|'auto'|'none'; save?: Ability; upcast?: string };
 }
 export interface Feature {
   id: string; name: string; source: { kind: 'generic'|'class'|'subclass'|'race'|'feat'; id: string };

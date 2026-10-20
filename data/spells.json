@@ -197,6 +197,7 @@
       "damage": {
         "dice": "1d4+1",
         "count": 3,
+        "unit": "darts",
         "type": "Force"
       },
       "resolution": "auto",
