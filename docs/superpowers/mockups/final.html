@@ -1,0 +1,653 @@
+<style>
+  .flow{display:flex;gap:28px;flex-wrap:wrap;align-items:flex-start}
+  .phone{width:280px;border:2px solid #555;border-radius:22px;padding:14px 12px;background:#1b1712;color:#e9dfc9;font-family:Georgia,serif;box-sizing:border-box}
+  .phone h4{margin:0 0 2px;font-size:15px;color:#d9b45f;text-align:center}
+  .phone .who{font:11px system-ui;color:#9b8f78;text-align:center;margin-bottom:10px}
+  .step{font:600 12px system-ui;color:#888;margin:0 0 6px 4px}
+  .sep{display:flex;align-items:center;gap:8px;margin:12px 0 8px;color:#d9b45f;font-size:11px;letter-spacing:2px}
+  .sep:before,.sep:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#d9b45f,transparent)}
+  .slots{font:11px system-ui;color:#9fc6e8;background:#141a20;border:1px solid #2c3a48;border-radius:6px;padding:6px 8px;margin-bottom:8px}
+  .gal{width:300px;background:#1b1712;padding:10px;border-radius:12px;font-family:Georgia,serif;color:#e9dfc9}
+
+  .stage{--i:1}
+  .stage[data-i="faint"]{--i:.6}
+  .stage[data-i="medium"]{--i:1}
+  .stage[data-i="strong"]{--i:1.6}
+
+  .row{--k:#d9b45f;position:relative;overflow:hidden;isolation:isolate;display:flex;justify-content:space-between;align-items:center;
+       border:1px solid #3a3226;border-radius:6px;padding:9px 10px;margin-bottom:6px;font-size:13px;background:#231e17}
+  .row small{color:#a89c84;font-family:system-ui;font-size:10px;position:relative}
+  .row span{position:relative}
+  .row.gold{background:linear-gradient(90deg,color-mix(in srgb,#d9b45f calc(var(--i)*10%),#231e17),#231e17 80%)}
+  .row.dim{opacity:.35}
+
+  /* ---------- v3: procedural grow / hold / wither ---------- */
+  .proc::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,color-mix(in srgb,var(--k) calc(var(--i)*7%),transparent),transparent 70%)}
+  svg.fxs{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;color:var(--c);opacity:calc(var(--i)*var(--o,.5));
+    -webkit-mask:linear-gradient(90deg,#000 40%,transparent 92%);mask:linear-gradient(90deg,#000 40%,transparent 92%)}
+  svg.fxs path{fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+  svg.fxs .thick{stroke-width:1.6}
+  svg.fxs .thicker{stroke-width:2.6}
+  svg.fxs .thin{stroke-width:.7}
+  svg.fxs .faint{opacity:.45}
+  svg.fxs .fill{fill:currentColor;stroke:none}
+  svg.fxs .leaf{fill:#5fae52;stroke:none}
+  svg.fxs .bloom{fill:#e9d77a;stroke:none}
+  svg.fxs .pop{transform-box:fill-box;transform-origin:center}
+  .p-sor{--k:#c8323c;--c:#e0606a;--o:.55}
+  .p-wiz{--k:#3a6fc4;--c:#86aef0;--o:.45}
+  .p-dru{--k:#4fa846;--c:#7cc56c;--o:.5}
+  .p-war{--k:#7b47b8;--c:#a77be0;--o:.55}
+  .p-cle{--k:#8f9aa8;--c:#dfe6ef;--o:.4}
+  .p-pal{--k:#c9a227;--c:#f1d36a;--o:.5}
+  .p-bar{--k:#b0408a;--c:#e070b8;--o:.5}
+  .p-ran{--k:#5e7a3a;--c:#b4d27a;--o:.5}
+
+  /* ---------- v1 backup: CSS washes ---------- */
+  .fx::before,.fx::after{content:"";position:absolute;pointer-events:none;z-index:-1}
+  .sor::before{inset:-40% -60%;opacity:calc(var(--i)*.55);background:radial-gradient(40% 60% at 20% 55%,#c8323c55,transparent 70%),radial-gradient(30% 45% at 45% 35%,#c8323c40,transparent 70%),radial-gradient(35% 50% at 70% 65%,#c8323c30,transparent 70%);animation:smoke 16s ease-in-out infinite alternate}
+  .sor::after{inset:-50% -80%;opacity:calc(var(--i)*.4);background:radial-gradient(25% 40% at 30% 50%,#e0606a40,transparent 70%),radial-gradient(30% 50% at 60% 40%,#8a1f2840,transparent 70%);animation:smoke 23s ease-in-out infinite alternate-reverse}
+  @keyframes smoke{0%{transform:translate(-14%,4%) scale(1)}50%{transform:translate(4%,-6%) scale(1.15)}100%{transform:translate(16%,3%) scale(1.05)}}
+  .wiz::before,.wiz::after{inset:-20px -40px;opacity:calc(var(--i)*.5);-webkit-mask:linear-gradient(90deg,#000,transparent 85%);mask:linear-gradient(90deg,#000,transparent 85%)}
+  .wiz::before{background:repeating-linear-gradient(60deg,#3a6fc455 0 1px,transparent 1px 9px);animation:weaveA 12s linear infinite}
+  .wiz::after{background:repeating-linear-gradient(-60deg,#7aa4ee44 0 1px,transparent 1px 11px);animation:weaveB 15s linear infinite}
+  @keyframes weaveA{to{transform:translateX(36px)}}
+  @keyframes weaveB{to{transform:translateX(-36px)}}
+  .dru::before{inset:-30px;opacity:calc(var(--i)*.55);background:radial-gradient(circle at 50% 50%,#e9d77a66 0 1.5px,transparent 2px),radial-gradient(circle at 50% 38%,#4fa84666 0 2.5px,transparent 3px),radial-gradient(circle at 62% 50%,#4fa84666 0 2.5px,transparent 3px),radial-gradient(circle at 50% 62%,#4fa84666 0 2.5px,transparent 3px),radial-gradient(circle at 38% 50%,#4fa84666 0 2.5px,transparent 3px);background-size:34px 34px;-webkit-mask:linear-gradient(90deg,#000,transparent 80%);mask:linear-gradient(90deg,#000,transparent 80%);animation:bloom 9s ease-in-out infinite}
+  .dru::after{inset:0;background:linear-gradient(90deg,color-mix(in srgb,#4fa846 calc(var(--i)*9%),transparent),transparent 70%)}
+  @keyframes bloom{0%,100%{transform:translateY(0) scale(.9);opacity:calc(var(--i)*.25)}50%{transform:translateY(-8px) scale(1.05);opacity:calc(var(--i)*.6)}}
+  .war::before{inset:-60% -10% -60% 40%;opacity:calc(var(--i)*.6);background:radial-gradient(closest-side,#7b47b866,#7b47b822 55%,transparent);animation:pact 7s ease-in-out infinite}
+  .war::after{inset:0;background:linear-gradient(90deg,color-mix(in srgb,#7b47b8 calc(var(--i)*8%),transparent),transparent 70%)}
+  @keyframes pact{0%,100%{transform:scale(.8);opacity:calc(var(--i)*.3)}50%{transform:scale(1.15);opacity:calc(var(--i)*.7)}}
+  .cle::before{width:520px;height:520px;left:-260px;top:-250px;opacity:calc(var(--i)*.45);background:repeating-conic-gradient(#c9d2dd30 0 4deg,transparent 4deg 18deg);-webkit-mask:radial-gradient(closest-side,#000,transparent);mask:radial-gradient(closest-side,#000,transparent);animation:spin 60s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .pal::after{inset:0;background:linear-gradient(90deg,color-mix(in srgb,#c9a227 calc(var(--i)*8%),transparent),transparent 70%)}
+  .pal::before{top:0;bottom:0;left:0;width:40%;opacity:calc(var(--i)*.6);background:linear-gradient(100deg,transparent,#f1d36a40 45%,#fff3c050 50%,#f1d36a40 55%,transparent);animation:glint 7s ease-in-out infinite}
+  @keyframes glint{0%,55%{transform:translateX(-120%)}85%,100%{transform:translateX(300%)}}
+  .bar::before{width:260px;height:260px;left:-130px;top:calc(50% - 130px);opacity:calc(var(--i)*.5);background:repeating-radial-gradient(circle,#b0408a50 0 1px,transparent 1px 16px);-webkit-mask:radial-gradient(closest-side,#000 30%,transparent);mask:radial-gradient(closest-side,#000 30%,transparent);animation:ripple 5s linear infinite}
+  @keyframes ripple{from{transform:scale(.9)}to{transform:scale(1.5)}}
+  .ran::before{inset:-40% -50%;opacity:calc(var(--i)*.55);background:radial-gradient(12% 30% at 15% 40%,#a6c46a44,transparent 70%),radial-gradient(10% 25% at 30% 70%,#5e7a3a55,transparent 70%),radial-gradient(14% 35% at 48% 35%,#a6c46a33,transparent 70%),radial-gradient(10% 28% at 65% 60%,#5e7a3a44,transparent 70%);animation:dapple 13s ease-in-out infinite alternate}
+  @keyframes dapple{from{transform:translate(-6%,3%)}to{transform:translate(6%,-3%)}}
+
+  @media (prefers-reduced-motion:reduce){.fx::before,.fx::after{animation:none!important}}
+  .stage.paused .fx::before,.stage.paused .fx::after{animation-play-state:paused}
+
+  /* ---------- background layer ---------- */
+  .phone.bgdemo{position:relative;overflow:hidden;isolation:isolate;padding:22px 16px 18px}
+  .bgdemo .row{background-color:#231e17e6}
+  .bgdemo .row.gold{background:linear-gradient(90deg,color-mix(in srgb,#d9b45f calc(var(--i)*10%),#231e17e6),#231e17e6 80%)}
+  svg.bgfx{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;color:var(--c);opacity:calc(var(--i)*var(--bo,.22));
+    -webkit-mask:radial-gradient(ellipse 70% 60% at 50% 50%,#0006 30%,#000 100%);mask:radial-gradient(ellipse 70% 60% at 50% 50%,#0006 30%,#000 100%)}
+  svg.bgfx path{fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+  svg.bgfx .thick{stroke-width:1.6} svg.bgfx .thicker{stroke-width:3} svg.bgfx .thin{stroke-width:.8} svg.bgfx .faint{opacity:.5}
+  svg.bgfx .fill{fill:currentColor;stroke:none} svg.bgfx .leaf{fill:#5fae52;stroke:none} svg.bgfx .bloom{fill:#e9d77a;stroke:none}
+  svg.bgfx .pop{transform-box:fill-box;transform-origin:center}
+  .b-sor{--c:#e0606a;--bo:.22}.b-wiz{--c:#86aef0;--bo:.24}.b-dru{--c:#7cc56c;--bo:.22}.b-war{--c:#a77be0;--bo:.24}
+  .b-cle{--c:#dfe6ef;--bo:.18}.b-pal{--c:#f1d36a;--bo:.2}.b-bar{--c:#e070b8;--bo:.22}.b-ran{--c:#b4d27a;--bo:.22}.b-gold{--c:#d9b45f;--bo:.2}
+  .b-bbn{--c:#e07a4a;--bo:.24}.b-ftr{--c:#c9ab86;--bo:.24}.b-mnk{--c:#6fd0cc;--bo:.22}.b-rog{--c:#a9a7c4;--bo:.26}
+  canvas.mist{position:absolute;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);z-index:-1;pointer-events:none;opacity:calc(var(--i)*.42);filter:blur(5px)}
+  canvas.blood{opacity:calc(var(--i)*.5);filter:blur(3px)}
+  svg.cells{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--i)*.55)}
+  .bgdemo{height:640px}
+  .back{font:11px system-ui;color:#9b8f78;margin-bottom:8px}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px 6px;margin-top:14px}
+  .ic{text-align:center;font-size:10.5px;line-height:1.2}
+  .ic img{width:58px;height:58px;border-radius:8px;border:1px solid #6b5a3a;display:block;margin:0 auto 4px;background:#000}
+  /* soft drop shadow behind all app text */
+  .phone{text-shadow:0 1px 2px rgb(0 0 0/.85),0 0 8px rgb(0 0 0/.55)}
+  /* ---------- fonts ---------- */
+  @font-face{font-family:'Inknut';src:url(/files/inknut-medium.woff2) format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Inknut';src:url(/files/inknut-light.woff2) format('woff2');font-weight:300;font-display:swap}
+  /* digits come from Noto Serif: Inknut only has old-style figures (1 reads as I). Defined after Inknut so they win for 0-9 */
+  @font-face{font-family:'Inknut';src:url(/files/noto-digits-medium.woff2) format('woff2');font-weight:500;unicode-range:U+0030-0039;font-display:swap}
+  @font-face{font-family:'Inknut';src:url(/files/noto-digits-light.woff2) format('woff2');font-weight:300;unicode-range:U+0030-0039;font-display:swap}
+  @font-face{font-family:'fell-english';src:url(/files/fell-english.woff2) format('woff2');font-display:swap}
+  /* ornaments: EB Garamond fleurons + Noto Sans Symbols 2 leaf dingbats, both OFL */
+  @font-face{font-family:'Orn';src:url(/files/orn-ebgaramond.woff2) format('woff2');unicode-range:U+2619,U+2766-2767,U+E001-E002;font-display:block}
+  @font-face{font-family:'Orn';src:url(/files/orn-notosymbols.woff2) format('woff2');unicode-range:U+1F650-1F667;font-display:block}
+  @font-face{font-family:'fell-english';src:url(/files/noto-digits-medium.woff2) format('woff2');unicode-range:U+0030-0039;font-display:swap}
+  .phone{--title:'fell-english'}
+  .phone{font-family:'Inknut',Georgia,serif;font-weight:500}
+  .phone .row{font-size:12px;line-height:1.25;padding:8px 10px}
+  .phone .row small,.phone .who,.phone .slots,.phone .back,.phone .ic{font-family:'Inknut',Georgia,serif;font-weight:500}
+  .phone .row small{font-size:9.5px}
+  .phone .who{font-size:10.5px}
+  .phone .slots{font-size:10px}
+  .phone .ic{font-size:9.5px}
+  .phone h4{font-family:var(--title),Georgia,serif;font-weight:normal;font-size:24px;letter-spacing:.5px;margin-bottom:0}
+  .orn{font-family:'Orn';font-weight:normal;letter-spacing:0;line-height:1}
+  .namerule{text-align:center;color:#d9b45f;font-size:30px;line-height:.6;margin:-2px 0 6px;opacity:.85}
+  .sep{font-family:var(--title),Georgia,serif;font-size:17px;letter-spacing:3px;gap:6px}
+  .sep .orn{font-size:26px;letter-spacing:0}
+  /* spell card */
+  .cB{background:linear-gradient(#1d1a17f2,#121010f2);color:#ddd2bd;border:1px solid #6b5a3a;border-radius:6px;padding:16px 14px 12px;position:relative;margin-top:6px}
+  .cB .corner{position:absolute;font-size:26px;color:#d9b45f;opacity:.7}
+  .cB .tl{left:4px;top:2px}.cB .tr{right:4px;top:2px;transform:scaleX(-1)}
+  .cB>img{position:absolute;right:14px;top:22px;width:54px;height:54px;border-radius:6px;border:1px solid #6b5a3a}
+  .cB .t{font-family:var(--title),Georgia,serif;font-size:24px;color:#f1e6cf;line-height:1.1}
+  .cB .s{font-size:10.5px;color:#a2957c;margin-bottom:8px}
+  .cB .d{font-size:15px;color:#f1e6cf}
+  .cB .dd{font-size:10.5px;color:#b9a6e6;margin-bottom:4px}
+  .cB .rule{text-align:center;color:#d9b45f;font-size:30px;line-height:.7;margin:4px 0;opacity:.8}
+  .cB p{font-weight:300;font-size:11.5px;line-height:1.6;margin:6px 0}
+  .cB p .orn{color:#d9b45f;font-size:15px}
+  .cB .tags{font-size:10px;color:#c8bba3;display:flex;flex-wrap:wrap;gap:4px 12px;margin:8px 0}
+  .cB .cost{border-top:1px solid #3c342a;margin:10px -14px -12px;padding:8px 14px;background:#191512;font-size:10.5px;display:flex;gap:14px}
+  .cB .g{color:#5fbf6a}.cB .b{color:#7fc4ff}
+  /* name header and card divider: ornament, line to the edge, mirrored ornament */
+  .namesep{display:flex;align-items:center;gap:8px;margin:0 -16px 4px;color:#d9b45f}
+  .namesep:before,.namesep:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#d9b45f)}
+  .namesep:after{background:linear-gradient(90deg,#d9b45f,transparent)}
+  .namesep h4{margin:0;white-space:nowrap}
+  .namesep .orn,.cardsep .orn{font-size:24px}
+  .flip{display:inline-block;transform:scaleX(-1)}
+  .cardsep{display:flex;align-items:center;gap:6px;margin:8px 0;color:#d9b45f}
+  .cardsep .ln{flex:1;height:1px;background:linear-gradient(90deg,#d9b45f,#d9b45f99 50%,#d9b45f)}
+  .pick{display:flex;flex-wrap:wrap;gap:4px;margin:4px 0 14px}
+  .pick button{font:22px 'Orn';color:#d9b45f;background:#2a241b;border:1px solid #4a3f2d;border-radius:6px;width:40px;height:40px;cursor:pointer;padding:0}
+  .pick button.on{border-color:#d9b45f;background:#3b2c14}
+  /* spell components: tap an icon for its explainer */
+  .comps{display:flex;gap:10px;margin:10px 0 4px}
+  .comp{width:52px;text-align:center;cursor:pointer;font-size:9.5px;color:#c8bba3}
+  .comp .ico{width:48px;height:48px;border:1px solid #6b5a3a;border-radius:50%;background:#000;overflow:hidden;display:flex;align-items:center;justify-content:center;margin:0 auto 3px}
+  .comp .ico img{width:32px;height:32px;filter:sepia(1) saturate(2) hue-rotate(5deg) brightness(.95)}
+  .comp.on .ico{border-color:#d9b45f;box-shadow:0 0 8px #d9b45f88}
+  .comp.off{opacity:.25;cursor:default}
+  .sub{display:none;background:#0d0b09;border:1px solid #d9b45f;border-radius:6px;padding:8px 10px;font-size:10.5px;line-height:1.55;color:#ddd2bd;margin:6px 0}
+  .sub b{color:#f1e6cf;font-family:var(--title),Georgia,serif;font-weight:normal;font-size:15px}
+  .sub.show{display:block}
+  /* scrolling spell page */
+  .spellpage{display:flex;flex-direction:column}
+  .sphead{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}
+  .sphead .back{margin:0}
+  .tog{display:flex;border:1px solid #6b5a3a;border-radius:999px;overflow:hidden;font-size:9.5px;cursor:pointer;background:#0d0b09cc}
+  .tog span{padding:3px 9px;color:#a89c84}
+  .spellpage.mine .t-mine,.spellpage:not(.mine) .t-all{background:#d9b45f;color:#1b1712;text-shadow:none}
+  .sptitle{margin:2px 0 6px!important;text-align:center}
+  .spscroll{flex:1;overflow-y:auto;margin:0 -16px;padding:0 16px 16px;scrollbar-width:none;
+    -webkit-mask:linear-gradient(#000 calc(100% - 24px),transparent);mask:linear-gradient(#000 calc(100% - 24px),transparent)}
+  .spscroll::-webkit-scrollbar{display:none}
+  .ssep{font-size:15px;letter-spacing:1px;margin:14px 0 10px}
+  .ssep em{font-style:normal;color:var(--sc);margin-left:5px}
+  .ssep .orn{font-size:20px;color:var(--sc)}
+  .spellpage .grid{margin-top:0;gap:12px 6px}
+  .spellpage .ic img{width:50px;height:50px}
+  .spellpage.mine .ic:not(.own){display:none}
+  .spellpage.mine .spsec.nomine{display:none}
+  .spellpage:not(.mine) .ic.own img{border-color:#d9b45f;box-shadow:0 0 0 1px #d9b45f,0 0 8px #d9b45f66}
+  .spsec.locked .grid{opacity:.35;filter:grayscale(.6)}
+  .lockmsg{text-align:center;font-size:9.5px;color:#a89c84;margin:-4px 0 8px}
+  /* menu row icons: BG3 resource icons for actions, class hotbar icons, spell slot + level */
+  .rl{display:flex;align-items:center;gap:9px}
+  .ri{width:24px;height:24px;flex:none;object-fit:contain;filter:drop-shadow(0 1px 2px #000c)}
+  .slot{position:relative;display:inline-flex;align-items:center;justify-content:center}
+  .slot img{width:20px;height:20px}
+  .slot b{position:absolute;font:600 10px/1 'Inknut',Georgia,serif;color:#fff;text-shadow:0 0 3px #000,0 0 2px #000}
+  .knobs{display:flex;gap:8px;margin:6px 0 18px;font:12px system-ui}
+  .knobs button{background:#2a241b;color:#e9dfc9;border:1px solid #4a3f2d;border-radius:6px;padding:6px 12px;cursor:pointer}
+  .knobs button.on{border-color:#d9b45f;color:#f3d48b}
+</style>
+
+<h2>Final mockup</h2>
+<p class="subtitle">Action, Bonus Action and Reaction use the BG3 resource icons. Class rows use the BG3 class hotbar icon, cantrips the plain class emblem, spell levels the BG3 spell slot with the level on it.</p>
+
+<div class="knobs" id="bgk">
+  <button onclick="setBg('gold',this)">No class</button>
+  <button class="on" onclick="setBg('sor',this)">Sorcerer</button>
+  <button onclick="setBg('wiz',this)">Wizard</button>
+  <button onclick="setBg('dru',this)">Druid</button>
+  <button onclick="setBg('war',this)">Warlock</button>
+  <button onclick="setBg('cle',this)">Cleric</button>
+  <button onclick="setBg('pal',this)">Paladin</button>
+  <button onclick="setBg('bar',this)">Bard</button>
+  <button onclick="setBg('ran',this)">Ranger</button>
+  <button onclick="setBg('bbn',this)">Barbarian</button>
+  <button onclick="setBg('ftr',this)">Fighter</button>
+  <button onclick="setBg('mnk',this)">Monk</button>
+  <button onclick="setBg('rog',this)">Rogue</button>
+</div>
+
+<div class="flow stage" id="stage" data-i="medium">
+  <div>
+    <div class="phone bgdemo">
+      <div class="namesep"><span class="orn o-name">🙚</span><h4>Rowan</h4><span class="orn o-name flip">🙚</span></div>
+      <div class="who">Sorcerer 3 / Druid 2</div>
+      <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/f/f2/Action_Icon.png">Actions</span><small>everyone</small></div>
+      <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/c/c9/Bonus_Action_Icon.png">Bonus Actions</span><small>everyone</small></div>
+      <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/c/c1/Reaction_Icon.png">Reactions</span><small>everyone</small></div>
+      <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/0/0e/Class_Sorcerer_Hotbar_Icon.png">Sorcerer Actions</span><small>Metamagic</small></div>
+      <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/a/ad/Class_Druid_Hotbar_Icon.png">Druid Actions</span><small>Wild Shape</small></div>
+      <div class="sep"><span class="orn">☙</span>MAGIC<span class="orn">❧</span></div>
+      <div class="row proc p-sor" style="cursor:pointer" onclick="jump('sor-c')" data-gen="sor"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/2/2b/Class_Sorcerer_Plain_Icon.png">Sorcerer Cantrips</span><small>4 known</small></div>
+      <div class="row proc p-dru" style="cursor:pointer" onclick="jump('dru-c')" data-gen="dru"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/8/88/Class_Druid_Plain_Icon.png">Druid Cantrips</span><small>2 known</small></div>
+      <div class="row proc p-sor" style="cursor:pointer" onclick="jump('sor-1')" data-gen="sor"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Sorcerer Spells</span></div>
+      <div class="row proc p-dru" style="cursor:pointer" onclick="jump('dru-1')" data-gen="dru"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Druid Spells</span></div>
+      <div class="row proc p-sor" style="cursor:pointer" onclick="jump('sor-2')" data-gen="sor"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Sorcerer Spells</span></div>
+      <div class="row dim"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>3</b></span>Level 3+</span><small>no spells yet</small></div>
+    </div>
+  </div>
+  <div>
+    <div class="phone bgdemo spellpage mine">
+      <div class="sphead">
+        <span class="back">‹ Menu</span>
+        <div class="tog" onclick="togMine(this)"><span class="t-mine">My spells</span><span class="t-all">All</span></div>
+      </div>
+      <h4 class="sptitle">Spells</h4>
+      <div class="spscroll" id="spscroll">
+        <section id="sor-c" class="spsec">
+          <div class="sep ssep" style="--sc:#e0606a"><span class="orn">☙</span>Cantrips <em>Sorcerer</em><span class="orn">❧</span></div>
+          <div class="grid"><div class="ic own"><img src="https://bg3.wiki/w/images/2/23/Fire_Bolt_Icon.webp">Fire Bolt</div><div class="ic own"><img src="https://bg3.wiki/w/images/f/f9/Ray_of_Frost_Icon.webp">Ray of Frost</div><div class="ic own"><img src="https://bg3.wiki/w/images/f/f9/Mage_Hand_Icon.webp">Mage Hand</div><div class="ic own"><img src="https://bg3.wiki/w/images/9/9d/Minor_Illusion_Icon.webp">Minor Illusion</div><div class="ic"><img src="https://bg3.wiki/w/images/1/1d/Poison_Spray_Icon.webp">Poison Spray</div><div class="ic"><img src="https://bg3.wiki/w/images/5/5c/Light_Icon.webp">Light</div><div class="ic"><img src="https://bg3.wiki/w/images/b/ba/Dancing_Lights_Icon.webp">Dancing Lights</div><div class="ic"><img src="https://bg3.wiki/w/images/0/04/Blade_Ward_Icon.webp">Blade Ward</div></div>
+        </section>
+        <section id="dru-c" class="spsec">
+          <div class="sep ssep" style="--sc:#7cc56c"><span class="orn">☙</span>Cantrips <em>Druid</em><span class="orn">❧</span></div>
+          <div class="grid"><div class="ic own"><img src="https://bg3.wiki/w/images/e/ec/Produce_Flame_Icon.webp">Produce Flame</div><div class="ic own"><img src="https://bg3.wiki/w/images/7/7f/Guidance_Icon.webp">Guidance</div><div class="ic"><img src="https://bg3.wiki/w/images/6/68/Shillelagh_Icon.webp">Shillelagh</div><div class="ic"><img src="https://bg3.wiki/w/images/e/e8/Thorn_Whip_Icon.webp">Thorn Whip</div><div class="ic"><img src="https://bg3.wiki/w/images/1/1d/Poison_Spray_Icon.webp">Poison Spray</div></div>
+        </section>
+        <section id="sor-1" class="spsec">
+          <div class="sep ssep" style="--sc:#e0606a"><span class="orn">☙</span>Level 1 <em>Sorcerer</em><span class="orn">❧</span></div>
+          <div class="grid"><div class="ic own"><img src="https://bg3.wiki/w/images/d/d4/Magic_Missile_Icon.webp">Magic Missile</div><div class="ic own"><img src="https://bg3.wiki/w/images/c/cf/Shield_spell_Icon.webp">Shield</div><div class="ic own"><img src="https://bg3.wiki/w/images/8/8e/Chromatic_Orb_Icon.webp">Chromatic Orb</div><div class="ic"><img src="https://bg3.wiki/w/images/c/cf/Burning_Hands_Icon.webp">Burning Hands</div><div class="ic"><img src="https://bg3.wiki/w/images/a/ae/Sleep_Icon.webp">Sleep</div><div class="ic"><img src="https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp">Thunderwave</div><div class="ic"><img src="https://bg3.wiki/w/images/8/8d/Disguise_Self_Icon.webp">Disguise Self</div><div class="ic"><img src="https://bg3.wiki/w/images/d/d6/Expeditious_Retreat_Icon.webp">Expeditious Retreat</div><div class="ic"><img src="https://bg3.wiki/w/images/f/f2/False_Life_Icon.webp">False Life</div><div class="ic"><img src="https://bg3.wiki/w/images/c/c0/Fog_Cloud_Icon.webp">Fog Cloud</div><div class="ic"><img src="https://bg3.wiki/w/images/2/28/Jump_Icon.webp">Jump</div><div class="ic"><img src="https://bg3.wiki/w/images/0/00/Feather_Fall_Icon.webp">Feather Fall</div></div>
+        </section>
+        <section id="dru-1" class="spsec">
+          <div class="sep ssep" style="--sc:#7cc56c"><span class="orn">☙</span>Level 1 <em>Druid</em><span class="orn">❧</span></div>
+          <div class="grid"><div class="ic own"><img src="https://bg3.wiki/w/images/4/40/Cure_Wounds_Icon.webp">Cure Wounds</div><div class="ic own"><img src="https://bg3.wiki/w/images/d/d9/Entangle_Icon.webp">Entangle</div><div class="ic own"><img src="https://bg3.wiki/w/images/a/a1/Faerie_Fire_Icon.webp">Faerie Fire</div><div class="ic own"><img src="https://bg3.wiki/w/images/4/42/Goodberry_Icon.webp">Goodberry</div><div class="ic"><img src="https://bg3.wiki/w/images/e/ef/Healing_Word_Icon.webp">Healing Word</div><div class="ic"><img src="https://bg3.wiki/w/images/c/c0/Fog_Cloud_Icon.webp">Fog Cloud</div><div class="ic"><img src="https://bg3.wiki/w/images/3/35/Longstrider_Icon.webp">Longstrider</div><div class="ic"><img src="https://bg3.wiki/w/images/2/28/Jump_Icon.webp">Jump</div><div class="ic"><img src="https://bg3.wiki/w/images/2/24/Speak_with_Animals_Icon.webp">Speak with Animals</div><div class="ic"><img src="https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp">Thunderwave</div></div>
+        </section>
+        <section id="sor-2" class="spsec">
+          <div class="sep ssep" style="--sc:#e0606a"><span class="orn">☙</span>Level 2 <em>Sorcerer</em><span class="orn">❧</span></div>
+          <div class="grid"><div class="ic own"><img src="https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp">Misty Step</div><div class="ic"><img src="https://bg3.wiki/w/images/7/75/Hold_Person_Icon.webp">Hold Person</div><div class="ic"><img src="https://bg3.wiki/w/images/8/8e/Scorching_Ray_Icon.webp">Scorching Ray</div><div class="ic"><img src="https://bg3.wiki/w/images/4/41/Mirror_Image_Icon.webp">Mirror Image</div><div class="ic"><img src="https://bg3.wiki/w/images/b/bf/Darkness_Icon.webp">Darkness</div><div class="ic"><img src="https://bg3.wiki/w/images/0/0d/Blur_Icon.webp">Blur</div></div>
+        </section>
+        <section id="sor-3" class="spsec locked nomine">
+          <div class="sep ssep" style="--sc:#e0606a"><span class="orn">☙</span>Level 3 <em>Sorcerer</em><span class="orn">❧</span></div>
+          <div class="lockmsg">Unlocks at Sorcerer 5</div><div class="grid"><div class="ic"><img src="https://bg3.wiki/w/images/c/cb/Fireball_Icon.webp">Fireball</div></div>
+        </section>
+      </div>
+    </div>
+  </div>
+  <div>
+    <div class="phone bgdemo" style="height:auto;min-height:640px">
+      <div class="back">‹ Level 1 Sorcerer Spells</div>
+      <div class="cB">
+        <img src="https://bg3.wiki/w/images/d/d4/Magic_Missile_Icon.webp">
+        <div class="t">Magic Missile</div>
+        <div class="s">Level 1 Evocation Spell</div>
+        <div class="d">6~15 Damage</div>
+        <div class="dd">3 darts × 1d4+1 Force</div>
+        <div class="cardsep"><span class="orn o-card"></span><span class="ln"></span><span class="orn o-card flip"></span></div>
+        <p>You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several.</p>
+        <p><span class="orn">❦</span> <i>At Higher Levels.</i> When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.</p>
+        <div class="tags"><span>◎ 120 ft</span><span>⏱ Instantaneous</span><span>Auto-hit</span></div>
+        <div class="comps">
+          <div class="comp" onclick="compPick(this,'v')"><div class="ico"><img src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/shouting.svg"></div>Verbal</div>
+          <div class="comp" onclick="compPick(this,'s')"><div class="ico"><img src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/magic-palm.svg"></div>Somatic</div>
+          <div class="comp off"><div class="ico"><img src="https://game-icons.net/icons/ffffff/000000/1x1/lorc/swap-bag.svg"></div>Material</div>
+        </div>
+        <div class="sub" id="sub-v"><b>Verbal</b><br>You must chant mystic words out loud. You can't cast it while gagged, unable to speak, or inside a Silence spell.</div>
+        <div class="sub" id="sub-s"><b>Somatic</b><br>You must make gestures with at least one free hand. Holding a sword and a shield? Stow one first.</div>
+        <div class="cost"><span class="g">● Action</span><span class="b">■ Level 1 Spell Slot</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>function togMine(t){const p=t.closest('.spellpage');p.classList.toggle('mine')}
+function jump(id){const sc=document.getElementById('spscroll'),el=document.getElementById(id);
+  if(getComputedStyle(el).display==='none')document.querySelector('.spellpage').classList.remove('mine');
+  sc.scrollTo({top:el.offsetTop-sc.offsetTop,behavior:'smooth'})}
+function compPick(el,k){const on=el.classList.contains('on');
+  document.querySelectorAll('.comp').forEach(c=>c.classList.remove('on'));document.querySelectorAll('.sub').forEach(x=>x.classList.remove('show'));
+  if(!on){el.classList.add('on');document.getElementById('sub-'+k).classList.add('show')}}
+
+function pickOrn(cls,b){document.querySelectorAll('.'+cls).forEach(e=>e.textContent=b.textContent);
+  b.parentNode.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');
+  const n=document.querySelector('.pick:nth-of-type(1) .on'),c=document.querySelectorAll('.pick')[1].querySelector('.on');
+  document.getElementById('pickout').textContent='Name: U+'+document.querySelectorAll('.pick')[0].querySelector('.on').dataset.g+'   Card: U+'+c.dataset.g}
+
+function setI(v,b){}
+function _unused(v,b){document.getElementById('stage').dataset.i=v;b.parentNode.querySelectorAll('button:not(#pz)').forEach(x=>x.classList.remove('on'));b.classList.add('on')}
+function togglePause(b){const s=document.getElementById('stage');s.classList.toggle('paused');const p=s.classList.contains('paused');b.textContent=p?'Resume motion':'Pause motion';document.getAnimations().forEach(a=>p?a.pause():a.play())}
+
+const NS='http://www.w3.org/2000/svg';
+const R=(a,b)=>a+Math.random()*(b-a);
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const G=3600,HOLD=1600,WITHER=3000;
+const f1=n=>n.toFixed(1);
+const toD=pts=>'M'+pts.map(p=>f1(p[0])+' '+f1(p[1])).join('L');
+function el(tag,attrs,parent){const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent.appendChild(e);return e}
+const circ=(cx,cy,r)=>`M${f1(cx+r)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(cx-r)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(cx+r)} ${f1(cy)}`;
+
+// a stroke that draws itself in: at = start as a fraction of the grow phase, dur in ms
+function line(svg,shape,at,dur,cls){const e=el('path',{d:typeof shape==='string'?shape:toD(shape),class:cls||''},svg);return{e,kind:'line',at,dur}}
+// a small shape that pops open in place
+function pop(svg,x,y,rot,at,draw){const o=el('g',{transform:`translate(${f1(x)} ${f1(y)}) rotate(${(rot||0).toFixed(0)})`},svg);const g=el('g',{class:'pop'},o);draw(g);return{e:g,kind:'pop',at}}
+
+// a tendril that tightens into a spiral
+function curl(x,y,h,dir,r){const pts=[[x,y]];for(let i=0;i<120&&r>.7;i++){h+=dir*.8/r;x+=Math.cos(h)*.8;y+=Math.sin(h)*.8;pts.push([x,y]);r*=.955}return pts}
+// a meandering path that stays inside the row
+function wander(x,y,h,len,H,o={}){const{turb=.18,wave=0,freq=.1,ph=R(0,6),st=1.4}=o;const pts=[[x,y]];
+  for(let s=0;s<len;s+=st){h+=R(-turb,turb)+Math.sin(s*freq+ph)*wave;if(y<H*.25)h+=.1;if(y>H*.75)h-=.1;h=Math.max(-.9,Math.min(.9,h));x+=Math.cos(h)*st;y+=Math.sin(h)*st;pts.push([x,y])}
+  return{pts,h,x,y}}
+const heading=(pts,i)=>{const a=pts[Math.max(0,i-1)],b=pts[Math.min(pts.length-1,i+1)];return Math.atan2(b[1]-a[1],b[0]-a[0])};
+
+const GEN={
+  // Druid: a vine creeps in, tendrils curl off it, leaves and blossoms open
+  dru(svg,W,H){const P=[],w=wander(-4,H*R(.35,.65),R(-.2,.2),W*.82,H,{turb:.22}),n=w.pts.length;
+    P.push(line(svg,w.pts,0,G,'thick'));let side=Math.random()<.5?1:-1;
+    for(let i=Math.floor(R(6,14));i<n;i+=Math.floor(R(9,19))){const[x,y]=w.pts[i],h=heading(w.pts,i),t=i/n;side*=-1;
+      const c=curl(x,y,h+side*R(.8,1.3),side,R(5,10));P.push(line(svg,c,t,900));
+      if(Math.random()<.45)P.push(line(svg,curl(x,y,h-side*R(.5,.9),-side,R(3,5)),t,900));
+      P.push(pop(svg,x,y,(h-side*R(.6,1.1))*57.3,t,g=>el('path',{d:'M0 0Q3.5 -2.6 7 0Q3.5 2.6 0 0',class:'leaf'},g)));
+      if(Math.random()<.5){const e=c[c.length-1];P.push(pop(svg,e[0],e[1],0,t+.18,g=>{for(let k=0;k<5;k++)el('circle',{cx:f1(Math.cos(k*1.2566)*1.6),cy:f1(Math.sin(k*1.2566)*1.6),r:1.1,class:'bloom'},g)}))}}
+    return P},
+
+  // Sorcerer: wisps of smoke drift across and curl at the ends, embers flicker along them
+  sor(svg,W,H){const P=[];for(let k=0;k<3;k++){const at=k*.12;
+      const w=wander(R(-14,-2),H*R(.25,.75),R(-.15,.15),W*R(.45,.75),H,{turb:.04,wave:.07,freq:R(.05,.09)});
+      const pts=w.pts.concat(curl(w.x,w.y,w.h,Math.random()<.5?1:-1,R(4,7)).slice(1));P.push(line(svg,pts,at,G*.75,'thick'));
+      for(let j=0;j<3;j++){const i=Math.floor(R(.2,1)*(w.pts.length-1)),p=w.pts[i];
+        P.push(pop(svg,p[0]+R(-3,3),p[1]+R(-6,6),0,at+i/pts.length*.75,g=>el('circle',{r:f1(R(.6,1.2)),class:'fill'},g)))}}
+    return P},
+
+  // Wizard: threads of the Weave cross into a lattice, sigils inscribe themselves on it
+  wiz(svg,W,H){const P=[],a=R(.24,.34),dx=H/Math.tan(a);let i=0;
+    for(let x0=-dx;x0<W*.75;x0+=R(16,26),i++){const pts=i%2?[[x0,-2],[x0+dx,H+2]]:[[x0+dx,-2],[x0,H+2]];P.push(line(svg,pts,Math.max(0,(x0+dx)/(W*.75+dx))*.8,1100,'thin'))}
+    for(let k=0;k<3;k++){const cx=R(.08,.6)*W,cy=H*R(.35,.65),r=R(3.5,5),at=cx/W*.8+.1;
+      P.push(line(svg,circ(cx,cy,r),at,700));
+      P.push(line(svg,[0,1,2,3].map(j=>[cx+Math.cos(j*2.094-1.571)*r*.62,cy+Math.sin(j*2.094-1.571)*r*.62]),at+.08,500,'thin'))}
+    return P},
+
+  // Warlock: an eye opens, tentacles reach out from it
+  war(svg,W,H){const P=[],ex=R(10,18),ey=H*R(.4,.6);
+    P.push(line(svg,`M${f1(ex-6)} ${f1(ey)}Q${f1(ex)} ${f1(ey-5)} ${f1(ex+6)} ${f1(ey)}Q${f1(ex)} ${f1(ey+5)} ${f1(ex-6)} ${f1(ey)}`,0,800));
+    P.push(pop(svg,ex,ey,0,.12,g=>el('circle',{r:1.6,class:'fill'},g)));
+    for(let k=0;k<3;k++){const at=.15+k*.06,w=wander(ex+6,ey,R(-.6,.6),W*R(.35,.62),H,{turb:.04,wave:.09,freq:.1});
+      const pts=w.pts.concat(curl(w.x,w.y,w.h,Math.random()<.5?1:-1,R(3,5)).slice(1));
+      P.push(line(svg,pts.slice(0,Math.floor(pts.length*.45)),at,G*.7*.45,'thicker'));
+      P.push(line(svg,pts,at,G*.7,'thin'));
+      for(let j=1;j<4;j++){const i=Math.floor(pts.length*j*.15),p=pts[i];P.push(pop(svg,p[0],p[1],0,at+i/pts.length*.7,g=>el('circle',{r:.8,class:'fill'},g)))}}
+    return P},
+
+  // Cleric: rays of light fan out from the edge, halos ring the source, sparkles at the tips
+  cle(svg,W,H){const P=[],cx=-4,cy=H*R(.4,.6);
+    for(let j=0;j<3;j++)P.push(line(svg,circ(cx,cy,14+j*11),.2+j*.1,1200,'thin'));
+    for(let k=0;k<10;k++){const a=-.7+k*.155+R(-.05,.05),len=R(40,W*.6),at=k*.04,c=Math.cos(a),s=Math.sin(a);
+      P.push(line(svg,[[cx+c*6,cy+s*6],[cx+c*len,cy+s*len]],at,1200,'thin'));
+      const tx=cx+c*len,ty=cy+s*len;if(ty>3&&ty<H-3&&Math.random()<.6)P.push(pop(svg,tx,ty,0,at+.32,g=>el('path',{d:'M0 -3L.7 -.7L3 0L.7 .7L0 3L-.7 .7L-3 0L-.7 -.7Z',class:'fill'},g)))}
+    return P},
+
+  // Paladin: a blade of light, mirrored heraldic scrolls, diamonds where they meet
+  pal(svg,W,H){const P=[],y=H/2,end=W*.75;P.push(line(svg,[[-2,y],[end,y]],0,G*.7,'thick'));
+    for(let x=R(14,24);x<W*.7;x+=R(28,40)){const at=x/end*.7,r=R(4,7),h=R(.8,1.2);
+      P.push(line(svg,curl(x,y,-h,1,r),at,900));P.push(line(svg,curl(x,y,h,-1,r),at,900));
+      P.push(pop(svg,x,y,0,at+.04,g=>el('path',{d:'M0 -2.5L2 0L0 2.5L-2 0Z',class:'fill'},g)))}
+    return P},
+
+  // Bard: a five-line staff waves in, notes land on it
+  bar(svg,W,H){const P=[],ph=R(0,6),amp=R(1.5,3),fr=R(.03,.05),gap=3.6,y0=H/2-2*gap,end=W*.75;
+    const yAt=(x,j)=>y0+j*gap+Math.sin(x*fr+ph)*amp;
+    for(let j=0;j<5;j++){const pts=[];for(let x=-2;x<=end;x+=3)pts.push([x,yAt(x,j)]);P.push(line(svg,pts,j*.03,G*.7,'thin'))}
+    for(let x=R(18,30);x<W*.7;x+=R(16,28)){const j=Math.floor(R(0,9))/2,up=j>2;
+      P.push(pop(svg,x,yAt(x,j),0,x/end*.7+.05,g=>{el('ellipse',{rx:2.2,ry:1.6,transform:'rotate(-20)',class:'fill'},g);el('path',{d:up?'M-2 .5V8':'M2 -.5V-8'},g)}))}
+    return P},
+
+  // Ranger: a faint trail with paw prints walking along it, grass springing up
+  ran(svg,W,H){const P=[],w=wander(-4,H*R(.35,.65),R(-.2,.2),W*.75,H,{turb:.12}),n=w.pts.length;
+    P.push(line(svg,w.pts,0,G*.7,'thin faint'));let side=1;
+    for(let i=6;i<n;i+=9){const[x,y]=w.pts[i],h=heading(w.pts,i);side*=-1;
+      P.push(pop(svg,x-Math.sin(h)*3*side,y+Math.cos(h)*3*side,h*57.3,i/n*.7,g=>{el('ellipse',{rx:1.6,ry:1.3,class:'fill'},g);
+        for(const[tx,ty]of[[2.3,-1.7],[2.9,-.55],[2.9,.6],[2.3,1.75]])el('circle',{cx:tx,cy:ty,r:.6,class:'fill'},g)}))}
+    for(let k=0;k<4;k++){const x=R(.05,.65)*W,at=x/W*.7;
+      for(const b of[-1,0,1])P.push(line(svg,`M${f1(x+b*1.5)} ${H}Q${f1(x+b*2)} ${f1(H-4)} ${f1(x+b*4+R(-1,1))} ${f1(H-R(6,9))}`,at,700,'thin'))}
+    return P},
+};
+
+function arm(parts){for(const p of parts)if(p.kind==='line'){const L=p.e.getTotalLength();p.L=L;p.e.style.strokeDasharray=L+' '+(L+1);p.e.style.strokeDashoffset=reduce?0:L}else if(!reduce)p.e.style.opacity=0}
+
+// one grow / hold / wither loop; T holds the timings, alive() lets a newer loop take over
+const ROW={G,HOLD,WITHER,POP:600};
+const BGT={G:7000,HOLD:4000,WITHER:6000,POP:1400};
+async function loop(host,svg,gen,T,alive=()=>true){
+  while(alive()){
+    const{width:W,height:H}=host.getBoundingClientRect();
+    svg.setAttribute('viewBox',`0 0 ${W} ${H}`);svg.replaceChildren();
+    const parts=gen(svg,W,H);arm(parts);
+    if(reduce)return;
+    let end=0;
+    let anims=parts.map(p=>{const delay=p.at*T.G;
+      if(p.kind==='line'){end=Math.max(end,delay+p.dur);return p.e.animate([{strokeDashoffset:p.L},{strokeDashoffset:0}],{duration:p.dur,delay,easing:p.dur>=T.G*.7?'linear':'cubic-bezier(.2,.7,.3,1)',fill:'forwards'})}
+      if(p.kind==='move'){end=Math.max(end,delay+p.dur);return p.e.animate(p.frames,{duration:p.dur,delay,fill:'forwards'})}
+      end=Math.max(end,delay+T.POP);return p.e.animate([{opacity:0,transform:'scale(0)'},{opacity:1,transform:'scale(1)'}],{duration:T.POP,delay,easing:'cubic-bezier(.3,1.4,.5,1)',fill:'forwards'})});
+    anims.push(svg.animate([],{duration:end+T.HOLD}));
+    await Promise.all(anims.map(a=>a.finished));
+    if(!alive())return;
+    // wither: a second wave erases everything in the order it grew
+    anims=parts.map(p=>{const delay=p.at*T.WITHER;
+      if(p.kind==='line')return p.e.animate([{strokeDashoffset:0},{strokeDashoffset:-p.L}],{duration:p.dur*.8,delay,easing:'ease-in',fill:'forwards'});
+      if(p.kind==='move')return p.e.animate([],{duration:0});
+      return p.e.animate([{opacity:1,transform:'scale(1)'},{opacity:0,transform:'scale(.6)'}],{duration:T.POP*.8,delay,fill:'forwards'})});
+    anims.push(svg.animate([],{duration:R(400,1200)}));
+    await Promise.all(anims.map(a=>a.finished));
+  }
+}
+async function life(row){
+  const svg=el('svg',{class:'fxs'},row);
+  await new Promise(r=>setTimeout(r,R(0,3500)));
+  loop(row,svg,GEN[row.dataset.gen],ROW);
+}
+document.querySelectorAll('.row[data-gen]').forEach(life);
+
+// ---------- backgrounds: same motifs, bigger, slower, fainter, kept to the edges ----------
+// walk: a path that keeps drifting back toward a base heading h0
+function walk(x,y,h0,len,o={}){const{turb=.08,wave=0,freq=.03,ph=R(0,6),pull=.06,st=2}=o;let h=h0;const pts=[[x,y]];
+  for(let s=0;s<len;s+=st){h+=R(-turb,turb)+Math.sin(s*freq+ph)*wave+(h0-h)*pull;x+=Math.cos(h)*st;y+=Math.sin(h)*st;pts.push([x,y])}
+  return{pts,h,x,y}}
+const big=(g,k)=>el('g',{transform:`scale(${k})`},g);
+const UP=-Math.PI/2;
+// rotate + scale a local shape into place
+const xf=(pts,cx,cy,a,s)=>pts.map(([x,y])=>[cx+(x*Math.cos(a)-y*Math.sin(a))*s,cy+(x*Math.sin(a)+y*Math.cos(a))*s]);
+const ring=(n,r,off)=>[...Array(n+1)].map((_,i)=>{const a=off+i*2*Math.PI/n;return[Math.cos(a)*r,Math.sin(a)*r]});
+// line-art dice: first shape is the outline, the rest are the facet lines
+const DIE={
+  d4:(cx,cy,r,a)=>{const T=ring(3,r,-Math.PI/2),m=[r*.12,r*.5];return[xf(T,cx,cy,a,1),xf([T[0],m],cx,cy,a,1),xf([T[1],m,T[2]],cx,cy,a,1)]},
+  d6:(cx,cy,r,a)=>{const Hx=ring(6,r,-Math.PI/2);return[xf(Hx,cx,cy,a,1),xf([Hx[0],[0,0],Hx[2]],cx,cy,a,1),xf([[0,0],Hx[4]],cx,cy,a,1)]},
+  d8:(cx,cy,r,a)=>{const O=[[0,-r],[r*.85,0],[0,r],[-r*.85,0],[0,-r]],m=[r*.18,r*.08];return[xf(O,cx,cy,a,1),xf([O[3],m,O[1]],cx,cy,a,1),xf([O[0],m,O[2]],cx,cy,a,1)]},
+  d12:(cx,cy,r,a)=>{const D=ring(10,r,-Math.PI/2),Pn=ring(5,r*.52,-Math.PI/2),out=[xf(D,cx,cy,a,1),xf(Pn,cx,cy,a,1)];for(let i=0;i<5;i++)out.push(xf([Pn[i],D[i*2]],cx,cy,a,1));return out},
+  d20:(cx,cy,r,a)=>{const Hx=ring(6,r,-Math.PI/2),T=ring(3,r*.55,-Math.PI/2),out=[xf(Hx,cx,cy,a,1),xf(T,cx,cy,a,1)];
+    for(let i=0;i<3;i++){const h=i*2;out.push(xf([Hx[(h+5)%6],T[i],Hx[h],T[i],Hx[h+1]],cx,cy,a,1))}return out},
+};
+// line-art sword pointing along angle a: blade, guard, grip + pommel
+function sword(x,y,a,L,s){return[xf([[0,-2.2],[L*.86,-2.2],[L,0],[L*.86,2.2],[0,2.2],[0,-2.2]],x,y,a,1),xf([[0,-8*s],[0,8*s]],x,y,a,1),xf([[0,0],[-11*s,0]],x,y,a,1),xf(ring(8,2.4*s,0).map(([u,v])=>[u-13.4*s,v]),x,y,a,1)]}
+
+// Perlin noise for the warlock mist
+const PERM=(()=>{const p=[...Array(256).keys()];for(let i=255;i>0;i--){const j=Math.floor(Math.random()*(i+1));[p[i],p[j]]=[p[j],p[i]]}return p.concat(p)})();
+const fade=t=>t*t*t*(t*(t*6-15)+10),lerp=(t,a,b)=>a+t*(b-a);
+const grad=(h,x,y)=>{switch(h&7){case 0:return x+y;case 1:return -x+y;case 2:return x-y;case 3:return -x-y;case 4:return x;case 5:return -x;case 6:return y;default:return -y}};
+function perlin(x,y){const X=Math.floor(x)&255,Y=Math.floor(y)&255;x-=Math.floor(x);y-=Math.floor(y);const u=fade(x),v=fade(y),a=PERM[X]+Y,b=PERM[X+1]+Y;
+  return lerp(v,lerp(u,grad(PERM[a],x,y),grad(PERM[b],x-1,y)),lerp(u,grad(PERM[a+1],x,y-1),grad(PERM[b+1],x-1,y-1)))}
+const fbm=(x,y)=>perlin(x,y)*.6+perlin(x*2.1,y*2.1)*.28+perlin(x*4.3,y*4.3)*.12;
+// a noise field drawn at low resolution and scaled up soft; e is the gather / hang / fade envelope
+function noiseLayer(cv,alive,{scale,period,draw,tick}){
+  const host=cv.parentNode,{width:W,height:H}=host.getBoundingClientRect(),w=Math.ceil(W/scale),h=Math.ceil(H/scale);
+  cv.width=w;cv.height=h;const ctx=cv.getContext('2d'),img=ctx.createImageData(w,h),t0=performance.now();let last=0,paused=0,pauseAt=0;
+  const render=(t,e)=>{draw(img.data,w,h,t,e,W,H);ctx.putImageData(img,0,0);if(tick)tick(t,e)};
+  if(reduce){render(0,1);return}
+  const frame=now=>{if(!alive())return;requestAnimationFrame(frame);
+    const st=document.getElementById('stage').classList.contains('paused');if(st){if(!pauseAt)pauseAt=now;return}if(pauseAt){paused+=now-pauseAt;pauseAt=0}
+    if(now-last<40)return;last=now;const el=now-t0-paused,ph=(el%period)/period,
+      env=ph<.35?ph/.35:ph<.6?1:Math.max(0,1-(ph-.6)/.32),e=env*env*(3-2*env);
+    render(el/1000,e)};
+  requestAnimationFrame(frame);
+}
+// Warlock: mist gathers from the bottom, hangs, then evaporates into holes
+function mistDraw(d,w,h,t,e){const thr=1.02-e*.7;
+  for(let j=0;j<h;j++){const yy=j/h,wgt=.2+.8*Math.max(0,Math.min(1,(yy-.3)/.7));
+    for(let i=0;i<w;i++){const nx=i/12,ny=j/12,n=fbm(nx+t*.04,ny+t*.1)*.65+fbm(nx*1.6-t*.06,ny*1.6+t*.05)*.35,dens=(n+.55)*wgt,
+      a=Math.max(0,Math.min(1,(dens-thr)/.45)),o=(j*w+i)*4;d[o]=167;d[o+1]=123;d[o+2]=224;d[o+3]=a*a*230}}}
+// Sorcerer: a vein of blood streams left to right across the lower screen, streaky noise stretched along the flow
+const veinY=(x,t,W,H)=>H*.66+Math.sin(x/W*5.2+t*.35)*H*.035+Math.sin(x/W*11+t*.6)*H*.012;
+function bloodDraw(d,w,h,t,e,W,H){const sx=W/w,sy=H/h,bw=H*.065,thr=1.05-e*.6;
+  for(let i=0;i<w;i++){const X=i*sx,yc=veinY(X,t,W,H);
+    for(let j=0;j<h;j++){const Y=j*sy,o=(j*w+i)*4,dy=(Y-yc)/bw,wgt=Math.exp(-dy*dy);
+      if(wgt<.02){d[o+3]=0;continue}
+      const n=fbm(X/70-t*.45,Y/22)*.7+fbm(X/30-t*.8,Y/12)*.3,dens=(n+.6)*wgt,a=Math.max(0,Math.min(1,(dens-thr)/.4)),hi=Math.max(0,n)*1.4;
+      d[o]=150+hi*70;d[o+1]=18+hi*30;d[o+2]=30+hi*25;d[o+3]=a*215}}}
+// blood cells riding the vein, tumbling as they go
+function bloodCells(svg,W,H){
+  const cells=[...Array(7)].map(()=>{const g=el('g',{},svg);el('ellipse',{rx:4.2,ry:3.4,fill:'#b3202f'},g);el('ellipse',{rx:2,ry:1.5,fill:'#6a0d17'},g);
+    return{g,x:R(0,W),off:R(-1,1),v:R(28,48),spin:R(0,360),vs:R(-60,60)}});
+  let lt=null;
+  return(t,e)=>{const dt=lt==null?0:t-lt;lt=t;
+    for(const c of cells){c.x+=c.v*dt;if(c.x>W+10)c.x=-10;c.spin+=c.vs*dt;const y=veinY(c.x,t,W,H)+c.off*H*.03;
+      c.g.setAttribute('transform',`translate(${f1(c.x)} ${f1(y)}) rotate(${c.spin|0}) scale(1 ${f1(.55+.45*Math.abs(Math.cos(c.spin/40)))})`);c.g.setAttribute('opacity',f1(e*.85))}}}
+// extra layers that sit under a class's line art
+const LAYERS={
+  war(ph,alive){const cv=document.createElement('canvas');cv.className='mist';ph.prepend(cv);noiseLayer(cv,alive,{scale:5,period:17000,draw:mistDraw})},
+  sor(ph,alive){const cv=document.createElement('canvas');cv.className='mist blood';ph.prepend(cv);const{width:W,height:H}=ph.getBoundingClientRect();
+    const sv=el('svg',{class:'cells',viewBox:`0 0 ${W} ${H}`},ph);noiseLayer(cv,alive,{scale:4,period:15000,draw:bloodDraw,tick:bloodCells(sv,W,H)})},
+};
+
+// a small shape that travels along keyframes (falling loot, flying arrows)
+function mover(svg,x,y,at,dur,frames,draw){const o=el('g',{transform:`translate(${f1(x)} ${f1(y)})`},svg);const g=el('g',{class:'pop'},o);draw(g);return{e:g,kind:'move',at,dur,frames}}
+// fist outline in a unit box: knuckles, finger lines, thumb, wrist crease
+const FIST=(()=>{const P=[],out=[[-.55,.95],[-.72,.35],[-.8,-.3]];
+  for(let i=0;i<4;i++){const xc=-.6+.4*i;for(let t=Math.PI;t<=2*Math.PI+.01;t+=Math.PI/8)out.push([xc+Math.cos(t)*.2,-.3+Math.sin(t)*.2])}
+  out.push([.78,.2],[.55,.95]);P.push(out);
+  for(const x of[-.4,0,.4])P.push([[x,-.3],[x,-.02]]);
+  const th=[];for(let t=0;t<=1.001;t+=.1)th.push([-.78+t*1.1,.06+Math.sin(t*Math.PI)*.22]);th.push([.36,0],[.2,-.06]);P.push(th);
+  P.push([[-.5,.62],[.45,.62]]);
+  return P})();
+
+const BG={
+  // vines climb from the bottom edge and curl over
+  dru(svg,W,H){const P=[],B=BGT.G;for(let k=0;k<3;k++){const x0=W*(k===1?R(.4,.6):k?R(.82,.98):R(.02,.18)),w=walk(x0,H+4,UP+R(-.25,.25),H*R(.35,.6),{turb:.06,wave:.012}),n=w.pts.length,at=k*.1;
+      P.push(line(svg,w.pts.concat(curl(w.x,w.y,w.h,Math.random()<.5?1:-1,R(10,16)).slice(1)),at,B*.8,'thick'));let side=1;
+      for(let i=Math.floor(R(15,25));i<n;i+=Math.floor(R(16,30))){const[x,y]=w.pts[i],h=heading(w.pts,i),t=at+i/n*.8;side*=-1;
+        const c=curl(x,y,h+side*R(.8,1.2),side,R(8,14));P.push(line(svg,c,t,1600));
+        P.push(pop(svg,x,y,(h-side*.9)*57.3,t,g=>el('path',{d:'M0 0Q3.5 -2.6 7 0Q3.5 2.6 0 0',class:'leaf'},big(g,2))));
+        if(Math.random()<.5){const e=c[c.length-1];P.push(pop(svg,e[0],e[1],0,t+.1,g=>{const b=big(g,2);for(let j=0;j<5;j++)el('circle',{cx:f1(Math.cos(j*1.2566)*1.6),cy:f1(Math.sin(j*1.2566)*1.6),r:1.1,class:'bloom'},b)}))}}}
+    return P},
+  // smoke rises from the bottom in slow columns, embers float up with it
+  sor(svg,W,H){const P=[],B=BGT.G;for(let k=0;k<4;k++){const at=k*.08,w=walk(W*R(.05,.95),H+4,UP,H*R(.4,.75),{turb:.03,wave:.035,freq:R(.02,.035)});
+      P.push(line(svg,w.pts.concat(curl(w.x,w.y,w.h,Math.random()<.5?1:-1,R(10,18)).slice(1)),at,B*.8,'thick'));
+      for(let j=0;j<4;j++){const i=Math.floor(R(.1,1)*(w.pts.length-1)),p=w.pts[i];P.push(pop(svg,p[0]+R(-10,10),p[1]+R(-10,10),0,at+i/w.pts.length*.8,g=>el('circle',{r:f1(R(1,2)),class:'fill'},g)))}}
+    return P},
+  // a large sigil inscribes itself in a corner, a few long threads of the Weave cross the lower screen
+  // a D&D dice set (d4 d6 d8 d12 d20) inscribes itself across the top, long threads of the Weave cross the lower screen
+  wiz(svg,W,H){const P=[],r=Math.min(W*.075,34),y=H*R(.09,.13),dice=['d4','d6','d8','d12','d20'];
+    dice.forEach((k,i)=>{const cx=W*(.13+i*.185)+R(-4,4),cy=y+R(-6,6)+(i%2?r*.5:0),a=R(-.25,.25),at=i*.1;
+      DIE[k](cx,cy,r,a).forEach((sh,j)=>P.push(line(svg,sh,at+(j?.06:0),j?1200:1800,j?'thin':'')))});
+    for(let k=0;k<6;k++){const y0=H*R(.55,1),a=R(-.5,-.2)*(k%2?1:-1),L=W*1.4;
+      P.push(line(svg,[[-10,y0],[-10+Math.cos(a)*L,y0+Math.sin(a)*L]],.4+k*.05,3000,'thin'))}
+    return P},
+  // the patron's eye opens in a top corner (the mist below it is a separate noise layer)
+  war(svg,W,H){const P=[],ex=W*R(.15,.3),ey=H*R(.08,.15),s=W*.12;
+    P.push(line(svg,`M${f1(ex-s)} ${f1(ey)}Q${f1(ex)} ${f1(ey-s*.8)} ${f1(ex+s)} ${f1(ey)}Q${f1(ex)} ${f1(ey+s*.8)} ${f1(ex-s)} ${f1(ey)}`,0,2400));
+    P.push(line(svg,circ(ex,ey,s*.3),.15,1800,'thin'));
+    P.push(pop(svg,ex,ey,0,.25,g=>el('path',{d:`M0 ${f1(-s*.22)}Q${f1(s*.07)} 0 0 ${f1(s*.22)}Q${f1(-s*.07)} 0 0 ${f1(-s*.22)}Z`,class:'fill'},g)));
+    for(let k=0;k<7;k++){const a=-Math.PI*.85+k*Math.PI*.7/6,r0=s*.95,r1=s*R(1.25,1.5);
+      P.push(line(svg,[[ex+Math.cos(a)*r0,ey+Math.sin(a)*r0*.7],[ex+Math.cos(a)*r1,ey+Math.sin(a)*r1*.75]],.3+k*.03,900,'thin'))}
+    return P},
+  // Barbarian: the ground cracks open from the bottom, claw marks rake across a corner
+  bbn(svg,W,H){const P=[];
+    const crack=(x,y,h,len,at,depth)=>{const pts=[[x,y]];let d=0;while(d<len){h+=R(-.55,.55)*.6;const st=R(6,11);x+=Math.cos(h)*st;y+=Math.sin(h)*st;d+=st;pts.push([x,y]);
+        if(depth<2&&Math.random()<.18)crack(x,y,h+R(.5,.9)*(Math.random()<.5?1:-1),len*R(.3,.5),at+d/len*.5,depth+1)}
+      P.push(line(svg,pts,at,BGT.G*.5*(len/(H*.4)),depth?'thin':'thick'))};
+    crack(-4,H*R(.85,.95),-.5,H*R(.35,.5),0,0);crack(W+4,H*R(.8,.95),-Math.PI+.5,H*R(.35,.5),.05,0);crack(W*R(.35,.65),H+4,-Math.PI/2+R(-.3,.3),H*R(.25,.35),.1,0);
+    const cx=W*R(.62,.8),cy=H*R(.1,.18),a=R(.9,1.2);
+    for(let k=-1;k<=1;k++){const ox=Math.cos(a+Math.PI/2)*k*9,oy=Math.sin(a+Math.PI/2)*k*9,len=W*R(.22,.3),pts=[];
+      for(let t=0;t<=1;t+=.05)pts.push([cx+ox+Math.cos(a)*len*(t-.5)+Math.sin(t*Math.PI)*4,cy+oy+Math.sin(a)*len*(t-.5)]);
+      P.push(line(svg,pts.slice(0,12),.45+(k+1)*.04,700,'thicker'));P.push(line(svg,pts,.45+(k+1)*.04,1000,'thin'))}
+    return P},
+  // Fighter: crossed swords behind a heater shield, rising in the lower corner
+  ftr(svg,W,H){const P=[],cx=W*R(.62,.75),cy=H*R(.8,.87),L=W*.42,sc=W/280;
+    for(const[a,at]of[[-2.25,0],[-.89,.08]]){const s=sword(cx-Math.cos(a)*L*.45,cy-Math.sin(a)*L*.45,a,L,sc);s.forEach((sh,j)=>P.push(line(svg,sh,at+j*.08,j?900:2600,j?'thin':'')))}
+    const sh=xf([[-14,-16],[14,-16],[14,-2],[0,18],[-14,-2],[-14,-16]],cx,cy+4*sc,0,1.5*sc);P.push(line(svg,sh,.35,2200,'thick'));
+    P.push(line(svg,xf([[-9,-6],[0,3],[9,-6]],cx,cy+4*sc,0,1.5*sc),.5,900,'thin'));
+    P.push(line(svg,xf([[-9,2],[0,11],[9,2]],cx,cy+4*sc,0,1.5*sc),.55,900,'thin'));
+    // a few arrows loosed across the screen on a gentle arc, either direction
+    for(let k=0;k<3;k++){const s=Math.random()<.5?1:-1,y=H*R(.2,.6),D=W+80,lift=R(20,50),th=R(10,18),dur=R(2200,3200);
+      P.push(mover(svg,s>0?-40:W+40,y,.15+k*.25,dur,[{transform:`translate(0px,0px) rotate(${f1(-th*s)}deg)`,opacity:0},{opacity:1,offset:.08},
+        {transform:`translate(${f1(s*D/2)}px,${f1(-lift)}px) rotate(0deg)`,offset:.5},{opacity:1,offset:.92},{transform:`translate(${f1(s*D)}px,0px) rotate(${f1(th*s)}deg)`,opacity:0}],
+        g=>{const a=s>0?g:el('g',{transform:'rotate(180)'},g);el('path',{d:'M-14 0L14 0'},a);el('path',{d:'M14 -2.6L19 0L14 2.6Z',class:'fill'},a);el('path',{d:'M-14 0L-18 -3M-11 0L-15 -3M-14 0L-18 3M-11 0L-15 3'},a)}))}
+    return P},
+  // Monk: an enso brush circle closes in a top corner, currents of ki flow across the lower screen
+  mnk(svg,W,H){const P=[],cx=W*R(.68,.8),cy=H*R(.12,.17),r=W*R(.15,.19),a0=R(0,6);
+    const arc=(span,rr)=>{const pts=[];for(let t=0;t<=span;t+=.05)pts.push([cx+Math.cos(a0+t)*rr,cy+Math.sin(a0+t)*rr]);return pts};
+    P.push(line(svg,arc(5.6,r),0,3000,'thicker'));P.push(line(svg,arc(5.95,r*1.04),.03,3200,'thin'));
+    // wisps leave the ring and draw the outline of a fist inside it
+    const rot=R(-.15,.15);FIST.forEach((poly,k)=>{const pts=xf(poly,cx,cy,rot,r*.6),[sx,sy]=pts[0],a=R(0,6.28),ax=cx+Math.cos(a)*r,ay=cy+Math.sin(a)*r,
+        mx=(ax+sx)/2+R(-.4,.4)*r,my=(ay+sy)/2+R(-.4,.4)*r,wisp=[];
+      for(let t=0;t<=1.001;t+=.08)wisp.push([(1-t)*(1-t)*ax+2*(1-t)*t*mx+t*t*sx,(1-t)*(1-t)*ay+2*(1-t)*t*my+t*t*sy]);
+      const at=.3+k*.06;P.push(line(svg,wisp,at,1200,'thin'));P.push(line(svg,pts,at+.15,1600,'thick'))});
+    for(let k=0;k<4;k++){const y0=H*(.6+k*.09),amp=R(6,14),fr=R(.012,.02),ph=R(0,6),pts=[];for(let x=-4;x<=W+4;x+=4)pts.push([x,y0+Math.sin(x*fr+ph)*amp]);
+      P.push(line(svg,pts,.15+k*.07,BGT.G*.6,'thin'));
+      for(let j=0;j<2;j++){const x=R(.15,.9)*W;P.push(pop(svg,x,y0+Math.sin(x*fr+ph)*amp-R(4,10),R(0,180),.15+k*.07+x/W*.6,g=>el('ellipse',{rx:2.6,ry:1.2,class:'fill'},g)))}}
+    return P},
+  // Rogue: a crescent moon rises, thrown daggers streak in and stick at the edges
+  rog(svg,W,H){const P=[],cx=W*R(.15,.25),cy=H*R(.1,.14),r=W*.09,cres=[];
+    for(let t=.35;t<=5.93;t+=.12)cres.push([cx+Math.cos(t)*r,cy+Math.sin(t)*r]);for(let t=5.6;t>=.68;t-=.12)cres.push([cx+r*.42+Math.cos(t)*r*.82,cy+Math.sin(t)*r*.82]);
+    cres.push(cres[0]);P.push(line(svg,cres,0,2600));
+    for(let k=0;k<3;k++){const y0=H*R(.45,.95),sx=-10,ex=W-R(8,16),ey=y0+R(-60,20),my=Math.min(y0,ey)-R(30,70),at=.25+k*.15,sc=W/280;
+      const q=t=>[(1-t)*(1-t)*sx+2*(1-t)*t*(sx+ex)/2+t*t*ex,(1-t)*(1-t)*y0+2*(1-t)*t*my+t*t*ey];
+      for(let j=0;j<12;j++){const t=j/12,[x,y]=q(t);P.push(pop(svg,x,y,0,at+t*.25,g=>el('circle',{r:.9,class:'fill'},g)))}
+      const[x1,y1]=q(.97),[x2,y2]=q(1),a=Math.atan2(y2-y1,x2-x1);
+      sword(x2-Math.cos(a)*22*sc,y2-Math.sin(a)*22*sc,a,22*sc,sc*.6).forEach(sh=>P.push(line(svg,sh,at+.26,500,'thin')))}
+    // loot tumbling down: coin pouches, daggers and loose coins
+    for(let k=0;k<8;k++){const kind=k<3?'pouch':k<6?'dagger':'coin',dur=R(3800,6000),spin=R(-220,220);
+      P.push(mover(svg,R(.08,.92)*W,-24,R(0,.85),dur,[{transform:'translate(0px,0px) rotate(0deg)',opacity:0,easing:'cubic-bezier(.45,0,.9,.6)'},{opacity:1,offset:.1},{opacity:1,offset:.82},
+        {transform:`translate(${f1(R(-20,20))}px,${f1(H+48)}px) rotate(${spin|0}deg)`,opacity:0}],
+        g=>{if(kind==='pouch'){el('path',{d:'M-5 -2Q-9 7 0 8Q9 7 5 -2Z'},g);el('path',{d:'M-4 -2L4 -2M-3 -2L-5 -6M3 -2L5 -6M0 -2L0 -6'},g);el('circle',{cx:0,cy:3.5,r:1.3,class:'fill'},g)}
+          else if(kind==='dagger')sword(-10,0,0,20,.6).forEach(pts=>el('path',{d:toD(pts)},g));
+          else{el('circle',{r:3},g);el('circle',{r:1.6},g)}}))}
+    return P},
+  // light falls from above: rays fan down from the top, halos ring the source
+  cle(svg,W,H){const P=[],cx=W*R(.35,.65),cy=-10;
+    for(let j=0;j<3;j++)P.push(line(svg,circ(cx,cy,W*(.16+j*.1)),.15+j*.1,2600,'thin'));
+    for(let k=0;k<11;k++){const a=Math.PI/2+(-.55+k*.11)+R(-.03,.03),len=H*R(.35,.8),c=Math.cos(a),s=Math.sin(a),at=k*.04;
+      P.push(line(svg,[[cx+c*20,cy+s*20],[cx+c*len,cy+s*len]],at,2600,'thin'));
+      if(Math.random()<.5)P.push(pop(svg,cx+c*len,cy+s*len,0,at+.35,g=>el('path',{d:'M0 -3L.7 -.7L3 0L.7 .7L0 3L-.7 .7L-3 0L-.7 -.7Z',class:'fill'},big(g,1.8))))}
+    return P},
+  // a heraldic frame: lines of light down both edges, mirrored scrolls turning inward
+  pal(svg,W,H){const P=[],m=12;
+    for(const side of[0,1]){const x=side?W-m:m,dir=side?-1:1;P.push(line(svg,[[x,H+2],[x,-2]],side*.05,BGT.G*.7,'thick'));
+      for(let y=H-R(40,70);y>30;y-=R(70,110)){const at=side*.05+(1-y/H)*.7,r=R(9,14);
+        P.push(line(svg,curl(x,y,dir>0?-.5:Math.PI+.5,dir,r),at,1600));P.push(line(svg,curl(x,y,dir>0?.5:Math.PI-.5,-dir,r),at,1600));
+        P.push(pop(svg,x,y,0,at+.04,g=>el('path',{d:'M0 -2.5L2 0L0 2.5L-2 0Z',class:'fill'},big(g,1.8))))}}
+    return P},
+  // two staves sweep diagonally across the lower screen, notes land on them
+  bar(svg,W,H){const P=[];for(let s=0;s<2;s++){const ph=R(0,6),amp=R(6,12),fr=R(.012,.02),gap=6,y0=H*(s?R(.78,.88):R(.55,.65)),tilt=R(-.25,-.1),at0=s*.15;
+      const yAt=(x,j)=>y0+x*tilt+j*gap+Math.sin(x*fr+ph)*amp;
+      for(let j=0;j<5;j++){const pts=[];for(let x=-4;x<=W+4;x+=4)pts.push([x,yAt(x,j)]);P.push(line(svg,pts,at0+j*.02,BGT.G*.7,'thin'))}
+      for(let x=R(20,40);x<W-10;x+=R(28,48)){const j=Math.floor(R(0,9))/2,up=j>2;
+        P.push(pop(svg,x,yAt(x,j),0,at0+x/W*.7+.05,g=>{const b=big(g,1.6);el('ellipse',{rx:2.2,ry:1.6,transform:'rotate(-20)',class:'fill'},b);el('path',{d:up?'M-2 .5V8':'M2 -.5V-8'},b)}))}}
+    return P},
+  // tracks wander up from the bottom, grass grows along the bottom edge
+  ran(svg,W,H){const P=[],w=walk(W*R(.2,.8),H+4,UP+R(-.3,.3),H*R(.5,.75),{turb:.05,wave:.02}),n=w.pts.length;
+    P.push(line(svg,w.pts,0,BGT.G*.7,'thin faint'));let side=1;
+    for(let i=6;i<n;i+=8){const[x,y]=w.pts[i],h=heading(w.pts,i);side*=-1;
+      P.push(pop(svg,x-Math.sin(h)*6*side,y+Math.cos(h)*6*side,h*57.3,i/n*.7,g=>{const b=big(g,2);el('ellipse',{rx:1.6,ry:1.3,class:'fill'},b);
+        for(const[tx,ty]of[[2.3,-1.7],[2.9,-.55],[2.9,.6],[2.3,1.75]])el('circle',{cx:tx,cy:ty,r:.6,class:'fill'},b)}))}
+    for(let x=R(4,14);x<W;x+=R(14,30)){const at=x/W*.6;
+      for(const b of[-1,0,1])P.push(line(svg,`M${f1(x+b*3)} ${H+1}Q${f1(x+b*4)} ${f1(H-8)} ${f1(x+b*8+R(-2,2))} ${f1(H-R(12,22))}`,at,1400,'thin'))}
+    return P},
+  // no spellcasting class: faint gold contour lines, like an old map of the Sword Coast
+  gold(svg,W,H){const P=[];
+    for(let k=0;k<7;k++){const top=k<3,y0=top?H*(.06+k*.05):H*(.72+(k-3)*.07),w=walk(-6,y0,R(-.1,.1),W+20,{turb:.04,wave:.015,freq:.02,pull:.08});
+      P.push(line(svg,w.pts,k*.06,BGT.G*.6,'thin'))}
+    const cx=W*.82,cy=H*.88;P.push(line(svg,circ(cx,cy,16),.5,1800,'thin'));
+    P.push(pop(svg,cx,cy,0,.6,g=>el('path',{d:'M0 -12L2 -2L12 0L2 2L0 12L-2 2L-12 0L-2 -2Z',class:'fill'},g)));
+    return P},
+};
+
+let bgToken=0;
+function setBg(cls,btn){
+  if(btn){btn.parentNode.querySelectorAll('button').forEach(x=>x.classList.remove('on'));btn.classList.add('on')}
+  const me=++bgToken,alive=()=>me===bgToken;
+  document.querySelectorAll('.bgdemo').forEach(ph=>{
+    [...ph.classList].filter(c=>c.startsWith('b-')).forEach(c=>ph.classList.remove(c));ph.classList.add('b-'+cls);
+    ph.querySelectorAll('svg.bgfx,canvas.mist,svg.cells').forEach(x=>x.remove());
+    const svg=el('svg',{class:'bgfx'},ph);ph.prepend(svg);
+    if(LAYERS[cls])LAYERS[cls](ph,alive);
+    loop(ph,svg,BG[cls],BGT,alive);
+  });
+}
+setBg('sor');
+</script>
+
