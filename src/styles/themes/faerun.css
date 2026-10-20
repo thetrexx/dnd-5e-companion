@@ -6,7 +6,7 @@
   --text-dim:#a89c84;
   --accent:#d9b45f;
   --text-shadow:0 1px 2px rgb(0 0 0/.85),0 0 8px rgb(0 0 0/.55);
-  --row-wash:rgb(0 0 0/.18);
+  --row-wash:10%;
   --font-body:'Inknut Antiqua',Georgia,serif;
   --font-desc:'Inknut Antiqua',Georgia,serif;
   --font-title:'IM Fell English',Georgia,serif;
@@ -18,15 +18,15 @@
   --sorcerer-blood:#96121e;
   --sorcerer-blood-hi:#c8323c;
   --sorcerer-cell:#b3202f;
-  --barbarian:#c2552b;--barbarian-line:#e07a4a;--barbarian-row-o:.5;--barbarian-bg-o:.24;
+  --barbarian:#b5532a;--barbarian-line:#e07a4a;--barbarian-row-o:.5;--barbarian-bg-o:.24;
   --bard:#b0408a;--bard-line:#e070b8;--bard-row-o:.5;--bard-bg-o:.22;
   --cleric:#8f9aa8;--cleric-line:#dfe6ef;--cleric-row-o:.4;--cleric-bg-o:.18;
   --druid:#4fa846;--druid-line:#7cc56c;--druid-row-o:.5;--druid-bg-o:.22;
-  --fighter:#a8865f;--fighter-line:#c9ab86;--fighter-row-o:.5;--fighter-bg-o:.24;
-  --monk:#3f9e9a;--monk-line:#6fd0cc;--monk-row-o:.5;--monk-bg-o:.22;
+  --fighter:#7a6248;--fighter-line:#c9ab86;--fighter-row-o:.5;--fighter-bg-o:.24;
+  --monk:#2a9a9a;--monk-line:#6fd0cc;--monk-row-o:.5;--monk-bg-o:.22;
   --paladin:#c9a227;--paladin-line:#f1d36a;--paladin-row-o:.5;--paladin-bg-o:.2;
   --ranger:#5e7a3a;--ranger-line:#b4d27a;--ranger-row-o:.5;--ranger-bg-o:.22;
-  --rogue:#7e7ca0;--rogue-line:#a9a7c4;--rogue-row-o:.5;--rogue-bg-o:.26;
+  --rogue:#4b4a5e;--rogue-line:#a9a7c4;--rogue-row-o:.5;--rogue-bg-o:.26;
   --sorcerer:#c8323c;--sorcerer-line:#e0606a;--sorcerer-row-o:.55;--sorcerer-bg-o:.22;
   --warlock:#7b47b8;--warlock-line:#a77be0;--warlock-row-o:.55;--warlock-bg-o:.24;
   --wizard:#3a6fc4;--wizard-line:#86aef0;--wizard-row-o:.45;--wizard-bg-o:.24;

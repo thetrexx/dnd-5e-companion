@@ -1,9 +1,9 @@
 import { render } from 'preact';
 import { App } from './app';
-import { applyTheme, storedTheme } from './theme/themes';
+import { applyTheme } from './theme/themes';
 import './styles/fonts.css';
 import './styles/themes/faerun.css';
 import './styles/base.css';
 
-applyTheme(storedTheme());
+applyTheme('faerun');
 render(<App />, document.getElementById('app')!);
