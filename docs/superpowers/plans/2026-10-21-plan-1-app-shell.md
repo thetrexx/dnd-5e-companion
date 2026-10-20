@@ -268,7 +268,7 @@ Explainer copy (exact, from the approved mockup): Verbal body `You must chant my
 ```ts
 export function maxSpellLevel(c: ClassDef, level: number): number;            // 0 = no spells
 export interface MenuRow { kind: 'actions'|'bonus'|'reactions'|'class'|'cantrips'|'spells'|'separator';
-  label: string; hint?: string; icon: {type: 'img'; src: string} | {type: 'slot'; level: number};
+  label: string; icon: {type: 'img'; src: string} | {type: 'slot'; level: number};
   target?: Route; dimmed?: boolean; motif?: ClassId }
 export function menuRows(cls: ClassId, level: number): MenuRow[];
 export interface Section { id: string; title: string; subtitle?: string; motif?: ClassId; locked?: string; items: (Spell|Feature)[] }
@@ -287,6 +287,7 @@ expect(menuRows('wizard', 3).find(r => r.label === 'Level 2 Spells')!.dimmed).to
 expect(menuRows('wizard', 3)[0].icon).toEqual({ type: 'img', src: expect.stringContaining('Action_Icon.png') });
 expect(menuRows('wizard', 3).find(r => r.label === 'Level 1 Spells')!.icon).toEqual({ type: 'slot', level: 1 });
 expect(menuRows('wizard', 3).find(r => r.label === 'Level 1 Spells')!.target).toEqual({ page: 'spells', cls: 'wizard', level: 3, section: 'lvl-1' });
+expect(menuRows('wizard', 3).every(r => !('hint' in r))).toBe(true);
 expect(menuRows('fighter', 5).map(r => r.label)).toEqual(['Actions','Bonus Actions','Reactions','Fighter Actions']);
 const sp = spellSections('wizard', 3);
 expect(sp.map(s => s.id)).toEqual(['cantrips','lvl-1','lvl-2','lvl-3']);   // only levels with fixture spells
@@ -298,7 +299,7 @@ expect(ac.map(s => s.id)).toEqual(['actions','bonus','reactions','class']);
 expect(ac.find(s => s.id === 'class')!.items.map(i => i.name)).toEqual(['Second Wind']);   // Action Surge is level 2
 expect(ac.flatMap(s => s.items).some(i => 'school' in i)).toBe(false);                     // no spells on the Actions page
 ```
-Hints: Actions/Bonus Actions/Reactions `everyone`; class row lists its first two feature names; cantrip row `N known` from `cantripsKnown`. Rows from `Level (max+1)` upward are dimmed. Separator row label is `MAGIC`. Icons: Action/Bonus/Reaction BG3 URLs from spec 4.4; class row `hotbarIcon`; cantrips `plainIcon`.
+Rows carry no hint text (owner's decision). Rows from `Level (max+1)` upward are dimmed. Separator row label is `MAGIC`. Icons: Action/Bonus/Reaction BG3 URLs from spec 4.4; class row `hotbarIcon`; cantrips `plainIcon`.
 
 - [ ] **Step 2: Run to verify they fail** — `npm test`. Expected: FAIL.
 - [ ] **Step 3: Implement** the three modules.

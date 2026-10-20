@@ -103,7 +103,7 @@ Fields: name; race and subrace; one or more classes, each with its level and sub
 ### 5.3 Main menu
 Header: the character name in the title font, between an ornament and its mirror image, with gold lines running out to the screen edges. Class and levels under it (e.g. "Sorcerer 3 / Druid 2").
 
-Rows, top to bottom, each with an icon (section 4.4) and a small right-hand hint:
+Rows, top to bottom, each with an icon (section 4.4) and its label only. No right-hand hint text (owner removed "everyone", feature names and "N known"):
 1. Actions
 2. Bonus Actions
 3. Reactions
