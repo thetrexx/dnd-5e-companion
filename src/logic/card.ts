@@ -19,10 +19,11 @@ export function damageLine(s: Spell): { headline: string; detail: string } | nul
   if (!d) return null;
   const { min, max } = diceRange(d.dice);
   const n = d.count ?? 1;
-  const headline = `${min * n}~${max * n} ${d.healing ? 'Healing' : 'Damage'}`;
+  const mod = d.plusMod ? ' + Mod' : '';
+  const headline = `${min * n}~${max * n}${mod} ${d.healing ? 'Healing' : 'Damage'}`;
   const detail = d.count && d.count > 1
-    ? `${d.count} ${d.unit ? `${d.unit} ` : ''}× ${d.dice} ${d.type}`
-    : `${d.dice} ${d.type}`;
+    ? `${d.count} ${d.unit ? `${d.unit} ` : ''}× ${d.dice}${mod} ${d.type}`
+    : `${d.dice}${mod} ${d.type}`;
   return { headline, detail };
 }
 

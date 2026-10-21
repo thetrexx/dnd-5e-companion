@@ -1,0 +1,116 @@
+[
+  {
+    "id": "school-of-evocation",
+    "cls": "wizard",
+    "name": "School of Evocation",
+    "page": 117,
+    "options": []
+  },
+  {
+    "id": "champion",
+    "cls": "fighter",
+    "name": "Champion",
+    "page": 72,
+    "options": []
+  },
+  {
+    "id": "eldritch-knight",
+    "cls": "fighter",
+    "name": "Eldritch Knight",
+    "page": 74,
+    "options": [],
+    "casting": {
+      "list": "wizard",
+      "schools": [
+        "Abjuration",
+        "Evocation"
+      ],
+      "ability": "int",
+      "cantripsKnown": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "spellsKnown": [
+        0,
+        0,
+        3,
+        4,
+        4,
+        4,
+        5,
+        6,
+        6,
+        7,
+        8,
+        8,
+        9,
+        10,
+        10,
+        11,
+        11,
+        11,
+        12,
+        13
+      ],
+      "maxSpellLevel": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ]
+    }
+  },
+  {
+    "id": "circle-of-the-land",
+    "cls": "druid",
+    "name": "Circle of the Land",
+    "page": 68,
+    "options": [
+      "land-terrain"
+    ],
+    "bonusSpells": {
+      "kind": "circle",
+      "grants": [
+        {
+          "spell": "hold-person",
+          "atLevel": 3,
+          "option": "land-terrain-arctic"
+        }
+      ]
+    }
+  }
+]

@@ -1,5 +1,6 @@
 import { DATA } from '../../src/data';
 import { levelLine, damageLine, tags, costBar, componentInfo, diceRange } from '../../src/logic/card';
+import type { Spell } from '../../src/data/types';
 
 const get = (id: string) => DATA.spells.find(s => s.id === id)!;
 const mm = get('magic-missile');
@@ -59,4 +60,8 @@ test('material cost and consumed copy', () => {
     .toBe("a pearl. Costs 100 gp. A component pouch or spellcasting focus can't stand in for it.");
   expect(mk({ text: 'a pearl', consumed: false })).toBe('a pearl. A component pouch or spellcasting focus can stand in for it.');
   expect(mk({ text: 'a pearl.', consumed: true })).toBe('a pearl. The spell consumes it.');
+});
+test('plusMod healing', () => {
+  const s = { ...get('fire-bolt'), summary: { resolution: 'none', damage: { dice: '1d8', type: 'Healing', healing: true, plusMod: true } } } as Spell;
+  expect(damageLine(s)).toEqual({ headline: '1~8 + Mod Healing', detail: '1d8 + Mod Healing' });
 });

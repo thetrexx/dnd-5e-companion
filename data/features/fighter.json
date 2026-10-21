@@ -1,0 +1,105 @@
+[
+  {
+    "id": "second-wind",
+    "name": "Second Wind",
+    "source": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "uses": "1/short rest",
+    "description": [
+      "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again."
+    ],
+    "page": 72
+  },
+  {
+    "id": "action-surge",
+    "name": "Action Surge",
+    "source": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "level": 2,
+    "cost": "free",
+    "uses": "1/short rest",
+    "description": [
+      "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.",
+      "Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn."
+    ],
+    "page": 72,
+    "scaling": [
+      {
+        "label": "Uses",
+        "values": [
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ]
+  },
+  {
+    "id": "fighting-style-protection",
+    "name": "Protection",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature you can see attacks a target other than you within 5 feet of you",
+    "description": [
+      "When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield."
+    ],
+    "page": 72
+  },
+  {
+    "id": "fighting-style-defense",
+    "name": "Defense",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "While you are wearing armor, you gain a +1 bonus to AC."
+    ],
+    "page": 72
+  },
+  {
+    "id": "weapon-bond",
+    "name": "Weapon Bond",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 3,
+    "cost": "other",
+    "description": [
+      "At 3rd level, you learn a ritual that creates a magical bond between yourself and one weapon. You perform the ritual over the course of 1 hour, which can be done during a short rest. The weapon must be within your reach throughout the ritual, at the conclusion of which you touch the weapon and forge the bond.",
+      "Once you have bonded a weapon to yourself, you can't be disarmed of that weapon unless you are incapacitated. If it is on the same plane of existence, you can summon that weapon as a bonus action on your turn, causing it to teleport instantly to your hand.",
+      "You can have up to two bonded weapons, but can summon only one at a time with your bonus action. If you attempt to bond with a third weapon, you must break the bond with one of the two other weapons."
+    ],
+    "page": 75
+  }
+]

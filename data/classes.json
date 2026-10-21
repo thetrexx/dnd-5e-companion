@@ -48,7 +48,10 @@
       9
     ],
     "hotbarIcon": "https://bg3.wiki/w/images/2/23/Class_Wizard_Hotbar_Icon.png",
-    "plainIcon": "https://bg3.wiki/w/images/5/55/Class_Wizard_Plain_Icon.png"
+    "plainIcon": "https://bg3.wiki/w/images/5/55/Class_Wizard_Plain_Icon.png",
+    "subclassLevel": 3,
+    "subclassLabel": "Arcane Tradition",
+    "options": []
   },
   {
     "id": "sorcerer",
@@ -99,7 +102,10 @@
       9
     ],
     "hotbarIcon": "https://bg3.wiki/w/images/0/0e/Class_Sorcerer_Hotbar_Icon.png",
-    "plainIcon": "https://bg3.wiki/w/images/2/2b/Class_Sorcerer_Plain_Icon.png"
+    "plainIcon": "https://bg3.wiki/w/images/2/2b/Class_Sorcerer_Plain_Icon.png",
+    "subclassLevel": 1,
+    "subclassLabel": "Sorcerous Origin",
+    "options": []
   },
   {
     "id": "druid",
@@ -150,13 +156,21 @@
       9
     ],
     "hotbarIcon": "https://bg3.wiki/w/images/a/ad/Class_Druid_Hotbar_Icon.png",
-    "plainIcon": "https://bg3.wiki/w/images/8/88/Class_Druid_Plain_Icon.png"
+    "plainIcon": "https://bg3.wiki/w/images/8/88/Class_Druid_Plain_Icon.png",
+    "subclassLevel": 2,
+    "subclassLabel": "Druid Circle",
+    "options": []
   },
   {
     "id": "fighter",
     "name": "Fighter",
     "caster": "none",
     "hotbarIcon": "https://bg3.wiki/w/images/4/44/Class_Fighter_Hotbar_Icon.png",
-    "plainIcon": "https://bg3.wiki/w/images/e/e4/Class_Fighter_Plain_Icon.png"
+    "plainIcon": "https://bg3.wiki/w/images/e/e4/Class_Fighter_Plain_Icon.png",
+    "subclassLevel": 3,
+    "subclassLabel": "Martial Archetype",
+    "options": [
+      "fighting-style"
+    ]
   }
 ]

@@ -1,0 +1,62 @@
+[
+  {
+    "id": "fighting-style",
+    "name": "Fighting Style",
+    "owner": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "land-terrain",
+    "name": "Land Terrain",
+    "owner": {
+      "kind": "subclass",
+      "id": "circle-of-the-land"
+    },
+    "picks": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  }
+]

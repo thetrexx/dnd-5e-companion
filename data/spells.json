@@ -452,5 +452,44 @@
       "save": "dex",
       "upcast": "+1d6 per slot level above 3rd"
     }
+  },
+  {
+    "id": "hold-person",
+    "name": "Hold Person",
+    "level": 2,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a small, straight piece of iron",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Choose a humanoid that you can see within range. The target must succeed on a Wisdom saving throw or be paralyzed for the duration. At the end of each of its turns, the target can make another Wisdom saving throw. On a success, the spell ends on the target."
+    ],
+    "higherLevels": "When you cast this spell using a spell slot of 3rd level or higher, you can target one additional humanoid for each slot level above 2nd. The humanoids must be within 30 feet of each other when you target them.",
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 251,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    }
   }
 ]
