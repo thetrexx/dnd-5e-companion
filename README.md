@@ -1,5 +1,7 @@
 # Spellbook & Steel — a D&D 5e companion
 
+> **Work in progress.** Only a few classes and sample spells are in so far. Full Player's Handbook content, character import and the animated class backgrounds are still being built.
+
 A phone-first cheat sheet for D&D 5e (2014 Player's Handbook rules). Players pick their class and level and get quick access to their actions, reactions, cantrips and spells, each with a BG3-style card showing the description, cost, components and dice. The paper character sheet stays the source of truth; this is only a lookup.
 
 Live site: https://thetrexx.github.io/dnd-5e-companion/
