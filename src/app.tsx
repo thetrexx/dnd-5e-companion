@@ -6,6 +6,7 @@ import { LevelPicker } from './ui/screens/LevelPicker';
 import { Menu } from './ui/screens/Menu';
 import { SpellsPage } from './ui/screens/SpellsPage';
 import { ActionsPage } from './ui/screens/ActionsPage';
+import { Settings } from './ui/screens/Settings';
 import { Card } from './ui/screens/Card';
 
 export function App() {
@@ -23,6 +24,7 @@ export function App() {
     case 'spells': return <SpellsPage cls={r.cls} level={r.level} section={r.section} />;
     case 'actions': return <ActionsPage cls={r.cls} level={r.level} section={r.section} />;
     case 'card': return <Card kind={r.kind} id={r.id} cls={r.cls} level={r.level} />;
+    case 'settings': return <Settings />;
     default: return <Start />;
   }
 }

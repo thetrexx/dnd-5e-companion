@@ -1,3 +1,6 @@
+// Every stylesheet in styles/themes/ is bundled; a theme is selectable once it is also listed in THEMES.
+import.meta.glob('../styles/themes/*.css', { eager: true });
+
 export interface ThemeInfo {
   id: string;
   name: string;

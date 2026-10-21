@@ -1,6 +1,8 @@
 import { DATA } from '../../data';
 import { CLASS_IDS } from '../../data/validate';
 import { toHash } from '../../router';
+import { GearButton } from '../GearButton';
+import { IosTip } from '../IosTip';
 import type { ClassId } from '../../data/types';
 
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -8,6 +10,7 @@ const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 export function Start() {
   return (
     <div class="screen start">
+      <GearButton />
       <h1 class="start-title">Spellbook &amp; Steel</h1>
       <div class="tiles">
         <button type="button" class="tile wide" disabled>
@@ -25,6 +28,7 @@ export function Start() {
           );
         })}
       </div>
+      <IosTip />
     </div>
   );
 }

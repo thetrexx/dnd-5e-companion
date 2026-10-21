@@ -41,3 +41,14 @@
 .card-desc .orn{font-family:var(--font-orn);color:var(--accent);font-size:15px}
 .card-tags{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:10px;color:var(--card-tags);margin:8px 0}
 .card-cost{display:flex;flex-wrap:wrap;gap:4px 14px;border-top:1px solid var(--card-cost-line);margin:10px -14px 0;padding:8px 14px;background:var(--card-cost-bg);font-size:10.5px}
+
+.screen{position:relative}
+.gear{position:absolute;top:10px;right:12px;padding:6px 8px;font-size:20px;line-height:1;color:var(--accent);text-decoration:none;text-shadow:var(--text-shadow)}
+.radios{display:flex;flex-direction:column;gap:2px;margin:6px 0 10px}
+.radio{display:flex;align-items:center;gap:10px;padding:8px 4px;font-size:13px;color:var(--text);text-shadow:var(--text-shadow);cursor:pointer}
+.radio input{accent-color:var(--accent);width:18px;height:18px;margin:0}
+.note{font-size:12px;color:var(--text-dim);margin:6px 0 12px}
+.about p{font-family:var(--font-desc);font-weight:300;font-size:11.5px;line-height:1.6;color:var(--text-dim);margin:8px 0}
+.ios-tip{position:sticky;bottom:12px;display:flex;align-items:center;gap:10px;margin-top:20px;padding:10px 12px;font-size:11.5px;line-height:1.4;color:var(--text);text-shadow:var(--text-shadow);background:var(--surface);border:1px solid var(--accent);border-radius:6px}
+.ios-tip span{flex:1}
+.ios-tip button{font:inherit;font-size:16px;color:var(--accent);background:none;border:0;padding:4px 8px;cursor:pointer}

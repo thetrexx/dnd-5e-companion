@@ -3,6 +3,7 @@ import type { ClassId } from '../../data/types';
 import { menuRows } from '../../logic/menu';
 import type { MenuRow } from '../../logic/menu';
 import { toHash } from '../../router';
+import { GearButton } from '../GearButton';
 import { Separator } from '../Separator';
 
 export const SLOT_ICON = 'https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png';
@@ -17,6 +18,7 @@ export function Menu(p: { cls: ClassId; level: number }) {
   const c = DATA.classes.find((x) => x.id === p.cls)!;
   return (
     <div class="screen">
+      <GearButton />
       <a class="back" href={toHash({ page: 'level', cls: p.cls })}>‹ Level</a>
       <Separator ornament={'\u{1F65A}'} label={c.name} full />
       <p class="hint center">Level {p.level}</p>
