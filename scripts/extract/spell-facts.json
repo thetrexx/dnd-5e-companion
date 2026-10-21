@@ -879,7 +879,12 @@
   ],
   "page": 218,
   "summary": {
-   "resolution": "none"
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d8",
+    "type": "Force"
+   },
+   "upcast": "+2d8 per slot level above 5"
   }
  },
  {
@@ -1266,7 +1271,8 @@
    "damage": {
     "dice": "10d8",
     "type": "Lightning"
-   }
+   },
+   "upcast": "+1 bolt per slot level above 6"
   }
  },
  {

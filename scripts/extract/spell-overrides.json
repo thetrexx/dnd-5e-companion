@@ -265,5 +265,20 @@
       "resolution": "save",
       "save": "cha"
     }
+  },
+  "bigbys-hand": {
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d8",
+        "type": "Force"
+      },
+      "upcast": "+2d8 per slot level above 5"
+    }
+  },
+  "chain-lightning": {
+    "summary": {
+      "upcast": "+1 bolt per slot level above 6"
+    }
   }
 }

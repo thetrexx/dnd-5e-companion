@@ -8,3 +8,8 @@ const facts = (lo: number, hi: number) =>
 
 test('batch 5a complete', () => expect(built(0, 1)).toBe(facts(0, 1)));
 test('batch 5b complete', () => expect(built(2, 3)).toBe(facts(2, 3)));
+test('batch 5c complete', () => expect(built(4, 6)).toBe(facts(4, 6)));
+test('confusion keeps its table', () => {
+  const d = DATA.spells.find(s => s.id === 'confusion')!.description.join('\n');
+  for (const row of ['1: ', '2-6: ', '7-8: ', '9-10: ']) expect(d).toContain(row);
+});

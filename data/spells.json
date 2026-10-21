@@ -252,6 +252,141 @@
     "textSource": "summary"
   },
   {
+    "id": "animate-objects",
+    "name": "Animate Objects",
+    "level": 5,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 213,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Up to 10 unattended nonmagical objects within 120 ft become your constructs (Medium counts 2, Large 4, Huge 8, max). At 0 HP one reverts, carrying excess damage over.",
+      "Bonus action: command any within 500 ft (one order for all); otherwise they only defend. Slam: bludgeoning, 5 ft.",
+      "Con 10, Int 3, Wis 3, Cha 1, speed 30 (legless: fly 30, hover), blindsight 30.",
+      "Tiny: 20 HP, AC 18, +8, 1d4+4, Str 4, Dex 18.",
+      "Small: 25 HP, AC 16, +6, 1d8+2, Str 6, Dex 14.",
+      "Medium: 40 HP, AC 13, +5, 2d6+1, Str 10, Dex 12.",
+      "Large: 50 HP, AC 10, +6, 2d10+2, Str 14, Dex 10.",
+      "Huge: 80 HP, AC 10, +8, 2d12+4, Str 18, Dex 6."
+    ],
+    "higherLevels": "Each slot level above 5 lets you animate 2 more objects.",
+    "textSource": "summary"
+  },
+  {
+    "id": "antilife-shell",
+    "name": "Antilife Shell",
+    "level": 5,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (10-foot radius)",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 213,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A 10 ft barrier surrounds you and moves with you for up to 1 hour (concentration). Creatures other than undead and constructs can't pass through it or reach across it, though they can still cast spells and make ranged or reach-weapon attacks through it.",
+      "The spell ends if your own movement would push one of those creatures through the barrier."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-eye",
+    "name": "Arcane Eye",
+    "level": 4,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 214,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A bit of bat fur",
+        "consumed": false
+      }
+    },
+    "description": [
+      "An invisible eye appears within 30 ft and hovers for up to 1 hour (concentration). You see what it sees, in every direction, with normal vision and darkvision to 30 ft.",
+      "Action: move the eye up to 30 ft. It can travel any distance from you but not to another plane. Solid barriers stop it, yet it slips through a gap 1 inch wide."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-gate",
+    "name": "Arcane Gate",
+    "level": 6,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "500 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 214,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Pick two points on the ground you can see, one within 10 ft of you and one within 500 ft. A ring portal 10 ft across opens over each for up to 10 minutes (concentration). If a creature occupies either point, the spell fails and the slot is lost.",
+      "Each ring works from one side only (your choice); whatever enters exits the other ring as if they were adjacent. Mist in the rings blocks sight. Bonus action: turn the rings to face new directions."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "arcane-lock",
     "name": "Arcane Lock",
     "level": 2,
@@ -398,6 +533,65 @@
     "textSource": "summary"
   },
   {
+    "id": "aura-of-life",
+    "name": "Aura of Life",
+    "level": 4,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (30-foot radius)",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 216,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "For up to 10 minutes (concentration) a 30 ft aura moves with you. Nonhostile creatures in it, you included, resist necrotic damage and their hit point maximum can't be lowered.",
+      "A nonhostile living creature that starts its turn in the aura at 0 HP regains 1 HP."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "aura-of-purity",
+    "name": "Aura of Purity",
+    "level": 4,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (30-foot radius)",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 216,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "For up to 10 minutes (concentration) a 30 ft aura moves with you. Nonhostile creatures in it, you included, can't be diseased, resist poison damage, and have advantage on saves against being blinded, charmed, deafened, frightened, paralyzed, poisoned or stunned."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "aura-of-vitality",
     "name": "Aura of Vitality",
     "level": 3,
@@ -428,6 +622,42 @@
     },
     "description": [
       "A 30 ft radius aura of healing surrounds you and moves with you for up to 1 minute (concentration). As a bonus action on each of your turns, you can restore 2d6 hit points to one creature in the aura, including yourself."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "awaken",
+    "name": "Awaken",
+    "level": 5,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "other",
+      "text": "8 hours"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "page": 216,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Agate worth 1,000 gp, used up",
+        "costGp": 1000,
+        "consumed": true
+      }
+    },
+    "description": [
+      "After 8 hours of work on a gem, you touch a beast or plant, Huge or smaller, with Intelligence 3 or less (or none). It gains Intelligence 10 and speaks one language you know. A plant can also move its limbs and gains human-like senses; the DM picks its stats.",
+      "It stays charmed by you for 30 days unless you or your allies harm it. Afterwards it chooses whether to stay friendly, based on how you treated it."
     ],
     "textSource": "summary"
   },
@@ -465,6 +695,81 @@
       "Up to 3 creatures you can see within 30 ft each make a Charisma save. For the duration (concentration, 1 minute), each one that fails rolls a d4 whenever it makes an attack roll or saving throw, and lowers that result by the number rolled."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
+    "textSource": "summary"
+  },
+  {
+    "id": "banishing-smite",
+    "name": "Banishing Smite",
+    "level": 5,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 216,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "5d10",
+        "type": "Force"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Your next weapon hit before the spell ends (concentration, up to 1 minute) deals an extra 5d10 force damage.",
+      "If that hit leaves the target at 50 HP or fewer, it is banished. A creature from another plane is sent home. One native to your plane goes to a harmless demiplane, incapacitated, and returns to its old space (or the nearest free one) when the spell ends."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "banishment",
+    "name": "Banishment",
+    "level": 4,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 217,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Something the target finds distasteful",
+        "consumed": false
+      }
+    },
+    "description": [
+      "One creature you can see within 60 ft makes a Charisma save or is banished for up to 1 minute (concentration).",
+      "Native to your plane: it waits, incapacitated, in a harmless demiplane, and returns to its space (or the nearest free one) when the spell ends.",
+      "From another plane: it is sent home. If the spell ends before 1 minute passes it comes back as above; if it lasts the full minute, it stays gone."
+    ],
+    "higherLevels": "Each slot level above 4 adds one more target.",
     "textSource": "summary"
   },
   {
@@ -600,6 +905,84 @@
     "textSource": "summary"
   },
   {
+    "id": "bigbys-hand",
+    "name": "Bigby's Hand",
+    "level": 5,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 218,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d8",
+        "type": "Force"
+      },
+      "upcast": "+2d8 per slot level above 5"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "An eggshell and a snakeskin glove",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A Large force hand appears within 120 ft (concentration, 1 minute): AC 20, HP = your HP maximum, Str 26, Dex 10, not space-filling; 0 HP ends it. When cast and as a later bonus action, move it up to 60 ft, then:",
+      "Clenched Fist: melee spell attack vs a target within 5 ft of it; 4d8 force.",
+      "Forceful Hand: Strength contest vs its Athletics (advantage vs Medium or smaller); push 5 ft + 5 ft × spellcasting modifier.",
+      "Grasping Hand: grapple a Huge or smaller target, same advantage. While held, bonus action: crush, 2d6 + spellcasting modifier bludgeoning.",
+      "Interposing Hand: half cover for you vs one creature, which can pass only if its Strength tops 26 (as difficult terrain)."
+    ],
+    "higherLevels": "Each slot level above 5 adds 2d8 to the fist and 2d6 to the crush.",
+    "textSource": "summary"
+  },
+  {
+    "id": "blade-barrier",
+    "name": "Blade Barrier",
+    "level": 6,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 218,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "6d10",
+        "type": "Slashing"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A wall of spinning magical blades appears within 90 ft for up to 10 minutes (concentration): straight, up to 100 ft long, or a ring up to 60 ft across; either way 20 ft high and 5 ft thick. It grants three-quarters cover, and its space is difficult terrain.",
+      "A creature that starts its turn in the wall, or enters it for the first time that turn, makes a Dexterity save: 6d10 slashing, half on a success."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "blade-ward",
     "name": "Blade Ward",
     "level": 0,
@@ -664,6 +1047,46 @@
       "Up to 3 creatures within 30 ft are blessed for 1 minute (concentration). Whenever a target attacks or saves, it can roll a d4 and add it to the result."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
+    "textSource": "summary"
+  },
+  {
+    "id": "blight",
+    "name": "Blight",
+    "level": 4,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 219,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "8d8",
+        "type": "Necrotic"
+      },
+      "upcast": "+1d8 per slot level above 4"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "One creature you can see within 30 ft makes a Constitution save: 8d8 necrotic, half on a success. Undead and constructs are unaffected.",
+      "A plant creature or magical plant saves with disadvantage and takes maximum damage. An ordinary non-creature plant, like a tree or shrub, just withers and dies."
+    ],
+    "higherLevels": "Each slot level above 4 adds 1d8.",
     "textSource": "summary"
   },
   {
@@ -943,6 +1366,48 @@
     "textSource": "summary"
   },
   {
+    "id": "chain-lightning",
+    "name": "Chain Lightning",
+    "level": 6,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 221,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "10d8",
+        "type": "Lightning"
+      },
+      "upcast": "+1 bolt per slot level above 6"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Fur; amber, glass or a crystal rod; 3 silver pins",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Lightning strikes one target you can see within 150 ft, then 3 bolts leap to up to 3 other targets within 30 ft of it. Targets can be creatures or objects; each takes only one bolt.",
+      "Every target makes a Dexterity save: 10d8 lightning, half on a success."
+    ],
+    "higherLevels": "Each slot level above 6 adds one more leaping bolt.",
+    "textSource": "summary"
+  },
+  {
     "id": "charm-person",
     "name": "Charm Person",
     "level": 1,
@@ -1057,6 +1522,79 @@
     "textSource": "summary"
   },
   {
+    "id": "circle-of-death",
+    "name": "Circle of Death",
+    "level": 6,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 221,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "8d6",
+        "type": "Necrotic"
+      },
+      "upcast": "+2d6 per slot level above 6"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Crushed black pearl powder worth 500 gp",
+        "costGp": 500,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Negative energy bursts in a 60 ft radius sphere around a point within 150 ft. Every creature in it makes a Constitution save: 8d6 necrotic, half on a success."
+    ],
+    "higherLevels": "Each slot level above 6 adds 2d6.",
+    "textSource": "summary"
+  },
+  {
+    "id": "circle-of-power",
+    "name": "Circle of Power",
+    "level": 5,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (30-foot radius)",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 221,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "For up to 10 minutes (concentration) a 30 ft aura moves with you. Friendly creatures in it, you included, have advantage on saves against spells and other magical effects.",
+      "When one of them succeeds on such a save that would normally halve the damage, it takes no damage instead."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "clairvoyance",
     "name": "Clairvoyance",
     "level": 3,
@@ -1137,6 +1675,45 @@
     "textSource": "summary"
   },
   {
+    "id": "cloudkill",
+    "name": "Cloudkill",
+    "level": 5,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 222,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "5d8",
+        "type": "Poison"
+      },
+      "upcast": "+1d8 per slot level above 5"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A 20 ft radius sphere of poison fog centers on a point within 120 ft for up to 10 minutes (concentration). It spreads around corners and is heavily obscured; strong wind ends it.",
+      "A creature that starts its turn in it, or enters it for the first time that turn, makes a Constitution save: 5d8 poison, half on a success. Holding breath doesn't help.",
+      "As each of your turns begins, the fog rolls 10 ft away from you, sinking into low ground and openings."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8.",
+    "textSource": "summary"
+  },
+  {
     "id": "color-spray",
     "name": "Color Spray",
     "level": 1,
@@ -1206,6 +1783,71 @@
     "textSource": "summary"
   },
   {
+    "id": "commune",
+    "name": "Commune",
+    "level": 5,
+    "school": "Divination",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Self",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "cleric"
+    ],
+    "page": 223,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Incense and a vial of holy or unholy water",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You reach your deity or a divine agent and ask up to 3 yes-or-no questions within the minute. Each gets a true answer, though the DM may say \"unclear\" if it lies outside the deity's knowledge, or give a short phrase if one word would mislead.",
+      "Each casting after the first before your next long rest has a cumulative 25% chance of no answer, rolled secretly by the DM."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "commune-with-nature",
+    "name": "Commune With Nature",
+    "level": 5,
+    "school": "Divination",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 224,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You learn up to 3 facts of your choice about the land within 3 miles of you outdoors, or 300 ft in caves and natural underground. It fails where building has replaced nature, such as towns and dungeons.",
+      "Topics: land and bodies of water; dominant flora, fauna, minerals or peoples; mighty celestials, elementals, fey, fiends or undead; the pull of other planes; buildings."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "compelled-duel",
     "name": "Compelled Duel",
     "level": 1,
@@ -1271,6 +1913,121 @@
       "For 1 hour, you understand any spoken language you hear. If you touch a surface bearing writing, you can read it too, taking about 1 minute per page.",
       "It does not reveal hidden meaning, secret codes or non-written symbols. Ritual."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "compulsion",
+    "name": "Compulsion",
+    "level": 4,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard"
+    ],
+    "page": 224,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Chosen creatures you can see within 30 ft that can hear you make a Wisdom save (creatures immune to charm pass). Those who fail are affected for up to 1 minute (concentration).",
+      "Bonus action each turn: name a horizontal direction. On its next turn each target must use as much movement as it can going that way, though it may act first. It avoids obvious deadly hazards but will provoke opportunity attacks. After moving, it repeats the save to end the effect."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "cone-of-cold",
+    "name": "Cone of Cold",
+    "level": 5,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (60-foot cone)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 224,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "8d8",
+        "type": "Cold"
+      },
+      "upcast": "+1d8 per slot level above 5"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A small crystal or glass cone",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Freezing air blasts from your hands in a 60 ft cone. Each creature there makes a Constitution save: 8d8 cold, half on a success. A creature it kills turns into a frozen statue until it thaws."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8.",
+    "textSource": "summary"
+  },
+  {
+    "id": "confusion",
+    "name": "Confusion",
+    "level": 4,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 224,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "3 nut shells",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Each creature in a 10 ft radius sphere around a point within 90 ft makes a Wisdom save or is confused for up to 1 minute (concentration). It can't take reactions and rolls a d10 at the start of each turn:",
+      "1: It moves its full speed in a random direction (roll a d8) and takes no action.",
+      "2-6: It doesn't move or act.",
+      "7-8: It uses its action to melee attack a random creature in reach, or does nothing if none is in reach.",
+      "9-10: It moves and acts normally.",
+      "Each time it ends a turn it repeats the save, ending the effect on a success."
+    ],
+    "higherLevels": "Each slot level above 4 widens the sphere by 5 ft.",
     "textSource": "summary"
   },
   {
@@ -1380,6 +2137,43 @@
     "description": [
       "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "conjure-elemental",
+    "name": "Conjure Elemental",
+    "level": 5,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "wizard"
+    ],
+    "page": 225,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Burning incense (air), soft clay (earth), sulfur and phosphorus (fire), or water and sand (water)",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Choose a 10 ft cube of air, earth, fire or water within 90 ft. A matching elemental of CR 5 or lower appears within 10 ft of it for up to 1 hour (concentration), vanishing at 0 HP.",
+      "It is friendly to your group, rolls its own initiative and obeys your spoken orders (no action needed); unordered, it only defends itself. The DM has its stats.",
+      "If your concentration breaks, it stays but turns hostile and may attack. You can't dismiss it; it vanishes 1 hour after you summoned it."
+    ],
+    "higherLevels": "Each slot level above 5 raises the CR by 1.",
     "textSource": "summary"
   },
   {
