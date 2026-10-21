@@ -1,0 +1,178 @@
+{
+  "acid-splash": {
+    "page": 211
+  },
+  "aid": {
+    "page": 211
+  },
+  "alarm": {
+    "page": 211
+  },
+  "alter-self": {
+    "page": 211
+  },
+  "antipathy-sympathy": {
+    "page": 214
+  },
+  "mordenkainens-sword": {
+    "page": 262
+  },
+  "color-spray": {
+    "page": 222,
+    "range": "Self (15-foot cone)"
+  },
+  "detect-evil-and-good": {
+    "page": 231
+  },
+  "detect-poison-and-disease": {
+    "page": 231
+  },
+  "find-familiar": {
+    "page": 240
+  },
+  "find-steed": {
+    "page": 240
+  },
+  "find-the-path": {
+    "page": 240,
+    "duration": "Concentration, up to 1 day"
+  },
+  "fireball": {
+    "page": 241,
+    "icon": "https://bg3.wiki/w/images/c/cb/Fireball_Icon.webp"
+  },
+  "geas": {
+    "page": 244
+  },
+  "leomunds-tiny-hut": {
+    "page": 255,
+    "range": "Self (10-foot-radius hemisphere)"
+  },
+  "vampiric-touch": {
+    "page": 285
+  },
+  "counterspell": {
+    "cast": {
+      "trigger": "when a creature within 60 ft casts a spell"
+    }
+  },
+  "feather-fall": {
+    "cast": {
+      "trigger": "when you or a creature within 60 ft falls"
+    }
+  },
+  "hellish-rebuke": {
+    "cast": {
+      "trigger": "when a creature you can see within 60 ft damages you"
+    }
+  },
+  "shield": {
+    "cast": {
+      "trigger": "when you're hit by an attack or targeted by magic missile"
+    },
+    "icon": "https://bg3.wiki/w/images/c/cf/Shield_spell_Icon.webp"
+  },
+  "magic-missile": {
+    "summary": {
+      "resolution": "auto",
+      "damage": {
+        "dice": "1d4+1",
+        "count": 3,
+        "unit": "darts"
+      },
+      "upcast": "+1 dart per slot level above 1"
+    },
+    "icon": "https://bg3.wiki/w/images/d/d4/Magic_Missile_Icon.webp"
+  },
+  "antilife-shell": {
+    "range": "Self (10-foot radius)"
+  },
+  "antimagic-field": {
+    "range": "Self (10-foot-radius sphere)"
+  },
+  "burning-hands": {
+    "range": "Self (15-foot cone)",
+    "icon": "https://bg3.wiki/w/images/c/cf/Burning_Hands_Icon.webp"
+  },
+  "cone-of-cold": {
+    "range": "Self (60-foot cone)"
+  },
+  "control-weather": {
+    "range": "Self (5-mile radius)"
+  },
+  "fear": {
+    "range": "Self (30-foot cone)"
+  },
+  "globe-of-invulnerability": {
+    "range": "Self (10-foot radius)"
+  },
+  "gust-of-wind": {
+    "range": "Self (60-foot line)"
+  },
+  "lightning-bolt": {
+    "range": "Self (100-foot line)"
+  },
+  "prismatic-spray": {
+    "range": "Self (60-foot cone)"
+  },
+  "speak-with-plants": {
+    "range": "Self (30-foot radius)"
+  },
+  "spirit-guardians": {
+    "range": "Self (15-foot radius)"
+  },
+  "sunbeam": {
+    "range": "Self (60-foot line)"
+  },
+  "thunderwave": {
+    "range": "Self (15-foot cube)",
+    "icon": "https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp"
+  },
+  "etherealness": {
+    "duration": "Up to 8 hours"
+  },
+  "forbiddance": {
+    "duration": "1 day"
+  },
+  "glyph-of-warding": {
+    "duration": "Until dispelled or triggered"
+  },
+  "symbol": {
+    "duration": "Until dispelled or triggered"
+  },
+  "prestidigitation": {
+    "duration": "Up to 1 hour"
+  },
+  "thaumaturgy": {
+    "duration": "Up to 1 minute"
+  },
+  "project-image": {
+    "duration": "Concentration, up to 1 day"
+  },
+  "plant-growth": {
+    "cast": {
+      "text": "1 action or 8 hours"
+    }
+  },
+  "fire-bolt": {
+    "icon": "https://bg3.wiki/w/images/2/23/Fire_Bolt_Icon.webp"
+  },
+  "ray-of-frost": {
+    "icon": "https://bg3.wiki/w/images/f/f9/Ray_of_Frost_Icon.webp"
+  },
+  "guidance": {
+    "icon": "https://bg3.wiki/w/images/7/7f/Guidance_Icon.webp"
+  },
+  "produce-flame": {
+    "icon": "https://bg3.wiki/w/images/e/ec/Produce_Flame_Icon.webp"
+  },
+  "shillelagh": {
+    "icon": "https://bg3.wiki/w/images/6/68/Shillelagh_Icon.webp"
+  },
+  "cure-wounds": {
+    "icon": "https://bg3.wiki/w/images/4/40/Cure_Wounds_Icon.webp"
+  },
+  "misty-step": {
+    "icon": "https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp"
+  }
+}

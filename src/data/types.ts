@@ -1,6 +1,6 @@
 export type ClassId = 'barbarian'|'bard'|'cleric'|'druid'|'fighter'|'monk'|'paladin'|'ranger'|'rogue'|'sorcerer'|'warlock'|'wizard';
-/** 'srd': word-for-word SRD 5.1 text. 'summary': our own words; the book holds the full rules. */
-export type TextSource = 'srd'|'summary';
+/** Every card is our own words; the book holds the full rules. */
+export type TextSource = 'summary';
 export type Cost = 'action'|'bonus'|'reaction'|'other';
 export type Ability = 'str'|'dex'|'con'|'int'|'wis'|'cha';
 export interface Spell {

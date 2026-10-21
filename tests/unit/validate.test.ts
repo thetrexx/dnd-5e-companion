@@ -40,6 +40,11 @@ test('textSource required', () => {
   expect(validateDataset(bad).join('\n')).toContain('textSource');
 });
 
+test('a spell with textSource srd is rejected', () => {
+  const bad = structuredClone(DATA); (bad.spells[0] as any).textSource = 'srd';
+  expect(validateDataset(bad).join('\n')).toContain('textSource');
+});
+
 test('class lists', () => {
   const s = (id: string) => DATA.spells.find(x => x.id === id)!;
   expect(s('shield').classes.sort()).toEqual(['sorcerer', 'wizard']);

@@ -3,7 +3,7 @@ import { CACHE } from './config.ts';
 import { judgeRecord } from './ocr.ts';
 import { extractPage } from './pages.ts';
 
-type Rec = { id: string; name: string; page?: number; description?: string[]; textSource?: 'srd' | 'summary'; higherLevels?: string };
+type Rec = { id: string; name: string; page?: number; description?: string[]; higherLevels?: string };
 type Spell = Rec & {
   level: number; school: string; ritual?: boolean; range: string; duration: string; higherLevels?: string;
   cast: { text: string }; components: { v: boolean; s: boolean; m?: { text: string } };
@@ -15,17 +15,6 @@ const REPORT = '.cache/ocr-report.md';
 
 const readJson = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
 const accept = existsSync('scripts/extract/ocr-accept.json') ? readJson<Record<string, string>>('scripts/extract/ocr-accept.json') : {};
-
-const sortKey = (name: string): string => name.toLowerCase().replace(/['’]/g, '');
-
-/** Every PHB spell name in book order, from spell-lists.json (Task 4) when present; else empty. */
-function bookOrder(): string[] {
-  const path = 'scripts/extract/spell-lists.json';
-  if (!existsSync(path)) return [];
-  const lists = readJson<Record<string, string[]>>(path);
-  const names = [...new Set(Object.values(lists).flat())];
-  return names.sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
-}
 
 function ordinal(n: number): string {
   return n === 1 ? '1st' : n === 2 ? '2nd' : n === 3 ? '3rd' : `${n}th`;
@@ -44,6 +33,11 @@ function spellText(s: Spell): string {
   ].join('\n');
 }
 
+/** The words we wrote: description, higher levels and the material item list. */
+function proseOf(s: Spell): string {
+  return [...(s.description ?? []), s.higherLevels ?? '', s.components.m?.text ?? ''].join('\n');
+}
+
 function ocrPages(page: number): string {
   let out = '';
   for (const p of [page, page + 1]) {
@@ -53,18 +47,11 @@ function ocrPages(page: number): string {
   return out;
 }
 
-interface Item { key: string; source: 'srd' | 'summary'; text: string; page: number; span?: { from: string; to?: string } }
+interface Item { key: string; text: string; page: number; prose?: string }
 
 function items(kind: Kind): Item[] | 'skip' {
   if (kind === 'spells') {
-    const spells = readJson<Spell[]>('data/spells.json');
-    const sorted = [...spells].sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
-    const book = bookOrder();
-    return sorted.map((s, i) => {
-      const at = book.findIndex(n => sortKey(n) === sortKey(s.name));
-      const to = at >= 0 ? book[at + 1] : sorted[i + 1]?.name;
-      return { key: `spells:${s.id}`, source: s.textSource ?? 'srd', text: spellText(s), page: s.page!, span: { from: s.name, to } };
-    });
+    return readJson<Spell[]>('data/spells.json').map(s => ({ key: `spells:${s.id}`, text: spellText(s), page: s.page!, prose: proseOf(s) }));
   }
   let recs: Rec[];
   if (kind === 'features') {
@@ -74,10 +61,10 @@ function items(kind: Kind): Item[] | 'skip' {
   } else {
     return 'skip'; // subclasses, races, options carry no description: nothing to compare
   }
-  return recs.map(r => ({ key: `${kind}:${r.id}`, source: r.textSource ?? 'srd', text: [r.name, ...(r.description ?? [])].join('\n'), page: r.page! }));
+  return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...(r.description ?? [])].join('\n'), page: r.page! }));
 }
 
-interface Result { key: string; source?: string; why: string[]; excerpts: string[]; accepted?: string }
+interface Result { key: string; why: string[]; excerpts: string[]; accepted?: string }
 
 const arg = process.argv[2];
 if (arg && !KINDS.includes(arg as Kind)) {
@@ -93,19 +80,19 @@ for (const kind of kinds) {
   if (list === 'skip') { console.log(`${kind}: skipped (no description to compare)`); continue; }
   for (const it of list) {
     checked++;
-    if (!Number.isInteger(it.page)) { failures.push({ key: it.key, source: it.source, why: ['no page'], excerpts: [], accepted: accept[it.key] }); continue; }
-    const r = judgeRecord(it.source, it.text, ocrPages(it.page), it.span);
-    if (!r.pass) failures.push({ key: it.key, source: it.source, why: r.reasons, excerpts: r.excerpts ?? [], accepted: accept[it.key] });
+    if (!Number.isInteger(it.page)) { failures.push({ key: it.key, why: ['no page'], excerpts: [], accepted: accept[it.key] }); continue; }
+    const r = judgeRecord(it.text, ocrPages(it.page), it.prose);
+    if (!r.pass) failures.push({ key: it.key, why: r.reasons, excerpts: [], accepted: accept[it.key] });
   }
 }
 
 const open = failures.filter(f => !f.accepted);
-for (const f of open) console.log(`FAIL ${f.key} [${f.source ?? 'srd'}]: ${f.why.join('; ')}`);
+for (const f of open) console.log(`FAIL ${f.key}: ${f.why.join('; ')}`);
 const lines = [
   '# OCR check report', '',
   `Checked ${checked}, failed ${failures.length} (${open.length} not accepted).`, '',
   ...[...open, ...failures.filter(f => f.accepted)].flatMap(f => [
-    `## ${f.key} [${f.source ?? 'srd'}]${f.accepted ? ` (accepted: ${f.accepted})` : ''}`,
+    `## ${f.key}${f.accepted ? ` (accepted: ${f.accepted})` : ''}`,
     ...f.why.map(w => `- ${w}`),
     ...f.excerpts.map(e => `- missing: "${e}"`), '',
   ]),

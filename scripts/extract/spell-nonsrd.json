@@ -1,0 +1,1158 @@
+[
+ {
+  "id": "arcane-gate",
+  "name": "Arcane Gate",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "500 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 214,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "armor-of-agathys",
+  "name": "Armor of Agathys",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 215,
+  "summary": {
+   "resolution": "none",
+   "upcast": "+5 temporary hit points and +5 cold damage per slot level above 1"
+  }
+ },
+ {
+  "id": "arms-of-hadar",
+  "name": "Arms of Hadar",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (10-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 215,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "2d6",
+    "type": "Necrotic"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "aura-of-life",
+  "name": "Aura of Life",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 216,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "aura-of-purity",
+  "name": "Aura of Purity",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 216,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "aura-of-vitality",
+  "name": "Aura of Vitality",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 216,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d6",
+    "type": "Healing",
+    "healing": true
+   }
+  }
+ },
+ {
+  "id": "banishing-smite",
+  "name": "Banishing Smite",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 216,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "5d10",
+    "type": "Force"
+   }
+  }
+ },
+ {
+  "id": "beast-sense",
+  "name": "Beast Sense",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": true,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [],
+  "page": 217,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "blade-ward",
+  "name": "Blade Ward",
+  "level": 0,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 218,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "blinding-smite",
+  "name": "Blinding Smite",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 219,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "3d8",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "chromatic-orb",
+  "name": "Chromatic Orb",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 50,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 221,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "3d8",
+    "type": "Varies"
+   },
+   "upcast": "+1d8 per slot level above 1"
+  }
+ },
+ {
+  "id": "circle-of-power",
+  "name": "Circle of Power",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 221,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "cloud-of-daggers",
+  "name": "Cloud of Daggers",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 222,
+  "summary": {
+   "resolution": "auto",
+   "damage": {
+    "dice": "4d4",
+    "type": "Slashing"
+   },
+   "upcast": "+2d4 per slot level above 2"
+  }
+ },
+ {
+  "id": "compelled-duel",
+  "name": "Compelled Duel",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 224,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "conjure-barrage",
+  "name": "Conjure Barrage",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (60-foot cone)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 225,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d8",
+    "type": "Weapon"
+   }
+  }
+ },
+ {
+  "id": "conjure-volley",
+  "name": "Conjure Volley",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 226,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "8d8",
+    "type": "Weapon"
+   }
+  }
+ },
+ {
+  "id": "cordon-of-arrows",
+  "name": "Cordon of Arrows",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "5 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 228,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d6",
+    "type": "Piercing"
+   },
+   "upcast": "+2 pieces of ammunition per slot level above 2"
+  }
+ },
+ {
+  "id": "crown-of-madness",
+  "name": "Crown of Madness",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 229,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "crusaders-mantle",
+  "name": "Crusader's Mantle",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 230,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "destructive-wave",
+  "name": "Destructive Wave",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 231,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "5d6",
+    "type": "Thunder"
+   }
+  }
+ },
+ {
+  "id": "dissonant-whispers",
+  "name": "Dissonant Whispers",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 234,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "3d6",
+    "type": "Psychic"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "elemental-weapon",
+  "name": "Elemental Weapon",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 237,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Varies"
+   },
+   "upcast": "slots 5-6: +2 bonus and 2d4; slots 7+: +3 bonus and 3d4"
+  }
+ },
+ {
+  "id": "ensnaring-strike",
+  "name": "Ensnaring Strike",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 237,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "1d6",
+    "type": "Piercing"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "feign-death",
+  "name": "Feign Death",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 240,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "friends",
+  "name": "Friends",
+  "level": 0,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 244,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "grasping-vine",
+  "name": "Grasping Vine",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 246,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "hail-of-thorns",
+  "name": "Hail of Thorns",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 249,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d10",
+    "type": "Piercing"
+   },
+   "upcast": "+1d10 per slot level above 1, up to 6d10"
+  }
+ },
+ {
+  "id": "hex",
+  "name": "Hex",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 251,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d6",
+    "type": "Necrotic"
+   },
+   "upcast": "slots 3-4: concentration up to 8 hours; slots 5+: up to 24 hours"
+  }
+ },
+ {
+  "id": "hunger-of-hadar",
+  "name": "Hunger of Hadar",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 251,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "2d6",
+    "type": "Cold"
+   }
+  }
+ },
+ {
+  "id": "lightning-arrow",
+  "name": "Lightning Arrow",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 255,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d8",
+    "type": "Lightning"
+   },
+   "upcast": "+1d8 per slot level above 3"
+  }
+ },
+ {
+  "id": "phantasmal-force",
+  "name": "Phantasmal Force",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 264,
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "1d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "power-word-heal",
+  "name": "Power Word Heal",
+  "level": 9,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 266,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "ray-of-sickness",
+  "name": "Ray of Sickness",
+  "level": 1,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 271,
+  "summary": {
+   "resolution": "attack",
+   "save": "con",
+   "damage": {
+    "dice": "2d8",
+    "type": "Poison"
+   },
+   "upcast": "+1d8 per slot level above 1"
+  }
+ },
+ {
+  "id": "searing-smite",
+  "name": "Searing Smite",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 274,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d6",
+    "type": "Fire"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "staggering-smite",
+  "name": "Staggering Smite",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 278,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "4d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "swift-quiver",
+  "name": "Swift Quiver",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 279,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "telepathy",
+  "name": "Telepathy",
+  "level": 8,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Unlimited",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 281,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "thorn-whip",
+  "name": "Thorn Whip",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 282,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d6",
+    "type": "Piercing"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "thunderous-smite",
+  "name": "Thunderous Smite",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 282,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "2d6",
+    "type": "Thunder"
+   }
+  }
+ },
+ {
+  "id": "tsunami",
+  "name": "Tsunami",
+  "level": 8,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Sight",
+  "duration": "Concentration, up to 6 rounds",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 284,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "6d10",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
+  "id": "witch-bolt",
+  "name": "Witch Bolt",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 289,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d12",
+    "type": "Lightning"
+   },
+   "upcast": "+1d12 per slot level above 1"
+  }
+ },
+ {
+  "id": "wrathful-smite",
+  "name": "Wrathful Smite",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 289,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "1d6",
+    "type": "Psychic"
+   }
+  }
+ }
+]

@@ -24,7 +24,7 @@ test('Card falls back when the spell has no icon', () => {
 test('Card shows the reaction trigger with the cost', () => {
   const r = render(<Card kind="spell" id="shield" cls="wizard" level={3} />);
   expect(r.container.querySelector('.card-cost')!.textContent)
-    .toContain('Reaction, which you take when you are hit by an attack or targeted by the magic missile spell');
+    .toContain('Reaction, when you');
 });
 
 test('Card divider uses the card separator variant', () => {
@@ -78,9 +78,9 @@ test('Start tile icon falls back on error', () => {
   expect(r.container.querySelector('.tile img')!.getAttribute('src')).toContain('/icons/fallback/');
 });
 
-test('summary card ends with the PHB page line; SRD card has none', () => {
+test('every card ends with the PHB page line', () => {
   const wb = render(<Card kind="feature" id="weapon-bond" cls="fighter" level={3} sub="eldritch-knight" />);
   expect(wb.container.textContent).toContain('Full rules: PHB p. 75');
   const fb = render(<Card kind="spell" id="fire-bolt" cls="wizard" level={3} />);
-  expect(fb.container.textContent).not.toContain('Full rules');
+  expect(fb.container.textContent).toContain('Full rules: PHB p. 242');
 });

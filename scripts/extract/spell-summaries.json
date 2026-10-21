@@ -1,0 +1,57 @@
+{
+  "fire-bolt": {
+    "description": ["Make a ranged spell attack against a creature or object within 120 ft. A hit deals 1d10 fire damage. A loose, unworn object that can burn catches fire."],
+    "higherLevels": "Damage rises to 2d10 at level 5, 3d10 at level 11 and 4d10 at level 17."
+  },
+  "ray-of-frost": {
+    "description": ["Make a ranged spell attack against a creature within 60 ft. A hit deals 1d8 cold damage and cuts the target's speed by 10 ft until your next turn begins."],
+    "higherLevels": "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+  },
+  "guidance": {
+    "description": ["Touch a willing creature. Once before the spell ends, it can roll a d4 and add the result to one ability check of its choice. The spell then ends."]
+  },
+  "produce-flame": {
+    "description": ["A flame appears in your palm and lasts 10 minutes. It does not hurt you, lights a 10 ft radius brightly and a further 10 ft dimly.", "You can hurl it at a creature within 30 ft as a ranged spell attack. A hit deals 1d8 fire damage. Throwing the flame ends the spell."],
+    "higherLevels": "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+  },
+  "shillelagh": {
+    "description": ["A club or quarterstaff you hold turns magical for 1 minute. Your melee attacks with it, for hit and damage, rely on your spellcasting ability rather than Strength, and it deals a d8. Recasting the spell or dropping the weapon ends it."],
+    "material": "mistletoe, shamrock leaf, a club or quarterstaff"
+  },
+  "magic-missile": {
+    "description": ["You fire 3 darts of force at creatures you choose within 120 ft that you can see. Each dart strikes automatically for 1d4+1 force damage. You can send every dart at one target or split them across several."],
+    "higherLevels": "Each slot level above 1 adds 1 dart."
+  },
+  "shield": {
+    "description": ["Until your next turn begins, you gain +5 AC, which also applies to the attack that triggered the spell. For the same time you take no harm from magic missile."]
+  },
+  "burning-hands": {
+    "description": ["Flames fan out from your hands in a 15 ft cone. Each creature in the cone makes a Dexterity save, taking 3d6 fire damage on a failure or half on a success. Loose flammable objects in the cone ignite."],
+    "higherLevels": "Damage rises by 1d6 for each slot level above 1."
+  },
+  "cure-wounds": {
+    "description": ["A creature you touch regains 1d8 hit points plus your spellcasting modifier. Undead and constructs are not healed."],
+    "higherLevels": "Healing rises by 1d8 for each slot level above 1."
+  },
+  "thunderwave": {
+    "description": ["A wave of force bursts out from you in a 15 ft cube. Creatures inside roll a Constitution save: failing means 2d8 thunder damage and a 10 ft shove away from you; passing means half damage and no shove.", "Loose objects in the cube are pushed 10 ft too, and the boom can be heard 300 ft away."],
+    "higherLevels": "Damage rises by 1d8 for each slot level above 1."
+  },
+  "mage-armor": {
+    "description": ["Touch a willing creature that wears no armor. For 8 hours its base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor or you dismiss it as an action."],
+    "material": "Scrap of cured leather"
+  },
+  "misty-step": {
+    "description": ["In a puff of silver mist you teleport up to 30 ft to an empty space you can see. It costs only a bonus action and needs just a spoken word, no gestures."]
+  },
+  "fireball": {
+    "description": ["A streak flies to a point you pick within 150 ft and blooms into a 20 ft radius burst of flame. Each creature there makes a Dexterity save, taking 8d6 fire damage on a failure or half on a success.", "The blast wraps around corners and sets loose flammable objects alight."],
+    "higherLevels": "Damage rises by 1d6 for each slot level above 3.",
+    "material": "Pellet of bat guano and sulfur"
+  },
+  "hold-person": {
+    "description": ["Pick a humanoid you can see within 60 ft. It makes a Wisdom save or is paralyzed. It repeats the save when each of its own turns finishes; a success frees it and ends the spell on it."],
+    "higherLevels": "A higher slot holds 1 extra humanoid per level above 2; targets must stand within 30 ft of one another.",
+    "material": "Small bit of straight iron"
+  }
+}

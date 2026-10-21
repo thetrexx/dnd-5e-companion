@@ -31,7 +31,7 @@ test('tags', () => {
   expect(tags(mm)).toEqual(['120 ft', 'Instantaneous', 'Auto-hit']);
   expect(tags(get('thunderwave'))).toContain('CON save');
   expect(tags(get('fire-bolt'))).toContain('Attack roll');
-  expect(tags(get('guidance'))).toEqual(['Touch', 'Up to 1 minute', 'Concentration']);
+  expect(tags(get('guidance'))).toEqual(['Touch', 'Concentration, up to 1 minute', 'Concentration']);
 });
 test('costBar', () => {
   expect(costBar(get('shield'))).toMatchObject({ cost: 'reaction', label: 'Reaction', slot: 'Level 1 Spell Slot' });
@@ -39,7 +39,7 @@ test('costBar', () => {
   expect(costBar(get('misty-step')).label).toBe('Bonus Action');
 });
 test('costBar reaction carries its trigger, others do not', () => {
-  expect(costBar(get('shield')).trigger).toBe('which you take when you are hit by an attack or targeted by the magic missile spell');
+  expect(costBar(get('shield')).trigger).toContain('magic missile');
   expect(costBar(mm).trigger).toBeUndefined();
 });
 test('componentInfo', () => {

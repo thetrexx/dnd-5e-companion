@@ -78,8 +78,6 @@ export function compareToOcr(text: string, ocr: string, span?: { from: string; t
   return { coverage, reverse, spanEndMissing, missingNumbers, missingExcerpts };
 }
 
-const MIN_COVERAGE = 0.92;
-const MIN_REVERSE = 0.85;
 const MAX_RUN = 8;
 
 const normWords = (s: string): string[] => s.split(/\s+/).map(normalizeOcr).filter(Boolean);
@@ -100,20 +98,16 @@ export function longestSharedRun(text: string, ocr: string): number {
   return best;
 }
 
-/** srd: word-for-word checks. summary: facts match (numbers) and own words (short shared run). */
-export function judgeRecord(source: 'srd' | 'summary', text: string, ocr: string, span?: { from: string; to?: string }):
-  { pass: boolean; reasons: string[]; excerpts?: string[] } {
+/**
+ * Facts match (every number in `text` is in the book) and own words (no long run shared with the book).
+ * `prose` is the part we wrote ourselves; the stat block above it matches the book by design, so only
+ * `prose` is tested for copying. It defaults to `text`.
+ */
+export function judgeRecord(text: string, ocr: string, prose: string = text): { pass: boolean; reasons: string[] } {
   const reasons: string[] = [];
-  const r = compareToOcr(text, ocr, source === 'srd' ? span : undefined);
+  const r = compareToOcr(text, ocr);
   if (r.missingNumbers.length) reasons.push(`missing numbers: ${r.missingNumbers.join(', ')}`);
-  if (source === 'srd') {
-    if (r.coverage < MIN_COVERAGE) reasons.push(`coverage ${r.coverage.toFixed(2)} < ${MIN_COVERAGE}`);
-    if (r.spanEndMissing) reasons.push(`span end not found: ${span!.to}`);
-    if (r.reverse !== undefined && r.reverse < MIN_REVERSE) reasons.push(`reverse ${r.reverse.toFixed(2)} < ${MIN_REVERSE}`);
-  } else {
-    const run = longestSharedRun(text, ocr);
-    if (run >= MAX_RUN) reasons.push(`copied: ${run} consecutive words match the book (limit ${MAX_RUN - 1})`);
-  }
-  const excerpts = source === 'srd' && reasons.length ? r.missingExcerpts : undefined;
-  return { pass: reasons.length === 0, reasons, ...(excerpts ? { excerpts } : {}) };
+  const run = longestSharedRun(prose, ocr);
+  if (run >= MAX_RUN) reasons.push(`copied: ${run} consecutive words match the book (limit ${MAX_RUN - 1})`);
+  return { pass: reasons.length === 0, reasons };
 }

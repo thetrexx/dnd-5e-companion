@@ -54,18 +54,8 @@ const own = 'Ranged spell attack out to 120 feet; a hit deals 1d10 fire, and una
 test('copied text has a long shared run', () =>
   expect(longestSharedRun('You hurl a mote of fire at a creature or object within range.', ocr)).toBeGreaterThanOrEqual(8));
 test('own words stay short', () => expect(longestSharedRun(own, ocr)).toBeLessThan(8));
-test('summary mode: wrong number fails, own words pass', () => {
-  expect(judgeRecord('summary', own, ocr).pass).toBe(true);
-  expect(judgeRecord('summary', own.replace('1d10', '1d12'), ocr).reasons.join()).toContain('1d12');
-  expect(judgeRecord('summary', 'You hurl a mote of fire at a creature or object within range.', ocr).pass).toBe(false);
-});
-test('srd mode: copied text passes, wrong number fails', () => {
-  expect(judgeRecord('srd', real, ocr).pass).toBe(true);
-  expect(judgeRecord('srd', real.replace('1d10', '1d12'), ocr).pass).toBe(false);
-});
-test('srd mode: failing record lists excerpts that differ', () => {
-  const r = judgeRecord('srd', real.replace('You hurl a mote of fire at a creature', 'Zorp blarg quux wibble flarn snazz'), ocr);
-  expect(r.pass).toBe(false);
-  expect(r.excerpts?.join(' ')).toContain('Zorp');
-  expect(judgeRecord('srd', real, ocr).excerpts ?? []).toEqual([]);
+test('judge: wrong number fails, own words pass', () => {
+  expect(judgeRecord(own, ocr).pass).toBe(true);
+  expect(judgeRecord(own.replace('1d10', '1d12'), ocr).reasons.join()).toContain('1d12');
+  expect(judgeRecord('You hurl a mote of fire at a creature or object within range.', ocr).pass).toBe(false);
 });
