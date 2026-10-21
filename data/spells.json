@@ -1,5 +1,291 @@
 [
   {
+    "id": "acid-splash",
+    "name": "Acid Splash",
+    "level": 0,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 211,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "1d6",
+        "type": "Acid"
+      },
+      "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You hurl a bubble of acid at one creature within 60 ft, or at two creatures within 5 ft of each other. Each target makes a Dexterity save or takes 1d6 acid damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "alarm",
+    "name": "Alarm",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "30 feet",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "ranger",
+      "wizard"
+    ],
+    "page": 211,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a bell and a piece of silver wire",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Ward a door, window or area up to a 20 ft cube within 30 ft. For 8 hours, any creature of a kind you did not exempt that touches or enters the area sets off an alert. You choose a mental ping that wakes you if within 1 mile, or a bell sound for 10 seconds that carries 60 ft.",
+      "You can ritual cast it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "animal-friendship",
+    "name": "Animal Friendship",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger"
+    ],
+    "page": 212,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a morsel of food",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Aim at a beast within 30 ft that can see and hear you. It makes a Wisdom save or is charmed for 24 hours. A beast with Intelligence 4 or more is immune.",
+      "The charm ends if you or an ally harm the beast."
+    ],
+    "higherLevels": "Each slot level above 1 lets you affect 1 more beast.",
+    "textSource": "summary"
+  },
+  {
+    "id": "armor-of-agathys",
+    "name": "Armor of Agathys",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "page": 215,
+    "summary": {
+      "resolution": "none",
+      "upcast": "+5 temporary hit points and +5 cold damage per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a cup of water",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A frosty shell gives you 5 temporary hit points for 1 hour. While any of those remain, a creature that hits you with a melee attack takes 5 cold damage.",
+      "The spell ends when the temporary hit points are gone."
+    ],
+    "higherLevels": "Each slot level above 1 adds 5 temporary hit points and 5 cold damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "arms-of-hadar",
+    "name": "Arms of Hadar",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (10-foot radius)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "page": 215,
+    "summary": {
+      "resolution": "save",
+      "save": "str",
+      "damage": {
+        "dice": "2d6",
+        "type": "Necrotic"
+      },
+      "upcast": "+1d6 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Dark tentacles erupt from you in a 10 ft radius. Each creature in the area makes a Strength save, taking 2d6 necrotic damage on a failure or half on a success.",
+      "A creature that fails also cannot take reactions until its next turn."
+    ],
+    "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "bane",
+    "name": "Bane",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric"
+    ],
+    "page": 216,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a drop of blood",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Up to 3 creatures within 30 ft each make a Charisma save. On a failure, for the duration (concentration, 1 minute) the creature rolls a d4 on each attack roll and saving throw and subtracts it."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1 target.",
+    "textSource": "summary"
+  },
+  {
+    "id": "blade-ward",
+    "name": "Blade Ward",
+    "level": 0,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 218,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Your next turn ends the effect. Until then, weapon attacks that deal bludgeoning, piercing or slashing damage to you do only half."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "bless",
+    "name": "Bless",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "page": 219,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a sprinkling of holy water",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Up to 3 creatures within 30 ft are blessed for 1 minute (concentration). Each rolls a d4 on every attack roll and saving throw and adds it to the result."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1 target.",
+    "textSource": "summary"
+  },
+  {
     "id": "burning-hands",
     "name": "Burning Hands",
     "level": 1,
@@ -35,6 +321,294 @@
       "Flames fan out from your hands in a 15 ft cone. Each creature in the cone makes a Dexterity save, taking 3d6 fire damage on a failure or half on a success. Loose flammable objects in the cone ignite."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "charm-person",
+    "name": "Charm Person",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 221,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Pick a humanoid you can see within 30 ft. It makes a Wisdom save, with advantage if you or your allies are fighting it. Failing, it is charmed for 1 hour, and sees you as a friendly acquaintance. Harming it ends the charm.",
+      "It knows afterwards that you magically influenced it."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other.",
+    "textSource": "summary"
+  },
+  {
+    "id": "chill-touch",
+    "name": "Chill Touch",
+    "level": 0,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 221,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d8",
+        "type": "Necrotic"
+      },
+      "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Ranged spell attack, 120 ft. A hit deals 1d8 necrotic damage, and the target cannot heal until your next turn begins. An undead target is also at disadvantage when it attacks you until then.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "chromatic-orb",
+    "name": "Chromatic Orb",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 221,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "3d8",
+        "type": "Varies"
+      },
+      "upcast": "+1d8 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a diamond worth 50 gp",
+        "costGp": 50,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Make a ranged spell attack against a creature within 90 ft. A hit deals 3d8 damage of a type you pick: acid, cold, fire, lightning, poison or thunder."
+    ],
+    "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "color-spray",
+    "name": "Color Spray",
+    "level": 1,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (15-foot cone)",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 222,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a pinch of powder or sand coloured red, yellow and blue",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A burst of colour fills a 15 ft cone. Roll 6d10: starting from the lowest-HP creature, blind creatures in the cone whose current hit points fit within that total, subtracting each from the pool.",
+      "Blindness lasts until the end of your next turn. Unconscious creatures and those that cannot see are skipped."
+    ],
+    "higherLevels": "Each slot level above 1 adds 2d10 to the roll.",
+    "textSource": "summary"
+  },
+  {
+    "id": "command",
+    "name": "Command",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "page": 223,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Speak a one-word order to a creature within 60 ft that understands you. It makes a Wisdom save or obeys on its next turn. Undead are immune, as is anything the order would directly harm.",
+      "Sample words: Approach (walks toward you), Drop (releases what it holds), Flee (runs away), Grovel (falls prone), Halt (stands still, no actions)."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other.",
+    "textSource": "summary"
+  },
+  {
+    "id": "compelled-duel",
+    "name": "Compelled Duel",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 224,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A creature within 30 ft that can see or hear you makes a Wisdom save. On a failure, for up to 1 minute (concentration) it has disadvantage on attacks against anyone but you, and needs a successful Wisdom save to willingly move more than 30 ft from you.",
+      "The effect ends if you attack someone else or cast a spell at a creature other than the target, if an ally of yours hurts the target, or if you end a turn more than 30 ft from it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "comprehend-languages",
+    "name": "Comprehend Languages",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 224,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a pinch of soot and salt",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 1 hour, you understand any spoken language you hear. If you touch a surface bearing writing, you can read it too, taking about 1 minute per page.",
+      "It does not reveal hidden meaning, secret codes or non-written symbols. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "create-or-destroy-water",
+    "name": "Create or Destroy Water",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid"
+    ],
+    "page": 229,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a drop of water for creating, or a few grains of sand for destroying",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Pick one effect, aimed within 30 ft:",
+      "• Create: fills an open container with up to 10 gallons of fresh water, or rain soaks a 30 ft cube and douses flames there.",
+      "• Destroy: removes up to 10 gallons of water from an open container, or burns off fog in a 30 ft cube."
+    ],
+    "higherLevels": "Each slot level above 1 adds 5 gallons, or 5 ft to the cube's side.",
     "textSource": "summary"
   },
   {
@@ -77,6 +651,558 @@
       "A creature you touch regains 1d8 hit points plus your spellcasting modifier. Undead and constructs are not healed."
     ],
     "higherLevels": "Healing rises by 1d8 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "dancing-lights",
+    "name": "Dancing Lights",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 230,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a bit of phosphorus, wychwood or a glowworm",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Up to 4 torch-like lights hover at points within 120 ft for up to 1 minute (concentration), or you can fuse them into one glowing humanoid form. Each gives dim light in a 10 ft radius.",
+      "Use a bonus action to shift any of them up to 60 ft. Keep them within 20 ft of one another; any that ends up over 120 ft from you vanishes."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "detect-evil-and-good",
+    "name": "Detect Evil and Good",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "page": 231,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For up to 10 minutes (concentration) you sense whether aberrations, celestials, elementals, fey, fiends or undead are within 30 ft, and where. You also sense places or objects within 30 ft that are consecrated or desecrated.",
+      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "detect-magic",
+    "name": "Detect Magic",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 231,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For up to 10 minutes (concentration) you sense magic within 30 ft. As an action you can see a faint aura around any magical creature or object in line of sight, and learn its school of magic.",
+      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "detect-poison-and-disease",
+    "name": "Detect Poison and Disease",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": true,
+    "classes": [
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger"
+    ],
+    "page": 231,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a yew leaf",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For up to 10 minutes (concentration) you sense poisons, poisonous creatures and diseases within 30 ft, learning what kind of each one it is and where.",
+      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "disguise-self",
+    "name": "Disguise Self",
+    "level": 1,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 233,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 1 hour you look different, including clothes, armor and gear: up to 1 ft taller or shorter, thin, fat or in between, any humanoid shape. Your stats do not change and the illusion does not alter touch.",
+      "A creature that inspects you can make an Investigation check against your spell save DC to see through it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "dissonant-whispers",
+    "name": "Dissonant Whispers",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard"
+    ],
+    "page": 234,
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "3d6",
+        "type": "Psychic"
+      },
+      "upcast": "+1d6 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You whisper a horrible tune only one creature within 60 ft can hear. It makes a Wisdom save, taking 3d6 psychic damage on a failure or half on a success.",
+      "On a failure it must also use its reaction to flee as far as it can by its speed, avoiding dangerous ground. A deafened creature is immune."
+    ],
+    "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-favor",
+    "name": "Divine Favor",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 234,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d4",
+        "type": "Radiant"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 1 minute (concentration), each time you hit with a weapon attack you add 1d4 radiant damage."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "druidcraft",
+    "name": "Druidcraft",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 236,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Choose one minor nature trick within 30 ft:",
+      "• Forecast the next 24 hours of weather.",
+      "• Force a flower to open or a bud to sprout at once.",
+      "• Produce a harmless sensory effect: drifting leaves, a gust, an animal call, a whiff of scent.",
+      "• Ignite or douse a candle, torch or small campfire."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-blast",
+    "name": "Eldritch Blast",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "page": 237,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d10",
+        "type": "Force"
+      },
+      "upcast": "1d10 at level 5, 1d10 at level 11, 1d10 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Make a ranged spell attack against a creature within 120 ft. A hit deals 1d10 force damage.",
+      "At level 5 you fire 2 beams, at level 11 3 beams and at level 17 4 beams. Each beam needs its own attack roll and may go at the same or different targets."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "ensnaring-strike",
+    "name": "Ensnaring Strike",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "page": 237,
+    "summary": {
+      "resolution": "save",
+      "save": "str",
+      "damage": {
+        "dice": "1d6",
+        "type": "Piercing"
+      },
+      "upcast": "+1d6 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Your next weapon hit within 1 minute (concentration) also conjures thorny vines around the target. It makes a Strength save (advantage if Large or bigger) or is restrained.",
+      "Each of its turns begins with 1d6 piercing damage while the vines hold. To escape, it spends an action and beats your spell save DC with a Strength check, ending the vines."
+    ],
+    "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "entangle",
+    "name": "Entangle",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 238,
+    "summary": {
+      "resolution": "save",
+      "save": "str"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Thick weeds and vines sprout across a 20 ft square within 90 ft for up to 1 minute (concentration), making it difficult terrain. Anyone inside when you cast it makes a Strength save or is restrained.",
+      "To break free, a restrained creature spends an action and beats your spell save DC with a Strength check. The growth fades when the spell ends."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "expeditious-retreat",
+    "name": "Expeditious Retreat",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 238,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For up to 10 minutes (concentration), you may Dash as a bonus action on every turn, starting with the turn you cast this."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "faerie-fire",
+    "name": "Faerie Fire",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "page": 239,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Pick a 20 ft cube within 60 ft. Objects in it glow blue, green or violet (your choice); each creature in it makes a Dexterity save and, on a failure, glows too. This lasts up to 1 minute (concentration).",
+      "Glowing things shed dim light for 10 ft, attacks against them have advantage, and invisibility does not hide them."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "false-life",
+    "name": "False Life",
+    "level": 1,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 239,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d4+4",
+        "type": "Healing",
+        "healing": true
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a little alcohol or distilled spirits",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You gain 1d4+4 temporary hit points for 1 hour."
+    ],
+    "higherLevels": "Each slot level above 1 adds 5 temporary hit points.",
+    "textSource": "summary"
+  },
+  {
+    "id": "feather-fall",
+    "name": "Feather Fall",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "reaction",
+      "text": "1 reaction",
+      "trigger": "when you or a creature within 60 ft falls"
+    },
+    "range": "60 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 239,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false,
+      "m": {
+        "text": "a small feather or piece of down",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Reaction when a creature within 60 ft falls. Up to 5 falling creatures within range slow to 60 ft per round and take no falling damage when they land, for 1 minute."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "find-familiar",
+    "name": "Find Familiar",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 hour"
+    },
+    "range": "10 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "wizard"
+    ],
+    "page": 240,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "10 gp of charcoal, incense and herbs, burned in a brazier",
+        "costGp": 10,
+        "consumed": true
+      }
+    },
+    "description": [
+      "Over 1 hour, you gain a spirit servant in the shape of a tiny beast you pick, such as a cat, owl, hawk, raven or rat. It acts on its own initiative and obeys your commands, but cannot attack.",
+      "You can see through its eyes and speak into its mind while within 1 mile. When you cast a touch-range spell, it can deliver it with its reaction. Dismiss it into a pocket space or call it back as an action. It vanishes at 0 hit points."
+    ],
     "textSource": "summary"
   },
   {
@@ -160,6 +1286,146 @@
     "textSource": "summary"
   },
   {
+    "id": "fog-cloud",
+    "name": "Fog Cloud",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 243,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You raise a 20 ft radius sphere of fog centred on a point within 120 ft, for up to 1 hour (concentration). It spreads around corners and heavily obscures the area. A strong wind (10 mph or more) disperses it in 1 minute."
+    ],
+    "higherLevels": "Each slot level above 1 adds 20 ft to the radius.",
+    "textSource": "summary"
+  },
+  {
+    "id": "friends",
+    "name": "Friends",
+    "level": 0,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 244,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true,
+      "m": {
+        "text": "a little makeup applied to your face as you cast",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For up to 1 minute you have advantage on Charisma checks against one non-hostile creature of your choice.",
+      "When the spell ends, that creature realizes you used magic on it and becomes hostile toward you. A violent creature may attack you; others may react in ways the DM decides."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "goodberry",
+    "name": "Goodberry",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 246,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a sprig of mistletoe",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Up to 10 berries appear in your hand and hold magic for 24 hours. Eating one restores 1 hit point and feeds a creature for the day.",
+      "The berries lose their magic if not eaten within 24 hours."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "grease",
+    "name": "Grease",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 246,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a bit of pork rind or butter",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Slick grease covers a 10 ft square on the ground within 60 ft for 1 minute, making it difficult terrain. Anyone standing in it when you cast it makes a Dexterity save or falls prone.",
+      "A creature that enters or ends its turn there makes the same save."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "guidance",
     "name": "Guidance",
     "level": 0,
@@ -188,6 +1454,225 @@
     "description": [
       "Touch a willing creature. Once before the spell ends, it can roll a d4 and add the result to one ability check of its choice. The spell then ends."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "guiding-bolt",
+    "name": "Guiding Bolt",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 248,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d6",
+        "type": "Radiant"
+      },
+      "upcast": "+1d6 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Make a ranged spell attack against a creature within 120 ft. A hit deals 4d6 radiant damage, and the next attack roll made against the target before the end of your next turn has advantage, thanks to the glow."
+    ],
+    "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "hail-of-thorns",
+    "name": "Hail of Thorns",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "page": 249,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "1d10",
+        "type": "Piercing"
+      },
+      "upcast": "+1d10 per slot level above 1, up to 6d10"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Your next ranged weapon hit within 1 minute (concentration) also bursts into thorns. The target and every creature within 5 ft of it make a Dexterity save, taking 1d10 piercing damage on a failure or half on a success.",
+      "The spell ends once that happens."
+    ],
+    "higherLevels": "Damage rises by 1d10 for each slot level above 1, to a maximum of 6d10.",
+    "textSource": "summary"
+  },
+  {
+    "id": "healing-word",
+    "name": "Healing Word",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d4",
+        "type": "Healing",
+        "healing": true,
+        "plusMod": true
+      },
+      "upcast": "+1d4 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A creature you can see within 60 ft regains 1d4 hit points plus your spellcasting modifier. Undead and constructs are not healed."
+    ],
+    "higherLevels": "Healing rises by 1d4 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "hellish-rebuke",
+    "name": "Hellish Rebuke",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "reaction",
+      "text": "1 reaction",
+      "trigger": "when a creature you can see within 60 ft damages you"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "2d10",
+        "type": "Fire"
+      },
+      "upcast": "+1d10 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Reaction when a creature you can see within 60 ft damages you. Flames wreath it, and it makes a Dexterity save, taking 2d10 fire damage on a failure or half on a success."
+    ],
+    "higherLevels": "Damage rises by 1d10 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "heroism",
+    "name": "Heroism",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "paladin"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you touch gains courage for 1 minute (concentration). It cannot be frightened, and each of its turns begins with temporary hit points granted to it, equal to your spellcasting modifier."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1 target.",
+    "textSource": "summary"
+  },
+  {
+    "id": "hex",
+    "name": "Hex",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "page": 251,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d6",
+        "type": "Necrotic"
+      },
+      "upcast": "slots 3-4: concentration up to 8 hours; slots 5+: up to 24 hours"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "the petrified eye of a newt",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Curse one creature within 90 ft you can see for up to 1 hour (concentration). Each time you hit it with an attack you deal an extra 1d6 necrotic damage, and it has disadvantage on checks with one ability score you choose when you cast the spell.",
+      "If it drops to 0 hit points, you can move the curse to a new creature within range as a bonus action."
+    ],
+    "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
     "textSource": "summary"
   },
   {
@@ -231,6 +1716,256 @@
     "textSource": "summary"
   },
   {
+    "id": "hunters-mark",
+    "name": "Hunter's Mark",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "page": 251,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Mark a creature you can see within 90 ft as your quarry for up to 1 hour (concentration). Each hit you land on it with a weapon deals 1d6 extra damage, and you have advantage on Perception and Survival checks to find it.",
+      "If it drops to 0 hit points, you can move the mark to a new creature within range as a bonus action."
+    ],
+    "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
+    "textSource": "summary"
+  },
+  {
+    "id": "identify",
+    "name": "Identify",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 252,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a pearl worth 100 gp and an owl feather",
+        "costGp": 100,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Over 1 minute, touch an object to learn its magic properties, how to use them and whether it needs attunement, and how many charges it has. Touch a creature to learn which spells, if any, currently affect it.",
+      "If you touch an object while casting, you do not learn what a spell on it does. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "illusory-script",
+    "name": "Illusory Script",
+    "level": 1,
+    "school": "Illusion",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Touch",
+    "duration": "10 days",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "warlock",
+      "wizard"
+    ],
+    "page": 252,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true,
+      "m": {
+        "text": "lead-based ink worth 10 gp, which the spell uses up",
+        "costGp": 10,
+        "consumed": true
+      }
+    },
+    "description": [
+      "Over 1 minute you write on parchment, paper or similar material, and the writing looks like a different message or script to everyone but you and those you name. It lasts 10 days.",
+      "The designated readers see the real text. Anyone else sees unreadable gibberish or a false message. Dispel magic reveals it. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "inflict-wounds",
+    "name": "Inflict Wounds",
+    "level": 1,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 253,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "3d10",
+        "type": "Necrotic"
+      },
+      "upcast": "+1d10 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You strike a creature you touch with a melee spell attack. If it hits, the target takes 3d10 necrotic damage."
+    ],
+    "higherLevels": "Damage rises by 1d10 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "jump",
+    "name": "Jump",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 254,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a grasshopper's hind leg",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you touch can jump three times as far as normal for 1 minute. It does not need a run-up, and the extra distance does not use more movement."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "light",
+    "name": "Light",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 255,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": false,
+      "m": {
+        "text": "a firefly or phosphorescent moss",
+        "consumed": false
+      }
+    },
+    "description": [
+      "One object up to 10 ft across glows for 1 hour: bright light 20 ft out, dim light another 20 ft, in any colour you pick. Something opaque placed over it hides the glow, and casting the spell again ends it.",
+      "If a hostile creature carries the object, it can make a Dexterity save to avoid the spell."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "longstrider",
+    "name": "Longstrider",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger",
+      "wizard"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a pinch of dirt",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you touch gains +10 ft of speed for 1 hour."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1 target.",
+    "textSource": "summary"
+  },
+  {
     "id": "mage-armor",
     "name": "Mage Armor",
     "level": 1,
@@ -261,6 +1996,39 @@
     },
     "description": [
       "Touch a willing creature that wears no armor. For 8 hours its base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor or you dismiss it as an action."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "mage-hand",
+    "name": "Mage Hand",
+    "level": 0,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A floating hand appears at a point within 30 ft and stays for 1 minute. It disappears if you dismiss it, recast the spell, or move more than 30 ft from it.",
+      "Use an action to move it 30 ft and have it handle something: open an unlocked door, take an item from or put one into an open container, or pour out a vial. It cannot attack, activate magic items, or lift over 10 lb."
     ],
     "textSource": "summary"
   },
@@ -304,6 +2072,117 @@
     "textSource": "summary"
   },
   {
+    "id": "mending",
+    "name": "Mending",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 259,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "two lodestones",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Touch a break or rip in an object, such as a snapped chain link or torn cloak, no longer than 1 ft, and it knits back together without a trace.",
+      "It cannot restore magic to a magic item, and it does not work on constructs."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "message",
+    "name": "Message",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 259,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a short piece of copper wire",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Point at a creature within 120 ft and whisper. Only it hears you, and it can whisper an answer only you hear.",
+      "No line of sight is needed, and it travels around corners. It cannot pass 1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood, and silence stops it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "minor-illusion",
+    "name": "Minor Illusion",
+    "level": 0,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 260,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true,
+      "m": {
+        "text": "a bit of fleece",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You make either a sound or a still image of an object, lasting 1 minute. A sound can be a whisper to a scream and can shift in volume or tone. An image fits in a 5 ft cube and has no sound, smell or light of its own.",
+      "Anyone who inspects it can make an Investigation check against your spell save DC to see through it. Touching it also exposes it. Casting the spell again replaces the old illusion."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "misty-step",
     "name": "Misty Step",
     "level": 2,
@@ -332,6 +2211,83 @@
     },
     "description": [
       "In a puff of silver mist you teleport up to 30 ft to an empty space you can see. It costs only a bonus action and needs just a spoken word, no gestures."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "poison-spray",
+    "name": "Poison Spray",
+    "level": 0,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "10 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 266,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "1d12",
+        "type": "Poison"
+      },
+      "upcast": "2d12 at level 5, 3d12 at level 11, 4d12 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You puff noxious gas at a creature within 10 ft. It makes a Constitution save or takes 1d12 poison damage.",
+      "Damage rises to 2d12 at level 5, 3d12 at level 11 and 4d12 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "prestidigitation",
+    "name": "Prestidigitation",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "10 feet",
+    "duration": "Up to 1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 267,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Minor magic tricks, all within 10 ft. Pick up to 3 of these effects to be active at once, each lasting up to 1 hour (or until you dismiss it as an action):",
+      "• A harmless sensory flourish: sparks, chimes, odd smells, a faint symbol.",
+      "• Light or snuff a flame.",
+      "• Clean or soil an object up to 1 cubic ft.",
+      "• Chill, warm or flavour 1 cubic ft of non-living material for 1 hour.",
+      "• Put a colour, mark or symbol on an object or surface for 1 hour.",
+      "• Make a trinket or illusory image that fits in your hand and lasts until your next turn ends."
     ],
     "textSource": "summary"
   },
@@ -373,6 +2329,74 @@
     "textSource": "summary"
   },
   {
+    "id": "protection-from-evil-and-good",
+    "name": "Protection from Evil and Good",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin",
+      "warlock",
+      "wizard"
+    ],
+    "page": 270,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "holy water, or powdered silver and iron (used up)",
+        "consumed": true
+      }
+    },
+    "description": [
+      "A willing creature you touch gains a ward for up to 10 minutes (concentration) against aberrations, celestials, elementals, fey, fiends and undead. Those creatures attack it at disadvantage and cannot possess it or charm or frighten it.",
+      "If it is already under such an effect, it gets a new save against it with advantage."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "purify-food-and-drink",
+    "name": "Purify Food and Drink",
+    "level": 1,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "10 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "cleric",
+      "druid",
+      "paladin"
+    ],
+    "page": 270,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "All non-magical food and drink in a 5 ft radius sphere centred on a point within 10 ft is cleansed of poison and disease. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "ray-of-frost",
     "name": "Ray of Frost",
     "level": 0,
@@ -410,6 +2434,184 @@
     "textSource": "summary"
   },
   {
+    "id": "ray-of-sickness",
+    "name": "Ray of Sickness",
+    "level": 1,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 271,
+    "summary": {
+      "resolution": "attack",
+      "save": "con",
+      "damage": {
+        "dice": "2d8",
+        "type": "Poison"
+      },
+      "upcast": "+1d8 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Make a ranged spell attack against a creature within 60 ft. A hit deals 2d8 poison damage, and the target makes a Constitution save or is poisoned until the end of your next turn."
+    ],
+    "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "resistance",
+    "name": "Resistance",
+    "level": 0,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid"
+    ],
+    "page": 272,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a miniature cloak",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You touch a willing creature. Once before the spell ends, it can roll a d4 and add it to one saving throw of its choice, before or after rolling the save. The spell then ends."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "sacred-flame",
+    "name": "Sacred Flame",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 272,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "1d8",
+        "type": "Radiant"
+      },
+      "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Radiance falls on a creature you can see within 60 ft. It makes a Dexterity save or takes 1d8 radiant damage. Cover gives it no bonus to this save.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "sanctuary",
+    "name": "Sanctuary",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "30 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 272,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a small silver mirror",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Bonus action. Ward a creature within 30 ft for 1 minute. Anyone who targets it with an attack or harmful spell must first make a Wisdom save, or pick a new target or lose the attack or spell.",
+      "Area effects are not stopped. The ward ends if the warded creature attacks, casts a spell at an enemy, or deals damage."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "searing-smite",
+    "name": "Searing Smite",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 274,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "1d6",
+        "type": "Fire"
+      },
+      "upcast": "+1d6 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Your next melee weapon hit within 1 minute (concentration) also deals 1d6 fire damage and ignites the target. Each of its turns then opens with another 1d6 fire damage.",
+      "Right after taking that burn, it makes a Constitution save; success puts the flames out and ends the spell."
+    ],
+    "higherLevels": "The extra damage on the hit rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
     "id": "shield",
     "name": "Shield",
     "level": 1,
@@ -438,6 +2640,40 @@
     },
     "description": [
       "Until your next turn begins, you gain +5 AC, which also applies to the attack that triggered the spell. For the same time you take no harm from magic missile."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "shield-of-faith",
+    "name": "Shield of Faith",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "page": 275,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a small parchment with holy text written on it",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature within 60 ft is surrounded by a shimmering field and gains +2 AC for up to 10 minutes (concentration)."
     ],
     "textSource": "summary"
   },
@@ -472,6 +2708,357 @@
     },
     "description": [
       "A club or quarterstaff you hold turns magical for 1 minute. Your melee attacks with it, for hit and damage, rely on your spellcasting ability rather than Strength, and it deals a d8. Recasting the spell or dropping the weapon ends it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "shocking-grasp",
+    "name": "Shocking Grasp",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 275,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d8",
+        "type": "Lightning"
+      },
+      "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Make a melee spell attack against a creature you touch, with advantage if it wears metal armor. A hit deals 1d8 lightning damage, and the target cannot take reactions until its next turn begins.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "silent-image",
+    "name": "Silent Image",
+    "level": 1,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 276,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a bit of fleece",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You create an image of an object, creature or effect within 60 ft, no larger than a 15 ft cube. It makes no sound, smell or other sensation, and lasts up to 10 minutes (concentration).",
+      "As an action you can move it anywhere in range, and its look can change to match. A creature can study it and make an Investigation check against your spell save DC to see through it. Touching it reveals it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "sleep",
+    "name": "Sleep",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 276,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "5d8",
+        "type": ""
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "fine sand, rose petals or a cricket",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Roll 5d8 for a pool of hit points. Pick a point within 90 ft; creatures within 20 ft of it fall asleep, lowest current hit points first, each one's total spent from the pool.",
+      "A sleeper is unconscious for 1 minute, until it takes damage, or until someone uses an action to wake it. Undead and creatures immune to charm are skipped."
+    ],
+    "higherLevels": "Each slot level above 1 adds 2d8 to the roll.",
+    "textSource": "summary"
+  },
+  {
+    "id": "spare-the-dying",
+    "name": "Spare the Dying",
+    "level": 0,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 277,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Touch a living creature at 0 hit points. It becomes stable. Undead and constructs are unaffected."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "speak-with-animals",
+    "name": "Speak with Animals",
+    "level": 1,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "10 minutes",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger"
+    ],
+    "page": 277,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 10 minutes you can understand and talk with beasts. Their knowledge is limited, but they can tell you about nearby places and monsters, and may do a small favour at the DM's discretion. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "tashas-hideous-laughter",
+    "name": "Tasha's Hideous Laughter",
+    "level": 1,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 280,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "tiny tarts, a feather",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature within 30 ft with Intelligence 5 or more makes a Wisdom save. On a failure it collapses in fits of laughter, prone and incapacitated and unable to stand, for up to 1 minute (concentration).",
+      "Each time its turn ends it repeats the save, and it also repeats it (with advantage) whenever it is hurt. Passing ends the spell."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "tensers-floating-disk",
+    "name": "Tenser's Floating Disk",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "wizard"
+    ],
+    "page": 282,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a drop of mercury",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A flat disc of force, 3 ft across and 1 inch thick, appears on the ground within 30 ft for 1 hour. It carries up to 500 lb, floats 3 ft up, and follows you, staying within 20 ft.",
+      "It will not leave the spot if you move over 100 ft away, and it vanishes when the spell ends, dropping its load. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "thaumaturgy",
+    "name": "Thaumaturgy",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Up to 1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 282,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You make a small show of wonder within 30 ft. Up to 3 of these can run at once, each for up to 1 minute (dismiss any as an action):",
+      "• Your voice booms up to 3 times louder.",
+      "• Flames flicker, brighten, dim or change colour.",
+      "• Harmless tremors shake the ground.",
+      "• A sound of your choice comes from a point you pick.",
+      "• A door or window flies open or slams shut.",
+      "• Your eyes change appearance."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "thorn-whip",
+    "name": "Thorn Whip",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 282,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d6",
+        "type": "Piercing"
+      },
+      "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "the stem of a plant with thorns",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Make a melee spell attack against a creature within 30 ft. A hit deals 1d6 piercing damage, and if the target is Large or smaller you can yank it up to 10 ft closer to you.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "thunderous-smite",
+    "name": "Thunderous Smite",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 282,
+    "summary": {
+      "resolution": "save",
+      "save": "str",
+      "damage": {
+        "dice": "2d6",
+        "type": "Thunder"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Your next melee weapon hit within 1 minute (concentration) rings with a thunderclap audible 300 ft away and deals 2d6 extra thunder damage. The target makes a Strength save or is pushed 10 ft away and knocked prone."
     ],
     "textSource": "summary"
   },
@@ -514,6 +3101,187 @@
       "Loose objects in the cube are pushed 10 ft too, and the boom can be heard 300 ft away."
     ],
     "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "true-strike",
+    "name": "True Strike",
+    "level": 0,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 round",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 284,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true
+    },
+    "description": [
+      "Pick a creature within 30 ft that you can see. Next turn, your first attack roll against it has advantage, provided the spell is still going (concentration, ends after your next turn)."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "unseen-servant",
+    "name": "Unseen Servant",
+    "level": 1,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "warlock",
+      "wizard"
+    ],
+    "page": 284,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "string, a bit of wood",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A Large, formless, invisible force with no mind appears at a spot within 60 ft and lasts 1 hour. Its AC is 10, it has 1 hit point and Strength 2, and you command it with a bonus action.",
+      "It does simple chores: fetching, cleaning, mending, folding, lighting fires, serving food and pouring drinks. It moves 15 ft, lifts up to 30 lb and cannot attack. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "vicious-mockery",
+    "name": "Vicious Mockery",
+    "level": 0,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard"
+    ],
+    "page": 285,
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "1d4",
+        "type": "Psychic"
+      },
+      "upcast": "2d4 at level 5, 3d4 at level 11, 4d4 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You hurl a cutting insult at a creature within 60 ft that can hear you. It makes a Wisdom save or takes 1d4 psychic damage and has disadvantage on its next attack roll before the end of its next turn.",
+      "Damage rises to 2d4 at level 5, 3d4 at level 11 and 4d4 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "witch-bolt",
+    "name": "Witch Bolt",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 289,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d12",
+        "type": "Lightning"
+      },
+      "upcast": "+1d12 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "twig from a lightning-struck tree",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Make a ranged spell attack against a creature within 30 ft. A hit deals 1d12 lightning damage and links you to the target with a beam for up to 1 minute (concentration).",
+      "On each later turn you can use your action to zap it for 1d12 lightning damage with no roll. The link breaks if you use your action on anything else, or if the target ends up out of range or behind full cover."
+    ],
+    "higherLevels": "The first hit's damage rises by 1d12 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "wrathful-smite",
+    "name": "Wrathful Smite",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 289,
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "1d6",
+        "type": "Psychic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Your next melee weapon hit within 1 minute (concentration) deals 1d6 extra psychic damage and frightens the target. It makes a Wisdom save or stays frightened until the spell ends.",
+      "While frightened it can use an action to repeat the save, ending the spell on success."
+    ],
     "textSource": "summary"
   }
 ]
