@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'preact/hooks';
+import { DATA } from './data';
 import { parseHash } from './router';
 import { Start } from './ui/screens/Start';
 import { LevelPicker } from './ui/screens/LevelPicker';
@@ -15,6 +16,7 @@ export function App() {
     return () => removeEventListener('hashchange', on);
   }, []);
   const r = parseHash(hash);
+  if ('cls' in r && !DATA.classes.some((c) => c.id === r.cls)) return <Start />;
   switch (r.page) {
     case 'level': return <LevelPicker cls={r.cls} />;
     case 'menu': return <Menu cls={r.cls} level={r.level} />;

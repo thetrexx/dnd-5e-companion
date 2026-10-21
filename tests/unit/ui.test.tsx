@@ -49,6 +49,9 @@ test('Separator shows label, sub in colour, mirrored ornament', () => {
   const r = render(<Separator ornament="X" label="Wizard" sub="Cantrips" color="red" full />);
   expect(r.getByText('Wizard')).toBeTruthy();
   expect((r.getByText('Cantrips') as HTMLElement).style.color).toBe('red');
+  expect((r.getByText('Wizard') as HTMLElement).style.color).toBe('');
+  expect((r.container.querySelector('.orn') as HTMLElement).style.color).toBe('red');
+  expect((r.container.querySelector('.sep') as HTMLElement).style.color).toBe('');
   expect(r.container.querySelectorAll('.orn').length).toBe(2);
   expect(r.container.querySelector('.sep-full')).toBeTruthy();
   const orns = r.container.querySelectorAll('.orn');

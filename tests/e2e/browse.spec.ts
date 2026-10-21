@@ -32,3 +32,7 @@ test('bg3 icon failure shows fallback', async ({ page }) => {
   await page.goto('./#/spells/wizard/3');
   await expect(page.locator('img[src*="/icons/fallback/"]').first()).toBeVisible();
 });
+test('class missing from data falls back to start', async ({ page }) => {
+  await page.goto('./#/menu/cleric/3');
+  await expect(page.getByText('My Character Sheet')).toBeVisible();
+});

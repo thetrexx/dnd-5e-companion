@@ -20,7 +20,7 @@
 .row{position:relative;display:flex;align-items:center;width:100%;text-align:left;font:inherit;font-size:13px;line-height:1.25;color:var(--text);text-shadow:var(--text-shadow);border:1px solid var(--border);border-radius:6px;padding:9px 10px;margin-bottom:6px;cursor:pointer;overflow-wrap:anywhere}
 .row.dim{opacity:var(--dimmed-opacity)}
 .rl{display:flex;align-items:center;gap:9px}
-.ri{width:24px;height:24px;flex:none;object-fit:contain;filter:drop-shadow(0 1px 2px var(--bg))}
+.ri{width:24px;height:24px;flex:none;object-fit:contain;filter:var(--icon-shadow)}
 .slot{position:relative;display:inline-flex;align-items:center;justify-content:center;flex:none;width:24px}
 .slot img{width:20px;height:20px}
 .slot b{position:absolute;font:500 10px/1 var(--font-body);color:var(--slot-num);text-shadow:var(--slot-num-shadow)}

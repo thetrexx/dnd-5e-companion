@@ -1,5 +1,5 @@
 /* Separator */
-.sep{display:flex;align-items:center;gap:8px;margin:12px 0 8px;color:var(--sep-color,var(--accent));font-family:var(--font-title);font-size:17px;letter-spacing:3px;text-shadow:var(--text-shadow)}
+.sep{display:flex;align-items:center;gap:8px;margin:12px 0 8px;color:var(--accent);font-family:var(--font-title);font-size:17px;letter-spacing:3px;text-shadow:var(--text-shadow)}
 .sep-full{margin-left:-16px;margin-right:-16px}
 .sep .orn{font-family:var(--font-orn);font-size:24px;letter-spacing:0;line-height:1}
 .sep .flip{display:inline-block;transform:scaleX(-1)}

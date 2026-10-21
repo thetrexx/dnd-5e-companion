@@ -16,6 +16,7 @@
   --explain-text:#ddd2bd;
   --text-shadow:0 1px 2px rgb(0 0 0/.85),0 0 8px rgb(0 0 0/.55);
   --row-wash:10%;
+  --icon-shadow:drop-shadow(0 1px 2px var(--bg));
   --row-motif-scale:20%;
   --dimmed-opacity:.4;
   --disabled-opacity:.45;

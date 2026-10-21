@@ -22,7 +22,7 @@ export function SectionPage(p: {
       </header>
       <div class="scroller" id="scroller">
         {p.empty ? <p class="empty">{p.empty}</p> : null}
-        {p.sections.map((s) => (
+        {p.sections.filter((s) => s.items.length > 0).map((s) => (
           <section key={s.id} id={s.id} class={`sec${s.locked ? ' locked' : ''}`}>
             <Separator ornament={'☙'} label={s.title} sub={s.subtitle}
               color={s.motif ? `var(--${s.motif}-line)` : undefined} />
