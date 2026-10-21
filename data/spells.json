@@ -279,7 +279,7 @@
       }
     },
     "description": [
-      "Up to 3 creatures within 30 ft are blessed for 1 minute (concentration). Each rolls a d4 on every attack roll and saving throw and adds it to the result."
+      "Up to 3 creatures within 30 ft are blessed for 1 minute (concentration). Whenever a target attacks or saves, it can roll a d4 and add it to the result."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
     "textSource": "summary"
@@ -922,7 +922,7 @@
       "Choose one minor nature trick within 30 ft:",
       "• Forecast the next 24 hours of weather.",
       "• Force a flower to open or a bud to sprout at once.",
-      "• Produce a harmless sensory effect: drifting leaves, a gust, an animal call, a whiff of scent.",
+      "• Produce an instant, harmless sensory effect that fits in a 5 ft cube: drifting leaves, a gust, an animal call, a whiff of scent.",
       "• Ignite or douse a candle, torch or small campfire."
     ],
     "textSource": "summary"
@@ -2815,7 +2815,7 @@
     },
     "description": [
       "Roll 5d8 to get a pool of hit points. Choose a point within 90 ft: creatures within 20 ft of it drop off in order of lowest current hit points, skipping those already unconscious. Each one's hit points are deducted from the pool, and a creature with more than what remains is unaffected.",
-      "A sleeper is unconscious for 1 minute, until it takes damage, or until someone uses an action to shake or slap it awake. Undead and creatures immune to charm are skipped."
+      "Sleepers stay unconscious for 1 minute, or until they are hurt or someone spends an action shaking or slapping them. Undead and anything immune to charm are skipped."
     ],
     "higherLevels": "Each slot level above 1 adds 2d8 to the roll.",
     "textSource": "summary"
