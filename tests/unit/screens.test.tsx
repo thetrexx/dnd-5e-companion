@@ -84,3 +84,9 @@ test('every card ends with the PHB page line', () => {
   const fb = render(<Card kind="spell" id="fire-bolt" cls="wizard" level={3} />);
   expect(fb.container.textContent).toContain('Full rules: PHB p. 242');
 });
+
+test('Card option back link points to the group that lists it for this class', () => {
+  const r = render(<Card kind="feature" id="fighting-style-protection" cls="paladin" level={2} />);
+  expect(r.container.querySelector('a.back')!.getAttribute('href')).toContain('opt-fighting-style-paladin');
+  expect(r.container.querySelector('.card-sub')!.textContent).toContain('Fighting Style');
+});

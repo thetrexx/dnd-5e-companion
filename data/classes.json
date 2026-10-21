@@ -521,7 +521,10 @@
     "plainIcon": "https://bg3.wiki/w/images/b/ba/Class_Warlock_Plain_Icon.png",
     "subclassLevel": 1,
     "subclassLabel": "Otherworldly Patron",
-    "options": []
+    "options": [
+      "eldritch-invocations",
+      "pact-boon"
+    ]
   },
   {
     "id": "wizard",
