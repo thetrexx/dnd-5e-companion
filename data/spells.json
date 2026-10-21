@@ -1915,7 +1915,7 @@
     "description": [
       "As an action (and when casting), read the surface thoughts of one creature you see within 30 ft; Intelligence 3 or lower, or no language: immune.",
       "Probe deeper (action): Wisdom save. Fail: you learn its reasoning, mood and what weighs on it. Success: spell ends. It notices; until you switch, it can use its action on an Intelligence contest to end the spell.",
-      "Or sense unseen thinking creatures within 30 ft (thick stone or metal, or thin lead, blocks this), then read them while in range."
+      "Or, when casting or as an action, sense unseen thinking creatures within 30 ft (2 ft of rock, 2 inches of metal or any lead sheet blocks this; the same immunity applies), then read them while they stay in range."
     ],
     "textSource": "summary"
   },
@@ -2610,7 +2610,7 @@
       "s": true
     },
     "description": [
-      "A spirit steed appears within 30 ft: warhorse, pony, camel, elk, mastiff or another the DM allows. Beast stats, but celestial, fey or fiend (you pick); Intelligence 5 or less becomes 6; it understands one language you speak.",
+      "A spirit steed appears in a free space within 30 ft: warhorse, pony, camel, elk, mastiff or another the DM allows. Beast stats, but celestial, fey or fiend (you pick); Intelligence 5 or less becomes 6; it understands one language you speak.",
       "It serves as your mount. While you ride it, your self-only spells can also target it. Telepathy within 1 mile.",
       "At 0 hit points, or dismissed as an action, it vanishes; recasting restores it at full hit points. One steed only; an action releases it for good."
     ],
@@ -3019,9 +3019,10 @@
       }
     },
     "description": [
-      "You hide a glyph on a surface (up to 10 ft across) or in a closable object (moving it over 10 ft breaks the glyph). Finding it: Investigation vs your spell save DC. You set the trigger. One use.",
-      "Explosive Runes: each creature in a 20 ft radius sphere saves (Dexterity): 5d8 acid, cold, fire, lightning or thunder damage (set when made), half on a success.",
-      "Spell Glyph: store a prepared spell of up to 3rd level aimed at one creature or an area; it goes off at the intruder."
+      "You hide a glyph on a surface (up to 10 ft across) or in a closable object; moving the object over 10 ft breaks it, ending the spell. Finding it: Investigation vs your spell save DC.",
+      "Set the trigger (touch, opening, approach, reading), optionally by height, weight, creature kind or alignment; exempt creatures, e.g. by password. It ends once triggered.",
+      "Explosive Runes: 20 ft radius sphere, spreading around corners; Dexterity save, 5d8 acid, cold, fire, lightning or thunder (set when made), half on a success.",
+      "Spell Glyph: store a prepared spell (3rd level or lower, one target or an area). It fires at the intruder; summons appear beside it; concentration spells run their full duration."
     ],
     "higherLevels": "Each slot level above 3 adds 1d8 to explosive runes, and a spell glyph can hold a spell up to the slot's level.",
     "textSource": "summary"
