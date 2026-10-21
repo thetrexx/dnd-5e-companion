@@ -43,6 +43,7 @@
 .card-desc p{font-family:var(--font-desc);font-weight:300;font-size:11.5px;line-height:1.6;margin:6px 0}
 .card-desc .orn{font-family:var(--font-orn);color:var(--accent);font-size:15px}
 .card-tags{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:10px;color:var(--card-tags);margin:8px 0}
+.card-ref{font-size:10px;color:var(--card-detail);opacity:.8;margin:8px 0}
 .card-cost{display:flex;flex-wrap:wrap;gap:4px 14px;border-top:1px solid var(--card-cost-line);margin:10px -14px 0;padding:8px 14px;background:var(--card-cost-bg);font-size:10.5px}
 
 .screen{position:relative}

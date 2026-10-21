@@ -32,7 +32,8 @@
         "type": "Fire"
       },
       "resolution": "attack"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "ray-of-frost",
@@ -67,7 +68,8 @@
         "type": "Cold"
       },
       "resolution": "attack"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "guidance",
@@ -96,7 +98,8 @@
     "icon": "https://bg3.wiki/w/images/7/7f/Guidance_Icon.webp",
     "summary": {
       "resolution": "none"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "produce-flame",
@@ -131,7 +134,8 @@
         "type": "Fire"
       },
       "resolution": "attack"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "shillelagh",
@@ -164,7 +168,8 @@
     "icon": "https://bg3.wiki/w/images/6/68/Shillelagh_Icon.webp",
     "summary": {
       "resolution": "none"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "magic-missile",
@@ -202,7 +207,8 @@
       },
       "resolution": "auto",
       "upcast": "+1 dart per slot level above 1st"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "shield",
@@ -233,7 +239,8 @@
     "icon": "https://bg3.wiki/w/images/c/cf/Shield_spell_Icon.webp",
     "summary": {
       "resolution": "none"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "burning-hands",
@@ -271,7 +278,8 @@
       "resolution": "save",
       "save": "dex",
       "upcast": "+1d6 per slot level above 1st"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "cure-wounds",
@@ -307,7 +315,8 @@
       },
       "resolution": "auto",
       "upcast": "+1d8 per slot level above 1st"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "thunderwave",
@@ -346,7 +355,8 @@
       "resolution": "save",
       "save": "con",
       "upcast": "+1d8 per slot level above 1st"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "mage-armor",
@@ -379,7 +389,8 @@
     "page": 256,
     "summary": {
       "resolution": "none"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "misty-step",
@@ -409,7 +420,8 @@
     "icon": "https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp",
     "summary": {
       "resolution": "none"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "fireball",
@@ -451,7 +463,8 @@
       "resolution": "save",
       "save": "dex",
       "upcast": "+1d6 per slot level above 3rd"
-    }
+    },
+    "textSource": "srd"
   },
   {
     "id": "hold-person",
@@ -490,6 +503,7 @@
     "summary": {
       "resolution": "save",
       "save": "wis"
-    }
+    },
+    "textSource": "srd"
   }
 ]

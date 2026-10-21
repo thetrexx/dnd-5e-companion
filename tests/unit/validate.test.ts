@@ -34,3 +34,8 @@ test('grant needs exactly one of spell/choose', () => {
   bad.subclasses.find(s => s.id === 'circle-of-the-land')!.bonusSpells!.grants[0].choose = { lists: ['wizard'], level: 1, count: 1 };
   expect(validateDataset(bad).join('\n')).toContain('exactly one');
 });
+
+test('textSource required', () => {
+  const bad = structuredClone(DATA); delete (bad.spells[0] as any).textSource;
+  expect(validateDataset(bad).join('\n')).toContain('textSource');
+});

@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { compareToOcr, normalizeOcr } from '../../scripts/extract/ocr';
+import { compareToOcr, judgeRecord, longestSharedRun, normalizeOcr } from '../../scripts/extract/ocr';
 
 const ocr = readFileSync('tests/unit/fixtures/ocr-fire-bolt.txt', 'utf8');
 const real = 'You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn\'t being worn or carried.';
@@ -48,4 +48,18 @@ test('missing span end is flagged, not sliced to the end', () => {
   const r = compareToOcr('Light', prose, { from: 'Light', to: 'Nonexistent Spell' });
   expect(r.spanEndMissing).toBe(true);
   expect(r.reverse).toBeUndefined();
+});
+
+const own = 'Ranged spell attack out to 120 feet; a hit deals 1d10 fire, and unattended flammable objects catch fire.';
+test('copied text has a long shared run', () =>
+  expect(longestSharedRun('You hurl a mote of fire at a creature or object within range.', ocr)).toBeGreaterThanOrEqual(8));
+test('own words stay short', () => expect(longestSharedRun(own, ocr)).toBeLessThan(8));
+test('summary mode: wrong number fails, own words pass', () => {
+  expect(judgeRecord('summary', own, ocr).pass).toBe(true);
+  expect(judgeRecord('summary', own.replace('1d10', '1d12'), ocr).reasons.join()).toContain('1d12');
+  expect(judgeRecord('summary', 'You hurl a mote of fire at a creature or object within range.', ocr).pass).toBe(false);
+});
+test('srd mode: copied text passes, wrong number fails', () => {
+  expect(judgeRecord('srd', real, ocr).pass).toBe(true);
+  expect(judgeRecord('srd', real.replace('1d10', '1d12'), ocr).pass).toBe(false);
 });

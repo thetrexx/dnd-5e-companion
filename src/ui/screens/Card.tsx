@@ -83,6 +83,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
           )}
           {spell && <div class="card-tags">{tags(spell).map((t) => <span key={t}>{t}</span>)}</div>}
           {spell && <ComponentIcons spell={spell} />}
+          {(spell ?? feature)!.textSource === 'summary' && <div class="card-ref">Full rules: PHB p. {(spell ?? feature)!.page}</div>}
           <div class="card-cost">
             {bar && <CostItem cost={bar.cost} label={bar.trigger ? `${bar.label}, ${bar.trigger}` : bar.label} />}
             {bar?.slot && <span><span style={{ color: 'var(--cost-slot)' }}>■</span> {bar.slot}</span>}

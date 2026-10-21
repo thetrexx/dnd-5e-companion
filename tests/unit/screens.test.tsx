@@ -77,3 +77,10 @@ test('Start tile icon falls back on error', () => {
   fireEvent.error(img);
   expect(r.container.querySelector('.tile img')!.getAttribute('src')).toContain('/icons/fallback/');
 });
+
+test('summary card ends with the PHB page line; SRD card has none', () => {
+  const wb = render(<Card kind="feature" id="weapon-bond" cls="fighter" level={3} sub="eldritch-knight" />);
+  expect(wb.container.textContent).toContain('Full rules: PHB p. 75');
+  const fb = render(<Card kind="spell" id="fire-bolt" cls="wizard" level={3} />);
+  expect(fb.container.textContent).not.toContain('Full rules');
+});

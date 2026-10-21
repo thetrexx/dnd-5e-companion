@@ -9,6 +9,7 @@ const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 const SOURCES = ['generic', 'class', 'subclass', 'option', 'race', 'feat'];
 const OWNERS = ['class', 'subclass', 'race'];
 const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron'];
+const TEXT_SOURCES = ['srd', 'summary'];
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 const isInt = (n: unknown, min: number, max: number) => Number.isInteger(n) && (n as number) >= min && (n as number) <= max;
@@ -84,6 +85,7 @@ export function validateDataset(d: Dataset): string[] {
   for (const s of d.spells) {
     const at = `spell "${s.id}"`;
     if (blank(s.name)) errs.push(`${at}: name is empty`);
+    if (!TEXT_SOURCES.includes(s.textSource)) errs.push(`${at}: textSource must be srd or summary`);
     if (!isInt(s.level, 0, 9)) errs.push(`${at}: level ${s.level} must be an integer 0-9`);
     if (blank(s.school)) errs.push(`${at}: school is empty`);
     if (!s.cast || !COSTS.includes(s.cast.cost)) errs.push(`${at}: cast.cost is not valid`);
@@ -105,6 +107,7 @@ export function validateDataset(d: Dataset): string[] {
   for (const f of d.features) {
     const at = `feature "${f.id}"`;
     if (blank(f.name)) errs.push(`${at}: name is empty`);
+    if (!TEXT_SOURCES.includes(f.textSource)) errs.push(`${at}: textSource must be srd or summary`);
     if (!f.source || !SOURCES.includes(f.source.kind)) errs.push(`${at}: source.kind is not valid`);
     else {
       const { kind, id } = f.source;
@@ -186,6 +189,7 @@ export function validateDataset(d: Dataset): string[] {
   for (const f of d.feats) {
     const at = `feat "${f.id}"`;
     if (blank(f.name)) errs.push(`${at}: name is empty`);
+    if (!TEXT_SOURCES.includes(f.textSource)) errs.push(`${at}: textSource must be srd or summary`);
     if (!Array.isArray(f.description) || f.description.length === 0 || f.description.some(blank)) errs.push(`${at}: description must be non-empty paragraphs`);
     if (!isInt(f.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     grants(at, f.spells);

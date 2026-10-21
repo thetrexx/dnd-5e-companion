@@ -1,9 +1,9 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { CACHE } from './config.ts';
-import { compareToOcr } from './ocr.ts';
+import { judgeRecord } from './ocr.ts';
 import { extractPage } from './pages.ts';
 
-type Rec = { id: string; name: string; page?: number; description?: string[] };
+type Rec = { id: string; name: string; page?: number; description?: string[]; textSource?: 'srd' | 'summary'; higherLevels?: string };
 type Spell = Rec & {
   level: number; school: string; ritual?: boolean; range: string; duration: string; higherLevels?: string;
   cast: { text: string }; components: { v: boolean; s: boolean; m?: { text: string } };
@@ -11,8 +11,6 @@ type Spell = Rec & {
 
 const KINDS = ['spells', 'features', 'subclasses', 'races', 'feats', 'options'] as const;
 type Kind = typeof KINDS[number];
-const MIN_COVERAGE = 0.92;
-const MIN_REVERSE = 0.85;
 const REPORT = '.cache/ocr-report.md';
 
 const readJson = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
@@ -55,7 +53,7 @@ function ocrPages(page: number): string {
   return out;
 }
 
-interface Item { key: string; text: string; page: number; span?: { from: string; to?: string } }
+interface Item { key: string; source: 'srd' | 'summary'; text: string; page: number; span?: { from: string; to?: string } }
 
 function items(kind: Kind): Item[] | 'skip' {
   if (kind === 'spells') {
@@ -65,7 +63,7 @@ function items(kind: Kind): Item[] | 'skip' {
     return sorted.map((s, i) => {
       const at = book.findIndex(n => sortKey(n) === sortKey(s.name));
       const to = at >= 0 ? book[at + 1] : sorted[i + 1]?.name;
-      return { key: `spells:${s.id}`, text: spellText(s), page: s.page!, span: { from: s.name, to } };
+      return { key: `spells:${s.id}`, source: s.textSource ?? 'srd', text: spellText(s), page: s.page!, span: { from: s.name, to } };
     });
   }
   let recs: Rec[];
@@ -76,10 +74,10 @@ function items(kind: Kind): Item[] | 'skip' {
   } else {
     return 'skip'; // subclasses, races, options carry no description: nothing to compare
   }
-  return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...(r.description ?? [])].join('\n'), page: r.page! }));
+  return recs.map(r => ({ key: `${kind}:${r.id}`, source: r.textSource ?? 'srd', text: [r.name, ...(r.description ?? [])].join('\n'), page: r.page! }));
 }
 
-interface Result { key: string; why: string[]; excerpts: string[]; accepted?: string }
+interface Result { key: string; source?: string; why: string[]; excerpts: string[]; accepted?: string }
 
 const arg = process.argv[2];
 if (arg && !KINDS.includes(arg as Kind)) {
@@ -95,23 +93,19 @@ for (const kind of kinds) {
   if (list === 'skip') { console.log(`${kind}: skipped (no description to compare)`); continue; }
   for (const it of list) {
     checked++;
-    if (!Number.isInteger(it.page)) { failures.push({ key: it.key, why: ['no page'], excerpts: [], accepted: accept[it.key] }); continue; }
-    const r = compareToOcr(it.text, ocrPages(it.page), it.span);
-    const why: string[] = [];
-    if (r.coverage < MIN_COVERAGE) why.push(`coverage ${r.coverage.toFixed(2)} < ${MIN_COVERAGE}`);
-    if (r.missingNumbers.length) why.push(`missing numbers: ${r.missingNumbers.join(', ')}`);
-    if (r.spanEndMissing) why.push(`span end not found: ${it.span!.to}`);
-    if (r.reverse !== undefined && r.reverse < MIN_REVERSE) why.push(`reverse ${r.reverse.toFixed(2)} < ${MIN_REVERSE}`);
-    if (why.length) failures.push({ key: it.key, why, excerpts: r.missingExcerpts, accepted: accept[it.key] });
+    if (!Number.isInteger(it.page)) { failures.push({ key: it.key, source: it.source, why: ['no page'], excerpts: [], accepted: accept[it.key] }); continue; }
+    const r = judgeRecord(it.source, it.text, ocrPages(it.page), it.span);
+    if (!r.pass) failures.push({ key: it.key, source: it.source, why: r.reasons, excerpts: [], accepted: accept[it.key] });
   }
 }
 
 const open = failures.filter(f => !f.accepted);
+for (const f of open) console.log(`FAIL ${f.key} [${f.source ?? 'srd'}]: ${f.why.join('; ')}`);
 const lines = [
   '# OCR check report', '',
   `Checked ${checked}, failed ${failures.length} (${open.length} not accepted).`, '',
   ...[...open, ...failures.filter(f => f.accepted)].flatMap(f => [
-    `## ${f.key}${f.accepted ? ` (accepted: ${f.accepted})` : ''}`,
+    `## ${f.key} [${f.source ?? 'srd'}]${f.accepted ? ` (accepted: ${f.accepted})` : ''}`,
     ...f.why.map(w => `- ${w}`),
     ...f.excerpts.map(e => `- missing: "${e}"`), '',
   ]),

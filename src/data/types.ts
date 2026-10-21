@@ -1,4 +1,6 @@
 export type ClassId = 'barbarian'|'bard'|'cleric'|'druid'|'fighter'|'monk'|'paladin'|'ranger'|'rogue'|'sorcerer'|'warlock'|'wizard';
+/** 'srd': word-for-word SRD 5.1 text. 'summary': our own words; the book holds the full rules. */
+export type TextSource = 'srd'|'summary';
 export type Cost = 'action'|'bonus'|'reaction'|'other';
 export type Ability = 'str'|'dex'|'con'|'int'|'wis'|'cha';
 export interface Spell {
@@ -7,7 +9,7 @@ export interface Spell {
   range: string; duration: string; concentration: boolean; ritual: boolean;
   components: { v: boolean; s: boolean; m?: { text: string; costGp?: number; consumed: boolean } };
   description: string[]; higherLevels?: string; classes: ClassId[]; page: number;
-  icon?: string;
+  icon?: string; textSource: TextSource;
   summary?: { damage?: { dice: string; count?: number; unit?: string; type: string; healing?: boolean; plusMod?: boolean }; resolution: 'attack'|'save'|'auto'|'none'; save?: Ability; upcast?: string };
 }
 export type FeatureCost = Cost|'free'|'passive';
@@ -26,7 +28,7 @@ export interface Feature {
   scaling?: Scaling[];
   prereq?: { level?: number; option?: string; text?: string };
   spells?: SpellGrant[];
-  description: string[]; page: number; icon?: string;
+  description: string[]; page: number; icon?: string; textSource: TextSource;
 }
 export interface ClassDef {
   id: ClassId; name: string; caster: 'full'|'half'|'third'|'pact'|'none';
@@ -50,7 +52,7 @@ export interface OptionGroup {
   bonus?: { subclass: string; atLevel: number; count: number }[];
 }
 export interface RaceDef { id: string; name: string; parent?: string; page: number; icon?: string; spells: SpellGrant[]; options: string[] }
-export interface FeatDef { id: string; name: string; prereq?: string; page: number; icon?: string; description: string[]; spells: SpellGrant[] }
+export interface FeatDef { id: string; name: string; prereq?: string; page: number; icon?: string; description: string[]; spells: SpellGrant[]; textSource: TextSource }
 export interface Dataset {
   classes: ClassDef[]; subclasses: SubclassDef[]; optionGroups: OptionGroup[];
   races: RaceDef[]; feats: FeatDef[]; spells: Spell[]; features: Feature[];
