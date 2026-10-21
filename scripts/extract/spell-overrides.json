@@ -53,7 +53,7 @@
   },
   "counterspell": {
     "cast": {
-      "trigger": "when a creature within 60 ft casts a spell"
+      "trigger": "when you see a creature within 60 ft casting a spell"
     }
   },
   "feather-fall": {

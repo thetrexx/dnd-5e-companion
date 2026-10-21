@@ -1274,6 +1274,220 @@
     "textSource": "summary"
   },
   {
+    "id": "continual-flame",
+    "name": "Continual Flame",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "page": 227,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Ruby dust worth 50 gp, used up",
+        "costGp": 50,
+        "consumed": true
+      }
+    },
+    "description": [
+      "An object you touch gives off a flame as bright as a torch until dispelled. It looks like real fire but makes no heat and needs no air. You can cover or hide it, but nothing smothers or douses it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "conjure-animals",
+    "name": "Conjure Animals",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 225,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Fey spirits in beast form appear in free spaces you can see within 60 ft, for up to 1 hour (concentration). Choose one group:",
+      "• 1 beast of CR 2 or lower",
+      "• 2 beasts of CR 1 or lower",
+      "• 4 beasts of CR 1/2 or lower",
+      "• 8 beasts of CR 1/4 or lower",
+      "They count as fey, are friendly, and share one initiative; they obey your spoken orders (no action needed) or else just defend themselves. One reduced to 0 hit points vanishes. The DM has their stats."
+    ],
+    "higherLevels": "Slot 5 doubles the number of creatures, slot 7 triples it, slot 9 quadruples it.",
+    "textSource": "summary"
+  },
+  {
+    "id": "conjure-barrage",
+    "name": "Conjure Barrage",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (60-foot cone)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "page": 225,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "3d8",
+        "type": "Weapon"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "1 piece of ammunition or a thrown weapon",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "cordon-of-arrows",
+    "name": "Cordon of Arrows",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "5 feet",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "page": 228,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "1d6",
+        "type": "Piercing"
+      },
+      "upcast": "+2 pieces of ammunition per slot level above 2"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "4 or more arrows or bolts",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You push 4 nonmagical arrows or bolts into the ground within 5 ft to guard the area for 8 hours. When you cast, you can name creatures it ignores.",
+      "Each time another creature comes within 30 ft of them (first time that turn) or finishes its turn that close, one piece flies at it: Dexterity save or 1d6 piercing damage. That piece is then destroyed; the spell ends when none are left."
+    ],
+    "higherLevels": "Each slot level above 2 lets you use 2 more pieces of ammunition.",
+    "textSource": "summary"
+  },
+  {
+    "id": "counterspell",
+    "name": "Counterspell",
+    "level": 3,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "reaction",
+      "text": "1 reaction",
+      "trigger": "when you see a creature within 60 ft casting a spell"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 228,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true
+    },
+    "description": [
+      "You try to stop a spell as it is being cast. If it is 3rd level or lower, it simply fails with no effect.",
+      "Higher-level spells (4th or above) need an ability check with your spellcasting ability, DC 10 + the spell's level; succeed and it fails."
+    ],
+    "higherLevels": "The spell fails automatically if its level is no higher than the slot you used.",
+    "textSource": "summary"
+  },
+  {
+    "id": "create-food-and-water",
+    "name": "Create Food and Water",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "page": 229,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You make 30 gallons of water and 45 pounds of food within 30 ft, on the ground or in containers: a day's supply for up to 15 humanoids or 5 steeds. The food is bland but filling and spoils if not eaten within 24 hours; the water stays clean."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "create-or-destroy-water",
     "name": "Create or Destroy Water",
     "level": 1,
@@ -1308,6 +1522,74 @@
       "• Destroy: removes up to 10 gallons of water from an open container, or burns off fog in a 30 ft cube."
     ],
     "higherLevels": "Each slot level above 1 adds 10 gallons, or 5 ft to the cube's side.",
+    "textSource": "summary"
+  },
+  {
+    "id": "crown-of-madness",
+    "name": "Crown of Madness",
+    "level": 2,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 229,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A humanoid you can see within 120 ft makes a Wisdom save or is charmed by you for up to 1 minute (concentration).",
+      "Each of its turns, before moving, it must spend its action on a melee attack at a creature you mentally pick (not itself). If you pick none, or none is in reach, it acts normally.",
+      "On your later turns you must use your action to keep control, or the spell ends. It repeats the save after each of its turns, ending the spell on a success."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "crusaders-mantle",
+    "name": "Crusader's Mantle",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 230,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d4",
+        "type": "Radiant"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A 30 ft radius aura of holy power surrounds you and moves with you for up to 1 minute (concentration). Every nonhostile creature in it, you included, adds 1d4 radiant damage to its weapon hits."
+    ],
     "textSource": "summary"
   },
   {
@@ -1385,6 +1667,114 @@
     "description": [
       "Up to 4 torch-like lights hover at points within 120 ft for up to 1 minute (concentration), or you can fuse them into one glowing humanoid form. Each gives dim light in a 10 ft radius.",
       "Use a bonus action to shift any of them up to 60 ft. Keep them within 20 ft of one another; any that ends up over 120 ft from you vanishes."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "darkness",
+    "name": "Darkness",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 230,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false,
+      "m": {
+        "text": "Bat fur; pitch or coal",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Magical darkness fills a 15 ft radius sphere around a point within 60 ft for up to 10 minutes (concentration). It spreads around corners; darkvision can't see through it and nonmagical light can't light it.",
+      "If you pick an object you hold or one nobody is wearing or carrying, the darkness moves with it; covering it with something opaque, like a bowl or helm, blocks the darkness.",
+      "Any light from a spell of 2nd level or lower that overlaps it is dispelled."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "darkvision",
+    "name": "Darkvision",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 230,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Pinch of dried carrot or an agate",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You touch a willing creature. For 8 hours it can see in the dark, with darkvision out to 60 ft."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "daylight",
+    "name": "Daylight",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger",
+      "sorcerer"
+    ],
+    "page": 230,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 1 hour, a 60 ft radius sphere of bright light, with dim light for another 60 ft, spreads from a point within 60 ft.",
+      "If you pick an object you hold or one nobody is wearing or carrying, the light moves with it; covering it with something opaque, like a bowl or helm, blocks the light.",
+      "Any darkness from a spell of 3rd level or lower that overlaps it is dispelled."
     ],
     "textSource": "summary"
   },
@@ -1493,6 +1883,43 @@
     "textSource": "summary"
   },
   {
+    "id": "detect-thoughts",
+    "name": "Detect Thoughts",
+    "level": 2,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 231,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "1 copper piece",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For up to 1 minute (concentration), as an action (and when casting), read the surface thoughts of one creature you see within 30 ft; Intelligence 3 or lower, or no language: immune.",
+      "Probe deeper (action): Wisdom save. Fail: you learn its reasoning, mood and what weighs on it. Success: spell ends. It notices; until you switch, it can use its action on an Intelligence contest to end the spell.",
+      "Or sense unseen thinking creatures within 30 ft (thick stone or metal, or thin lead, blocks this), then read them while in range."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "disguise-self",
     "name": "Disguise Self",
     "level": 1,
@@ -1522,6 +1949,43 @@
       "For 1 hour, or until you dismiss it as an action, you and your gear look different. You can seem 1 ft taller or shorter, thin, fat or in between, but must keep the same basic limb arrangement.",
       "It fails touch inspection: a fake hat would let hands pass through. A creature can use an action to inspect you and make an Investigation check against your spell save DC to see through it."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "dispel-magic",
+    "name": "Dispel Magic",
+    "level": 3,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 234,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Target one creature, object or magical effect within 120 ft. Any spell of 3rd level or lower affecting it is ended.",
+      "Against each spell of 4th level or above, roll an ability check with your spellcasting ability against DC 10 + its level; a success ends that spell."
+    ],
+    "higherLevels": "Spells of a level no higher than the slot you used end automatically.",
     "textSource": "summary"
   },
   {
@@ -1663,6 +2127,119 @@
     "textSource": "summary"
   },
   {
+    "id": "elemental-weapon",
+    "name": "Elemental Weapon",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 237,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d4",
+        "type": "Varies"
+      },
+      "upcast": "slots 5-6: +2 bonus and 2d4; slots 7+: +3 bonus and 3d4"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A nonmagical weapon you touch turns magic for up to 1 hour (concentration). Pick acid, cold, fire, lightning or thunder: the weapon gains +1 on attack rolls, and each hit adds 1d4 damage of that type."
+    ],
+    "higherLevels": "Slot 5 or 6: +2 and 2d4; slot 7 or higher: +3 and 3d4.",
+    "textSource": "summary"
+  },
+  {
+    "id": "enhance-ability",
+    "name": "Enhance Ability",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "sorcerer"
+    ],
+    "page": 237,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Fur or a feather from a beast",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You touch a creature and give it one boon for up to 1 hour (concentration):",
+      "Bear's Endurance: advantage on Constitution checks, plus 2d6 temporary hit points that vanish when the spell ends.",
+      "Bull's Strength: advantage on Strength checks; carrying capacity doubles.",
+      "Cat's Grace: advantage on Dexterity checks; no damage from falls of 20 ft or less unless incapacitated.",
+      "Eagle's Splendor, Fox's Cunning, Owl's Wisdom: advantage on Charisma, Intelligence or Wisdom checks."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1 more target.",
+    "textSource": "summary"
+  },
+  {
+    "id": "enlarge-reduce",
+    "name": "Enlarge/Reduce",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 237,
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Pinch of powdered iron",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature or unattended object you can see within 30 ft grows or shrinks for up to 1 minute (concentration); an unwilling creature resists with a Constitution save. Its worn and carried gear changes too; dropped items return to normal.",
+      "Enlarge: twice the size (1 category up, as space allows), 8 times the weight. Advantage on Strength checks and saves; its weapons deal +1d4 damage.",
+      "Reduce: half size (1 category down), one-eighth the weight. Disadvantage on Strength checks and saves; its weapons deal 1d4 less damage (minimum 1)."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "ensnaring-strike",
     "name": "Ensnaring Strike",
     "level": 1,
@@ -1727,6 +2304,38 @@
     "description": [
       "Thick weeds and vines sprout across a 20 ft square within 90 ft for up to 1 minute (concentration), making it difficult terrain. Anyone inside when you cast it makes a Strength save or is restrained.",
       "To break free, a restrained creature spends an action and beats your spell save DC with a Strength check. The growth fades when the spell ends."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "enthrall",
+    "name": "Enthrall",
+    "level": 2,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "warlock"
+    ],
+    "page": 238,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You speak a captivating stream of words. Creatures you choose that you can see within 60 ft and that hear you make a Wisdom save. Creatures immune to charm pass automatically; one your party is fighting has advantage.",
+      "On a failure, for 1 minute or until it can't hear you, it has disadvantage on Wisdom (Perception) checks to notice anyone but you. Being incapacitated or unable to speak ends the spell."
     ],
     "textSource": "summary"
   },
@@ -1830,6 +2439,44 @@
     "textSource": "summary"
   },
   {
+    "id": "fear",
+    "name": "Fear",
+    "level": 3,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (30-foot cone)",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 239,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "White feather or hen's heart",
+        "consumed": false
+      }
+    },
+    "description": [
+      "An illusion of their worst fears hits each creature in a 30 ft cone. Each makes a Wisdom save or drops what it holds and is frightened for up to 1 minute (concentration).",
+      "A frightened creature must Dash away from you by the safest route on each of its turns, unless it has nowhere to go. If it ends its turn where it can't see you, it makes a Wisdom save; a success ends the spell on it."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "feather-fall",
     "name": "Feather Fall",
     "level": 1,
@@ -1866,6 +2513,43 @@
     "textSource": "summary"
   },
   {
+    "id": "feign-death",
+    "name": "Feign Death",
+    "level": 3,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "wizard"
+    ],
+    "page": 240,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Pinch of graveyard dirt",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You touch a willing creature and it falls into a deathlike trance for 1 hour, or until you touch it as an action to end it. Inspection and spells that check its status show it as dead.",
+      "It is blinded and incapacitated, its speed is 0, and it resists all damage except psychic. Any disease or poison it has or gets does nothing until the spell ends."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "find-familiar",
     "name": "Find Familiar",
     "level": 1,
@@ -1898,6 +2582,37 @@
       "Forms: bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel. A celestial, fey or fiend, it obeys you, has its own initiative, never attacks.",
       "Within 100 ft: telepathy; it delivers your touch spells by reaction. As an action, borrow its senses until your next turn; you are blind and deaf meanwhile.",
       "At 0 hit points it vanishes until recast. An action dismisses it to a pocket dimension (recall within 30 ft) or forever. Recast to change its form; only 1 familiar."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "find-steed",
+    "name": "Find Steed",
+    "level": 2,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "paladin"
+    ],
+    "page": 240,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A spirit takes a steed's form in a free space within 30 ft: warhorse, pony, camel, elk, mastiff or another the DM allows. Beast stats, but celestial, fey or fiend (you pick); Intelligence 5 or less becomes 6; it understands one language you speak.",
+      "It serves as your mount. While you ride it, your self-only spells can also target it. Telepathy within 1 mile.",
+      "At 0 hit points, or dismissed as an action, it vanishes; recasting restores it at full hit points. One steed only; an action releases it for good."
     ],
     "textSource": "summary"
   },

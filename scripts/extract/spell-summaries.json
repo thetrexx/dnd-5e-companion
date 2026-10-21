@@ -752,5 +752,148 @@
     ],
     "higherLevels": "Each slot level above 2 adds 2d4 damage.",
     "material": "Sliver of glass"
+  },
+  "conjure-animals": {
+    "description": [
+      "Fey spirits in beast form appear in free spaces you can see within 60 ft, for up to 1 hour (concentration). Choose one group:",
+      "• 1 beast of CR 2 or lower",
+      "• 2 beasts of CR 1 or lower",
+      "• 4 beasts of CR 1/2 or lower",
+      "• 8 beasts of CR 1/4 or lower",
+      "They count as fey, are friendly, and share one initiative; they obey your spoken orders (no action needed) or else just defend themselves. One reduced to 0 hit points vanishes. The DM has their stats."
+    ],
+    "higherLevels": "Slot 5 doubles the number of creatures, slot 7 triples it, slot 9 quadruples it."
+  },
+  "conjure-barrage": {
+    "description": [
+      "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
+    ],
+    "material": "1 piece of ammunition or a thrown weapon"
+  },
+  "continual-flame": {
+    "description": [
+      "An object you touch gives off a flame as bright as a torch until dispelled. It looks like real fire but makes no heat and needs no air. You can cover or hide it, but nothing smothers or douses it."
+    ],
+    "material": "Ruby dust worth 50 gp, used up"
+  },
+  "cordon-of-arrows": {
+    "description": [
+      "You push 4 nonmagical arrows or bolts into the ground within 5 ft to guard the area for 8 hours. When you cast, you can name creatures it ignores.",
+      "Each time another creature comes within 30 ft of them (first time that turn) or finishes its turn that close, one piece flies at it: Dexterity save or 1d6 piercing damage. That piece is then destroyed; the spell ends when none are left."
+    ],
+    "higherLevels": "Each slot level above 2 lets you use 2 more pieces of ammunition.",
+    "material": "4 or more arrows or bolts"
+  },
+  "counterspell": {
+    "description": [
+      "You try to stop a spell as it is being cast. If it is 3rd level or lower, it simply fails with no effect.",
+      "Higher-level spells (4th or above) need an ability check with your spellcasting ability, DC 10 + the spell's level; succeed and it fails."
+    ],
+    "higherLevels": "The spell fails automatically if its level is no higher than the slot you used."
+  },
+  "create-food-and-water": {
+    "description": [
+      "You make 30 gallons of water and 45 pounds of food within 30 ft, on the ground or in containers: a day's supply for up to 15 humanoids or 5 steeds. The food is bland but filling and spoils if not eaten within 24 hours; the water stays clean."
+    ]
+  },
+  "crown-of-madness": {
+    "description": [
+      "A humanoid you can see within 120 ft makes a Wisdom save or is charmed by you for up to 1 minute (concentration).",
+      "Each of its turns, before moving, it must spend its action on a melee attack at a creature you mentally pick (not itself). If you pick none, or none is in reach, it acts normally.",
+      "On your later turns you must use your action to keep control, or the spell ends. It repeats the save after each of its turns, ending the spell on a success."
+    ]
+  },
+  "crusaders-mantle": {
+    "description": [
+      "A 30 ft radius aura of holy power surrounds you and moves with you for up to 1 minute (concentration). Every nonhostile creature in it, you included, adds 1d4 radiant damage to its weapon hits."
+    ]
+  },
+  "darkness": {
+    "description": [
+      "Magical darkness fills a 15 ft radius sphere around a point within 60 ft for up to 10 minutes (concentration). It spreads around corners; darkvision can't see through it and nonmagical light can't light it.",
+      "If you pick an object you hold or one nobody is wearing or carrying, the darkness moves with it; covering it with something opaque, like a bowl or helm, blocks the darkness.",
+      "Any light from a spell of 2nd level or lower that overlaps it is dispelled."
+    ],
+    "material": "Bat fur; pitch or coal"
+  },
+  "darkvision": {
+    "description": [
+      "You touch a willing creature. For 8 hours it can see in the dark, with darkvision out to 60 ft."
+    ],
+    "material": "Pinch of dried carrot or an agate"
+  },
+  "daylight": {
+    "description": [
+      "For 1 hour, a 60 ft radius sphere of bright light, with dim light for another 60 ft, spreads from a point within 60 ft.",
+      "If you pick an object you hold or one nobody is wearing or carrying, the light moves with it; covering it with something opaque, like a bowl or helm, blocks the light.",
+      "Any darkness from a spell of 3rd level or lower that overlaps it is dispelled."
+    ]
+  },
+  "detect-thoughts": {
+    "description": [
+      "For up to 1 minute (concentration), as an action (and when casting), read the surface thoughts of one creature you see within 30 ft; Intelligence 3 or lower, or no language: immune.",
+      "Probe deeper (action): Wisdom save. Fail: you learn its reasoning, mood and what weighs on it. Success: spell ends. It notices; until you switch, it can use its action on an Intelligence contest to end the spell.",
+      "Or sense unseen thinking creatures within 30 ft (thick stone or metal, or thin lead, blocks this), then read them while in range."
+    ],
+    "material": "1 copper piece"
+  },
+  "dispel-magic": {
+    "description": [
+      "Target one creature, object or magical effect within 120 ft. Any spell of 3rd level or lower affecting it is ended.",
+      "Against each spell of 4th level or above, roll an ability check with your spellcasting ability against DC 10 + its level; a success ends that spell."
+    ],
+    "higherLevels": "Spells of a level no higher than the slot you used end automatically."
+  },
+  "elemental-weapon": {
+    "description": [
+      "A nonmagical weapon you touch turns magic for up to 1 hour (concentration). Pick acid, cold, fire, lightning or thunder: the weapon gains +1 on attack rolls, and each hit adds 1d4 damage of that type."
+    ],
+    "higherLevels": "Slot 5 or 6: +2 and 2d4; slot 7 or higher: +3 and 3d4."
+  },
+  "enhance-ability": {
+    "description": [
+      "You touch a creature and give it one boon for up to 1 hour (concentration):",
+      "Bear's Endurance: advantage on Constitution checks, plus 2d6 temporary hit points that vanish when the spell ends.",
+      "Bull's Strength: advantage on Strength checks; carrying capacity doubles.",
+      "Cat's Grace: advantage on Dexterity checks; no damage from falls of 20 ft or less unless incapacitated.",
+      "Eagle's Splendor, Fox's Cunning, Owl's Wisdom: advantage on Charisma, Intelligence or Wisdom checks."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1 more target.",
+    "material": "Fur or a feather from a beast"
+  },
+  "enlarge-reduce": {
+    "description": [
+      "A creature or unattended object you can see within 30 ft grows or shrinks for up to 1 minute (concentration); an unwilling creature resists with a Constitution save. Its worn and carried gear changes too; dropped items return to normal.",
+      "Enlarge: twice the size (1 category up, as space allows), 8 times the weight. Advantage on Strength checks and saves; its weapons deal +1d4 damage.",
+      "Reduce: half size (1 category down), one-eighth the weight. Disadvantage on Strength checks and saves; its weapons deal 1d4 less damage (minimum 1)."
+    ],
+    "material": "Pinch of powdered iron"
+  },
+  "enthrall": {
+    "description": [
+      "You speak a captivating stream of words. Creatures you choose that you can see within 60 ft and that hear you make a Wisdom save. Creatures immune to charm pass automatically; one your party is fighting has advantage.",
+      "On a failure, for 1 minute or until it can't hear you, it has disadvantage on Wisdom (Perception) checks to notice anyone but you. Being incapacitated or unable to speak ends the spell."
+    ]
+  },
+  "fear": {
+    "description": [
+      "An illusion of their worst fears hits each creature in a 30 ft cone. Each makes a Wisdom save or drops what it holds and is frightened for up to 1 minute (concentration).",
+      "A frightened creature must Dash away from you by the safest route on each of its turns, unless it has nowhere to go. If it ends its turn where it can't see you, it makes a Wisdom save; a success ends the spell on it."
+    ],
+    "material": "White feather or hen's heart"
+  },
+  "feign-death": {
+    "description": [
+      "You touch a willing creature and it falls into a deathlike trance for 1 hour, or until you touch it as an action to end it. Inspection and spells that check its status show it as dead.",
+      "It is blinded and incapacitated, its speed is 0, and it resists all damage except psychic. Any disease or poison it has or gets does nothing until the spell ends."
+    ],
+    "material": "Pinch of graveyard dirt"
+  },
+  "find-steed": {
+    "description": [
+      "A spirit takes a steed's form in a free space within 30 ft: warhorse, pony, camel, elk, mastiff or another the DM allows. Beast stats, but celestial, fey or fiend (you pick); Intelligence 5 or less becomes 6; it understands one language you speak.",
+      "It serves as your mount. While you ride it, your self-only spells can also target it. Telepathy within 1 mile.",
+      "At 0 hit points, or dismissed as an action, it vanishes; recasting restores it at full hit points. One steed only; an action releases it for good."
+    ]
   }
 }
