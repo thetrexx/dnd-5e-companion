@@ -105,5 +105,606 @@
     ],
     "page": 59,
     "textSource": "summary"
+  },
+  {
+    "id": "knowledge-of-the-ages",
+    "name": "Knowledge of the Ages",
+    "source": {
+      "kind": "subclass",
+      "id": "knowledge-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "uses": "Lasts 10 minutes",
+    "description": [
+      "Pick one skill or tool. You are proficient with it for 10 minutes."
+    ],
+    "page": 59,
+    "textSource": "summary"
+  },
+  {
+    "id": "read-thoughts",
+    "name": "Read Thoughts",
+    "source": {
+      "kind": "subclass",
+      "id": "knowledge-domain"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Target a creature you can see within 60 ft. It makes a Wisdom save. On a pass, you cannot target it with this again until a long rest.",
+      "On a fail, you read its surface thoughts for 1 minute while it stays within 60 ft of you. During that time you can spend your action to end the reading and cast suggestion on it with no spell slot. It automatically fails the save against that spell."
+    ],
+    "page": 59,
+    "textSource": "summary"
+  },
+  {
+    "id": "visions-of-the-past",
+    "name": "Visions of the Past",
+    "source": {
+      "kind": "subclass",
+      "id": "knowledge-domain"
+    },
+    "level": 17,
+    "cost": "other",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Meditate for at least 1 minute while holding an object or standing in a place, and you receive glimpses of its recent history. You can keep it up for as many minutes as your Wisdom score, and you must concentrate throughout.",
+      "Object Reading: learn how the last owner got and lost the item, plus the latest big event involving them. Each extra minute covers one earlier owner, back as many days as your Wisdom score.",
+      "Area Reading: see events in a space up to a 50-ft cube, one significant event per minute, newest first, going back as many days as your Wisdom score."
+    ],
+    "page": 60,
+    "textSource": "summary"
+  },
+  {
+    "id": "preserve-life",
+    "name": "Preserve Life",
+    "source": {
+      "kind": "subclass",
+      "id": "life-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "scaling": [
+      {
+        "label": "Healing pool",
+        "values": [
+          "",
+          "10",
+          "15",
+          "20",
+          "25",
+          "30",
+          "35",
+          "40",
+          "45",
+          "50",
+          "55",
+          "60",
+          "65",
+          "70",
+          "75",
+          "80",
+          "85",
+          "90",
+          "95",
+          "100"
+        ]
+      }
+    ],
+    "description": [
+      "Present your holy symbol and spread a pool of healing among creatures within 30 ft of you. The pool equals 5 times your cleric level.",
+      "This cannot raise anyone above half of their hit point maximum, and it does not work on undead or constructs."
+    ],
+    "page": 60,
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "life-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 radiant damage to it. The extra damage becomes 2d8 at cleric level 14.",
+      "It costs no action and no resource; just declare it when you hit."
+    ],
+    "page": 60,
+    "textSource": "summary"
+  },
+  {
+    "id": "warding-flare",
+    "name": "Warding Flare",
+    "source": {
+      "kind": "subclass",
+      "id": "light-domain"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature you can see within 30 ft attacks you",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "description": [
+      "When a creature within 30 ft that you can see attacks you, flare light at it so the attack roll has disadvantage. Attackers that cannot be blinded ignore this."
+    ],
+    "page": 61,
+    "textSource": "summary"
+  },
+  {
+    "id": "radiance-of-the-dawn",
+    "name": "Radiance of the Dawn",
+    "source": {
+      "kind": "subclass",
+      "id": "light-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Present your holy symbol. Magical darkness within 30 ft of you ends, and every hostile creature within 30 ft makes a Constitution save.",
+      "A failed save takes 2d10 + your cleric level radiant damage; a pass takes half. Targets with total cover from you are unaffected."
+    ],
+    "page": 61,
+    "textSource": "summary"
+  },
+  {
+    "id": "improved-flare",
+    "name": "Improved Flare",
+    "source": {
+      "kind": "subclass",
+      "id": "light-domain"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature within 30 ft attacks someone else",
+    "uses": "Spends Warding Flare uses",
+    "description": [
+      "Warding Flare now also protects others: use it when a creature you can see within 30 ft attacks someone other than you."
+    ],
+    "page": 61,
+    "textSource": "summary"
+  },
+  {
+    "id": "corona-of-light",
+    "name": "Corona of Light",
+    "source": {
+      "kind": "subclass",
+      "id": "light-domain"
+    },
+    "level": 17,
+    "cost": "action",
+    "description": [
+      "Activate an aura of sunlight lasting 1 minute, or until you end it with another action. It sheds bright light in a 60-ft radius and dim light for 30 ft more.",
+      "Enemies standing in the bright light have disadvantage on saves against your fire or radiant spells."
+    ],
+    "page": 61,
+    "textSource": "summary"
+  },
+  {
+    "id": "charm-animals-and-plants",
+    "name": "Charm Animals and Plants",
+    "source": {
+      "kind": "subclass",
+      "id": "nature-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Present your holy symbol and name your deity. Each beast or plant creature within 30 ft that can see you makes a Wisdom save.",
+      "A creature that fails becomes your charmed friend (and a friend to anyone you name). The charm lasts 1 minute and breaks the moment it takes damage."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "dampen-elements",
+    "name": "Dampen Elements",
+    "source": {
+      "kind": "subclass",
+      "id": "nature-domain"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature within 30 ft takes acid, cold, fire, lightning or thunder damage",
+    "description": [
+      "When you or a creature within 30 ft takes acid, cold, fire, lightning or thunder damage, grant that creature resistance to that single instance of damage."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "nature-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "nature-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 cold, fire or lightning (your choice) damage to it. The extra damage becomes 2d8 at cleric level 14.",
+      "It costs no action and no resource; just declare it when you hit."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "master-of-nature",
+    "name": "Master of Nature",
+    "source": {
+      "kind": "subclass",
+      "id": "nature-domain"
+    },
+    "level": 17,
+    "cost": "bonus",
+    "description": [
+      "While creatures are charmed by Charm Animals and Plants, use a bonus action on your turn to tell each what to do on its next turn."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "wrath-of-the-storm",
+    "name": "Wrath of the Storm",
+    "source": {
+      "kind": "subclass",
+      "id": "tempest-domain"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature within 5 ft hits you",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "description": [
+      "A creature you can see that is within 5 ft and hits you must make a Dexterity save. Choose lightning or thunder: it takes 2d8 of that type, or half if it passes."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "destructive-wrath",
+    "name": "Destructive Wrath",
+    "source": {
+      "kind": "subclass",
+      "id": "tempest-domain"
+    },
+    "level": 2,
+    "cost": "free",
+    "resource": "1 Channel Divinity",
+    "trigger": "You roll lightning or thunder damage",
+    "description": [
+      "When you roll lightning or thunder damage, spend a Channel Divinity use to take the maximum on each die instead of rolling."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "thunderbolt-strike",
+    "name": "Thunderbolt Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "tempest-domain"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You deal lightning damage",
+    "description": [
+      "Lightning damage you deal to a creature of size Large or smaller can also push it up to 10 ft away from you."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "tempest-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "tempest-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 thunder damage to it. The extra damage becomes 2d8 at cleric level 14.",
+      "It costs no action and no resource; just declare it when you hit."
+    ],
+    "page": 62,
+    "textSource": "summary"
+  },
+  {
+    "id": "blessing-of-the-trickster",
+    "name": "Blessing of the Trickster",
+    "source": {
+      "kind": "subclass",
+      "id": "trickery-domain"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Touch someone willing (not yourself) to make their Dexterity (Stealth) checks advantaged for 1 hour. Using this again ends the earlier blessing."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "invoke-duplicity",
+    "name": "Invoke Duplicity",
+    "source": {
+      "kind": "subclass",
+      "id": "trickery-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Make an illusory copy of yourself in an open space you can see within 30 ft. It lasts 1 minute and ends if you lose concentration.",
+      "As a bonus action, move it up to 30 ft to a space you can see, keeping it within 120 ft of you. You can cast spells as if standing in its space, using your own senses.",
+      "When you and the copy are both within 5 ft of a creature that can see the copy, you have advantage on attacks against that creature."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "cloak-of-shadows",
+    "name": "Cloak of Shadows",
+    "source": {
+      "kind": "subclass",
+      "id": "trickery-domain"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "You turn invisible until the end of your next turn. You become visible early if you attack or cast a spell."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "trickery-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "trickery-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 poison damage to it. The extra damage becomes 2d8 at cleric level 14.",
+      "It costs no action and no resource; just declare it when you hit."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "improved-duplicity",
+    "name": "Improved Duplicity",
+    "source": {
+      "kind": "subclass",
+      "id": "trickery-domain"
+    },
+    "level": 17,
+    "cost": "bonus",
+    "description": [
+      "Invoke Duplicity makes up to 4 copies instead of 1. On your turn, spend a bonus action to shift any of them up to 30 ft each, never farther than 120 ft from you."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "war-priest",
+    "name": "War Priest",
+    "source": {
+      "kind": "subclass",
+      "id": "war-domain"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "You use the Attack action",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "description": [
+      "When you take the Attack action, make 1 weapon attack as a bonus action."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "guided-strike",
+    "name": "Guided Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "war-domain"
+    },
+    "level": 2,
+    "cost": "free",
+    "resource": "1 Channel Divinity",
+    "trigger": "You make an attack roll",
+    "description": [
+      "When you make an attack roll, spend a Channel Divinity use for a +10 bonus to it. Decide after seeing the roll, before the DM says if it hits."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "war-gods-blessing",
+    "name": "War God's Blessing",
+    "source": {
+      "kind": "subclass",
+      "id": "war-domain"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "resource": "1 Channel Divinity",
+    "trigger": "A creature within 30 ft makes an attack roll",
+    "description": [
+      "When a creature within 30 ft makes an attack roll, spend a Channel Divinity use to give it a +10 bonus. Decide after seeing the roll, before the DM says if it hits."
+    ],
+    "page": 63,
+    "textSource": "summary"
+  },
+  {
+    "id": "war-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "war-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 bonus (same type as your weapon) damage to it. The extra damage becomes 2d8 at cleric level 14.",
+      "It costs no action and no resource; just declare it when you hit."
+    ],
+    "page": 63,
+    "textSource": "summary"
   }
 ]

@@ -140,5 +140,369 @@
     "name": "College of Valor",
     "page": 55,
     "options": []
+  },
+  {
+    "id": "knowledge-domain",
+    "cls": "cleric",
+    "name": "Knowledge Domain",
+    "page": 59,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "command",
+          "atLevel": 1
+        },
+        {
+          "spell": "identify",
+          "atLevel": 1
+        },
+        {
+          "spell": "augury",
+          "atLevel": 3
+        },
+        {
+          "spell": "suggestion",
+          "atLevel": 3
+        },
+        {
+          "spell": "nondetection",
+          "atLevel": 5
+        },
+        {
+          "spell": "speak-with-dead",
+          "atLevel": 5
+        },
+        {
+          "spell": "arcane-eye",
+          "atLevel": 7
+        },
+        {
+          "spell": "confusion",
+          "atLevel": 7
+        },
+        {
+          "spell": "legend-lore",
+          "atLevel": 9
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "life-domain",
+    "cls": "cleric",
+    "name": "Life Domain",
+    "page": 60,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "bless",
+          "atLevel": 1
+        },
+        {
+          "spell": "cure-wounds",
+          "atLevel": 1
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 3
+        },
+        {
+          "spell": "spiritual-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "beacon-of-hope",
+          "atLevel": 5
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "death-ward",
+          "atLevel": 7
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 7
+        },
+        {
+          "spell": "mass-cure-wounds",
+          "atLevel": 9
+        },
+        {
+          "spell": "raise-dead",
+          "atLevel": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "light-domain",
+    "cls": "cleric",
+    "name": "Light Domain",
+    "page": 61,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "burning-hands",
+          "atLevel": 1
+        },
+        {
+          "spell": "faerie-fire",
+          "atLevel": 1
+        },
+        {
+          "spell": "flaming-sphere",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3
+        },
+        {
+          "spell": "daylight",
+          "atLevel": 5
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 5
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "nature-domain",
+    "cls": "cleric",
+    "name": "Nature Domain",
+    "page": 61,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "animal-friendship",
+          "atLevel": 1
+        },
+        {
+          "spell": "speak-with-animals",
+          "atLevel": 1
+        },
+        {
+          "spell": "barkskin",
+          "atLevel": 3
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5
+        },
+        {
+          "spell": "wind-wall",
+          "atLevel": 5
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 7
+        },
+        {
+          "spell": "grasping-vine",
+          "atLevel": 7
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9
+        },
+        {
+          "spell": "tree-stride",
+          "atLevel": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "tempest-domain",
+    "cls": "cleric",
+    "name": "Tempest Domain",
+    "page": 62,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "fog-cloud",
+          "atLevel": 1
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 1
+        },
+        {
+          "spell": "gust-of-wind",
+          "atLevel": 3
+        },
+        {
+          "spell": "shatter",
+          "atLevel": 3
+        },
+        {
+          "spell": "call-lightning",
+          "atLevel": 5
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 7
+        },
+        {
+          "spell": "destructive-wave",
+          "atLevel": 9
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "trickery-domain",
+    "cls": "cleric",
+    "name": "Trickery Domain",
+    "page": 63,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "charm-person",
+          "atLevel": 1
+        },
+        {
+          "spell": "disguise-self",
+          "atLevel": 1
+        },
+        {
+          "spell": "mirror-image",
+          "atLevel": 3
+        },
+        {
+          "spell": "pass-without-trace",
+          "atLevel": 3
+        },
+        {
+          "spell": "blink",
+          "atLevel": 5
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 5
+        },
+        {
+          "spell": "dimension-door",
+          "atLevel": 7
+        },
+        {
+          "spell": "polymorph",
+          "atLevel": 7
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        },
+        {
+          "spell": "modify-memory",
+          "atLevel": 9
+        }
+      ]
+    }
+  },
+  {
+    "id": "war-domain",
+    "cls": "cleric",
+    "name": "War Domain",
+    "page": 63,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "divine-favor",
+          "atLevel": 1
+        },
+        {
+          "spell": "shield-of-faith",
+          "atLevel": 1
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "spiritual-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "crusaders-mantle",
+          "atLevel": 5
+        },
+        {
+          "spell": "spirit-guardians",
+          "atLevel": 5
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 9
+        }
+      ]
+    }
   }
 ]
