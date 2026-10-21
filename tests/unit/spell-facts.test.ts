@@ -1,5 +1,5 @@
 import { readFileSync } from 'node:fs';
-import { buildSpells, factsFromSrd, type SpellFacts, type SrdSpell } from '../../scripts/extract/spell-facts';
+import { buildSpells, factsFromSrd, merge, type SpellFacts, type SrdSpell } from '../../scripts/extract/spell-facts';
 
 const facts: SpellFacts[] = JSON.parse(readFileSync('scripts/extract/spell-facts.json', 'utf8'));
 const f = (id: string) => facts.find(x => x.id === id)!;
@@ -38,4 +38,10 @@ test('factsFromSrd reads structure only', () => {
   } as unknown as SrdSpell;
   const r = factsFromSrd(api, { 'hideous-laughter': "Tasha's Hideous Laughter" });
   expect(r).toMatchObject({ id: 'tashas-hideous-laughter', components: { m: { costGp: 2500, consumed: true } }, summary: { resolution: 'save', save: 'wis' } });
+});
+
+test('a null override deletes the key instead of writing null', () => {
+  expect(merge({ summary: { resolution: 'none', damage: { dice: '1d6' } } }, { summary: { damage: null } }))
+    .toEqual({ summary: { resolution: 'none' } });
+  expect(JSON.stringify(facts)).not.toContain('"damage":null');
 });

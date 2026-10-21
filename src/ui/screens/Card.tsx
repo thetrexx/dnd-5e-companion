@@ -71,7 +71,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
   const extra = feature ? [feature.resource, feature.uses].filter(Boolean).join(' · ') : '';
   const scaling = (feature?.scaling ?? []).map((s) => ({ label: s.label, value: s.values[p.level - 1] })).filter((s) => s.value);
   const featureLabel = feature
-    ? COST_LABEL[feature.cost] + (feature.cost === 'reaction' && feature.trigger ? `, ${feature.trigger}` : '') + (extra ? ` · ${extra}` : '')
+    ? COST_LABEL[feature.cost] + (feature.trigger ? `, ${feature.trigger}` : '') + (extra ? ` · ${extra}` : '')
     : '';
   return (
     <div class="screen fixed">
@@ -93,12 +93,12 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
           )}
           {spell && <div class="card-tags">{tags(spell).map((t) => <span key={t}>{t}</span>)}</div>}
           {spell && <ComponentIcons spell={spell} />}
-          {(spell ?? feature)!.textSource === 'summary' && <div class="card-ref">Full rules: PHB p. {(spell ?? feature)!.page}</div>}
           <div class="card-cost">
             {bar && <CostItem cost={bar.cost} label={bar.trigger ? `${bar.label}, ${bar.trigger}` : bar.label} />}
             {bar?.slot && <span><span style={{ color: 'var(--cost-slot)' }}>■</span> {bar.slot}</span>}
             {feature && <CostItem cost={feature.cost} label={featureLabel} />}
           </div>
+          {(spell ?? feature)!.textSource === 'summary' && <div class="card-ref">Full rules: PHB p. {(spell ?? feature)!.page}</div>}
         </article>
       </div>
     </div>

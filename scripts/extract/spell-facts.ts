@@ -143,10 +143,14 @@ export function findSpellPage(name: string, pages: Map<number, string>, others: 
 const readJson = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
 const isObj = (v: unknown): v is Record<string, unknown> => typeof v === 'object' && v !== null && !Array.isArray(v);
 
-function merge<T>(base: T, patch: unknown): T {
+export function merge<T>(base: T, patch: unknown): T {
   if (!isObj(base) || !isObj(patch)) return patch as T;
   const out: Record<string, unknown> = { ...base };
-  for (const [k, v] of Object.entries(patch)) out[k] = k in out ? merge(out[k], v) : v;
+  for (const [k, v] of Object.entries(patch)) {
+    // null in an override deletes the key
+    if (v === null) delete out[k];
+    else out[k] = k in out ? merge(out[k], v) : v;
+  }
   return out as T;
 }
 

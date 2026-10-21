@@ -33,7 +33,8 @@ export function tags(s: Spell): string[] {
   if (r === 'auto') out.push('Auto-hit');
   else if (r === 'attack') out.push('Attack roll');
   else if (r === 'save' && s.summary?.save) out.push(`${s.summary.save.toUpperCase()} save`);
-  if (s.concentration) out.push('Concentration');
+  // the duration text already says Concentration; a second tag would repeat it
+  if (s.concentration && !/concentration/i.test(s.duration)) out.push('Concentration');
   if (s.ritual) out.push('Ritual');
   return out;
 }

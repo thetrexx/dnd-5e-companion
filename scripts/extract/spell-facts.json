@@ -2881,8 +2881,7 @@
   ],
   "page": 233,
   "summary": {
-   "resolution": "none",
-   "damage": null
+   "resolution": "none"
   }
  },
  {
@@ -3728,8 +3727,7 @@
   ],
   "page": 239,
   "summary": {
-   "resolution": "none",
-   "damage": null
+   "resolution": "none"
   }
  },
  {
@@ -5589,7 +5587,6 @@
   "summary": {
    "resolution": "save",
    "save": "dex",
-   "damage": null,
    "upcast": "+1d8 per slot level above 4"
   }
  },
@@ -6777,8 +6774,7 @@
   "page": 259,
   "summary": {
    "resolution": "save",
-   "save": "dex",
-   "damage": null
+   "save": "dex"
   }
  },
  {
@@ -9008,8 +9004,7 @@
   ],
   "page": 276,
   "summary": {
-   "resolution": "none",
-   "damage": null
+   "resolution": "none"
   }
  },
  {
@@ -9454,8 +9449,7 @@
   "page": 279,
   "summary": {
    "resolution": "save",
-   "save": "con",
-   "damage": null
+   "save": "con"
   }
  },
  {

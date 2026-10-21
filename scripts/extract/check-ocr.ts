@@ -3,7 +3,7 @@ import { CACHE } from './config.ts';
 import { judgeRecord } from './ocr.ts';
 import { extractPage } from './pages.ts';
 
-type Rec = { id: string; name: string; page?: number; description?: string[]; higherLevels?: string };
+type Rec = { id: string; name: string; page?: number; description?: string[] };
 type Spell = Rec & {
   level: number; school: string; ritual?: boolean; range: string; duration: string; higherLevels?: string;
   cast: { text: string }; components: { v: boolean; s: boolean; m?: { text: string } };
@@ -66,7 +66,7 @@ function items(kind: Kind): Item[] | 'skip' {
   return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...(r.description ?? [])].join('\n'), page: r.page! }));
 }
 
-interface Result { key: string; why: string[]; excerpts: string[]; accepted?: string }
+interface Result { key: string; why: string[]; accepted?: string }
 
 const arg = process.argv[2];
 if (arg && !KINDS.includes(arg as Kind)) {
@@ -82,9 +82,9 @@ for (const kind of kinds) {
   if (list === 'skip') { console.log(`${kind}: skipped (no description to compare)`); continue; }
   for (const it of list) {
     checked++;
-    if (!Number.isInteger(it.page)) { failures.push({ key: it.key, why: ['no page'], excerpts: [], accepted: accept[it.key] }); continue; }
+    if (!Number.isInteger(it.page)) { failures.push({ key: it.key, why: ['no page'], accepted: accept[it.key] }); continue; }
     const r = judgeRecord(it.text, ocrPages(it.page), it.prose);
-    if (!r.pass) failures.push({ key: it.key, why: r.reasons, excerpts: [], accepted: accept[it.key] });
+    if (!r.pass) failures.push({ key: it.key, why: r.reasons, accepted: accept[it.key] });
   }
 }
 
@@ -96,7 +96,7 @@ const lines = [
   ...[...open, ...failures.filter(f => f.accepted)].flatMap(f => [
     `## ${f.key}${f.accepted ? ` (accepted: ${f.accepted})` : ''}`,
     ...f.why.map(w => `- ${w}`),
-    ...f.excerpts.map(e => `- missing: "${e}"`), '',
+    '',
   ]),
 ];
 mkdirSync('.cache', { recursive: true });

@@ -1,6 +1,7 @@
 import { DATA } from '../data';
 import type { ClassId, Route } from '../data/types';
 import { maxSpellLevel } from './rules';
+import { actionSections } from './sections';
 import { effectiveSub } from './subclass';
 
 export const ACTION_ICON = 'https://bg3.wiki/w/images/f/f2/Action_Icon.png';
@@ -22,11 +23,14 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
   const s = effectiveSub(cls, level, sub);
   const to = (page: 'actions' | 'spells', section: string): Route =>
     s ? { page, cls, level, sub: s.id, section } : { page, cls, level, section };
+  // the class row lands on the first class, subclass or option section that has cards
+  const classSection = actionSections(cls, level, s?.id)
+    .find(x => (x.id === 'class' || x.id === 'subclass' || x.id.startsWith('opt-')) && x.items.length > 0)?.id ?? 'class';
   const rows: MenuRow[] = [
     { kind: 'actions', label: 'Actions', icon: { type: 'img', src: ACTION_ICON }, target: to('actions', 'actions') },
     { kind: 'bonus', label: 'Bonus Actions', icon: { type: 'img', src: BONUS_ACTION_ICON }, target: to('actions', 'bonus') },
     { kind: 'reactions', label: 'Reactions', icon: { type: 'img', src: REACTION_ICON }, target: to('actions', 'reactions') },
-    { kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: s?.hotbarIcon ?? c.hotbarIcon }, target: to('actions', 'class') },
+    { kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: s?.hotbarIcon ?? c.hotbarIcon }, target: to('actions', classSection) },
   ];
   // Subclass casting (Eldritch Knight, Arcane Trickster) on a non-caster class.
   const cast = c.caster === 'none' ? s?.casting : undefined;

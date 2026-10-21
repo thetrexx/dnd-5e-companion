@@ -25,7 +25,9 @@ test('fighter 1 action sections', () => {
 test('subclass spell sections', () => {
   const ekSp = spellSections('fighter', 3, 'eldritch-knight').flatMap(s => s.items) as Spell[];
   expect(ekSp.length).toBeGreaterThan(0);
-  expect(ekSp.every(s => ['Abjuration', 'Evocation'].includes(s.school))).toBe(true);
+  expect(ekSp.filter(s => s.level > 0).every(s => ['Abjuration', 'Evocation'].includes(s.school))).toBe(true);
+  // cantrips have no school limit
+  expect(ekSp.some(s => s.level === 0 && !['Abjuration', 'Evocation'].includes(s.school))).toBe(true);
   const land = spellSections('druid', 3, 'circle-of-the-land').find(s => s.id === 'lvl-2')!;
   expect(land.items.some(i => i.id === 'hold-person')).toBe(true);
   expect(land.items.filter(i => i.id === 'hold-person')).toHaveLength(1);
@@ -59,4 +61,17 @@ test('land tag joins every terrain granting a spell', () => {
   const l2 = spellSections('druid', 3, 'circle-of-the-land').find(s => s.id === 'lvl-2')!;
   expect(l2.tags?.['spike-growth']).toBe('Circle · Arctic, Mountain');
   expect(l2.tags?.['hold-person']).toBe('Circle · Arctic');
+});
+
+test('arcane trickster cantrips include mage hand', () => {
+  const at = spellSections('rogue', 3, 'arcane-trickster');
+  expect(at.find(s => s.id === 'cantrips')!.items.map(i => i.id)).toContain('mage-hand');
+  expect(at.filter(s => s.id !== 'cantrips').flatMap(s => s.items as Spell[]).every(s => ['Enchantment', 'Illusion'].includes(s.school))).toBe(true);
+});
+
+test('subclass casters omit spell levels they never reach', () => {
+  const ek = spellSections('fighter', 3, 'eldritch-knight');
+  expect(ek.map(s => s.id)).toEqual(['cantrips', 'lvl-1', 'lvl-2', 'lvl-3', 'lvl-4']);
+  expect(ek.find(s => s.id === 'lvl-4')!.locked).toBe('Unlocks at Fighter 19');
+  expect(spellSections('rogue', 20, 'arcane-trickster').some(s => s.id === 'lvl-5')).toBe(false);
 });

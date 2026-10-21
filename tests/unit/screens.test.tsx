@@ -83,6 +83,19 @@ test('every card ends with the PHB page line', () => {
   expect(wb.container.textContent).toContain('Full rules: PHB p. 75');
   const fb = render(<Card kind="spell" id="fire-bolt" cls="wizard" level={3} />);
   expect(fb.container.textContent).toContain('Full rules: PHB p. 242');
+  for (const r of [wb, fb]) {
+    const art = r.container.querySelector('article.card')!;
+    expect(art.lastElementChild!.className).toBe('card-ref');
+    expect(art.querySelector('.card-cost')!.nextElementSibling!.className).toBe('card-ref');
+  }
+});
+
+test('Card shows a feature trigger for any cost', () => {
+  const f = DATA.features.find((x) => x.id === 'frenzy')!;
+  expect(f.cost).toBe('bonus');
+  expect(f.trigger).toBeTruthy();
+  const r = render(<Card kind="feature" id="frenzy" cls="barbarian" level={3} sub="path-of-the-berserker" />);
+  expect(r.container.querySelector('.card-cost')!.textContent).toContain(`Bonus Action, ${f.trigger}`);
 });
 
 test('Card option back link points to the group that lists it for this class', () => {

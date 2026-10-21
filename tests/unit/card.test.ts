@@ -31,7 +31,7 @@ test('tags', () => {
   expect(tags(mm)).toEqual(['120 ft', 'Instantaneous', 'Auto-hit']);
   expect(tags(get('thunderwave'))).toContain('CON save');
   expect(tags(get('fire-bolt'))).toContain('Attack roll');
-  expect(tags(get('guidance'))).toEqual(['Touch', 'Concentration, up to 1 minute', 'Concentration']);
+  expect(tags(get('guidance'))).toEqual(['Touch', 'Concentration, up to 1 minute']);
 });
 test('costBar', () => {
   expect(costBar(get('shield'))).toMatchObject({ cost: 'reaction', label: 'Reaction', slot: 'Level 1 Spell Slot' });

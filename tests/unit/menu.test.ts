@@ -38,3 +38,8 @@ test('warlock slot rows use the warlock icon', () => {
   expect(menuRows('warlock', 1).find(r => r.kind === 'spells')!.icon).toMatchObject({ type: 'slot', warlock: true });
   expect(menuRows('wizard', 1).find(r => r.kind === 'spells')!.icon).toEqual({ type: 'slot', level: 1 });
 });
+test('class actions row targets the first non-empty class section', () => {
+  const lock = (r: ReturnType<typeof menuRows>) => r.find(x => x.kind === 'class')!.target;
+  expect(lock(menuRows('fighter', 1))).toMatchObject({ page: 'actions', section: 'class' });
+  expect(lock(menuRows('warlock', 2))).toMatchObject({ page: 'actions', section: 'opt-eldritch-invocations' });
+});

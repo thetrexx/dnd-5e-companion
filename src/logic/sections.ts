@@ -17,7 +17,8 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   const s = effectiveSub(cls, level, sub);
   const cast = c.caster === 'none' ? s?.casting : undefined;
   const mine = cast
-    ? DATA.spells.filter(sp => sp.classes.includes(cast.list) && cast.schools.includes(sp.school))
+    // the school limit applies to leveled spells only; cantrips come from the whole list
+    ? DATA.spells.filter(sp => sp.classes.includes(cast.list) && (sp.level === 0 || cast.schools.includes(sp.school)))
     : DATA.spells.filter(sp => sp.classes.includes(cls));
   const maxTable = cast ? cast.maxSpellLevel : c.maxSpellLevel;
   const subtitle = cast ? s!.name : c.name;
@@ -48,8 +49,10 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
     }
   }
   const max = cast ? (cast.maxSpellLevel[level - 1] ?? 0) : maxSpellLevel(c, level);
+  // a subclass caster (Eldritch Knight, Arcane Trickster) never reaches levels 5-9: leave them out
+  const ceiling = cast ? Math.max(...cast.maxSpellLevel) : 9;
   const out: Section[] = [];
-  for (let n = 0; n <= 9; n++) {
+  for (let n = 0; n <= ceiling; n++) {
     const items = byLevel.get(n) ?? [];
     if (items.length === 0) continue;
     const sec: Section = {
