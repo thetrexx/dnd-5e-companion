@@ -2617,6 +2617,38 @@
     "textSource": "summary"
   },
   {
+    "id": "find-traps",
+    "name": "Find Traps",
+    "level": 2,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "ranger"
+    ],
+    "page": 241,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You learn whether any trap lies within 120 ft and in your line of sight. A trap here means anything deliberately built to cause a sudden harmful or unwanted effect, for example a glyph of warding, an alarm ward or a pit trap, but not natural hazards like a weak floor or hidden sinkhole.",
+      "You learn only that a trap exists and the general kind of danger, not where it is."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "fire-bolt",
     "name": "Fire Bolt",
     "level": 0,
@@ -2697,6 +2729,123 @@
     "textSource": "summary"
   },
   {
+    "id": "flame-blade",
+    "name": "Flame Blade",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 242,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "3d6",
+        "type": "Fire"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Leaf of sumac",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A scimitar-sized blade of fire forms in your free hand for up to 10 minutes (concentration). If you let go it vanishes, but you can call it back as a bonus action.",
+      "Use your action to swing it as a melee spell attack, dealing 3d6 fire damage on a hit. It sheds bright light for 10 ft and dim light for 10 ft more."
+    ],
+    "higherLevels": "Every 2 slot levels above 2 add 1d6 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "flaming-sphere",
+    "name": "Flaming Sphere",
+    "level": 2,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "wizard"
+    ],
+    "page": 242,
+    "summary": {
+      "resolution": "save",
+      "damage": {
+        "dice": "2d6",
+        "type": "Fire"
+      },
+      "upcast": "+1d6 per slot level above 2",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Bit of tallow, pinch of brimstone, dusting of powdered iron",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 5 ft wide ball of fire appears in a free space within 60 ft for up to 1 minute (concentration). A creature that ends its turn within 5 ft of it makes a Dexterity save: 2d6 fire damage, half on a success.",
+      "As a bonus action, roll it up to 30 ft; a creature it rams makes the save and the sphere stops for the turn. It hops 5 ft barriers and 10 ft pits, ignites unattended flammables, and lights 20 ft bright plus 20 ft dim."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d6 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "fly",
+    "name": "Fly",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 243,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Wing feather from any bird",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You touch a willing creature; it gains a flying speed of 60 ft for up to 10 minutes (concentration). When the spell ends, it falls if still in the air, unless it can stop itself."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1 more target.",
+    "textSource": "summary"
+  },
+  {
     "id": "fog-cloud",
     "name": "Fog Cloud",
     "level": 1,
@@ -2764,6 +2913,117 @@
       "For up to 1 minute (concentration) you have advantage on Charisma checks aimed at one creature of your choice that is not hostile to you.",
       "When the spell ends, that creature realizes you used magic on it and turns hostile toward you. A violent one may attack you; others may seek revenge in other ways, at the DM's discretion."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "gaseous-form",
+    "name": "Gaseous Form",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 244,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Gauze scrap and a wisp of smoke",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A willing creature you touch, with all its gear, becomes a misty cloud for up to 1 hour (concentration). Dropping to 0 hit points ends it; incorporeal creatures are unaffected.",
+      "As mist it only flies, at 10 ft, can enter others' spaces and slip through cracks (liquids count as solid surfaces), resists nonmagical damage, has advantage on Strength, Dexterity and Constitution saves, and hovers even if stunned.",
+      "It can't speak, attack, cast spells, or handle objects, and can't use or drop what it carries."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "gentle-repose",
+    "name": "Gentle Repose",
+    "level": 2,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "10 days",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "page": 245,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Pinch of salt, plus a copper piece on each eye that must stay there",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Touch a corpse or other remains: for 10 days it neither decays nor can become undead.",
+      "Days under this spell don't count toward the time limit of spells like raise dead, so it buys more time to revive the creature."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "glyph-of-warding",
+    "name": "Glyph of Warding",
+    "level": 3,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 hour"
+    },
+    "range": "Touch",
+    "duration": "Until dispelled or triggered",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "wizard"
+    ],
+    "page": 245,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Incense and powdered diamond worth 200 gp, used up",
+        "costGp": 200,
+        "consumed": true
+      }
+    },
+    "description": [
+      "You hide a glyph on a surface (up to 10 ft across) or in a closable object, which breaks it if moved over 10 ft. Finding it: Investigation vs your spell save DC. You set the trigger (creature traits, password). One use.",
+      "Explosive Runes: Dexterity save for each creature in a 20 ft radius sphere: 5d8 acid, cold, fire, lightning or thunder damage (set when made), half on a success.",
+      "Spell Glyph: store one of your prepared spells, up to 3rd level, aimed at one creature or an area; triggering it casts the spell at the intruder."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d8 to explosive runes, and a spell glyph can hold a spell up to the slot's level.",
     "textSource": "summary"
   },
   {
@@ -2903,6 +3163,44 @@
     "textSource": "summary"
   },
   {
+    "id": "gust-of-wind",
+    "name": "Gust of Wind",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (60-foot line)",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 248,
+    "summary": {
+      "resolution": "save",
+      "save": "str"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "1 legume seed",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 60 ft long, 10 ft wide line of strong wind blows from you for up to 1 minute (concentration). Each creature that starts its turn in it makes a Strength save or is pushed 15 ft away from you along the line.",
+      "Moving toward you inside the line costs 2 ft per 1 ft. The wind clears gas and vapor, snuffs candles and torches, and gives shielded flames like lanterns a 50% chance to go out.",
+      "Each turn, a bonus action turns the wind to a new direction."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "hail-of-thorns",
     "name": "Hail of Thorns",
     "level": 1,
@@ -2936,6 +3234,41 @@
       "Your next ranged weapon hit before the spell ends (concentration, up to 1 minute) makes thorns burst from your weapon or ammunition. Besides the attack's normal effect, the target and every creature within 5 ft of it make a Dexterity save, taking 1d10 piercing damage on a failure or half on a success."
     ],
     "higherLevels": "Damage rises by 1d10 for each slot level above 1, to a maximum of 6d10.",
+    "textSource": "summary"
+  },
+  {
+    "id": "haste",
+    "name": "Haste",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Shaving of licorice root",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A willing creature you can see within 30 ft is sped up for up to 1 minute (concentration): double speed, +2 AC, advantage on Dexterity saves, and 1 extra action each turn. That action can only be Attack (a single weapon attack), Dash, Disengage, Hide or Use an Object.",
+      "When the spell ends, a wave of lethargy hits: the target can't move or act until after its next turn."
+    ],
     "textSource": "summary"
   },
   {
@@ -2975,6 +3308,48 @@
       "A creature you can see within 60 ft regains 1d4 hit points plus your spellcasting modifier. Undead and constructs are not healed."
     ],
     "higherLevels": "Healing rises by 1d4 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "heat-metal",
+    "name": "Heat Metal",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "2d8",
+        "type": "Fire"
+      },
+      "upcast": "+1d8 per slot level above 2"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Piece of iron and a flame",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A manufactured metal object you can see within 60 ft, such as a metal weapon or medium or heavy metal armor, glows red-hot for up to 1 minute (concentration). Any creature touching it takes 2d8 fire damage on the cast, and again each time you use a bonus action on later turns.",
+      "A creature holding or wearing it that takes the damage makes a Constitution save or drops it if able. If it can't or won't let go, it attacks and makes ability checks with disadvantage until your next turn begins."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d8 damage.",
     "textSource": "summary"
   },
   {
@@ -3127,6 +3502,45 @@
     "textSource": "summary"
   },
   {
+    "id": "hunger-of-hadar",
+    "name": "Hunger of Hadar",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock"
+    ],
+    "page": 251,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "2d6",
+        "type": "Cold"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Pickled octopus tentacle",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 20 ft radius sphere of freezing void opens on a point within 150 ft for up to 1 minute (concentration). No light can brighten it, creatures fully inside are blinded, it is difficult terrain, and its whispers carry 30 ft.",
+      "A creature starting its turn inside takes 2d6 cold damage (no save). One ending its turn inside makes a Dexterity save or takes 2d6 acid damage."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "hunters-mark",
     "name": "Hunter's Mark",
     "level": 1,
@@ -3155,6 +3569,44 @@
       "If it drops to 0 hit points first, you can spend a bonus action on a later turn to move the mark to a new creature."
     ],
     "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
+    "textSource": "summary"
+  },
+  {
+    "id": "hypnotic-pattern",
+    "name": "Hypnotic Pattern",
+    "level": 3,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 252,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": false,
+      "s": true,
+      "m": {
+        "text": "Glowing incense stick or crystal vial of phosphorescent material",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A swirl of colors flashes briefly in a 30 ft cube within 120 ft. Each creature in it that sees the pattern makes a Wisdom save or is charmed for up to 1 minute (concentration). While charmed it is incapacitated and its speed is 0.",
+      "The effect ends for a creature if it takes any damage or someone uses an action to shake it awake."
+    ],
     "textSource": "summary"
   },
   {
@@ -3267,6 +3719,43 @@
     "textSource": "summary"
   },
   {
+    "id": "invisibility",
+    "name": "Invisibility",
+    "level": 2,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 254,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Eyelash in gum arabic",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you touch turns invisible for up to 1 hour (concentration), along with whatever it wears or carries while on its person. The spell ends for a target as soon as it attacks or casts a spell."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1 more target.",
+    "textSource": "summary"
+  },
+  {
     "id": "jump",
     "name": "Jump",
     "level": 1,
@@ -3299,6 +3788,144 @@
     },
     "description": [
       "You touch a creature. For 1 minute its jump distance is 3 times normal."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "knock",
+    "name": "Knock",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 254,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Pick an object you can see within 60 ft that blocks access: a door, box, chest, manacles, padlock and so on. A mundane lock opens, or a stuck or barred object comes free; with several locks, only one opens.",
+      "An arcane lock on it is suppressed for 10 minutes; meanwhile the object opens and closes normally.",
+      "Casting it makes a loud knock heard up to 300 ft away."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "leomunds-tiny-hut",
+    "name": "Leomund's Tiny Hut",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Self (10-foot-radius hemisphere)",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 255,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Small crystal bead",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 10 ft radius dome of force forms over you and stays put for 8 hours; leaving it ends the spell. It holds you plus up to nine Medium or smaller creatures, and fails if anything larger, or more than nine creatures, is inside.",
+      "Those inside at casting pass through freely; everything else is barred, and spells and magical effects can't cross it. Inside stays comfortable and dry.",
+      "You can make the inside dim or dark. Opaque from outside (any color), clear from inside."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "lesser-restoration",
+    "name": "Lesser Restoration",
+    "level": 2,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger"
+    ],
+    "page": 255,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You touch a creature and end one disease or one condition on it: blinded, deafened, paralyzed or poisoned."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "levitate",
+    "name": "Levitate",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 255,
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Small leather loop, or golden wire bent into a cup on a long shank",
+        "consumed": false
+      }
+    },
+    "description": [
+      "One creature or object you can see within 60 ft, weighing up to 500 pounds, rises up to 20 ft and hangs there for up to 10 minutes (concentration). An unwilling creature that passes a Constitution save is unaffected.",
+      "It moves only by pushing or pulling on fixed things in reach, like climbing. Each turn you can raise or lower it up to 20 ft: within your move if it is you, otherwise with your action (it must stay in range). When the spell ends it floats gently down."
     ],
     "textSource": "summary"
   },
@@ -3337,6 +3964,118 @@
     "description": [
       "One object up to 10 ft across glows for 1 hour: bright light 20 ft out, dim light another 20 ft, in any colour you pick. Something opaque placed over it hides the glow. Casting the spell again, or dismissing it as an action, ends it.",
       "If a hostile creature is holding or wearing the object, it can make a Dexterity save to avoid the spell."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "lightning-arrow",
+    "name": "Lightning Arrow",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "ranger"
+    ],
+    "page": 255,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d8",
+        "type": "Lightning"
+      },
+      "upcast": "+1d8 per slot level above 3"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Your next ranged weapon attack before the spell ends (concentration, up to 1 minute) turns the ammunition, or the thrown weapon, into lightning. Roll the attack normally: 4d8 lightning damage on a hit, half on a miss, instead of the weapon's damage.",
+      "Hit or miss, each creature within 10 ft of the target makes a Dexterity save, taking 2d8 lightning damage, half on a success. The ammunition or weapon then returns to normal."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d8 to both damage rolls.",
+    "textSource": "summary"
+  },
+  {
+    "id": "lightning-bolt",
+    "name": "Lightning Bolt",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (100-foot line)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 255,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "8d6",
+        "type": "Lightning"
+      },
+      "upcast": "+1d6 per slot level above 3"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Fur scrap and an amber, crystal or glass rod",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 100 ft long, 5 ft wide line of lightning blasts out from you, aimed where you like. Each creature in the line makes a Dexterity save, taking 8d6 lightning damage, half on a success. It sets fire to flammable objects nobody is wearing or carrying."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d6 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "locate-animals-or-plants",
+    "name": "Locate Animals or Plants",
+    "level": 2,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Bit of bloodhound fur",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Name or describe a specific kind of beast or plant. If any lie within 5 miles, you sense how far away the closest one is and in which direction."
     ],
     "textSource": "summary"
   },

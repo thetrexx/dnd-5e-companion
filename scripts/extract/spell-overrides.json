@@ -190,5 +190,22 @@
       "resolution": "save",
       "save": "dex"
     }
+  },
+  "flame-blade": {
+    "summary": {
+      "resolution": "attack"
+    }
+  },
+  "flaming-sphere": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "levitate": {
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    }
   }
 }

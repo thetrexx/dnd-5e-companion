@@ -4157,7 +4157,7 @@
   ],
   "page": 242,
   "summary": {
-   "resolution": "none",
+   "resolution": "attack",
    "damage": {
     "dice": "3d6",
     "type": "Fire"
@@ -4223,12 +4223,13 @@
   ],
   "page": 242,
   "summary": {
-   "resolution": "none",
+   "resolution": "save",
    "damage": {
     "dice": "2d6",
     "type": "Fire"
    },
-   "upcast": "+1d6 per slot level above 2"
+   "upcast": "+1d6 per slot level above 2",
+   "save": "dex"
   }
  },
  {
@@ -6000,7 +6001,8 @@
   ],
   "page": 255,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "con"
   }
  },
  {
