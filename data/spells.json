@@ -2246,7 +2246,7 @@
       "s": true
     },
     "description": [
-      "You puff noxious gas at a creature within 10 ft. It makes a Constitution save or takes 1d12 poison damage.",
+      "You puff noxious gas at a creature you can see within 10 ft. It makes a Constitution save or takes 1d12 poison damage.",
       "Damage rises to 2d12 at level 5, 3d12 at level 11 and 4d12 at level 17."
     ],
     "textSource": "summary"
@@ -2321,10 +2321,10 @@
       "s": true
     },
     "description": [
-      "A flame appears in your palm and lasts 10 minutes. It does not hurt you, lights a 10 ft radius brightly and a further 10 ft dimly.",
-      "You can hurl it at a creature within 30 ft as a ranged spell attack. A hit deals 1d8 fire damage. Throwing the flame ends the spell."
+      "A flame sits in your palm for 10 minutes, harmless to you and your gear, lighting a 10 ft radius brightly and a further 10 ft dimly. Dismiss it as an action, or recast, to end it.",
+      "When you cast it, or as an action later, you can throw it at a creature within 30 ft (ranged spell attack; 1d8 fire on a hit). Throwing it ends the spell.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
     ],
-    "higherLevels": "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17.",
     "textSource": "summary"
   },
   {
@@ -2360,7 +2360,7 @@
     },
     "description": [
       "A willing creature you touch gains a ward for up to 10 minutes (concentration) against aberrations, celestials, elementals, fey, fiends and undead. Those creatures attack it at disadvantage and cannot possess it or charm or frighten it.",
-      "If it is already under such an effect, it gets a new save against it with advantage."
+      "If one of them already has it charmed, frightened or possessed, it has advantage on any new save against that effect."
     ],
     "textSource": "summary"
   },
@@ -2427,9 +2427,9 @@
       "s": true
     },
     "description": [
-      "Make a ranged spell attack against a creature within 60 ft. A hit deals 1d8 cold damage and cuts the target's speed by 10 ft until your next turn begins."
+      "Make a ranged spell attack against a creature within 60 ft. A hit deals 1d8 cold damage and cuts the target's speed by 10 ft until your next turn begins.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
     ],
-    "higherLevels": "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17.",
     "textSource": "summary"
   },
   {
@@ -2569,7 +2569,7 @@
     },
     "description": [
       "Bonus action. Ward a creature within 30 ft for 1 minute. Anyone who targets it with an attack or harmful spell must first make a Wisdom save, or pick a new target or lose the attack or spell.",
-      "Area effects are not stopped. The ward ends if the warded creature makes an attack, casts a spell, or damages another creature."
+      "Area effects such as a fireball are not stopped. The ward ends if the warded creature attacks, or targets or catches a foe with a spell."
     ],
     "textSource": "summary"
   },
@@ -2778,7 +2778,7 @@
     },
     "description": [
       "You create an image of an object, creature or effect within 60 ft, no larger than a 15 ft cube. It makes no sound, smell or other sensation, and lasts up to 10 minutes (concentration).",
-      "As an action you can move it anywhere in range, and its look can change to match. A creature can study it and make an Investigation check against your spell save DC to see through it. Touching it reveals it."
+      "As an action you can move it anywhere in range, and its look can change to match. A creature that spends its action studying it can make an Investigation check against your spell save DC to see through it. Touching it reveals it."
     ],
     "textSource": "summary"
   },
