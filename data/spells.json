@@ -1195,9 +1195,9 @@
       }
     },
     "description": [
-      "A familiar spirit appears within 10 ft as a bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel (your pick). Celestial, fey or fiend, it obeys you, rolls its own initiative, never attacks.",
-      "Within 100 ft: telepathy, and it delivers your touch spells by reaction. As an action, use its senses instead of yours until your next turn.",
-      "At 0 hit points it vanishes until you recast. Dismiss or recall it (within 30 ft) as an action. 1 at a time."
+      "Forms: bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel. A celestial, fey or fiend, it obeys you, has its own initiative, never attacks.",
+      "Within 100 ft: telepathy; it delivers your touch spells by reaction. As an action, borrow its senses until your next turn; you are blind and deaf meanwhile.",
+      "At 0 hit points it vanishes until recast. An action dismisses it to a pocket dimension (recall within 30 ft) or forever. Recast to change its form; only 1 familiar."
     ],
     "textSource": "summary"
   },
@@ -2283,8 +2283,8 @@
       "• Light or snuff a candle, torch or small campfire.",
       "• Clean or soil an object up to 1 cubic ft.",
       "• Chill, warm or flavour 1 cubic ft of non-living material for 1 hour.",
-      "• Make a colour, mark or symbol appear on a surface for 1 hour.",
-      "• Make a hand-sized trinket or illusory image until your next turn ends.",
+      "• A colour, mark or symbol on a surface for 1 hour.",
+      "• A hand-sized trinket or illusory image until your next turn ends.",
       "Up to 3 timed effects at once; dismiss one as an action."
     ],
     "textSource": "summary"
@@ -2978,10 +2978,10 @@
       "• Your voice booms up to 3 times louder for 1 minute.",
       "• Flames flicker, brighten, dim or change colour for 1 minute.",
       "• Harmless tremors shake the ground for 1 minute.",
-      "• A sound you choose starts at a point you pick (instant).",
-      "• An unlocked door or window flies open or slams shut (instant).",
+      "• A sound you choose starts at a point you pick.",
+      "• An unlocked door or window flies open or slams shut.",
       "• Your eyes change appearance for 1 minute.",
-      "Up to 3 of the 1-minute effects can be active at once; dismiss one as an action."
+      "Up to 3 of the 1-minute effects at once; dismiss one as an action."
     ],
     "textSource": "summary"
   },
