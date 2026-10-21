@@ -29,7 +29,7 @@ export function ComponentIcons(p: { spell: Spell }) {
           );
         })}
       </div>
-      {shown && <p class="comp-explain">{shown.body}</p>}
+      {shown && <div class="comp-explain"><b>{shown.title}</b><p>{shown.body}</p></div>}
     </div>
   );
 }

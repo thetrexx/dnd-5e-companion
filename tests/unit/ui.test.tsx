@@ -22,17 +22,17 @@ test('Icon with no src renders the fallback directly', () => {
 
 test('ComponentIcons: tap toggles explainer, Material dimmed when absent', () => {
   const r = render(<ComponentIcons spell={mm} />);
-  fireEvent.click(r.getByText('Verbal'));
+  fireEvent.click(r.getByRole('button', { name: 'Verbal' }));
   expect(r.getByText(/chant mystic words/)).toBeTruthy();
-  fireEvent.click(r.getByText('Verbal'));
+  fireEvent.click(r.getByRole('button', { name: 'Verbal' }));
   expect(r.queryByText(/chant mystic words/)).toBeNull();
   expect(r.getByText('Material').closest('[aria-disabled="true"]')).toBeTruthy();
 });
 
 test('ComponentIcons: only one explainer open at a time', () => {
   const r = render(<ComponentIcons spell={mm} />);
-  fireEvent.click(r.getByText('Verbal'));
-  fireEvent.click(r.getByText('Somatic'));
+  fireEvent.click(r.getByRole('button', { name: 'Verbal' }));
+  fireEvent.click(r.getByRole('button', { name: 'Somatic' }));
   expect(r.queryByText(/chant mystic words/)).toBeNull();
   expect(r.getByText(/free hand/)).toBeTruthy();
 });

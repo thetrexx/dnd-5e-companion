@@ -20,3 +20,5 @@
 .comp.on .ico{border-color:var(--accent);box-shadow:0 0 8px color-mix(in srgb,var(--accent) 53%,transparent)}
 .comp.off{opacity:.25;cursor:default}
 .comp-explain{background:var(--explain-bg);border:1px solid var(--accent);border-radius:6px;padding:8px 10px;font-family:var(--font-desc);font-size:10.5px;line-height:1.55;color:var(--explain-text);margin:6px 0;text-shadow:var(--text-shadow)}
+.comp-explain b{display:block;color:var(--explain-title);font-family:var(--font-title);font-weight:normal;font-size:15px}
+.comp-explain p{margin:0}
