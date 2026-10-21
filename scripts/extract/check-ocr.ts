@@ -3,10 +3,13 @@ import { CACHE } from './config.ts';
 import { judgeRecord } from './ocr.ts';
 import { extractPage } from './pages.ts';
 
-type Rec = { id: string; name: string; page?: number; description?: string[] };
+type Rec = {
+  id: string; name: string; page?: number; description?: string[];
+  trigger?: string; prereq?: { text?: string }; resource?: string; uses?: string;
+};
 type Spell = Rec & {
   level: number; school: string; ritual?: boolean; range: string; duration: string; higherLevels?: string;
-  cast: { text: string }; components: { v: boolean; s: boolean; m?: { text: string } };
+  cast: { text: string; trigger?: string }; components: { v: boolean; s: boolean; m?: { text: string } };
 };
 
 const KINDS = ['spells', 'features', 'subclasses', 'races', 'feats', 'options'] as const;
@@ -33,9 +36,14 @@ function spellText(s: Spell): string {
   ].join('\n');
 }
 
-/** The words we wrote: description, higher levels and the material item list. */
-function proseOf(s: Spell): string {
-  return [...(s.description ?? []), s.higherLevels ?? '', s.components.m?.text ?? ''].join('\n');
+/** The words we wrote, one entry per field: description, higher levels, material item list, reaction trigger. */
+function proseOf(s: Spell): string[] {
+  return [(s.description ?? []).join('\n'), s.higherLevels ?? '', s.components.m?.text ?? '', s.cast.trigger ?? ''].filter(Boolean);
+}
+
+/** A feature's or feat's own words, one entry per field. */
+function recProse(r: Rec): string[] {
+  return [(r.description ?? []).join('\n'), r.trigger ?? '', r.prereq?.text ?? '', r.resource ?? '', r.uses ?? ''].filter(Boolean);
 }
 
 function ocrPages(page: number): string {
@@ -49,7 +57,7 @@ function ocrPages(page: number): string {
   return out;
 }
 
-interface Item { key: string; text: string; page: number; prose?: string }
+interface Item { key: string; text: string; page: number; prose: string[] }
 
 function items(kind: Kind): Item[] | 'skip' {
   if (kind === 'spells') {
@@ -63,7 +71,7 @@ function items(kind: Kind): Item[] | 'skip' {
   } else {
     return 'skip'; // subclasses, races, options carry no description: nothing to compare
   }
-  return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...(r.description ?? [])].join('\n'), page: r.page! }));
+  return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...recProse(r)].join('\n'), page: r.page!, prose: recProse(r) }));
 }
 
 interface Result { key: string; why: string[]; accepted?: string }
