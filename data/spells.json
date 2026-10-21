@@ -10560,7 +10560,7 @@
     "description": [
       "You turn into a creature with CR up to your level that you've seen: an average one (no class levels or Spellcasting), not a construct or undead.",
       "Its stats replace yours, except alignment, Int, Wis and Cha. You keep your skill and save proficiencies, add its own, and use its bonus where higher. No legendary or lair actions. You take its HP and Hit Dice; at 0 HP you revert, excess damage carrying over.",
-      "Class, race and other features work if the body allows; its senses replace yours; you speak only if it can. Gear falls, merges or is worn (DM rules on fit).",
+      "Class, race and other features work if the body allows; you lose special senses it lacks; you speak only if it can. Gear falls, merges or is worn (DM rules on fit).",
       "Your action switches to another valid form; your HP can't rise from it."
     ],
     "textSource": "summary"
@@ -12178,7 +12178,7 @@
       }
     },
     "description": [
-      "A creature you touch that died no more than 200 years ago, of anything but old age, returns with full HP if its soul is free and willing. All wounds close, poison and disease are cured, curses from its death are lifted, and missing organs and limbs are replaced.",
+      "A creature you touch that died no more than 200 years ago, of anything but old age, returns with full HP if its soul is free and willing. All wounds close, poison and disease are cured, any curses it had at death are lifted, and missing organs and limbs are replaced.",
       "If the body is gone, speak the creature's name: it reappears in a new body in a free space of your choice within 10 ft."
     ],
     "textSource": "summary"
@@ -12884,7 +12884,7 @@
       "• Up to 20 creatures you can see regain all HP and lose every effect greater restoration ends.",
       "• Up to 10 creatures you can see gain resistance to one damage type.",
       "• Up to 10 creatures you can see become immune to one spell or effect for 8 hours.",
-      "• Reroll one roll made since your last turn, optionally with advantage or disadvantage; you pick which result stands.",
+      "• Force a reroll of any one roll from the last round (your last turn included), optionally with advantage or disadvantage; you pick which result stands.",
       "Other wishes: tell the DM; bigger ones risk failure or twisted results.",
       "Any use besides copying a spell strains you: until a long rest, each spell you cast deals you 1d10 necrotic per spell level (unpreventable); your Strength drops to 3 for 2d4 days (2 days fewer per day of rest); 33 percent chance you lose wish forever."
     ],
