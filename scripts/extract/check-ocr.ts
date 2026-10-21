@@ -95,7 +95,7 @@ for (const kind of kinds) {
     checked++;
     if (!Number.isInteger(it.page)) { failures.push({ key: it.key, source: it.source, why: ['no page'], excerpts: [], accepted: accept[it.key] }); continue; }
     const r = judgeRecord(it.source, it.text, ocrPages(it.page), it.span);
-    if (!r.pass) failures.push({ key: it.key, source: it.source, why: r.reasons, excerpts: [], accepted: accept[it.key] });
+    if (!r.pass) failures.push({ key: it.key, source: it.source, why: r.reasons, excerpts: r.excerpts ?? [], accepted: accept[it.key] });
   }
 }
 

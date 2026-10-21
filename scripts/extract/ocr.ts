@@ -102,7 +102,7 @@ export function longestSharedRun(text: string, ocr: string): number {
 
 /** srd: word-for-word checks. summary: facts match (numbers) and own words (short shared run). */
 export function judgeRecord(source: 'srd' | 'summary', text: string, ocr: string, span?: { from: string; to?: string }):
-  { pass: boolean; reasons: string[] } {
+  { pass: boolean; reasons: string[]; excerpts?: string[] } {
   const reasons: string[] = [];
   const r = compareToOcr(text, ocr, source === 'srd' ? span : undefined);
   if (r.missingNumbers.length) reasons.push(`missing numbers: ${r.missingNumbers.join(', ')}`);
@@ -114,5 +114,6 @@ export function judgeRecord(source: 'srd' | 'summary', text: string, ocr: string
     const run = longestSharedRun(text, ocr);
     if (run >= MAX_RUN) reasons.push(`copied: ${run} consecutive words match the book (limit ${MAX_RUN - 1})`);
   }
-  return { pass: reasons.length === 0, reasons };
+  const excerpts = source === 'srd' && reasons.length ? r.missingExcerpts : undefined;
+  return { pass: reasons.length === 0, reasons, ...(excerpts ? { excerpts } : {}) };
 }

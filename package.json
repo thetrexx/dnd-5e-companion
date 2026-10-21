@@ -10,7 +10,9 @@
     "test": "vitest run",
     "e2e": "playwright test",
     "extract:pages": "node scripts/extract/pages.ts",
-    "check:ocr": "node scripts/extract/check-ocr.ts"
+    "check:ocr": "node scripts/extract/check-ocr.ts",
+    "extract:srd": "node scripts/extract/srd-spells.ts",
+    "extract:lists": "node scripts/extract/apply-spell-lists.ts"
   },
   "dependencies": {
     "preact": "^11.0.1"

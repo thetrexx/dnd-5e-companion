@@ -39,3 +39,10 @@ test('textSource required', () => {
   const bad = structuredClone(DATA); delete (bad.spells[0] as any).textSource;
   expect(validateDataset(bad).join('\n')).toContain('textSource');
 });
+
+test('class lists', () => {
+  const s = (id: string) => DATA.spells.find(x => x.id === id)!;
+  expect(s('shield').classes.sort()).toEqual(['sorcerer', 'wizard']);
+  expect(s('cure-wounds').classes.sort()).toEqual(['bard', 'cleric', 'druid', 'paladin', 'ranger']);
+  expect(s('fireball').page).toBe(241);
+});

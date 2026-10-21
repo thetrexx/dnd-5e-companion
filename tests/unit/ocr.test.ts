@@ -63,3 +63,9 @@ test('srd mode: copied text passes, wrong number fails', () => {
   expect(judgeRecord('srd', real, ocr).pass).toBe(true);
   expect(judgeRecord('srd', real.replace('1d10', '1d12'), ocr).pass).toBe(false);
 });
+test('srd mode: failing record lists excerpts that differ', () => {
+  const r = judgeRecord('srd', real.replace('You hurl a mote of fire at a creature', 'Zorp blarg quux wibble flarn snazz'), ocr);
+  expect(r.pass).toBe(false);
+  expect(r.excerpts?.join(' ')).toContain('Zorp');
+  expect(judgeRecord('srd', real, ocr).excerpts ?? []).toEqual([]);
+});
