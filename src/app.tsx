@@ -5,6 +5,7 @@ import { parseHash } from './router';
 import { Start } from './ui/screens/Start';
 import { LevelPicker } from './ui/screens/LevelPicker';
 import { Menu } from './ui/screens/Menu';
+import { SubclassPicker } from './ui/screens/SubclassPicker';
 import { SpellsPage } from './ui/screens/SpellsPage';
 import { ActionsPage } from './ui/screens/ActionsPage';
 import { Settings } from './ui/screens/Settings';
@@ -26,10 +27,11 @@ export function App() {
   if ('cls' in r && !DATA.classes.some((c) => c.id === r.cls)) return <Start />;
   switch (r.page) {
     case 'level': return <LevelPicker cls={r.cls} />;
-    case 'menu': return <Menu cls={r.cls} level={r.level} />;
-    case 'spells': return <SpellsPage cls={r.cls} level={r.level} section={r.section} />;
-    case 'actions': return <ActionsPage cls={r.cls} level={r.level} section={r.section} />;
-    case 'card': return <Card kind={r.kind} id={r.id} cls={r.cls} level={r.level} />;
+    case 'subclass': return <SubclassPicker cls={r.cls} level={r.level} />;
+    case 'menu': return <Menu cls={r.cls} level={r.level} sub={r.sub} />;
+    case 'spells': return <SpellsPage cls={r.cls} level={r.level} sub={r.sub} section={r.section} />;
+    case 'actions': return <ActionsPage cls={r.cls} level={r.level} sub={r.sub} section={r.section} />;
+    case 'card': return <Card kind={r.kind} id={r.id} cls={r.cls} level={r.level} sub={r.sub} />;
     case 'settings': return <Settings />;
     default: return <Start />;
   }

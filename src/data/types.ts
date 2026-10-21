@@ -57,6 +57,7 @@ export interface Dataset {
 }
 export type Route =
   | { page: 'start' } | { page: 'level'; cls: ClassId } | { page: 'settings' }
-  | { page: 'menu'; cls: ClassId; level: number }
-  | { page: 'spells'|'actions'; cls: ClassId; level: number; section?: string }
-  | { page: 'card'; kind: 'spell'|'feature'; id: string; cls: ClassId; level: number };
+  | { page: 'subclass'; cls: ClassId; level: number }
+  | { page: 'menu'; cls: ClassId; level: number; sub?: string }
+  | { page: 'spells'|'actions'; cls: ClassId; level: number; sub?: string; section?: string }
+  | { page: 'card'; kind: 'spell'|'feature'; id: string; cls: ClassId; level: number; sub?: string };

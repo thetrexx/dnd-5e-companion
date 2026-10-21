@@ -4,6 +4,7 @@ test('browse a wizard', async ({ page }) => {
   await page.goto('./');
   await page.getByText('Wizard').click();
   await page.getByRole('button', { name: '3', exact: true }).click();
+  await page.getByRole('button', { name: 'No subclass' }).click();
   await expect(page).toHaveURL(/#\/menu\/wizard\/3$/);
   await page.getByText('Level 1 Spells').click();
   await expect(page).toHaveURL(/#\/spells\/wizard\/3\?s=lvl-1$/);
