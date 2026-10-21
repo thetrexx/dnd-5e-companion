@@ -184,5 +184,11 @@
     "summary": {
       "damage": null
     }
+  },
+  "call-lightning": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
   }
 }

@@ -1199,12 +1199,13 @@
   ],
   "page": 220,
   "summary": {
-   "resolution": "none",
+   "resolution": "save",
    "damage": {
     "dice": "3d10",
     "type": "Lightning"
    },
-   "upcast": "+1d10 per slot level above 3"
+   "upcast": "+1d10 per slot level above 3",
+   "save": "dex"
   }
  },
  {
