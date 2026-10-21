@@ -1,1 +1,201 @@
-[]
+[
+  {
+    "id": "dwarf",
+    "name": "Dwarf",
+    "page": 20,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "hill-dwarf",
+    "name": "Hill Dwarf",
+    "parent": "dwarf",
+    "page": 20,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "mountain-dwarf",
+    "name": "Mountain Dwarf",
+    "parent": "dwarf",
+    "page": 20,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "elf",
+    "name": "Elf",
+    "page": 23,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "high-elf",
+    "name": "High Elf",
+    "parent": "elf",
+    "page": 23,
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "wizard"
+          ],
+          "level": 0,
+          "count": 1
+        },
+        "atLevel": 1,
+        "ability": "int"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "wood-elf",
+    "name": "Wood Elf",
+    "parent": "elf",
+    "page": 24,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "drow",
+    "name": "Drow",
+    "parent": "elf",
+    "page": 24,
+    "spells": [
+      {
+        "spell": "dancing-lights",
+        "atLevel": 1,
+        "ability": "cha"
+      },
+      {
+        "spell": "faerie-fire",
+        "atLevel": 3,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      },
+      {
+        "spell": "darkness",
+        "atLevel": 5,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "halfling",
+    "name": "Halfling",
+    "page": 28,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "lightfoot-halfling",
+    "name": "Lightfoot Halfling",
+    "parent": "halfling",
+    "page": 28,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "stout-halfling",
+    "name": "Stout Halfling",
+    "parent": "halfling",
+    "page": 28,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "human",
+    "name": "Human",
+    "page": 31,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "variant-human",
+    "name": "Variant Human",
+    "parent": "human",
+    "page": 31,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "dragonborn",
+    "name": "Dragonborn",
+    "page": 34,
+    "spells": [],
+    "options": [
+      "draconic-ancestry"
+    ]
+  },
+  {
+    "id": "gnome",
+    "name": "Gnome",
+    "page": 37,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "forest-gnome",
+    "name": "Forest Gnome",
+    "parent": "gnome",
+    "page": 37,
+    "spells": [
+      {
+        "spell": "minor-illusion",
+        "atLevel": 1,
+        "ability": "int"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "rock-gnome",
+    "name": "Rock Gnome",
+    "parent": "gnome",
+    "page": 37,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "half-elf",
+    "name": "Half-Elf",
+    "page": 39,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "half-orc",
+    "name": "Half-Orc",
+    "page": 41,
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "tiefling",
+    "name": "Tiefling",
+    "page": 43,
+    "spells": [
+      {
+        "spell": "thaumaturgy",
+        "atLevel": 1,
+        "ability": "cha"
+      },
+      {
+        "spell": "hellish-rebuke",
+        "atLevel": 3,
+        "ability": "cha",
+        "uses": "Once per long rest, cast as a 2nd-level spell"
+      },
+      {
+        "spell": "darkness",
+        "atLevel": 5,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      }
+    ],
+    "options": []
+  }
+]

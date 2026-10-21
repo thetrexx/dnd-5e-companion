@@ -559,5 +559,66 @@
       3,
       3
     ]
+  },
+  {
+    "id": "draconic-ancestry",
+    "name": "Draconic Ancestry",
+    "owner": {
+      "kind": "race",
+      "id": "dragonborn"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "draconic-ancestry-sorcerer",
+    "name": "Draconic Ancestry",
+    "owner": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "draconic-ancestry"
   }
 ]

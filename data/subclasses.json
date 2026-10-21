@@ -1131,7 +1131,9 @@
     "cls": "sorcerer",
     "name": "Draconic Bloodline",
     "page": 102,
-    "options": []
+    "options": [
+      "draconic-ancestry-sorcerer"
+    ]
   },
   {
     "id": "wild-magic",
