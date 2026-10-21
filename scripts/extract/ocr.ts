@@ -26,8 +26,29 @@ function share(items: string[], haystack: string): number {
   return hit / items.length;
 }
 
+/**
+ * Index in `lines` of the heading line for `name`: the line whose normalized start equals the
+ * normalized name. Headings are in caps, so a line that starts with the name in caps wins over
+ * one that merely starts with the same letters in prose.
+ */
+function findHeading(lines: string[], name: string, after: number): number {
+  const n = normalizeOcr(name);
+  let loose = -1;
+  for (let i = after; i < lines.length; i++) {
+    if (!normalizeOcr(lines[i]).startsWith(n)) continue;
+    if (!/[a-z]/.test(lines[i].trim().slice(0, name.length))) return i;
+    if (loose < 0) loose = i;
+  }
+  return loose;
+}
+
+/**
+ * `ocr` is raw text with newlines (headings are found at line starts). With `span`, `reverse` is
+ * the share of the cut's shingles found in the text. If `span.from` is absent, reverse is 0. If
+ * `span.to` is given but absent after the heading, `reverse` is undefined and `spanEndMissing` is true.
+ */
 export function compareToOcr(text: string, ocr: string, span?: { from: string; to?: string }):
-  { coverage: number; reverse?: number; missingNumbers: string[]; missingExcerpts: string[] } {
+  { coverage: number; reverse?: number; spanEndMissing?: boolean; missingNumbers: string[]; missingExcerpts: string[] } {
   const nText = normalizeOcr(text);
   const nOcr = normalizeOcr(ocr);
   const coverage = share(shingles(nText), nOcr);
@@ -43,14 +64,16 @@ export function compareToOcr(text: string, ocr: string, span?: { from: string; t
   }
 
   let reverse: number | undefined;
+  let spanEndMissing: boolean | undefined;
   if (span) {
-    const a = nOcr.indexOf(normalizeOcr(span.from));
+    const lines = ocr.split(/\r?\n/);
+    const a = findHeading(lines, span.from, 0);
     if (a < 0) reverse = 0;
     else {
-      const toN = span.to ? normalizeOcr(span.to) : '';
-      const b = toN ? nOcr.indexOf(toN, a + 1) : -1;
-      reverse = share(shingles(nOcr.slice(a, b < 0 ? undefined : b)), nText);
+      const b = span.to ? findHeading(lines, span.to, a + 1) : lines.length;
+      if (b < 0) spanEndMissing = true;
+      else reverse = share(shingles(normalizeOcr(lines.slice(a, b).join('\n'))), nText);
     }
   }
-  return { coverage, reverse, missingNumbers, missingExcerpts };
+  return { coverage, reverse, spanEndMissing, missingNumbers, missingExcerpts };
 }

@@ -31,3 +31,21 @@ test('dropped sentence is caught by reverse', () => {
   expect(r.reverse!).toBeLessThan(0.85);
 });
 test('normalize', () => expect(normalizeOcr('Vou /ire IdlO')).toBe(normalizeOcr('You fire 1d10')));
+
+const prose = `BLESS Enchantment
+Casting Time: 1 action
+You bless up to three creatures. The light of the gods is upon them, and light fills the area.
+LIGHT Evoeation eantrip
+Casting Time: 1 aetion
+You touch one object that is no larger than 10 feet in any dimension.
+LONGSTRIDER Transmutation`;
+test('span heading anchors to its line, not earlier prose', () => {
+  const r = compareToOcr('Light\nEvocation cantrip\nCasting Time: 1 action\nYou touch one object that is no larger than 10 feet in any dimension.', prose, { from: 'Light', to: 'Longstrider' });
+  expect(r.reverse!).toBeGreaterThanOrEqual(0.85);
+  expect(r.spanEndMissing).toBeUndefined();
+});
+test('missing span end is flagged, not sliced to the end', () => {
+  const r = compareToOcr('Light', prose, { from: 'Light', to: 'Nonexistent Spell' });
+  expect(r.spanEndMissing).toBe(true);
+  expect(r.reverse).toBeUndefined();
+});

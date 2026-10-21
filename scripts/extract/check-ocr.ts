@@ -18,6 +18,17 @@ const REPORT = '.cache/ocr-report.md';
 const readJson = <T>(path: string): T => JSON.parse(readFileSync(path, 'utf8')) as T;
 const accept = existsSync('scripts/extract/ocr-accept.json') ? readJson<Record<string, string>>('scripts/extract/ocr-accept.json') : {};
 
+const sortKey = (name: string): string => name.toLowerCase().replace(/['’]/g, '');
+
+/** Every PHB spell name in book order, from spell-lists.json (Task 4) when present; else empty. */
+function bookOrder(): string[] {
+  const path = 'scripts/extract/spell-lists.json';
+  if (!existsSync(path)) return [];
+  const lists = readJson<Record<string, string[]>>(path);
+  const names = [...new Set(Object.values(lists).flat())];
+  return names.sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
+}
+
 function ordinal(n: number): string {
   return n === 1 ? '1st' : n === 2 ? '2nd' : n === 3 ? '3rd' : `${n}th`;
 }
@@ -49,11 +60,13 @@ interface Item { key: string; text: string; page: number; span?: { from: string;
 function items(kind: Kind): Item[] | 'skip' {
   if (kind === 'spells') {
     const spells = readJson<Spell[]>('data/spells.json');
-    const sorted = [...spells].sort((a, b) => a.name.localeCompare(b.name));
-    return sorted.map((s, i) => ({
-      key: `spells:${s.id}`, text: spellText(s), page: s.page!,
-      span: { from: s.name, to: sorted[i + 1]?.name },
-    }));
+    const sorted = [...spells].sort((a, b) => sortKey(a.name).localeCompare(sortKey(b.name)));
+    const book = bookOrder();
+    return sorted.map((s, i) => {
+      const at = book.findIndex(n => sortKey(n) === sortKey(s.name));
+      const to = at >= 0 ? book[at + 1] : sorted[i + 1]?.name;
+      return { key: `spells:${s.id}`, text: spellText(s), page: s.page!, span: { from: s.name, to } };
+    });
   }
   let recs: Rec[];
   if (kind === 'features') {
@@ -87,6 +100,7 @@ for (const kind of kinds) {
     const why: string[] = [];
     if (r.coverage < MIN_COVERAGE) why.push(`coverage ${r.coverage.toFixed(2)} < ${MIN_COVERAGE}`);
     if (r.missingNumbers.length) why.push(`missing numbers: ${r.missingNumbers.join(', ')}`);
+    if (r.spanEndMissing) why.push(`span end not found: ${it.span!.to}`);
     if (r.reverse !== undefined && r.reverse < MIN_REVERSE) why.push(`reverse ${r.reverse.toFixed(2)} < ${MIN_REVERSE}`);
     if (why.length) failures.push({ key: it.key, why, excerpts: r.missingExcerpts, accepted: accept[it.key] });
   }
