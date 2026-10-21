@@ -226,6 +226,7 @@
     ],
     "page": 195,
     "textSource": "summary",
-    "icon": "https://bg3.wiki/w/images/3/35/Opportunity_Attack_Icon.webp"
+    "icon": "https://bg3.wiki/w/images/3/35/Opportunity_Attack_Icon.webp",
+    "trigger": "A hostile creature in your sight steps out of your reach"
   }
 ]

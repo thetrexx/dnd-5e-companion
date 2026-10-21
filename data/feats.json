@@ -177,7 +177,7 @@
     "prereq": "Intelligence or Wisdom 13 or higher",
     "page": 169,
     "description": [
-      "You start with a ritual book holding 2 first-level spells. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability.",
+      "You start with a ritual book holding 2 first-level spells. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability. You can cast them only as rituals, with the book in your hand.",
       "Found ritual spells can be copied in when they are on that class list and their level is at most half yours (round up). Each costs 2 hours and 50 gp per spell level."
     ],
     "spells": [
@@ -240,7 +240,7 @@
     "name": "Shield Master",
     "page": 170,
     "description": [
-      "While wielding a shield: after the Attack action you can use a bonus action to shove a creature within 5 ft with it, and you add the shield's AC bonus to Dexterity saves against effects that target only you.",
+      "While wielding a shield: after the Attack action you can use a bonus action to shove a creature within 5 ft with it. As long as you aren't incapacitated, the shield's AC bonus also adds to your Dexterity saves against spells and effects that target only you.",
       "When a Dexterity save would let you take half damage, you can react to take none on a success."
     ],
     "spells": [],
@@ -281,6 +281,7 @@
     "name": "Tavern Brawler",
     "page": 170,
     "description": [
+      "+1 to Strength or Constitution (max 20).",
       "Improvised weapons and unarmed strikes count as proficient for you, and your unarmed strikes roll a d4 for damage.",
       "On your turn, once an unarmed strike or improvised weapon connects, your bonus action can go on a grapple attempt against that target."
     ],

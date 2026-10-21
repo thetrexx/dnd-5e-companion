@@ -219,14 +219,14 @@
       "id": "path-of-the-totem-warrior"
     },
     "level": 14,
-    "cost": "bonus",
+    "cost": "other",
     "trigger": "While raging",
     "resource": "Rage",
     "description": [
       "Pick a totem animal again (the same one or a new one). Its effect works only while you rage.",
       "Bear: hostile creatures within 5 ft of you attack at disadvantage unless they target you or an ally with this same feature. Enemies that cannot see or hear you, or cannot be frightened, are immune.",
       "Eagle: you fly at a speed matching your current walking speed, but only in short bursts. Land before your turn ends or you drop.",
-      "Wolf: after a melee weapon hit on a target no bigger than Large, spend a bonus action to topple it prone."
+      "Wolf (bonus action): after a melee weapon hit on a target no bigger than Large, spend a bonus action to topple it prone."
     ],
     "page": 50,
     "textSource": "summary"

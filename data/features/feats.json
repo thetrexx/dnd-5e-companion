@@ -300,7 +300,7 @@
     "cost": "reaction",
     "trigger": "An effect lets a successful Dexterity save halve the damage",
     "description": [
-      "If you succeed on that Dexterity save, you take no damage at all, as you duck behind your shield. You must not be incapacitated."
+      "Pass that Dexterity save and you take no damage at all, ducking behind your shield. This needs you to be able to act (not incapacitated)."
     ],
     "page": 170,
     "textSource": "summary"

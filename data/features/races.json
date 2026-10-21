@@ -17,6 +17,51 @@
     "icon": "https://bg3.wiki/w/images/8/84/Lucky_Icon.png"
   },
   {
+    "id": "mask-of-the-wild",
+    "name": "Mask of the Wild",
+    "source": {
+      "kind": "race",
+      "id": "wood-elf"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Nature is cover enough for you. You may try to hide while only lightly obscured, as long as the cover is foliage, heavy rain, falling snow, mist or some other natural phenomenon."
+    ],
+    "page": 24,
+    "textSource": "summary"
+  },
+  {
+    "id": "naturally-stealthy",
+    "name": "Naturally Stealthy",
+    "source": {
+      "kind": "race",
+      "id": "lightfoot-halfling"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Bigger folk make good hiding spots. You may try to hide when the only thing screening you from view is a creature one or more sizes bigger than you."
+    ],
+    "page": 28,
+    "textSource": "summary"
+  },
+  {
+    "id": "halfling-nimbleness",
+    "name": "Halfling Nimbleness",
+    "source": {
+      "kind": "race",
+      "id": "halfling"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Creatures bigger than you don't block your path: you may pass through their spaces."
+    ],
+    "page": 28,
+    "textSource": "summary"
+  },
+  {
     "id": "tinker",
     "name": "Tinker",
     "source": {

@@ -12,6 +12,7 @@
     "extract:pages": "node scripts/extract/pages.ts",
     "check:ocr": "node scripts/extract/check-ocr.ts",
     "extract:lists": "node scripts/extract/apply-spell-lists.ts",
+    "extract:srd": "node scripts/extract/fetch-srd.ts",
     "extract:facts": "node scripts/extract/spell-facts.ts",
     "build:spells": "node scripts/extract/build-spells.ts",
     "extract:icons": "node scripts/extract/icons.ts"
