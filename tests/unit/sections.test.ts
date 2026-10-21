@@ -1,4 +1,4 @@
-import type { Spell } from '../../src/data/types';
+import type { Feature, Spell } from '../../src/data/types';
 import { spellSections, actionSections } from '../../src/logic/sections';
 
 test('wizard spell sections', () => {
@@ -41,4 +41,9 @@ test('option and subclass action sections', () => {
   expect(actionSections('fighter', 3).some(s => s.id === 'subclass')).toBe(false);
   expect(actionSections('fighter', 3, 'champion').some(s => s.id === 'subclass')).toBe(false);
   expect(actionSections('druid', 3, 'circle-of-the-land').some(s => s.id === 'opt-land-terrain')).toBe(false);
+});
+test('monk ki pool shows on the actions page', () => {
+  const ki = actionSections('monk', 5).find(s => s.id === 'class')!.items.find(i => i.id === 'ki') as Feature | undefined;
+  expect(ki).toBeTruthy();
+  expect(ki!.scaling!.find(s => s.label === 'Ki Points')!.values[4]).toBe('5');
 });

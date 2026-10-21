@@ -50,8 +50,8 @@
       "id": "monk"
     },
     "level": 2,
-    "cost": "passive",
-    "resource": "Ki points",
+    "cost": "free",
+    "resource": "Ki points (pool)",
     "uses": "Refill on short or long rest",
     "scaling": [
       {
@@ -97,7 +97,7 @@
     "level": 2,
     "cost": "bonus",
     "trigger": "Right after you take the Attack action",
-    "resource": "Ki points",
+    "resource": "1 ki point",
     "description": [
       "Right after you take the Attack action, spend 1 ki point to throw two unarmed strikes using your bonus action."
     ],
@@ -113,7 +113,7 @@
     },
     "level": 2,
     "cost": "bonus",
-    "resource": "Ki points",
+    "resource": "1 ki point",
     "description": [
       "Spend 1 ki point to Dodge with your bonus action: attacks against you have disadvantage and your Dexterity saves have advantage until your next turn."
     ],
@@ -129,7 +129,7 @@
     },
     "level": 2,
     "cost": "bonus",
-    "resource": "Ki points",
+    "resource": "1 ki point",
     "description": [
       "Spend 1 ki point and use your bonus action to Disengage or Dash. Your jump distance is also doubled for the turn."
     ],
@@ -146,7 +146,7 @@
     "level": 3,
     "cost": "reaction",
     "trigger": "A ranged weapon attack hits you",
-    "resource": "Ki points (optional, 1)",
+    "resource": "1 ki point (optional, to throw the missile back)",
     "description": [
       "When a ranged weapon attack hits you, roll 1d10, add your Dexterity modifier and monk level, and subtract the total from the damage.",
       "If that takes the damage to 0 and the missile is small enough to hold, and you have a free hand, you catch it. You may then spend 1 ki point to fire it back right away, within the same reaction. You are proficient with it, and it counts as a monk weapon."
@@ -180,7 +180,7 @@
     "level": 5,
     "cost": "free",
     "trigger": "You hit with a melee weapon attack",
-    "resource": "Ki points",
+    "resource": "1 ki point",
     "description": [
       "After a melee weapon hit, spend 1 ki point to try to stun the target. On a failed Constitution save (your ki save DC) it is stunned until your next turn ends."
     ],
@@ -213,7 +213,7 @@
     "level": 14,
     "cost": "free",
     "trigger": "You fail a saving throw",
-    "resource": "Ki points",
+    "resource": "1 ki point",
     "description": [
       "Spend 1 ki point to reroll a saving throw you just failed. You must take the new result.",
       "You are also proficient in all saving throws (always on)."
@@ -230,7 +230,7 @@
     },
     "level": 18,
     "cost": "action",
-    "resource": "Ki points (4 or 8)",
+    "resource": "4 ki points (8 for astral projection)",
     "description": [
       "Spend 4 ki points to turn invisible for 1 minute. While invisible you resist every damage type except force.",
       "Or spend 8 ki points to cast astral projection with no material components. You cannot bring other creatures along."
@@ -252,6 +252,7 @@
       "If you roll initiative with no ki points left, you get 4 ki points back."
     ],
     "page": 79,
-    "textSource": "summary"
+    "textSource": "summary",
+    "resource": "Regain 4 ki points"
   }
 ]
