@@ -247,10 +247,10 @@
     "cost": "free",
     "uses": "Replace a dead companion in 8 hours",
     "description": [
-      "You gain a beast companion: pick a beast of Medium size or smaller with challenge rating 1/4 or lower (hawk, mastiff and panther are in appendix D). Add your proficiency bonus to its AC, attack and damage rolls, and to its proficient saves and skills.",
+      "You gain a beast companion: a beast of Medium size or smaller with challenge rating 1/4 or lower (hawk, mastiff and panther are in appendix D). Add your proficiency bonus to its AC, attack and damage rolls, and proficient saves and skills.",
       "Its hit point maximum is its normal one or 4 x your ranger level, whichever is higher. It acts on your initiative but only moves unless you command it (see Companion Commands).",
-      "With only the beast along, you move stealthily at normal pace in favored terrain. When you cast a spell on yourself at level 15 or higher, it also affects the beast if it is within 30 ft.",
-      "If it dies, bond with another willing beast over 8 hours to get a new companion."
+      "With only the beast along, you move stealthily at normal pace in favored terrain. From level 15, a spell you cast on yourself can also affect the beast within 30 ft.",
+      "If it dies, bond with another willing beast over 8 hours."
     ],
     "page": 93,
     "textSource": "summary"

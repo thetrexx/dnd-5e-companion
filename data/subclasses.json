@@ -1,12 +1,5 @@
 [
   {
-    "id": "school-of-evocation",
-    "cls": "wizard",
-    "name": "School of Evocation",
-    "page": 117,
-    "options": []
-  },
-  {
     "id": "champion",
     "cls": "fighter",
     "name": "Champion",
@@ -1293,6 +1286,62 @@
         }
       ]
     },
+    "options": []
+  },
+  {
+    "id": "school-of-abjuration",
+    "cls": "wizard",
+    "name": "School of Abjuration",
+    "page": 115,
+    "options": []
+  },
+  {
+    "id": "school-of-conjuration",
+    "cls": "wizard",
+    "name": "School of Conjuration",
+    "page": 116,
+    "options": []
+  },
+  {
+    "id": "school-of-divination",
+    "cls": "wizard",
+    "name": "School of Divination",
+    "page": 116,
+    "options": []
+  },
+  {
+    "id": "school-of-enchantment",
+    "cls": "wizard",
+    "name": "School of Enchantment",
+    "page": 117,
+    "options": []
+  },
+  {
+    "id": "school-of-evocation",
+    "cls": "wizard",
+    "name": "School of Evocation",
+    "page": 117,
+    "options": []
+  },
+  {
+    "id": "school-of-illusion",
+    "cls": "wizard",
+    "name": "School of Illusion",
+    "page": 118,
+    "options": []
+  },
+  {
+    "id": "school-of-necromancy",
+    "cls": "wizard",
+    "name": "School of Necromancy",
+    "page": 118,
+    "options": []
+  },
+  {
+    "id": "school-of-transmutation",
+    "cls": "wizard",
+    "name": "School of Transmutation",
+    "page": 119,
     "options": []
   }
 ]
