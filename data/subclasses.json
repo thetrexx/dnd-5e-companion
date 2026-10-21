@@ -826,5 +826,12 @@
     "name": "Circle of the Moon",
     "page": 69,
     "options": []
+  },
+  {
+    "id": "battle-master",
+    "cls": "fighter",
+    "name": "Battle Master",
+    "page": 73,
+    "options": []
   }
 ]

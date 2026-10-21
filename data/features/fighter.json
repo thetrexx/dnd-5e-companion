@@ -145,10 +145,203 @@
     },
     "level": 3,
     "cost": "other",
+    "uses": "Summon: bonus action",
     "description": [
-      "Level 3 ritual: spend 1 hour (a short rest works) bonding with one weapon. The weapon has to stay within reach the whole time; touch it at the end to finish the bond.",
-      "A bonded weapon can't be taken from you by disarming unless you're incapacitated. While it is on your plane, summon it to your hand as a bonus action on your turn; it teleports there at once.",
-      "Two bonded weapons at most, and only one can be summoned per bonus action. To bond a third, first break the bond with one of the others."
+      "A 1-hour ritual (a short rest works) ties you to one weapon. Keep it within reach throughout, and touch it at the end to seal the bond.",
+      "A bonded weapon cannot be disarmed from you unless you are incapacitated. While it is on your plane, you can call it to your hand as a bonus action on your turn; it teleports there instantly.",
+      "You can have up to 2 bonded weapons, but summon only one per bonus action. Bonding a third needs you to break one existing bond first."
+    ],
+    "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "superiority-dice",
+    "name": "Superiority Dice",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Superiority dice (pool)",
+    "uses": "Refill on short or long rest",
+    "scaling": [
+      {
+        "label": "Superiority Dice",
+        "values": [
+          "",
+          "",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      {
+        "label": "Die size",
+        "values": [
+          "",
+          "",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      },
+      {
+        "label": "Maneuvers known",
+        "values": [
+          "",
+          "",
+          "3",
+          "3",
+          "3",
+          "3",
+          "5",
+          "5",
+          "5",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "9",
+          "9",
+          "9",
+          "9",
+          "9",
+          "9"
+        ]
+      }
+    ],
+    "description": [
+      "Your pool of special dice that pay for maneuvers. Spend 1 die per maneuver, and use only one maneuver on each attack. Every spent die comes back after a short or long rest.",
+      "Maneuver save DC = 8 + proficiency bonus + Strength or Dexterity modifier (your choice).",
+      "You know 3 maneuvers at level 3, and learn 2 more at levels 7, 10 and 15. You may swap one maneuver whenever you learn new ones."
+    ],
+    "page": 73,
+    "textSource": "summary"
+  },
+  {
+    "id": "know-your-enemy",
+    "name": "Know Your Enemy",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "level": 7,
+    "cost": "other",
+    "description": [
+      "Study or chat with a creature for 1 minute or more, away from combat. The DM tells you whether it ranks above, below or level with you in 2 traits you pick. Options: any of the 3 physical scores, AC, current HP, overall class levels, or fighter levels."
+    ],
+    "page": 73,
+    "textSource": "summary"
+  },
+  {
+    "id": "relentless",
+    "name": "Relentless",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You roll initiative with 0 superiority dice",
+    "description": [
+      "Roll initiative with every superiority die spent, and you get 1 die back."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "war-magic",
+    "name": "War Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "trigger": "You cast a cantrip with your action",
+    "description": [
+      "Cast a cantrip as your action, and you may follow it with 1 weapon attack as a bonus action."
+    ],
+    "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-strike",
+    "name": "Eldritch Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "description": [
+      "A creature you hit with a weapon attack suffers disadvantage on its next save against one of your spells. The spell must land before your next turn ends."
+    ],
+    "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-charge",
+    "name": "Arcane Charge",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You use Action Surge",
+    "resource": "Action Surge",
+    "description": [
+      "When you use Action Surge, you can teleport up to 30 ft to an open space you can see. Teleport before or after the extra action."
+    ],
+    "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "improved-war-magic",
+    "name": "Improved War Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 18,
+    "cost": "bonus",
+    "trigger": "You cast a spell with your action",
+    "description": [
+      "After you use your action to cast any spell, make 1 weapon attack as a bonus action."
     ],
     "page": 75,
     "textSource": "summary"

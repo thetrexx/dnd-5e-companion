@@ -27,6 +27,13 @@
       1,
       1,
       1
+    ],
+    "bonus": [
+      {
+        "subclass": "champion",
+        "atLevel": 10,
+        "count": 1
+      }
     ]
   },
   {
