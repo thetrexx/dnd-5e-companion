@@ -920,10 +920,10 @@
     },
     "description": [
       "Choose one minor nature trick within 30 ft:",
-      "• Forecast the next 24 hours of weather.",
-      "• Force a flower to open or a bud to sprout at once.",
-      "• Produce an instant, harmless sensory effect that fits in a 5 ft cube: drifting leaves, a gust, an animal call, a whiff of scent.",
-      "• Ignite or douse a candle, torch or small campfire."
+      "• A tiny, harmless sign (a golden orb for sun, a cloud for rain, snowflakes) forecasts your local weather for the next 24 hours; it lasts 1 round.",
+      "• Instantly bloom a flower, burst open a seed pod or unfurl a leaf bud.",
+      "• Produce an instant, harmless sensory effect that fits in a 5 ft cube: drifting leaves, a breeze, a small animal noise, a faint smell.",
+      "• Ignite or put out a candle, torch or small campfire."
     ],
     "textSource": "summary"
   },
@@ -1276,7 +1276,7 @@
     },
     "description": [
       "A streak flies to a point you pick within 150 ft and blooms into a 20 ft radius burst of flame. Each creature there makes a Dexterity save, taking 8d6 fire damage on a failure or half on a success.",
-      "The blast wraps around corners and sets loose flammable objects alight."
+      "The blast wraps around corners and sets alight any flammable objects in the area that nobody is wearing or carrying."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 3.",
     "textSource": "summary"
@@ -1518,8 +1518,7 @@
       "s": false
     },
     "description": [
-      "Your next ranged weapon hit within 1 minute (concentration) also bursts into thorns. The target and every creature within 5 ft of it make a Dexterity save, taking 1d10 piercing damage on a failure or half on a success.",
-      "The spell ends once that happens."
+      "Your next ranged weapon hit before the spell ends (concentration, up to 1 minute) makes thorns burst from your weapon or ammunition. Besides the attack's normal effect, the target and every creature within 5 ft of it make a Dexterity save, taking 1d10 piercing damage on a failure or half on a success."
     ],
     "higherLevels": "Damage rises by 1d10 for each slot level above 1, to a maximum of 6d10.",
     "textSource": "summary"
@@ -1738,7 +1737,7 @@
     },
     "description": [
       "Mark a creature you can see within 90 ft as your quarry for up to 1 hour (concentration). Each hit you land on it with a weapon deals 1d6 extra damage, and you have advantage on Perception and Survival checks to find it.",
-      "If it drops to 0 hit points, you can move the mark to a new creature within range as a bonus action."
+      "If it drops to 0 hit points first, you can spend a bonus action on a later turn to move the mark to a new creature."
     ],
     "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
     "textSource": "summary"
@@ -2025,8 +2024,8 @@
       "s": true
     },
     "description": [
-      "A floating hand appears at a point within 30 ft and stays for 1 minute. It disappears if you dismiss it, recast the spell, or move more than 30 ft from it.",
-      "Use an action to move it 30 ft and have it handle something: open an unlocked door, take an item from or put one into an open container, or pour out a vial. It cannot attack, activate magic items, or lift over 10 lb."
+      "A floating hand appears at a point within 30 ft and stays for 1 minute. It vanishes if you dismiss it as an action, cast the spell again, or it is ever more than 30 ft from you.",
+      "Use your action to control it, moving it up to 30 ft each time: handle an object, open an unlocked door or container, stow or fetch an item from an open container, or pour out a vial. It cannot attack, activate magic items, or carry over 10 lb."
     ],
     "textSource": "summary"
   },
@@ -2139,7 +2138,7 @@
     },
     "description": [
       "Point at a creature within 120 ft and whisper. Only it hears you, and it can whisper an answer only you hear.",
-      "It works through solid objects if you know the target is behind the barrier and are familiar with it. Silence, 1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. It bends around corners and through openings."
+      "It works through solid objects if you know the target is behind the barrier and are familiar with it. Magical silence, 1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. It bends around corners and through openings."
     ],
     "textSource": "summary"
   },
