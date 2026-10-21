@@ -32,3 +32,16 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'preserve-life')!.resource).toBe('1 Channel Divinity');
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
+
+test('40 subclasses', () => expect(DATA.subclasses).toHaveLength(40));
+test('oath and patron spells', () => {
+  expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
+  expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
+  expect(sub('the-fiend').bonusSpells!.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['burning-hands', 'command']);
+});
+test('AT casting', () => expect(sub('arcane-trickster').casting).toMatchObject({ list: 'wizard', schools: ['Enchantment', 'Illusion'] }));
+test('subclass features B', () => {
+  for (const id of ['sacred-weapon', 'vow-of-enmity', 'rangers-companion', 'fast-hands', 'assassinate', 'tides-of-chaos',
+    'dark-ones-blessing', 'fey-presence', 'portent', 'arcane-ward'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});

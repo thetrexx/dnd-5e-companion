@@ -854,5 +854,161 @@
     "name": "Way of the Four Elements",
     "page": 80,
     "options": []
+  },
+  {
+    "id": "oath-of-devotion",
+    "cls": "paladin",
+    "name": "Oath of Devotion",
+    "page": 85,
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 3
+        },
+        {
+          "spell": "sanctuary",
+          "atLevel": 3
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 5
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 5
+        },
+        {
+          "spell": "beacon-of-hope",
+          "atLevel": 9
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 9
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 13
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 13
+        },
+        {
+          "spell": "commune",
+          "atLevel": 17
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "oath-of-the-ancients",
+    "cls": "paladin",
+    "name": "Oath of the Ancients",
+    "page": 86,
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "ensnaring-strike",
+          "atLevel": 3
+        },
+        {
+          "spell": "speak-with-animals",
+          "atLevel": 3
+        },
+        {
+          "spell": "moonbeam",
+          "atLevel": 5
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 9
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 9
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 13
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 13
+        },
+        {
+          "spell": "commune-with-nature",
+          "atLevel": 17
+        },
+        {
+          "spell": "tree-stride",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "oath-of-vengeance",
+    "cls": "paladin",
+    "name": "Oath of Vengeance",
+    "page": 87,
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "bane",
+          "atLevel": 3
+        },
+        {
+          "spell": "hunters-mark",
+          "atLevel": 3
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 5
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "haste",
+          "atLevel": 9
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "dimension-door",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
   }
 ]
