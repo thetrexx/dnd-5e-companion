@@ -312,5 +312,365 @@
     ],
     "page": 93,
     "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-aberrations",
+    "name": "Aberrations",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Aberrations count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-beasts",
+    "name": "Beasts",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Beasts count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-celestials",
+    "name": "Celestials",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Celestials count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-constructs",
+    "name": "Constructs",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Constructs count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-dragons",
+    "name": "Dragons",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Dragons count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-elementals",
+    "name": "Elementals",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Elementals count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-fey",
+    "name": "Fey",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fey count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-fiends",
+    "name": "Fiends",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fiends count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-giants",
+    "name": "Giants",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Giants count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-monstrosities",
+    "name": "Monstrosities",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Monstrosities count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-oozes",
+    "name": "Oozes",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Oozes count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-plants",
+    "name": "Plants",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Plants count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-undead",
+    "name": "Undead",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Undead count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-humanoids",
+    "name": "Two Humanoid Races",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Instead of a creature type, you may name two humanoid races, such as gnolls and orcs. Both count as favored enemies, with the same tracking and lore advantages and one language they speak.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-arctic",
+    "name": "Arctic",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Arctic is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-coast",
+    "name": "Coast",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Coast is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-desert",
+    "name": "Desert",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Desert is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-forest",
+    "name": "Forest",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Forest is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-grassland",
+    "name": "Grassland",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Grassland is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-mountain",
+    "name": "Mountain",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Mountain is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-swamp",
+    "name": "Swamp",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Swamp is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-underdark",
+    "name": "Underdark",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Underdark is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
   }
 ]

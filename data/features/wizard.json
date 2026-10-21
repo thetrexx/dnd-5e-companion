@@ -254,7 +254,7 @@
     "trigger": "A creature you can see within 30 ft attacks you",
     "uses": "Once per attacker per long rest",
     "description": [
-      "Needs another creature within the attacker's reach. When an enemy you can see no more than 30 ft away targets you with an attack, force a Wisdom save against your wizard spell save DC. If it fails, it must instead strike whoever stands nearest to it (not you, not itself); on ties the attacker decides.",
+      "Needs another creature within range of that attack. When an enemy you can see no more than 30 ft away targets you with an attack, force a Wisdom save against your wizard spell save DC. If it fails, it must instead strike whoever stands nearest to it (not you, not itself); on ties the attacker decides.",
       "If it passes, that attacker is off limits for this feature until you take a long rest. Use it before you learn whether the attack lands. Charm-immune creatures ignore it."
     ],
     "page": 117,

@@ -334,7 +334,7 @@
       }
     ],
     "description": [
-      "Pick two 1st-level spells with the ritual tag, from any class list, and write them in your Book of Shadows. They are free picks, not counted among your known spells, and you cast them only as rituals while holding the book. Warlock spells you already know that carry the tag can be cast as rituals too.",
+      "Pick two 1st-level spells with the ritual tag, from any class list, and write them in your Book of Shadows. They do not count as spells known, and you cast them only as rituals with the book in hand. Warlock spells you already know that carry the tag can be cast as rituals too.",
       "You can copy more rituals you find into the book if the spell level is no more than half your warlock level, rounded up. Each spell level takes 2 hours and 50 gp of ink."
     ],
     "page": 110,

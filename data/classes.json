@@ -360,7 +360,9 @@
     "subclassLevel": 3,
     "subclassLabel": "Ranger Archetype",
     "options": [
-      "fighting-style-ranger"
+      "fighting-style-ranger",
+      "favored-enemy",
+      "natural-explorer"
     ]
   },
   {

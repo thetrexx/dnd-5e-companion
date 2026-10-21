@@ -379,5 +379,185 @@
       9,
       9
     ]
+  },
+  {
+    "id": "elemental-disciplines",
+    "name": "Elemental Disciplines",
+    "owner": {
+      "kind": "subclass",
+      "id": "way-of-the-four-elements"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "id": "totem-spirit",
+    "name": "Totem Spirit",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "aspect-of-the-beast",
+    "name": "Aspect of the Beast",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "totemic-attunement",
+    "name": "Totemic Attunement",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "favored-enemy",
+    "name": "Favored Enemy",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  {
+    "id": "natural-explorer",
+    "name": "Natural Explorer",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
   }
 ]

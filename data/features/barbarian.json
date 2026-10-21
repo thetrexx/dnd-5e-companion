@@ -225,5 +225,142 @@
     ],
     "page": 50,
     "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-bear",
+    "name": "Bear",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "While you rage, you resist every damage type except psychic. The bear spirit lets you shrug off nearly any punishment."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-eagle",
+    "name": "Eagle",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "You are raging and not in heavy armor",
+    "description": [
+      "While you rage and wear no heavy armor, enemies have disadvantage on opportunity attacks against you, and you can take the Dash action as a bonus action."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-wolf",
+    "name": "Wolf",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "While you rage, allies who attack in melee get advantage against any enemy standing within 5 feet of you. You lead the pack."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-bear",
+    "name": "Bear",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "You gain the might of a bear: you can carry and lift twice as much, and Strength checks to push, pull, lift or break things have advantage."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-eagle",
+    "name": "Eagle",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "You see like an eagle: distance up to 1 mile is clear to you, and within 100 feet you can pick out fine details. Dim light no longer penalizes your Wisdom (Perception) checks."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-wolf",
+    "name": "Wolf",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "You get a wolf's hunting senses. You can track creatures while moving at a fast pace, and you can sneak at a normal pace while traveling."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-bear",
+    "name": "Bear",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "passive",
+    "description": [
+      "While you rage, enemies within 5 feet of you have disadvantage when attacking anyone besides you or an ally with this feature. Enemies that cannot see or hear you, or cannot be frightened, ignore this."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-eagle",
+    "name": "Eagle",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "passive",
+    "description": [
+      "While you rage, you gain a flying speed matching your current walking speed. It lasts only in short bursts: you fall if your turn ends while you are airborne with nothing holding you up."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-wolf",
+    "name": "Wolf",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "You hit with a melee weapon attack while raging",
+    "description": [
+      "Once you hit a Large or smaller creature with a melee weapon attack during a rage, a bonus action on your turn lets you topple it prone."
+    ],
+    "page": 50,
+    "textSource": "summary"
   }
 ]

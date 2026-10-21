@@ -442,7 +442,11 @@
     "cls": "barbarian",
     "name": "Path of the Totem Warrior",
     "page": 50,
-    "options": []
+    "options": [
+      "totem-spirit",
+      "aspect-of-the-beast",
+      "totemic-attunement"
+    ]
   },
   {
     "id": "college-of-lore",
@@ -848,7 +852,9 @@
     "cls": "monk",
     "name": "Way of the Four Elements",
     "page": 80,
-    "options": []
+    "options": [
+      "elemental-disciplines"
+    ]
   },
   {
     "id": "oath-of-devotion",

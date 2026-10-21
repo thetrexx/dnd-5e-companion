@@ -483,5 +483,384 @@
     ],
     "page": 80,
     "textSource": "summary"
+  },
+  {
+    "id": "elemental-attunement",
+    "name": "Elemental Attunement",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-four-elements"
+    },
+    "level": 3,
+    "cost": "action",
+    "description": [
+      "You know this one for free. Use your action to briefly bend nearby elemental forces, choosing one effect.",
+      "• A harmless burst of sensation tied to air, earth, fire or water, like sparks, a gust, mist or a rumble.",
+      "• Light or put out a candle, torch or small campfire at once.",
+      "• Heat or cool lifeless material weighing no more than 1 pound; the change lasts 1 hour.",
+      "• Have earth, fire, water or mist fitting in a 1-foot cube shift into a rough shape of your design for 1 minute."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-breath-of-winter",
+    "name": "Breath of Winter",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "6 ki points",
+    "prereq": {
+      "level": 17
+    },
+    "spells": [
+      {
+        "spell": "cone-of-cold",
+        "atLevel": 17
+      }
+    ],
+    "description": [
+      "Costs 6 ki points: you cast cone of cold. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-clench-of-the-north-wind",
+    "name": "Clench of the North Wind",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "3 ki points",
+    "prereq": {
+      "level": 6
+    },
+    "spells": [
+      {
+        "spell": "hold-person",
+        "atLevel": 6
+      }
+    ],
+    "description": [
+      "Costs 3 ki points: you cast hold person. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-eternal-mountain-defense",
+    "name": "Eternal Mountain Defense",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "5 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "stoneskin",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 5 ki points: you cast stoneskin on yourself only. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-fangs-of-the-fire-snake",
+    "name": "Fangs of the Fire Snake",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You take the Attack action on your turn",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point to wrap your fists and feet in flame. Your unarmed reach grows by 10 feet for that action and the rest of the turn, and unarmed hits deal fire damage instead of bludgeoning.",
+      "When one of those attacks hits, spend 1 more ki point to add 1d10 fire damage."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-fist-of-four-thunders",
+    "name": "Fist of Four Thunders",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "spells": [
+      {
+        "spell": "thunderwave",
+        "atLevel": 3
+      }
+    ],
+    "description": [
+      "Costs 2 ki points: you cast thunderwave. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-fist-of-unbroken-air",
+    "name": "Fist of Unbroken Air",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "description": [
+      "Spend 2 ki points and your action to slam a creature within 30 feet with compressed air. It makes a Strength save. On a failure it takes 3d10 bludgeoning damage, is pushed up to 20 feet away and falls prone; on a success it takes half damage and nothing else.",
+      "Each extra ki point adds 1d10 damage."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-flames-of-the-phoenix",
+    "name": "Flames of the Phoenix",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "4 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "fireball",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 4 ki points: you cast fireball. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-gong-of-the-summit",
+    "name": "Gong of the Summit",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "3 ki points",
+    "prereq": {
+      "level": 6
+    },
+    "spells": [
+      {
+        "spell": "shatter",
+        "atLevel": 6
+      }
+    ],
+    "description": [
+      "Costs 3 ki points: you cast shatter. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-mist-stance",
+    "name": "Mist Stance",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "4 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "gaseous-form",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 4 ki points: you cast gaseous form on yourself only. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-ride-the-wind",
+    "name": "Ride the Wind",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "4 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "fly",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 4 ki points: you cast fly on yourself only. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-river-of-hungry-flame",
+    "name": "River of Hungry Flame",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "5 ki points",
+    "prereq": {
+      "level": 17
+    },
+    "spells": [
+      {
+        "spell": "wall-of-fire",
+        "atLevel": 17
+      }
+    ],
+    "description": [
+      "Costs 5 ki points: you cast wall of fire. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-rush-of-the-gale-spirits",
+    "name": "Rush of the Gale Spirits",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "spells": [
+      {
+        "spell": "gust-of-wind",
+        "atLevel": 3
+      }
+    ],
+    "description": [
+      "Costs 2 ki points: you cast gust of wind. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-shape-the-flowing-river",
+    "name": "Shape the Flowing River",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point and your action to choose ice or water filling an area no bigger than 30 feet per side, within 120 feet. You can swap water for ice or ice for water there and reshape the ice freely: raise or lower its surface, dig a trench, build a wall or a pillar.",
+      "Changes can be at most half the area's longest side, and you cannot trap or hurt a creature with them."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-sweeping-cinder-strike",
+    "name": "Sweeping Cinder Strike",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "spells": [
+      {
+        "spell": "burning-hands",
+        "atLevel": 3
+      }
+    ],
+    "description": [
+      "Costs 2 ki points: you cast burning hands. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-water-whip",
+    "name": "Water Whip",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "2 ki points",
+    "description": [
+      "Spend 2 ki points and a bonus action to make a water whip lash at a creature you see within 30 feet. It makes a Dexterity save. Fail: 3d10 bludgeoning damage, and you choose to knock it prone or yank it up to 25 feet closer. Success: half damage, no other effect.",
+      "Each extra ki point adds 1d10 damage."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-wave-of-rolling-earth",
+    "name": "Wave of Rolling Earth",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "6 ki points",
+    "prereq": {
+      "level": 17
+    },
+    "spells": [
+      {
+        "spell": "wall-of-stone",
+        "atLevel": 17
+      }
+    ],
+    "description": [
+      "Costs 6 ki points: you cast wall of stone. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
   }
 ]
