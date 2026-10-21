@@ -534,14 +534,14 @@
   "sanctuary": {
     "description": [
       "Bonus action. Ward a creature within 30 ft for 1 minute. Anyone who targets it with an attack or harmful spell must first make a Wisdom save, or pick a new target or lose the attack or spell.",
-      "Area effects are not stopped. The ward ends if the warded creature attacks, casts a spell at an enemy, or deals damage."
+      "Area effects are not stopped. The ward ends if the warded creature makes an attack, casts a spell, or damages another creature."
     ],
     "material": "a small silver mirror"
   },
   "searing-smite": {
     "description": [
       "Your next melee weapon hit within 1 minute (concentration) also deals 1d6 fire damage and ignites the target. Each of its turns then opens with another 1d6 fire damage.",
-      "Right after taking that burn, it makes a Constitution save; success puts the flames out and ends the spell."
+      "Right after taking that burn, it makes a Constitution save; success puts the flames out and ends the spell. The target, or a creature within 5 ft of it, can also use an action to put the fire out, or submerging it does."
     ],
     "higherLevels": "The extra damage on the hit rises by 1d6 for each slot level above 1."
   },
@@ -560,8 +560,8 @@
   },
   "sleep": {
     "description": [
-      "Roll 5d8 for a pool of hit points. Pick a point within 90 ft; creatures within 20 ft of it fall asleep, lowest current hit points first, each one's total spent from the pool.",
-      "A sleeper is unconscious for 1 minute, until it takes damage, or until someone uses an action to wake it. Undead and creatures immune to charm are skipped."
+      "Roll 5d8 to get a pool of hit points. Choose a point within 90 ft: creatures within 20 ft of it drop off in order of lowest current hit points, skipping those already unconscious. Each one's hit points are deducted from the pool, and a creature with more than what remains is unaffected.",
+      "A sleeper is unconscious for 1 minute, until it takes damage, or until someone uses an action to shake or slap it awake. Undead and creatures immune to charm are skipped."
     ],
     "higherLevels": "Each slot level above 1 adds 2d8 to the roll.",
     "material": "fine sand, rose petals or a cricket"
