@@ -1,0 +1,10 @@
+@font-face{font-family:'Inknut Antiqua';src:url(/fonts/inknut-medium.woff2) format('woff2');font-weight:500;font-display:swap}
+@font-face{font-family:'Inknut Antiqua';src:url(/fonts/inknut-light.woff2) format('woff2');font-weight:300;font-display:swap}
+/* digits come from Noto Serif: Inknut only has old-style figures. Declared after Inknut so they win for 0-9 */
+@font-face{font-family:'Inknut Antiqua';src:url(/fonts/noto-digits-medium.woff2) format('woff2');font-weight:500;unicode-range:U+0030-0039;font-display:swap}
+@font-face{font-family:'Inknut Antiqua';src:url(/fonts/noto-digits-light.woff2) format('woff2');font-weight:300;unicode-range:U+0030-0039;font-display:swap}
+@font-face{font-family:'IM Fell English';src:url(/fonts/fell-english.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'IM Fell English';src:url(/fonts/noto-digits-medium.woff2) format('woff2');unicode-range:U+0030-0039;font-display:swap}
+/* ornaments: EB Garamond fleurons + Noto Sans Symbols 2 leaf dingbats */
+@font-face{font-family:'Orn';src:url(/fonts/orn-ebgaramond.woff2) format('woff2');unicode-range:U+2619,U+2766-2767,U+E001-E002;font-display:block}
+@font-face{font-family:'Orn';src:url(/fonts/orn-notosymbols.woff2) format('woff2');unicode-range:U+1F650-1F667;font-display:block}

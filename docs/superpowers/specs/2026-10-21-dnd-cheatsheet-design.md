@@ -249,7 +249,7 @@ All fonts are subset to the characters used and served as WOFF2. The subset file
 
 ## 10. Hosting and repo
 
-- Repo: `D:\GitHub\dnd-cheatsheet` (*my call* on the name), pushed to the owner's GitHub and served with GitHub Pages.
+- Repo: local folder `D:\GitHub\dnd-cheatsheet`, published as GitHub repo `thetrexx/dnd-5e-companion` (name chosen by the owner) and served with GitHub Pages.
 - Static site. A build step is fine (e.g. for subsetting fonts or bundling data) as long as the published output is static files.
 - Add a web app manifest and icons so "Add to Home Screen" gives a proper app icon and name.
 

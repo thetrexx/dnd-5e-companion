@@ -6,7 +6,7 @@
 
 **Architecture:** Vite + Preact + TypeScript single-page app with hash routing, published to GitHub Pages as static files. All game content is JSON under `data/`, typed and validated at build and test time. Screen logic (which rows, which sections, what the card says) lives in pure functions under `src/logic/` so it is unit-tested without a browser; Preact components under `src/ui/` only render it. Every colour, font and strength lives in `src/styles/themes/faerun.css`.
 
-**Tech Stack:** Vite 5, Preact 10, TypeScript 5 (strict), Vitest + @testing-library/preact + jsdom, Playwright (Chromium, phone viewport), GitHub Actions + GitHub Pages.
+**Tech Stack:** Vite 8, Preact 11, TypeScript 7 (strict), Vitest + @testing-library/preact + jsdom, Playwright (Chromium, phone viewport), GitHub Actions + GitHub Pages.
 
 **Spec:** `docs/superpowers/specs/2026-10-21-dnd-cheatsheet-design.md`. Visual reference: `docs/superpowers/mockups/final.html` (lift colours, sizes and CSS from it).
 
@@ -453,7 +453,7 @@ await expect(page.getByText('Unofficial Fan Content permitted under the Fan Cont
 **Files:**
 - Modify: `README.md` (create: what it is, `npm` scripts, how to deploy)
 
-- [ ] **Step 1: Push and enable Pages.** Ask the owner to create the GitHub repo `dnd-cheatsheet` and enable Pages with source "GitHub Actions". Then add the remote and push `main`.
+- [ ] **Step 1: Push and enable Pages.** Ask the owner to create the GitHub repo `dnd-5e-companion` and enable Pages with source "GitHub Actions". Then add the remote and push `main`.
 - [ ] **Step 2: Verify the workflow.** Run: `gh run watch`. Expected: the deploy job succeeds and prints the Pages URL.
 - [ ] **Step 3: Verify the live site.** Open the Pages URL with Playwright at 390×844. Expected: the browse flow from Task 7 passes against the live URL, fonts load (`document.fonts.check('16px "IM Fell English"')` is true) and bg3.wiki icons render.
 - [ ] **Step 4: Owner check.** Ask the owner to open the URL on an iPhone and an Android phone, add it to the home screen, and confirm fonts, icons and text shadow look right.

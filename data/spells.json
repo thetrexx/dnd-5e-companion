@@ -1,0 +1,456 @@
+[
+  {
+    "id": "fire-bolt",
+    "name": "Fire Bolt",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You hurl a mote of fire at a creature or object within range. Make a ranged spell attack against the target. On a hit, the target takes 1d10 fire damage. A flammable object hit by this spell ignites if it isn't being worn or carried.",
+      "This spell's damage increases by 1d10 when you reach 5th level (2d10), 11th level (3d10), and 17th level (4d10)."
+    ],
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 242,
+    "icon": "https://bg3.wiki/w/images/2/23/Fire_Bolt_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "1d10",
+        "type": "Fire"
+      },
+      "resolution": "attack"
+    }
+  },
+  {
+    "id": "ray-of-frost",
+    "name": "Ray of Frost",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A frigid beam of blue-white light streaks toward a creature within range. Make a ranged spell attack against the target. On a hit, it takes 1d8 cold damage, and its speed is reduced by 10 feet until the start of your next turn.",
+      "The spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+    ],
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 271,
+    "icon": "https://bg3.wiki/w/images/f/f9/Ray_of_Frost_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "1d8",
+        "type": "Cold"
+      },
+      "resolution": "attack"
+    }
+  },
+  {
+    "id": "guidance",
+    "name": "Guidance",
+    "level": 0,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You touch one willing creature. Once before the spell ends, the target can roll a d4 and add the number rolled to one ability check of its choice. It can roll the die before or after making the ability check. The spell then ends."
+    ],
+    "classes": [
+      "druid"
+    ],
+    "page": 248,
+    "icon": "https://bg3.wiki/w/images/7/7f/Guidance_Icon.webp",
+    "summary": {
+      "resolution": "none"
+    }
+  },
+  {
+    "id": "produce-flame",
+    "name": "Produce Flame",
+    "level": 0,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "10 minutes",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A flickering flame appears in your hand. The flame remains there for the duration and harms neither you nor your equipment. The flame sheds bright light in a 10-foot radius and dim light for an additional 10 feet. The spell ends if you dismiss it as an action or if you cast it again.",
+      "You can also attack with the flame, although doing so ends the spell. When you cast this spell, or as an action on a later turn, you can hurl the flame at a creature within 30 feet of you. Make a ranged spell attack. On a hit, the target takes 1d8 fire damage.",
+      "This spell's damage increases by 1d8 when you reach 5th level (2d8), 11th level (3d8), and 17th level (4d8)."
+    ],
+    "classes": [
+      "druid"
+    ],
+    "page": 269,
+    "icon": "https://bg3.wiki/w/images/e/ec/Produce_Flame_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "1d8",
+        "type": "Fire"
+      },
+      "resolution": "attack"
+    }
+  },
+  {
+    "id": "shillelagh",
+    "name": "Shillelagh",
+    "level": 0,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Touch",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "mistletoe, a shamrock leaf, and a club or quarterstaff",
+        "consumed": false
+      }
+    },
+    "description": [
+      "The wood of a club or a quarterstaff you are holding is imbued with nature's power. For the duration, you can use your spellcasting ability instead of Strength for the attack and damage rolls of melee attacks using that weapon, and the weapon's damage die becomes a d8. The weapon also becomes magical, if it isn't already. The spell ends if you cast it again or if you let go of the weapon."
+    ],
+    "classes": [
+      "druid"
+    ],
+    "page": 275,
+    "icon": "https://bg3.wiki/w/images/6/68/Shillelagh_Icon.webp",
+    "summary": {
+      "resolution": "none"
+    }
+  },
+  {
+    "id": "magic-missile",
+    "name": "Magic Missile",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You create three glowing darts of magical force. Each dart hits a creature of your choice that you can see within range. A dart deals 1d4 + 1 force damage to its target. The darts all strike simultaneously, and you can direct them to hit one creature or several."
+    ],
+    "higherLevels": "When you cast this spell using a spell slot of 2nd level or higher, the spell creates one more dart for each slot level above 1st.",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 257,
+    "icon": "https://bg3.wiki/w/images/d/d4/Magic_Missile_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "1d4+1",
+        "count": 3,
+        "unit": "darts",
+        "type": "Force"
+      },
+      "resolution": "auto",
+      "upcast": "+1 dart per slot level above 1st"
+    }
+  },
+  {
+    "id": "shield",
+    "name": "Shield",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "reaction",
+      "text": "1 reaction",
+      "trigger": "which you take when you are hit by an attack or targeted by the magic missile spell"
+    },
+    "range": "Self",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "An invisible barrier of magical force appears and protects you. Until the start of your next turn, you have a +5 bonus to AC, including against the triggering attack, and you take no damage from magic missile."
+    ],
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 275,
+    "icon": "https://bg3.wiki/w/images/c/cf/Shield_spell_Icon.webp",
+    "summary": {
+      "resolution": "none"
+    }
+  },
+  {
+    "id": "burning-hands",
+    "name": "Burning Hands",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "As you hold your hands with thumbs touching and fingers spread, a thin sheet of flames shoots forth from your outstretched fingertips. Each creature in a 15-foot cone must make a dexterity saving throw. A creature takes 3d6 fire damage on a failed save, or half as much damage on a successful one.",
+      "The fire ignites any flammable objects in the area that aren't being worn or carried."
+    ],
+    "higherLevels": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d6 for each slot level above 1st.",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 220,
+    "icon": "https://bg3.wiki/w/images/c/cf/Burning_Hands_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "3d6",
+        "type": "Fire"
+      },
+      "resolution": "save",
+      "save": "dex",
+      "upcast": "+1d6 per slot level above 1st"
+    }
+  },
+  {
+    "id": "cure-wounds",
+    "name": "Cure Wounds",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you touch regains a number of hit points equal to 1d8 + your spellcasting ability modifier. This spell has no effect on undead or constructs."
+    ],
+    "higherLevels": "When you cast this spell using a spell slot of 2nd level or higher, the healing increases by 1d8 for each slot level above 1st.",
+    "classes": [
+      "druid"
+    ],
+    "page": 230,
+    "icon": "https://bg3.wiki/w/images/4/40/Cure_Wounds_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "1d8",
+        "type": "Healing",
+        "healing": true
+      },
+      "resolution": "auto",
+      "upcast": "+1d8 per slot level above 1st"
+    }
+  },
+  {
+    "id": "thunderwave",
+    "name": "Thunderwave",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A wave of thunderous force sweeps out from you. Each creature in a 15-foot cube originating from you must make a constitution saving throw. On a failed save, a creature takes 2d8 thunder damage and is pushed 10 feet away from you. On a successful save, the creature takes half as much damage and isn't pushed.",
+      "In addition, unsecured objects that are completely within the area of effect are automatically pushed 10 feet away from you by the spell's effect, and the spell emits a thunderous boom audible out to 300 feet."
+    ],
+    "higherLevels": "When you cast this spell using a spell slot of 2nd level or higher, the damage increases by 1d8 for each slot level above 1st.",
+    "classes": [
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 282,
+    "icon": "https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "2d8",
+        "type": "Thunder"
+      },
+      "resolution": "save",
+      "save": "con",
+      "upcast": "+1d8 per slot level above 1st"
+    }
+  },
+  {
+    "id": "mage-armor",
+    "name": "Mage Armor",
+    "level": 1,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a piece of cured leather",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You touch a willing creature who isn't wearing armor, and a protective magical force surrounds it until the spell ends. The target's base AC becomes 13 + its Dexterity modifier. The spell ends if the target dons armor or if you dismiss the spell as an action."
+    ],
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "none"
+    }
+  },
+  {
+    "id": "misty-step",
+    "name": "Misty Step",
+    "level": 2,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Briefly surrounded by silvery mist, you teleport up to 30 feet to an unoccupied space that you can see."
+    ],
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 260,
+    "icon": "https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp",
+    "summary": {
+      "resolution": "none"
+    }
+  },
+  {
+    "id": "fireball",
+    "name": "Fireball",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a tiny ball of bat guano and sulfur",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A bright streak flashes from your pointing finger to a point you choose within range and then blossoms with a low roar into an explosion of flame. Each creature in a 20-foot-radius sphere centered on that point must make a dexterity saving throw. A target takes 8d6 fire damage on a failed save, or half as much damage on a successful one.",
+      "The fire spreads around corners. It ignites flammable objects in the area that aren't being worn or carried."
+    ],
+    "higherLevels": "When you cast this spell using a spell slot of 4th level or higher, the damage increases by 1d6 for each slot level above 3rd.",
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 241,
+    "icon": "https://bg3.wiki/w/images/c/cb/Fireball_Icon.webp",
+    "summary": {
+      "damage": {
+        "dice": "8d6",
+        "type": "Fire"
+      },
+      "resolution": "save",
+      "save": "dex",
+      "upcast": "+1d6 per slot level above 3rd"
+    }
+  }
+]

@@ -1,0 +1,25 @@
+/* Separator */
+.sep{display:flex;align-items:center;gap:8px;margin:12px 0 8px;color:var(--accent);font-family:var(--font-title);font-size:17px;letter-spacing:3px;text-shadow:var(--text-shadow)}
+.sep-full{margin-left:-16px;margin-right:-16px}
+.sep .orn{font-family:var(--font-orn);font-size:24px;letter-spacing:0;line-height:1}
+.sep .flip{display:inline-block;transform:scaleX(-1)}
+.sep .ln{flex:1;height:1px;background:linear-gradient(90deg,transparent,currentColor,transparent)}
+.sep-card .ln{background:var(--card-sep-line)}
+.sep-label{white-space:nowrap}
+.sep-sub{white-space:nowrap;font-size:.8em}
+
+/* Icon grid */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 6px}
+.ic{display:block;text-align:center;font:inherit;font-size:9.5px;line-height:1.2;color:var(--text);background:none;border:0;padding:0;cursor:pointer;text-shadow:var(--text-shadow)}
+.ic img{width:50px;height:50px;border-radius:6px;border:1px solid var(--icon-border);display:block;margin:0 auto 4px;background:var(--comp-bg);object-fit:cover}
+
+/* Component icons */
+.comps{display:flex;gap:10px;margin:10px 0 4px}
+.comp{width:52px;text-align:center;cursor:pointer;font:inherit;font-size:9.5px;color:var(--comp-label);background:none;border:0;padding:0;text-shadow:var(--text-shadow)}
+.comp .ico{width:48px;height:48px;border:1px solid var(--icon-border);border-radius:50%;background:var(--comp-bg);overflow:hidden;display:flex;align-items:center;justify-content:center;margin:0 auto 3px}
+.comp .ico img{width:32px;height:32px;filter:var(--comp-icon-filter)}
+.comp.on .ico{border-color:var(--accent);box-shadow:var(--comp-glow)}
+.comp.off{opacity:var(--comp-off-opacity);cursor:default}
+.comp-explain{background:var(--explain-bg);border:1px solid var(--accent);border-radius:6px;padding:8px 10px;font-family:var(--font-desc);font-size:10.5px;line-height:1.55;color:var(--explain-text);margin:6px 0;text-shadow:var(--text-shadow)}
+.comp-explain b{display:block;color:var(--explain-title);font-family:var(--font-title);font-weight:normal;font-size:15px}
+.comp-explain p{margin:0}
