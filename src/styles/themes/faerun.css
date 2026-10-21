@@ -9,6 +9,9 @@
   --icon-border:#6b5a3a;
   --comp-label:#c8bba3;
   --explain-bg:#0d0b09;
+  --comp-icon-filter:sepia(1) saturate(2) hue-rotate(5deg) brightness(.95);
+  --comp-glow:0 0 8px color-mix(in srgb,var(--accent) 53%,transparent);
+  --comp-off-opacity:.25;
   --explain-title:#f1e6cf;
   --explain-text:#ddd2bd;
   --text-shadow:0 1px 2px rgb(0 0 0/.85),0 0 8px rgb(0 0 0/.55);

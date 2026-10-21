@@ -11,7 +11,7 @@ export function Icon(p: { src?: string; fallback: 'spell' | 'action'; alt: strin
   useEffect(() => setFailed(false), [p.src]);
   const src = p.src && !failed ? p.src : fallbackUrl(p.fallback);
   return (
-    <img class="icon" src={src} alt={p.alt} width={p.size} height={p.size} loading="lazy"
+    <img src={src} alt={p.alt} width={p.size} height={p.size} loading="lazy"
       onError={() => setFailed(true)} />
   );
 }

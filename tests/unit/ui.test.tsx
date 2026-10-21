@@ -24,6 +24,7 @@ test('ComponentIcons: tap toggles explainer, Material dimmed when absent', () =>
   const r = render(<ComponentIcons spell={mm} />);
   fireEvent.click(r.getByRole('button', { name: 'Verbal' }));
   expect(r.getByText(/chant mystic words/)).toBeTruthy();
+  expect(r.container.querySelector('.comp-explain b')!.textContent).toBe('Verbal');
   fireEvent.click(r.getByRole('button', { name: 'Verbal' }));
   expect(r.queryByText(/chant mystic words/)).toBeNull();
   expect(r.getByText('Material').closest('[aria-disabled="true"]')).toBeTruthy();
@@ -50,4 +51,7 @@ test('Separator shows label, sub in colour, mirrored ornament', () => {
   expect((r.getByText('Cantrips') as HTMLElement).style.color).toBe('red');
   expect(r.container.querySelectorAll('.orn').length).toBe(2);
   expect(r.container.querySelector('.sep-full')).toBeTruthy();
+  const orns = r.container.querySelectorAll('.orn');
+  expect(orns[0].classList.contains('flip')).toBe(false);
+  expect(orns[1].classList.contains('flip')).toBe(true);
 });
