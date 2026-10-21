@@ -11,6 +11,6 @@ test('effectiveSub needs an existing subclass of the class at or above its level
 
 test('subclassesAt lists the class subclasses once the level is reached', () => {
   expect(subclassesAt('fighter', 2)).toEqual([]);
-  expect(subclassesAt('fighter', 3).map(s => s.id)).toEqual(['champion', 'eldritch-knight']);
+  expect(subclassesAt('fighter', 3).map(s => s.id)).toEqual(['champion', 'battle-master', 'eldritch-knight']);
   expect(subclassesAt('warlock', 1)).toEqual([]);
 });

@@ -254,5 +254,234 @@
     "page": 79,
     "textSource": "summary",
     "resource": "Regain 4 ki points"
+  },
+  {
+    "id": "open-hand-technique",
+    "name": "Open Hand Technique",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "A Flurry of Blows attack hits",
+    "resource": "Ki (from Flurry of Blows)",
+    "description": [
+      "When a Flurry of Blows attack hits, pick one rider for that target.",
+      "Option 1: Dexterity save, or it is knocked prone. Option 2: Strength save, or you shove it up to 15 ft away. Option 3: no save, but it loses its reactions until your next turn ends."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "wholeness-of-body",
+    "name": "Wholeness of Body",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "scaling": [
+      {
+        "label": "Healing",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "18",
+          "21",
+          "24",
+          "27",
+          "30",
+          "33",
+          "36",
+          "39",
+          "42",
+          "45",
+          "48",
+          "51",
+          "54",
+          "57",
+          "60"
+        ]
+      }
+    ],
+    "description": [
+      "Heal yourself for 3 times your monk level in hit points."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "tranquility",
+    "name": "Tranquility",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 11,
+    "cost": "other",
+    "uses": "Renews at the end of each long rest",
+    "description": [
+      "At the end of each long rest you gain the effect of sanctuary, lasting until your next long rest (it can end early as normal). The save DC is 8 + Wisdom modifier + proficiency bonus."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "quivering-palm",
+    "name": "Quivering Palm",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You hit with an unarmed strike",
+    "resource": "3 ki points",
+    "description": [
+      "When you hit with an unarmed strike, spend 3 ki to plant harmless vibrations in the target. They last as many days as your monk level.",
+      "Later, use your action to end them (you and the target must share a plane). The target makes a Constitution save. On a fail it drops to 0 hit points; on a pass it takes 10d10 necrotic damage.",
+      "Only one creature can carry the vibrations at a time. You can end them harmlessly with no action."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "shadow-arts",
+    "name": "Shadow Arts",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "description": [
+      "Spend 2 ki to cast darkness, darkvision, pass without trace or silence with no material components.",
+      "You also know the minor illusion cantrip."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "shadow-step",
+    "name": "Shadow Step",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "description": [
+      "Standing in dim light or darkness, you can jump up to 60 ft to a free space you can see, provided that space is dimly lit or dark too.",
+      "Your first melee attack before that turn ends has advantage."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "way-of-shadow-cloak-of-shadows",
+    "name": "Cloak of Shadows",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 11,
+    "cost": "action",
+    "description": [
+      "While in dim light or darkness, turn invisible. It lasts until you attack, cast a spell, or end up in bright light."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "opportunist",
+    "name": "Opportunist",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 17,
+    "cost": "reaction",
+    "trigger": "A creature within 5 ft is hit by another creature's attack",
+    "description": [
+      "When a creature within 5 ft of you is hit by an attack from someone other than you, make 1 melee attack against that creature."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "disciple-of-the-elements",
+    "name": "Disciple of the Elements",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-four-elements"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Ki points",
+    "scaling": [
+      {
+        "label": "Max ki per spell",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      {
+        "label": "Disciplines known",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    ],
+    "description": [
+      "Elemental disciplines are paid for in ki points. You know Elemental Attunement plus 1 other discipline, and learn 1 more at levels 6, 11 and 17.",
+      "Disciplines that cast spells use the spell's own casting time and rules, with no material components. From level 5, spend extra ki to raise the spell's level by 1 per extra point, if the spell has a stronger higher-level version. Total ki on one spell is capped (see the scaling)."
+    ],
+    "page": 80,
+    "textSource": "summary"
   }
 ]

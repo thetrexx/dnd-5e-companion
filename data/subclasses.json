@@ -14,6 +14,13 @@
     "options": []
   },
   {
+    "id": "battle-master",
+    "cls": "fighter",
+    "name": "Battle Master",
+    "page": 73,
+    "options": []
+  },
+  {
     "id": "eldritch-knight",
     "cls": "fighter",
     "name": "Eldritch Knight",
@@ -828,10 +835,24 @@
     "options": []
   },
   {
-    "id": "battle-master",
-    "cls": "fighter",
-    "name": "Battle Master",
-    "page": 73,
+    "id": "way-of-the-open-hand",
+    "cls": "monk",
+    "name": "Way of the Open Hand",
+    "page": 79,
+    "options": []
+  },
+  {
+    "id": "way-of-shadow",
+    "cls": "monk",
+    "name": "Way of Shadow",
+    "page": 80,
+    "options": []
+  },
+  {
+    "id": "way-of-the-four-elements",
+    "cls": "monk",
+    "name": "Way of the Four Elements",
+    "page": 80,
     "options": []
   }
 ]

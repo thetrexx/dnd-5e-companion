@@ -57,7 +57,7 @@ test('SubclassPicker lists subclasses and No subclass', () => {
   const r = render(<SubclassPicker cls="fighter" level={3} />);
   expect(r.container.querySelector('.page-title')!.textContent).toBe('Fighter');
   expect(r.container.querySelector('.hint')!.textContent).toBe('Pick a Martial Archetype');
-  expect([...r.container.querySelectorAll('button')].map(b => b.textContent)).toEqual(['Champion', 'Eldritch Knight', 'No subclass']);
+  expect([...r.container.querySelectorAll('button')].map(b => b.textContent)).toEqual(['Champion', 'Battle Master', 'Eldritch Knight', 'No subclass']);
 });
 
 test('Menu row icons and slot icon survive a failed load', () => {

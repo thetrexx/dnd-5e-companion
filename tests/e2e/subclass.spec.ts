@@ -30,5 +30,5 @@ test('320px: tagged spells and the picker fit', async ({ page }) => {
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), hash).toBe(true);
   }
   await page.goto('./#/spells/druid/3/circle-of-the-land?s=lvl-2');
-  await expect(page.getByText('Circle · Arctic')).toBeVisible();
+  await expect(page.getByText('Circle · Arctic', { exact: true }).first()).toBeVisible();
 });
