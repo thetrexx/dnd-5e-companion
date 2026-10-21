@@ -855,8 +855,8 @@
       "s": false
     },
     "description": [
-      "You whisper a horrible tune only one creature within 60 ft can hear. It makes a Wisdom save, taking 3d6 psychic damage on a failure or half on a success.",
-      "On a failure it must also use its reaction to flee as far as it can by its speed, avoiding dangerous ground. A deafened creature is immune."
+      "You whisper a jarring tune that only one creature you choose within 60 ft can hear. It makes a Wisdom save, taking 3d6 psychic damage on a failure or half on a success.",
+      "On a failure it must also spend its reaction, if it has one, to move as far from you as its speed allows, steering clear of obvious hazards like fire or a pit. Deafened creatures pass the save automatically."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
     "textSource": "summary"
@@ -1195,9 +1195,9 @@
       }
     },
     "description": [
-      "Casting takes 1 hour. A spirit takes a tiny animal form you pick (bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel) within 10 ft. It is a celestial, fey or fiend, obeys you, rolls its own initiative and cannot attack.",
-      "Within 100 ft you speak to it telepathically. As an action you can see and hear through it until your next turn begins, blind and deaf to your own surroundings.",
-      "It can deliver your touch-range spells using its reaction. At 0 hit points it vanishes; recasting brings it back. Dismiss it to a pocket dimension or call it back within 30 ft. Casting again changes its form. 1 familiar only."
+      "After a 1-hour casting, a spirit familiar appears within 10 ft in an animal form you pick (bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel). A celestial, fey or fiend, it obeys you, acts on its own initiative and cannot attack.",
+      "Within 100 ft: telepathy, and it can deliver your touch spells with its reaction. As an action you use its senses until your next turn starts, blind and deaf yourself meanwhile.",
+      "At 0 hit points it vanishes until you recast. As an action, dismiss it to a pocket dimension (or for good) or recall it within 30 ft. Only 1 familiar; recasting changes its form."
     ],
     "textSource": "summary"
   },
@@ -1233,9 +1233,9 @@
       "s": true
     },
     "description": [
-      "Make a ranged spell attack against a creature or object within 120 ft. A hit deals 1d10 fire damage. A loose, unworn object that can burn catches fire."
+      "Make a ranged spell attack against a creature or object within 120 ft. A hit deals 1d10 fire damage. A flammable object it hits catches fire if nobody is wearing or carrying it.",
+      "Damage rises to 2d10 at level 5, 3d10 at level 11 and 4d10 at level 17."
     ],
-    "higherLevels": "Damage rises to 2d10 at level 5, 3d10 at level 11 and 4d10 at level 17.",
     "textSource": "summary"
   },
   {
@@ -1309,7 +1309,7 @@
       "s": true
     },
     "description": [
-      "You raise a 20 ft radius sphere of fog centred on a point within 120 ft, for up to 1 hour (concentration). It spreads around corners and heavily obscures the area. A strong wind (10 mph or more) disperses it in 1 minute."
+      "You raise a 20 ft radius sphere of fog centred on a point within 120 ft, for up to 1 hour (concentration). It spreads around corners and heavily obscures the area. A wind of 10 mph or more disperses it early."
     ],
     "higherLevels": "Each slot level above 1 adds 20 ft to the radius.",
     "textSource": "summary"
