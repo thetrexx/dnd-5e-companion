@@ -119,7 +119,16 @@
     "range": "Self (30-foot radius)"
   },
   "spirit-guardians": {
-    "range": "Self (15-foot radius)"
+    "range": "Self (15-foot radius)",
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "3d8",
+        "type": "Radiant or Necrotic"
+      },
+      "upcast": "+1d8 per slot level above 3"
+    }
   },
   "sunbeam": {
     "range": "Self (60-foot line)"
@@ -212,6 +221,36 @@
     "components": {
       "m": {
         "costGp": 10
+      }
+    }
+  },
+  "ray-of-enfeeblement": {
+    "summary": {
+      "resolution": "attack"
+    }
+  },
+  "scorching-ray": {
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "count": 3,
+        "unit": "rays"
+      },
+      "upcast": "+1 ray per slot level above 2"
+    }
+  },
+  "sleet-storm": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "spike-growth": {
+    "summary": {
+      "resolution": "auto",
+      "damage": {
+        "dice": "2d4",
+        "type": "Piercing"
       }
     }
   }

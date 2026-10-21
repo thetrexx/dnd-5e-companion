@@ -1157,5 +1157,120 @@
       "1 action: normal plants in a 100 ft radius around a point within 150 ft grow thick and tangled. Creatures moving through spend 4 ft of movement per 1 ft. You can leave out any areas you like.",
       "8 hours: plants in a half-mile radius around a point within 150 ft are enriched for 1 year and give double the usual harvest."
     ]
+  },
+  "prayer-of-healing": {
+    "description": [
+      "Over 10 minutes of prayer, up to 6 creatures you choose and can see within 30 ft each regain 2d8 + your spellcasting ability modifier hit points. Undead and constructs are unaffected."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d8 healing."
+  },
+  "protection-from-energy": {
+    "description": [
+      "A willing creature you touch gains resistance to one damage type you pick (acid, cold, fire, lightning or thunder) for up to 1 hour (concentration)."
+    ]
+  },
+  "protection-from-poison": {
+    "description": [
+      "You touch a creature and cure a poison affecting it; if several afflict it, you end one you know about or a random one.",
+      "For 1 hour it also has advantage on saves against being poisoned and resistance to poison damage."
+    ]
+  },
+  "ray-of-enfeeblement": {
+    "description": [
+      "Make a ranged spell attack against a creature within 60 ft. On a hit, for up to 1 minute (concentration), its weapon attacks that use Strength deal only half damage.",
+      "After each of its turns, it makes a Constitution save; a success ends the spell."
+    ]
+  },
+  "remove-curse": {
+    "description": [
+      "Your touch ends every curse on one creature or object. A cursed magic item keeps its curse, but its owner's attunement breaks, so the item can be taken off or thrown away."
+    ]
+  },
+  "revivify": {
+    "description": [
+      "You touch a creature that died within the last minute; it comes back to life with 1 hit point. It can't revive a creature that died of old age, and doesn't restore lost body parts."
+    ],
+    "material": "Diamonds worth 300 gp, used up"
+  },
+  "rope-trick": {
+    "description": [
+      "You touch a rope up to 60 ft long. One end rises until the rope hangs straight up, and at the top an invisible entrance leads to an extradimensional space for 1 hour.",
+      "Climb the rope to get in. Up to 8 Medium or smaller creatures fit, and the rope can be pulled up out of sight. Attacks and spells can't cross the entrance, but those inside see out through a 3 ft by 5 ft window around the rope.",
+      "When the spell ends, everything inside falls out."
+    ],
+    "material": "Powdered corn extract and a twisted loop of parchment"
+  },
+  "scorching-ray": {
+    "description": [
+      "You fire 3 rays of fire at targets within 120 ft, all at one target or split among several. Make a separate ranged spell attack for each ray; each hit deals 2d6 fire damage."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1 more ray."
+  },
+  "see-invisibility": {
+    "description": [
+      "For 1 hour, invisible creatures and objects are plainly visible to you. You also see into the Ethereal Plane, where creatures and things appear ghostly and see-through."
+    ],
+    "material": "Pinch of talc and a little powdered silver"
+  },
+  "sending": {
+    "description": [
+      "Send a message of twenty-five words or fewer to a creature you are familiar with. It hears it in its mind, knows you if it has met you, and can reply the same way right away. Any creature with Intelligence 1 or more understands it.",
+      "Distance is no limit, even across planes, but to another plane there is a 5% chance the message fails to arrive."
+    ],
+    "material": "Short piece of fine copper wire"
+  },
+  "shatter": {
+    "description": [
+      "A painful burst of ringing sound erupts at a point within 60 ft. Each creature in a 10 ft radius sphere makes a Constitution save, taking 3d8 thunder damage, half on a success. Creatures of stone, crystal, metal or other inorganic material save at disadvantage. Unattended nonmagical objects in the area take the damage too."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d8 damage.",
+    "material": "Chip of mica"
+  },
+  "silence": {
+    "description": [
+      "For up to 10 minutes (concentration), no sound can be made in or pass through a 20 ft radius sphere on a point within 120 ft.",
+      "Anything entirely inside is immune to thunder damage, and creatures entirely inside are deafened. Spells with a verbal component can't be cast there."
+    ]
+  },
+  "sleet-storm": {
+    "description": [
+      "Freezing sleet fills a 40 ft radius, 20 ft tall cylinder on a point within 150 ft for up to 1 minute (concentration). The area is heavily obscured, open flames go out, and icy ground makes it difficult terrain.",
+      "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or falls prone. Anyone concentrating inside must succeed on a Constitution save vs your spell save DC to keep concentrating."
+    ],
+    "material": "Dust and a few water drops"
+  },
+  "slow": {
+    "description": [
+      "Up to six creatures you choose in a 40 ft cube within 120 ft each make a Wisdom save or are slowed for up to 1 minute (concentration).",
+      "Slowed: half speed, -2 to AC and Dexterity saves, no reactions. On its turn it gets an action or a bonus action, not both, and only one attack. Casting a 1-action spell: roll a d20; on 11 or higher it takes effect next turn using that turn's action, or is lost.",
+      "It repeats the save after each of its turns; a success frees it."
+    ],
+    "material": "Drop of molasses"
+  },
+  "speak-with-dead": {
+    "description": [
+      "A corpse within 10 ft that still has a mouth, isn't undead, and wasn't targeted by this spell in the last 10 days can answer up to five of your questions within 10 minutes.",
+      "It knows only what it knew alive, in the languages it knew. Answers are usually short, cryptic or repetitive, and it may lie if hostile to you. It learns nothing new and can't predict the future."
+    ],
+    "material": "Burning incense"
+  },
+  "speak-with-plants": {
+    "description": [
+      "For 10 minutes, plants within 30 ft gain a little awareness: they talk with you, obey simple commands, and can tell you what passed through the area in the last day (creatures, weather and so on).",
+      "You can make plant-choked difficult terrain normal, or turn ground with plants into difficult terrain, while the spell lasts. Plants can move branches and tendrils but not uproot. You can talk to plant creatures, and free creatures held by entangle."
+    ]
+  },
+  "spider-climb": {
+    "description": [
+      "For up to 1 hour (concentration), a willing creature you touch can walk up, down and across walls and upside down on ceilings with its hands free, and climbs at its walking speed."
+    ],
+    "material": "Drop of bitumen and a spider"
+  },
+  "spike-growth": {
+    "description": [
+      "The ground in a 20 ft radius around a point within 150 ft sprouts hard spikes and thorns for up to 10 minutes (concentration). It is difficult terrain; every 5 ft a creature moves into or through it deals it 2d4 piercing damage.",
+      "The spikes look natural. A creature that couldn't see the area at casting must pass a Perception check vs your spell save DC to notice the danger before entering."
+    ],
+    "material": "7 sharp thorns or 7 small sharpened twigs"
   }
 }

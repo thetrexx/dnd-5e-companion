@@ -8114,7 +8114,7 @@
   ],
   "page": 271,
   "summary": {
-   "resolution": "save",
+   "resolution": "attack",
    "save": "con"
   }
  },
@@ -8504,11 +8504,14 @@
   ],
   "page": 273,
   "summary": {
-   "resolution": "none",
+   "resolution": "attack",
    "damage": {
     "dice": "2d6",
-    "type": "Fire"
-   }
+    "type": "Fire",
+    "count": 3,
+    "unit": "rays"
+   },
+   "upcast": "+1 ray per slot level above 2"
   }
  },
  {
@@ -9020,7 +9023,8 @@
   ],
   "page": 276,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "dex"
   }
  },
  {
@@ -9217,7 +9221,11 @@
   ],
   "page": 277,
   "summary": {
-   "resolution": "none"
+   "resolution": "auto",
+   "damage": {
+    "dice": "2d4",
+    "type": "Piercing"
+   }
   }
  },
  {
@@ -9245,7 +9253,13 @@
   ],
   "page": 278,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "3d8",
+    "type": "Radiant or Necrotic"
+   },
+   "upcast": "+1d8 per slot level above 3"
   }
  },
  {
