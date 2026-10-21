@@ -11,7 +11,9 @@
     "cls": "fighter",
     "name": "Battle Master",
     "page": 73,
-    "options": []
+    "options": [
+      "maneuvers"
+    ]
   },
   {
     "id": "eldritch-knight",

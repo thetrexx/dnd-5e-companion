@@ -376,7 +376,7 @@
     "level": 2,
     "cost": "passive",
     "description": [
-      "You see normally in darkness, magical or not, out to 120 feet."
+      "You see normally in darkness, magical or not, out to 120 feet. Always on, with nothing to activate."
     ],
     "page": 110,
     "textSource": "summary"
@@ -424,7 +424,7 @@
       }
     ],
     "description": [
-      "Cast detect magic at will, without spending a spell slot."
+      "Cast detect magic at will, without spending a spell slot. Use it as often as you like, including as a ritual."
     ],
     "page": 110,
     "textSource": "summary"
@@ -442,7 +442,7 @@
       "text": "Eldritch blast cantrip"
     },
     "description": [
-      "Your eldritch blast reaches out to 300 feet instead of its normal range."
+      "Your eldritch blast reaches out to 300 feet instead of its normal range, so you can strike from far outside enemy reach."
     ],
     "page": 111,
     "textSource": "summary"
@@ -457,7 +457,7 @@
     "level": 2,
     "cost": "passive",
     "description": [
-      "You can read any writing, in any language or script. Nothing to activate."
+      "You can read any writing, in any language or script. It is always on, so there is nothing to activate."
     ],
     "page": 111,
     "textSource": "summary"
@@ -536,7 +536,7 @@
       }
     ],
     "description": [
-      "Cast disguise self at will, with no spell slot spent."
+      "Cast disguise self at will, with no spell slot spent. Change your look as often as you like."
     ],
     "page": 111,
     "textSource": "summary"
@@ -561,7 +561,7 @@
       }
     ],
     "description": [
-      "Cast alter self at will, with no spell slot spent."
+      "Cast alter self at will, with no spell slot spent. Reshape your own body as often as you like."
     ],
     "page": 111,
     "textSource": "summary"
@@ -635,7 +635,7 @@
       }
     ],
     "description": [
-      "Cast silent image at will. It uses no spell slot and no material components."
+      "Cast silent image at will. It uses no spell slot and no material components, so you can conjure illusions as often as you like."
     ],
     "page": 111,
     "textSource": "summary"
@@ -678,7 +678,7 @@
       }
     ],
     "description": [
-      "Cast jump on yourself at will, with no spell slot and no material components."
+      "Cast jump on yourself at will, with no spell slot and no material components. Use it whenever you need to clear a gap."
     ],
     "page": 111,
     "textSource": "summary"
@@ -815,7 +815,7 @@
       }
     ],
     "description": [
-      "Cast arcane eye at will, with no spell slot spent."
+      "Cast arcane eye at will, with no spell slot spent. Scout around corners and through walls as often as you like."
     ],
     "page": 111,
     "textSource": "summary"
@@ -859,7 +859,7 @@
       }
     ],
     "description": [
-      "Cast speak with dead at will, with no spell slot spent."
+      "Cast speak with dead at will, with no spell slot spent. Question a corpse as often as the situation allows."
     ],
     "page": 111,
     "textSource": "summary"

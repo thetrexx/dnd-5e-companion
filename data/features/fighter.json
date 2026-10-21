@@ -131,7 +131,7 @@
     "level": 1,
     "cost": "passive",
     "description": [
-      "You get +1 AC for as long as you are wearing armor."
+      "You get +1 AC for as long as you are wearing armor. Always on; it stops working when you take the armor off."
     ],
     "page": 72,
     "textSource": "summary"
@@ -344,6 +344,341 @@
       "After you use your action to cast any spell, make 1 weapon attack as a bonus action."
     ],
     "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-archery",
+    "name": "Archery",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "You get +2 to attack rolls made with ranged weapons. It is always on, so there is nothing to activate."
+    ],
+    "page": 72,
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-dueling",
+    "name": "Dueling",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Holding a melee weapon in one hand with no other weapon in your other hand gives you +2 to damage rolls with it."
+    ],
+    "page": 72,
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-great-weapon-fighting",
+    "name": "Great Weapon Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Wielding a melee weapon with two hands, if a damage die shows 1 or 2 you may roll it again, and the second result stands even if it is low too. Only weapons that are two-handed or versatile qualify."
+    ],
+    "page": 72,
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-two-weapon-fighting",
+    "name": "Two-Weapon Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "When fighting with two weapons, your second attack also adds your ability modifier to its damage."
+    ],
+    "page": 72,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-commanders-strike",
+    "name": "Commander's Strike",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "You take the Attack action",
+    "resource": "1 superiority die",
+    "description": [
+      "When you take the Attack action, trade one of your swings for a bonus action that sends a friendly creature who sees or hears you into battle. Spend the die: that creature uses its reaction for one weapon attack, with the die added to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-disarming-attack",
+    "name": "Disarming Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. The target makes a Strength save; on a failure it drops one held item of your choice, which lands at its feet.",
+      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-distracting-strike",
+    "name": "Distracting Strike",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. The next attack against that target by anyone other than you has advantage, if it happens before the start of your next turn."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-evasive-footwork",
+    "name": "Evasive Footwork",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You move",
+    "resource": "1 superiority die",
+    "description": [
+      "When you move, roll the die and add the result to your AC. The bonus lasts until you stop moving."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-feinting-attack",
+    "name": "Feinting Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 superiority die",
+    "description": [
+      "Use a bonus action to feint at a creature within 5 feet. Your next attack roll against it has advantage, and if that attack hits you add the die to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-goading-attack",
+    "name": "Goading Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. The target makes a Wisdom save. If it fails, its attacks against anyone other than you are made with disadvantage until your next turn ends.",
+      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-lunging-attack",
+    "name": "Lunging Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a melee attack on your turn",
+    "resource": "1 superiority die",
+    "description": [
+      "Your reach for that one attack grows by 5 feet. If it hits, add the die to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-maneuvering-attack",
+    "name": "Maneuvering Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. Pick an ally who sees or hears you; as a reaction it can walk up to half its speed, and the target gets no opportunity attack against it during that move."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-menacing-attack",
+    "name": "Menacing Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. The target makes a Wisdom save. A failed save leaves it frightened of you through your next turn.",
+      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-parry",
+    "name": "Parry",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "Another creature damages you with a melee attack",
+    "resource": "1 superiority die",
+    "description": [
+      "When another creature hits you with a melee attack, spend a reaction and the die to cut the damage by the die roll plus your Dexterity modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-precision-attack",
+    "name": "Precision Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a weapon attack roll",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the attack roll. You can do this before or after rolling, but before the attack's effects are applied."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-pushing-attack",
+    "name": "Pushing Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. A target of Large size or smaller makes a Strength save; on a failure you push it up to 15 feet away from you.",
+      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-rally",
+    "name": "Rally",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 superiority die",
+    "description": [
+      "Spend a bonus action to encourage a friendly creature that can see or hear you. It gains temporary hit points equal to the die roll plus your Charisma modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-riposte",
+    "name": "Riposte",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A creature misses you with a melee attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Make one melee weapon attack against that creature. If it hits, add the die to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-sweeping-attack",
+    "name": "Sweeping Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a melee weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Pick a second creature within 5 feet of the first and within your reach. If your original attack roll would also hit it, it takes damage equal to your die roll, of the same type as the original attack."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-trip-attack",
+    "name": "Trip Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the damage. A target of Large size or smaller makes a Strength save; on a failure you knock it prone.",
+      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+    ],
+    "page": 74,
     "textSource": "summary"
   }
 ]

@@ -25,15 +25,24 @@ function CostItem(p: { cost: FeatureCost; label: string }) {
   return <span><span style={{ color: `var(${s.token})` }}>{s.sym}</span> {p.label}</span>;
 }
 
-function featureSection(f: Feature): string {
+/** The group that lists this option for the current class or subclass. A group reusing another group's options (from/only) wins over the source group. */
+function optionGroupId(f: Feature, cls: ClassId, sub?: string): string {
+  const own = DATA.optionGroups.filter((g) =>
+    ((g.owner.kind === 'class' && g.owner.id === cls) || (g.owner.kind === 'subclass' && g.owner.id === sub))
+    && (g.from ?? g.id) === f.source.id && (!g.only || g.only.includes(f.id)));
+  return own.find((g) => g.from)?.id ?? own[0]?.id ?? f.source.id;
+}
+
+function featureSection(f: Feature, group: string): string {
   if (f.source.kind === 'subclass') return 'subclass';
-  if (f.source.kind === 'option') return `opt-${f.source.id}`;
+  if (f.source.kind === 'option') return `opt-${group}`;
   if (f.source.kind !== 'generic') return 'class';
   return f.cost === 'bonus' ? 'bonus' : f.cost === 'reaction' ? 'reactions' : 'actions';
 }
 
-function sourceLabel(f: Feature): string {
-  const { kind, id } = f.source;
+function sourceLabel(f: Feature, group: string): string {
+  const { kind } = f.source;
+  const id = kind === 'option' ? group : f.source.id;
   if (kind === 'generic') return 'General';
   if (kind === 'subclass') return DATA.subclasses.find((s) => s.id === id)?.name ?? cap(id.replace(/-/g, ' '));
   if (kind === 'option') return DATA.optionGroups.find((g) => g.id === id)?.name ?? cap(id.replace(/-/g, ' '));
@@ -44,8 +53,9 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
   const spell = p.kind === 'spell' ? DATA.spells.find((s) => s.id === p.id) : undefined;
   const feature = p.kind === 'feature' ? DATA.features.find((f) => f.id === p.id) : undefined;
   const page = p.kind === 'spell' ? 'spells' : 'actions';
-  const section = spell ? (spell.level === 0 ? 'cantrips' : `lvl-${spell.level}`) : feature ? featureSection(feature) : undefined;
   const sub = effectiveSub(p.cls, p.level, p.sub)?.id;
+  const group = feature ? optionGroupId(feature, p.cls, sub) : '';
+  const section = spell ? (spell.level === 0 ? 'cantrips' : `lvl-${spell.level}`) : feature ? featureSection(feature, group) : undefined;
   const back = toHash({ page, cls: p.cls, level: p.level, ...(sub && { sub }), section });
   const head = (
     <header class="fixed-head">
@@ -57,7 +67,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
   }
   const dmg = spell ? damageLine(spell) : null;
   const bar = spell ? costBar(spell) : null;
-  const source = feature ? sourceLabel(feature) : '';
+  const source = feature ? sourceLabel(feature, group) : '';
   const extra = feature ? [feature.resource, feature.uses].filter(Boolean).join(' · ') : '';
   const scaling = (feature?.scaling ?? []).map((s) => ({ label: s.label, value: s.values[p.level - 1] })).filter((s) => s.value);
   const featureLabel = feature

@@ -280,7 +280,9 @@
     "plainIcon": "https://bg3.wiki/w/images/8/82/Class_Paladin_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Sacred Oath",
-    "options": []
+    "options": [
+      "fighting-style-paladin"
+    ]
   },
   {
     "id": "ranger",
@@ -357,7 +359,9 @@
     "plainIcon": "https://bg3.wiki/w/images/2/27/Class_Ranger_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Ranger Archetype",
-    "options": []
+    "options": [
+      "fighting-style-ranger"
+    ]
   },
   {
     "id": "rogue",
@@ -444,7 +448,9 @@
     "plainIcon": "https://bg3.wiki/w/images/2/2b/Class_Sorcerer_Plain_Icon.png",
     "subclassLevel": 1,
     "subclassLabel": "Sorcerous Origin",
-    "options": []
+    "options": [
+      "metamagic"
+    ]
   },
   {
     "id": "warlock",
