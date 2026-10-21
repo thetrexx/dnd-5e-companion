@@ -91,5 +91,134 @@
     ],
     "page": 97,
     "textSource": "summary"
+  },
+  {
+    "id": "fast-hands",
+    "name": "Fast Hands",
+    "source": {
+      "kind": "subclass",
+      "id": "thief"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "Your Cunning Action bonus action can pay for any of these: a Sleight of Hand check, disarming a trap or opening a lock with thieves' tools, or the Use an Object action."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "thiefs-reflexes",
+    "name": "Thief's Reflexes",
+    "source": {
+      "kind": "subclass",
+      "id": "thief"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "First round of a combat",
+    "description": [
+      "In the first round of any combat you get two turns: one at your normal initiative and one at your initiative minus 10. You cannot do this if you are surprised."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "assassinate",
+    "name": "Assassinate",
+    "source": {
+      "kind": "subclass",
+      "id": "assassin"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You attack a creature that has not acted yet",
+    "description": [
+      "You have advantage on attack rolls against creatures that have not yet taken a turn in the combat. Any hit you land on a surprised creature is a critical hit."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "death-strike",
+    "name": "Death Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "assassin"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You hit a surprised creature",
+    "description": [
+      "Hit a surprised creature and it must pass a Constitution save. The DC is 8, plus your proficiency bonus, plus your Dexterity modifier. If it fails, your attack deals double damage."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "mage-hand-legerdemain",
+    "name": "Mage Hand Legerdemain",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "You always know mage hand as an Arcane Trickster. Cast it and the hand can be invisible. It can also stow an item into someone else's container, fetch one out, or pick locks and disarm traps from a distance using thieves' tools.",
+      "Beat the creature's Wisdom (Perception) with a Dexterity (Sleight of Hand) check and these tasks go unnoticed. Controlling the hand takes your Cunning Action bonus action."
+    ],
+    "page": 98,
+    "textSource": "summary"
+  },
+  {
+    "id": "magical-ambush",
+    "name": "Magical Ambush",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "You cast a spell on a creature while hidden from it",
+    "description": [
+      "Cast a spell at a creature that can't see you (you are hidden from it) and that creature has disadvantage on its saves against the spell for the rest of the turn."
+    ],
+    "page": 98,
+    "textSource": "summary"
+  },
+  {
+    "id": "versatile-trickster",
+    "name": "Versatile Trickster",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 13,
+    "cost": "bonus",
+    "description": [
+      "Use your mage hand to distract. Pick a creature within 5 ft of the hand. You have advantage on attack rolls against it until the end of this turn."
+    ],
+    "page": 98,
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-thief",
+    "name": "Spell Thief",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 17,
+    "cost": "reaction",
+    "trigger": "A creature casts a spell that targets you or includes you in its area",
+    "uses": "Once per long rest",
+    "description": [
+      "When a creature casts a spell that targets you or includes you in its area, force it to make a saving throw with its spellcasting ability. The DC is your spell save DC.",
+      "On a fail, the spell has no effect on you, and if it is level 1+ and a level you can cast, you learn it for 8 hours and cast it with your own slots. The caster cannot cast that spell for those 8 hours.",
+      "Recharges on a long rest."
+    ],
+    "page": 98,
+    "textSource": "summary"
   }
 ]
