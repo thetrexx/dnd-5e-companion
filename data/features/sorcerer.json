@@ -140,7 +140,7 @@
     "cost": "free",
     "uses": "Once, then long rest (or after a surge)",
     "description": [
-      "Take advantage on one attack roll, ability check or saving throw of your choice.",
+      "Give yourself advantage on a single d20 roll: an attack, a check or a save.",
       "After that it stays spent until you finish a long rest. The exception: if the DM triggers a Wild Magic Surge once you cast a sorcerer spell (1st level or above), you roll the surge and the feature is ready again."
     ],
     "page": 103,
