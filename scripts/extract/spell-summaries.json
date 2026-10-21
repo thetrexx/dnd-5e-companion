@@ -227,12 +227,12 @@
   },
   "true-strike": {
     "description": [
-      "Pick a creature within 30 ft that you can see. Next turn, your first attack roll against it has advantage, provided the spell is still going (concentration, ends after your next turn)."
+      "Point at a target within 30 ft. On your next turn, your first attack roll against it has advantage, provided the spell is still going (concentration, 1 round)."
     ]
   },
   "vicious-mockery": {
     "description": [
-      "You hurl a cutting insult at a creature within 60 ft that can hear you. It makes a Wisdom save or takes 1d4 psychic damage and has disadvantage on its next attack roll before the end of its next turn.",
+      "You hurl a cutting insult at a creature you can see within 60 ft. If it can hear you (it need not understand), it makes a Wisdom save or takes 1d4 psychic damage and has disadvantage on its next attack roll before the end of its next turn.",
       "Damage rises to 2d4 at level 5, 3d4 at level 11 and 4d4 at level 17."
     ]
   },
@@ -406,9 +406,9 @@
   },
   "find-familiar": {
     "description": [
-      "After a 1-hour casting, a spirit familiar appears within 10 ft in an animal form you pick (bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel). A celestial, fey or fiend, it obeys you, acts on its own initiative and cannot attack.",
-      "Within 100 ft: telepathy, and it can deliver your touch spells with its reaction. As an action you use its senses until your next turn starts, blind and deaf yourself meanwhile.",
-      "At 0 hit points it vanishes until you recast. As an action, dismiss it to a pocket dimension (or for good) or recall it within 30 ft. Only 1 familiar; recasting changes its form."
+      "A familiar spirit appears within 10 ft as a bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel (your pick). Celestial, fey or fiend, it obeys you, rolls its own initiative, never attacks.",
+      "Within 100 ft: telepathy, and it delivers your touch spells by reaction. As an action, use its senses instead of yours until your next turn.",
+      "At 0 hit points it vanishes until you recast. Dismiss or recall it (within 30 ft) as an action. 1 at a time."
     ],
     "material": "10 gp of charcoal, incense and herbs, burned"
   },
@@ -572,7 +572,7 @@
   },
   "tashas-hideous-laughter": {
     "description": [
-      "A creature within 30 ft with Intelligence 5 or more makes a Wisdom save. On a failure it collapses in fits of laughter, prone and incapacitated and unable to stand, for up to 1 minute (concentration).",
+      "A creature you can see within 30 ft, with Intelligence 5 or more, makes a Wisdom save. On a failure it collapses in fits of laughter, prone and incapacitated and unable to stand, for up to 1 minute (concentration).",
       "Each time its turn ends it repeats the save, and it also repeats it (with advantage) whenever it is hurt. Passing ends the spell."
     ],
     "material": "tiny tarts, a feather"
@@ -592,7 +592,7 @@
   "unseen-servant": {
     "description": [
       "An invisible, mindless, shapeless force appears on the ground within 60 ft for 1 hour. Its AC is 10, it has 1 hit point and Strength 2, and it cannot attack. Reaching 0 hit points ends the spell.",
-      "Use a bonus action on your turn to send it up to 15 ft and have it interact with an object. It does simple chores: fetching, cleaning, mending, folding, lighting fires, serving food, pouring wine. Sending it more than 60 ft from you ends the spell. Ritual."
+      "Once per turn, as a bonus action, send it up to 15 ft to interact with an object. It does simple chores (fetching, cleaning, mending, folding, lighting fires, serving food, pouring wine), working a task until done. A task taking it over 60 ft from you ends the spell. Ritual."
     ],
     "material": "string, a bit of wood"
   },
