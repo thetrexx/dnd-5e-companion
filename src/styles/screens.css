@@ -43,6 +43,7 @@
 .card-desc p{font-family:var(--font-desc);font-weight:300;font-size:11.5px;line-height:1.6;margin:6px 0}
 .card-desc .orn{font-family:var(--font-orn);color:var(--accent);font-size:15px}
 .card-tags{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:10px;color:var(--card-tags);margin:8px 0}
+.card-ref{font-size:10px;color:var(--card-detail);opacity:.8;margin:8px 0}
 .card-cost{display:flex;flex-wrap:wrap;gap:4px 14px;border-top:1px solid var(--card-cost-line);margin:10px -14px 0;padding:8px 14px;background:var(--card-cost-bg);font-size:10.5px}
 
 .screen{position:relative}
@@ -55,3 +56,8 @@
 .ios-tip{position:sticky;bottom:12px;display:flex;align-items:center;gap:10px;margin-top:20px;padding:10px 12px;font-size:11.5px;line-height:1.4;color:var(--text);text-shadow:var(--text-shadow);background:var(--surface);border:1px solid var(--accent);border-radius:6px}
 .ios-tip span{flex:1}
 .ios-tip button{font:inherit;font-size:16px;color:var(--accent);background:none;border:0;padding:4px 8px;cursor:pointer}
+
+.ic-tag{display:block;margin-top:2px;font-size:8.5px;color:var(--text-dim);overflow-wrap:anywhere}
+.row.pick{background:var(--surface)}
+a.row{text-decoration:none;box-sizing:border-box}
+.card-scaling{font-size:10.5px;color:var(--card-detail);margin:8px 0}

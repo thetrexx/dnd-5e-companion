@@ -1,0 +1,313 @@
+[
+  {
+    "id": "lucky",
+    "name": "Lucky",
+    "source": {
+      "kind": "race",
+      "id": "halfling"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You roll a 1 on an attack, check or save",
+    "description": [
+      "A natural 1 on your d20 for an attack, ability check or saving throw lets you roll again. The second roll stands, even if it is lower."
+    ],
+    "page": 28,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Lucky_Icon.png"
+  },
+  {
+    "id": "mask-of-the-wild",
+    "name": "Mask of the Wild",
+    "source": {
+      "kind": "race",
+      "id": "wood-elf"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Nature is cover enough for you. You may try to hide while only lightly obscured, as long as the cover is foliage, heavy rain, falling snow, mist or some other natural phenomenon."
+    ],
+    "page": 24,
+    "textSource": "summary"
+  },
+  {
+    "id": "naturally-stealthy",
+    "name": "Naturally Stealthy",
+    "source": {
+      "kind": "race",
+      "id": "lightfoot-halfling"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Bigger folk make good hiding spots. You may try to hide when the only thing screening you from view is a creature one or more sizes bigger than you."
+    ],
+    "page": 28,
+    "textSource": "summary"
+  },
+  {
+    "id": "halfling-nimbleness",
+    "name": "Halfling Nimbleness",
+    "source": {
+      "kind": "race",
+      "id": "halfling"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Creatures bigger than you don't block your path: you may pass through their spaces."
+    ],
+    "page": 28,
+    "textSource": "summary"
+  },
+  {
+    "id": "tinker",
+    "name": "Tinker",
+    "source": {
+      "kind": "race",
+      "id": "rock-gnome"
+    },
+    "level": 1,
+    "cost": "other",
+    "resource": "Up to 3 devices",
+    "uses": "Building takes 1 hour",
+    "description": [
+      "Using tinker's tools, 1 hour of work and 10 gp of parts produce a Tiny clockwork gadget (AC 5, 1 hp). After 24 hours it quits, unless you put in 1 hour of upkeep.",
+      "Pick a form when you build it: a toy creature that shuffles 5 ft in a random direction each turn of yours, a fire starter that lights candles, torches or campfires (it takes your action to use), or a music box that plays a song. You may have 3 gadgets running. Dismantling one costs your action and returns the parts."
+    ],
+    "page": 37,
+    "textSource": "summary"
+  },
+  {
+    "id": "breath-weapon",
+    "name": "Breath Weapon",
+    "source": {
+      "kind": "race",
+      "id": "dragonborn"
+    },
+    "level": 1,
+    "cost": "action",
+    "resource": "One use",
+    "uses": "Refills on short or long rest",
+    "scaling": [
+      {
+        "label": "Breath damage",
+        "values": [
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6"
+        ]
+      }
+    ],
+    "description": [
+      "As your action, blast the area set by your draconic ancestry (damage type, shape and save type). Everyone in it makes the save against DC 8 + your Constitution modifier + your proficiency bonus, taking the full dice on a fail and half on a success.",
+      "Once spent, it stays unavailable until you take a short or long rest."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "relentless-endurance",
+    "name": "Relentless Endurance",
+    "source": {
+      "kind": "race",
+      "id": "half-orc"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You would drop to 0 hit points but not be killed outright",
+    "uses": "Once per long rest",
+    "description": [
+      "If damage drops you to 0 hit points without killing you outright, you stay up at 1 hit point instead.",
+      "It works once; a long rest resets it."
+    ],
+    "page": 41,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3a/Relentless_Endurance_Icon.webp"
+  },
+  {
+    "id": "savage-attacks",
+    "name": "Savage Attacks",
+    "source": {
+      "kind": "race",
+      "id": "half-orc"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "Your melee weapon attack crits",
+    "description": [
+      "Crit with a melee weapon? Roll one of its damage dice once more and add that roll to the crit's extra damage."
+    ],
+    "page": 41,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Savage_Attacks_Icon.webp"
+  },
+  {
+    "id": "draconic-ancestry-black",
+    "name": "Black Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Acid ancestry. A dragonborn's breath weapon fills a line 5 ft wide and 30 ft long and calls for a Dexterity save. The resistance you gain is to acid damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-blue",
+    "name": "Blue Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Lightning ancestry. A dragonborn's breath weapon fills a line 5 ft wide and 30 ft long and calls for a Dexterity save. The resistance you gain is to lightning damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-brass",
+    "name": "Brass Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fire ancestry. A dragonborn's breath weapon fills a line 5 ft wide and 30 ft long and calls for a Dexterity save. The resistance you gain is to fire damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-bronze",
+    "name": "Bronze Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Lightning ancestry. A dragonborn's breath weapon fills a line 5 ft wide and 30 ft long and calls for a Dexterity save. The resistance you gain is to lightning damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-copper",
+    "name": "Copper Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Acid ancestry. A dragonborn's breath weapon fills a line 5 ft wide and 30 ft long and calls for a Dexterity save. The resistance you gain is to acid damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-gold",
+    "name": "Gold Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fire ancestry. A dragonborn's breath weapon fills a 15 ft cone and calls for a Dexterity save. The resistance you gain is to fire damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-green",
+    "name": "Green Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Poison ancestry. A dragonborn's breath weapon fills a 15 ft cone and calls for a Constitution save. The resistance you gain is to poison damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-red",
+    "name": "Red Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fire ancestry. A dragonborn's breath weapon fills a 15 ft cone and calls for a Dexterity save. The resistance you gain is to fire damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-silver",
+    "name": "Silver Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Cold ancestry. A dragonborn's breath weapon fills a 15 ft cone and calls for a Constitution save. The resistance you gain is to cold damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-ancestry-white",
+    "name": "White Dragon",
+    "source": {
+      "kind": "option",
+      "id": "draconic-ancestry"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Cold ancestry. A dragonborn's breath weapon fills a 15 ft cone and calls for a Constitution save. The resistance you gain is to cold damage."
+    ],
+    "page": 34,
+    "textSource": "summary"
+  }
+]

@@ -1,0 +1,624 @@
+[
+  {
+    "id": "fighting-style",
+    "name": "Fighting Style",
+    "owner": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "bonus": [
+      {
+        "subclass": "champion",
+        "atLevel": 10,
+        "count": 1
+      }
+    ]
+  },
+  {
+    "id": "land-terrain",
+    "name": "Land Terrain",
+    "owner": {
+      "kind": "subclass",
+      "id": "circle-of-the-land"
+    },
+    "picks": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "hunters-prey",
+    "name": "Hunter's Prey",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "defensive-tactics",
+    "name": "Defensive Tactics",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "multiattack",
+    "name": "Multiattack",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "superior-hunters-defense",
+    "name": "Superior Hunter's Defense",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "eldritch-invocations",
+    "name": "Eldritch Invocations",
+    "owner": {
+      "kind": "class",
+      "id": "warlock"
+    },
+    "picks": [
+      0,
+      2,
+      2,
+      2,
+      3,
+      3,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6,
+      7,
+      7,
+      7,
+      8,
+      8,
+      8
+    ]
+  },
+  {
+    "id": "pact-boon",
+    "name": "Pact Boon",
+    "owner": {
+      "kind": "class",
+      "id": "warlock"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "metamagic",
+    "name": "Metamagic",
+    "owner": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "picks": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "id": "fighting-style-paladin",
+    "name": "Fighting Style",
+    "owner": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "picks": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "fighting-style",
+    "only": [
+      "fighting-style-defense",
+      "fighting-style-dueling",
+      "fighting-style-great-weapon-fighting",
+      "fighting-style-protection"
+    ]
+  },
+  {
+    "id": "fighting-style-ranger",
+    "name": "Fighting Style",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "fighting-style",
+    "only": [
+      "fighting-style-archery",
+      "fighting-style-defense",
+      "fighting-style-dueling",
+      "fighting-style-two-weapon-fighting"
+    ]
+  },
+  {
+    "id": "maneuvers",
+    "name": "Maneuvers",
+    "owner": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "picks": [
+      0,
+      0,
+      3,
+      3,
+      3,
+      3,
+      5,
+      5,
+      5,
+      7,
+      7,
+      7,
+      7,
+      7,
+      9,
+      9,
+      9,
+      9,
+      9,
+      9
+    ]
+  },
+  {
+    "id": "elemental-disciplines",
+    "name": "Elemental Disciplines",
+    "owner": {
+      "kind": "subclass",
+      "id": "way-of-the-four-elements"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4
+    ]
+  },
+  {
+    "id": "totem-spirit",
+    "name": "Totem Spirit",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "aspect-of-the-beast",
+    "name": "Aspect of the Beast",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "totemic-attunement",
+    "name": "Totemic Attunement",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "favored-enemy",
+    "name": "Favored Enemy",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  {
+    "id": "natural-explorer",
+    "name": "Natural Explorer",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3,
+      3
+    ]
+  },
+  {
+    "id": "draconic-ancestry",
+    "name": "Draconic Ancestry",
+    "owner": {
+      "kind": "race",
+      "id": "dragonborn"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "draconic-ancestry-sorcerer",
+    "name": "Draconic Ancestry",
+    "owner": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "draconic-ancestry"
+  }
+]

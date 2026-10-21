@@ -1,0 +1,878 @@
+[
+  {
+    "id": "martial-arts",
+    "name": "Martial Arts",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "scaling": [
+      {
+        "label": "Martial Arts Die",
+        "values": [
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10"
+        ]
+      }
+    ],
+    "description": [
+      "This works while you are unarmed or using only monk weapons (shortswords and simple melee weapons without two-handed or heavy), with no armor or shield. Use Dexterity for attack and damage if you like, and roll the Martial Arts die in place of the usual damage die.",
+      "Bonus action: one extra unarmed strike, available when your Attack action used an unarmed strike or a monk weapon."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "ki",
+    "name": "Ki",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "free",
+    "resource": "Ki points (pool)",
+    "uses": "Refill on short or long rest",
+    "scaling": [
+      {
+        "label": "Ki Points",
+        "values": [
+          "",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      }
+    ],
+    "description": [
+      "Ki points pay for your ki features, 1 point each unless a card says otherwise. A short or long rest brings them all back (meditate for at least 30 minutes).",
+      "Your ki save DC is 8 plus your proficiency bonus plus your Wisdom modifier."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "flurry-of-blows",
+    "name": "Flurry of Blows",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "trigger": "Just after your Attack action",
+    "resource": "1 ki point",
+    "description": [
+      "Follow your Attack action at once with a bonus action costing 1 ki point: two unarmed strikes."
+    ],
+    "page": 78,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ef/Flurry_of_Blows_Icon.webp"
+  },
+  {
+    "id": "patient-defense",
+    "name": "Patient Defense",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point to Dodge with your bonus action: attacks against you have disadvantage and your Dexterity saves have advantage until your next turn."
+    ],
+    "page": 78,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/81/Patient_Defence_Icon.webp"
+  },
+  {
+    "id": "step-of-the-wind",
+    "name": "Step of the Wind",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point and use your bonus action to Disengage or Dash. Your jump distance is also doubled for the turn."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "deflect-missiles",
+    "name": "Deflect Missiles",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A ranged weapon attack hits you",
+    "resource": "1 ki point (optional, to throw the missile back)",
+    "description": [
+      "When a ranged weapon attack hits you, roll 1d10, add your Dexterity modifier and monk level, and subtract the total from the damage.",
+      "If that takes the damage to 0 and the missile is small enough to hold, and you have a free hand, you catch it. You may then spend 1 ki point to fire it back right away, within the same reaction. You are proficient with it, and it counts as a monk weapon."
+    ],
+    "page": 78,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/75/Deflect_Missiles_Icon.webp"
+  },
+  {
+    "id": "slow-fall",
+    "name": "Slow Fall",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 4,
+    "cost": "reaction",
+    "trigger": "You fall",
+    "description": [
+      "When you fall, reduce the falling damage by 5 times your monk level."
+    ],
+    "page": 78,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/de/Slow_Fall_Icon.webp"
+  },
+  {
+    "id": "stunning-strike",
+    "name": "Stunning Strike",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 5,
+    "cost": "free",
+    "trigger": "You hit with a melee weapon attack",
+    "resource": "1 ki point",
+    "description": [
+      "After a melee weapon hit, spend 1 ki point to try to stun the target. On a failed Constitution save (your ki save DC) it is stunned until your next turn ends."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "stillness-of-mind",
+    "name": "Stillness of Mind",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 7,
+    "cost": "action",
+    "description": [
+      "Use your action to end one charm or fear effect that is on you.",
+      "It ends only one effect per use."
+    ],
+    "page": 79,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/25/Stillness_of_Mind_Icon.webp"
+  },
+  {
+    "id": "diamond-soul",
+    "name": "Diamond Soul",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You fail a saving throw",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point to reroll a saving throw you just failed. You must take the new result.",
+      "You are also proficient in all saving throws (always on)."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "empty-body",
+    "name": "Empty Body",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "4 ki points (8 for astral projection)",
+    "description": [
+      "Spend 4 ki points to turn invisible for 1 minute. While invisible you resist every damage type except force.",
+      "Or spend 8 ki points to cast astral projection with no material components. You cannot bring other creatures along."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "perfect-self",
+    "name": "Perfect Self",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "You roll initiative with 0 ki points",
+    "description": [
+      "If you roll initiative with no ki points left, you get 4 ki points back."
+    ],
+    "page": 79,
+    "textSource": "summary",
+    "resource": "Regain 4 ki points"
+  },
+  {
+    "id": "open-hand-technique",
+    "name": "Open Hand Technique",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "A Flurry of Blows attack hits",
+    "resource": "Ki (from Flurry of Blows)",
+    "description": [
+      "When a Flurry of Blows attack hits, pick one rider for that target.",
+      "Option 1: Dexterity save, or it is knocked prone. Option 2: Strength save, or you shove it up to 15 ft away. Option 3: no save, but it loses its reactions until your next turn ends."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "wholeness-of-body",
+    "name": "Wholeness of Body",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "scaling": [
+      {
+        "label": "Healing",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "18",
+          "21",
+          "24",
+          "27",
+          "30",
+          "33",
+          "36",
+          "39",
+          "42",
+          "45",
+          "48",
+          "51",
+          "54",
+          "57",
+          "60"
+        ]
+      }
+    ],
+    "description": [
+      "Heal yourself for 3 times your monk level in hit points."
+    ],
+    "page": 79,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fe/Wholeness_of_Body_Icon.webp"
+  },
+  {
+    "id": "tranquility",
+    "name": "Tranquility",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 11,
+    "cost": "other",
+    "uses": "Renews at the end of each long rest",
+    "description": [
+      "At the end of each long rest you gain the effect of sanctuary, lasting until your next long rest (it can end early as normal). The save DC is 8 + Wisdom modifier + proficiency bonus."
+    ],
+    "page": 80,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/94/Tranquility_Icon.webp"
+  },
+  {
+    "id": "quivering-palm",
+    "name": "Quivering Palm",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-open-hand"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You hit with an unarmed strike",
+    "resource": "3 ki points",
+    "description": [
+      "When you hit with an unarmed strike, spend 3 ki to plant harmless vibrations in the target. They last as many days as your monk level.",
+      "Later, use your action to end them (you and the target must share a plane). The target makes a Constitution save. On a fail it drops to 0 hit points; on a pass it takes 10d10 necrotic damage.",
+      "Only one creature can carry the vibrations at a time. You can end them harmlessly with no action."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "shadow-arts",
+    "name": "Shadow Arts",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "description": [
+      "As an action, pay 2 ki to cast one of these: silence, darkness, darkvision or pass without trace. None of them needs material components.",
+      "Minor illusion joins your cantrips (if you didn't have it already)."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "shadow-step",
+    "name": "Shadow Step",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "description": [
+      "Standing in dim light or darkness, you can jump up to 60 ft to a free space you can see, provided that space is dimly lit or dark too.",
+      "Your first melee attack before that turn ends has advantage."
+    ],
+    "page": 80,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e9/Shadow_Step_Icon.webp"
+  },
+  {
+    "id": "way-of-shadow-cloak-of-shadows",
+    "name": "Cloak of Shadows",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 11,
+    "cost": "action",
+    "description": [
+      "While in dim light or darkness, turn invisible. It lasts until you attack, cast a spell, or end up in bright light."
+    ],
+    "page": 80,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3f/Cloak_of_Shadows_Icon.webp"
+  },
+  {
+    "id": "opportunist",
+    "name": "Opportunist",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-shadow"
+    },
+    "level": 17,
+    "cost": "reaction",
+    "trigger": "A creature within 5 ft is hit by another creature's attack",
+    "description": [
+      "When a creature within 5 ft of you is hit by an attack from someone other than you, make 1 melee attack against that creature."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "disciple-of-the-elements",
+    "name": "Disciple of the Elements",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-four-elements"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Ki points",
+    "scaling": [
+      {
+        "label": "Max ki per spell",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      {
+        "label": "Disciplines known",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    ],
+    "description": [
+      "Elemental disciplines are paid for in ki points. You know Elemental Attunement plus 1 other discipline, and learn 1 more at levels 6, 11 and 17.",
+      "Disciplines that cast spells use the spell's own casting time and rules, with no material components. From level 5, spend extra ki to raise the spell's level by 1 per extra point, if the spell has a stronger higher-level version. Total ki on one spell is capped (see the scaling)."
+    ],
+    "page": 80,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-attunement",
+    "name": "Elemental Attunement",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-four-elements"
+    },
+    "level": 3,
+    "cost": "action",
+    "description": [
+      "You know this one for free. Use your action to briefly bend nearby elemental forces, choosing one effect.",
+      "• A harmless burst of sensation tied to air, earth, fire or water, like sparks, a gust, mist or a rumble.",
+      "• Light or put out a candle, torch or small campfire at once.",
+      "• Heat or cool lifeless material weighing no more than 1 pound; the change lasts 1 hour.",
+      "• Have earth, fire, water or mist fitting in a 1-foot cube shift into a rough shape of your design for 1 minute."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-breath-of-winter",
+    "name": "Breath of Winter",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "6 ki points",
+    "prereq": {
+      "level": 17
+    },
+    "spells": [
+      {
+        "spell": "cone-of-cold",
+        "atLevel": 17
+      }
+    ],
+    "description": [
+      "Costs 6 ki points: you cast cone of cold. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-clench-of-the-north-wind",
+    "name": "Clench of the North Wind",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "3 ki points",
+    "prereq": {
+      "level": 6
+    },
+    "spells": [
+      {
+        "spell": "hold-person",
+        "atLevel": 6
+      }
+    ],
+    "description": [
+      "Costs 3 ki points: you cast hold person. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-eternal-mountain-defense",
+    "name": "Eternal Mountain Defense",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "5 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "stoneskin",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 5 ki points: you cast stoneskin on yourself only. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-fangs-of-the-fire-snake",
+    "name": "Fangs of the Fire Snake",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You take the Attack action on your turn",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point to wrap your fists and feet in flame. Your unarmed reach grows by 10 feet for that action and the rest of the turn, and unarmed hits deal fire damage instead of bludgeoning.",
+      "When one of those attacks hits, spend 1 more ki point to add 1d10 fire damage."
+    ],
+    "page": 81,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d1/Fangs_of_the_Fire_Snake_Icon.webp"
+  },
+  {
+    "id": "elemental-disciplines-fist-of-four-thunders",
+    "name": "Fist of Four Thunders",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "spells": [
+      {
+        "spell": "thunderwave",
+        "atLevel": 3
+      }
+    ],
+    "description": [
+      "Costs 2 ki points: you cast thunderwave. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-fist-of-unbroken-air",
+    "name": "Fist of Unbroken Air",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "description": [
+      "Spend 2 ki points and your action to slam a creature within 30 feet with compressed air. It makes a Strength save. On a failure it takes 3d10 bludgeoning damage, is pushed up to 20 feet away and falls prone; on a success it takes half damage and nothing else.",
+      "Each extra ki point adds 1d10 damage."
+    ],
+    "page": 81,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7d/Fist_of_Unbroken_Air_Icon.webp"
+  },
+  {
+    "id": "elemental-disciplines-flames-of-the-phoenix",
+    "name": "Flames of the Phoenix",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "4 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "fireball",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 4 ki points: you cast fireball. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-gong-of-the-summit",
+    "name": "Gong of the Summit",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "3 ki points",
+    "prereq": {
+      "level": 6
+    },
+    "spells": [
+      {
+        "spell": "shatter",
+        "atLevel": 6
+      }
+    ],
+    "description": [
+      "Costs 3 ki points: you cast shatter. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-mist-stance",
+    "name": "Mist Stance",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "4 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "gaseous-form",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 4 ki points: you cast gaseous form on yourself only. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-ride-the-wind",
+    "name": "Ride the Wind",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "4 ki points",
+    "prereq": {
+      "level": 11
+    },
+    "spells": [
+      {
+        "spell": "fly",
+        "atLevel": 11
+      }
+    ],
+    "description": [
+      "Costs 4 ki points: you cast fly on yourself only. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-river-of-hungry-flame",
+    "name": "River of Hungry Flame",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "5 ki points",
+    "prereq": {
+      "level": 17
+    },
+    "spells": [
+      {
+        "spell": "wall-of-fire",
+        "atLevel": 17
+      }
+    ],
+    "description": [
+      "Costs 5 ki points: you cast wall of fire. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-rush-of-the-gale-spirits",
+    "name": "Rush of the Gale Spirits",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "spells": [
+      {
+        "spell": "gust-of-wind",
+        "atLevel": 3
+      }
+    ],
+    "description": [
+      "Costs 2 ki points: you cast gust of wind. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-shape-the-flowing-river",
+    "name": "Shape the Flowing River",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point and your action to choose ice or water filling an area no bigger than 30 feet per side, within 120 feet. You can swap water for ice or ice for water there and reshape the ice freely: raise or lower its surface, dig a trench, build a wall or a pillar.",
+      "Changes can be at most half the area's longest side, and you cannot trap or hurt a creature with them."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-sweeping-cinder-strike",
+    "name": "Sweeping Cinder Strike",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 ki points",
+    "spells": [
+      {
+        "spell": "burning-hands",
+        "atLevel": 3
+      }
+    ],
+    "description": [
+      "Costs 2 ki points: you cast burning hands. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-disciplines-water-whip",
+    "name": "Water Whip",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "2 ki points",
+    "description": [
+      "Spend 2 ki points and a bonus action to make a water whip lash at a creature you see within 30 feet. It makes a Dexterity save. Fail: 3d10 bludgeoning damage, and you choose to knock it prone or yank it up to 25 feet closer. Success: half damage, no other effect.",
+      "Each extra ki point adds 1d10 damage."
+    ],
+    "page": 81,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/64/Water_Whip_Icon.webp"
+  },
+  {
+    "id": "elemental-disciplines-wave-of-rolling-earth",
+    "name": "Wave of Rolling Earth",
+    "source": {
+      "kind": "option",
+      "id": "elemental-disciplines"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "6 ki points",
+    "prereq": {
+      "level": 17
+    },
+    "spells": [
+      {
+        "spell": "wall-of-stone",
+        "atLevel": 17
+      }
+    ],
+    "description": [
+      "Costs 6 ki points: you cast wall of stone. From monk level 5, each extra ki point raises the spell level by 1 if the spell is stronger when upcast."
+    ],
+    "page": 81,
+    "textSource": "summary"
+  }
+]

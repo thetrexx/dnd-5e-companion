@@ -1,0 +1,197 @@
+[
+  {
+    "id": "bardic-inspiration",
+    "name": "Bardic Inspiration",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "1 use per die given",
+    "uses": "Charisma modifier (minimum 1) per long rest; short rest too from level 5",
+    "scaling": [
+      {
+        "label": "Die",
+        "values": [
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action: choose another creature within 60 ft that can hear you. It gets a Bardic Inspiration die for the next 10 minutes.",
+      "Once in that time, it can roll the die and add the result to one ability check, attack roll or saving throw. It can see its d20 first, but must decide before the DM announces the outcome. A creature holds only one die at a time.",
+      "From level 5 a short rest also restores your uses."
+    ],
+    "page": 53,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/0a/Bardic_Inspiration_Icon.webp"
+  },
+  {
+    "id": "song-of-rest",
+    "name": "Song of Rest",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 2,
+    "cost": "free",
+    "uses": "Once per short rest, no resource",
+    "scaling": [
+      {
+        "label": "Extra HP",
+        "values": [
+          "",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      }
+    ],
+    "description": [
+      "During a short rest, perform soothing music or speech. You and each friendly creature that hears you and regains hit points at the end of that rest gets bonus healing in the die shown."
+    ],
+    "page": 54,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b1/Song_of_Rest_Icon.webp"
+  },
+  {
+    "id": "countercharm",
+    "name": "Countercharm",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 6,
+    "cost": "action",
+    "description": [
+      "Action: start a performance that lasts until the end of your next turn. You and each friendly creature within 30 ft that can hear you have advantage on saves against being frightened or charmed.",
+      "It ends early if you are incapacitated or silenced, or if you choose to stop it (no action)."
+    ],
+    "page": 54,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/48/Countercharm_Icon.webp"
+  },
+  {
+    "id": "superior-inspiration",
+    "name": "Superior Inspiration",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "You roll initiative with 0 uses left",
+    "description": [
+      "When you roll initiative and have no Bardic Inspiration uses left, you regain 1 use."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  },
+  {
+    "id": "cutting-words",
+    "name": "Cutting Words",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-lore"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A creature within 60 ft rolls",
+    "resource": "1 Bardic Inspiration",
+    "description": [
+      "When a creature you can see within 60 ft makes an attack roll, ability check or damage roll, spend 1 Bardic Inspiration use and roll the die. Subtract the result from that roll.",
+      "You can wait until after the roll, but you must act before the DM says whether it succeeds or before the damage is dealt. Creatures that cannot hear you, or are immune to being charmed, are unaffected."
+    ],
+    "page": 54,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5c/Cutting_Words_Icon.webp"
+  },
+  {
+    "id": "peerless-skill",
+    "name": "Peerless Skill",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-lore"
+    },
+    "level": 14,
+    "cost": "free",
+    "resource": "1 Bardic Inspiration",
+    "description": [
+      "When you make an ability check, spend 1 Bardic Inspiration use, roll the die and add it to the check.",
+      "You can decide after rolling the d20, but before the DM tells you the outcome."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  },
+  {
+    "id": "combat-inspiration",
+    "name": "Combat Inspiration",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-valor"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "Holder makes a weapon damage roll, or is attacked",
+    "resource": "Bardic Inspiration die",
+    "description": [
+      "A creature holding your Bardic Inspiration die can use it in battle, in one of two ways.",
+      "Damage: roll the die and add it to a weapon damage roll it just made.",
+      "Defense: when an attack targets it, use its reaction to roll the die and add the result to its AC against that attack. It can do this after seeing the attack roll, before learning whether it hits."
+    ],
+    "page": 55,
+    "textSource": "summary"
+  },
+  {
+    "id": "battle-magic",
+    "name": "Battle Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-valor"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "You cast a bard spell with your action",
+    "description": [
+      "Cast a bard spell using your action, and you may then make 1 weapon attack as a bonus action."
+    ],
+    "page": 55,
+    "textSource": "summary"
+  }
+]

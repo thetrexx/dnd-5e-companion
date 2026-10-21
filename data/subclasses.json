@@ -1,0 +1,1397 @@
+[
+  {
+    "id": "champion",
+    "cls": "fighter",
+    "name": "Champion",
+    "page": 72,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/b7/Class_Fighter_Champion_Hotbar_Icon.png"
+  },
+  {
+    "id": "battle-master",
+    "cls": "fighter",
+    "name": "Battle Master",
+    "page": 73,
+    "options": [
+      "maneuvers"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/7/73/Class_Fighter_Battle_Master_Hotbar_Icon.png"
+  },
+  {
+    "id": "eldritch-knight",
+    "cls": "fighter",
+    "name": "Eldritch Knight",
+    "page": 74,
+    "options": [],
+    "casting": {
+      "list": "wizard",
+      "schools": [
+        "Abjuration",
+        "Evocation"
+      ],
+      "ability": "int",
+      "cantripsKnown": [
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "spellsKnown": [
+        0,
+        0,
+        3,
+        4,
+        4,
+        4,
+        5,
+        6,
+        6,
+        7,
+        8,
+        8,
+        9,
+        10,
+        10,
+        11,
+        11,
+        11,
+        12,
+        13
+      ],
+      "maxSpellLevel": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/7/7e/Class_Fighter_Eldritch_Knight_Hotbar_Icon.png"
+  },
+  {
+    "id": "circle-of-the-land",
+    "cls": "druid",
+    "name": "Circle of the Land",
+    "page": 68,
+    "options": [
+      "land-terrain"
+    ],
+    "bonusSpells": {
+      "kind": "circle",
+      "grants": [
+        {
+          "spell": "hold-person",
+          "atLevel": 3,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "slow",
+          "atLevel": 5,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 7,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "commune-with-nature",
+          "atLevel": 9,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "mirror-image",
+          "atLevel": 3,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 3,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "water-breathing",
+          "atLevel": 5,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "water-walk",
+          "atLevel": 5,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "conjure-elemental",
+          "atLevel": 9,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "blur",
+          "atLevel": 3,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "silence",
+          "atLevel": 3,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "create-food-and-water",
+          "atLevel": 5,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 5,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "blight",
+          "atLevel": 7,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "hallucinatory-terrain",
+          "atLevel": 7,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "wall-of-stone",
+          "atLevel": 9,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "barkskin",
+          "atLevel": 3,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "spider-climb",
+          "atLevel": 3,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "call-lightning",
+          "atLevel": 5,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "divination",
+          "atLevel": 7,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "commune-with-nature",
+          "atLevel": 9,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "tree-stride",
+          "atLevel": 9,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "invisibility",
+          "atLevel": 3,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "pass-without-trace",
+          "atLevel": 3,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "daylight",
+          "atLevel": 5,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "haste",
+          "atLevel": 5,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "divination",
+          "atLevel": 7,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "dream",
+          "atLevel": 9,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "spider-climb",
+          "atLevel": 3,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "lightning-bolt",
+          "atLevel": 5,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "meld-into-stone",
+          "atLevel": 5,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "stone-shape",
+          "atLevel": 7,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 7,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "passwall",
+          "atLevel": 9,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "wall-of-stone",
+          "atLevel": 9,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "darkness",
+          "atLevel": 3,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "melfs-acid-arrow",
+          "atLevel": 3,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "water-walk",
+          "atLevel": 5,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "stinking-cloud",
+          "atLevel": 5,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "locate-creature",
+          "atLevel": 7,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "spider-climb",
+          "atLevel": 3,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "web",
+          "atLevel": 3,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "gaseous-form",
+          "atLevel": 5,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "stinking-cloud",
+          "atLevel": 5,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "stone-shape",
+          "atLevel": 7,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "cloudkill",
+          "atLevel": 9,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-underdark"
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/f/f1/Class_Druid_Land_Hotbar_Icon.png"
+  },
+  {
+    "id": "path-of-the-berserker",
+    "cls": "barbarian",
+    "name": "Path of the Berserker",
+    "page": 49,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/41/Class_Barbarian_Berserker_Hotbar_Icon.png"
+  },
+  {
+    "id": "path-of-the-totem-warrior",
+    "cls": "barbarian",
+    "name": "Path of the Totem Warrior",
+    "page": 50,
+    "options": [
+      "totem-spirit",
+      "aspect-of-the-beast",
+      "totemic-attunement"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/2f/Class_Barbarian_Wildheart_Hotbar_Icon.png"
+  },
+  {
+    "id": "college-of-lore",
+    "cls": "bard",
+    "name": "College of Lore",
+    "page": 54,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/82/Class_Bard_Lore_Hotbar_Icon.png"
+  },
+  {
+    "id": "college-of-valor",
+    "cls": "bard",
+    "name": "College of Valor",
+    "page": 55,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/9b/Class_Bard_Valour_Hotbar_Icon.png"
+  },
+  {
+    "id": "knowledge-domain",
+    "cls": "cleric",
+    "name": "Knowledge Domain",
+    "page": 59,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "command",
+          "atLevel": 1
+        },
+        {
+          "spell": "identify",
+          "atLevel": 1
+        },
+        {
+          "spell": "augury",
+          "atLevel": 3
+        },
+        {
+          "spell": "suggestion",
+          "atLevel": 3
+        },
+        {
+          "spell": "nondetection",
+          "atLevel": 5
+        },
+        {
+          "spell": "speak-with-dead",
+          "atLevel": 5
+        },
+        {
+          "spell": "arcane-eye",
+          "atLevel": 7
+        },
+        {
+          "spell": "confusion",
+          "atLevel": 7
+        },
+        {
+          "spell": "legend-lore",
+          "atLevel": 9
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/2/2c/Class_Cleric_Knowledge_Hotbar_Icon.png"
+  },
+  {
+    "id": "life-domain",
+    "cls": "cleric",
+    "name": "Life Domain",
+    "page": 60,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "bless",
+          "atLevel": 1
+        },
+        {
+          "spell": "cure-wounds",
+          "atLevel": 1
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 3
+        },
+        {
+          "spell": "spiritual-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "beacon-of-hope",
+          "atLevel": 5
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "death-ward",
+          "atLevel": 7
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 7
+        },
+        {
+          "spell": "mass-cure-wounds",
+          "atLevel": 9
+        },
+        {
+          "spell": "raise-dead",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/7/72/Class_Cleric_Life_Hotbar_Icon.png"
+  },
+  {
+    "id": "light-domain",
+    "cls": "cleric",
+    "name": "Light Domain",
+    "page": 61,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "burning-hands",
+          "atLevel": 1
+        },
+        {
+          "spell": "faerie-fire",
+          "atLevel": 1
+        },
+        {
+          "spell": "flaming-sphere",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3
+        },
+        {
+          "spell": "daylight",
+          "atLevel": 5
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 5
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/5/56/Class_Cleric_Light_Hotbar_Icon.png"
+  },
+  {
+    "id": "nature-domain",
+    "cls": "cleric",
+    "name": "Nature Domain",
+    "page": 61,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "animal-friendship",
+          "atLevel": 1
+        },
+        {
+          "spell": "speak-with-animals",
+          "atLevel": 1
+        },
+        {
+          "spell": "barkskin",
+          "atLevel": 3
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5
+        },
+        {
+          "spell": "wind-wall",
+          "atLevel": 5
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 7
+        },
+        {
+          "spell": "grasping-vine",
+          "atLevel": 7
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9
+        },
+        {
+          "spell": "tree-stride",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/1/19/Class_Cleric_Nature_Hotbar_Icon.png"
+  },
+  {
+    "id": "tempest-domain",
+    "cls": "cleric",
+    "name": "Tempest Domain",
+    "page": 62,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "fog-cloud",
+          "atLevel": 1
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 1
+        },
+        {
+          "spell": "gust-of-wind",
+          "atLevel": 3
+        },
+        {
+          "spell": "shatter",
+          "atLevel": 3
+        },
+        {
+          "spell": "call-lightning",
+          "atLevel": 5
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 7
+        },
+        {
+          "spell": "destructive-wave",
+          "atLevel": 9
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/1/14/Class_Cleric_Tempest_Hotbar_Icon.png"
+  },
+  {
+    "id": "trickery-domain",
+    "cls": "cleric",
+    "name": "Trickery Domain",
+    "page": 63,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "charm-person",
+          "atLevel": 1
+        },
+        {
+          "spell": "disguise-self",
+          "atLevel": 1
+        },
+        {
+          "spell": "mirror-image",
+          "atLevel": 3
+        },
+        {
+          "spell": "pass-without-trace",
+          "atLevel": 3
+        },
+        {
+          "spell": "blink",
+          "atLevel": 5
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 5
+        },
+        {
+          "spell": "dimension-door",
+          "atLevel": 7
+        },
+        {
+          "spell": "polymorph",
+          "atLevel": 7
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        },
+        {
+          "spell": "modify-memory",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/9/98/Class_Cleric_Trickery_Hotbar_Icon.png"
+  },
+  {
+    "id": "war-domain",
+    "cls": "cleric",
+    "name": "War Domain",
+    "page": 63,
+    "options": [],
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "divine-favor",
+          "atLevel": 1
+        },
+        {
+          "spell": "shield-of-faith",
+          "atLevel": 1
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "spiritual-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "crusaders-mantle",
+          "atLevel": 5
+        },
+        {
+          "spell": "spirit-guardians",
+          "atLevel": 5
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 9
+        }
+      ]
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/a/a8/Class_Cleric_War_Hotbar_Icon.png"
+  },
+  {
+    "id": "circle-of-the-moon",
+    "cls": "druid",
+    "name": "Circle of the Moon",
+    "page": 69,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/f/fb/Class_Druid_Moon_Hotbar_Icon.png"
+  },
+  {
+    "id": "way-of-the-open-hand",
+    "cls": "monk",
+    "name": "Way of the Open Hand",
+    "page": 79,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/0/0a/Class_Monk_Open_Hand_Hotbar_Icon.png"
+  },
+  {
+    "id": "way-of-shadow",
+    "cls": "monk",
+    "name": "Way of Shadow",
+    "page": 80,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/4f/Class_Monk_Shadow_Hotbar_Icon.png"
+  },
+  {
+    "id": "way-of-the-four-elements",
+    "cls": "monk",
+    "name": "Way of the Four Elements",
+    "page": 80,
+    "options": [
+      "elemental-disciplines"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/bc/Class_Monk_Four_Elements_Hotbar_Icon.png"
+  },
+  {
+    "id": "oath-of-devotion",
+    "cls": "paladin",
+    "name": "Oath of Devotion",
+    "page": 85,
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 3
+        },
+        {
+          "spell": "sanctuary",
+          "atLevel": 3
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 5
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 5
+        },
+        {
+          "spell": "beacon-of-hope",
+          "atLevel": 9
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 9
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 13
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 13
+        },
+        {
+          "spell": "commune",
+          "atLevel": 17
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/34/Class_Paladin_Devotion_Hotbar_Icon.png"
+  },
+  {
+    "id": "oath-of-the-ancients",
+    "cls": "paladin",
+    "name": "Oath of the Ancients",
+    "page": 86,
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "ensnaring-strike",
+          "atLevel": 3
+        },
+        {
+          "spell": "speak-with-animals",
+          "atLevel": 3
+        },
+        {
+          "spell": "moonbeam",
+          "atLevel": 5
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 9
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 9
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 13
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 13
+        },
+        {
+          "spell": "commune-with-nature",
+          "atLevel": 17
+        },
+        {
+          "spell": "tree-stride",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/2a/Class_Paladin_Ancients_Hotbar_Icon.png"
+  },
+  {
+    "id": "oath-of-vengeance",
+    "cls": "paladin",
+    "name": "Oath of Vengeance",
+    "page": 87,
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "bane",
+          "atLevel": 3
+        },
+        {
+          "spell": "hunters-mark",
+          "atLevel": 3
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 5
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "haste",
+          "atLevel": 9
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "dimension-door",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/81/Class_Paladin_Vengeance_Hotbar_Icon.png"
+  },
+  {
+    "id": "hunter",
+    "cls": "ranger",
+    "name": "Hunter",
+    "page": 93,
+    "options": [
+      "hunters-prey",
+      "defensive-tactics",
+      "multiattack",
+      "superior-hunters-defense"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/93/Class_Ranger_Hunter_Hotbar_Icon.png"
+  },
+  {
+    "id": "beast-master",
+    "cls": "ranger",
+    "name": "Beast Master",
+    "page": 93,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/bd/Class_Ranger_Beast_Master_Hotbar_Icon.png"
+  },
+  {
+    "id": "thief",
+    "cls": "rogue",
+    "name": "Thief",
+    "page": 97,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/ee/Class_Rogue_Thief_Hotbar_Icon.png"
+  },
+  {
+    "id": "assassin",
+    "cls": "rogue",
+    "name": "Assassin",
+    "page": 97,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/c/c2/Class_Rogue_Assassin_Hotbar_Icon.png"
+  },
+  {
+    "id": "arcane-trickster",
+    "cls": "rogue",
+    "name": "Arcane Trickster",
+    "page": 97,
+    "casting": {
+      "list": "wizard",
+      "schools": [
+        "Enchantment",
+        "Illusion"
+      ],
+      "ability": "int",
+      "cantripsKnown": [
+        0,
+        0,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "spellsKnown": [
+        0,
+        0,
+        3,
+        4,
+        4,
+        4,
+        5,
+        6,
+        6,
+        7,
+        8,
+        8,
+        9,
+        10,
+        10,
+        11,
+        11,
+        11,
+        12,
+        13
+      ],
+      "maxSpellLevel": [
+        0,
+        0,
+        1,
+        1,
+        1,
+        1,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        4,
+        4
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/1/12/Class_Rogue_Arcane_Trickster_Hotbar_Icon.png"
+  },
+  {
+    "id": "draconic-bloodline",
+    "cls": "sorcerer",
+    "name": "Draconic Bloodline",
+    "page": 102,
+    "options": [
+      "draconic-ancestry-sorcerer"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/27/Class_Sorcerer_Draconic_Bloodline_Hotbar_Icon.png"
+  },
+  {
+    "id": "wild-magic",
+    "cls": "sorcerer",
+    "name": "Wild Magic",
+    "page": 103,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/e9/Class_Sorcerer_Wild_Magic_Hotbar_Icon.png"
+  },
+  {
+    "id": "the-archfey",
+    "cls": "warlock",
+    "name": "The Archfey",
+    "page": 108,
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "faerie-fire",
+          "atLevel": 1
+        },
+        {
+          "spell": "sleep",
+          "atLevel": 1
+        },
+        {
+          "spell": "calm-emotions",
+          "atLevel": 3
+        },
+        {
+          "spell": "phantasmal-force",
+          "atLevel": 3
+        },
+        {
+          "spell": "blink",
+          "atLevel": 5
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        },
+        {
+          "spell": "seeming",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/f/f2/Class_Warlock_Archfey_Hotbar_Icon.png"
+  },
+  {
+    "id": "the-fiend",
+    "cls": "warlock",
+    "name": "The Fiend",
+    "page": 109,
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "burning-hands",
+          "atLevel": 1
+        },
+        {
+          "spell": "command",
+          "atLevel": 1
+        },
+        {
+          "spell": "blindness-deafness",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 5
+        },
+        {
+          "spell": "stinking-cloud",
+          "atLevel": 5
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "hallow",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/9f/Class_Warlock_Fiend_Hotbar_Icon.png"
+  },
+  {
+    "id": "the-great-old-one",
+    "cls": "warlock",
+    "name": "The Great Old One",
+    "page": 109,
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "dissonant-whispers",
+          "atLevel": 1
+        },
+        {
+          "spell": "tashas-hideous-laughter",
+          "atLevel": 1
+        },
+        {
+          "spell": "detect-thoughts",
+          "atLevel": 3
+        },
+        {
+          "spell": "phantasmal-force",
+          "atLevel": 3
+        },
+        {
+          "spell": "clairvoyance",
+          "atLevel": 5
+        },
+        {
+          "spell": "sending",
+          "atLevel": 5
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 7
+        },
+        {
+          "spell": "evards-black-tentacles",
+          "atLevel": 7
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        },
+        {
+          "spell": "telekinesis",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/4f/Class_Warlock_Great_Old_One_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-abjuration",
+    "cls": "wizard",
+    "name": "School of Abjuration",
+    "page": 115,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/ef/Class_Wizard_Abjuration_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-conjuration",
+    "cls": "wizard",
+    "name": "School of Conjuration",
+    "page": 116,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/a/ab/Class_Wizard_Conjuration_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-divination",
+    "cls": "wizard",
+    "name": "School of Divination",
+    "page": 116,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/35/Class_Wizard_Divination_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-enchantment",
+    "cls": "wizard",
+    "name": "School of Enchantment",
+    "page": 117,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/b5/Class_Wizard_Enchantment_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-evocation",
+    "cls": "wizard",
+    "name": "School of Evocation",
+    "page": 117,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/6/63/Class_Wizard_Evocation_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-illusion",
+    "cls": "wizard",
+    "name": "School of Illusion",
+    "page": 118,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/3d/Class_Wizard_Illusion_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-necromancy",
+    "cls": "wizard",
+    "name": "School of Necromancy",
+    "page": 118,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/0/0c/Class_Wizard_Necromancy_Hotbar_Icon.png"
+  },
+  {
+    "id": "school-of-transmutation",
+    "cls": "wizard",
+    "name": "School of Transmutation",
+    "page": 119,
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/25/Class_Wizard_Transmutation_Hotbar_Icon.png"
+  }
+]

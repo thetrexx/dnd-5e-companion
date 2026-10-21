@@ -1,0 +1,704 @@
+[
+  {
+    "id": "second-wind",
+    "name": "Second Wind",
+    "source": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "uses": "1/short rest",
+    "description": [
+      "On your turn, use a bonus action to heal 1d10 + your fighter level hit points.",
+      "Once used, you need a short or long rest before using it again."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/95/Second_Wind_Icon.webp"
+  },
+  {
+    "id": "action-surge",
+    "name": "Action Surge",
+    "source": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "level": 2,
+    "cost": "free",
+    "uses": "Per short or long rest, see Uses",
+    "scaling": [
+      {
+        "label": "Uses",
+        "values": [
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ],
+    "description": [
+      "On your turn, take one extra action in addition to your normal action and any bonus action.",
+      "Needs a short or long rest to use again. From level 17 you get two uses between rests, but only one per turn."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Action_Surge_Icon.webp"
+  },
+  {
+    "id": "indomitable",
+    "name": "Indomitable",
+    "source": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "You fail a saving throw",
+    "uses": "Per long rest, see Uses",
+    "scaling": [
+      {
+        "label": "Uses",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "When you fail a saving throw, you can reroll it. You must keep the new roll.",
+      "Each use needs a long rest to recover. See Uses for how many uses you have."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/16/Indomitable_Icon.webp"
+  },
+  {
+    "id": "fighting-style-protection",
+    "name": "Protection",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "An enemy you can see attacks someone else within 5 ft",
+    "description": [
+      "Shield in hand, you can throw off attacks on allies beside you. If a creature you can see attacks another target within 5 ft of you, spend your reaction: that attack roll has disadvantage."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/73/Protection_Icon.webp"
+  },
+  {
+    "id": "fighting-style-defense",
+    "name": "Defense",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "You get +1 AC for as long as you are wearing armor. Always on; it stops working when you take the armor off."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e2/Defence_Icon.webp"
+  },
+  {
+    "id": "weapon-bond",
+    "name": "Weapon Bond",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 3,
+    "cost": "other",
+    "uses": "Summon: bonus action",
+    "description": [
+      "A 1-hour ritual (a short rest works) ties you to one weapon. Keep it within reach throughout, and touch it at the end to seal the bond.",
+      "A bonded weapon cannot be disarmed from you unless you are incapacitated. While it is on your plane, you can call it to your hand as a bonus action on your turn; it teleports there instantly.",
+      "You can have up to 2 bonded weapons, but summon only one per bonus action. Bonding a third needs you to break one existing bond first."
+    ],
+    "page": 75,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Weapon_Bond_Icon.webp"
+  },
+  {
+    "id": "superiority-dice",
+    "name": "Superiority Dice",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Superiority dice (pool)",
+    "uses": "Refill on short or long rest",
+    "scaling": [
+      {
+        "label": "Superiority Dice",
+        "values": [
+          "",
+          "",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6",
+          "6"
+        ]
+      },
+      {
+        "label": "Die size",
+        "values": [
+          "",
+          "",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      },
+      {
+        "label": "Maneuvers known",
+        "values": [
+          "",
+          "",
+          "3",
+          "3",
+          "3",
+          "3",
+          "5",
+          "5",
+          "5",
+          "7",
+          "7",
+          "7",
+          "7",
+          "7",
+          "9",
+          "9",
+          "9",
+          "9",
+          "9",
+          "9"
+        ]
+      }
+    ],
+    "description": [
+      "Your pool of special dice that pay for maneuvers. Spend 1 die per maneuver, and use only one maneuver on each attack. Every spent die comes back after a short or long rest.",
+      "Maneuver save DC = 8 + proficiency bonus + Strength or Dexterity modifier (your choice).",
+      "You know 3 maneuvers at level 3, and learn 2 more at levels 7, 10 and 15. You may swap one maneuver whenever you learn new ones."
+    ],
+    "page": 73,
+    "textSource": "summary"
+  },
+  {
+    "id": "know-your-enemy",
+    "name": "Know Your Enemy",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "level": 7,
+    "cost": "other",
+    "description": [
+      "Study or chat with a creature for 1 minute or more, away from combat. The DM tells you whether it ranks above, below or level with you in 2 traits you pick. Options: any of the 3 physical scores, AC, current HP, overall class levels, or fighter levels."
+    ],
+    "page": 73,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/30/Know_Your_Enemy_Icon.webp"
+  },
+  {
+    "id": "relentless",
+    "name": "Relentless",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-master"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You roll initiative with 0 superiority dice",
+    "description": [
+      "Roll initiative with every superiority die spent, and you get 1 die back."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "war-magic",
+    "name": "War Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "trigger": "You cast a cantrip with your action",
+    "description": [
+      "Cast a cantrip as your action, and you may follow it with 1 weapon attack as a bonus action."
+    ],
+    "page": 75,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1a/War_Magic_Icon.webp"
+  },
+  {
+    "id": "eldritch-strike",
+    "name": "Eldritch Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "description": [
+      "A creature you hit with a weapon attack suffers disadvantage on its next save against one of your spells. The spell must land before your next turn ends."
+    ],
+    "page": 75,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/95/Eldritch_Strike_Icon.webp"
+  },
+  {
+    "id": "arcane-charge",
+    "name": "Arcane Charge",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You use Action Surge",
+    "resource": "Action Surge",
+    "description": [
+      "Action Surge now comes with a blink: teleport up to 30 ft into an unoccupied space you can see, either before or after the extra action."
+    ],
+    "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "improved-war-magic",
+    "name": "Improved War Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "eldritch-knight"
+    },
+    "level": 18,
+    "cost": "bonus",
+    "trigger": "You cast a spell with your action",
+    "description": [
+      "After you use your action to cast any spell, make 1 weapon attack as a bonus action."
+    ],
+    "page": 75,
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-archery",
+    "name": "Archery",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "You get +2 to attack rolls made with ranged weapons. It is always on, so there is nothing to activate."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/83/Archery_Icon.webp"
+  },
+  {
+    "id": "fighting-style-dueling",
+    "name": "Dueling",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Holding a melee weapon in one hand with no other weapon in your other hand gives you +2 to damage rolls with it."
+    ],
+    "page": 72,
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-great-weapon-fighting",
+    "name": "Great Weapon Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Wielding a melee weapon with two hands, if a damage die shows 1 or 2 you may roll it again, and the second result stands even if it is low too. Only weapons that are two-handed or versatile qualify."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1f/Great_Weapon_Fighting_Icon.webp"
+  },
+  {
+    "id": "fighting-style-two-weapon-fighting",
+    "name": "Two-Weapon Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "When fighting with two weapons, your second attack also adds your ability modifier to its damage."
+    ],
+    "page": 72,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/54/Two-Weapon_Fighting_Icon.webp"
+  },
+  {
+    "id": "maneuvers-commanders-strike",
+    "name": "Commander's Strike",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "You take the Attack action",
+    "resource": "1 superiority die",
+    "description": [
+      "When you take the Attack action, trade one of your swings for a bonus action that sends a friendly creature who sees or hears you into battle. Spend the die: that creature uses its reaction for one weapon attack, with the die added to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d2/Commander's_Strike_Icon.webp"
+  },
+  {
+    "id": "maneuvers-disarming-attack",
+    "name": "Disarming Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll. Name an item the target holds; it must pass a Strength save or let go, and the item falls at its feet.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-distracting-strike",
+    "name": "Distracting Strike",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll, and you open the target up for your friends: until your next turn starts, the first attack roll someone else makes against it has advantage."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-evasive-footwork",
+    "name": "Evasive Footwork",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You move",
+    "resource": "1 superiority die",
+    "description": [
+      "When you move, roll the die and add the result to your AC. The bonus lasts until you stop moving."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b6/Evasive_Footwork_Icon.webp"
+  },
+  {
+    "id": "maneuvers-feinting-attack",
+    "name": "Feinting Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 superiority die",
+    "description": [
+      "Use a bonus action to feint at a creature within 5 feet. Your next attack roll against it has advantage, and if that attack hits you add the die to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7a/Feinting_Attack_Icon.webp"
+  },
+  {
+    "id": "maneuvers-goading-attack",
+    "name": "Goading Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll, and the target must pass a Wisdom save or fixate on you. Until your next turn ends, it rolls with disadvantage when it attacks anyone but you.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-lunging-attack",
+    "name": "Lunging Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a melee attack on your turn",
+    "resource": "1 superiority die",
+    "description": [
+      "Your reach for that one attack grows by 5 feet. If it hits, add the die to the damage."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-maneuvering-attack",
+    "name": "Maneuvering Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll. An ally who can see or hear you may then use its reaction for a move of up to half its speed, and your target can't make opportunity attacks against it for that move."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-menacing-attack",
+    "name": "Menacing Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll, and the target must pass a Wisdom save or be frightened of you. The fear lasts until your next turn ends.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-parry",
+    "name": "Parry",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "Another creature damages you with a melee attack",
+    "resource": "1 superiority die",
+    "description": [
+      "When another creature hits you with a melee attack, spend a reaction and the die to cut the damage by the die roll plus your Dexterity modifier."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/aa/Parry_Icon.webp"
+  },
+  {
+    "id": "maneuvers-precision-attack",
+    "name": "Precision Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a weapon attack roll",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the attack roll. You can do this before or after rolling, but before the attack's effects are applied."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Precision_Attack_Icon.webp"
+  },
+  {
+    "id": "maneuvers-pushing-attack",
+    "name": "Pushing Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll. A Large or smaller target must pass a Strength save or you shove it up to 15 ft straight away from you.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  },
+  {
+    "id": "maneuvers-rally",
+    "name": "Rally",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 superiority die",
+    "description": [
+      "On your turn, spend a bonus action to steady an ally who can see or hear you. Roll the die; the ally gets that many temporary hit points plus your Charisma modifier."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d2/Rally_Icon.webp"
+  },
+  {
+    "id": "maneuvers-riposte",
+    "name": "Riposte",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A melee attack misses you",
+    "resource": "1 superiority die",
+    "description": [
+      "Strike back at the creature that missed: one melee weapon attack against it. On a hit, the die joins the damage roll."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9e/Riposte_Icon.webp"
+  },
+  {
+    "id": "maneuvers-sweeping-attack",
+    "name": "Sweeping Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your melee weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "Carry the swing into a second creature that is within 5 ft of the first target and within your reach. Compare your original attack roll to its AC; if that roll would hit it, it takes damage equal to the die, of the original attack's damage type."
+    ],
+    "page": 74,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d5/Sweeping_Attack_Icon.webp"
+  },
+  {
+    "id": "maneuvers-trip-attack",
+    "name": "Trip Attack",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon attack hits",
+    "resource": "1 superiority die",
+    "description": [
+      "The die joins the damage roll. A Large or smaller target must pass a Strength save or fall prone.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
+    ],
+    "page": 74,
+    "textSource": "summary"
+  }
+]

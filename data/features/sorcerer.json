@@ -1,0 +1,324 @@
+[
+  {
+    "id": "sorcery-points",
+    "name": "Sorcery Points",
+    "source": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "level": 2,
+    "cost": "free",
+    "resource": "Sorcery points (pool)",
+    "uses": "Refill on long rest",
+    "scaling": [
+      {
+        "label": "Sorcery Points",
+        "values": [
+          "",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      }
+    ],
+    "description": [
+      "Sorcery points pay for Flexible Casting and your Metamagic options. You can never hold more than the maximum for your level.",
+      "A long rest refills them all."
+    ],
+    "page": 101,
+    "textSource": "summary"
+  },
+  {
+    "id": "font-of-magic",
+    "name": "Font of Magic",
+    "source": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "Sorcery points / spell slots",
+    "description": [
+      "Bonus action: swap between spell slots and sorcery points.",
+      "Make a slot: spend points to create one slot of 5th level or lower. Cost: 1st level 2 points, 2nd level 3, 3rd level 5, 4th level 6, 5th level 7.",
+      "Burn a slot: expend one slot and gain sorcery points equal to its level."
+    ],
+    "page": 101,
+    "textSource": "summary"
+  },
+  {
+    "id": "sorcerous-restoration",
+    "name": "Sorcerous Restoration",
+    "source": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "level": 20,
+    "cost": "free",
+    "uses": "Once per short rest",
+    "description": [
+      "When you finish a short rest, you regain 4 expended sorcery points."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-affinity",
+    "name": "Elemental Affinity",
+    "source": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You cast a spell of your ancestry damage type",
+    "resource": "1 sorcery point (resistance only)",
+    "description": [
+      "Your spells that deal your dragon ancestor's damage type get your Charisma modifier added once to the damage.",
+      "Pay 1 sorcery point and you also resist that type for 1 hour."
+    ],
+    "page": 102,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/63/Elemental_Affinity_Icon.png"
+  },
+  {
+    "id": "dragon-wings",
+    "name": "Dragon Wings",
+    "source": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "description": [
+      "Grow a pair of dragon wings. You fly at a speed equal to your walking speed. They remain until you dismiss them, which also costs a bonus action.",
+      "They won't come out in armor that isn't made for them, and unsuitable clothing may be ruined."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-presence",
+    "name": "Draconic Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "5 sorcery points",
+    "description": [
+      "Pay 5 sorcery points to radiate awe or fear (you choose) out to 60 ft for 1 minute. It needs your concentration, just like a concentration spell.",
+      "Each hostile creature that begins its turn in the aura makes a Wisdom save. A failure means charmed (awe) or frightened (fear) until the aura ends. A success makes that creature immune to the aura for 24 hours."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "tides-of-chaos",
+    "name": "Tides of Chaos",
+    "source": {
+      "kind": "subclass",
+      "id": "wild-magic"
+    },
+    "level": 1,
+    "cost": "free",
+    "uses": "Once, then long rest (or after a surge)",
+    "description": [
+      "Give yourself advantage on a single d20 roll: an attack, a check or a save.",
+      "After that it stays spent until you finish a long rest. The exception: if the DM triggers a Wild Magic Surge once you cast a sorcerer spell (1st level or above), you roll the surge and the feature is ready again."
+    ],
+    "page": 103,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8d/Tides_of_Chaos_Icon.webp"
+  },
+  {
+    "id": "bend-luck",
+    "name": "Bend Luck",
+    "source": {
+      "kind": "subclass",
+      "id": "wild-magic"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "Someone else you can see rolls an attack, ability check or save",
+    "resource": "2 sorcery points",
+    "description": [
+      "Twist their fate with 2 sorcery points and your reaction: roll 1d4 and add it to their roll or take it away, as you prefer.",
+      "Decide after you see their roll but before its effects happen."
+    ],
+    "page": 103,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/55/Bend_Luck_Icon.webp"
+  },
+  {
+    "id": "spell-bombardment",
+    "name": "Spell Bombardment",
+    "source": {
+      "kind": "subclass",
+      "id": "wild-magic"
+    },
+    "level": 18,
+    "cost": "free",
+    "trigger": "You roll spell damage and a die shows its highest number",
+    "uses": "Once per turn",
+    "description": [
+      "Once per turn, when you roll spell damage and any die shows its maximum number, pick one of those dice and roll it again, adding the new roll to the damage."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-careful-spell",
+    "name": "Careful Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast a spell that makes other creatures save",
+    "resource": "1 sorcery point",
+    "description": [
+      "Shield some targets from your spell. Choose up to your Charisma modifier creatures (at least 1); they pass their save automatically."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-distant-spell",
+    "name": "Distant Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast a spell with a range of 5 feet or more, or touch",
+    "resource": "1 sorcery point",
+    "description": [
+      "Doubles the range of a spell whose range is 5 feet or more. A touch spell instead gets a range of 30 feet."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-empowered-spell",
+    "name": "Empowered Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You roll damage for a spell",
+    "resource": "1 sorcery point",
+    "description": [
+      "Pick up to your Charisma modifier (at least 1) of the dice rolled for damage and roll them again. You must keep the new results.",
+      "It stacks with another Metamagic option used on the same casting."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-extended-spell",
+    "name": "Extended Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast a spell with a duration of 1 minute or longer",
+    "resource": "1 sorcery point",
+    "description": [
+      "Doubles the duration of the spell, up to a maximum of 24 hours. Useful for buffs you want to last through a whole day."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-heightened-spell",
+    "name": "Heightened Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast a spell that forces a saving throw",
+    "resource": "3 sorcery points",
+    "description": [
+      "Pick one target of the spell. It rolls its first save against the spell with disadvantage."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-quickened-spell",
+    "name": "Quickened Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast a spell with a casting time of 1 action",
+    "resource": "2 sorcery points",
+    "description": [
+      "Turns the casting time of that spell from an action into a bonus action for this casting."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-subtle-spell",
+    "name": "Subtle Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast any spell",
+    "resource": "1 sorcery point",
+    "description": [
+      "Cast the spell with no verbal or somatic components, so nobody hears or sees you doing it."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-twinned-spell",
+    "name": "Twinned Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your spell targets a single creature and its range isn't self",
+    "resource": "Sorcery points equal to the spell's level (1 for a cantrip)",
+    "description": [
+      "Pay 1 sorcery point per spell level (a cantrip costs 1) and the spell picks up a second target, which also has to be within its range."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  }
+]

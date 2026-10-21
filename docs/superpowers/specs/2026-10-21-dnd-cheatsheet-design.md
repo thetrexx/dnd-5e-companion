@@ -37,14 +37,16 @@ The look matters to the owner. It should feel like Baldur's Gate 3 in Faerûn: d
 - **Hosting:** GitHub Pages, from a public repo. Static files only. Hosting must stay free.
 - **Storage:** the browser's local storage only.
 - **Connectivity:** players have internet at the table. Offline support is not required.
-- **Content source:** the owner's PDF of the 2014 Player's Handbook, at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf` (confirmed by the owner; `DnD5E.pdf` next to it is the Dungeon Master's Guide and is not a source).
-- **Legal posture:** publishing Player's Handbook text outside the SRD is redistribution of WotC IP. The owner was told this, including that the realistic worst case is a DMCA takedown of the repo, and chose to accept the risk. The site must be free, non-commercial and carry WotC's Fan Content Policy notice (section 11).
+- **Content source:** the owner's PDF of the 2014 Player's Handbook, at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf` (confirmed by the owner; `DnD5E.pdf` next to it is the Dungeon Master's Guide and is not a source), is the reference for facts: names, numbers, levels, class lists and page numbers. Published text comes from two places only (owner decision, 2026-10-21; see 4.1).
+- **Legal posture:** the site never republishes the Player's Handbook's own wording outside the SRD. All card text is written in our own words (game mechanics are facts; only the book's expression is protected); SRD 5.1 data used for facts is credited under CC BY 4.0. An earlier draft had the owner accept the risk of publishing PHB text; that was reversed on 2026-10-21 when extraction showed it meant book-scale verbatim copying. The site must be free, non-commercial and carry WotC's Fan Content Policy notice (section 11).
 
 ## 4. Content and data
 
 ### 4.1 Extraction
 
-All rules text is extracted **once** from the PDF into data files that ship with the site. Nothing is fetched or parsed from the PDF at runtime. The extraction can be scripted, manual or mixed. The output is what matters, and it must be checked by hand against the book. Only the SRD 5.1 is free to publish; the owner accepted the risk for the rest.
+All content is prepared **once** into data files that ship with the site. Nothing is fetched or parsed from the PDF at runtime. Every card's text is a short description **in our own words** (owner decision, 2026-10-21, after the API content filter blocked handling official text, SRD included). It covers the full mechanics a player needs at the table (cost, range, duration, targets, damage, saves, scaling, limits), and the card gives the PHB page so the player can read the full rules in the book. No official text, PHB or SRD, is published, and descriptions never copy the book's sentences. Structured facts (levels, ranges, durations, components, dice) may come from SRD 5.1 data (CC BY 4.0, credited on the About screen) or from the book.
+
+Every entry is checked against the book for facts: names, numbers, levels, durations, damage and page numbers must match it exactly. The extraction can be scripted, manual or mixed.
 
 Scope:
 - **All 361 Player's Handbook spells**, including the 45 that are not in SRD 5.1. Spells with a wizard's name in the PHB (e.g. "Tasha's Hideous Laughter") keep the PHB name.
@@ -136,6 +138,7 @@ BG3 tooltip style, opened by tapping an icon on either page. Top to bottom:
 - **Component icons:** Verbal, Somatic, Material as 48 px round icons on pure black circles. Components a spell doesn't use are dimmed. Tapping one opens a short explainer under the row (tap again to close). The Material explainer lists the actual item, its gold cost, whether it is consumed, and whether a component pouch or focus can replace it.
 - Cost bar: ● Action / ▲ Bonus Action / reaction, plus the slot level.
 - Feature cards (from the Actions page) use the same layout minus the spell-only parts, showing the resource spent and uses/recharge instead.
+- Every card ends with a small line "Full rules: PHB p. N".
 
 ### 5.7 Settings
 Reached from the start screen and the menu.

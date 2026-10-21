@@ -1,0 +1,16 @@
+GLIMMER DART
+Evoeation eantrip
+Casting Time: I aetion
+Range: 90 /eet
+Components: V, S
+Duration: Instantaneous
+Vou /ling a sliver o/ eold light at one ereature
+yoll ean see within range. Make a ranged spell
+attaek. On a hit, the ereature takes Id8 radiant
+damage and glows /aintly llntil the start o/ yollr
+next tllrn, so it ean't hide in dim light.
+The dart splits into more slivers as yoll grow: 2d8
+at 5th level, 3d8 at IIth, and 4d8 at I7th.
+GLOOM WARD
+2nd-level abjllration
+Casting Time: I aetion

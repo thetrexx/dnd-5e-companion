@@ -1,0 +1,438 @@
+{
+  "acid-splash": {
+    "page": 211
+  },
+  "aid": {
+    "page": 211
+  },
+  "alarm": {
+    "page": 211
+  },
+  "alter-self": {
+    "page": 211
+  },
+  "antipathy-sympathy": {
+    "page": 214,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    }
+  },
+  "mordenkainens-sword": {
+    "page": 262
+  },
+  "color-spray": {
+    "page": 222,
+    "range": "Self (15-foot cone)"
+  },
+  "detect-evil-and-good": {
+    "page": 231
+  },
+  "detect-poison-and-disease": {
+    "page": 231
+  },
+  "find-familiar": {
+    "page": 240
+  },
+  "find-steed": {
+    "page": 240
+  },
+  "find-the-path": {
+    "page": 240,
+    "duration": "Concentration, up to 1 day"
+  },
+  "fireball": {
+    "page": 241,
+    "icon": "https://bg3.wiki/w/images/c/cb/Fireball_Icon.webp"
+  },
+  "geas": {
+    "page": 244,
+    "summary": {
+      "damage": {
+        "dice": "5d10",
+        "type": "Psychic"
+      }
+    }
+  },
+  "leomunds-tiny-hut": {
+    "page": 255,
+    "range": "Self (10-foot-radius hemisphere)"
+  },
+  "vampiric-touch": {
+    "page": 285
+  },
+  "counterspell": {
+    "cast": {
+      "trigger": "when you see a creature within 60 ft casting a spell"
+    }
+  },
+  "feather-fall": {
+    "cast": {
+      "trigger": "when you or a creature within 60 ft falls"
+    }
+  },
+  "hellish-rebuke": {
+    "cast": {
+      "trigger": "when a creature you can see within 60 ft damages you"
+    }
+  },
+  "shield": {
+    "cast": {
+      "trigger": "when you're hit by an attack or targeted by magic missile"
+    },
+    "icon": "https://bg3.wiki/w/images/c/cf/Shield_spell_Icon.webp"
+  },
+  "magic-missile": {
+    "summary": {
+      "resolution": "auto",
+      "damage": {
+        "dice": "1d4+1",
+        "count": 3,
+        "unit": "darts"
+      },
+      "upcast": "+1 dart per slot level above 1"
+    },
+    "icon": "https://bg3.wiki/w/images/d/d4/Magic_Missile_Icon.webp"
+  },
+  "antilife-shell": {
+    "range": "Self (10-foot radius)"
+  },
+  "antimagic-field": {
+    "range": "Self (10-foot-radius sphere)"
+  },
+  "burning-hands": {
+    "range": "Self (15-foot cone)",
+    "icon": "https://bg3.wiki/w/images/c/cf/Burning_Hands_Icon.webp"
+  },
+  "cone-of-cold": {
+    "range": "Self (60-foot cone)"
+  },
+  "control-weather": {
+    "range": "Self (5-mile radius)"
+  },
+  "fear": {
+    "range": "Self (30-foot cone)"
+  },
+  "globe-of-invulnerability": {
+    "range": "Self (10-foot radius)"
+  },
+  "gust-of-wind": {
+    "range": "Self (60-foot line)"
+  },
+  "lightning-bolt": {
+    "range": "Self (100-foot line)"
+  },
+  "prismatic-spray": {
+    "range": "Self (60-foot cone)",
+    "summary": {
+      "damage": {
+        "type": "(type by ray)"
+      }
+    }
+  },
+  "speak-with-plants": {
+    "range": "Self (30-foot radius)"
+  },
+  "spirit-guardians": {
+    "range": "Self (15-foot radius)",
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "3d8",
+        "type": "Radiant or Necrotic"
+      },
+      "upcast": "+1d8 per slot level above 3"
+    }
+  },
+  "sunbeam": {
+    "range": "Self (60-foot line)"
+  },
+  "thunderwave": {
+    "range": "Self (15-foot cube)",
+    "icon": "https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp"
+  },
+  "etherealness": {
+    "duration": "Up to 8 hours"
+  },
+  "forbiddance": {
+    "duration": "1 day",
+    "summary": {
+      "resolution": "auto",
+      "damage": {
+        "dice": "5d10",
+        "type": "Radiant or Necrotic"
+      }
+    }
+  },
+  "glyph-of-warding": {
+    "duration": "Until dispelled or triggered"
+  },
+  "symbol": {
+    "duration": "Until dispelled or triggered"
+  },
+  "prestidigitation": {
+    "duration": "Up to 1 hour"
+  },
+  "thaumaturgy": {
+    "duration": "Up to 1 minute"
+  },
+  "project-image": {
+    "duration": "Concentration, up to 1 day"
+  },
+  "plant-growth": {
+    "cast": {
+      "text": "1 action or 8 hours"
+    }
+  },
+  "fire-bolt": {
+    "icon": "https://bg3.wiki/w/images/2/23/Fire_Bolt_Icon.webp"
+  },
+  "ray-of-frost": {
+    "icon": "https://bg3.wiki/w/images/f/f9/Ray_of_Frost_Icon.webp"
+  },
+  "guidance": {
+    "icon": "https://bg3.wiki/w/images/7/7f/Guidance_Icon.webp"
+  },
+  "produce-flame": {
+    "icon": "https://bg3.wiki/w/images/e/ec/Produce_Flame_Icon.webp"
+  },
+  "shillelagh": {
+    "icon": "https://bg3.wiki/w/images/6/68/Shillelagh_Icon.webp"
+  },
+  "cure-wounds": {
+    "icon": "https://bg3.wiki/w/images/4/40/Cure_Wounds_Icon.webp"
+  },
+  "misty-step": {
+    "icon": "https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp"
+  },
+  "sleep": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "false-life": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "call-lightning": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "flame-blade": {
+    "summary": {
+      "resolution": "attack"
+    }
+  },
+  "flaming-sphere": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "levitate": {
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    }
+  },
+  "magic-mouth": {
+    "components": {
+      "m": {
+        "costGp": 10
+      }
+    }
+  },
+  "ray-of-enfeeblement": {
+    "summary": {
+      "resolution": "attack"
+    }
+  },
+  "scorching-ray": {
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "count": 3,
+        "unit": "rays"
+      },
+      "upcast": "+1 ray per slot level above 2"
+    }
+  },
+  "sleet-storm": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "spike-growth": {
+    "summary": {
+      "resolution": "auto",
+      "damage": {
+        "dice": "2d4",
+        "type": "Piercing"
+      }
+    }
+  },
+  "web": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "zone-of-truth": {
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    }
+  },
+  "bigbys-hand": {
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d8",
+        "type": "Force"
+      },
+      "upcast": "+2d8 per slot level above 5"
+    }
+  },
+  "chain-lightning": {
+    "summary": {
+      "upcast": "+1 bolt per slot level above 6"
+    }
+  },
+  "contagion": {
+    "summary": {
+      "resolution": "attack"
+    }
+  },
+  "disintegrate": {
+    "summary": {
+      "upcast": "+3d6 per slot level above 6"
+    }
+  },
+  "destructive-wave": {
+    "summary": {
+      "damage": {
+        "dice": "10d6",
+        "type": "Thunder + Radiant or Necrotic (5d6 each)"
+      }
+    }
+  },
+  "dimension-door": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "flame-strike": {
+    "summary": {
+      "damage": {
+        "dice": "8d6",
+        "type": "Fire + Radiant (4d6 each)"
+      },
+      "upcast": "+1d6 per slot level above 5"
+    }
+  },
+  "fire-shield": {
+    "summary": {
+      "damage": {
+        "type": "Fire or Cold"
+      }
+    }
+  },
+  "ice-storm": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "otilukes-freezing-sphere": {
+    "summary": {
+      "upcast": "+1d6 per slot level above 6"
+    }
+  },
+  "phantasmal-killer": {
+    "summary": {
+      "upcast": "+1d10 per slot level above 4"
+    }
+  },
+  "seeming": {
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    }
+  },
+  "wall-of-fire": {
+    "summary": {
+      "upcast": "+1d8 per slot level above 4"
+    }
+  },
+  "wall-of-stone": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "wall-of-thorns": {
+    "summary": {
+      "damage": {
+        "type": "Piercing (Slashing to pass through)"
+      }
+    }
+  },
+  "earthquake": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "forcecage": {
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    }
+  },
+  "meteor-swarm": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "holy-aura": {
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    }
+  },
+  "power-word-stun": {
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    }
+  },
+  "prismatic-wall": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "storm-of-vengeance": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "true-polymorph": {
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    }
+  },
+  "weird": {
+    "summary": {
+      "damage": {
+        "dice": "4d10",
+        "type": "Psychic"
+      }
+    }
+  }
+}

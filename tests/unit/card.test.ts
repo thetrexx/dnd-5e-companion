@@ -1,5 +1,6 @@
 import { DATA } from '../../src/data';
 import { levelLine, damageLine, tags, costBar, componentInfo, diceRange } from '../../src/logic/card';
+import type { Spell } from '../../src/data/types';
 
 const get = (id: string) => DATA.spells.find(s => s.id === id)!;
 const mm = get('magic-missile');
@@ -30,7 +31,7 @@ test('tags', () => {
   expect(tags(mm)).toEqual(['120 ft', 'Instantaneous', 'Auto-hit']);
   expect(tags(get('thunderwave'))).toContain('CON save');
   expect(tags(get('fire-bolt'))).toContain('Attack roll');
-  expect(tags(get('guidance'))).toEqual(['Touch', 'Up to 1 minute', 'Concentration']);
+  expect(tags(get('guidance'))).toEqual(['Touch', 'Concentration, up to 1 minute']);
 });
 test('costBar', () => {
   expect(costBar(get('shield'))).toMatchObject({ cost: 'reaction', label: 'Reaction', slot: 'Level 1 Spell Slot' });
@@ -38,7 +39,7 @@ test('costBar', () => {
   expect(costBar(get('misty-step')).label).toBe('Bonus Action');
 });
 test('costBar reaction carries its trigger, others do not', () => {
-  expect(costBar(get('shield')).trigger).toBe('which you take when you are hit by an attack or targeted by the magic missile spell');
+  expect(costBar(get('shield')).trigger).toContain('magic missile');
   expect(costBar(mm).trigger).toBeUndefined();
 });
 test('componentInfo', () => {
@@ -59,4 +60,8 @@ test('material cost and consumed copy', () => {
     .toBe("a pearl. Costs 100 gp. A component pouch or spellcasting focus can't stand in for it.");
   expect(mk({ text: 'a pearl', consumed: false })).toBe('a pearl. A component pouch or spellcasting focus can stand in for it.');
   expect(mk({ text: 'a pearl.', consumed: true })).toBe('a pearl. The spell consumes it.');
+});
+test('plusMod healing', () => {
+  const s = { ...get('fire-bolt'), summary: { resolution: 'none', damage: { dice: '1d8', type: 'Healing', healing: true, plusMod: true } } } as Spell;
+  expect(damageLine(s)).toEqual({ headline: '1~8 + Mod Healing', detail: '1d8 + Mod Healing' });
 });

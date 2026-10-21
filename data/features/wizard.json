@@ -1,0 +1,477 @@
+[
+  {
+    "id": "arcane-recovery",
+    "name": "Arcane Recovery",
+    "source": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "level": 1,
+    "cost": "free",
+    "uses": "Once per day, after a short rest",
+    "description": [
+      "A short rest over your spellbook can refill used spell slots. Pick slots whose levels total no more than half your wizard level, rounded up; slots of level 6 and above are off the table.",
+      "A 4th-level wizard, say, has 2 levels to spend: one level-2 slot, or a pair of level-1 slots."
+    ],
+    "page": 115,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ed/Arcane_Recovery_Icon.webp"
+  },
+  {
+    "id": "spell-mastery",
+    "name": "Spell Mastery",
+    "source": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "level": 18,
+    "cost": "free",
+    "uses": "At will, at lowest level",
+    "description": [
+      "Pick one 1st-level and one 2nd-level wizard spell from your spellbook. While you have them prepared, cast each at its lowest level at will, with no slot.",
+      "Casting at a higher level uses a slot as usual. After 8 hours of study you can swap either one for another spell of the same level."
+    ],
+    "page": 115,
+    "textSource": "summary"
+  },
+  {
+    "id": "signature-spells",
+    "name": "Signature Spells",
+    "source": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "level": 20,
+    "cost": "free",
+    "uses": "Once per spell per short or long rest",
+    "description": [
+      "Pick two 3rd-level wizard spells from your spellbook. Both are always prepared and do not count against your prepared total.",
+      "Cast each once at 3rd level with no slot. After you do, you cannot do so for that spell again until a short or long rest. A higher-level casting uses a slot as usual."
+    ],
+    "page": 115,
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-ward",
+    "name": "Arcane Ward",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-abjuration"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You cast a level 1+ abjuration spell",
+    "resource": "Arcane Ward hit points (pool)",
+    "uses": "Created once per long rest",
+    "scaling": [
+      {
+        "label": "Ward HP (+ Int modifier)",
+        "values": [
+          "",
+          "4",
+          "6",
+          "8",
+          "10",
+          "12",
+          "14",
+          "16",
+          "18",
+          "20",
+          "22",
+          "24",
+          "26",
+          "28",
+          "30",
+          "32",
+          "34",
+          "36",
+          "38",
+          "40"
+        ]
+      }
+    ],
+    "description": [
+      "That first abjuration casting can also wrap you in a ward, which lasts till your next long rest. Its starting hit points equal 2 x your wizard level + your Intelligence modifier.",
+      "Damage to you drains the ward before it reaches you; whatever the ward can't soak spills over onto you. A ward at 0 HP stops absorbing but doesn't vanish. Later abjuration spells of level 1+ restore 2 x the spell's level to it.",
+      "You can create it only once per long rest."
+    ],
+    "page": 115,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Arcane_Ward_Icon.webp"
+  },
+  {
+    "id": "projected-ward",
+    "name": "Projected Ward",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-abjuration"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature you can see within 30 ft takes damage",
+    "description": [
+      "When a creature you can see within 30 ft takes damage, your Arcane Ward soaks it instead. If that drops the ward to 0, the creature takes the remaining damage."
+    ],
+    "page": 115,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Projected_Ward_Icon.webp"
+  },
+  {
+    "id": "minor-conjuration",
+    "name": "Minor Conjuration",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-conjuration"
+    },
+    "level": 2,
+    "cost": "action",
+    "description": [
+      "Create a nonmagical object you have seen, in your hand or on the ground within 10 ft in an open space you can see. It is at most 3 ft on a side and 10 lb, and glows with dim light for 5 ft.",
+      "It lasts 1 hour, or until it takes damage or you use this feature again."
+    ],
+    "page": 116,
+    "textSource": "summary"
+  },
+  {
+    "id": "benign-transposition",
+    "name": "Benign Transposition",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-conjuration"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Long rest, or after casting a 1st-level+ conjuration spell",
+    "description": [
+      "Teleport up to 30 ft into a free space you can see. Alternatively, target a space holding a Small or Medium creature who agrees, and you two trade places.",
+      "It comes back after a long rest, or as soon as you cast any conjuration spell of 1st level or above."
+    ],
+    "page": 116,
+    "textSource": "summary"
+  },
+  {
+    "id": "portent",
+    "name": "Portent",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-divination"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You or a creature you can see is about to make a d20 roll",
+    "resource": "Portent dice (pool)",
+    "uses": "Roll after each long rest",
+    "scaling": [
+      {
+        "label": "Portent d20s",
+        "values": [
+          "",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "Each long rest, roll the listed number of d20s and keep the results. Each result can stand in for a d20 roll of yours, or of any creature you can see: an attack, a save or a check. One use per result.",
+      "State the swap before that roll happens. Only one swap per turn. Leftover results vanish when you next finish a long rest."
+    ],
+    "page": 116,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1d/Portent_Icon.webp"
+  },
+  {
+    "id": "expert-divination",
+    "name": "Expert Divination",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-divination"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You use a slot of level 2+ to cast a divination spell",
+    "description": [
+      "Get one spent slot back. It has to be lower in level than the spell you just cast, and no higher than level 5."
+    ],
+    "page": 116,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f4/Expert_Divination_Icon.webp"
+  },
+  {
+    "id": "the-third-eye",
+    "name": "The Third Eye",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-divination"
+    },
+    "level": 10,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Pick one benefit. It lasts until you are incapacitated or take a short or long rest. Darkvision 60 ft. Ethereal Sight 60 ft. Greater Comprehension (read any language). See Invisibility within 10 ft in line of sight.",
+      "You can use the feature again only after a rest."
+    ],
+    "page": 116,
+    "textSource": "summary"
+  },
+  {
+    "id": "hypnotic-gaze",
+    "name": "Hypnotic Gaze",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-enchantment"
+    },
+    "level": 2,
+    "cost": "action",
+    "description": [
+      "Choose a creature within 5 ft that can see or hear you. It makes a Wisdom save against your wizard spell save DC or is charmed until the end of your next turn: speed 0, incapacitated, visibly dazed.",
+      "On later turns, spend your action to extend it to the end of your next turn. It ends if you move more than 5 ft away, the creature can't see or hear you, or it takes damage.",
+      "After it ends, or on a passed first save, you can't target that creature again until a long rest."
+    ],
+    "page": 117,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f6/Hypnotic_Gaze_Icon.webp"
+  },
+  {
+    "id": "instinctive-charm",
+    "name": "Instinctive Charm",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-enchantment"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature you can see within 30 ft attacks you",
+    "uses": "Once per attacker per long rest",
+    "description": [
+      "Needs another creature within range of that attack. When an enemy you can see no more than 30 ft away targets you with an attack, force a Wisdom save against your wizard spell save DC. If it fails, it must instead strike whoever stands nearest to it (not you, not itself); on ties the attacker decides.",
+      "If it passes, that attacker is off limits for this feature until you take a long rest. Use it before you learn whether the attack lands. Charm-immune creatures ignore it."
+    ],
+    "page": 117,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/92/Instinctive_Charm_Icon.webp"
+  },
+  {
+    "id": "split-enchantment",
+    "name": "Split Enchantment",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-enchantment"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "You cast a single-target enchantment spell of 1st level or higher",
+    "description": [
+      "Your single-target enchantment spells (slot level 1+) can pick a second target as well."
+    ],
+    "page": 117,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b1/Split_Enchantment_Icon.webp"
+  },
+  {
+    "id": "alter-memories",
+    "name": "Alter Memories",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-enchantment"
+    },
+    "level": 14,
+    "cost": "action",
+    "trigger": "You cast an enchantment spell that charms",
+    "description": [
+      "Pick one of the creatures your charm lands on; it doesn't realise it has been charmed.",
+      "Once before the spell ends, spend your action to blur its memory of the charm. It must beat your wizard spell save DC with an Intelligence save. On a failure it loses up to 1 + your Charisma modifier hours of memories (at least 1 hour). You may take less, but no more than the spell's duration."
+    ],
+    "page": 117,
+    "textSource": "summary"
+  },
+  {
+    "id": "sculpt-spells",
+    "name": "Sculpt Spells",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-evocation"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "Your evocation spell affects creatures you can see",
+    "description": [
+      "Carve safe pockets into the blast. Choose up to 1 + the spell's level of those creatures: each one succeeds on its save automatically, and where a successful save would still mean half damage, it takes none."
+    ],
+    "page": 117,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/97/Sculpt_Spells_Icon.webp"
+  },
+  {
+    "id": "overchannel",
+    "name": "Overchannel",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-evocation"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You cast a damaging wizard spell of 5th level or lower",
+    "uses": "Free once per long rest, then you take necrotic damage",
+    "description": [
+      "Cast a damaging wizard spell of 5th level or lower and have it deal its maximum damage.",
+      "First use between long rests is free. Using it again hurts you right after the spell: 2d12 necrotic per spell level on the second use, plus another 1d12 per level for each use after that. This damage ignores resistance and immunity."
+    ],
+    "page": 118,
+    "textSource": "summary"
+  },
+  {
+    "id": "malleable-illusions",
+    "name": "Malleable Illusions",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-illusion"
+    },
+    "level": 6,
+    "cost": "action",
+    "description": [
+      "While an illusion spell with a duration of 1 minute or longer is running and you can see it, spend your action to change what the illusion does, within the spell's normal parameters."
+    ],
+    "page": 118,
+    "textSource": "summary"
+  },
+  {
+    "id": "illusory-self",
+    "name": "Illusory Self",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-illusion"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "You are the target of an attack roll",
+    "uses": "Once per short or long rest",
+    "description": [
+      "React on instinct and an illusory copy of you steps into the attacker's way. The attack misses you no matter what, and the copy fades.",
+      "Recharges on a short or long rest."
+    ],
+    "page": 118,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a8/Illusory_Self_Icon.webp"
+  },
+  {
+    "id": "illusory-reality",
+    "name": "Illusory Reality",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-illusion"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "Your illusion spell of level 1+ is still running",
+    "description": [
+      "On your turn, a bonus action turns one inanimate, nonmagical object inside the illusion into a real one for 1 minute (picture a fake bridge your party can actually cross).",
+      "The real object never deals damage or directly hurts anyone."
+    ],
+    "page": 118,
+    "textSource": "summary"
+  },
+  {
+    "id": "grim-harvest",
+    "name": "Grim Harvest",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-necromancy"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "Your spell kills a creature",
+    "uses": "Once per turn",
+    "description": [
+      "Once per turn, when your spell of 1st level or higher kills one or more creatures, you regain hit points equal to 2 x the spell's level, or 3 x if it is a necromancy spell.",
+      "Constructs and undead give you nothing."
+    ],
+    "page": 118,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/59/Grim_Harvest_Icon.webp"
+  },
+  {
+    "id": "command-undead",
+    "name": "Command Undead",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-necromancy"
+    },
+    "level": 14,
+    "cost": "action",
+    "description": [
+      "Pick an undead you can see within 60 ft, even one another wizard made. It makes a Charisma save against your wizard spell save DC. On a success you can't try again on it.",
+      "On a fail it becomes friendly and obeys you until you use this feature again.",
+      "Intelligence 8+ gives it advantage on the save. Intelligence 12+ lets it repeat the save every hour until it frees itself."
+    ],
+    "page": 119,
+    "textSource": "summary"
+  },
+  {
+    "id": "transmuters-stone",
+    "name": "Transmuter's Stone",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-transmutation"
+    },
+    "level": 6,
+    "cost": "other",
+    "description": [
+      "Work for 8 hours to craft a stone, and pick its benefit while you do. Options: darkvision 60 ft; +10 ft speed while unencumbered; Constitution save proficiency; or damage resistance to one of acid, cold, fire, lightning, thunder (your pick).",
+      "Whoever holds the stone gets the benefit, and it can be you or someone else. When you cast a slotted transmutation spell, you may swap the benefit while the stone is on you. Making a new stone ends the old one."
+    ],
+    "page": 119,
+    "textSource": "summary"
+  },
+  {
+    "id": "shapechanger",
+    "name": "Shapechanger",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-transmutation"
+    },
+    "level": 10,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Cast polymorph on yourself without using a spell slot, turning into a beast of challenge rating 1 or lower. You add the spell to your spellbook if it is missing.",
+      "After that, you can't do it again until a short or long rest, but you can still cast polymorph normally with a slot."
+    ],
+    "page": 119,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9d/Shapechanger_Icon.webp"
+  },
+  {
+    "id": "master-transmuter",
+    "name": "Master Transmuter",
+    "source": {
+      "kind": "subclass",
+      "id": "school-of-transmutation"
+    },
+    "level": 14,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Destroy your transmuter's stone to release its power as one effect: Major Transformation (turn one nonmagical object of up to 5 ft cube into another of similar size and mass, 10 minutes of work), Panacea (end all curses, diseases and poisons on a creature you touch and restore all its hit points), Restore Life (cast raise dead via the stone, no slot), or Restore Youth (a willing creature touched looks 3d10 years younger, minimum age 13).",
+      "You can't make a new stone until a long rest."
+    ],
+    "page": 119,
+    "textSource": "summary"
+  }
+]

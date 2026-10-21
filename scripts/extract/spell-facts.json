@@ -1,0 +1,10782 @@
+[
+ {
+  "id": "acid-splash",
+  "name": "Acid Splash",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 211,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d6",
+    "type": "Acid"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "aid",
+  "name": "Aid",
+  "level": 2,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 211,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "alarm",
+  "name": "Alarm",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "30 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "ranger",
+   "wizard"
+  ],
+  "page": 211,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "alter-self",
+  "name": "Alter Self",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 211,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "animal-friendship",
+  "name": "Animal Friendship",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger"
+  ],
+  "page": 212,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "animal-messenger",
+  "name": "Animal Messenger",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger"
+  ],
+  "page": 212,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "animal-shapes",
+  "name": "Animal Shapes",
+  "level": 8,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 24 hours",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 212,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "animate-dead",
+  "name": "Animate Dead",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "wizard"
+  ],
+  "page": 212,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "animate-objects",
+  "name": "Animate Objects",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 213,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "antilife-shell",
+  "name": "Antilife Shell",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (10-foot radius)",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 213,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "antimagic-field",
+  "name": "Antimagic Field",
+  "level": 8,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (10-foot-radius sphere)",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "wizard"
+  ],
+  "page": 213,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "antipathy-sympathy",
+  "name": "Antipathy/Sympathy",
+  "level": 8,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "60 feet",
+  "duration": "10 days",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "wizard"
+  ],
+  "page": 214,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "arcane-eye",
+  "name": "Arcane Eye",
+  "level": 4,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 214,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "arcane-gate",
+  "name": "Arcane Gate",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "500 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 214,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "arcane-lock",
+  "name": "Arcane Lock",
+  "level": 2,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 215,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "armor-of-agathys",
+  "name": "Armor of Agathys",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 215,
+  "summary": {
+   "resolution": "none",
+   "upcast": "+5 temporary hit points and +5 cold damage per slot level above 1"
+  }
+ },
+ {
+  "id": "arms-of-hadar",
+  "name": "Arms of Hadar",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (10-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 215,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "2d6",
+    "type": "Necrotic"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "astral-projection",
+  "name": "Astral Projection",
+  "level": 9,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "10 feet",
+  "duration": "Special",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "warlock",
+   "wizard"
+  ],
+  "page": 215,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "augury",
+  "name": "Augury",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 215,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "aura-of-life",
+  "name": "Aura of Life",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 216,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "aura-of-purity",
+  "name": "Aura of Purity",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 216,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "aura-of-vitality",
+  "name": "Aura of Vitality",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 216,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d6",
+    "type": "Healing",
+    "healing": true
+   }
+  }
+ },
+ {
+  "id": "awaken",
+  "name": "Awaken",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "8 hours"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "druid"
+  ],
+  "page": 216,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "bane",
+  "name": "Bane",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric"
+  ],
+  "page": 216,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "banishing-smite",
+  "name": "Banishing Smite",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 216,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "5d10",
+    "type": "Force"
+   }
+  }
+ },
+ {
+  "id": "banishment",
+  "name": "Banishment",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 217,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "barkskin",
+  "name": "Barkskin",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 217,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "beacon-of-hope",
+  "name": "Beacon of Hope",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 217,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "beast-sense",
+  "name": "Beast Sense",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": true,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 217,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "bestow-curse",
+  "name": "Bestow Curse",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "wizard"
+  ],
+  "page": 218,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "bigbys-hand",
+  "name": "Bigby's Hand",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 218,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d8",
+    "type": "Force"
+   },
+   "upcast": "+2d8 per slot level above 5"
+  }
+ },
+ {
+  "id": "blade-barrier",
+  "name": "Blade Barrier",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 218,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "6d10",
+    "type": "Slashing"
+   }
+  }
+ },
+ {
+  "id": "blade-ward",
+  "name": "Blade Ward",
+  "level": 0,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 218,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "bless",
+  "name": "Bless",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "blight",
+  "name": "Blight",
+  "level": 4,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "8d8",
+    "type": "Necrotic"
+   },
+   "upcast": "+1d8 per slot level above 4"
+  }
+ },
+ {
+  "id": "blinding-smite",
+  "name": "Blinding Smite",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "3d8",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "blindness-deafness",
+  "name": "Blindness/Deafness",
+  "level": 2,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "blink",
+  "name": "Blink",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "blur",
+  "name": "Blur",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "branding-smite",
+  "name": "Branding Smite",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 219,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d6",
+    "type": "Radiant"
+   },
+   "upcast": "+1d6 per slot level above 2"
+  }
+ },
+ {
+  "id": "burning-hands",
+  "name": "Burning Hands",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (15-foot cone)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 220,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d6",
+    "type": "Fire"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  },
+  "icon": "https://bg3.wiki/w/images/c/cf/Burning_Hands_Icon.webp"
+ },
+ {
+  "id": "call-lightning",
+  "name": "Call Lightning",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 220,
+  "summary": {
+   "resolution": "save",
+   "damage": {
+    "dice": "3d10",
+    "type": "Lightning"
+   },
+   "upcast": "+1d10 per slot level above 3",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "calm-emotions",
+  "name": "Calm Emotions",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "chain-lightning",
+  "name": "Chain Lightning",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d8",
+    "type": "Lightning"
+   },
+   "upcast": "+1 bolt per slot level above 6"
+  }
+ },
+ {
+  "id": "charm-person",
+  "name": "Charm Person",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "chill-touch",
+  "name": "Chill Touch",
+  "level": 0,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d8",
+    "type": "Necrotic"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+  }
+ },
+ {
+  "id": "chromatic-orb",
+  "name": "Chromatic Orb",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 50,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "3d8",
+    "type": "Varies"
+   },
+   "upcast": "+1d8 per slot level above 1"
+  }
+ },
+ {
+  "id": "circle-of-death",
+  "name": "Circle of Death",
+  "level": 6,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "8d6",
+    "type": "Necrotic"
+   },
+   "upcast": "+2d6 per slot level above 6"
+  }
+ },
+ {
+  "id": "circle-of-power",
+  "name": "Circle of Power",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 221,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "clairvoyance",
+  "name": "Clairvoyance",
+  "level": 3,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "1 mile",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 100,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 222,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "clone",
+  "name": "Clone",
+  "level": 8,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 222,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "cloud-of-daggers",
+  "name": "Cloud of Daggers",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 222,
+  "summary": {
+   "resolution": "auto",
+   "damage": {
+    "dice": "4d4",
+    "type": "Slashing"
+   },
+   "upcast": "+2d4 per slot level above 2"
+  }
+ },
+ {
+  "id": "cloudkill",
+  "name": "Cloudkill",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 222,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "5d8",
+    "type": "Poison"
+   },
+   "upcast": "+1d8 per slot level above 5"
+  }
+ },
+ {
+  "id": "color-spray",
+  "name": "Color Spray",
+  "level": 1,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (15-foot cone)",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 222,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "command",
+  "name": "Command",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 223,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "commune",
+  "name": "Commune",
+  "level": 5,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 223,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "commune-with-nature",
+  "name": "Commune With Nature",
+  "level": 5,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 224,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "compelled-duel",
+  "name": "Compelled Duel",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 224,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "comprehend-languages",
+  "name": "Comprehend Languages",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 224,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "compulsion",
+  "name": "Compulsion",
+  "level": 4,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard"
+  ],
+  "page": 224,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "cone-of-cold",
+  "name": "Cone of Cold",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (60-foot cone)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 224,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "8d8",
+    "type": "Cold"
+   },
+   "upcast": "+1d8 per slot level above 5"
+  }
+ },
+ {
+  "id": "confusion",
+  "name": "Confusion",
+  "level": 4,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 224,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "contact-other-plane",
+  "name": "Contact Other Plane",
+  "level": 5,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 226,
+  "summary": {
+   "resolution": "save",
+   "save": "int"
+  }
+ },
+ {
+  "id": "contagion",
+  "name": "Contagion",
+  "level": 5,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "7 days",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 227,
+  "summary": {
+   "resolution": "attack",
+   "save": "con"
+  }
+ },
+ {
+  "id": "contingency",
+  "name": "Contingency",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Self",
+  "duration": "10 days",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1500,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 227,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "continual-flame",
+  "name": "Continual Flame",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 50,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "wizard"
+  ],
+  "page": 227,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "control-water",
+  "name": "Control Water",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "wizard"
+  ],
+  "page": 227,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "2d8",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
+  "id": "control-weather",
+  "name": "Control Weather",
+  "level": 8,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Self (5-mile radius)",
+  "duration": "Concentration, up to 8 hours",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "wizard"
+  ],
+  "page": 228,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "conjure-animals",
+  "name": "Conjure Animals",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 225,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "conjure-barrage",
+  "name": "Conjure Barrage",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (60-foot cone)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 225,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d8",
+    "type": "Weapon"
+   }
+  }
+ },
+ {
+  "id": "conjure-celestial",
+  "name": "Conjure Celestial",
+  "level": 7,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 225,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "conjure-elemental",
+  "name": "Conjure Elemental",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "wizard"
+  ],
+  "page": 225,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "conjure-fey",
+  "name": "Conjure Fey",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "warlock"
+  ],
+  "page": 226,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "conjure-minor-elementals",
+  "name": "Conjure Minor Elementals",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "wizard"
+  ],
+  "page": 226,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "conjure-volley",
+  "name": "Conjure Volley",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 226,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "8d8",
+    "type": "Weapon"
+   }
+  }
+ },
+ {
+  "id": "conjure-woodland-beings",
+  "name": "Conjure Woodland Beings",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 226,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "cordon-of-arrows",
+  "name": "Cordon of Arrows",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "5 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 228,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d6",
+    "type": "Piercing"
+   },
+   "upcast": "+2 pieces of ammunition per slot level above 2"
+  }
+ },
+ {
+  "id": "counterspell",
+  "name": "Counterspell",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "reaction",
+   "text": "1 reaction",
+   "trigger": "when you see a creature within 60 ft casting a spell"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 228,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "create-food-and-water",
+  "name": "Create Food and Water",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 229,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "create-or-destroy-water",
+  "name": "Create or Destroy Water",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 229,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "create-undead",
+  "name": "Create Undead",
+  "level": 6,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 150,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "warlock",
+   "wizard"
+  ],
+  "page": 229,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "creation",
+  "name": "Creation",
+  "level": 5,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "30 feet",
+  "duration": "Special",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 229,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "crown-of-madness",
+  "name": "Crown of Madness",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 229,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "crusaders-mantle",
+  "name": "Crusader's Mantle",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "cure-wounds",
+  "name": "Cure Wounds",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d8",
+    "type": "Healing",
+    "healing": true,
+    "plusMod": true
+   },
+   "upcast": "+1d8 per slot level above 1"
+  },
+  "icon": "https://bg3.wiki/w/images/4/40/Cure_Wounds_Icon.webp"
+ },
+ {
+  "id": "dancing-lights",
+  "name": "Dancing Lights",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "darkness",
+  "name": "Darkness",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "darkvision",
+  "name": "Darkvision",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "daylight",
+  "name": "Daylight",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger",
+   "sorcerer"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "death-ward",
+  "name": "Death Ward",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "delayed-blast-fireball",
+  "name": "Delayed Blast Fireball",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 230,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "12d6",
+    "type": "Fire"
+   },
+   "upcast": "+1d6 per slot level above 7"
+  }
+ },
+ {
+  "id": "demiplane",
+  "name": "Demiplane",
+  "level": 8,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 231,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "destructive-wave",
+  "name": "Destructive Wave",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 231,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "10d6",
+    "type": "Thunder + Radiant or Necrotic (5d6 each)"
+   }
+  }
+ },
+ {
+  "id": "detect-evil-and-good",
+  "name": "Detect Evil and Good",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 231,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "detect-magic",
+  "name": "Detect Magic",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 231,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "detect-poison-and-disease",
+  "name": "Detect Poison and Disease",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger"
+  ],
+  "page": 231,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "detect-thoughts",
+  "name": "Detect Thoughts",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 231,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "dimension-door",
+  "name": "Dimension Door",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "500 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 233,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "disguise-self",
+  "name": "Disguise Self",
+  "level": 1,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 233,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "disintegrate",
+  "name": "Disintegrate",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 233,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d6+40",
+    "type": "Force"
+   },
+   "upcast": "+3d6 per slot level above 6"
+  }
+ },
+ {
+  "id": "dispel-evil-and-good",
+  "name": "Dispel Evil and Good",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 233,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "dispel-magic",
+  "name": "Dispel Magic",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 234,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "dissonant-whispers",
+  "name": "Dissonant Whispers",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard"
+  ],
+  "page": 234,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "3d6",
+    "type": "Psychic"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "divination",
+  "name": "Divination",
+  "level": 4,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 234,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "divine-favor",
+  "name": "Divine Favor",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 234,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "divine-word",
+  "name": "Divine Word",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 234,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "dominate-beast",
+  "name": "Dominate Beast",
+  "level": 4,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer"
+  ],
+  "page": 234,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "dominate-monster",
+  "name": "Dominate Monster",
+  "level": 8,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 235,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "dominate-person",
+  "name": "Dominate Person",
+  "level": 5,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 235,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "drawmijs-instant-summons",
+  "name": "Drawmij's Instant Summons",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 235,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "dream",
+  "name": "Dream",
+  "level": 5,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Special",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "warlock",
+   "wizard"
+  ],
+  "page": 236,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "3d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "druidcraft",
+  "name": "Druidcraft",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 236,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "earthquake",
+  "name": "Earthquake",
+  "level": 8,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "500 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "sorcerer"
+  ],
+  "page": 236,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "eldritch-blast",
+  "name": "Eldritch Blast",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 237,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d10",
+    "type": "Force"
+   },
+   "upcast": "1d10 at level 5, 1d10 at level 11, 1d10 at level 17"
+  }
+ },
+ {
+  "id": "elemental-weapon",
+  "name": "Elemental Weapon",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 237,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Varies"
+   },
+   "upcast": "slots 5-6: +2 bonus and 2d4; slots 7+: +3 bonus and 3d4"
+  }
+ },
+ {
+  "id": "enhance-ability",
+  "name": "Enhance Ability",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "sorcerer"
+  ],
+  "page": 237,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "enlarge-reduce",
+  "name": "Enlarge/Reduce",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 237,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "ensnaring-strike",
+  "name": "Ensnaring Strike",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 237,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "1d6",
+    "type": "Piercing"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "entangle",
+  "name": "Entangle",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 238,
+  "summary": {
+   "resolution": "save",
+   "save": "str"
+  }
+ },
+ {
+  "id": "enthrall",
+  "name": "Enthrall",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "warlock"
+  ],
+  "page": 238,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "etherealness",
+  "name": "Etherealness",
+  "level": 7,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Up to 8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 238,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "evards-black-tentacles",
+  "name": "Evard's Black Tentacles",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 238,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d6",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
+  "id": "expeditious-retreat",
+  "name": "Expeditious Retreat",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 238,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "eyebite",
+  "name": "Eyebite",
+  "level": 6,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 238,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "fabricate",
+  "name": "Fabricate",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 239,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "faerie-fire",
+  "name": "Faerie Fire",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "druid"
+  ],
+  "page": 239,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "false-life",
+  "name": "False Life",
+  "level": 1,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 239,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "fear",
+  "name": "Fear",
+  "level": 3,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot cone)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 239,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "feather-fall",
+  "name": "Feather Fall",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "reaction",
+   "text": "1 reaction",
+   "trigger": "when you or a creature within 60 ft falls"
+  },
+  "range": "60 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 239,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "feeblemind",
+  "name": "Feeblemind",
+  "level": 8,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "warlock",
+   "wizard"
+  ],
+  "page": 239,
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "4d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "feign-death",
+  "name": "Feign Death",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "wizard"
+  ],
+  "page": 240,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "find-familiar",
+  "name": "Find Familiar",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 10,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 240,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "find-steed",
+  "name": "Find Steed",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 240,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "find-the-path",
+  "name": "Find the Path",
+  "level": 6,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 day",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 100,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid"
+  ],
+  "page": 240,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "find-traps",
+  "name": "Find Traps",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "ranger"
+  ],
+  "page": 241,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "finger-of-death",
+  "name": "Finger of Death",
+  "level": 7,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 241,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "7d8+30",
+    "type": "Necrotic"
+   }
+  }
+ },
+ {
+  "id": "fire-bolt",
+  "name": "Fire Bolt",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 242,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d10",
+    "type": "Fire"
+   },
+   "upcast": "2d10 at level 5, 3d10 at level 11, 4d10 at level 17"
+  },
+  "icon": "https://bg3.wiki/w/images/2/23/Fire_Bolt_Icon.webp"
+ },
+ {
+  "id": "fire-shield",
+  "name": "Fire Shield",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 242,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d8",
+    "type": "Fire or Cold"
+   }
+  }
+ },
+ {
+  "id": "fire-storm",
+  "name": "Fire Storm",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "sorcerer"
+  ],
+  "page": 242,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "7d10",
+    "type": "Fire"
+   }
+  }
+ },
+ {
+  "id": "fireball",
+  "name": "Fireball",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 241,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "8d6",
+    "type": "Fire"
+   },
+   "upcast": "+1d6 per slot level above 3"
+  },
+  "icon": "https://bg3.wiki/w/images/c/cb/Fireball_Icon.webp"
+ },
+ {
+  "id": "flame-blade",
+  "name": "Flame Blade",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 242,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "3d6",
+    "type": "Fire"
+   }
+  }
+ },
+ {
+  "id": "flame-strike",
+  "name": "Flame Strike",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 242,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "8d6",
+    "type": "Fire + Radiant (4d6 each)"
+   },
+   "upcast": "+1d6 per slot level above 5"
+  }
+ },
+ {
+  "id": "flaming-sphere",
+  "name": "Flaming Sphere",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "wizard"
+  ],
+  "page": 242,
+  "summary": {
+   "resolution": "save",
+   "damage": {
+    "dice": "2d6",
+    "type": "Fire"
+   },
+   "upcast": "+1d6 per slot level above 2",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "flesh-to-stone",
+  "name": "Flesh to Stone",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 243,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "fly",
+  "name": "Fly",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 243,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "fog-cloud",
+  "name": "Fog Cloud",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 243,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "forbiddance",
+  "name": "Forbiddance",
+  "level": 6,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Touch",
+  "duration": "1 day",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 243,
+  "summary": {
+   "resolution": "auto",
+   "damage": {
+    "dice": "5d10",
+    "type": "Radiant or Necrotic"
+   }
+  }
+ },
+ {
+  "id": "forcecage",
+  "name": "Forcecage",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "100 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1500,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "warlock",
+   "wizard"
+  ],
+  "page": 243,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "foresight",
+  "name": "Foresight",
+  "level": 9,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "warlock",
+   "wizard"
+  ],
+  "page": 244,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "freedom-of-movement",
+  "name": "Freedom of Movement",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "ranger"
+  ],
+  "page": 244,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "friends",
+  "name": "Friends",
+  "level": 0,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 244,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "gaseous-form",
+  "name": "Gaseous Form",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 244,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "gate",
+  "name": "Gate",
+  "level": 9,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 5000,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 244,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "geas",
+  "name": "Geas",
+  "level": 5,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "60 feet",
+  "duration": "30 days",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "wizard"
+  ],
+  "page": 244,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "5d10",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "gentle-repose",
+  "name": "Gentle Repose",
+  "level": 2,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "10 days",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "wizard"
+  ],
+  "page": 245,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "giant-insect",
+  "name": "Giant Insect",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 245,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "glibness",
+  "name": "Glibness",
+  "level": 8,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "warlock"
+  ],
+  "page": 245,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "globe-of-invulnerability",
+  "name": "Globe of Invulnerability",
+  "level": 6,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (10-foot radius)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 245,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "glyph-of-warding",
+  "name": "Glyph of Warding",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled or triggered",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 200,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "wizard"
+  ],
+  "page": 245,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "goodberry",
+  "name": "Goodberry",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 246,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "grasping-vine",
+  "name": "Grasping Vine",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 246,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "grease",
+  "name": "Grease",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 246,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "greater-invisibility",
+  "name": "Greater Invisibility",
+  "level": 4,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 246,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "greater-restoration",
+  "name": "Greater Restoration",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 100,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid"
+  ],
+  "page": 246,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "guardian-of-faith",
+  "name": "Guardian of Faith",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 246,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "guards-and-wards",
+  "name": "Guards and Wards",
+  "level": 6,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Touch",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 10,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 248,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "guidance",
+  "name": "Guidance",
+  "level": 0,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 248,
+  "summary": {
+   "resolution": "none"
+  },
+  "icon": "https://bg3.wiki/w/images/7/7f/Guidance_Icon.webp"
+ },
+ {
+  "id": "guiding-bolt",
+  "name": "Guiding Bolt",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 248,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d6",
+    "type": "Radiant"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "gust-of-wind",
+  "name": "Gust of Wind",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (60-foot line)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 248,
+  "summary": {
+   "resolution": "save",
+   "save": "str"
+  }
+ },
+ {
+  "id": "hail-of-thorns",
+  "name": "Hail of Thorns",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 249,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d10",
+    "type": "Piercing"
+   },
+   "upcast": "+1d10 per slot level above 1, up to 6d10"
+  }
+ },
+ {
+  "id": "hallow",
+  "name": "Hallow",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "other",
+   "text": "24 hours"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 249,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "hallucinatory-terrain",
+  "name": "Hallucinatory Terrain",
+  "level": 4,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "300 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "warlock",
+   "wizard"
+  ],
+  "page": 249,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "harm",
+  "name": "Harm",
+  "level": 6,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 249,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "14d6",
+    "type": "Necrotic"
+   }
+  }
+ },
+ {
+  "id": "haste",
+  "name": "Haste",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "heal",
+  "name": "Heal",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "healing-word",
+  "name": "Healing Word",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Healing",
+    "healing": true,
+    "plusMod": true
+   },
+   "upcast": "+1d4 per slot level above 1"
+  }
+ },
+ {
+  "id": "heat-metal",
+  "name": "Heat Metal",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "2d8",
+    "type": "Fire"
+   },
+   "upcast": "+1d8 per slot level above 2"
+  }
+ },
+ {
+  "id": "hellish-rebuke",
+  "name": "Hellish Rebuke",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "reaction",
+   "text": "1 reaction",
+   "trigger": "when a creature you can see within 60 ft damages you"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "2d10",
+    "type": "Fire"
+   },
+   "upcast": "+1d10 per slot level above 1"
+  }
+ },
+ {
+  "id": "heroes-feast",
+  "name": "Heroes' Feast",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "heroism",
+  "name": "Heroism",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "paladin"
+  ],
+  "page": 250,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "hex",
+  "name": "Hex",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 251,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d6",
+    "type": "Necrotic"
+   },
+   "upcast": "slots 3-4: concentration up to 8 hours; slots 5+: up to 24 hours"
+  }
+ },
+ {
+  "id": "hold-monster",
+  "name": "Hold Monster",
+  "level": 5,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 251,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "hold-person",
+  "name": "Hold Person",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 251,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "holy-aura",
+  "name": "Holy Aura",
+  "level": 8,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 251,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "hunger-of-hadar",
+  "name": "Hunger of Hadar",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 251,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "2d6",
+    "type": "Cold"
+   }
+  }
+ },
+ {
+  "id": "hunters-mark",
+  "name": "Hunter's Mark",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 251,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "hypnotic-pattern",
+  "name": "Hypnotic Pattern",
+  "level": 3,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 252,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "ice-storm",
+  "name": "Ice Storm",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 252,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "upcast": "+1d8 per slot level above 4"
+  }
+ },
+ {
+  "id": "identify",
+  "name": "Identify",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 100,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 252,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "illusory-script",
+  "name": "Illusory Script",
+  "level": 1,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "10 days",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "costGp": 10,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "warlock",
+   "wizard"
+  ],
+  "page": 252,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "imprisonment",
+  "name": "Imprisonment",
+  "level": 9,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "30 feet",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 252,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "incendiary-cloud",
+  "name": "Incendiary Cloud",
+  "level": 8,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 253,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d8",
+    "type": "Fire"
+   }
+  }
+ },
+ {
+  "id": "inflict-wounds",
+  "name": "Inflict Wounds",
+  "level": 1,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 253,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "3d10",
+    "type": "Necrotic"
+   },
+   "upcast": "+1d10 per slot level above 1"
+  }
+ },
+ {
+  "id": "insect-plague",
+  "name": "Insect Plague",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "sorcerer"
+  ],
+  "page": 254,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "4d10",
+    "type": "Piercing"
+   },
+   "upcast": "+1d10 per slot level above 5"
+  }
+ },
+ {
+  "id": "invisibility",
+  "name": "Invisibility",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 254,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "jump",
+  "name": "Jump",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 254,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "knock",
+  "name": "Knock",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 254,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "legend-lore",
+  "name": "Legend Lore",
+  "level": 5,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 250,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "wizard"
+  ],
+  "page": 254,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "leomunds-secret-chest",
+  "name": "Leomund's Secret Chest",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 5000,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 254,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "leomunds-tiny-hut",
+  "name": "Leomund's Tiny Hut",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self (10-foot-radius hemisphere)",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 255,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "lesser-restoration",
+  "name": "Lesser Restoration",
+  "level": 2,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger"
+  ],
+  "page": 255,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "levitate",
+  "name": "Levitate",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 255,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "light",
+  "name": "Light",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 255,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "lightning-arrow",
+  "name": "Lightning Arrow",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 255,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d8",
+    "type": "Lightning"
+   },
+   "upcast": "+1d8 per slot level above 3"
+  }
+ },
+ {
+  "id": "lightning-bolt",
+  "name": "Lightning Bolt",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (100-foot line)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 255,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "8d6",
+    "type": "Lightning"
+   },
+   "upcast": "+1d6 per slot level above 3"
+  }
+ },
+ {
+  "id": "locate-animals-or-plants",
+  "name": "Locate Animals or Plants",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "locate-creature",
+  "name": "Locate Creature",
+  "level": 4,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger",
+   "wizard"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "locate-object",
+  "name": "Locate Object",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger",
+   "wizard"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "longstrider",
+  "name": "Longstrider",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger",
+   "wizard"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mage-armor",
+  "name": "Mage Armor",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mage-hand",
+  "name": "Mage Hand",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "magic-circle",
+  "name": "Magic Circle",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "10 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 100,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin",
+   "warlock",
+   "wizard"
+  ],
+  "page": 256,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "magic-jar",
+  "name": "Magic Jar",
+  "level": 6,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Self",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 257,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "magic-missile",
+  "name": "Magic Missile",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 257,
+  "summary": {
+   "resolution": "auto",
+   "damage": {
+    "dice": "1d4+1",
+    "type": "Force",
+    "count": 3,
+    "unit": "darts"
+   },
+   "upcast": "+1 dart per slot level above 1"
+  },
+  "icon": "https://bg3.wiki/w/images/d/d4/Magic_Missile_Icon.webp"
+ },
+ {
+  "id": "magic-mouth",
+  "name": "Magic Mouth",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "30 feet",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": true,
+    "costGp": 10
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 257,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "magic-weapon",
+  "name": "Magic Weapon",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "paladin",
+   "wizard"
+  ],
+  "page": 257,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "major-image",
+  "name": "Major Image",
+  "level": 3,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 258,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mass-cure-wounds",
+  "name": "Mass Cure Wounds",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid"
+  ],
+  "page": 258,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "3d8",
+    "type": "Healing",
+    "healing": true,
+    "plusMod": true
+   },
+   "upcast": "+1d8 per slot level above 5"
+  }
+ },
+ {
+  "id": "mass-heal",
+  "name": "Mass Heal",
+  "level": 9,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 258,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mass-healing-word",
+  "name": "Mass Healing Word",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 258,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d4",
+    "type": "Healing",
+    "healing": true,
+    "plusMod": true
+   },
+   "upcast": "+1d4 per slot level above 3"
+  }
+ },
+ {
+  "id": "mass-suggestion",
+  "name": "Mass Suggestion",
+  "level": 6,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 258,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "maze",
+  "name": "Maze",
+  "level": 8,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 258,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "meld-into-stone",
+  "name": "Meld Into Stone",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 259,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "melfs-acid-arrow",
+  "name": "Melf's Acid Arrow",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 259,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d4",
+    "type": "Acid"
+   },
+   "upcast": "+1d4 per slot level above 2"
+  }
+ },
+ {
+  "id": "mending",
+  "name": "Mending",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 259,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "message",
+  "name": "Message",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 259,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "meteor-swarm",
+  "name": "Meteor Swarm",
+  "level": 9,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "1 mile",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 259,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "mind-blank",
+  "name": "Mind Blank",
+  "level": 8,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 259,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "minor-illusion",
+  "name": "Minor Illusion",
+  "level": 0,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 260,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mirage-arcane",
+  "name": "Mirage Arcane",
+  "level": 7,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Sight",
+  "duration": "10 days",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "wizard"
+  ],
+  "page": 260,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mirror-image",
+  "name": "Mirror Image",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 260,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mislead",
+  "name": "Mislead",
+  "level": 5,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 260,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "misty-step",
+  "name": "Misty Step",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 260,
+  "summary": {
+   "resolution": "none"
+  },
+  "icon": "https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp"
+ },
+ {
+  "id": "modify-memory",
+  "name": "Modify Memory",
+  "level": 5,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 261,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "moonbeam",
+  "name": "Moonbeam",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 261,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "2d10",
+    "type": "Radiant"
+   },
+   "upcast": "+1d10 per slot level above 2"
+  }
+ },
+ {
+  "id": "mordenkainens-faithful-hound",
+  "name": "Mordenkainen's Faithful Hound",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 261,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d8",
+    "type": "Piercing"
+   }
+  }
+ },
+ {
+  "id": "mordenkainens-magnificent-mansion",
+  "name": "Mordenkainen's Magnificent Mansion",
+  "level": 7,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "300 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 5,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 261,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mordenkainens-private-sanctum",
+  "name": "Mordenkainen's Private Sanctum",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "120 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 262,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "mordenkainens-sword",
+  "name": "Mordenkainen's Sword",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 250,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 262,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "3d10",
+    "type": "Force"
+   }
+  }
+ },
+ {
+  "id": "move-earth",
+  "name": "Move Earth",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 2 hours",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 263,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "nondetection",
+  "name": "Nondetection",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "ranger",
+   "wizard"
+  ],
+  "page": 263,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "nystuls-magic-aura",
+  "name": "Nystul's Magic Aura",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 263,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "otilukes-freezing-sphere",
+  "name": "Otiluke's Freezing Sphere",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 263,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "10d6",
+    "type": "Cold"
+   },
+   "upcast": "+1d6 per slot level above 6"
+  }
+ },
+ {
+  "id": "otilukes-resilient-sphere",
+  "name": "Otiluke's Resilient Sphere",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 264,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "ottos-irresistible-dance",
+  "name": "Otto's Irresistible Dance",
+  "level": 6,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 264,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "pass-without-trace",
+  "name": "Pass Without Trace",
+  "level": 2,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 264,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "passwall",
+  "name": "Passwall",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 264,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "phantasmal-force",
+  "name": "Phantasmal Force",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 264,
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "1d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "phantasmal-killer",
+  "name": "Phantasmal Killer",
+  "level": 4,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 265,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "4d10",
+    "type": "Psychic"
+   },
+   "upcast": "+1d10 per slot level above 4"
+  }
+ },
+ {
+  "id": "phantom-steed",
+  "name": "Phantom Steed",
+  "level": 3,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 265,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "planar-ally",
+  "name": "Planar Ally",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 265,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "planar-binding",
+  "name": "Planar Binding",
+  "level": 5,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "60 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "wizard"
+  ],
+  "page": 265,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "plane-shift",
+  "name": "Plane Shift",
+  "level": 7,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 250,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 266,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "plant-growth",
+  "name": "Plant Growth",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action or 8 hours"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger"
+  ],
+  "page": 266,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "poison-spray",
+  "name": "Poison Spray",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 266,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d12",
+    "type": "Poison"
+   },
+   "upcast": "2d12 at level 5, 3d12 at level 11, 4d12 at level 17"
+  }
+ },
+ {
+  "id": "polymorph",
+  "name": "Polymorph",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 266,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "power-word-heal",
+  "name": "Power Word Heal",
+  "level": 9,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard"
+  ],
+  "page": 266,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "power-word-kill",
+  "name": "Power Word Kill",
+  "level": 9,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 266,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "power-word-stun",
+  "name": "Power Word Stun",
+  "level": 8,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 267,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "prayer-of-healing",
+  "name": "Prayer of Healing",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 267,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d8",
+    "type": "Healing",
+    "healing": true,
+    "plusMod": true
+   },
+   "upcast": "+1d8 per slot level above 2"
+  }
+ },
+ {
+  "id": "prestidigitation",
+  "name": "Prestidigitation",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "Up to 1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 267,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "prismatic-spray",
+  "name": "Prismatic Spray",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (60-foot cone)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 267,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d6",
+    "type": "(type by ray)"
+   }
+  }
+ },
+ {
+  "id": "prismatic-wall",
+  "name": "Prismatic Wall",
+  "level": 9,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 267,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "produce-flame",
+  "name": "Produce Flame",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 269,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d8",
+    "type": "Fire"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+  },
+  "icon": "https://bg3.wiki/w/images/e/ec/Produce_Flame_Icon.webp"
+ },
+ {
+  "id": "programmed-illusion",
+  "name": "Programmed Illusion",
+  "level": 6,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 269,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "project-image",
+  "name": "Project Image",
+  "level": 7,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "500 miles",
+  "duration": "Concentration, up to 1 day",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 5,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "protection-from-energy",
+  "name": "Protection From Energy",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "protection-from-evil-and-good",
+  "name": "Protection from Evil and Good",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin",
+   "warlock",
+   "wizard"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "protection-from-poison",
+  "name": "Protection from Poison",
+  "level": 2,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "paladin",
+   "ranger"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "purify-food-and-drink",
+  "name": "Purify Food and Drink",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "paladin"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "raise-dead",
+  "name": "Raise Dead",
+  "level": 5,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "paladin"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "rarys-telepathic-bond",
+  "name": "Rary's Telepathic Bond",
+  "level": 5,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 270,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "ray-of-enfeeblement",
+  "name": "Ray of Enfeeblement",
+  "level": 2,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 271,
+  "summary": {
+   "resolution": "attack",
+   "save": "con"
+  }
+ },
+ {
+  "id": "ray-of-frost",
+  "name": "Ray of Frost",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 271,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d8",
+    "type": "Cold"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+  },
+  "icon": "https://bg3.wiki/w/images/f/f9/Ray_of_Frost_Icon.webp"
+ },
+ {
+  "id": "ray-of-sickness",
+  "name": "Ray of Sickness",
+  "level": 1,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 271,
+  "summary": {
+   "resolution": "attack",
+   "save": "con",
+   "damage": {
+    "dice": "2d8",
+    "type": "Poison"
+   },
+   "upcast": "+1d8 per slot level above 1"
+  }
+ },
+ {
+  "id": "regenerate",
+  "name": "Regenerate",
+  "level": 7,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid"
+  ],
+  "page": 271,
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "4d8+15",
+    "type": "Healing",
+    "healing": true
+   }
+  }
+ },
+ {
+  "id": "reincarnate",
+  "name": "Reincarnate",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 271,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "remove-curse",
+  "name": "Remove Curse",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "paladin",
+   "warlock",
+   "wizard"
+  ],
+  "page": 271,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "resistance",
+  "name": "Resistance",
+  "level": 0,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "resurrection",
+  "name": "Resurrection",
+  "level": 7,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "reverse-gravity",
+  "name": "Reverse Gravity",
+  "level": 7,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "100 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "revivify",
+  "name": "Revivify",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 300,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "rope-trick",
+  "name": "Rope Trick",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "sacred-flame",
+  "name": "Sacred Flame",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d8",
+    "type": "Radiant"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+  }
+ },
+ {
+  "id": "sanctuary",
+  "name": "Sanctuary",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "30 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 272,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "scorching-ray",
+  "name": "Scorching Ray",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 273,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "2d6",
+    "type": "Fire",
+    "count": 3,
+    "unit": "rays"
+   },
+   "upcast": "+1 ray per slot level above 2"
+  }
+ },
+ {
+  "id": "scrying",
+  "name": "Scrying",
+  "level": 5,
+  "school": "Divination",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "druid",
+   "warlock",
+   "wizard"
+  ],
+  "page": 273,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "searing-smite",
+  "name": "Searing Smite",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 274,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d6",
+    "type": "Fire"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "see-invisibility",
+  "name": "See Invisibility",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 274,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "seeming",
+  "name": "Seeming",
+  "level": 5,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 274,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
+  "id": "sending",
+  "name": "Sending",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Unlimited",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "wizard"
+  ],
+  "page": 274,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "sequester",
+  "name": "Sequester",
+  "level": 7,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 5000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 274,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "shapechange",
+  "name": "Shapechange",
+  "level": 9,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1500,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "wizard"
+  ],
+  "page": 274,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "shatter",
+  "name": "Shatter",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 275,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "3d8",
+    "type": "Thunder"
+   },
+   "upcast": "+1d8 per slot level above 2"
+  }
+ },
+ {
+  "id": "shield",
+  "name": "Shield",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "reaction",
+   "text": "1 reaction",
+   "trigger": "when you're hit by an attack or targeted by magic missile"
+  },
+  "range": "Self",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 275,
+  "summary": {
+   "resolution": "none"
+  },
+  "icon": "https://bg3.wiki/w/images/c/cf/Shield_spell_Icon.webp"
+ },
+ {
+  "id": "shield-of-faith",
+  "name": "Shield of Faith",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 275,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "shillelagh",
+  "name": "Shillelagh",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 275,
+  "summary": {
+   "resolution": "none"
+  },
+  "icon": "https://bg3.wiki/w/images/6/68/Shillelagh_Icon.webp"
+ },
+ {
+  "id": "shocking-grasp",
+  "name": "Shocking Grasp",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 275,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d8",
+    "type": "Lightning"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+  }
+ },
+ {
+  "id": "silence",
+  "name": "Silence",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "ranger"
+  ],
+  "page": 275,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "silent-image",
+  "name": "Silent Image",
+  "level": 1,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 276,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "simulacrum",
+  "name": "Simulacrum",
+  "level": 7,
+  "school": "Illusion",
+  "cast": {
+   "cost": "other",
+   "text": "12 hours"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1500,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 276,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "sleep",
+  "name": "Sleep",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 276,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "sleet-storm",
+  "name": "Sleet Storm",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 276,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "slow",
+  "name": "Slow",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "spare-the-dying",
+  "name": "Spare the Dying",
+  "level": 0,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "speak-with-animals",
+  "name": "Speak with Animals",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "speak-with-dead",
+  "name": "Speak with Dead",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "speak-with-plants",
+  "name": "Speak with Plants",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot radius)",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "ranger"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "spider-climb",
+  "name": "Spider Climb",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "spike-growth",
+  "name": "Spike Growth",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 277,
+  "summary": {
+   "resolution": "auto",
+   "damage": {
+    "dice": "2d4",
+    "type": "Piercing"
+   }
+  }
+ },
+ {
+  "id": "spirit-guardians",
+  "name": "Spirit Guardians",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (15-foot radius)",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 278,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "3d8",
+    "type": "Radiant or Necrotic"
+   },
+   "upcast": "+1d8 per slot level above 3"
+  }
+ },
+ {
+  "id": "spiritual-weapon",
+  "name": "Spiritual Weapon",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "60 feet",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 278,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d8",
+    "type": "Force",
+    "plusMod": true
+   }
+  }
+ },
+ {
+  "id": "staggering-smite",
+  "name": "Staggering Smite",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 278,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "4d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "stinking-cloud",
+  "name": "Stinking Cloud",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 278,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "stone-shape",
+  "name": "Stone Shape",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "wizard"
+  ],
+  "page": 278,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "stoneskin",
+  "name": "Stoneskin",
+  "level": 4,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 100,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 278,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "storm-of-vengeance",
+  "name": "Storm of Vengeance",
+  "level": 9,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Sight",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 279,
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
+  "id": "suggestion",
+  "name": "Suggestion",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 8 hours",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 279,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "sunbeam",
+  "name": "Sunbeam",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (60-foot line)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 279,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "6d8",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "sunburst",
+  "name": "Sunburst",
+  "level": 8,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 279,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "12d6",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
+  "id": "swift-quiver",
+  "name": "Swift Quiver",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 279,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "symbol",
+  "name": "Symbol",
+  "level": 7,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "Until dispelled or triggered",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 1000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "wizard"
+  ],
+  "page": 280,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "tashas-hideous-laughter",
+  "name": "Tasha's Hideous Laughter",
+  "level": 1,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "wizard"
+  ],
+  "page": 280,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "telekinesis",
+  "name": "Telekinesis",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 280,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "telepathy",
+  "name": "Telepathy",
+  "level": 8,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Unlimited",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 281,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "teleport",
+  "name": "Teleport",
+  "level": 7,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 281,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "teleportation-circle",
+  "name": "Teleportation Circle",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "10 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "costGp": 50,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 282,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "tensers-floating-disk",
+  "name": "Tenser's Floating Disk",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 282,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "thaumaturgy",
+  "name": "Thaumaturgy",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Up to 1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 282,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "thorn-whip",
+  "name": "Thorn Whip",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 282,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d6",
+    "type": "Piercing"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "thunderous-smite",
+  "name": "Thunderous Smite",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 282,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "2d6",
+    "type": "Thunder"
+   }
+  }
+ },
+ {
+  "id": "thunderwave",
+  "name": "Thunderwave",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (15-foot cube)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 282,
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "2d8",
+    "type": "Thunder"
+   },
+   "upcast": "+1d8 per slot level above 1"
+  },
+  "icon": "https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp"
+ },
+ {
+  "id": "time-stop",
+  "name": "Time Stop",
+  "level": 9,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 283,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "tongues",
+  "name": "Tongues",
+  "level": 3,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 283,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "transport-via-plants",
+  "name": "Transport via Plants",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 283,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "tree-stride",
+  "name": "Tree Stride",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 283,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "true-polymorph",
+  "name": "True Polymorph",
+  "level": 9,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "warlock",
+   "wizard"
+  ],
+  "page": 283,
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "true-resurrection",
+  "name": "True Resurrection",
+  "level": 9,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25000,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid"
+  ],
+  "page": 284,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "true-seeing",
+  "name": "True Seeing",
+  "level": 6,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 284,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "true-strike",
+  "name": "True Strike",
+  "level": 0,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 round",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 284,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "tsunami",
+  "name": "Tsunami",
+  "level": 8,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Sight",
+  "duration": "Concentration, up to 6 rounds",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 284,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "6d10",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
+  "id": "unseen-servant",
+  "name": "Unseen Servant",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "warlock",
+   "wizard"
+  ],
+  "page": 284,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "vampiric-touch",
+  "name": "Vampiric Touch",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 285,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "3d6",
+    "type": "Necrotic"
+   },
+   "upcast": "+1d6 per slot level above 3"
+  }
+ },
+ {
+  "id": "vicious-mockery",
+  "name": "Vicious Mockery",
+  "level": 0,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard"
+  ],
+  "page": 285,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "1d4",
+    "type": "Psychic"
+   },
+   "upcast": "2d4 at level 5, 3d4 at level 11, 4d4 at level 17"
+  }
+ },
+ {
+  "id": "wall-of-fire",
+  "name": "Wall of Fire",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 285,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "5d8",
+    "type": "Fire"
+   },
+   "upcast": "+1d8 per slot level above 4"
+  }
+ },
+ {
+  "id": "wall-of-force",
+  "name": "Wall of Force",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 285,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "wall-of-ice",
+  "name": "Wall of Ice",
+  "level": 6,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 285,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d6",
+    "type": "Cold"
+   },
+   "upcast": "+2d6 per slot level above 6"
+  }
+ },
+ {
+  "id": "wall-of-stone",
+  "name": "Wall of Stone",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 287,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "wall-of-thorns",
+  "name": "Wall of Thorns",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 287,
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "7d8",
+    "type": "Piercing (Slashing to pass through)"
+   },
+   "upcast": "+1d8 per slot level above 6"
+  }
+ },
+ {
+  "id": "warding-bond",
+  "name": "Warding Bond",
+  "level": 2,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 50,
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 287,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "water-breathing",
+  "name": "Water Breathing",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 287,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "water-walk",
+  "name": "Water Walk",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric",
+   "druid",
+   "ranger",
+   "sorcerer"
+  ],
+  "page": 287,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "web",
+  "name": "Web",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 287,
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "weird",
+  "name": "Weird",
+  "level": 9,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 288,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "4d10",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "wind-walk",
+  "name": "Wind Walk",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "30 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 288,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "wind-wall",
+  "name": "Wind Wall",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 288,
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "3d8",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
+  "id": "wish",
+  "name": "Wish",
+  "level": 9,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 288,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "witch-bolt",
+  "name": "Witch Bolt",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 289,
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d12",
+    "type": "Lightning"
+   },
+   "upcast": "+1d12 per slot level above 1"
+  }
+ },
+ {
+  "id": "word-of-recall",
+  "name": "Word of Recall",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "5 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 289,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "wrathful-smite",
+  "name": "Wrathful Smite",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 289,
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "1d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "zone-of-truth",
+  "name": "Zone of Truth",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "cleric",
+   "paladin"
+  ],
+  "page": 289,
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ }
+]

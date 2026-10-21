@@ -1,0 +1,232 @@
+[
+  {
+    "id": "attack",
+    "name": "Attack",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "You make one melee or ranged attack. This is the usual way to fight.",
+      "Features like Extra Attack let you make more attacks with this one action."
+    ],
+    "page": 192,
+    "textSource": "summary"
+  },
+  {
+    "id": "cast-a-spell",
+    "name": "Cast a Spell",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Casting uses whatever time the spell lists. Most spells take 1 action, so casting is often your action for the turn, but some take a bonus action or reaction, and some take minutes or hours."
+    ],
+    "page": 192,
+    "textSource": "summary"
+  },
+  {
+    "id": "dash",
+    "name": "Dash",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Gain extra movement this turn equal to your speed, after modifiers. Speed 30 means up to 60 ft total.",
+      "If your speed is raised or cut, the Dash bonus changes by the same amount."
+    ],
+    "page": 192,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cc/Dash_Icon.webp"
+  },
+  {
+    "id": "disengage",
+    "name": "Disengage",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Your movement does not provoke opportunity attacks for the rest of this turn.",
+      "Use it to slip away from enemies in reach without giving them a free swing. It does not move you by itself."
+    ],
+    "page": 192,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/94/Disengage_Icon.webp"
+  },
+  {
+    "id": "dodge",
+    "name": "Dodge",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Until your next turn begins, attackers you can see have disadvantage against you, and your Dexterity saves have advantage.",
+      "The benefit ends if you become incapacitated or your speed falls to 0."
+    ],
+    "page": 192,
+    "textSource": "summary"
+  },
+  {
+    "id": "help",
+    "name": "Help",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Aid a creature with a task: it gets advantage on its next ability check for that task if it rolls before the start of your next turn.",
+      "Or aid an attack: pick an enemy within 5 ft of you. The first attack roll an ally makes against it before your next turn has advantage."
+    ],
+    "page": 192,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/89/Help_Icon.webp"
+  },
+  {
+    "id": "hide",
+    "name": "Hide",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Make a Dexterity (Stealth) check to hide. If it succeeds, you gain the benefits of being hidden from creatures that cannot find you."
+    ],
+    "page": 192,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/32/Hide_Icon.webp"
+  },
+  {
+    "id": "ready",
+    "name": "Ready",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Pick a visible trigger and the action (or a move up to your speed) you will take when it happens. You act on it with your reaction, right after the trigger, or you can let it pass. One reaction per round.",
+      "To ready a spell, it must take 1 action. You cast it now and hold it, which needs concentration. When the trigger happens, you release it. If your concentration breaks first, the spell fizzles."
+    ],
+    "page": 193,
+    "textSource": "summary"
+  },
+  {
+    "id": "search",
+    "name": "Search",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Hunt for something specific. Depending on what you are looking for, the DM will call for Wisdom (Perception) or Intelligence (Investigation).",
+      "It uses your action, so it is a trade against attacking or moving on."
+    ],
+    "page": 193,
+    "textSource": "summary"
+  },
+  {
+    "id": "use-an-object",
+    "name": "Use an Object",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Interacting with one object is normally free during your turn. Spend your action when the object needs it, or when you want to handle more than one object in a turn."
+    ],
+    "page": 193,
+    "textSource": "summary"
+  },
+  {
+    "id": "grapple",
+    "name": "Grapple",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Replace one of your attacks with a grapple. The target can be at most one size larger and must be in reach. You need a free hand.",
+      "Make a Strength (Athletics) check against its Strength (Athletics) or Dexterity (Acrobatics), its choice. On a win, it is grappled. You can let go at any time.",
+      "A grappled creature escapes with its action by winning that contest against you. If you move, you drag it along at half speed, unless it is 2 or more sizes smaller than you."
+    ],
+    "page": 195,
+    "textSource": "summary"
+  },
+  {
+    "id": "shove",
+    "name": "Shove",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Replace one of your attacks with a shove. The target can be at most one size larger and must be in reach.",
+      "Make a Strength (Athletics) check against its Strength (Athletics) or Dexterity (Acrobatics), its choice. If you win, you either knock it prone or push it 5 ft away."
+    ],
+    "page": 195,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6b/Shove_Icon.webp"
+  },
+  {
+    "id": "two-weapon-fighting",
+    "name": "Two-Weapon Fighting",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "description": [
+      "After you attack with a light melee weapon in one hand on your Attack action, you can attack with a different light melee weapon in your other hand as a bonus action.",
+      "You do not add your ability modifier to that bonus attack's damage unless it is negative. A thrown weapon can be thrown for either attack."
+    ],
+    "page": 195,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/54/Two-Weapon_Fighting_Icon.webp"
+  },
+  {
+    "id": "opportunity-attack",
+    "name": "Opportunity Attack",
+    "source": {
+      "kind": "generic",
+      "id": "combat"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "description": [
+      "When a hostile creature you can see leaves your reach, you can make one melee attack against it as your reaction. It happens just before the creature leaves.",
+      "No opportunity attack if the creature took the Disengage action, teleported, or was moved without using its own movement, action or reaction."
+    ],
+    "page": 195,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Opportunity_Attack_Icon.webp",
+    "trigger": "A hostile creature in your sight steps out of your reach"
+  }
+]

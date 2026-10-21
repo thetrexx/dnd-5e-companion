@@ -1,0 +1,333 @@
+[
+  {
+    "id": "divine-sense",
+    "name": "Divine Sense",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 1,
+    "cost": "action",
+    "uses": "1 + Charisma modifier per long rest",
+    "description": [
+      "Until your next turn ends, your senses reveal celestials, fiends and undead within 60 ft, except any with total cover. You learn each one's type, not its identity. You also notice consecrated or desecrated places and objects in range.",
+      "Uses: 1 + your Charisma modifier. A long rest restores them all."
+    ],
+    "page": 84,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/41/Divine_Sense_Icon.webp"
+  },
+  {
+    "id": "lay-on-hands",
+    "name": "Lay on Hands",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 1,
+    "cost": "action",
+    "resource": "Healing pool",
+    "uses": "Pool refills on a long rest",
+    "scaling": [
+      {
+        "label": "Pool",
+        "values": [
+          "5",
+          "10",
+          "15",
+          "20",
+          "25",
+          "30",
+          "35",
+          "40",
+          "45",
+          "50",
+          "55",
+          "60",
+          "65",
+          "70",
+          "75",
+          "80",
+          "85",
+          "90",
+          "95",
+          "100"
+        ]
+      }
+    ],
+    "description": [
+      "You have a healing pool of 5 x your paladin level hit points, refilled by a long rest. As an action, touch a creature and spend points from the pool to heal it by that amount.",
+      "Or spend 5 points to cure a disease or neutralize a poison on the target. You can do that several times in one use.",
+      "No effect on undead or constructs."
+    ],
+    "page": 84,
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-smite",
+    "name": "Divine Smite",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You hit with a melee weapon attack",
+    "resource": "Paladin spell slot",
+    "description": [
+      "On a melee weapon hit, spend a paladin spell slot to add radiant damage.",
+      "It is 2d8 with a 1st-level slot, plus 1d8 for every slot level above 1st, capped at 5d8. Undead and fiends take another 1d8."
+    ],
+    "page": 85,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4b/Divine_Smite_Icon.webp"
+  },
+  {
+    "id": "cleansing-touch",
+    "name": "Cleansing Touch",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 14,
+    "cost": "action",
+    "uses": "Charisma modifier (minimum 1) per long rest",
+    "description": [
+      "As an action, end a spell that is affecting you or a willing creature you touch.",
+      "You get as many uses as your Charisma modifier (at least 1). A long rest restores them."
+    ],
+    "page": 85,
+    "textSource": "summary"
+  },
+  {
+    "id": "paladin-channel-divinity",
+    "name": "Channel Divinity",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Channel Divinity uses (pool)",
+    "uses": "1 use, refills on short or long rest",
+    "description": [
+      "Your oath gives you divine effects you can trigger. You get 1 use, and each effect costs it. Effects with a save use your paladin spell save DC.",
+      "A short or long rest gives the use back."
+    ],
+    "page": 85,
+    "textSource": "summary"
+  },
+  {
+    "id": "sacred-weapon",
+    "name": "Sacred Weapon",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-devotion"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Imbue a weapon you hold with holy energy for 1 minute. Add your Charisma modifier (minimum +1) to attack rolls with it.",
+      "It sheds bright light in 20 ft and dim light 20 ft further, and counts as magical if it was not. You can end it on your turn as part of another action. It also ends if you drop it or fall unconscious."
+    ],
+    "page": 86,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/83/Sacred_Weapon_Icon.webp"
+  },
+  {
+    "id": "turn-the-unholy",
+    "name": "Turn the Unholy",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-devotion"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Hold up your holy symbol and pray. Every fiend and undead within 30 ft that can see or hear you makes a Wisdom save against your spell save DC.",
+      "Failures are turned for 1 minute, ending early if they take damage. A turned creature runs from you, can't voluntarily end up within 30 ft, and gets no reactions. Its action can only be Dash, or escaping something that holds it; with no room to flee, it Dodges."
+    ],
+    "page": 86,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/00/Turn_the_Unholy_Icon.webp"
+  },
+  {
+    "id": "holy-nimbus",
+    "name": "Holy Nimbus",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-devotion"
+    },
+    "level": 20,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Sunlight radiates from you for 1 minute: bright light in 30 ft and dim light 30 ft beyond.",
+      "An enemy that starts its turn in the bright light takes 10 radiant damage. You also have advantage on saves against spells cast by fiends and undead.",
+      "Once used, it needs a long rest."
+    ],
+    "page": 86,
+    "textSource": "summary"
+  },
+  {
+    "id": "natures-wrath",
+    "name": "Nature's Wrath",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-ancients"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Conjure spectral vines that rise around one creature you can see within 10 ft. It makes a Strength or Dexterity save (its pick) against your spell save DC, and on a fail it is restrained.",
+      "The target saves again every time its own turn ends; passing frees it and the vines disappear."
+    ],
+    "page": 87,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/68/Nature's_Wrath_Icon.webp"
+  },
+  {
+    "id": "turn-the-faithless",
+    "name": "Turn the Faithless",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-ancients"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Utter ancient words that hurt fey and fiends. Each one within 30 ft that hears you makes a Wisdom save against your spell save DC.",
+      "Failures are turned for 1 minute or until damaged. They flee, can't voluntarily come within 30 ft of you, and get no reactions. Their action is limited to Dash or escaping a hold, or Dodge when cornered.",
+      "A turned creature loses any illusion or shapeshift hiding its true form."
+    ],
+    "page": 87,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d3/Turn_the_Faithless_Icon.webp"
+  },
+  {
+    "id": "undying-sentinel",
+    "name": "Undying Sentinel",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-ancients"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You are reduced to 0 hit points",
+    "uses": "Once per long rest",
+    "description": [
+      "When damage drops you to 0 hit points without killing you outright, you can drop to 1 hit point instead.",
+      "Works once, then needs a long rest."
+    ],
+    "page": 87,
+    "textSource": "summary"
+  },
+  {
+    "id": "elder-champion",
+    "name": "Elder Champion",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-ancients"
+    },
+    "level": 20,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Use your action to become a primal force of nature for 1 minute, with an appearance you choose.",
+      "Each of your turns starts with 10 hit points regained. Any paladin spell that takes 1 action to cast takes a bonus action instead. Enemies within 10 ft have disadvantage on saves against your paladin spells and Channel Divinity.",
+      "Recharges on a long rest."
+    ],
+    "page": 87,
+    "textSource": "summary"
+  },
+  {
+    "id": "abjure-enemy",
+    "name": "Abjure Enemy",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-vengeance"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Present your holy symbol and denounce a creature you can see within 60 ft. It makes a Wisdom save against your spell save DC. Fiends and undead roll at disadvantage, and creatures immune to fright are unaffected.",
+      "On a fail, it is frightened for 1 minute or until hurt. While frightened it can't move (speed 0) or use speed bonuses. On a success, it only has half speed, with the same 1-minute limit and the same end on damage."
+    ],
+    "page": 88,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b8/Abjure_Enemy_Icon.webp"
+  },
+  {
+    "id": "vow-of-enmity",
+    "name": "Vow of Enmity",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-vengeance"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Pick one visible creature 10 ft or less from you and swear a vow against it. For 1 minute your attack rolls against it have advantage. The vow ends early if the target falls unconscious or reaches 0 hit points."
+    ],
+    "page": 88,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/71/Vow_of_Enmity_Icon.webp"
+  },
+  {
+    "id": "relentless-avenger",
+    "name": "Relentless Avenger",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-vengeance"
+    },
+    "level": 7,
+    "cost": "free",
+    "trigger": "Your opportunity attack hits",
+    "description": [
+      "Chase down a fleeing foe: when your opportunity attack lands, the same reaction lets you move up to half your speed straight after it. Nobody gets opportunity attacks on you for that move."
+    ],
+    "page": 88,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ed/Relentless_Avenger_Icon.webp"
+  },
+  {
+    "id": "soul-of-vengeance",
+    "name": "Soul of Vengeance",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-vengeance"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "A creature under your Vow of Enmity attacks",
+    "description": [
+      "If a creature bound by your Vow of Enmity attacks, spend your reaction to strike it with a melee weapon attack, as long as it is in your reach."
+    ],
+    "page": 88,
+    "textSource": "summary"
+  },
+  {
+    "id": "avenging-angel",
+    "name": "Avenging Angel",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-vengeance"
+    },
+    "level": 20,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Transform into an angel of vengeance for 1 hour. Wings give you a flying speed of 60 ft.",
+      "You also project a 30 ft aura of menace. The first time an enemy enters it, or starts a turn inside it during a fight, that enemy makes a Wisdom save against your spell save DC. A fail frightens it of you for 1 minute or until damaged, and attacks against it have advantage.",
+      "Recharges on a long rest."
+    ],
+    "page": 88,
+    "textSource": "summary"
+  }
+]

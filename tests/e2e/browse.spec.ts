@@ -4,6 +4,7 @@ test('browse a wizard', async ({ page }) => {
   await page.goto('./');
   await page.getByText('Wizard').click();
   await page.getByRole('button', { name: '3', exact: true }).click();
+  await page.getByRole('button', { name: 'No subclass' }).click();
   await expect(page).toHaveURL(/#\/menu\/wizard\/3$/);
   await page.getByText('Level 1 Spells').click();
   await expect(page).toHaveURL(/#\/spells\/wizard\/3\?s=lvl-1$/);
@@ -41,10 +42,16 @@ test('bg3 icon failure shows fallback', async ({ page }) => {
   await page.goto('./#/spells/wizard/3');
   const img = page.locator('.ic', { hasText: 'Magic Missile' }).locator('img');
   await expect(img).toHaveAttribute('src', /\/icons\/fallback\//);
-  const srcs = await page.locator('.ic img').evaluateAll((els) => els.map((e) => e.getAttribute('src')));
-  expect(srcs.every((s) => s!.includes('/icons/fallback/'))).toBe(true);
+  await expect.poll(async () => {
+    // lazy images below the fold never load, so never fail: only judge those in view
+    const srcs = await page.locator('.ic img').evaluateAll((els) => els
+      .filter((e) => { const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; })
+      .map((e) => e.getAttribute('src')));
+    return srcs.every((s) => s!.includes('/icons/fallback/'));
+  }).toBe(true);
+  await expect(page.locator('.ic', { hasText: 'Fireball' }).first().locator('img')).toHaveAttribute('src', /school-evocation.svg$/);
 });
-test('class missing from data falls back to start', async ({ page }) => {
-  await page.goto('./#/menu/cleric/3');
+test('unknown class falls back to start', async ({ page }) => {
+  await page.goto('./#/menu/artificer/3');
   await expect(page.getByText('My Character Sheet')).toBeVisible();
 });

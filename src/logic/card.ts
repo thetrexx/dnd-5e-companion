@@ -19,10 +19,11 @@ export function damageLine(s: Spell): { headline: string; detail: string } | nul
   if (!d) return null;
   const { min, max } = diceRange(d.dice);
   const n = d.count ?? 1;
-  const headline = `${min * n}~${max * n} ${d.healing ? 'Healing' : 'Damage'}`;
+  const mod = d.plusMod ? ' + Mod' : '';
+  const headline = `${min * n}~${max * n}${mod} ${d.healing ? 'Healing' : 'Damage'}`;
   const detail = d.count && d.count > 1
-    ? `${d.count} ${d.unit ? `${d.unit} ` : ''}× ${d.dice} ${d.type}`
-    : `${d.dice} ${d.type}`;
+    ? `${d.count} ${d.unit ? `${d.unit} ` : ''}× ${d.dice}${mod} ${d.type}`
+    : `${d.dice}${mod} ${d.type}`;
   return { headline, detail };
 }
 
@@ -32,7 +33,8 @@ export function tags(s: Spell): string[] {
   if (r === 'auto') out.push('Auto-hit');
   else if (r === 'attack') out.push('Attack roll');
   else if (r === 'save' && s.summary?.save) out.push(`${s.summary.save.toUpperCase()} save`);
-  if (s.concentration) out.push('Concentration');
+  // the duration text already says Concentration; a second tag would repeat it
+  if (s.concentration && !/concentration/i.test(s.duration)) out.push('Concentration');
   if (s.ritual) out.push('Ritual');
   return out;
 }

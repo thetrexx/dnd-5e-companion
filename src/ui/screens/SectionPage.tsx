@@ -5,8 +5,9 @@ import { toHash } from '../../router';
 import { IconGrid } from '../IconGrid';
 import { Separator } from '../Separator';
 
+/** `sub` must already be a valid (effective) subclass id. */
 export function SectionPage(p: {
-  title: string; cls: ClassId; level: number; section?: string; sections: Section[];
+  title: string; cls: ClassId; level: number; sub?: string; section?: string; sections: Section[];
   kind: 'spell' | 'feature'; empty?: string;
 }) {
   useEffect(() => {
@@ -14,10 +15,11 @@ export function SectionPage(p: {
     if (el) el.scrollIntoView();
     else document.getElementById('scroller')?.scrollTo(0, 0);
   }, [p.section, p.cls, p.level, p.title]);
+  const withSub = p.sub ? { sub: p.sub } : {};
   return (
     <div class="screen fixed">
       <header class="fixed-head">
-        <a class="back" href={toHash({ page: 'menu', cls: p.cls, level: p.level })}>‹ Menu</a>
+        <a class="back" href={toHash({ page: 'menu', cls: p.cls, level: p.level, ...withSub })}>‹ Menu</a>
         <h1 class="page-title">{p.title}</h1>
       </header>
       <div class="scroller" id="scroller">
@@ -28,8 +30,8 @@ export function SectionPage(p: {
               color={s.motif ? `var(--${s.motif}-line)` : undefined} />
             {s.locked && <p class="locked-note">{s.locked}</p>}
             <div class="sec-grid">
-              <IconGrid items={s.items} onPick={(id) => {
-                const r: Route = { page: 'card', kind: p.kind, id, cls: p.cls, level: p.level };
+              <IconGrid items={s.items} tags={s.tags} onPick={(id) => {
+                const r: Route = { page: 'card', kind: p.kind, id, cls: p.cls, level: p.level, ...withSub };
                 location.hash = toHash(r);
               }} />
             </div>

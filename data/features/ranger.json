@@ -1,0 +1,695 @@
+[
+  {
+    "id": "primeval-awareness",
+    "name": "Primeval Awareness",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "Ranger spell slot",
+    "description": [
+      "Use your action and spend a ranger spell slot. You sense whether undead, fiends, fey, elementals, dragons, celestials or aberrations are present within 1 mile (6 miles in your favored terrain). The sense lasts 1 minute per level of the slot.",
+      "You learn only whether they are there, not their location or number."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  },
+  {
+    "id": "hide-in-plain-sight",
+    "name": "Hide in Plain Sight",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 10,
+    "cost": "other",
+    "description": [
+      "Spend 1 minute making camouflage from mud, dirt, plants, soot and similar materials you have on hand.",
+      "Then press against a solid surface (tree, wall) at least as large as you. While you stay there without moving, taking actions or reactions, you get +10 to Dexterity (Stealth) checks. Moving or acting breaks it, and you must camouflage again."
+    ],
+    "page": 92,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/04/Hide_in_Plain_Sight_Icon.webp"
+  },
+  {
+    "id": "vanish",
+    "name": "Vanish",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "description": [
+      "Hide as a bonus action.",
+      "Only magic can track you, unless you choose to leave a trail."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  },
+  {
+    "id": "foe-slayer",
+    "name": "Foe Slayer",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "You attack a favored enemy",
+    "uses": "Once per turn",
+    "description": [
+      "Once per turn, when you attack one of your favored enemies, add your Wisdom modifier to either the attack roll or the damage roll.",
+      "You can decide after seeing the roll, as long as the roll's effects are not yet applied."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  },
+  {
+    "id": "hunters-prey-colossus-slayer",
+    "name": "Colossus Slayer",
+    "source": {
+      "kind": "option",
+      "id": "hunters-prey"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a wounded creature with a weapon attack",
+    "description": [
+      "Once per turn, a weapon hit on a creature that is below its maximum hit points adds 1d8 damage."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f0/Colossus_Slayer_Icon.webp"
+  },
+  {
+    "id": "hunters-prey-giant-killer",
+    "name": "Giant Killer",
+    "source": {
+      "kind": "option",
+      "id": "hunters-prey"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A Large or larger creature within 5 ft attacks you",
+    "description": [
+      "When a Large or bigger creature within 5 ft attacks you, hit or miss, you may answer with an attack against it right after, if you can see it."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bd/Giant_Killer_Icon.webp"
+  },
+  {
+    "id": "hunters-prey-horde-breaker",
+    "name": "Horde Breaker",
+    "source": {
+      "kind": "option",
+      "id": "hunters-prey"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a weapon attack (once per turn)",
+    "description": [
+      "Each of your turns, one weapon attack can earn a bonus swing: attack again with that weapon, aimed at a different creature standing within 5 ft of the first target and inside the weapon's range."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-tactics-escape-the-horde",
+    "name": "Escape the Horde",
+    "source": {
+      "kind": "option",
+      "id": "defensive-tactics"
+    },
+    "level": 7,
+    "cost": "passive",
+    "description": [
+      "Opportunity attacks against you have disadvantage."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/78/Escape_the_Horde_Icon.webp"
+  },
+  {
+    "id": "defensive-tactics-multiattack-defense",
+    "name": "Multiattack Defense",
+    "source": {
+      "kind": "option",
+      "id": "defensive-tactics"
+    },
+    "level": 7,
+    "cost": "passive",
+    "description": [
+      "After a creature hits you, you gain +4 AC against its later attacks for the rest of that turn."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/09/Multiattack_Defense_Icon.webp"
+  },
+  {
+    "id": "defensive-tactics-steel-will",
+    "name": "Steel Will",
+    "source": {
+      "kind": "option",
+      "id": "defensive-tactics"
+    },
+    "level": 7,
+    "cost": "passive",
+    "description": [
+      "You have advantage on saves against being frightened."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a6/Steel_Will_Icon.webp"
+  },
+  {
+    "id": "multiattack-volley",
+    "name": "Volley",
+    "source": {
+      "kind": "option",
+      "id": "multiattack"
+    },
+    "level": 11,
+    "cost": "action",
+    "description": [
+      "Choose a spot in view that lies inside your weapon's range. Shoot every creature within 10 ft of that spot, rolling a separate attack for each target and spending ammunition on each as usual."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a5/Volley_Icon.webp"
+  },
+  {
+    "id": "multiattack-whirlwind-attack",
+    "name": "Whirlwind Attack",
+    "source": {
+      "kind": "option",
+      "id": "multiattack"
+    },
+    "level": 11,
+    "cost": "action",
+    "description": [
+      "Make a melee attack against every creature within 5 ft of you, each with its own attack roll."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/90/Whirlwind_Attack_Icon.webp"
+  },
+  {
+    "id": "superior-hunters-defense-evasion",
+    "name": "Evasion",
+    "source": {
+      "kind": "option",
+      "id": "superior-hunters-defense"
+    },
+    "level": 15,
+    "cost": "passive",
+    "description": [
+      "On a Dexterity save that halves damage, you take none if you pass and half if you fail."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7c/Evasion_Icon.webp"
+  },
+  {
+    "id": "superior-hunters-defense-stand-against-the-tide",
+    "name": "Stand Against the Tide",
+    "source": {
+      "kind": "option",
+      "id": "superior-hunters-defense"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "A hostile creature's melee attack misses you",
+    "description": [
+      "Turn the miss around. Spend your reaction to pick another creature (not the attacker); the attacker makes that same attack again, now against your pick."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "superior-hunters-defense-uncanny-dodge",
+    "name": "Uncanny Dodge",
+    "source": {
+      "kind": "option",
+      "id": "superior-hunters-defense"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An attacker you can see hits you",
+    "description": [
+      "When an attacker you can see hits you, halve that attack's damage to you."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Uncanny_Dodge_Icon.webp"
+  },
+  {
+    "id": "rangers-companion",
+    "name": "Ranger's Companion",
+    "source": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "level": 3,
+    "cost": "free",
+    "uses": "Replace a dead companion in 8 hours",
+    "description": [
+      "You gain a beast companion: a beast of Medium size or smaller with challenge rating 1/4 or lower (hawk, mastiff and panther are in appendix D). Add your proficiency bonus to its AC, attack and damage rolls, and proficient saves and skills.",
+      "Its hit point maximum is its normal one or 4 x your ranger level, whichever is higher. It acts on your initiative but only moves unless you command it (see Companion Commands).",
+      "With only the beast along, you move stealthily at normal pace in favored terrain. From level 15, a spell you cast on yourself can also affect the beast within 30 ft.",
+      "If it dies, bond with another willing beast over 8 hours."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "companion-commands",
+    "name": "Companion Commands",
+    "source": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "level": 3,
+    "cost": "action",
+    "scaling": [
+      {
+        "label": "Companion attacks",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ],
+    "description": [
+      "On your turn you can direct where the beast moves for free. Spend your action to have it Attack, Dash, Disengage, Dodge or Help. Once you have Extra Attack, you may make one weapon attack yourself when you order its Attack.",
+      "From level 11 the companion makes two attacks when ordered to Attack."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "exceptional-training",
+    "name": "Exceptional Training",
+    "source": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "description": [
+      "On a turn your beast doesn't attack, use a bonus action to have it Dash, Disengage, Dodge or Help on its turn."
+    ],
+    "page": 93,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bf/Exceptional_Training_Icon.webp"
+  },
+  {
+    "id": "favored-enemy-aberrations",
+    "name": "Aberrations",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Aberrations count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-beasts",
+    "name": "Beasts",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Beasts count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-celestials",
+    "name": "Celestials",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Celestials count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-constructs",
+    "name": "Constructs",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Constructs count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-dragons",
+    "name": "Dragons",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Dragons count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-elementals",
+    "name": "Elementals",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Elementals count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-fey",
+    "name": "Fey",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fey count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-fiends",
+    "name": "Fiends",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Fiends count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-giants",
+    "name": "Giants",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Giants count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-monstrosities",
+    "name": "Monstrosities",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Monstrosities count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-oozes",
+    "name": "Oozes",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Oozes count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-plants",
+    "name": "Plants",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Plants count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-undead",
+    "name": "Undead",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Undead count as your favored enemy. Track them with advantage on Wisdom (Survival), and recall lore about them with advantage on Intelligence checks. You also pick up one language they speak, if they have one.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-enemy-humanoids",
+    "name": "Two Humanoid Races",
+    "source": {
+      "kind": "option",
+      "id": "favored-enemy"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Instead of a creature type, you may name two humanoid races, such as gnolls and orcs. Both count as favored enemies, with the same tracking and lore advantages and one language they speak.",
+      "You pick another favored enemy at 6th and 14th level."
+    ],
+    "page": 91,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-explorer-arctic",
+    "name": "Arctic",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Arctic is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/03/Arctic_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-coast",
+    "name": "Coast",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Coast is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/96/Coast_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-desert",
+    "name": "Desert",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Desert is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/55/Desert_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-forest",
+    "name": "Forest",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Forest is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/07/Forest_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-grassland",
+    "name": "Grassland",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Grassland is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fc/Grassland_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-mountain",
+    "name": "Mountain",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Mountain is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bb/Mountain_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-swamp",
+    "name": "Swamp",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Swamp is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b5/Swamp_Icon.webp"
+  },
+  {
+    "id": "natural-explorer-underdark",
+    "name": "Underdark",
+    "source": {
+      "kind": "option",
+      "id": "natural-explorer"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Underdark is a favored terrain. Your proficiency bonus is doubled on Intelligence or Wisdom checks about it when you use a skill you are proficient in.",
+      "Traveling there for an hour or more: difficult terrain does not slow your group, only magic can get it lost, you stay alert while busy, you can sneak at a normal pace when alone, you find twice the food when foraging, and tracking reveals exact numbers, sizes and age.",
+      "You pick more favored terrain at 6th and 10th level."
+    ],
+    "page": 91,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/af/Underdark_Icon.webp"
+  }
+]

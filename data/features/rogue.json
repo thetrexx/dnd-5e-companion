@@ -1,0 +1,227 @@
+[
+  {
+    "id": "sneak-attack",
+    "name": "Sneak Attack",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You hit with a finesse or ranged weapon",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Sneak Attack",
+        "values": [
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "5d6",
+          "5d6",
+          "6d6",
+          "6d6",
+          "7d6",
+          "7d6",
+          "8d6",
+          "8d6",
+          "9d6",
+          "9d6",
+          "10d6",
+          "10d6"
+        ]
+      }
+    ],
+    "description": [
+      "Once per turn, add the Sneak Attack dice as extra damage to one creature you hit. The attack must use a finesse or ranged weapon, and you need either advantage on the attack roll, or another enemy of the target within 5 ft of it that is not incapacitated, with you having no disadvantage on the roll."
+    ],
+    "page": 96,
+    "textSource": "summary"
+  },
+  {
+    "id": "cunning-action",
+    "name": "Cunning Action",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "description": [
+      "Each turn you have a bonus action that can be used only for Dash, Disengage or Hide."
+    ],
+    "page": 96,
+    "textSource": "summary"
+  },
+  {
+    "id": "uncanny-dodge",
+    "name": "Uncanny Dodge",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 5,
+    "cost": "reaction",
+    "trigger": "An attacker you can see hits you",
+    "description": [
+      "When an attacker you can see hits you, use your reaction to halve the damage of that attack."
+    ],
+    "page": 96,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Uncanny_Dodge_Icon.webp"
+  },
+  {
+    "id": "stroke-of-luck",
+    "name": "Stroke of Luck",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "Your attack misses, or you fail an ability check",
+    "uses": "1/short rest",
+    "description": [
+      "A missed attack against a target in range becomes a hit. Or a failed ability check counts as a natural 20 on the d20.",
+      "Needs a short or long rest before it can be used again."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "fast-hands",
+    "name": "Fast Hands",
+    "source": {
+      "kind": "subclass",
+      "id": "thief"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "Your Cunning Action bonus action can pay for any of these: a Sleight of Hand check, disarming a trap or opening a lock with thieves' tools, or the Use an Object action."
+    ],
+    "page": 97,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/dc/Fast_Hands_Icon.webp"
+  },
+  {
+    "id": "thiefs-reflexes",
+    "name": "Thief's Reflexes",
+    "source": {
+      "kind": "subclass",
+      "id": "thief"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "Round 1 of a fight",
+    "description": [
+      "Combat's opening round gives you an extra turn: act once on your usual initiative count, then again 10 counts lower. Being surprised cancels this."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "assassinate",
+    "name": "Assassinate",
+    "source": {
+      "kind": "subclass",
+      "id": "assassin"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Attacking a foe that hasn't acted yet",
+    "description": [
+      "Strike first and hard. Until a creature has had its first turn of the fight, your attack rolls against it have advantage. Against a surprised creature, every hit you land counts as a critical hit."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "death-strike",
+    "name": "Death Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "assassin"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You hit a surprised creature",
+    "description": [
+      "Hit a surprised creature and it must pass a Constitution save. The DC is 8, plus your proficiency bonus, plus your Dexterity modifier. If it fails, your attack deals double damage."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  },
+  {
+    "id": "mage-hand-legerdemain",
+    "name": "Mage Hand Legerdemain",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "You always know mage hand as an Arcane Trickster. Cast it and the hand can be invisible. It can also stow an item into someone else's container, fetch one out, or pick locks and disarm traps from a distance using thieves' tools.",
+      "Beat the creature's Wisdom (Perception) with a Dexterity (Sleight of Hand) check and these tasks go unnoticed. Controlling the hand takes your Cunning Action bonus action."
+    ],
+    "page": 98,
+    "textSource": "summary"
+  },
+  {
+    "id": "magical-ambush",
+    "name": "Magical Ambush",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "You cast a spell on a creature while hidden from it",
+    "description": [
+      "Cast a spell at a creature that can't see you (you are hidden from it) and that creature has disadvantage on its saves against the spell for the rest of the turn."
+    ],
+    "page": 98,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e1/Magical_Ambush_Icon.webp"
+  },
+  {
+    "id": "versatile-trickster",
+    "name": "Versatile Trickster",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 13,
+    "cost": "bonus",
+    "description": [
+      "Use your mage hand to distract. Pick a creature within 5 ft of the hand. You have advantage on attack rolls against it until the end of this turn."
+    ],
+    "page": 98,
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-thief",
+    "name": "Spell Thief",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-trickster"
+    },
+    "level": 17,
+    "cost": "reaction",
+    "trigger": "A spell targets you or catches you in its area",
+    "uses": "Once per long rest",
+    "description": [
+      "Right after the spell is cast, spend your reaction: the caster saves with its spellcasting ability modifier against your spell save DC.",
+      "If it fails, the spell does nothing to you. A spell of level 1 or higher that you have slots for (any class's list) is now yours for 8 hours, cast with your own slots, while the caster loses the use of it for those 8 hours.",
+      "Recharges on a long rest."
+    ],
+    "page": 98,
+    "textSource": "summary"
+  }
+]

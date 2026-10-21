@@ -12,9 +12,63 @@
 
 **Owner decision (2026-10-21):** a plain class with no saved character asks for the level, then for a subclass ("No subclass" allowed) when the class has one at that level. The menu, actions and spells then show that subclass only, including its domain, oath, circle or patron spells.
 
+## Amendment 2 (2026-10-21, owner decision): all card text in our own words
+
+The API content filter stopped Task 4 three times. Each time a helper was handling D&D rules text, SRD included. The owner chose: **every card's text is our own summary; no official text (PHB or SRD) is published.** This supersedes Amendment 1's SRD bullets.
+
+- **`textSource`:** every Spell, Feature and FeatDef has `textSource: 'summary'`. The type narrows to `'summary'`. The validator rejects anything else. The checker's `srd` mode and the SRD-wording accept path are removed.
+- **Facts from data, text from us:**
+  - Structured facts are imported by script (no prose):
+    - from the SRD cache (`.cache/srd/`): level, school, casting time, range, component flags, duration, concentration, ritual, damage dice and type, save, attack type;
+    - from the page images for non-SRD entries.
+  - Every fact is checked against the book.
+  - `description`, `higherLevels` and the material item text are written by us: short and complete, in the summary style of Amendment 1.
+  - `check:ocr` judges every record in summary mode: numbers present in the book, and no 8-word copied run.
+- **Hard rule for every implementer:**
+  - Never write out official rules text, in files, tool inputs, messages or reports.
+  - Read sources (page images, SRD cache) for facts and meaning, then write fresh sentences.
+  - Don't print SRD descriptions to the terminal: inspect with scripts that print ids and short fields.
+  - Test fixtures and assertions use short values (ids, numbers, flags), never long text.
+- **Card style for summaries:**
+  - One short paragraph for the core effect, plus extra short paragraphs only for distinct modes or table rows (`"1: …"`).
+  - Plain sentences, second person ("You …"), numbers as digits, distances in feet ("60 ft").
+  - Target 25-90 words per spell description.
+- **Plan 1 fixtures and Task 1's SRD-sourced fixtures** (generic combat actions, class fixture features, the 14 fixture spells) are rewritten as summaries by the task that owns them:
+  - Task 4 owns the 14 spells.
+  - Task 6 owns the generic actions and fighter/druid/sorcerer/wizard fixtures, together with their classes.
+- **About screen:** keep the SRD 5.1 CC BY 4.0 credit (structured facts come from SRD data) and the Fan Content notice.
+
+## Amendment (2026-10-21, owner decision): text sources
+
+Task 4's first run was stopped by the API content filter while copying PHB text. The owner chose: **SRD text word for word, everything else in our own words.** This amendment overrides any task text below that says "verbatim", "transcribe" or "PHB wording wins".
+
+- **`textSource`:** every Spell, Feature and FeatDef gains a required `textSource: 'srd' | 'summary'`.
+- **SRD entries (`'srd'`):**
+  - Text is the SRD 5.1 text from dnd5eapi, mapped by script. This covers spells, class and subclass features (`/api/2014/features`, `/subclasses`), racial traits (`/traits`, `/races`, `/subraces`) and the one SRD feat (`/feats`).
+  - Never hand-retyped.
+  - Where SRD wording differs from the PHB, the SRD wording stays. Only facts must match the book.
+  - The PHB name is still used where the SRD renamed a spell ("Tasha's Hideous Laughter").
+- **Summary entries (`'summary'`):** everything not in the SRD.
+  - `description` is 1-4 short paragraphs **in our own words**, written from the page image. They cover every mechanic a player needs at the table: cost, range, targets, duration, damage dice and type, save or attack, scaling, limits and recharge.
+  - Never copy the book's sentences: no run of 8 or more consecutive words may match the book.
+  - `higherLevels` follows the same rule.
+  - Names, numbers, levels, dice, ranges, durations and page numbers must match the book exactly.
+- **Checker (new Task 3b, before Task 4 resumes):**
+  - `compareToOcr` gains `longestSharedRun(text, ocr): number`, the longest run of consecutive normalized words shared with the OCR.
+  - `check:ocr` applies two modes by `textSource`:
+    - `srd`: today's checks. Failures caused purely by SRD-vs-PHB wording are accepted with the reason "SRD wording", after confirming the numbers match.
+    - `summary`: every number-bearing token must appear in the page's OCR (facts match), and `longestSharedRun < 8` (own words). Coverage and reverse are not used.
+- **Card:** a `summary` card ends with the line `Full rules: PHB p. <page>` (theme tokens only).
+- **Content tasks (4-11):**
+  - Import every SRD entry by script from dnd5eapi (cache in `.cache/srd/`).
+  - Write summaries for the rest from the page images.
+  - Task 1's hand-written fixtures (`fighting-style-*`, `land-terrain-*`, `weapon-bond`, `hold-person`) are re-sourced: SRD ones from the API, `weapon-bond` as a summary.
+  - The reviewer of each content task checks at least 10 random records against the page images for facts, and spot-checks that summaries don't copy book sentences.
+- Implementers never output long stretches of book text in their messages or reports. They quote at most a few words to identify a passage.
+
 ## Global Constraints
 
-- 2014 PHB only. Text is verbatim from the owner's PDF at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf`, keeping the book's own typos. No 2024 wording, no other books. Where SRD and PHB wording differ, the PHB wins.
+- 2014 PHB only. Text sources per the Amendment above; facts (names, numbers, levels, dice, ranges, durations, pages) from the owner's PDF at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf`. No 2024 wording, no other books.
 - **Page numbers:** book page = PDF page − 1 (PHB p242 is PDF page 243). `page` fields hold book pages.
 - The PDF, page images and OCR text are never committed. They live in `.cache/phb/` (git-ignored).
 - **Text format:**
@@ -397,136 +451,169 @@ test('normalize', () => expect(normalizeOcr('Vou /ire IdlO')).toBe(normalizeOcr(
 
 ---
 
-### Task 4: Spells from the SRD, PHB names, pages and class lists
+### Task 3b: textSource, summary-mode checker, PHB reference line
 
 **Files:**
-- Create: `scripts/extract/srd-spells.ts`, `scripts/extract/phb-names.json`, `scripts/extract/spell-lists.json`, `scripts/extract/apply-spell-lists.ts`, `tests/unit/srd-spells.test.ts`, `tests/unit/fixtures/srd-{fireball,cure-wounds,confusion,shield}.json` (recorded API responses)
-- Modify: `data/spells.json`, `package.json` (`extract:srd`, `extract:lists`)
+- Modify: `src/data/types.ts`, `src/data/validate.ts`, `scripts/extract/ocr.ts`, `scripts/extract/check-ocr.ts`, `src/ui/screens/Card.tsx`, `src/styles/screens.css`, `data/spells.json`, `data/features/*.json`, `data/feats.json`
+- Test: `tests/unit/ocr.test.ts`, `tests/unit/validate.test.ts`, `tests/unit/screens.test.tsx`
 
 **Interfaces:**
-- Consumes: Task 3 `CACHE`, the OCR page texts.
 - Produces:
 
 ```ts
-export function mapSrdSpell(api: SrdSpell, phbNames: Record<string, string>): Spell;   // page 0 until located
-export function findSpellPage(name: string, pages: Map<number, string>): number | null; // book page whose OCR has the heading
-export function phbId(name: string): string;                                             // "Tasha's Hideous Laughter" → "tashas-hideous-laughter"
+// types.ts: Spell, Feature, FeatDef gain  textSource: 'srd' | 'summary'
+// ocr.ts
+export function longestSharedRun(text: string, ocr: string): number;     // consecutive normalized words shared
+export function judgeRecord(source: 'srd' | 'summary', text: string, ocr: string, span?: { from: string; to?: string }):
+  { pass: boolean; reasons: string[] };
+// srd: coverage >= 0.92, no missingNumbers, reverse >= 0.85 (span end missing is its own reason)
+// summary: no missingNumbers, longestSharedRun < 8
 ```
 
-- **SRD mapping rules:**
-  - `id = phbId(name)`, where `name = phbNames[index] ?? api.name`.
-  - **`cast`:**
-    - `cost` is action, bonus or reaction from `casting_time` ("1 action", "1 bonus action", "1 reaction"), and `other` for anything else.
-    - `text` = `casting_time`.
-    - The SRD has no triggers, so reaction spells get `trigger` copied from the PHB casting-time line.
-  - **Components:** `components.m.text` = `material`. `costGp` comes from `/(\d[\d,]*)\s*gp/`. `consumed` = `/consume/i`.
-  - **Description:** `desc` is converted per Global Constraints: markdown tables become row paragraphs, `- ` becomes `• `, `*`/`**` are stripped. `higherLevels` = `higher_level.join(' ')`.
-  - **`summary`:**
-    - `damage.dice` = `damage_at_slot_level[level]`, or `damage_at_character_level["1"]` for cantrips. A `+ MOD` is removed and sets `plusMod`.
-    - `healing` from `heal_at_slot_level`.
-    - `resolution`: `save` when `dc` exists (`save` = `dc.dc_type.index`), else `attack` when `attack_type` exists, else `none`.
-    - `upcast` from `higher_level` when it matches `increases by (\S+) for each slot level above (\w+)`, written as `+<dice> per slot level above <ord>`.
-    - When `dice` fails the card's dice regex, `damage` is dropped and the id is logged.
-  - **Merge:** `extract:srd` fetches all SRD spells (one list call plus one call per spell, sequential, cached in `.cache/srd/`). It merges into `data/spells.json` and **never overwrites an existing id**.
-  - **`phb-names.json`:** maps every SRD spell whose SRD name differs from the PHB (the wizard-named spells, e.g. `hideous-laughter` → `Tasha's Hideous Laughter`, `acid-arrow` → `Melf's Acid Arrow`). Complete it by comparing the SRD list with the PHB's own spell list pages.
-- **Pages:** run `extract:pages -- 207 289`, then fill `page` with `findSpellPage`. That function matches the normalized name at the start of an OCR line, followed by the school or level line. Hand-fix any `null`.
-- **`spell-lists.json`:** transcribed from the page images of PHB p207-211, as `{ "bard": ["Animal Friendship", …], … }` for the 8 casting classes, using PHB names. `extract:lists` sets every spell's `classes` from it, warns about names on the lists that have no spell record yet (expected until Task 5), and fails on names it can't match at all.
-- **Checking:** run `check:ocr -- spells` and fix every SRD spell whose text differs from the PHB.
+- **Words:** split each side on whitespace and normalize each word with `normalizeOcr`, dropping empty words.
+- **check-ocr.ts** uses `judgeRecord` for every record and prints the mode next to each failure.
+- **Card:** a record with `textSource: 'summary'` ends with `Full rules: PHB p. <page>` in a small dim line.
+- **Fixture re-sourcing:**
+  - Spells and generic/class fixture features that came from dnd5eapi get `'srd'`.
+  - `fighting-style-protection` and `fighting-style-defense` take their text from dnd5eapi (`/api/2014/features/fighting-style-protection`, `…-defense`) and get `'srd'`.
+  - `land-terrain-arctic`, `land-terrain-coast` and `weapon-bond` get own-words summaries and `'summary'`.
 
 - [ ] **Step 1: Write the failing tests**
 
 ```ts
-const names = JSON.parse(readFileSync('scripts/extract/phb-names.json', 'utf8'));
-const fx = (n: string) => JSON.parse(readFileSync(`tests/unit/fixtures/srd-${n}.json`, 'utf8'));
-test('fireball', () => expect(mapSrdSpell(fx('fireball'), names)).toMatchObject({
-  id: 'fireball', level: 3, school: 'Evocation', cast: { cost: 'action', text: '1 action' }, range: '150 feet',
-  components: { v: true, s: true, m: { text: 'A tiny ball of bat guano and sulfur', consumed: false } },
-  summary: { damage: { dice: '8d6', type: 'Fire' }, resolution: 'save', save: 'dex', upcast: '+1d6 per slot level above 3rd' },
-}));
-test('cure wounds plusMod', () => expect(mapSrdSpell(fx('cure-wounds'), names).summary?.damage).toMatchObject({ dice: '1d8', healing: true, plusMod: true }));
-test('confusion table rows', () => {
-  const d = mapSrdSpell(fx('confusion'), names).description;
-  expect(d.some(p => p.startsWith('1: '))).toBe(true); expect(d.some(p => p.startsWith('9-10: '))).toBe(true);
-  expect(d.join(' ')).not.toMatch(/[|*]/);
+const ocr = readFileSync('tests/unit/fixtures/ocr-fire-bolt.txt', 'utf8');
+test('copied text has a long shared run', () =>
+  expect(longestSharedRun('You hurl a mote of fire at a creature or object within range.', ocr)).toBeGreaterThanOrEqual(8));
+test('own words stay short', () =>
+  expect(longestSharedRun('Ranged spell attack out to 120 feet; a hit deals 1d10 fire, and unattended flammable objects catch fire.', ocr)).toBeLessThan(8));
+test('summary mode: wrong number fails, own words pass', () => {
+  const own = 'Ranged spell attack out to 120 feet; a hit deals 1d10 fire, and unattended flammable objects catch fire.';
+  expect(judgeRecord('summary', own, ocr).pass).toBe(true);
+  expect(judgeRecord('summary', own.replace('1d10', '1d12'), ocr).reasons.join()).toContain('1d12');
+  expect(judgeRecord('summary', 'You hurl a mote of fire at a creature or object within range.', ocr).pass).toBe(false);
 });
-test('shield is a reaction', () => expect(mapSrdSpell(fx('shield'), names).cast.cost).toBe('reaction'));
-test('phb names', () => expect(phbId("Tasha's Hideous Laughter")).toBe('tashas-hideous-laughter'));
-test('findSpellPage', () => expect(findSpellPage('Fire Bolt', new Map([[241, 'x'], [242, readFileSync('tests/unit/fixtures/ocr-fire-bolt.txt', 'utf8')]]))).toBe(242));
+// validate.test.ts
+test('textSource required', () => {
+  const bad = structuredClone(DATA); delete (bad.spells[0] as any).textSource;
+  expect(validateDataset(bad).join('
+')).toContain('textSource');
+});
+// screens.test.tsx: Card for feature weapon-bond (fighter 3, eldritch-knight) shows "Full rules: PHB p. 75"; Card for spell fire-bolt shows no "Full rules"
 ```
 
-```ts
-// validate.test.ts additions (real content from here on)
-test('class lists', () => {
-  const s = (id: string) => DATA.spells.find(x => x.id === id)!;
-  expect(s('shield').classes.sort()).toEqual(['sorcerer', 'wizard']);
-  expect(s('cure-wounds').classes.sort()).toEqual(['bard', 'cleric', 'druid', 'paladin', 'ranger']);
-  expect(s('fireball').page).toBe(241);
-});
-```
-
-- [ ] **Step 2: Run to verify they fail** — `npm test`. Expected: FAIL.
-- [ ] **Step 3: Implement** the mapping and scripts. Run `extract:srd`, `extract:pages -- 207 289`, transcribe `spell-lists.json`, run `extract:lists`, fix pages and PHB wording until `check:ocr -- spells` passes for every record present.
-- [ ] **Step 4: Run to verify they pass** — `npm test && npm run check:ocr -- spells`. Expected: PASS. The report lists only accepted entries, each with a reason.
-- [ ] **Step 5: Commit** — `git commit -m "feat: SRD spells with PHB names, pages and class lists"`
+- [ ] **Step 2: Run to verify they fail.** Expected: FAIL.
+- [ ] **Step 3: Implement.**
+- [ ] **Step 4: Run to verify they pass** — `npm test && npm run build && npm run check:ocr -- features`. Expected: unit tests PASS; the feature check passes for the re-sourced fixtures, or their failures are accepted with reasons.
+- [ ] **Step 5: Commit** — `git commit -m "feat: text sources (SRD or own-words summary), summary checker, PHB reference line"`
 
 ---
 
-### Task 5: The 45 non-SRD spells and card summaries for all 361
+### Task 4: Spell facts for all 361, class lists, and the build step
 
 **Files:**
-- Modify: `data/spells.json`, `scripts/extract/ocr-accept.json` (if needed)
-- Test: `tests/unit/spells-content.test.ts`
+- Create: `scripts/extract/spell-facts.ts`, `scripts/extract/spell-facts.json`, `scripts/extract/spell-lists.json`, `scripts/extract/spell-summaries.json`, `scripts/extract/build-spells.ts`, `tests/unit/spell-facts.test.ts`
+- Modify: `src/data/types.ts` (textSource narrows to `'summary'`), `src/data/validate.ts`, `scripts/extract/ocr.ts` + `check-ocr.ts` (remove srd mode), `tests/unit/ocr.test.ts`, `data/spells.json`, `package.json` (`extract:facts`, `build:spells`)
+- Delete or replace: the checkpoint's `scripts/extract/srd-spells.ts`, `tests/unit/srd-spells.test.ts`, `tests/unit/fixtures/srd-*.json` (prose-bearing). Reuse its rename map (`phb-names.json`).
 
 **Interfaces:**
-- Consumes: Task 4 tooling, `spell-lists.json`.
-- Produces: `data/spells.json` with exactly 361 records, all fields complete.
+- Produces:
 
-- **Transcription:** transcribe every PHB spell that has no record yet from the page images (`.cache/phb/p<N>.png`), with all fields. Then rerun `extract:lists` so it reports no missing names.
-- **Hand-review the derived fields for all 361 spells:**
-  - **`summary.damage`** only when the spell deals or heals a fixed dice amount.
-    - Multi-projectile spells get `count` + `unit`: Magic Missile 3 darts of `1d4+1`; Scorching Ray 3 rays of `2d6`; Eldritch Blast 1 beam of `1d10` at character level 1.
-  - **`resolution`:**
-    - `auto` for automatic hits (Magic Missile).
-    - `save` + ability whenever the text calls for a saving throw.
-    - `attack` for spell attacks.
-    - `none` otherwise.
-  - **`upcast`:** one short line when "At Higher Levels" has a simple pattern, otherwise omitted.
-  - **`cast.trigger`:** the trigger text for every reaction spell.
-- **Spells with no summary:** spells that neither damage nor heal get `summary: { resolution }` only when a save or attack applies, and no `summary` otherwise.
+```ts
+// spell-facts.json: SpellFacts[] — every Spell field except description/higherLevels; components.m holds { costGp?, consumed } only
+export type SpellFacts = Omit<Spell, 'description' | 'higherLevels' | 'textSource' | 'components'> &
+  { components: { v: boolean; s: boolean; m?: { costGp?: number; consumed: boolean } } };
+// spell-summaries.json: Record<id, { description: string[]; higherLevels?: string; material?: string }>
+export function factsFromSrd(api: SrdSpell, phbNames: Record<string, string>): SpellFacts;   // reads only structured fields
+export function buildSpells(facts: SpellFacts[], summaries: Record<string, SpellSummary>): Spell[]; // only ids with a summary; textSource 'summary'; sorted by name
+```
+
+- **`factsFromSrd`** never reads `desc`, `higher_level` or `material`, except:
+  - `/consume/i` on the material text sets `consumed`;
+  - `/(\d[\d,]*)\s*gp/` sets `costGp`.
+  
+  These are facts, and the text itself is not stored.
+- **`summary`** (cost, damage, save, attack, upcast) is derived from structured API fields as in the old Task 4 rules:
+  - Damage dice: `damage_at_slot_level[level]`, or `damage_at_character_level["1"]` for cantrips. A `+ MOD` is removed and sets `plusMod`.
+  - Healing: `heal_at_slot_level`.
+  - Resolution: `save` when `dc` exists (ability from `dc.dc_type.index`), else `attack` when `attack_type` exists, else `none`.
+  - Upcast: written in our words.
+- **The 45 non-SRD spells:** facts come from the page images.
+- **Reaction spells:** `cast.trigger` is a short own-words trigger ("when you're hit by an attack or targeted by magic missile").
+- **Pages:** from `findSpellPage` on the OCR. Hand-check any that come back `null`.
+- **Class lists:** `spell-lists.json` (names only, from p207-211) sets `classes`.
+- **This task's summaries:** write `spell-summaries.json` entries for the 14 fixture spells only: every id in `data/spells.json` at commit 4e31beb (`git show 4e31beb:data/spells.json`). `build:spells` then writes exactly those 14 to `data/spells.json`, so app tests keep their ids.
 
 - [ ] **Step 1: Write the failing tests**
 
 ```ts
-const s = (id: string) => DATA.spells.find(x => x.id === id)!;
-test('361 spells, each on a class list', () => {
-  expect(DATA.spells).toHaveLength(361);
-  expect(DATA.spells.filter(x => x.classes.length === 0).map(x => x.id)).toEqual([]);
+const facts: SpellFacts[] = JSON.parse(readFileSync('scripts/extract/spell-facts.json', 'utf8'));
+const f = (id: string) => facts.find(x => x.id === id)!;
+test('361 spell facts, PHB names, every one on a list with a page', () => {
+  expect(facts).toHaveLength(361);
+  expect(f('tashas-hideous-laughter').name).toBe("Tasha's Hideous Laughter");
+  expect(facts.find(x => x.id === 'hideous-laughter')).toBeUndefined();
+  expect(facts.filter(x => x.classes.length === 0 || x.page < 1).map(x => x.id)).toEqual([]);
 });
-test('non-SRD spells present', () => {
-  for (const id of ['hex', 'hunters-mark', 'armor-of-agathys', 'arms-of-hadar', 'hail-of-thorns', 'ensnaring-strike',
-    'witch-bolt', 'compelled-duel', 'searing-smite', 'branding-smite', 'crusaders-mantle', 'friends', 'chromatic-orb'])
-    expect(s(id), id).toBeTruthy();
+test('facts', () => {
+  expect(f('fireball')).toMatchObject({ level: 3, school: 'Evocation', page: 241, range: '150 feet',
+    summary: { damage: { dice: '8d6', type: 'Fire' }, resolution: 'save', save: 'dex' } });
+  expect(f('shield').classes.sort()).toEqual(['sorcerer', 'wizard']);
+  expect(f('cure-wounds').classes.sort()).toEqual(['bard', 'cleric', 'druid', 'paladin', 'ranger']);
+  expect(f('cure-wounds').summary?.damage).toMatchObject({ dice: '1d8', healing: true, plusMod: true });
+  expect(f('hex').cast.cost).toBe('bonus');
+  expect(f('hellish-rebuke').cast.cost).toBe('reaction');
+  expect(f('magic-missile').summary).toMatchObject({ resolution: 'auto', damage: { dice: '1d4+1', count: 3, unit: 'darts' } });
+  expect(f('identify').components.m).toMatchObject({ costGp: 100, consumed: false });
+  expect(Object.keys(f('fireball'))).not.toContain('description');
 });
-test('summaries', () => {
-  expect(s('magic-missile').summary).toMatchObject({ resolution: 'auto', damage: { dice: '1d4+1', count: 3, unit: 'darts', type: 'Force' } });
-  expect(s('hex').cast.cost).toBe('bonus');
-  expect(s('hellish-rebuke').cast).toMatchObject({ cost: 'reaction', trigger: expect.stringContaining('damaged by a creature') });
-  expect(s('tashas-hideous-laughter').summary).toMatchObject({ resolution: 'save', save: 'wis' });
-  expect(s('fireball').summary?.damage?.dice).toBe('8d6');
+test('build keeps only summarized ids', () => {
+  const out = buildSpells(facts, { fireball: { description: ['x'], material: 'bat guano and sulfur' } });
+  expect(out.map(s => s.id)).toEqual(['fireball']);
+  expect(out[0]).toMatchObject({ textSource: 'summary', components: { m: { text: 'bat guano and sulfur' } } });
 });
-test('confusion keeps its whole table', () => {
-  const d = s('confusion').description.join('\n');
+// validate.test.ts: a spell with textSource 'srd' is rejected
+```
+
+- [ ] **Step 2: Run to verify they fail.** Expected: FAIL.
+- [ ] **Step 3: Implement**, then run `extract:facts`, fill the 45 non-SRD facts from the images, run `extract:lists`, write the 14 fixture summaries, and run `build:spells`.
+- [ ] **Step 4: Run to verify they pass** — `npm test && npm run build && npm run check:ocr -- spells`. Expected: PASS for the 14 built spells (summary mode).
+- [ ] **Step 5: Commit** — `git commit -m "feat: facts for all 361 spells, class lists, own-words build step"`
+
+---
+
+### Tasks 5a-5d: Spell summaries in batches
+
+Each batch writes `spell-summaries.json` entries for its spells, runs `build:spells`, and passes `check:ocr -- spells` (summary mode).
+
+- **Batches:** 5a = cantrips and 1st level, 5b = 2nd and 3rd, 5c = 4th to 6th, 5d = 7th to 9th.
+- **Files:** `scripts/extract/spell-summaries.json`, `data/spells.json` (built), `tests/unit/spells-content.test.ts`.
+- **Summary content** (per Amendment 2):
+  - The core effect, then the targets/area, duration-relevant behaviour, and save/attack and its outcome.
+  - Ongoing choices (e.g. moving the sphere as a bonus action).
+  - `higherLevels` in one short sentence.
+  - `material` as a short item list with its cost.
+  - Tables become `"<roll>: <effect>"` rows.
+
+- [ ] **Step 1 (each batch): failing test** — every fact id of the batch's levels has a built spell with a non-empty description:
+
+```ts
+const built = (lo: number, hi: number) => DATA.spells.filter(s => s.level >= lo && s.level <= hi).length;
+const facts = (lo: number, hi: number) => (JSON.parse(readFileSync('scripts/extract/spell-facts.json', 'utf8')) as SpellFacts[]).filter(s => s.level >= lo && s.level <= hi).length;
+test('batch 5a complete', () => expect(built(0, 1)).toBe(facts(0, 1)));          // 5b: (2, 3)  5c: (4, 6)  5d: (7, 9)
+```
+
+  Batch 5c adds:
+
+```ts
+test('confusion keeps its table', () => {
+  const d = DATA.spells.find(s => s.id === 'confusion')!.description.join('\n');
   for (const row of ['1: ', '2-6: ', '7-8: ', '9-10: ']) expect(d).toContain(row);
-});
-test('every spell has a page and text', () => {
-  expect(DATA.spells.filter(x => x.page < 1 || x.description.length === 0).map(x => x.id)).toEqual([]);
 });
 ```
 
-- [ ] **Step 2: Run to verify they fail** — `npx vitest run tests/unit/spells-content.test.ts`. Expected: FAIL.
-- [ ] **Step 3: Implement** (transcribe, review summaries).
-- [ ] **Step 4: Run to verify they pass** — `npm test && npm run check:ocr -- spells`. Expected: PASS.
-- [ ] **Step 5: Commit** — `git commit -m "feat: all 361 PHB spells with card summaries"`
+  Batch 5d adds: `expect(DATA.spells).toHaveLength(361)`.
+- [ ] **Step 2-4:** write the summaries, then run `npm run build:spells && npm test && npm run check:ocr -- spells`. Expected: PASS, with no accepted copies.
+- [ ] **Step 5: Commit** — `git commit -m "feat: spell summaries, <levels>"`
 
 ---
 

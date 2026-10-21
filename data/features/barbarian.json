@@ -1,0 +1,371 @@
+[
+  {
+    "id": "rage",
+    "name": "Rage",
+    "source": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "Rages",
+    "uses": "Per long rest, see Rages",
+    "scaling": [
+      {
+        "label": "Rages",
+        "values": [
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6",
+          "Unlimited"
+        ]
+      },
+      {
+        "label": "Rage Damage",
+        "values": [
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+4",
+          "+4",
+          "+4",
+          "+4",
+          "+4"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action: start a rage. The perks below apply only while you are out of heavy armor. You get advantage on Strength checks and saves, extra damage (the Rage Damage bonus) on melee weapon attacks made with Strength, and resistance to bludgeoning, piercing and slashing damage.",
+      "No casting spells and no concentrating on them while raging.",
+      "A rage lasts 1 minute. It stops sooner if you are knocked out, or if your turn ends having neither attacked a hostile creature nor taken damage since your previous turn. You may also drop it with a bonus action."
+    ],
+    "page": 48,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c9/Rage_Icon.webp"
+  },
+  {
+    "id": "reckless-attack",
+    "name": "Reckless Attack",
+    "source": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "Your first attack on your turn",
+    "description": [
+      "On the first attack of your turn you may go reckless. Your Strength melee weapon attacks have advantage until the turn ends.",
+      "In return, enemies have advantage on their attacks against you until your next turn starts."
+    ],
+    "page": 48,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/21/Reckless_Attack_Icon.webp"
+  },
+  {
+    "id": "relentless-rage",
+    "name": "Relentless Rage",
+    "source": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "You drop to 0 hit points while raging",
+    "uses": "DC 10, +5 each use until a short or long rest",
+    "description": [
+      "Dropping to 0 HP while raging (without being killed outright) lets you roll a Constitution save at DC 10. Succeed and you stay up with 1 HP.",
+      "Every later use adds 5 to the DC. A short or long rest resets it to 10."
+    ],
+    "page": 49,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e8/Relentless_Rage_Icon.webp"
+  },
+  {
+    "id": "frenzy",
+    "name": "Frenzy",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-berserker"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "While raging in a frenzy",
+    "resource": "Rage",
+    "description": [
+      "Opt into frenzy as you start a rage. For its whole length, each later turn lets you spend a bonus action on 1 melee weapon attack.",
+      "When the rage ends, you take 1 level of exhaustion."
+    ],
+    "page": 49,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/68/Frenzy_Icon.webp"
+  },
+  {
+    "id": "intimidating-presence",
+    "name": "Intimidating Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-berserker"
+    },
+    "level": 10,
+    "cost": "action",
+    "description": [
+      "Target one creature within 30 ft that can see or hear you. It makes a Wisdom save against DC 8 + proficiency bonus + Charisma modifier, or becomes frightened of you, lasting through your next turn.",
+      "Spend your action on later turns to extend the fear another round. It stops if the target loses line of sight to you or ends a turn over 60 ft away.",
+      "A target that passes the save is immune to this for 24 hours."
+    ],
+    "page": 49,
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Intimidating_Presence_Icon.webp"
+  },
+  {
+    "id": "retaliation",
+    "name": "Retaliation",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-berserker"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "You take damage from a creature within 5 ft",
+    "description": [
+      "When a creature within 5 ft damages you, make 1 melee weapon attack against it as a reaction."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "spirit-seeker",
+    "name": "Spirit Seeker",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 3,
+    "cost": "other",
+    "description": [
+      "You can cast beast sense and speak with animals, but only as rituals (they take extra time and use no spell slot)."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit",
+    "name": "Totem Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 3,
+    "cost": "other",
+    "trigger": "While raging",
+    "resource": "Rage",
+    "description": [
+      "Pick a totem animal when you take this path. Its effect works only while you rage.",
+      "Bear: resistance to every damage type except psychic.",
+      "Eagle: while you wear no heavy armor, opportunity attacks against you have disadvantage, and you can Dash as a bonus action.",
+      "Wolf: allies have advantage on melee attacks against any enemy within 5 ft of you."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "spirit-walker",
+    "name": "Spirit Walker",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 10,
+    "cost": "other",
+    "description": [
+      "You can cast commune with nature as a ritual. A spirit version of one of your totem animals appears to deliver the answers."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement",
+    "name": "Totemic Attunement",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 14,
+    "cost": "other",
+    "trigger": "While raging",
+    "resource": "Rage",
+    "description": [
+      "Pick a totem animal again (the same one or a new one). Its effect works only while you rage.",
+      "Bear: hostile creatures within 5 ft of you attack at disadvantage unless they target you or an ally with this same feature. Enemies that cannot see or hear you, or cannot be frightened, are immune.",
+      "Eagle: you fly at a speed matching your current walking speed, but only in short bursts. Land before your turn ends or you drop.",
+      "Wolf (bonus action): after a melee weapon hit on a target no bigger than Large, spend a bonus action to topple it prone."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-bear",
+    "name": "Bear",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "While you rage, you resist every damage type except psychic. The bear spirit lets you shrug off nearly any punishment."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-eagle",
+    "name": "Eagle",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "Raging, out of heavy armor",
+    "description": [
+      "During a rage without heavy armor on, Dash costs you only a bonus action on your turn, and any opportunity attack made at you rolls with disadvantage."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-wolf",
+    "name": "Wolf",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "While you rage, allies who attack in melee get advantage against any enemy standing within 5 feet of you. You lead the pack."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-bear",
+    "name": "Bear",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "Bear might: your carrying capacity, maximum load and maximum lift all double. You also roll Strength checks to push, pull, lift or break objects with advantage."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-eagle",
+    "name": "Eagle",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "You see like an eagle: distance up to 1 mile is clear to you, and within 100 feet you can pick out fine details. Dim light no longer penalizes your Wisdom (Perception) checks."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-wolf",
+    "name": "Wolf",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "You get a wolf's hunting senses. You can track creatures while moving at a fast pace, and you can sneak at a normal pace while traveling."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-bear",
+    "name": "Bear",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "passive",
+    "description": [
+      "While you rage, enemies within 5 feet of you have disadvantage when attacking anyone besides you or an ally with this feature. Enemies that cannot see or hear you, or cannot be frightened, ignore this."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-eagle",
+    "name": "Eagle",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "passive",
+    "description": [
+      "While you rage, you gain a flying speed matching your current walking speed. It lasts only in short bursts: you fall if your turn ends while you are airborne with nothing holding you up."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-wolf",
+    "name": "Wolf",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "Raging, after a melee weapon hit",
+    "description": [
+      "A rage-only takedown: once your melee weapon attack connects with a Large or smaller creature, a bonus action that same turn drops it prone."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  }
+]

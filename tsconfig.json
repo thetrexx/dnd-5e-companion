@@ -10,7 +10,8 @@
     "noEmit": true,
     "skipLibCheck": true,
     "isolatedModules": true,
+    "allowImportingTsExtensions": true,
     "types": ["vitest/globals", "node", "vite/client"]
   },
-  "include": ["src", "tests", "vite.config.ts", "playwright.config.ts"]
+  "include": ["src", "tests", "scripts/extract", "vite.config.ts", "playwright.config.ts"]
 }
