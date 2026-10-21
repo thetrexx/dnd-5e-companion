@@ -9,12 +9,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "The most common action to take in combat is the Attack action, whether you are swinging a sword, firing an arrow from a bow, or brawling with your fists.",
-      "With this action, you make one melee or ranged attack.",
-      "Certain features, such as the Extra Attack feature of the fighter, allow you to make more than one attack with this action."
+      "You make one melee or ranged attack. This is the usual way to fight.",
+      "Features like Extra Attack let you make more attacks with this one action."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "cast-a-spell",
@@ -26,10 +25,10 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "Spellcasters such as wizards and clerics, as well as many monsters, have access to spells and can use them to great effect in combat. Each spell has a casting time, which specifies whether the caster must use an action, a reaction, minutes, or even hours to cast the spell. Casting a spell is, therefore, not necessarily an action. Most spells do have a casting time of 1 action, so a spellcaster often uses his or her action in combat to cast such a spell."
+      "Casting uses whatever time the spell lists. Most spells take 1 action, so casting is often your action for the turn, but some take a bonus action or reaction, and some take minutes or hours."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "dash",
@@ -41,11 +40,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "When you take the Dash action, you gain extra movement for the current turn. The increase equals your speed, after applying any modifiers. With a speed of 30 feet, for example, you can move up to 60 feet on your turn if you dash.",
-      "Any increase or decrease to your speed changes this additional movement by the same amount. If your speed of 30 feet is reduced to 15 feet, for instance, you can move up to 30 feet this turn if you dash."
+      "Gain extra movement this turn equal to your speed, after modifiers. Speed 30 means up to 60 ft total.",
+      "If your speed is raised or cut, the Dash bonus changes by the same amount."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "disengage",
@@ -57,10 +56,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "If you take the Disengage action, your movement doesn't provoke opportunity attacks for the rest of the turn."
+      "Your movement does not provoke opportunity attacks for the rest of this turn.",
+      "Use it to slip away from enemies in reach without giving them a free swing. It does not move you by itself."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "dodge",
@@ -72,10 +72,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "When you take the Dodge action, you focus entirely on avoiding attacks. Until the start of your next turn, any attack roll made against you has disadvantage if you can see the attacker, and you make Dexterity saving throws with advantage. You lose this benefit if you are incapacitated or if your speed drops to 0."
+      "Until your next turn begins, attackers you can see have disadvantage against you, and your Dexterity saves have advantage.",
+      "The benefit ends if you become incapacitated or your speed falls to 0."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "help",
@@ -87,11 +88,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "You can lend your aid to another creature in the completion of a task. When you take the Help action, the creature you aid gains advantage on the next ability check it makes to perform the task you are helping with, provided that it makes the check before the start of your next turn.",
-      "Alternatively, you can aid a friendly creature in attacking a creature within 5 feet of you. You feint, distract the target, or in some other way team up to make your ally's attack more effective. If your ally attacks the target before your next turn, the first attack roll is made with advantage."
+      "Aid a creature with a task: it gets advantage on its next ability check for that task if it rolls before the start of your next turn.",
+      "Or aid an attack: pick an enemy within 5 ft of you. The first attack roll an ally makes against it before your next turn has advantage."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "hide",
@@ -103,10 +104,10 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "When you take the Hide action, you make a Dexterity (Stealth) check in an attempt to hide, following the rules for hiding. If you succeed, you gain certain benefits, as described in the \"Unseen Attackers and Targets\" section later in this chapter."
+      "Make a Dexterity (Stealth) check to hide. If it succeeds, you gain the benefits of being hidden from creatures that cannot find you."
     ],
     "page": 192,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "ready",
@@ -118,13 +119,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "Sometimes you want to get the jump on a foe or wait for a particular circumstance before you act. To do so, you can take the Ready action on your turn, which lets you act using your reaction before the start of your next turn.",
-      "First, you decide what perceivable circumstance will trigger your reaction. Then, you choose the action you will take in response to that trigger, or you choose to move up to your speed in response to it. Examples include \"If the cultist steps on the trapdoor, I'll pull the lever that opens it,\" and \"If the goblin steps next to me, I move away.\"",
-      "When the trigger occurs, you can either take your reaction right after the trigger finishes or ignore the trigger. Remember that you can take only one reaction per round.",
-      "When you ready a spell, you cast it as normal but hold its energy, which you release with your reaction when the trigger occurs. To be readied, a spell must have a casting time of 1 action, and holding onto the spell's magic requires concentration. If your concentration is broken, the spell dissipates without taking effect. For example, if you are concentrating on the web spell and ready magic missile, your web spell ends, and if you take damage before you release magic missile with your reaction, your concentration might be broken."
+      "Pick a visible trigger and the action (or a move up to your speed) you will take when it happens. You act on it with your reaction, right after the trigger, or you can let it pass. One reaction per round.",
+      "To ready a spell, it must take 1 action. You cast it now and hold it, which needs concentration. When the trigger happens, you release it. If your concentration breaks first, the spell fizzles."
     ],
     "page": 193,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "search",
@@ -136,10 +135,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "When you take the Search action, you devote your attention to finding something. Depending on the nature of your search, the GM might have you make a Wisdom (Perception) check or an Intelligence (Investigation) check."
+      "Hunt for something specific. Depending on what you are looking for, the DM will call for Wisdom (Perception) or Intelligence (Investigation).",
+      "It uses your action, so it is a trade against attacking or moving on."
     ],
     "page": 193,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "use-an-object",
@@ -151,10 +151,10 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "You normally interact with an object while doing something else, such as when you draw a sword as part of an attack. When an object requires your action for its use, you take the Use an Object action. This action is also useful when you want to interact with more than one object on your turn."
+      "Interacting with one object is normally free during your turn. Spend your action when the object needs it, or when you want to handle more than one object in a turn."
     ],
     "page": 193,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "grapple",
@@ -166,13 +166,12 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "When you want to grab a creature or wrestle with it, you can use the Attack action to make a special melee attack, a grapple. If you're able to make multiple attacks with the Attack action, this attack replaces one of them.",
-      "The target of your grapple must be no more than one size larger than you and must be within your reach. Using at least one free hand, you try to seize the target by making a grapple check instead of an attack roll: a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you succeed, you subject the target to the grappled condition. The condition specifies the things that end it, and you can release the target whenever you like (no action required).",
-      "Escaping a Grapple. A grappled creature can use its action to escape. To do so, it must succeed on a Strength (Athletics) or Dexterity (Acrobatics) check contested by your Strength (Athletics) check.",
-      "Moving a Grappled Creature. When you move, you can drag or carry the grappled creature with you, but your speed is halved, unless the creature is two or more sizes smaller than you."
+      "Replace one of your attacks with a grapple. The target can be at most one size larger and must be in reach. You need a free hand.",
+      "Make a Strength (Athletics) check against its Strength (Athletics) or Dexterity (Acrobatics), its choice. On a win, it is grappled. You can let go at any time.",
+      "A grappled creature escapes with its action by winning that contest against you. If you move, you drag it along at half speed, unless it is 2 or more sizes smaller than you."
     ],
     "page": 195,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "shove",
@@ -184,11 +183,11 @@
     "level": 1,
     "cost": "action",
     "description": [
-      "Using the Attack action, you can make a special melee attack to shove a creature, either to knock it prone or push it away from you. If you're able to make multiple attacks with the Attack action, this attack replaces one of them.",
-      "The target must be no more than one size larger than you and must be within your reach. Instead of making an attack roll, you make a Strength (Athletics) check contested by the target's Strength (Athletics) or Dexterity (Acrobatics) check (the target chooses the ability to use). If you win the contest, you either knock the target prone or push it 5 feet away from you."
+      "Replace one of your attacks with a shove. The target can be at most one size larger and must be in reach.",
+      "Make a Strength (Athletics) check against its Strength (Athletics) or Dexterity (Acrobatics), its choice. If you win, you either knock it prone or push it 5 ft away."
     ],
     "page": 195,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "two-weapon-fighting",
@@ -200,11 +199,11 @@
     "level": 1,
     "cost": "bonus",
     "description": [
-      "When you take the Attack action and attack with a light melee weapon that you're holding in one hand, you can use a bonus action to attack with a different light melee weapon that you're holding in the other hand. You don't add your ability modifier to the damage of the bonus attack, unless that modifier is negative.",
-      "If either weapon has the thrown property, you can throw the weapon, instead of making a melee attack with it."
+      "After you attack with a light melee weapon in one hand on your Attack action, you can attack with a different light melee weapon in your other hand as a bonus action.",
+      "You do not add your ability modifier to that bonus attack's damage unless it is negative. A thrown weapon can be thrown for either attack."
     ],
     "page": 195,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "opportunity-attack",
@@ -216,11 +215,10 @@
     "level": 1,
     "cost": "reaction",
     "description": [
-      "In a fight, everyone is constantly watching for a chance to strike an enemy who is fleeing or passing by. Such a strike is called an opportunity attack.",
-      "You can make an opportunity attack when a hostile creature that you can see moves out of your reach. To make the opportunity attack, you use your reaction to make one melee attack against the provoking creature. The attack occurs right before the creature leaves your reach.",
-      "You can avoid provoking an opportunity attack by taking the Disengage action. You also don't provoke an opportunity attack when you teleport or when someone or something moves you without using your movement, action, or reaction. For example, you don't provoke an opportunity attack if an explosion hurls you out of a foe's reach or if gravity causes you to fall past an enemy."
+      "When a hostile creature you can see leaves your reach, you can make one melee attack against it as your reaction. It happens just before the creature leaves.",
+      "No opportunity attack if the creature took the Disengage action, teleported, or was moved without using its own movement, action or reaction."
     ],
     "page": 195,
-    "textSource": "srd"
+    "textSource": "summary"
   }
 ]

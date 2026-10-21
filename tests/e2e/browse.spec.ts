@@ -45,7 +45,7 @@ test('bg3 icon failure shows fallback', async ({ page }) => {
   const srcs = await page.locator('.ic img').evaluateAll((els) => els.map((e) => e.getAttribute('src')));
   expect(srcs.every((s) => s!.includes('/icons/fallback/'))).toBe(true);
 });
-test('class missing from data falls back to start', async ({ page }) => {
-  await page.goto('./#/menu/cleric/3');
+test('unknown class falls back to start', async ({ page }) => {
+  await page.goto('./#/menu/artificer/3');
   await expect(page.getByText('My Character Sheet')).toBeVisible();
 });

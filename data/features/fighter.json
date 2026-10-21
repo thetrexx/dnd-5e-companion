@@ -10,10 +10,11 @@
     "cost": "bonus",
     "uses": "1/short rest",
     "description": [
-      "You have a limited well of stamina that you can draw on to protect yourself from harm. On your turn, you can use a bonus action to regain hit points equal to 1d10 + your fighter level. Once you use this feature, you must finish a short or long rest before you can use it again."
+      "On your turn, use a bonus action to heal 1d10 + your fighter level hit points.",
+      "Once used, you need a short or long rest before using it again."
     ],
     "page": 72,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "action-surge",
@@ -24,12 +25,7 @@
     },
     "level": 2,
     "cost": "free",
-    "uses": "1/short rest",
-    "description": [
-      "Starting at 2nd level, you can push yourself beyond your normal limits for a moment. On your turn, you can take one additional action on top of your regular action and a possible bonus action.",
-      "Once you use this feature, you must finish a short or long rest before you can use it again. Starting at 17th level, you can use it twice before a rest, but only once on the same turn."
-    ],
-    "page": 72,
+    "uses": "Per short or long rest, see Uses",
     "scaling": [
       {
         "label": "Uses",
@@ -57,7 +53,57 @@
         ]
       }
     ],
-    "textSource": "srd"
+    "description": [
+      "On your turn, take one extra action in addition to your normal action and any bonus action.",
+      "Needs a short or long rest to use again. From level 17 you get two uses between rests, but only one per turn."
+    ],
+    "page": 72,
+    "textSource": "summary"
+  },
+  {
+    "id": "indomitable",
+    "name": "Indomitable",
+    "source": {
+      "kind": "class",
+      "id": "fighter"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "You fail a saving throw",
+    "uses": "Per long rest, see Uses",
+    "scaling": [
+      {
+        "label": "Uses",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "When you fail a saving throw, you can reroll it. You must keep the new roll.",
+      "Each use needs a long rest to recover. See Uses for how many uses you have."
+    ],
+    "page": 72,
+    "textSource": "summary"
   },
   {
     "id": "fighting-style-protection",
@@ -70,10 +116,10 @@
     "cost": "reaction",
     "trigger": "A creature you can see attacks a target other than you within 5 feet of you",
     "description": [
-      "When a creature you can see attacks a target other than you that is within 5 feet of you, you can use your reaction to impose disadvantage on the attack roll. You must be wielding a shield."
+      "While you wield a shield, you can use your reaction when a creature you can see attacks someone else within 5 ft of you. The attack roll gets disadvantage."
     ],
     "page": 72,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "fighting-style-defense",
@@ -85,10 +131,10 @@
     "level": 1,
     "cost": "passive",
     "description": [
-      "While you are wearing armor, you gain a +1 bonus to AC."
+      "You get +1 AC for as long as you are wearing armor."
     ],
     "page": 72,
-    "textSource": "srd"
+    "textSource": "summary"
   },
   {
     "id": "weapon-bond",

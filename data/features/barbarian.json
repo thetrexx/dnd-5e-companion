@@ -1,0 +1,108 @@
+[
+  {
+    "id": "rage",
+    "name": "Rage",
+    "source": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "Rages",
+    "uses": "Per long rest, see Rages",
+    "scaling": [
+      {
+        "label": "Rages",
+        "values": [
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6",
+          "Unlimited"
+        ]
+      },
+      {
+        "label": "Rage Damage",
+        "values": [
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+3",
+          "+4",
+          "+4",
+          "+4",
+          "+4",
+          "+4"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action: start a rage. The perks below apply only while you are out of heavy armor. You get advantage on Strength checks and saves, extra damage (the Rage Damage bonus) on melee weapon attacks made with Strength, and resistance to bludgeoning, piercing and slashing damage.",
+      "No casting spells and no concentrating on them while raging.",
+      "A rage lasts 1 minute. It stops sooner if you are knocked out, or if your turn ends having neither attacked a hostile creature nor taken damage since your previous turn. You may also drop it with a bonus action."
+    ],
+    "page": 48,
+    "textSource": "summary"
+  },
+  {
+    "id": "reckless-attack",
+    "name": "Reckless Attack",
+    "source": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "Your first attack on your turn",
+    "description": [
+      "On the first attack of your turn you may go reckless. Your Strength melee weapon attacks have advantage until the turn ends.",
+      "In return, enemies have advantage on their attacks against you until your next turn starts."
+    ],
+    "page": 48,
+    "textSource": "summary"
+  },
+  {
+    "id": "relentless-rage",
+    "name": "Relentless Rage",
+    "source": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "You drop to 0 hit points while raging",
+    "uses": "DC 10, +5 each use until a short or long rest",
+    "description": [
+      "Dropping to 0 HP while raging (without being killed outright) lets you roll a Constitution save at DC 10. Succeed and you stay up with 1 HP.",
+      "Every later use adds 5 to the DC. A short or long rest resets it to 10."
+    ],
+    "page": 49,
+    "textSource": "summary"
+  }
+]
