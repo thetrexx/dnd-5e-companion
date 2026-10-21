@@ -7516,6 +7516,84 @@
     "textSource": "summary"
   },
   {
+    "id": "mordenkainens-private-sanctum",
+    "name": "Mordenkainen's Private Sanctum",
+    "level": 4,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "120 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 262,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Thin lead sheet, opaque glass, cotton or cloth, and powdered chrysolite",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You secure a cube from 5 to 100 ft on a side within 120 ft for 24 hours, or until you end it as an action. Pick any of these:",
+      "• Sound can't cross the edge.",
+      "• The edge looks dark and foggy, blocking sight and darkvision.",
+      "• Divination sensors can't appear inside or pass through the edge.",
+      "• Divination spells can't target creatures inside.",
+      "• No teleporting in or out.",
+      "• No planar travel inside.",
+      "Casting it on the same spot daily for a year makes it permanent."
+    ],
+    "higherLevels": "Each slot level above 4 adds 100 ft to the cube's side (200 ft at 5th).",
+    "textSource": "summary"
+  },
+  {
+    "id": "move-earth",
+    "name": "Move Earth",
+    "level": 6,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 2 hours",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 263,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "An iron blade and a small bag of mixed clay, loam and sand",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For up to 2 hours (concentration) you reshape dirt, sand or clay in an area up to 40 ft on a side within 120 ft: raise or lower ground, dig or fill a trench, build or flatten a wall, form a pillar. Changes can reach half the area's largest side (20 ft for a 40 ft square) and take 10 minutes to finish.",
+      "Every 10 minutes of concentration you may pick a new area. The slow change rarely traps or hurts creatures.",
+      "Natural stone and stonework can't be shaped, though they shift with the ground, and unstable buildings may collapse. Plants ride along with the moved earth."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "nondetection",
     "name": "Nondetection",
     "level": 3,
@@ -7587,6 +7665,116 @@
     "textSource": "summary"
   },
   {
+    "id": "otilukes-freezing-sphere",
+    "name": "Otiluke's Freezing Sphere",
+    "level": 6,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "300 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 263,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "10d6",
+        "type": "Cold"
+      },
+      "upcast": "+1d6 per slot level above 6"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A small crystal sphere",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A globe of cold bursts in a 60 ft radius sphere at a point within 300 ft. Each creature there makes a Constitution save: 10d6 cold, half on a success.",
+      "If it hits water, the surface freezes 6 inches deep over a 30 ft square for 1 minute, trapping swimmers; one can use an action for a Strength check vs your spell save DC to break out.",
+      "Or keep it as a sling-stone globe. You or someone you hand it to can throw it (40 ft) or sling it; it bursts on impact as above. It explodes on its own after 1 minute."
+    ],
+    "higherLevels": "Each slot level above 6 adds 1d6.",
+    "textSource": "summary"
+  },
+  {
+    "id": "otilukes-resilient-sphere",
+    "name": "Otiluke's Resilient Sphere",
+    "level": 4,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 264,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Two half-spheres, one of clear crystal and one of gum arabic",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A force sphere encloses a Large or smaller creature or object within 30 ft for up to 1 minute (concentration). An unwilling creature makes a Dexterity save to avoid it.",
+      "Nothing passes in or out, though the creature inside can breathe. The sphere takes no damage, and no attack or effect crosses it either way. Disintegrate destroys it without harming what's inside.",
+      "The weightless sphere can be lifted by others, or rolled from inside as an action at up to half the creature's speed."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "ottos-irresistible-dance",
+    "name": "Otto's Irresistible Dance",
+    "level": 6,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 264,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A creature you can see within 30 ft starts dancing in place for up to 1 minute (concentration); there is no save to resist it at first. Creatures immune to charm are unaffected.",
+      "While dancing it spends all its movement dancing without leaving its space, has disadvantage on Dexterity saves and attack rolls, and attacks against it have advantage.",
+      "As an action, it can make a Wisdom save to stop; success ends the spell."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "pass-without-trace",
     "name": "Pass Without Trace",
     "level": 2,
@@ -7617,6 +7805,40 @@
     },
     "description": [
       "Shadow and hush surround you for up to 1 hour (concentration). You and each creature you choose within 30 ft of you get +10 to Dexterity (Stealth) checks, leave no tracks or other trace, and can't be tracked except by magic."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "passwall",
+    "name": "Passwall",
+    "level": 5,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 264,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A pinch of sesame seeds",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A passage up to 5 ft wide, 8 ft tall and 20 ft deep opens for 1 hour at a point you can see within 30 ft on wood, plaster or stone (wall, ceiling or floor). It doesn't weaken the structure around it.",
+      "When it closes, anything still inside is pushed safely out to the nearest free space by the surface you cast it on."
     ],
     "textSource": "summary"
   },
@@ -7663,6 +7885,43 @@
     "textSource": "summary"
   },
   {
+    "id": "phantasmal-killer",
+    "name": "Phantasmal Killer",
+    "level": 4,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 265,
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "4d10",
+        "type": "Psychic"
+      },
+      "upcast": "+1d10 per slot level above 4"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 120 ft sees its worst fear, visible only to it. It makes a Wisdom save or is frightened for up to 1 minute (concentration).",
+      "At the start of each of its turns while frightened, it makes another Wisdom save: failure deals 4d10 psychic; success ends the spell."
+    ],
+    "higherLevels": "Each slot level above 4 adds 1d10.",
+    "textSource": "summary"
+  },
+  {
     "id": "phantom-steed",
     "name": "Phantom Steed",
     "level": 3,
@@ -7691,6 +7950,77 @@
       "You or a creature you pick can ride it. It has riding horse stats, but speed 100 ft and 10 miles an hour (13 at a fast pace).",
       "It ends if the steed takes damage or you dismiss it (action). The steed then fades over 1 minute so the rider can get off."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "planar-ally",
+    "name": "Planar Ally",
+    "level": 6,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 265,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You call on a powerful being you know (a god, primordial, demon prince or similar). It sends a loyal celestial, elemental or fiend to a free space within 60 ft. You may request one by name, but the DM may send another.",
+      "It owes you nothing; you bargain for a task and payment. Rough guide: 100 gp per minute, 1,000 gp per hour, 10,000 gp per day (up to 10 days). Fitting tasks may cost half or nothing, safe ones half, risky ones more; suicidal tasks are rarely accepted.",
+      "It leaves when done or when the term ends. With no deal it returns home at once. While serving it counts as a party member for XP."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "planar-binding",
+    "name": "Planar Binding",
+    "level": 5,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 hour"
+    },
+    "range": "60 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "wizard"
+    ],
+    "page": 265,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A jewel worth 1,000 gp, used up",
+        "costGp": 1000,
+        "consumed": true
+      }
+    },
+    "description": [
+      "A celestial, elemental, fey or fiend that stays within 60 ft for the whole hour of casting (often held in a reversed magic circle) makes a Charisma save. On a failure it serves you for 24 hours. If another spell summoned or made it, that spell lasts as long as this one.",
+      "It follows your instructions as well as it can, but a hostile one twists your words. If done early, it reports to you on your plane, or waits where you bound it."
+    ],
+    "higherLevels": "Duration: 10 days at 6th level, 30 days at 7th, 180 days at 8th, a year and a day at 9th.",
     "textSource": "summary"
   },
   {
@@ -7762,6 +8092,45 @@
     "description": [
       "You puff noxious gas at a creature you can see within 10 ft. It makes a Constitution save or takes 1d12 poison damage.",
       "Damage rises to 2d12 at level 5, 3d12 at level 11 and 4d12 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "polymorph",
+    "name": "Polymorph",
+    "level": 4,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 266,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A caterpillar cocoon",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you can see within 60 ft turns into a beast with CR no higher than its level or CR, for up to 1 hour (concentration). An unwilling target makes a Wisdom save to resist; shapechangers succeed automatically.",
+      "It takes the beast's stats, mental scores included, keeping only alignment and personality. Gear melds in and can't be used. It can't speak, cast spells, or do anything needing hands or speech.",
+      "It uses the beast's HP. At 0 HP it reverts with its old HP, and excess damage carries over; it ends early if the target dies."
     ],
     "textSource": "summary"
   },

@@ -337,5 +337,15 @@
     "summary": {
       "damage": null
     }
+  },
+  "otilukes-freezing-sphere": {
+    "summary": {
+      "upcast": "+1d6 per slot level above 6"
+    }
+  },
+  "phantasmal-killer": {
+    "summary": {
+      "upcast": "+1d10 per slot level above 4"
+    }
   }
 }

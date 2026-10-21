@@ -7249,7 +7249,8 @@
    "damage": {
     "dice": "10d6",
     "type": "Cold"
-   }
+   },
+   "upcast": "+1d6 per slot level above 6"
   }
  },
  {
@@ -7426,7 +7427,8 @@
    "damage": {
     "dice": "4d10",
     "type": "Psychic"
-   }
+   },
+   "upcast": "+1d10 per slot level above 4"
   }
  },
  {
