@@ -77,5 +77,108 @@
     ],
     "page": 102,
     "textSource": "summary"
+  },
+  {
+    "id": "elemental-affinity",
+    "name": "Elemental Affinity",
+    "source": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You cast a spell of your ancestry damage type",
+    "resource": "1 sorcery point (resistance only)",
+    "description": [
+      "Your spells that deal your dragon ancestor's damage type get your Charisma modifier added once to the damage.",
+      "Pay 1 sorcery point and you also resist that type for 1 hour."
+    ],
+    "page": 102,
+    "textSource": "summary"
+  },
+  {
+    "id": "dragon-wings",
+    "name": "Dragon Wings",
+    "source": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "description": [
+      "Grow a pair of dragon wings. You fly at a speed equal to your walking speed. They remain until you dismiss them, which also costs a bonus action.",
+      "They won't come out in armor that isn't made for them, and unsuitable clothing may be ruined."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "draconic-presence",
+    "name": "Draconic Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "draconic-bloodline"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "5 sorcery points",
+    "description": [
+      "Pay 5 sorcery points to radiate awe or fear (you choose) out to 60 ft for 1 minute. It needs your concentration, just like a concentration spell.",
+      "Each hostile creature that begins its turn in the aura makes a Wisdom save. A failure means charmed (awe) or frightened (fear) until the aura ends. A success makes that creature immune to the aura for 24 hours."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "tides-of-chaos",
+    "name": "Tides of Chaos",
+    "source": {
+      "kind": "subclass",
+      "id": "wild-magic"
+    },
+    "level": 1,
+    "cost": "free",
+    "uses": "Once, then long rest (or after a surge)",
+    "description": [
+      "Take advantage on one attack roll, ability check or saving throw of your choice.",
+      "After that it stays spent until you finish a long rest. The exception: if the DM triggers a Wild Magic Surge once you cast a sorcerer spell (1st level or above), you roll the surge and the feature is ready again."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "bend-luck",
+    "name": "Bend Luck",
+    "source": {
+      "kind": "subclass",
+      "id": "wild-magic"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature you can see makes an attack roll, ability check or saving throw",
+    "resource": "2 sorcery points",
+    "description": [
+      "Another creature you can see is about to roll an attack, check or save. Spend 2 sorcery points and roll 1d4. You add that number to or subtract it from their roll, your choice.",
+      "Do this after their roll is made but before the result takes effect."
+    ],
+    "page": 103,
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-bombardment",
+    "name": "Spell Bombardment",
+    "source": {
+      "kind": "subclass",
+      "id": "wild-magic"
+    },
+    "level": 18,
+    "cost": "free",
+    "trigger": "You roll spell damage and a die shows its highest number",
+    "uses": "Once per turn",
+    "description": [
+      "Once per turn, when you roll spell damage and any die shows its maximum number, pick one of those dice and roll it again, adding the new roll to the damage."
+    ],
+    "page": 103,
+    "textSource": "summary"
   }
 ]

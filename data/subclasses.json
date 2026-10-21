@@ -1124,5 +1124,19 @@
       ]
     },
     "options": []
+  },
+  {
+    "id": "draconic-bloodline",
+    "cls": "sorcerer",
+    "name": "Draconic Bloodline",
+    "page": 102,
+    "options": []
+  },
+  {
+    "id": "wild-magic",
+    "cls": "sorcerer",
+    "name": "Wild Magic",
+    "page": 103,
+    "options": []
   }
 ]
