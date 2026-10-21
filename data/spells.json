@@ -3870,6 +3870,46 @@
     "textSource": "summary"
   },
   {
+    "id": "evards-black-tentacles",
+    "name": "Evard's Black Tentacles",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 238,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "3d6",
+        "type": "Bludgeoning"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A bit of tentacle from a giant octopus or giant squid",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Black tentacles fill a 20 ft square of ground you can see within 90 ft for up to 1 minute (concentration), making it difficult terrain.",
+      "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or takes 3d6 bludgeoning and is restrained until the spell ends. One already restrained takes 3d6 bludgeoning when its turn starts there.",
+      "A restrained creature can use its action for a Strength or Dexterity check (its pick) against your spell save DC to break free."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "expeditious-retreat",
     "name": "Expeditious Retreat",
     "level": 1,
@@ -3897,6 +3937,72 @@
     },
     "description": [
       "For up to 10 minutes (concentration), you may Dash as a bonus action on every turn, starting with the turn you cast this."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "eyebite",
+    "name": "Eyebite",
+    "level": 6,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 238,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Your eyes turn to dark voids for up to 1 minute (concentration). On casting and as an action each later turn, a creature you can see within 60 ft makes a Wisdom save or suffers your chosen effect. A creature that succeeded can't be targeted again.",
+      "Asleep: unconscious until it takes damage or someone uses an action to wake it.",
+      "Panicked: frightened; on each turn it Dashes away from you by the safest short route unless trapped, until it is 60 ft or more away and can't see you.",
+      "Sickened: disadvantage on attack rolls and ability checks. It repeats the save as each of its turns ends, ending this on a success."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "fabricate",
+    "name": "Fabricate",
+    "level": 4,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "120 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 239,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You turn raw materials you can see within 120 ft into a finished item of the same stuff, such as trees into a wooden bridge or hemp into rope. The item can be Large or smaller (fitting a 10 ft cube or eight joined 5 ft cubes), or Medium at most (one 5 ft cube) for metal, stone or other minerals.",
+      "Quality matches the raw materials. You can't make or change creatures or magic items, and fine work like jewelry, weapons, glass or armor needs proficiency with the matching artisan's tools."
     ],
     "textSource": "summary"
   },
@@ -4147,6 +4253,43 @@
     "textSource": "summary"
   },
   {
+    "id": "find-the-path",
+    "name": "Find the Path",
+    "level": 6,
+    "school": "Divination",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 day",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "page": 240,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Divining tools (bones, cards, runes or similar) worth 100 gp, plus an item taken from the destination",
+        "costGp": 100,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Name a fixed place on your plane that you know. For up to 1 day (concentration), while on its plane, you know its distance and direction, and at every fork you know which way is shortest and most direct, though not always safest.",
+      "The spell fails for a place on another plane, one that moves (like a mobile fortress), or a vague one (\"a green dragon's lair\")."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "find-traps",
     "name": "Find Traps",
     "level": 2,
@@ -4212,6 +4355,45 @@
     "description": [
       "Make a ranged spell attack against a creature or object within 120 ft. A hit deals 1d10 fire damage. A flammable object it hits catches fire if nobody is wearing or carrying it.",
       "Damage rises to 2d10 at level 5, 3d10 at level 11 and 4d10 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "fire-shield",
+    "name": "Fire Shield",
+    "level": 4,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "10 minutes",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 242,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "2d8",
+        "type": "Fire or Cold"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A bit of phosphorus or a firefly",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Wispy flames surround you for 10 minutes, giving bright light to 10 ft and dim light 10 ft beyond. You can end it early as an action.",
+      "Warm shield: resistance to cold damage. Chill shield: resistance to fire damage.",
+      "When a creature within 5 ft hits you with a melee attack, it takes 2d8 fire (warm) or 2d8 cold (chill)."
     ],
     "textSource": "summary"
   },
@@ -4298,6 +4480,46 @@
     "textSource": "summary"
   },
   {
+    "id": "flame-strike",
+    "name": "Flame Strike",
+    "level": 5,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 242,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "8d6",
+        "type": "Fire + Radiant (4d6 each)"
+      },
+      "upcast": "+1d6 per slot level above 5"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A pinch of sulfur",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Holy fire pours down in a 10 ft radius, 40 ft high cylinder around a point within 60 ft. Each creature in it makes a Dexterity save: 4d6 fire plus 4d6 radiant, half on a success."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d6 to the fire or the radiant damage (your pick).",
+    "textSource": "summary"
+  },
+  {
     "id": "flaming-sphere",
     "name": "Flaming Sphere",
     "level": 2,
@@ -4337,6 +4559,43 @@
       "As a bonus action, roll it up to 30 ft; a creature it rams makes the save and the sphere stops for the turn. It hops 5 ft barriers and 10 ft pits, ignites unattended flammables, and lights 20 ft bright plus 20 ft dim."
     ],
     "higherLevels": "Each slot level above 2 adds 1d6 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "flesh-to-stone",
+    "name": "Flesh to Stone",
+    "level": 6,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 243,
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A pinch of lime, water and earth",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you can see within 60 ft, with a body of flesh, makes a Constitution save. On a failure it is restrained as it starts to harden.",
+      "While restrained, it repeats the save at the end of each of its turns. 3 successes (not necessarily in a row) end the spell; 3 failures turn it to stone, petrified for the duration.",
+      "If you keep concentration for the full minute, it stays stone until the effect is removed. Breaking the statue leaves matching injuries if it is restored."
+    ],
     "textSource": "summary"
   },
   {
@@ -4406,6 +4665,83 @@
       "You raise a 20 ft radius sphere of fog centred on a point within 120 ft, for up to 1 hour (concentration). It spreads around corners and heavily obscures the area. A wind of 10 mph or more disperses it early."
     ],
     "higherLevels": "Each slot level above 1 adds 20 ft to the radius.",
+    "textSource": "summary"
+  },
+  {
+    "id": "forbiddance",
+    "name": "Forbiddance",
+    "level": 6,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "Touch",
+    "duration": "1 day",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "cleric"
+    ],
+    "page": 243,
+    "summary": {
+      "resolution": "auto",
+      "damage": {
+        "dice": "5d10",
+        "type": "Radiant or Necrotic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Holy water, rare incense, and 1,000 gp of powdered ruby",
+        "costGp": 1000,
+        "consumed": false
+      }
+    },
+    "description": [
+      "You ward up to 40,000 sq ft of floor, 30 ft high, for 1 day. Nothing can teleport in or enter by portal (like gate), the Astral or Ethereal Plane, the Feywild, the Shadowfell or plane shift.",
+      "Choose creature types from celestials, elementals, fey, fiends and undead. One of them entering the area for the first time on a turn, or starting its turn there, takes 5d10 radiant or necrotic (your choice when cast). A password you set spares the speaker.",
+      "Areas can't overlap another forbiddance. Casting it in the same place daily for 30 days makes it last until dispelled; the last casting uses up the materials."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "freedom-of-movement",
+    "name": "Freedom of Movement",
+    "level": 4,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "ranger"
+    ],
+    "page": 244,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A leather strap tied around an arm or similar limb",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 1 hour, a willing creature you touch ignores difficult terrain, and no spell or magical effect can lower its speed, paralyze it or restrain it.",
+      "It can spend 5 ft of movement to slip free of nonmagical restraints, such as manacles or a grapple. Being underwater doesn't hamper its movement or attacks."
+    ],
     "textSource": "summary"
   },
   {
@@ -4483,6 +4819,46 @@
     "textSource": "summary"
   },
   {
+    "id": "geas",
+    "name": "Geas",
+    "level": 5,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "60 feet",
+    "duration": "30 days",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "wizard"
+    ],
+    "page": 244,
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "5d10",
+        "type": "Psychic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Give a command to a creature you can see within 60 ft that understands you: do some service, or avoid some act. It makes a Wisdom save or is charmed by you for 30 days. Each time it directly works against your order it takes 5d10 psychic, at most once a day.",
+      "Any order is allowed except one meaning certain death; a suicidal order ends the spell. You can end it as an action; remove curse, greater restoration or wish also ends it."
+    ],
+    "higherLevels": "A 7th- or 8th-level slot makes it last 1 year; a 9th-level slot makes it last until one of those spells ends it.",
+    "textSource": "summary"
+  },
+  {
     "id": "gentle-repose",
     "name": "Gentle Repose",
     "level": 2,
@@ -4515,6 +4891,73 @@
       "Touch a corpse or other remains: for 10 days it neither decays nor can become undead.",
       "Days under this spell don't count toward the time limit of spells like raise dead, so it buys more time to revive the creature."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "giant-insect",
+    "name": "Giant Insect",
+    "level": 4,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 245,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Within 30 ft, up to 10 centipedes, 3 spiders, 5 wasps or 1 scorpion grow into giant versions for up to 10 minutes (concentration). The DM may allow other bugs, like a bee becoming a giant wasp.",
+      "They obey your spoken commands and act on your turn in combat; the DM has their stats and runs their actions and movement.",
+      "Each stays giant until the spell ends, it drops to 0 HP, or you use an action to end it for that creature."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "globe-of-invulnerability",
+    "name": "Globe of Invulnerability",
+    "level": 6,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (10-foot radius)",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 245,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A glass or crystal bead that breaks when the spell ends",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A still, shimmering barrier forms in a 10 ft radius around you for up to 1 minute (concentration).",
+      "Spells cast from outside at 5th level or lower can't affect creatures or objects inside, even if cast with a higher slot. They can still target things inside, but do nothing, and their areas leave the inside untouched."
+    ],
+    "higherLevels": "Each slot level above 6 blocks spells one level higher.",
     "textSource": "summary"
   },
   {
@@ -4593,6 +5036,38 @@
     "textSource": "summary"
   },
   {
+    "id": "grasping-vine",
+    "name": "Grasping Vine",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 246,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A vine sprouts in a free space you can see within 30 ft for up to 1 minute (concentration). When you cast it, it lashes at a creature you can see within 30 ft of it: Dexterity save or be pulled 20 ft straight toward the vine.",
+      "Bonus action on each of your turns: lash at the same creature or a new one."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "grease",
     "name": "Grease",
     "level": 1,
@@ -4624,6 +5099,148 @@
     "description": [
       "Slick grease covers a 10 ft square on the ground within 60 ft for 1 minute, making it difficult terrain. Anyone standing in it when you cast it makes a Dexterity save or falls prone.",
       "A creature that enters or ends its turn there makes the same save."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "greater-invisibility",
+    "name": "Greater Invisibility",
+    "level": 4,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 246,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You or a creature you touch turns invisible for up to 1 minute (concentration), along with what it wears and carries while on its person. Unlike invisibility, attacking or casting spells doesn't end it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "greater-restoration",
+    "name": "Greater Restoration",
+    "level": 5,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "page": 246,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Diamond dust worth 100 gp, used up",
+        "costGp": 100,
+        "consumed": true
+      }
+    },
+    "description": [
+      "Touch a creature to remove one exhaustion level or end one of these:",
+      "• one effect charming or petrifying it",
+      "• one curse, including attunement to a cursed magic item",
+      "• any reduction to one of its ability scores",
+      "• one effect reducing its hit point maximum"
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "guardian-of-faith",
+    "name": "Guardian of Faith",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 246,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A Large spectral guardian with your deity's sword and shield fills a free space you can see within 30 ft for 8 hours.",
+      "Any creature hostile to you that first moves within 10 ft of it on a turn makes a Dexterity save: 20 radiant damage, half on a success. The guardian disappears once it has dealt 60 damage in total."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "guards-and-wards",
+    "name": "Guards and Wards",
+    "level": 6,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "Touch",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 248,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Burning incense, brimstone and oil, knotted string, umber hulk blood, and a silver rod worth 10 gp",
+        "costGp": 10,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Ward up to 2,500 sq ft of floor, up to 20 ft tall, any shape, for 24 hours, split across floors you walk while casting if you like. Name creatures it ignores, plus an optional password protecting its speaker.",
+      "Corridors: fog heavily obscures them; at each junction others have a 50% chance of heading the wrong way.",
+      "Doors: arcane-locked; up to 10 can look like plain wall.",
+      "Stairs: webbed (as web), regrowing within 10 minutes if cleared.",
+      "Plus one: dancing lights in 4 corridors, magic mouth or stinking cloud in 2 places, gust of wind in one room, or suggestion in a 5 ft square.",
+      "Dispel magic removes one effect per success. Recast daily for a year: permanent."
     ],
     "textSource": "summary"
   },
@@ -4765,6 +5382,115 @@
       "Your next ranged weapon hit before the spell ends (concentration, up to 1 minute) makes thorns burst from your weapon or ammunition. Besides the attack's normal effect, the target and every creature within 5 ft of it make a Dexterity save, taking 1d10 piercing damage on a failure or half on a success."
     ],
     "higherLevels": "Damage rises by 1d10 for each slot level above 1, to a maximum of 6d10.",
+    "textSource": "summary"
+  },
+  {
+    "id": "hallow",
+    "name": "Hallow",
+    "level": 5,
+    "school": "Evocation",
+    "cast": {
+      "cost": "other",
+      "text": "24 hours"
+    },
+    "range": "Touch",
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 249,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Herbs, oils and incense worth 1,000 gp, used up",
+        "costGp": 1000,
+        "consumed": true
+      }
+    },
+    "description": [
+      "Over 24 hours you charge a radius up to 60 ft around a touched point (not overlapping another hallow). Celestials, elementals, fey, fiends and undead are barred from entering and from charming, frightening or possessing anyone inside; such effects end on entering. You may exempt types.",
+      "Add one effect, for everyone or a group you name (a deity's followers, orcs). A creature entering or starting its turn there may make a Charisma save to ignore it until it leaves.",
+      "Courage: no frightened. Darkness or Daylight (beats lower-level magic). Energy Protection or Vulnerability: one type, not bludgeoning, piercing or slashing. Everlasting Rest: dead can't become undead. Extradimensional Interference: no teleport or planar travel. Fear: frightened inside. Silence. Tongues: shared understanding."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "hallucinatory-terrain",
+    "name": "Hallucinatory Terrain",
+    "level": 4,
+    "school": "Illusion",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "300 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "warlock",
+      "wizard"
+    ],
+    "page": 249,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Stone, twig, and some green plant",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Natural terrain in a 150 ft cube within 300 ft looks, sounds and smells like other natural terrain for 24 hours: a road can seem a swamp, a cliff a gentle slope. Buildings, gear and creatures look unchanged.",
+      "Touch isn't fooled, so anyone walking in likely sees through it. If touch doesn't reveal it, a creature studying it closely can roll Investigation vs your spell save DC; success shows it only as a faint image over the real ground."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "harm",
+    "name": "Harm",
+    "level": 6,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 249,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "14d6",
+        "type": "Necrotic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 60 ft makes a Constitution save: 14d6 necrotic, half on a success. This can't drop it below 1 HP.",
+      "On a failure, its hit point maximum also drops by the damage taken for 1 hour. Anything that cures disease restores the maximum early."
+    ],
     "textSource": "summary"
   },
   {

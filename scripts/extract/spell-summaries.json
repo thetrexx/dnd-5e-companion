@@ -1689,5 +1689,153 @@
       "Nightmare: deliver up to 10 words, then the target makes a Wisdom save (disadvantage if you have a piece of its body). Fail: it gains no benefit from that rest and takes 3d6 psychic on waking."
     ],
     "material": "Sand, ink, and a quill taken from a sleeping bird"
+  },
+  "evards-black-tentacles": {
+    "description": [
+      "Black tentacles fill a 20 ft square of ground you can see within 90 ft for up to 1 minute (concentration), making it difficult terrain.",
+      "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or takes 3d6 bludgeoning and is restrained until the spell ends. One already restrained takes 3d6 bludgeoning when its turn starts there.",
+      "A restrained creature can use its action for a Strength or Dexterity check (its pick) against your spell save DC to break free."
+    ],
+    "material": "A bit of tentacle from a giant octopus or giant squid"
+  },
+  "eyebite": {
+    "description": [
+      "Your eyes turn to dark voids for up to 1 minute (concentration). On casting and as an action each later turn, a creature you can see within 60 ft makes a Wisdom save or suffers your chosen effect. A creature that succeeded can't be targeted again.",
+      "Asleep: unconscious until it takes damage or someone uses an action to wake it.",
+      "Panicked: frightened; on each turn it Dashes away from you by the safest short route unless trapped, until it is 60 ft or more away and can't see you.",
+      "Sickened: disadvantage on attack rolls and ability checks. It repeats the save as each of its turns ends, ending this on a success."
+    ]
+  },
+  "fabricate": {
+    "description": [
+      "You turn raw materials you can see within 120 ft into a finished item of the same stuff, such as trees into a wooden bridge or hemp into rope. The item can be Large or smaller (fitting a 10 ft cube or eight joined 5 ft cubes), or Medium at most (one 5 ft cube) for metal, stone or other minerals.",
+      "Quality matches the raw materials. You can't make or change creatures or magic items, and fine work like jewelry, weapons, glass or armor needs proficiency with the matching artisan's tools."
+    ]
+  },
+  "find-the-path": {
+    "description": [
+      "Name a fixed place on your plane that you know. For up to 1 day (concentration), while on its plane, you know its distance and direction, and at every fork you know which way is shortest and most direct, though not always safest.",
+      "The spell fails for a place on another plane, one that moves (like a mobile fortress), or a vague one (\"a green dragon's lair\")."
+    ],
+    "material": "Divining tools (bones, cards, runes or similar) worth 100 gp, plus an item taken from the destination"
+  },
+  "fire-shield": {
+    "description": [
+      "Wispy flames surround you for 10 minutes, giving bright light to 10 ft and dim light 10 ft beyond. You can end it early as an action.",
+      "Warm shield: resistance to cold damage. Chill shield: resistance to fire damage.",
+      "When a creature within 5 ft hits you with a melee attack, it takes 2d8 fire (warm) or 2d8 cold (chill)."
+    ],
+    "material": "A bit of phosphorus or a firefly"
+  },
+  "flame-strike": {
+    "description": [
+      "Holy fire pours down in a 10 ft radius, 40 ft high cylinder around a point within 60 ft. Each creature in it makes a Dexterity save: 4d6 fire plus 4d6 radiant, half on a success."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d6 to the fire or the radiant damage (your pick).",
+    "material": "A pinch of sulfur"
+  },
+  "flesh-to-stone": {
+    "description": [
+      "A creature you can see within 60 ft, with a body of flesh, makes a Constitution save. On a failure it is restrained as it starts to harden.",
+      "While restrained, it repeats the save at the end of each of its turns. 3 successes (not necessarily in a row) end the spell; 3 failures turn it to stone, petrified for the duration.",
+      "If you keep concentration for the full minute, it stays stone until the effect is removed. Breaking the statue leaves matching injuries if it is restored."
+    ],
+    "material": "A pinch of lime, water and earth"
+  },
+  "forbiddance": {
+    "description": [
+      "You ward up to 40,000 sq ft of floor, 30 ft high, for 1 day. Nothing can teleport in or enter by portal (like gate), the Astral or Ethereal Plane, the Feywild, the Shadowfell or plane shift.",
+      "Choose creature types from celestials, elementals, fey, fiends and undead. One of them entering the area for the first time on a turn, or starting its turn there, takes 5d10 radiant or necrotic (your choice when cast). A password you set spares the speaker.",
+      "Areas can't overlap another forbiddance. Casting it in the same place daily for 30 days makes it last until dispelled; the last casting uses up the materials."
+    ],
+    "material": "Holy water, rare incense, and 1,000 gp of powdered ruby"
+  },
+  "freedom-of-movement": {
+    "description": [
+      "For 1 hour, a willing creature you touch ignores difficult terrain, and no spell or magical effect can lower its speed, paralyze it or restrain it.",
+      "It can spend 5 ft of movement to slip free of nonmagical restraints, such as manacles or a grapple. Being underwater doesn't hamper its movement or attacks."
+    ],
+    "material": "A leather strap tied around an arm or similar limb"
+  },
+  "geas": {
+    "description": [
+      "Give a command to a creature you can see within 60 ft that understands you: do some service, or avoid some act. It makes a Wisdom save or is charmed by you for 30 days. Each time it directly works against your order it takes 5d10 psychic, at most once a day.",
+      "Any order is allowed except one meaning certain death; a suicidal order ends the spell. You can end it as an action; remove curse, greater restoration or wish also ends it."
+    ],
+    "higherLevels": "A 7th- or 8th-level slot makes it last 1 year; a 9th-level slot makes it last until one of those spells ends it."
+  },
+  "giant-insect": {
+    "description": [
+      "Within 30 ft, up to 10 centipedes, 3 spiders, 5 wasps or 1 scorpion grow into giant versions for up to 10 minutes (concentration). The DM may allow other bugs, like a bee becoming a giant wasp.",
+      "They obey your spoken commands and act on your turn in combat; the DM has their stats and runs their actions and movement.",
+      "Each stays giant until the spell ends, it drops to 0 HP, or you use an action to end it for that creature."
+    ]
+  },
+  "globe-of-invulnerability": {
+    "description": [
+      "A still, shimmering barrier forms in a 10 ft radius around you for up to 1 minute (concentration).",
+      "Spells cast from outside at 5th level or lower can't affect creatures or objects inside, even if cast with a higher slot. They can still target things inside, but do nothing, and their areas leave the inside untouched."
+    ],
+    "higherLevels": "Each slot level above 6 blocks spells one level higher.",
+    "material": "A glass or crystal bead that breaks when the spell ends"
+  },
+  "grasping-vine": {
+    "description": [
+      "A vine sprouts in a free space you can see within 30 ft for up to 1 minute (concentration). When you cast it, it lashes at a creature you can see within 30 ft of it: Dexterity save or be pulled 20 ft straight toward the vine.",
+      "Bonus action on each of your turns: lash at the same creature or a new one."
+    ]
+  },
+  "greater-invisibility": {
+    "description": [
+      "You or a creature you touch turns invisible for up to 1 minute (concentration), along with what it wears and carries while on its person. Unlike invisibility, attacking or casting spells doesn't end it."
+    ]
+  },
+  "greater-restoration": {
+    "description": [
+      "Touch a creature to remove one exhaustion level or end one of these:",
+      "• one effect charming or petrifying it",
+      "• one curse, including attunement to a cursed magic item",
+      "• any reduction to one of its ability scores",
+      "• one effect reducing its hit point maximum"
+    ],
+    "material": "Diamond dust worth 100 gp, used up"
+  },
+  "guardian-of-faith": {
+    "description": [
+      "A Large spectral guardian with your deity's sword and shield fills a free space you can see within 30 ft for 8 hours.",
+      "Any creature hostile to you that first moves within 10 ft of it on a turn makes a Dexterity save: 20 radiant damage, half on a success. The guardian disappears once it has dealt 60 damage in total."
+    ]
+  },
+  "guards-and-wards": {
+    "description": [
+      "Ward up to 2,500 sq ft of floor, up to 20 ft tall, any shape, for 24 hours, split across floors you walk while casting if you like. Name creatures it ignores, plus an optional password protecting its speaker.",
+      "Corridors: fog heavily obscures them; at each junction others have a 50% chance of heading the wrong way.",
+      "Doors: arcane-locked; up to 10 can look like plain wall.",
+      "Stairs: webbed (as web), regrowing within 10 minutes if cleared.",
+      "Plus one: dancing lights in 4 corridors, magic mouth or stinking cloud in 2 places, gust of wind in one room, or suggestion in a 5 ft square.",
+      "Dispel magic removes one effect per success. Recast daily for a year: permanent."
+    ],
+    "material": "Burning incense, brimstone and oil, knotted string, umber hulk blood, and a silver rod worth 10 gp"
+  },
+  "hallow": {
+    "description": [
+      "Over 24 hours you charge a radius up to 60 ft around a touched point (not overlapping another hallow). Celestials, elementals, fey, fiends and undead are barred from entering and from charming, frightening or possessing anyone inside; such effects end on entering. You may exempt types.",
+      "Add one effect, for everyone or a group you name (a deity's followers, orcs). A creature entering or starting its turn there may make a Charisma save to ignore it until it leaves.",
+      "Courage: no frightened. Darkness or Daylight (beats lower-level magic). Energy Protection or Vulnerability: one type, not bludgeoning, piercing or slashing. Everlasting Rest: dead can't become undead. Extradimensional Interference: no teleport or planar travel. Fear: frightened inside. Silence. Tongues: shared understanding."
+    ],
+    "material": "Herbs, oils and incense worth 1,000 gp, used up"
+  },
+  "hallucinatory-terrain": {
+    "description": [
+      "Natural terrain in a 150 ft cube within 300 ft looks, sounds and smells like other natural terrain for 24 hours: a road can seem a swamp, a cliff a gentle slope. Buildings, gear and creatures look unchanged.",
+      "Touch isn't fooled, so anyone walking in likely sees through it. If touch doesn't reveal it, a creature studying it closely can roll Investigation vs your spell save DC; success shows it only as a faint image over the real ground."
+    ],
+    "material": "Stone, twig, and some green plant"
+  },
+  "harm": {
+    "description": [
+      "A creature you can see within 60 ft makes a Constitution save: 14d6 necrotic, half on a success. This can't drop it below 1 HP.",
+      "On a failure, its hit point maximum also drops by the damage taken for 1 hour. Anything that cures disease restores the maximum early."
+    ]
   }
 }

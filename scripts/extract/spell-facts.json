@@ -4064,7 +4064,7 @@
    "resolution": "none",
    "damage": {
     "dice": "2d8",
-    "type": "Fire"
+    "type": "Fire or Cold"
    }
   }
  },
@@ -4196,9 +4196,10 @@
    "resolution": "save",
    "save": "dex",
    "damage": {
-    "dice": "4d6",
-    "type": "Fire"
-   }
+    "dice": "8d6",
+    "type": "Fire + Radiant (4d6 each)"
+   },
+   "upcast": "+1d6 per slot level above 5"
   }
  },
  {
@@ -4350,7 +4351,11 @@
   ],
   "page": 243,
   "summary": {
-   "resolution": "none"
+   "resolution": "auto",
+   "damage": {
+    "dice": "5d10",
+    "type": "Radiant or Necrotic"
+   }
   }
  },
  {
@@ -4565,7 +4570,11 @@
   "page": 244,
   "summary": {
    "resolution": "save",
-   "save": "wis"
+   "save": "wis",
+   "damage": {
+    "dice": "5d10",
+    "type": "Psychic"
+   }
   }
  },
  {
