@@ -103,8 +103,8 @@
       }
     },
     "description": [
-      "Ward a door, window or area up to a 20 ft cube within 30 ft for 8 hours. Whenever a Tiny or larger creature touches or enters it, you are alerted. You can name creatures that do not set it off.",
-      "Choose the alert type when casting. Mental: a ping in your mind, which wakes you, if you are within 1 mile. Audible: a hand-bell sound for 10 seconds, heard within 60 ft. Ritual."
+      "Guard one door, one window, or a spot no bigger than a 20 ft cube, within 30 ft, for 8 hours. Anything Tiny or bigger that enters or touches the warded spot raises the alarm, apart from creatures you exempt when casting. Ritual.",
+      "Pick mental or audible as you cast. Mental pings your mind (waking you if asleep) while you're no more than 1 mile off. Audible rings like a hand bell for 10 seconds, heard out to 60 ft."
     ],
     "textSource": "summary"
   },
@@ -134,10 +134,10 @@
       "s": true
     },
     "description": [
-      "You reshape yourself for up to 1 hour (concentration). Pick one option; as an action you can swap it for another.",
-      "Aquatic Adaptation: gills and webbed fingers. You breathe water and swim at your walking speed.",
-      "Change Appearance: choose your height, weight, face, voice, hair, even another race. Stats, size and body shape stay. Reshape again as an action.",
-      "Natural Weapons: claws, fangs or horns. Unarmed strikes deal 1d6 bludgeoning, piercing or slashing, count as magic, are proficient and get +1 to attack and damage."
+      "Take on a new form for up to 1 hour (concentration), choosing one option below. Spend an action to drop it and switch to a different one.",
+      "Aquatic Adaptation: grow gills and webbed fingers. Breathe water, and swim at a speed matching your walking speed.",
+      "Change Appearance: set your height, weight, face, voice, hair, coloring and marks, even look like another race. Your stats don't change, nor do your size or basic shape (a biped stays a biped). An action lets you redo the look.",
+      "Natural Weapons: claws, fangs, horns or the like. Your unarmed strikes become magic, use your proficiency, deal 1d6 bludgeoning, piercing or slashing as fits the weapon, and gain +1 to attack and damage rolls."
     ],
     "textSource": "summary"
   },
@@ -561,9 +561,9 @@
       }
     },
     "description": [
-      "You gain 5 temporary hit points for 1 hour, wrapped in spectral frost. While any remain, a creature that hits you with a melee attack takes 5 cold damage."
+      "Frost coats you and your gear, granting 5 temporary hit points that last up to 1 hour. Hit you in melee while any of those points remain, and the attacker suffers 5 cold damage."
     ],
-    "higherLevels": "Each slot level above 1 adds 5 temporary hit points and 5 cold damage.",
+    "higherLevels": "Every slot level beyond 1 raises both numbers by 5.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/7/77/Armour_of_Agathys_Icon.webp"
   },
@@ -1279,8 +1279,8 @@
       "s": false
     },
     "description": [
-      "The next time you hit with a melee weapon attack before the spell ends (concentration, up to 1 minute), your weapon blazes with light: the hit deals an extra 3d8 radiant damage, and the target makes a Constitution save or is blinded until the spell ends.",
-      "A blinded target repeats the save after each of its turns, ending the blindness on a success."
+      "Your weapon is primed with light (concentration, up to 1 minute). Land a melee weapon attack before then and it flashes: +3d8 radiant damage, and the target must pass a Constitution save or lose its sight until the spell ends.",
+      "A blinded target gets another Constitution save after each of its turns; one success restores its sight."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/5/5e/Blinding_Smite_Icon.webp"
@@ -1825,14 +1825,14 @@
       "v": true,
       "s": true,
       "m": {
-        "text": "A diamond worth 1,000 gp and 1 cubic inch of the creature's flesh (consumed), plus a sealable vessel worth 2,000 gp that fits a Medium creature",
+        "text": "Diamond (1,000 gp+) and 1 cubic inch of the creature's flesh, both consumed; a vessel with a sealable lid big enough for a Medium creature (2,000 gp+)",
         "costGp": 1000,
         "consumed": true
       }
     },
     "description": [
-      "You grow an inert copy of a living creature inside a sealed vessel. It reaches full size in 120 days, or you can make it a younger version. It lasts as long as the vessel stays undisturbed.",
-      "Once the clone has matured, if the original dies and its soul is free and willing, the soul moves into the clone. The clone has the same body, mind, memories and abilities, but none of the original's gear. The old remains go inert and can't be raised, since the soul is now elsewhere."
+      "Grow a lifeless spare body of a living creature in a sealed vessel. In 120 days it reaches full adult size, or you can have it come out younger. It keeps indefinitely while the vessel is left alone.",
+      "After it matures, should the original die with a soul that is free and willing to come back, that soul moves in. The new body is a perfect physical match with the same personality, memories and abilities, though it has none of the old gear. The original's remains turn inert and can never be raised, because the soul now lives elsewhere."
     ],
     "textSource": "summary"
   },
@@ -2081,8 +2081,8 @@
       "s": false
     },
     "description": [
-      "A creature you can see within 30 ft makes a Wisdom save. If it fails, for 1 minute (concentration) it has disadvantage on attacks against anyone but you. To move more than 30 ft from you it needs a Wisdom save; success lifts the limit that turn.",
-      "The spell ends if you attack another creature or cast a spell at a hostile creature besides the target, if an ally damages the target or aims a harmful spell at it, or if you finish a turn over 30 ft away."
+      "Challenge one creature you can see within 30 ft; it resists with a Wisdom save. On a failure, for up to 1 minute (concentration), its attack rolls have disadvantage unless aimed at you. Each time it tries to move to a space over 30 ft from you it saves again, and a success frees its movement for that turn.",
+      "The duel breaks if you attack anyone else, target a different hostile creature with a spell, a friend of yours harms the target with damage or a harmful spell, or your turn ends with you over 30 ft from it."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/7/73/Compelled_Duel_Icon.webp"
@@ -4678,7 +4678,7 @@
       }
     },
     "description": [
-      "Reaction when you or a creature within 60 ft falls. Up to 5 falling creatures within range drop at only 60 ft per round for 1 minute. One that lands before then takes no falling damage and lands on its feet, and the spell ends for it."
+      "Slow the fall of up to 5 creatures within 60 ft, yourself included if you like. For 1 minute each drifts down at 60 ft per round. Touching ground before the minute is up means no falling damage and a landing on its feet; the spell then stops for that creature."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/0/00/Feather_Fall_Icon.webp"
@@ -5321,9 +5321,9 @@
       "s": true
     },
     "description": [
-      "You raise a 20 ft radius sphere of fog centred on a point within 120 ft, for up to 1 hour (concentration). It spreads around corners and heavily obscures the area. A wind of 10 mph or more disperses it early."
+      "Fill a 20 ft radius sphere with fog, centred on a point you pick within 120 ft. The fog creeps around corners and makes the area heavily obscured. It lingers for up to 1 hour (concentration) unless a wind of 10 mph or stronger blows it away."
     ],
-    "higherLevels": "Each slot level above 1 adds 20 ft to the radius.",
+    "higherLevels": "The radius grows by 20 ft per slot level above 1.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/c/c0/Fog_Cloud_Icon.webp"
   },
@@ -6084,7 +6084,7 @@
       "s": true
     },
     "description": [
-      "Touch a willing creature. Once before the spell ends, it can roll a d4 and add the result to one ability check of its choice, rolling either before or after the d20. The spell then ends."
+      "Bless a willing creature you touch with a bit of insight. One time before the spell ends it may add a d4 to an ability check it chooses, and it can roll the d4 either before or after the d20. That use ends the spell."
     ],
     "textSource": "summary"
   },
@@ -6118,9 +6118,9 @@
       "s": true
     },
     "description": [
-      "Make a ranged spell attack against a creature within 120 ft. A hit deals 4d6 radiant damage, and the next attack roll made against the target before the end of your next turn has advantage, thanks to the glow."
+      "Hurl a streak of light at a creature within 120 ft with a ranged spell attack. On a hit it takes 4d6 radiant damage and keeps glowing faintly, so whoever attacks it next, before your next turn is over, rolls with advantage."
     ],
-    "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "higherLevels": "Add 1d6 damage per slot level above 1.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/2/2c/Guiding_Bolt_Icon.webp"
   },
@@ -6524,14 +6524,14 @@
       "v": true,
       "s": true,
       "m": {
-        "text": "Gem-studded bowl worth 1,000 gp, used up",
+        "text": "Gem-encrusted bowl worth 1,000 gp, consumed",
         "costGp": 1000,
         "consumed": true
       }
     },
     "description": [
-      "A grand feast appears for you and up to 12 other creatures. Eating takes 1 hour; the food then vanishes and the benefits begin.",
-      "Each diner is cured of all disease and poison, becomes immune to poison and to being frightened, and has advantage on Wisdom saves. Its hit point maximum also rises by 2d10, and it gains that many HP. All of this lasts 24 hours."
+      "Conjure a banquet for yourself and as many as 12 other creatures. The meal takes 1 hour to eat, then vanishes, and only then do its benefits start.",
+      "For the next 24 hours each diner is free of all disease and poison, can't be poisoned or frightened, and makes every Wisdom save with advantage. Roll 2d10: its hit point maximum grows by that much, and its current hit points rise by the same amount."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/a/a0/Heroes'_Feast_Icon.webp"
@@ -7062,9 +7062,9 @@
       "s": true
     },
     "description": [
-      "You strike a creature you touch with a melee spell attack. If it hits, the target takes 3d10 necrotic damage."
+      "A touch-range melee spell attack. On a hit: 3d10 necrotic."
     ],
-    "higherLevels": "Damage rises by 1d10 for each slot level above 1.",
+    "higherLevels": "Each slot level above 1 adds 1d10.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/3/3d/Inflict_Wounds_Icon.webp"
   },
@@ -8205,14 +8205,14 @@
       "v": true,
       "s": true,
       "m": {
-        "text": "Powdered rhubarb leaf and an adder's stomach",
+        "text": "Rhubarb leaf powder and an adder's stomach",
         "consumed": false
       }
     },
     "description": [
-      "Make a ranged spell attack against a target within 90 ft. On a hit it takes 4d4 acid damage now and 2d4 acid damage at the end of its next turn. On a miss it takes half the first damage and none later."
+      "Loose a green arrow of acid at a target within 90 ft with a ranged spell attack. A hit burns for 4d4 acid right away and another 2d4 acid when the target's next turn ends. A miss still splashes it for half the first 4d4, with no later damage."
     ],
-    "higherLevels": "Each slot level above 2 adds 1d4 to both the first and the later damage.",
+    "higherLevels": "Per slot level above 2, both the first and the later damage gain 1d4.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/6/67/Melf's_Acid_Arrow_Icon.webp"
   },
@@ -8418,8 +8418,8 @@
       "s": true
     },
     "description": [
-      "For 10 days, land covering up to 1 mile square looks, sounds, smells and even feels like different terrain, though its overall shape stays the same: a field can seem a swamp, a cliff a gentle slope. You can also change how structures look or add illusory ones. Creatures can't be hidden, disguised or added.",
-      "Because the illusion is solid to the touch, it can make clear ground difficult terrain (or the reverse) or otherwise block movement. Any piece carried out of the area vanishes. Truesight reveals the real terrain, but the illusion's other parts still work on that creature."
+      "Disguise up to a 1 mile square of land as some other terrain for 10 days. It looks, sounds, smells and even feels different, but keeps its basic shape: a road might pass for a swamp, a pond for a meadow, a cliff for an easy slope. Buildings can be altered or invented too. Creatures can't be hidden, disguised or added.",
+      "Since the mirage can be touched, it really slows or blocks travel: open ground may become difficult terrain, or rough ground easy going. Any bit of it taken out of the area vanishes. Truesight shows the real land, yet the rest of the illusion still affects that viewer, who can still touch it."
     ],
     "textSource": "summary"
   },
@@ -8749,8 +8749,8 @@
       }
     },
     "description": [
-      "A floating sword of force appears within 60 ft for up to 1 minute. When it appears, make a melee spell attack against a target within 5 ft of it: 3d10 force on a hit.",
-      "On each of your turns, your bonus action moves it up to 20 ft to a spot you can see and repeats the attack, on the same target or another."
+      "Summon a hovering blade of force within 60 ft that lasts up to 1 minute. As it appears, make a melee spell attack on a target within 5 ft of the blade, dealing 3d10 force if it hits.",
+      "While it lasts, your bonus action each turn flies the blade up to 20 ft to any visible spot and swings again, at the old target or a new one."
     ],
     "textSource": "summary"
   },
@@ -9776,7 +9776,7 @@
       "s": true
     },
     "description": [
-      "A willing creature you touch gains resistance to one damage type you pick (acid, cold, fire, lightning or thunder) for up to 1 hour (concentration)."
+      "Shield a willing creature by touch against one element you choose: acid, cold, fire, lightning or thunder. It resists that damage type for up to 1 hour (concentration)."
     ],
     "textSource": "summary"
   },
@@ -10057,9 +10057,9 @@
       "s": true
     },
     "description": [
-      "Make a ranged spell attack against a creature within 60 ft. A hit deals 2d8 poison damage, and the target makes a Constitution save or is poisoned until the end of your next turn."
+      "Fire a sickly green ray at a creature within 60 ft using a ranged spell attack. A hit deals 2d8 poison, and the target must then pass a Constitution save or stay poisoned until your next turn ends."
     ],
-    "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
+    "higherLevels": "Add 1d8 per slot level above 1.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/7/74/Ray_of_Sickness_Icon.webp"
   },
@@ -11469,14 +11469,14 @@
       "v": true,
       "s": true,
       "m": {
-        "text": "Rotten egg or a few skunk cabbage leaves",
+        "text": "A rotten egg or some skunk cabbage leaves",
         "consumed": false
       }
     },
     "description": [
-      "A 20 ft radius sphere of yellow, sickening gas fills a point within 90 ft for up to 1 minute (concentration), spreading around corners; the area is heavily obscured.",
-      "Each creature fully inside at the start of its turn makes a Constitution save against poison. On a failure it spends its action that turn retching and reeling. Creatures that needn't breathe or are immune to poison pass automatically.",
-      "A moderate wind (10 mph or more) clears it in 4 rounds; a strong wind (20 mph or more) in 1."
+      "Release a yellow, nauseating gas in a 20 ft radius sphere centred on a point within 90 ft. It flows around corners, heavily obscures the area, and hangs there for up to 1 minute (concentration).",
+      "Anyone wholly inside the cloud as its turn begins rolls a Constitution save against poison. Failing means it loses its action that turn to retching and reeling. A creature immune to poison, or one with no need to breathe, always passes.",
+      "Wind of 10 mph or more blows the gas away after 4 rounds; wind of 20 mph or more, after 1 round."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/b/b7/Stinking_Cloud_Icon.webp"
@@ -11550,7 +11550,7 @@
       }
     },
     "description": [
-      "A willing creature you touch gets skin as hard as stone for up to 1 hour (concentration), resisting nonmagical bludgeoning, piercing and slashing damage."
+      "Harden a willing creature's flesh with a touch. For up to 1 hour (concentration) it resists bludgeoning, piercing and slashing damage, as long as that damage comes from nonmagical attacks."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/c/c3/Stoneskin_Icon.webp"
@@ -11958,14 +11958,14 @@
       "v": true,
       "s": false,
       "m": {
-        "text": "Rare chalks and gem-infused inks worth 50 gp, used up",
+        "text": "Gem-infused inks and rare chalks worth 50 gp, consumed",
         "costGp": 50,
         "consumed": true
       }
     },
     "description": [
-      "Draw a 10 ft circle linked to a permanent teleportation circle on your plane whose sigil sequence you know. A portal opens until the end of your next turn; anyone stepping in appears within 5 ft of that circle (or the nearest free space).",
-      "You start knowing 2 Material Plane sequences picked by the DM, and can memorize another after 1 minute of study. Casting it in the same spot daily for a year makes a permanent circle."
+      "Inscribe a 10 ft wide circle of sigils that links to a permanent teleportation circle on your current plane, one whose sigil sequence you know. A portal shimmers open until your next turn ends; whoever enters arrives within 5 ft of the destination circle, or in the closest free space.",
+      "When you first gain the spell you know 2 sequences for Material Plane circles, chosen by the DM, and 1 minute of study lets you memorise any new one you find. Cast it at one spot every day for a year to create a permanent circle there."
     ],
     "textSource": "summary"
   },
