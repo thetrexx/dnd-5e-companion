@@ -1873,7 +1873,7 @@
   ],
   "page": 227,
   "summary": {
-   "resolution": "save",
+   "resolution": "attack",
    "save": "con"
   }
  },
@@ -2732,8 +2732,8 @@
    "resolution": "save",
    "save": "con",
    "damage": {
-    "dice": "5d6",
-    "type": "Thunder"
+    "dice": "10d6",
+    "type": "Thunder + Radiant or Necrotic (5d6 each)"
    }
   }
  },
@@ -2881,10 +2881,7 @@
   "page": 233,
   "summary": {
    "resolution": "none",
-   "damage": {
-    "dice": "4d6",
-    "type": "Force"
-   }
+   "damage": null
   }
  },
  {
@@ -2945,7 +2942,8 @@
    "damage": {
     "dice": "10d6+40",
     "type": "Force"
-   }
+   },
+   "upcast": "+3d6 per slot level above 6"
   }
  },
  {

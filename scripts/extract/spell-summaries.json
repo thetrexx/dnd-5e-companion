@@ -1523,5 +1523,171 @@
     ],
     "higherLevels": "Each slot level above 5 raises the CR by 1.",
     "material": "Burning incense (air), soft clay (earth), sulfur and phosphorus (fire), or water and sand (water)"
+  },
+  "contact-other-plane": {
+    "description": [
+      "You reach out to a demigod, a long-dead sage's spirit or some other strange entity from another plane. Make a DC 15 Intelligence save.",
+      "Fail: you take 6d6 psychic damage and go insane until you finish a long rest: you can't take actions, understand speech or read, and you speak only gibberish. Greater restoration cures it.",
+      "Success: you may ask up to 5 questions while the spell lasts. Each gets a one-word reply (yes, no, maybe, never, irrelevant or unclear), or a short phrase if one word would mislead."
+    ]
+  },
+  "conjure-fey": {
+    "description": [
+      "A fey creature of CR 6 or lower, or a fey spirit in the shape of a beast of CR 6 or lower, appears in a free space you can see within 90 ft. It vanishes at 0 HP or when the spell ends (concentration, up to 1 hour).",
+      "It is friendly to your group, rolls its own initiative and obeys your spoken orders (no action needed) if they fit its alignment; unordered, it only defends itself. The DM has its stats.",
+      "If your concentration breaks, it stays but turns hostile and may attack. You can't dismiss it; it vanishes 1 hour after you summoned it."
+    ],
+    "higherLevels": "Each slot level above 6 raises the CR by 1."
+  },
+  "conjure-minor-elementals": {
+    "description": [
+      "Elementals appear in free spaces you can see within 90 ft for up to 1 hour (concentration). Pick one option:",
+      "• 1 elemental of CR 2 or lower",
+      "• 2 elementals of CR 1 or lower",
+      "• 4 elementals of CR 1/2 or lower",
+      "• 8 elementals of CR 1/4 or lower",
+      "Each vanishes at 0 HP or when the spell ends. They are friendly to your group, act on one shared initiative and follow your spoken orders (no action needed); unordered, they only defend themselves. The DM has their stats."
+    ],
+    "higherLevels": "A 6th-level slot doubles the number summoned; an 8th-level slot triples it."
+  },
+  "conjure-volley": {
+    "description": [
+      "Shoot a nonmagical piece of ammunition or throw a nonmagical weapon at a point within 150 ft. Hundreds of copies rain down in a 40 ft radius, 20 ft high cylinder there, then vanish.",
+      "Each creature in the area makes a Dexterity save: 8d8 damage of the weapon's or ammunition's type, half on a success."
+    ],
+    "material": "A piece of ammunition or a thrown weapon"
+  },
+  "conjure-woodland-beings": {
+    "description": [
+      "Fey creatures appear in free spaces you can see within 60 ft for up to 1 hour (concentration). Pick one option:",
+      "• 1 fey creature of CR 2 or lower",
+      "• 2 fey creatures of CR 1 or lower",
+      "• 4 fey creatures of CR 1/2 or lower",
+      "• 8 fey creatures of CR 1/4 or lower",
+      "Each vanishes at 0 HP or when the spell ends. They are friendly to your group, act on one shared initiative and follow your spoken orders (no action needed); unordered, they only defend themselves. The DM has their stats."
+    ],
+    "higherLevels": "A 6th-level slot doubles the number summoned; an 8th-level slot triples it.",
+    "material": "One holly berry for each creature summoned"
+  },
+  "contagion": {
+    "description": [
+      "Melee spell attack vs a creature in reach; on a hit it catches a disease you pick. At the end of each of its turns it makes a Constitution save: 3 failures lock it in for 7 days with no more saves; 3 successes cure it, ending the spell. Disease cures work.",
+      "Blinding Sickness: blinded; disadvantage on Wisdom checks and saves.",
+      "Filth Fever: disadvantage on Strength checks, saves and Strength attacks.",
+      "Flesh Rot: disadvantage on Charisma checks; vulnerable to all damage.",
+      "Mindfire: disadvantage on Intelligence checks and saves; acts as if confused in combat.",
+      "Seizure: disadvantage on Dexterity checks, saves and Dexterity attacks.",
+      "Slimy Doom: disadvantage on Constitution checks and saves; any damage stuns it until its next turn ends."
+    ]
+  },
+  "contingency": {
+    "description": [
+      "Choose a spell you can cast of 5th level or lower, with a casting time of 1 action, that can target you. Cast it together with this spell, spending both slots, and describe a trigger.",
+      "The stored spell takes effect on you alone the first time the trigger happens, whether you want it or not, and contingency ends. You can have only one contingency at a time; casting another ends the first. It also ends if the statuette isn't on you."
+    ],
+    "material": "Ivory statuette of yourself set with gems, worth 1,500 gp"
+  },
+  "control-water": {
+    "description": [
+      "Control freestanding water in a cube up to 100 ft wide within 300 ft. Pick an effect now; later, as an action, repeat or switch:",
+      "Flood: still water rises up to 20 ft. In open water, a 20 ft wave crosses the area each turn instead, carrying Huge or smaller vehicles (25% capsize chance).",
+      "Part Water: the water splits into two walls around a trench.",
+      "Redirect Flow: the water moves the way you choose, even uphill.",
+      "Whirlpool (water 50 ft square, 25 ft deep): pulls things within 25 ft 10 ft closer. Entering or starting a turn there: Strength save or 2d8 bludgeoning and caught (half, free on a success). Swim out: Athletics vs your save DC (disadvantage if caught)."
+    ],
+    "material": "A drop of water and a pinch of dust"
+  },
+  "create-undead": {
+    "description": [
+      "Cast only at night. Up to 3 Medium or Small humanoid corpses within 10 ft rise as ghouls under your control (the DM has their stats).",
+      "Bonus action: command any of them within 120 ft (one order for all); unordered, they just defend themselves. An order holds until the task is done.",
+      "Control lasts 24 hours. Recast before it ends to keep up to 3 of them for another 24 hours instead of making new ones."
+    ],
+    "higherLevels": "7th-level slot: 4 ghouls. 8th: 5 ghouls or 2 ghasts or wights. 9th: 6 ghouls, 3 ghasts or wights, or 2 mummies.",
+    "material": "Per corpse: a clay pot of grave dirt, a clay pot of brackish water, and a black onyx stone worth 150 gp"
+  },
+  "creation": {
+    "description": [
+      "Using Shadowfell shadow-stuff, you make a nonliving object of plant matter (cloth, rope, wood) or mineral (stone, crystal, metal) within 30 ft. It fits in a 5 ft cube and must be a form and material you have seen. How long it lasts depends on the material (mixed: use the shortest):",
+      "Vegetable matter: 1 day. Stone or crystal: 12 hours. Precious metals: 1 hour. Gems: 10 minutes. Adamantine or mithral: 1 minute.",
+      "Any spell that uses something made this way as its material component fails."
+    ],
+    "higherLevels": "Each slot level above 5 grows the cube by 5 ft.",
+    "material": "A tiny bit of the same matter as the item"
+  },
+  "death-ward": {
+    "description": [
+      "You touch a creature and shield it for 8 hours. The first time damage would drop it to 0 HP, it stays at 1 HP and the spell ends.",
+      "If it is still active when an effect would kill the target outright without dealing damage, that effect fails against it and the spell ends."
+    ]
+  },
+  "destructive-wave": {
+    "description": [
+      "You strike the ground and divine force ripples out. Each creature you choose within 30 ft makes a Constitution save.",
+      "Fail: 5d6 thunder plus 5d6 radiant or necrotic (your choice), and it falls prone. Success: half damage, and it stays standing."
+    ]
+  },
+  "dimension-door": {
+    "description": [
+      "You teleport to any spot within 500 ft that you can see, picture, or describe by distance and direction (\"200 ft straight down\").",
+      "You can take objects you can carry, plus one willing creature your size or smaller within 5 ft, with its gear up to its carrying capacity.",
+      "If the arrival space is occupied, you and anyone with you take 4d6 force damage and stay put."
+    ]
+  },
+  "disintegrate": {
+    "description": [
+      "A green ray hits a target you can see within 60 ft: a creature, an object, or something made of magical force (such as a wall of force).",
+      "A creature makes a Dexterity save or takes 10d6 + 40 force. If that drops it to 0 HP, it turns to gray dust with all it carries except magic items; only true resurrection or wish can revive it.",
+      "A Large or smaller nonmagical object or force creation is destroyed outright; a bigger one loses a 10 ft cube. Magic items are unaffected."
+    ],
+    "higherLevels": "Each slot level above 6 adds 3d6.",
+    "material": "A lodestone and a pinch of dust"
+  },
+  "dispel-evil-and-good": {
+    "description": [
+      "For up to 1 minute (concentration), attacks by celestials, elementals, fey, fiends and undead against you have disadvantage. Either option below also ends the spell:",
+      "Break Enchantment: as an action, touch a creature you can reach to free it from being charmed, frightened or possessed by one of those creature types.",
+      "Dismissal: as an action, make a melee spell attack against one of those creatures in reach. On a hit it makes a Charisma save or is sent to its home plane (undead to the Shadowfell, fey to the Feywild if already home)."
+    ],
+    "material": "Holy water or powdered silver and iron"
+  },
+  "divination": {
+    "description": [
+      "With an offering, you ask a god or its servants one question about a goal, event or activity happening within 7 days. The DM answers truthfully, maybe as a brief phrase, a riddle-like rhyme or an omen. It ignores later changes, like new spells or allies lost.",
+      "Each casting after the first before your next long rest has a cumulative 25% chance of a random reading, rolled secretly by the DM."
+    ],
+    "material": "Incense and a fitting sacrificial offering, together worth 25 gp, used up"
+  },
+  "dominate-beast": {
+    "description": [
+      "A beast you can see within 60 ft makes a Wisdom save (advantage if you or your allies are fighting it) or is charmed by you for up to 1 minute (concentration).",
+      "While on the same plane, you can give it simple orders telepathically (no action needed) and it does its best to obey; with no new orders it defends itself. As an action, take full control until the end of your next turn: it does only what you choose, and you can spend your reaction to make it use its own.",
+      "Each time it takes damage it repeats the save, ending the spell on a success."
+    ],
+    "higherLevels": "Concentration rises to 10 minutes with a 5th-level slot, 1 hour with 6th, and 8 hours with 7th or higher."
+  },
+  "dominate-person": {
+    "description": [
+      "A humanoid you can see within 60 ft makes a Wisdom save (advantage if you or your allies are fighting it) or is charmed by you for up to 1 minute (concentration).",
+      "While on the same plane, you can give it simple orders telepathically (no action needed) and it does its best to obey; with no new orders it defends itself. As an action, take full control until the end of your next turn: it does only what you choose, and you can spend your reaction to make it use its own.",
+      "Each time it takes damage it repeats the save, ending the spell on a success."
+    ],
+    "higherLevels": "Concentration rises to 10 minutes with a 6th-level slot, 1 hour with 7th, and 8 hours with 8th or higher."
+  },
+  "drawmijs-instant-summons": {
+    "description": [
+      "You mark an object of 10 pounds or less, no longer than 6 ft, and its name appears invisibly on the sapphire. Each casting needs a new sapphire.",
+      "Later, as an action, speak its name and crush the gem: it lands in your hand from any distance, even across planes, and the spell ends. If someone else holds or carries it, it stays put but you learn who has it and roughly where.",
+      "Dispel magic or similar on the sapphire ends the spell."
+    ],
+    "material": "A sapphire worth 1,000 gp"
+  },
+  "dream": {
+    "description": [
+      "Target a creature you know on your plane (not one that doesn't sleep, like an elf). You, or a willing creature you touch, fall into a trance as the messenger, aware of your surroundings but unable to move or act.",
+      "While the target sleeps, the messenger appears in its dreams to talk and shape the dream; the target remembers it all. If it is awake, wait for sleep or end the spell. The messenger can leave the trance at any time.",
+      "Nightmare: deliver up to 10 words, then the target makes a Wisdom save (disadvantage if you have a piece of its body). Fail: it gains no benefit from that rest and takes 3d6 psychic on waking."
+    ],
+    "material": "Sand, ink, and a quill taken from a sleeping bird"
   }
 }

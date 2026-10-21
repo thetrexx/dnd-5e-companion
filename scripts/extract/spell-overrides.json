@@ -280,5 +280,28 @@
     "summary": {
       "upcast": "+1 bolt per slot level above 6"
     }
+  },
+  "contagion": {
+    "summary": {
+      "resolution": "attack"
+    }
+  },
+  "disintegrate": {
+    "summary": {
+      "upcast": "+3d6 per slot level above 6"
+    }
+  },
+  "destructive-wave": {
+    "summary": {
+      "damage": {
+        "dice": "10d6",
+        "type": "Thunder + Radiant or Necrotic (5d6 each)"
+      }
+    }
+  },
+  "dimension-door": {
+    "summary": {
+      "damage": null
+    }
   }
 }
