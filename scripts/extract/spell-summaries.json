@@ -126,8 +126,8 @@
   },
   "friends": {
     "description": [
-      "For up to 1 minute you have advantage on Charisma checks against one non-hostile creature of your choice.",
-      "When the spell ends, that creature realizes you used magic on it and becomes hostile toward you. A violent creature may attack you; others may react in ways the DM decides."
+      "For up to 1 minute (concentration) you have advantage on Charisma checks aimed at one creature of your choice that is not hostile to you.",
+      "When the spell ends, that creature realizes you used magic on it and turns hostile toward you. A violent one may attack you; others may seek revenge in other ways, at the DM's discretion."
     ],
     "material": "a little makeup applied to your face as you cast"
   },
@@ -146,22 +146,22 @@
   },
   "mending": {
     "description": [
-      "Touch a break or rip in an object, such as a snapped chain link or torn cloak, no longer than 1 ft, and it knits back together without a trace.",
-      "It cannot restore magic to a magic item, and it does not work on constructs."
+      "Touch a single break or rip no longer than 1 ft in any direction, such as a snapped chain link, torn cloak or leaking wineskin. It mends with no trace of damage.",
+      "It can physically fix a magic item or construct, but cannot bring back any magic the object lost."
     ],
     "material": "two lodestones"
   },
   "message": {
     "description": [
       "Point at a creature within 120 ft and whisper. Only it hears you, and it can whisper an answer only you hear.",
-      "No line of sight is needed, and it travels around corners. It cannot pass 1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood, and silence stops it."
+      "It works through solid objects if you know the target is behind the barrier and are familiar with it. Silence, 1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. It bends around corners and through openings."
     ],
     "material": "a short piece of copper wire"
   },
   "minor-illusion": {
     "description": [
       "You make either a sound or a still image of an object, lasting 1 minute. A sound can be a whisper to a scream and can shift in volume or tone. An image fits in a 5 ft cube and has no sound, smell or light of its own.",
-      "Anyone who inspects it can make an Investigation check against your spell save DC to see through it. Touching it also exposes it. Casting the spell again replaces the old illusion."
+      "Anyone who uses an action to examine it can make an Investigation check against your spell save DC to see through it, and it then looks faint to them. Touching it also exposes it. Casting the spell again replaces the old one."
     ],
     "material": "a bit of fleece"
   },
@@ -406,10 +406,11 @@
   },
   "find-familiar": {
     "description": [
-      "Over 1 hour, you gain a spirit servant in the shape of a tiny beast you pick, such as a cat, owl, hawk, raven or rat. It acts on its own initiative and obeys your commands, but cannot attack.",
-      "You can see through its eyes and speak into its mind while within 1 mile. When you cast a touch-range spell, it can deliver it with its reaction. Dismiss it into a pocket space or call it back as an action. It vanishes at 0 hit points."
+      "Casting takes 1 hour. A spirit takes a tiny animal form you pick (bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel) in a free space within 10 ft. It is a celestial, fey or fiend, obeys you, and cannot attack; it rolls its own initiative.",
+      "Within 100 ft you speak to it telepathically. As an action you can see and hear through it until your next turn begins, going blind and deaf yourself meanwhile.",
+      "It can deliver your touch-range spells using its reaction. At 0 hit points it vanishes; recasting brings it back. You can dismiss it to a pocket dimension, or call it back within 30 ft. Casting again changes its form. You can have only 1 familiar."
     ],
-    "material": "10 gp of charcoal, incense and herbs, burned in a brazier"
+    "material": "10 gp of charcoal, incense and herbs, burned"
   },
   "fog-cloud": {
     "description": [
@@ -419,8 +420,8 @@
   },
   "goodberry": {
     "description": [
-      "Up to 10 berries appear in your hand and hold magic for 24 hours. Eating one restores 1 hit point and feeds a creature for the day.",
-      "The berries lose their magic if not eaten within 24 hours."
+      "Up to 10 berries appear in your hand, magical for 24 hours. A creature can use its action to eat one: it restores 1 hit point and feeds the creature for a day.",
+      "Berries not eaten within 24 hours lose their magic."
     ],
     "material": "a sprig of mistletoe"
   },
@@ -458,7 +459,8 @@
   },
   "heroism": {
     "description": [
-      "A creature you touch gains courage for 1 minute (concentration). It cannot be frightened, and each of its turns begins with temporary hit points granted to it, equal to your spellcasting modifier."
+      "A willing creature you touch gains courage for 1 minute (concentration). It cannot be frightened, and each of its turns begins with temporary hit points equal to your spellcasting modifier.",
+      "When the spell ends, it loses any temporary hit points this spell gave it."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target."
   },
@@ -479,17 +481,18 @@
   },
   "identify": {
     "description": [
-      "Over 1 minute, touch an object to learn its magic properties, how to use them and whether it needs attunement, and how many charges it has. Touch a creature to learn which spells, if any, currently affect it.",
-      "If you touch an object while casting, you do not learn what a spell on it does. Ritual."
+      "Over 1 minute, touch an object throughout the casting. A magic item reveals what it does and how to use it, whether it needs attunement, and its charges. You also learn which spells, if any, are affecting it, what they are, and which spell made it, if one did.",
+      "Touch a creature instead to learn which spells currently affect it. Ritual."
     ],
     "material": "a pearl worth 100 gp and an owl feather"
   },
   "illusory-script": {
     "description": [
-      "Over 1 minute you write on parchment, paper or similar material, and the writing looks like a different message or script to everyone but you and those you name. It lasts 10 days.",
-      "The designated readers see the real text. Anyone else sees unreadable gibberish or a false message. Dispel magic reveals it. Ritual."
+      "Over 1 minute you write on parchment, paper or similar material, laying an illusion on it that lasts 10 days. You and anyone you name see it as normal writing with the meaning you intended. Everyone else sees an unreadable, unknown script.",
+      "Alternatively, others can see a wholly different message, in another hand and a language you know.",
+      "Dispelling it destroys both the script and the illusion. A creature with truesight can read the hidden message. Ritual."
     ],
-    "material": "lead-based ink worth 10 gp, which the spell uses up"
+    "material": "lead-based ink worth 10 gp (used up)"
   },
   "inflict-wounds": {
     "description": [
@@ -499,7 +502,7 @@
   },
   "jump": {
     "description": [
-      "A creature you touch can jump three times as far as normal for 1 minute. It does not need a run-up, and the extra distance does not use more movement."
+      "You touch a creature. For 1 minute its jump distance is 3 times normal."
     ],
     "material": "a grasshopper's hind leg"
   },
@@ -605,7 +608,7 @@
   "wrathful-smite": {
     "description": [
       "Your next melee weapon hit within 1 minute (concentration) adds 1d6 psychic damage. The target also makes a Wisdom save or becomes frightened of you for the rest of the spell.",
-      "Once frightened, it can spend an action on a Wisdom check against your spell save DC; success ends the spell."
+      "Once frightened, it can spend an action on a Wisdom check, trying to beat your spell save DC. Success ends the spell."
     ]
   }
 }
