@@ -3722,11 +3722,7 @@
   "page": 239,
   "summary": {
    "resolution": "none",
-   "damage": {
-    "dice": "1d4+4",
-    "type": "Healing",
-    "healing": true
-   }
+   "damage": null
   }
  },
  {
@@ -8990,10 +8986,7 @@
   "page": 276,
   "summary": {
    "resolution": "none",
-   "damage": {
-    "dice": "5d8",
-    "type": ""
-   }
+   "damage": null
   }
  },
  {

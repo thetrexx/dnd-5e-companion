@@ -31,7 +31,7 @@
       "s": true
     },
     "description": [
-      "You hurl a bubble of acid at one creature within 60 ft, or at two creatures within 5 ft of each other. Each target makes a Dexterity save or takes 1d6 acid damage.",
+      "You hurl a bubble of acid at 1 creature within 60 ft, or at 2 creatures within 5 ft of each other. Each target makes a Dexterity save or takes 1d6 acid damage.",
       "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
     ],
     "textSource": "summary"
@@ -61,13 +61,13 @@
       "v": true,
       "s": true,
       "m": {
-        "text": "a bell and a piece of silver wire",
+        "text": "tiny bell, fine silver wire",
         "consumed": false
       }
     },
     "description": [
-      "Ward a door, window or area up to a 20 ft cube within 30 ft. For 8 hours, any creature of a kind you did not exempt that touches or enters the area sets off an alert. You choose a mental ping that wakes you if within 1 mile, or a bell sound for 10 seconds that carries 60 ft.",
-      "You can ritual cast it."
+      "Ward a door, window or area up to a 20 ft cube within 30 ft for 8 hours. Whenever a Tiny or larger creature touches or enters it, you are alerted. You can name creatures that do not set it off.",
+      "Choose the alert type when casting. Mental: a ping in your mind, which wakes you, if you are within 1 mile. Audible: a hand-bell sound for 10 seconds, heard within 60 ft. Ritual."
     ],
     "textSource": "summary"
   },
@@ -103,8 +103,8 @@
       }
     },
     "description": [
-      "Aim at a beast within 30 ft that can see and hear you. It makes a Wisdom save or is charmed for 24 hours. A beast with Intelligence 4 or more is immune.",
-      "The charm ends if you or an ally harm the beast."
+      "A beast within 30 ft that can see and hear you makes a Wisdom save, or is charmed by you for 24 hours. If its Intelligence is 4 or higher, the spell fails.",
+      "The charm ends if you or your companions harm it."
     ],
     "higherLevels": "Each slot level above 1 lets you affect 1 more beast.",
     "textSource": "summary"
@@ -139,8 +139,7 @@
       }
     },
     "description": [
-      "A frosty shell gives you 5 temporary hit points for 1 hour. While any of those remain, a creature that hits you with a melee attack takes 5 cold damage.",
-      "The spell ends when the temporary hit points are gone."
+      "You gain 5 temporary hit points for 1 hour, wrapped in spectral frost. While any remain, a creature that hits you with a melee attack takes 5 cold damage."
     ],
     "higherLevels": "Each slot level above 1 adds 5 temporary hit points and 5 cold damage.",
     "textSource": "summary"
@@ -467,8 +466,8 @@
       }
     },
     "description": [
-      "A burst of colour fills a 15 ft cone. Roll 6d10: starting from the lowest-HP creature, blind creatures in the cone whose current hit points fit within that total, subtracting each from the pool.",
-      "Blindness lasts until the end of your next turn. Unconscious creatures and those that cannot see are skipped."
+      "Roll 6d10 for a pool of hit points. Creatures in a 15 ft cone are affected in order of lowest current hit points first, skipping unconscious creatures and those that cannot see.",
+      "Each creature whose hit points fit within what is left of the pool is blinded until the spell ends (1 round), and its hit points are subtracted from the pool."
     ],
     "higherLevels": "Each slot level above 1 adds 2d10 to the roll.",
     "textSource": "summary"
@@ -608,7 +607,7 @@
       "• Create: fills an open container with up to 10 gallons of fresh water, or rain soaks a 30 ft cube and douses flames there.",
       "• Destroy: removes up to 10 gallons of water from an open container, or burns off fog in a 30 ft cube."
     ],
-    "higherLevels": "Each slot level above 1 adds 5 gallons, or 5 ft to the cube's side.",
+    "higherLevels": "Each slot level above 1 adds 10 gallons, or 5 ft to the cube's side.",
     "textSource": "summary"
   },
   {
@@ -716,7 +715,7 @@
     },
     "description": [
       "For up to 10 minutes (concentration) you sense whether aberrations, celestials, elementals, fey, fiends or undead are within 30 ft, and where. You also sense places or objects within 30 ft that are consecrated or desecrated.",
-      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it."
+      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood or dirt blocks it."
     ],
     "textSource": "summary"
   },
@@ -751,8 +750,8 @@
       "s": true
     },
     "description": [
-      "For up to 10 minutes (concentration) you sense magic within 30 ft. As an action you can see a faint aura around any magical creature or object in line of sight, and learn its school of magic.",
-      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. Ritual."
+      "For up to 10 minutes (concentration) you sense magic within 30 ft. As an action you can see a faint aura around any visible magical creature or object there, and learn its school of magic.",
+      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood or dirt blocks it. Ritual."
     ],
     "textSource": "summary"
   },
@@ -788,8 +787,8 @@
       }
     },
     "description": [
-      "For up to 10 minutes (concentration) you sense poisons, poisonous creatures and diseases within 30 ft, learning what kind of each one it is and where.",
-      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. Ritual."
+      "For up to 10 minutes (concentration) you sense poisons, poisonous creatures and diseases within 30 ft, learning what kind each one is and where.",
+      "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood or dirt blocks it. Ritual."
     ],
     "textSource": "summary"
   },
@@ -820,8 +819,8 @@
       "s": true
     },
     "description": [
-      "For 1 hour you look different, including clothes, armor and gear: up to 1 ft taller or shorter, thin, fat or in between, any humanoid shape. Your stats do not change and the illusion does not alter touch.",
-      "A creature that inspects you can make an Investigation check against your spell save DC to see through it."
+      "For 1 hour, or until you dismiss it as an action, you and your gear look different. You can seem 1 ft taller or shorter, thin, fat or in between, but must keep the same basic limb arrangement.",
+      "It fails touch inspection: a fake hat would let hands pass through. A creature can use an action to inspect you and make an Investigation check against your spell save DC to see through it."
     ],
     "textSource": "summary"
   },
@@ -995,7 +994,7 @@
     },
     "description": [
       "Your next weapon hit within 1 minute (concentration) also conjures thorny vines around the target. It makes a Strength save (advantage if Large or bigger) or is restrained.",
-      "Each of its turns begins with 1d6 piercing damage while the vines hold. To escape, it spends an action and beats your spell save DC with a Strength check, ending the vines."
+      "Each of its turns begins with 1d6 piercing damage while the vines hold. The target, or anyone able to touch it, can use an action and beat your spell save DC with a Strength check to free it, ending the vines."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
     "textSource": "summary"
@@ -1090,7 +1089,7 @@
     },
     "description": [
       "Pick a 20 ft cube within 60 ft. Objects in it glow blue, green or violet (your choice); each creature in it makes a Dexterity save and, on a failure, glows too. This lasts up to 1 minute (concentration).",
-      "Glowing things shed dim light for 10 ft, attacks against them have advantage, and invisibility does not hide them."
+      "Glowing things shed dim light for 10 ft. Attacks against them have advantage if the attacker can see them, and invisibility does not hide them."
     ],
     "textSource": "summary"
   },
@@ -1114,11 +1113,7 @@
     "page": 239,
     "summary": {
       "resolution": "none",
-      "damage": {
-        "dice": "1d4+4",
-        "type": "Healing",
-        "healing": true
-      }
+      "damage": null
     },
     "components": {
       "v": true,
@@ -2281,13 +2276,14 @@
       "s": true
     },
     "description": [
-      "Minor magic tricks, all within 10 ft. Pick up to 3 of these effects to be active at once, each lasting up to 1 hour (or until you dismiss it as an action):",
-      "• A harmless sensory flourish: sparks, chimes, odd smells, a faint symbol.",
-      "• Light or snuff a flame.",
+      "Pick one minor trick within 10 ft:",
+      "• A harmless sensory effect: sparks, a gust, soft notes, an odd smell.",
+      "• Light or snuff a candle, torch or small campfire.",
       "• Clean or soil an object up to 1 cubic ft.",
       "• Chill, warm or flavour 1 cubic ft of non-living material for 1 hour.",
-      "• Put a colour, mark or symbol on an object or surface for 1 hour.",
-      "• Make a trinket or illusory image that fits in your hand and lasts until your next turn ends."
+      "• Make a colour, mark or symbol appear on a surface for 1 hour.",
+      "• Make a trinket or illusory image that fits in your hand, lasting until your next turn ends.",
+      "Up to 3 timed effects can run at once; dismiss one as an action."
     ],
     "textSource": "summary"
   },
@@ -2804,10 +2800,7 @@
     "page": 276,
     "summary": {
       "resolution": "none",
-      "damage": {
-        "dice": "5d8",
-        "type": ""
-      }
+      "damage": null
     },
     "components": {
       "v": true,
@@ -2949,8 +2942,8 @@
       }
     },
     "description": [
-      "A flat disc of force, 3 ft across and 1 inch thick, appears on the ground within 30 ft for 1 hour. It carries up to 500 lb, floats 3 ft up, and follows you, staying within 20 ft.",
-      "It will not leave the spot if you move over 100 ft away, and it vanishes when the spell ends, dropping its load. Ritual."
+      "A horizontal disk of force, 3 ft across and 1 inch thick, floats 3 ft above the ground in a free space within 30 ft for 1 hour. It holds up to 500 lb; more weight ends the spell and everything drops.",
+      "It stays put while you are within 20 ft, and trails you to stay within 20 ft if you move away. It cannot cross a 10 ft height change. If you get more than 100 ft from it, the spell ends. Ritual."
     ],
     "textSource": "summary"
   },
@@ -2979,13 +2972,14 @@
       "s": false
     },
     "description": [
-      "You make a small show of wonder within 30 ft. Up to 3 of these can run at once, each for up to 1 minute (dismiss any as an action):",
-      "• Your voice booms up to 3 times louder.",
-      "• Flames flicker, brighten, dim or change colour.",
-      "• Harmless tremors shake the ground.",
-      "• A sound of your choice comes from a point you pick.",
-      "• A door or window flies open or slams shut.",
-      "• Your eyes change appearance."
+      "You show a minor wonder within 30 ft. Choose one:",
+      "• Your voice booms up to 3 times louder for 1 minute.",
+      "• Flames flicker, brighten, dim or change colour for 1 minute.",
+      "• Harmless tremors shake the ground for 1 minute.",
+      "• A sound you choose starts at a point you pick (instant).",
+      "• An unlocked door or window flies open or slams shut (instant).",
+      "• Your eyes change appearance for 1 minute.",
+      "Up to 3 of the 1-minute effects can be active at once; dismiss one as an action."
     ],
     "textSource": "summary"
   },
@@ -3166,8 +3160,8 @@
       }
     },
     "description": [
-      "A Large, formless, invisible force with no mind appears at a spot within 60 ft and lasts 1 hour. Its AC is 10, it has 1 hit point and Strength 2, and you command it with a bonus action.",
-      "It does simple chores: fetching, cleaning, mending, folding, lighting fires, serving food and pouring drinks. It moves 15 ft, lifts up to 30 lb and cannot attack. Ritual."
+      "An invisible, mindless, shapeless force appears on the ground within 60 ft for 1 hour. Its AC is 10, it has 1 hit point and Strength 2, and it cannot attack. Reaching 0 hit points ends the spell.",
+      "Use a bonus action on your turn to send it up to 15 ft and have it interact with an object. It does simple chores: fetching, cleaning, mending, folding, lighting fires, serving food, pouring wine. Sending it more than 60 ft from you ends the spell. Ritual."
     ],
     "textSource": "summary"
   },
@@ -3279,8 +3273,8 @@
       "s": false
     },
     "description": [
-      "Your next melee weapon hit within 1 minute (concentration) deals 1d6 extra psychic damage and frightens the target. It makes a Wisdom save or stays frightened until the spell ends.",
-      "While frightened it can use an action to repeat the save, ending the spell on success."
+      "Your next melee weapon hit within 1 minute (concentration) adds 1d6 psychic damage. The target also makes a Wisdom save or becomes frightened of you for the rest of the spell.",
+      "Once frightened, it can spend an action on a Wisdom check against your spell save DC; success ends the spell."
     ],
     "textSource": "summary"
   }

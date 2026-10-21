@@ -174,5 +174,15 @@
   },
   "misty-step": {
     "icon": "https://bg3.wiki/w/images/1/1f/Misty_Step_Icon.webp"
+  },
+  "sleep": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "false-life": {
+    "summary": {
+      "damage": null
+    }
   }
 }
