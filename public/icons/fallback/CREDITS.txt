@@ -1,0 +1,4 @@
+Fallback icons from game-icons.net by Lorc (shouting, magic-palm, swap-bag, magic-swirl, crossed-swords).
+License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
+Source: https://game-icons.net
+Modified: black background removed. Glyph fill stays light because currentColor cannot apply inside an <img>.

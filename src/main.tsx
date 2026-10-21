@@ -4,6 +4,7 @@ import { applyTheme } from './theme/themes';
 import './styles/fonts.css';
 import './styles/themes/faerun.css';
 import './styles/base.css';
+import './styles/components.css';
 
 applyTheme('faerun');
 render(<App />, document.getElementById('app')!);
