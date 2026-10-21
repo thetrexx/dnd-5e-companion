@@ -133,7 +133,7 @@
   },
   "light": {
     "description": [
-      "One object up to 10 ft across glows for 1 hour: bright light 20 ft out, dim light another 20 ft, in any colour you pick. Something opaque placed over it hides the glow, and casting the spell again ends it.",
+      "One object up to 10 ft across glows for 1 hour: bright light 20 ft out, dim light another 20 ft, in any colour you pick. Something opaque placed over it hides the glow. Casting the spell again, or dismissing it as an action, ends it.",
       "If a hostile creature carries the object, it can make a Dexterity save to avoid the spell."
     ],
     "material": "a firefly or phosphorescent moss"
@@ -174,13 +174,13 @@
   "prestidigitation": {
     "description": [
       "Pick one minor trick within 10 ft:",
-      "• A harmless sensory effect: sparks, a gust, soft notes, an odd smell.",
+      "• Harmless sensory effect: sparks, a gust, soft notes, an odd smell.",
       "• Light or snuff a candle, torch or small campfire.",
       "• Clean or soil an object up to 1 cubic ft.",
       "• Chill, warm or flavour 1 cubic ft of non-living material for 1 hour.",
       "• Make a colour, mark or symbol appear on a surface for 1 hour.",
-      "• Make a trinket or illusory image that fits in your hand, lasting until your next turn ends.",
-      "Up to 3 timed effects can run at once; dismiss one as an action."
+      "• Make a hand-sized trinket or illusory image until your next turn ends.",
+      "Up to 3 timed effects at once; dismiss one as an action."
     ]
   },
   "resistance": {
@@ -400,15 +400,15 @@
   },
   "feather-fall": {
     "description": [
-      "Reaction when a creature within 60 ft falls. Up to 5 falling creatures within range slow to 60 ft per round and take no falling damage when they land, for 1 minute."
+      "Reaction when you or a creature within 60 ft falls. Up to 5 falling creatures within range drop at only 60 ft per round for 1 minute. One that lands before then takes no falling damage and lands on its feet, and the spell ends for it."
     ],
     "material": "a small feather or piece of down"
   },
   "find-familiar": {
     "description": [
-      "Casting takes 1 hour. A spirit takes a tiny animal form you pick (bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel) in a free space within 10 ft. It is a celestial, fey or fiend, obeys you, and cannot attack; it rolls its own initiative.",
-      "Within 100 ft you speak to it telepathically. As an action you can see and hear through it until your next turn begins, going blind and deaf yourself meanwhile.",
-      "It can deliver your touch-range spells using its reaction. At 0 hit points it vanishes; recasting brings it back. You can dismiss it to a pocket dimension, or call it back within 30 ft. Casting again changes its form. You can have only 1 familiar."
+      "Casting takes 1 hour. A spirit takes a tiny animal form you pick (bat, cat, crab, frog, hawk, lizard, octopus, owl, poisonous snake, fish, rat, raven, sea horse, spider or weasel) within 10 ft. It is a celestial, fey or fiend, obeys you, rolls its own initiative and cannot attack.",
+      "Within 100 ft you speak to it telepathically. As an action you can see and hear through it until your next turn begins, blind and deaf to your own surroundings.",
+      "It can deliver your touch-range spells using its reaction. At 0 hit points it vanishes; recasting brings it back. Dismiss it to a pocket dimension or call it back within 30 ft. Casting again changes its form. 1 familiar only."
     ],
     "material": "10 gp of charcoal, incense and herbs, burned"
   },
