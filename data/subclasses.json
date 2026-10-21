@@ -1138,5 +1138,161 @@
     "name": "Wild Magic",
     "page": 103,
     "options": []
+  },
+  {
+    "id": "the-archfey",
+    "cls": "warlock",
+    "name": "The Archfey",
+    "page": 108,
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "faerie-fire",
+          "atLevel": 1
+        },
+        {
+          "spell": "sleep",
+          "atLevel": 1
+        },
+        {
+          "spell": "calm-emotions",
+          "atLevel": 3
+        },
+        {
+          "spell": "phantasmal-force",
+          "atLevel": 3
+        },
+        {
+          "spell": "blink",
+          "atLevel": 5
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        },
+        {
+          "spell": "seeming",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "the-fiend",
+    "cls": "warlock",
+    "name": "The Fiend",
+    "page": 109,
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "burning-hands",
+          "atLevel": 1
+        },
+        {
+          "spell": "command",
+          "atLevel": 1
+        },
+        {
+          "spell": "blindness-deafness",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 5
+        },
+        {
+          "spell": "stinking-cloud",
+          "atLevel": 5
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "hallow",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "the-great-old-one",
+    "cls": "warlock",
+    "name": "The Great Old One",
+    "page": 109,
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "dissonant-whispers",
+          "atLevel": 1
+        },
+        {
+          "spell": "tashas-hideous-laughter",
+          "atLevel": 1
+        },
+        {
+          "spell": "detect-thoughts",
+          "atLevel": 3
+        },
+        {
+          "spell": "phantasmal-force",
+          "atLevel": 3
+        },
+        {
+          "spell": "clairvoyance",
+          "atLevel": 5
+        },
+        {
+          "spell": "sending",
+          "atLevel": 5
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 7
+        },
+        {
+          "spell": "evards-black-tentacles",
+          "atLevel": 7
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        },
+        {
+          "spell": "telekinesis",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
   }
 ]

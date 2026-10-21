@@ -15,5 +15,162 @@
     ],
     "page": 108,
     "textSource": "summary"
+  },
+  {
+    "id": "fey-presence",
+    "name": "Fey Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "the-archfey"
+    },
+    "level": 1,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "description": [
+      "A wave of fey charm and menace spreads from you in a 10 ft cube. Each creature inside makes a Wisdom save against your warlock spell save DC.",
+      "Those who fail are charmed by you or frightened of you (you choose which), lasting to the end of your next turn.",
+      "Recharges on a short or long rest."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "misty-escape",
+    "name": "Misty Escape",
+    "source": {
+      "kind": "subclass",
+      "id": "the-archfey"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "You take damage",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Taking damage lets you dissolve into mist. Use your reaction to go invisible and teleport up to 60 ft to a free space in sight.",
+      "Invisibility holds until your next turn begins, unless you attack or cast a spell first. Recharges on a short or long rest."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "beguiling-defenses",
+    "name": "Beguiling Defenses",
+    "source": {
+      "kind": "subclass",
+      "id": "the-archfey"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "A creature tries to charm you",
+    "description": [
+      "Charm cannot affect you. When a creature attempts it anyway, spend your reaction to reflect the effect back. That creature rolls a Wisdom save against your warlock spell save DC, and on a failure you have it charmed for 1 minute, or sooner if it is hurt."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "dark-delirium",
+    "name": "Dark Delirium",
+    "source": {
+      "kind": "subclass",
+      "id": "the-archfey"
+    },
+    "level": 14,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Choose a creature within 60 ft that you can see. It makes a Wisdom save against your warlock spell save DC. If it fails, you decide whether it is charmed or frightened. This lasts 1 minute, but stops if your concentration breaks or the target takes damage.",
+      "The target thinks it is lost in a mist-filled realm you design, and perceives only itself, you and that illusion.",
+      "Recharges on a short or long rest."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "dark-ones-blessing",
+    "name": "Dark One's Blessing",
+    "source": {
+      "kind": "subclass",
+      "id": "the-fiend"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You reduce a hostile creature to 0 hit points",
+    "description": [
+      "Whenever you drop a hostile creature to 0 hit points, you receive temporary hit points: your Charisma modifier plus your warlock level, with a minimum of 1."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "dark-ones-own-luck",
+    "name": "Dark One's Own Luck",
+    "source": {
+      "kind": "subclass",
+      "id": "the-fiend"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You make an ability check or saving throw",
+    "uses": "Once per short or long rest",
+    "description": [
+      "After seeing the roll of an ability check or saving throw you make, but before its effect lands, add a d10 to it.",
+      "Recharges on a short or long rest."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "hurl-through-hell",
+    "name": "Hurl Through Hell",
+    "source": {
+      "kind": "subclass",
+      "id": "the-fiend"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You hit a creature with an attack",
+    "uses": "Once per long rest",
+    "description": [
+      "When you hit with an attack, send the target through the lower planes. It vanishes and comes back at the end of your next turn, in its old space or the nearest open one.",
+      "A target that isn't a fiend takes 10d10 psychic damage from the ordeal.",
+      "Recharges on a long rest."
+    ],
+    "page": 109,
+    "textSource": "summary"
+  },
+  {
+    "id": "entropic-ward",
+    "name": "Entropic Ward",
+    "source": {
+      "kind": "subclass",
+      "id": "the-great-old-one"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature makes an attack roll against you",
+    "uses": "Once per short or long rest",
+    "description": [
+      "When a creature rolls an attack against you, use your reaction to give that roll disadvantage. If it still misses, your next attack against that creature has advantage, provided you make it by the end of your following turn.",
+      "Recharges on a short or long rest."
+    ],
+    "page": 110,
+    "textSource": "summary"
+  },
+  {
+    "id": "create-thrall",
+    "name": "Create Thrall",
+    "source": {
+      "kind": "subclass",
+      "id": "the-great-old-one"
+    },
+    "level": 14,
+    "cost": "action",
+    "description": [
+      "Touch a humanoid that is incapacitated. It stays charmed by you until someone casts remove curse on it, the charm is lifted another way, or you use this feature again.",
+      "While you both share a plane, you can speak to the thrall mind to mind."
+    ],
+    "page": 110,
+    "textSource": "summary"
   }
 ]
