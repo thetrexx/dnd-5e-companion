@@ -9455,10 +9455,7 @@
   "summary": {
    "resolution": "save",
    "save": "con",
-   "damage": {
-    "dice": "2d6",
-    "type": "Thunder"
-   }
+   "damage": null
   }
  },
  {
@@ -10051,7 +10048,8 @@
   ],
   "page": 283,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "wis"
   }
  },
  {
@@ -10574,7 +10572,11 @@
   "page": 288,
   "summary": {
    "resolution": "save",
-   "save": "wis"
+   "save": "wis",
+   "damage": {
+    "dice": "4d10",
+    "type": "Psychic"
+   }
   }
  },
  {

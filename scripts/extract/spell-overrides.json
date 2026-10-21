@@ -415,5 +415,24 @@
       "resolution": "save",
       "save": "dex"
     }
+  },
+  "storm-of-vengeance": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "true-polymorph": {
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    }
+  },
+  "weird": {
+    "summary": {
+      "damage": {
+        "dice": "4d10",
+        "type": "Psychic"
+      }
+    }
   }
 }

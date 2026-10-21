@@ -2469,5 +2469,140 @@
       "Severed body parts (fingers, legs, tails…) grow back after 2 minutes. If you hold the severed part to the stump, it reattaches at once."
     ],
     "material": "A prayer wheel and holy water"
+  },
+  "resurrection": {
+    "description": [
+      "A creature you touch that has been dead at most a century, didn't die of old age and isn't undead returns with full HP if its soul is free and willing.",
+      "It is cured of poisons and normal diseases, its mortal wounds close and lost body parts regrow. Magical diseases, curses and the like persist unless removed first.",
+      "It takes -4 on attack rolls, saves and ability checks, easing by 1 per long rest.",
+      "If it had been dead a year or more, you can't cast spells and have disadvantage on attacks, ability checks and saves until you finish a long rest."
+    ],
+    "material": "A diamond worth 1,000 gp, consumed"
+  },
+  "reverse-gravity": {
+    "description": [
+      "Gravity flips in a 50 ft radius, 100 ft high cylinder centred on a point within 100 ft. Every unanchored creature and object there falls upward to the top when you cast it. A creature can make a Dexterity save to grab a fixed object within reach and avoid falling.",
+      "Anything that hits a ceiling or other solid object on the way takes normal falling damage. Anything that reaches the top without hitting something hovers there, swaying slightly. When the spell ends, everything drops back down."
+    ],
+    "material": "A lodestone and iron filings"
+  },
+  "sequester": {
+    "description": [
+      "Until dispelled, a willing creature or an object you touch turns invisible, and divination can't target it nor scrying sensors perceive it. A creature falls into suspended animation: time stops for it and it doesn't age.",
+      "You can set an ending condition, anything that happens or can be seen within 1 mile of the target (\"after 1,000 years\"). Any damage to the target also ends it."
+    ],
+    "material": "Diamond, emerald, ruby and sapphire dust worth 5,000 gp, consumed"
+  },
+  "shapechange": {
+    "description": [
+      "You turn into a creature with CR up to your level that you've seen: an average one (no class levels or Spellcasting), not a construct or undead.",
+      "Its stats replace yours, except alignment, Int, Wis and Cha. You keep your skill and save proficiencies, add its own, and use its bonus where higher. No legendary or lair actions. You take its HP and Hit Dice; at 0 HP you revert, excess damage carrying over.",
+      "Class, race and other features work if the body allows; its senses replace yours; you speak only if it can. Gear falls, merges or is worn (DM rules on fit).",
+      "Your action switches to another valid form; your HP can't rise from it."
+    ],
+    "material": "A jade circlet worth 1,500 gp, put on your head before casting"
+  },
+  "simulacrum": {
+    "description": [
+      "You build an illusory copy of a beast or humanoid that stays within reach for the whole casting. It is part real, made of ice or snow, and acts as a normal creature with the original's stats, but has half its hit point maximum and no gear.",
+      "It is friendly to you and creatures you name, obeys your spoken orders and acts on your turn in combat. It can't learn, level up or regain spent spell slots. You can repair it in an alchemical lab with herbs and minerals costing 100 gp per HP. At 0 HP it melts away. Casting this again destroys any simulacrum you already have."
+    ],
+    "material": "Enough snow or ice for a life-size copy, some hair or nail of the creature placed inside, and powdered ruby worth 1,500 gp (consumed)"
+  },
+  "storm-of-vengeance": {
+    "description": [
+      "A storm cloud, 360 ft in radius, gathers over a point you can see. As it forms, each creature under it (within 5,000 ft) makes a Constitution save or takes 2d6 thunder and is deafened for 5 minutes. On your turn each round you concentrate:",
+      "Round 2: acid rain, 1d6 acid to everything below.",
+      "Round 3: six bolts at six different targets you choose below; Dexterity save, 10d6 lightning, half on a success.",
+      "Round 4: hail, 2d6 bludgeoning to everything below.",
+      "Rounds 5-10: icy rain and wind. Difficult terrain, heavily obscured, 1d6 cold to each creature, no ranged weapon attacks, severe distraction for concentration; fog and mist are blown off."
+    ]
+  },
+  "sunburst": {
+    "description": [
+      "Sunlight blazes in a 60 ft radius around a point within 150 ft. Each creature in it makes a Constitution save: 12d6 radiant and blinded for 1 minute, or half damage and not blinded on a success. Undead and oozes save with disadvantage.",
+      "A blinded creature saves again as each of its turns ends, regaining sight on a success. Darkness from spells in the area is dispelled."
+    ],
+    "material": "Fire and a piece of sunstone"
+  },
+  "symbol": {
+    "description": [
+      "You inscribe a near-invisible glyph on a surface (up to 10 ft across) or inside a closable object (moving it over 10 ft ends the spell). Spotting it needs an Intelligence (Investigation) check vs your spell save DC. You choose the trigger, can refine it, and can exempt creatures (e.g. a password).",
+      "Triggered, it sheds dim light in a 60 ft radius for 10 minutes, then ends. Creatures there, or entering or ending a turn there, suffer one effect:",
+      "Death: Constitution save, 10d10 necrotic, half on a success.",
+      "Discord: Constitution save or 1 minute of bickering: no useful talk, disadvantage on attacks and ability checks.",
+      "Fear: Wisdom save or frightened 1 minute, dropping held items and moving 30 ft away each turn.",
+      "Hopelessness: Charisma save or 1 minute unable to attack or harm anyone.",
+      "Insanity: Intelligence save or 1 minute insane: no actions, no reading or understanding, erratic DM-run movement.",
+      "Pain: Constitution save or incapacitated 1 minute.",
+      "Sleep: Wisdom save or unconscious 10 minutes; damage or a shake wakes it.",
+      "Stunning: Wisdom save or stunned 1 minute."
+    ],
+    "material": "Mercury, phosphorus, and powdered diamond and opal worth 1,000 gp in total, consumed"
+  },
+  "telepathy": {
+    "description": [
+      "For 24 hours you share a telepathic link with a willing creature you know, anywhere on your plane. It ends if either of you leaves that plane.",
+      "You can trade words, images, sounds and other sensations at once, and it knows it's you. Any creature with Intelligence 1 or more understands your words and the sense of what you send."
+    ],
+    "material": "A pair of linked silver rings"
+  },
+  "teleport": {
+    "description": [
+      "You and up to 8 willing creatures, or one object (fits a 10 ft cube, not held by an unwilling creature), all within 10 ft and seen, go to a known destination on your plane. The DM rolls d100:",
+      "Permanent circle, associated object: on target.",
+      "Very familiar: mishap 01-05, similar 06-13, off 14-24, on 25-100.",
+      "Seen casually: mishap 01-33, similar 34-43, off 44-53, on 54-100.",
+      "Viewed once, description: mishap 01-43, similar 44-53, off 54-73, on 74-100.",
+      "False destination: mishap 01-50, similar 51-100.",
+      "Off target: 1d10 × 1d10 percent of the distance away, random direction. Similar area: a look-alike place anywhere on the plane. Mishap: 3d10 force to each traveller, then the DM rolls again."
+    ]
+  },
+  "time-stop": {
+    "description": [
+      "Time halts for everyone else. You get 1d4 + 1 consecutive turns, acting and moving as normal.",
+      "It ends early if any action you take or effect you create in that time affects another creature or an object someone else wears or carries, or if you move more than 1,000 ft from where you cast it."
+    ]
+  },
+  "true-polymorph": {
+    "description": [
+      "Choose a creature or an unworn, uncarried nonmagical object you can see within 30 ft. Unwilling creatures make a Wisdom save; shapechangers are immune. It lasts until the spell ends or the target hits 0 HP, and becomes permanent if you concentrate the full hour.",
+      "Creature to creature: CR up to the target's (or its level). New stats, same alignment and personality, new HP; at 0 HP it reverts, excess carrying over. It acts only as the form allows; gear merges.",
+      "Object to creature: no bigger than the object, CR 9 or lower; friendly, acts on your turns as you direct; uncontrolled once permanent.",
+      "Creature to object: it and its gear become the object; afterwards it remembers nothing."
+    ],
+    "material": "A drop of mercury, some gum arabic and a wisp of smoke"
+  },
+  "true-resurrection": {
+    "description": [
+      "A creature you touch that died no more than 200 years ago, of anything but old age, returns with full HP if its soul is free and willing. All wounds close, poison and disease are cured, curses from its death are lifted, and missing organs and limbs are replaced.",
+      "If the body is gone, speak the creature's name: it reappears in a new body in a free space of your choice within 10 ft."
+    ],
+    "material": "Holy water and diamonds worth 25,000 gp, consumed"
+  },
+  "tsunami": {
+    "description": [
+      "A wall of water up to 300 ft long, 300 ft high and 50 ft thick rises at a point you can see. Each creature in it makes a Strength save: 6d10 bludgeoning, half on a success.",
+      "As each of your turns begins, it rolls 50 ft away from you with everyone inside. Each Huge or smaller creature inside or in its path makes a Strength save or takes 5d10 bludgeoning (once per round). Then it loses 50 ft of height and later damage drops 1d10; at 0 ft it ends.",
+      "Swimming in it needs a Strength (Athletics) check vs your spell save DC. Leaving it, a creature falls."
+    ]
+  },
+  "weird": {
+    "description": [
+      "Each creature in a 30 ft radius sphere around a point within 120 ft makes a Wisdom save or is frightened by phantoms of its worst fears that only it can see, until the spell ends.",
+      "At the start of each of its turns, a frightened creature makes a Wisdom save or takes 4d10 psychic damage. A success ends the spell for it."
+    ]
+  },
+  "wish": {
+    "description": [
+      "Copy any spell of 8th level or lower, ignoring all requirements, even costly materials. Or pick one:",
+      "• A nonmagical object worth up to 25,000 gp, at most 300 ft in any dimension, appears on the ground in view.",
+      "• Up to 20 creatures you can see regain all HP and lose every effect greater restoration ends.",
+      "• Up to 10 creatures you can see gain resistance to one damage type.",
+      "• Up to 10 creatures you can see become immune to one spell or effect for 8 hours.",
+      "• Reroll one roll made since your last turn, optionally with advantage or disadvantage; you pick which result stands.",
+      "Other wishes: tell the DM; bigger ones risk failure or twisted results.",
+      "Any use besides copying a spell strains you: until a long rest, each spell you cast deals you 1d10 necrotic per spell level (unpreventable); your Strength drops to 3 for 2d4 days (2 days fewer per day of rest); 33 percent chance you lose wish forever."
+    ]
   }
 }
