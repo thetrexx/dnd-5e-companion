@@ -1448,7 +1448,7 @@
       "s": true
     },
     "description": [
-      "Touch a willing creature. Once before the spell ends, it can roll a d4 and add the result to one ability check of its choice. The spell then ends."
+      "Touch a willing creature. Once before the spell ends, it can roll a d4 and add the result to one ability check of its choice, rolling either before or after the d20. The spell then ends."
     ],
     "textSource": "summary"
   },
@@ -1667,7 +1667,7 @@
     },
     "description": [
       "Curse one creature within 90 ft you can see for up to 1 hour (concentration). Each time you hit it with an attack you deal an extra 1d6 necrotic damage, and it has disadvantage on checks with one ability score you choose when you cast the spell.",
-      "If it drops to 0 hit points, you can move the curse to a new creature within range as a bonus action."
+      "If it drops to 0 hit points, you can move the curse to a new creature within range as a bonus action on a later turn. Remove curse on the target ends the spell early."
     ],
     "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
     "textSource": "summary"
@@ -1922,7 +1922,7 @@
     },
     "description": [
       "One object up to 10 ft across glows for 1 hour: bright light 20 ft out, dim light another 20 ft, in any colour you pick. Something opaque placed over it hides the glow. Casting the spell again, or dismissing it as an action, ends it.",
-      "If a hostile creature carries the object, it can make a Dexterity save to avoid the spell."
+      "If a hostile creature is holding or wearing the object, it can make a Dexterity save to avoid the spell."
     ],
     "textSource": "summary"
   },
@@ -2175,8 +2175,8 @@
       }
     },
     "description": [
-      "You make either a sound or a still image of an object, lasting 1 minute. A sound can be a whisper to a scream and can shift in volume or tone. An image fits in a 5 ft cube and has no sound, smell or light of its own.",
-      "Anyone who uses an action to examine it can make an Investigation check against your spell save DC to see through it, and it then looks faint to them. Touching it also exposes it. Casting the spell again replaces the old one."
+      "Within 30 ft you make either a sound or the image of an object, lasting 1 minute. A sound can be a whisper to a scream, steady or in bursts. An image fits in a 5 ft cube and makes no sound, smell or light. Dismiss it as an action, or recast to end it.",
+      "A creature that spends an action examining it makes an Investigation check against your spell save DC to see through it, and it then looks faint to them. Touching it also exposes it."
     ],
     "textSource": "summary"
   },
