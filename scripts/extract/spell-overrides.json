@@ -12,7 +12,11 @@
     "page": 211
   },
   "antipathy-sympathy": {
-    "page": 214
+    "page": 214,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    }
   },
   "mordenkainens-sword": {
     "page": 262
@@ -370,6 +374,18 @@
       "damage": {
         "type": "Piercing (Slashing to pass through)"
       }
+    }
+  },
+  "earthquake": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "forcecage": {
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
     }
   }
 }

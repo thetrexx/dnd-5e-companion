@@ -215,6 +215,36 @@
     "textSource": "summary"
   },
   {
+    "id": "animal-shapes",
+    "name": "Animal Shapes",
+    "level": 8,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 24 hours",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 212,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Any number of willing creatures you can see within 30 ft each become a Large or smaller beast of CR 4 or lower; each can get a different form. On later turns, your action gives them new forms.",
+      "Each keeps its alignment and its Int, Wis and Cha, but uses the beast's other stats and HP. When the form hits 0 HP it reverts and takes back its old HP; leftover damage carries over. It can only do what the beast can, can't talk or cast spells, and its gear merges into the form, unusable."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "animate-dead",
     "name": "Animate Dead",
     "level": 3,
@@ -317,6 +347,79 @@
     "description": [
       "A 10 ft barrier surrounds you and moves with you for up to 1 hour (concentration). Creatures other than undead and constructs can't pass through it or reach across it, though they can still cast spells and make ranged or reach-weapon attacks through it.",
       "The spell ends if your own movement would push one of those creatures through the barrier."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "antimagic-field",
+    "name": "Antimagic Field",
+    "level": 8,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (10-foot-radius sphere)",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "wizard"
+    ],
+    "page": 213,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Powdered iron or iron filings (a pinch)",
+        "consumed": false
+      }
+    },
+    "description": [
+      "An invisible 10 ft radius sphere of antimagic stays centred on you. Nobody can cast spells inside. Summoned or magically made creatures and objects wink out while in it, magic items act as mundane ones, and teleports or planar travel into or out of it fail; portals and extradimensional spaces close while inside.",
+      "Spells and magic effects in it, or aimed at something in it, are suppressed (artifacts and deities excepted), and their durations keep running. A slot spent on a suppressed spell is still used. Areas like fireball stop at its edge. A magic weapon is mundane against a target inside or in a wielder's hands inside. Dispel magic doesn't touch it, and two fields don't cancel."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "antipathy-sympathy",
+    "name": "Antipathy/Sympathy",
+    "level": 8,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "other",
+      "text": "1 hour"
+    },
+    "range": "60 feet",
+    "duration": "10 days",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "wizard"
+    ],
+    "page": 214,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Alum soaked in vinegar (antipathy) or a drop of honey (sympathy)",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Choose a Huge or smaller creature or object, or up to a 200 ft cube, within 60 ft, and an intelligent creature type. For 10 days the target has one aura:",
+      "Antipathy: one that sees the target or comes within 60 ft makes a Wisdom save or is frightened while it sees it or is within 60 ft, fleeing to the nearest safe spot out of sight.",
+      "Sympathy: on a failed Wisdom save, it spends its movement each turn reaching the target and won't willingly leave. Harm from the target grants a save.",
+      "It saves again on ending a turn beyond 60 ft and out of sight, and every 24 hours; success frees it, then 1 minute of immunity."
     ],
     "textSource": "summary"
   },
@@ -491,6 +594,44 @@
       "A creature that fails also cannot take reactions until its next turn."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "astral-projection",
+    "name": "Astral Projection",
+    "level": 9,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "other",
+      "text": "1 hour"
+    },
+    "range": "10 feet",
+    "duration": "Special",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "warlock",
+      "wizard"
+    ],
+    "page": 215,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Per creature: a jacinth worth 1,000 gp and a carved silver bar worth 100 gp, consumed",
+        "costGp": 1000,
+        "consumed": true
+      }
+    },
+    "description": [
+      "You and up to 8 willing creatures within 10 ft project into the Astral Plane (fails if you're already there). Bodies left behind lie unconscious in suspended animation, needing no food or air and not ageing.",
+      "Each astral form copies its owner's stats and gear and trails a silver cord; if an effect cuts the cord, that creature dies. Harm to the astral form doesn't reach the body. Entering another plane, or your starting one, through a portal pulls your body there to rejoin.",
+      "Your action ends it for all. It ends for one creature whose body or astral form hits 0 HP or is dispelled; the cord pulls it home. If you're returned early, the others stay."
+    ],
     "textSource": "summary"
   },
   {
@@ -1633,6 +1774,41 @@
     "textSource": "summary"
   },
   {
+    "id": "clone",
+    "name": "Clone",
+    "level": 8,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "other",
+      "text": "1 hour"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 222,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A diamond worth 1,000 gp and 1 cubic inch of the creature's flesh (consumed), plus a sealable vessel worth 2,000 gp that fits a Medium creature",
+        "costGp": 1000,
+        "consumed": true
+      }
+    },
+    "description": [
+      "You grow an inert copy of a living creature inside a sealed vessel. It reaches full size in 120 days, or you can make it a younger version. It lasts as long as the vessel stays undisturbed.",
+      "Once the clone has matured, if the original dies and its soul is free and willing, the soul moves into the clone. The clone has the same body, mind, memories and abilities, but none of the original's gear. The old remains go inert and can't be raised, since the soul is now elsewhere."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "cloud-of-daggers",
     "name": "Cloud of Daggers",
     "level": 2,
@@ -2215,6 +2391,44 @@
     "textSource": "summary"
   },
   {
+    "id": "control-weather",
+    "name": "Control Weather",
+    "level": 8,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "Self (5-mile radius)",
+    "duration": "Concentration, up to 8 hours",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "wizard"
+    ],
+    "page": 228,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Incense burning, plus earth and wood bits in water",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You must be outdoors. For the duration you control the weather within 5 miles; going somewhere without open sky overhead ends it. When you cast it, you shift precipitation, temperature and wind each by one stage up or down (and can turn the wind). Changes take 1d4 × 10 minutes to arrive, then you can shift again. Once the spell is over, the weather slowly returns to normal.",
+      "Precipitation: clear (1), light clouds (2), overcast or fog (3), rain, hail or snow (4), torrential rain, heavy hail or blizzard (5).",
+      "Temperature: unbearable heat (1), hot (2), warm (3), cool (4), cold (5), arctic (6).",
+      "Wind: calm (1), moderate (2), strong (3), gale (4), storm (5)."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "conjure-animals",
     "name": "Conjure Animals",
     "level": 3,
@@ -2286,6 +2500,36 @@
     "description": [
       "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "conjure-celestial",
+    "name": "Conjure Celestial",
+    "level": 7,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 225,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A celestial of CR 4 or lower appears in an empty space you can see within 90 ft. It is friendly to you and your allies, rolls its own initiative, and follows your spoken orders (no action needed) unless they go against its alignment. With no orders, it only defends itself. It vanishes at 0 hp or when the spell ends. The DM has its stats."
+    ],
+    "higherLevels": "With a 9th-level slot, the celestial can be CR 5 or lower.",
     "textSource": "summary"
   },
   {
@@ -2977,6 +3221,80 @@
     "textSource": "summary"
   },
   {
+    "id": "delayed-blast-fireball",
+    "name": "Delayed Blast Fireball",
+    "level": 7,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 230,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "12d6",
+        "type": "Fire"
+      },
+      "upcast": "+1d6 per slot level above 7"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A tiny ball of bat guano and sulfur",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A glowing bead hangs at a point within 150 ft. When the spell ends (you drop concentration or choose to end it), it bursts in a 20 ft radius sphere that spreads around corners. Each creature there makes a Dexterity save: full fire damage on a failure, half on a success.",
+      "Damage starts at 12d6 and grows by 1d6 at the end of each of your turns it hasn't gone off.",
+      "A creature that touches the bead first makes a Dexterity save. On a failure it explodes at once; on a success the creature can throw it up to 40 ft, and it explodes when it hits a creature or solid object. The fire lights unattended flammable objects."
+    ],
+    "higherLevels": "Each slot level above 7 adds 1d6 to the base damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "demiplane",
+    "name": "Demiplane",
+    "level": 8,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 231,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true
+    },
+    "description": [
+      "A shadowy door, big enough for Medium creatures, appears on a flat solid surface you can see within 60 ft. It opens onto an empty room of wood or stone, 30 ft in each dimension. When the spell ends, the door vanishes and anyone or anything inside is stuck there.",
+      "Each casting can make a new demiplane or link to one you made before. If you know what another caster's demiplane from this spell is like and holds, you can link to that one instead."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "destructive-wave",
     "name": "Destructive Wave",
     "level": 5,
@@ -3442,6 +3760,41 @@
     "textSource": "summary"
   },
   {
+    "id": "divine-word",
+    "name": "Divine Word",
+    "level": 7,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 234,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Any number of creatures of your choice within 30 ft that you can see and that can hear you make a Charisma save. On a failure, the effect depends on its current HP:",
+      "50 HP or less: deafened, 1 minute.",
+      "40 HP or less: blinded and deafened, 10 minutes.",
+      "30 HP or less: stunned, blinded and deafened, 1 hour.",
+      "20 HP or less: dies.",
+      "Whatever its HP, a celestial, elemental, fey or fiend that fails is also banished to its home plane unless already there, and can't come back to your plane for 24 hours except by wish."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "dominate-beast",
     "name": "Dominate Beast",
     "level": 4,
@@ -3473,6 +3826,42 @@
       "Each time it takes damage it repeats the save, ending the spell on a success."
     ],
     "higherLevels": "Concentration rises to 10 minutes with a 5th-level slot, 1 hour with 6th, and 8 hours with 7th or higher.",
+    "textSource": "summary"
+  },
+  {
+    "id": "dominate-monster",
+    "name": "Dominate Monster",
+    "level": 8,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 235,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 60 ft makes a Wisdom save (advantage if you or your allies are fighting it) or is charmed by you for up to 1 hour (concentration).",
+      "While on the same plane, you can give it simple orders telepathically (no action needed) and it does its best to obey; with no new orders it defends itself. As an action, take full control until the end of your next turn: it does only what you choose, and you can spend your reaction to make it use its own.",
+      "Each time it takes damage it repeats the save, ending the spell on a success."
+    ],
+    "higherLevels": "With a 9th-level slot, concentration lasts up to 8 hours.",
     "textSource": "summary"
   },
   {
@@ -3618,6 +4007,44 @@
       "• Instantly bloom a flower, burst open a seed pod or unfurl a leaf bud.",
       "• Produce an instant, harmless sensory effect that fits in a 5 ft cube: drifting leaves, a breeze, a small animal noise, a faint smell.",
       "• Ignite or put out a candle, torch or small campfire."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "earthquake",
+    "name": "Earthquake",
+    "level": 8,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "500 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "sorcerer"
+    ],
+    "page": 236,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Dirt (a pinch), a rock fragment and some clay",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 100 ft radius around a point within 500 ft becomes difficult terrain. Grounded concentrating creatures there make a Constitution save or lose concentration. On casting and at each turn's end while you concentrate, grounded creatures there make a Dexterity save or fall prone.",
+      "Fissures: as your next turn starts, 1d6 fissures (1d10 × 10 ft deep, 10 ft wide) open; anyone over one makes a Dexterity save or falls in. Structures above one collapse.",
+      "Structures take 50 bludgeoning on casting and at the start of your turns. One at 0 HP collapses: creatures within half its height make a Dexterity save or take 5d6 bludgeoning, fall prone and are buried (DC 20 Athletics to escape); success halves it."
     ],
     "textSource": "summary"
   },
@@ -3867,6 +4294,42 @@
       "You speak a captivating stream of words. Creatures you choose that you can see within 60 ft and that hear you make a Wisdom save. Creatures immune to charm pass automatically; one your party is fighting has advantage.",
       "On a failure, for 1 minute or until it can't hear you, it has disadvantage on Wisdom (Perception) checks to notice anyone but you. Being incapacitated or unable to speak ends the spell."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "etherealness",
+    "name": "Etherealness",
+    "level": 7,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Up to 8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 238,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For up to 8 hours (end it with an action) you're in the Border Ethereal, overlapping your plane. You can move in any direction, but up or down costs double. You see and hear your home plane in grey, out to 60 ft.",
+      "You only affect, and are affected by, creatures on the Ethereal Plane; others can't sense you without special magic. You move through objects of your home plane.",
+      "When it ends you return to your home plane where you are; if that space is filled, you're shunted to the nearest free space, taking force damage equal to twice the feet moved. It fails if cast on the Ethereal Plane or a plane not bordering it."
+    ],
+    "higherLevels": "Each slot level above 7 lets you bring up to 3 willing creatures (counting you) within 10 ft.",
     "textSource": "summary"
   },
   {
@@ -4149,6 +4612,48 @@
     "textSource": "summary"
   },
   {
+    "id": "feeblemind",
+    "name": "Feeblemind",
+    "level": 8,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "warlock",
+      "wizard"
+    ],
+    "page": 239,
+    "summary": {
+      "resolution": "save",
+      "save": "int",
+      "damage": {
+        "dice": "4d6",
+        "type": "Psychic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A handful of clay, crystal, glass or mineral spheres",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you can see within 150 ft takes 4d6 psychic damage and makes an Intelligence save. On a failure, its Intelligence and Charisma become 1: it can't cast spells, use magic items, understand language or communicate in any sensible way, though it still knows, follows and protects its friends.",
+      "It saves again at the end of every 30 days, ending the spell on a success. Greater restoration, heal or wish also ends it."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "feign-death",
     "name": "Feign Death",
     "level": 3,
@@ -4322,6 +4827,43 @@
     "textSource": "summary"
   },
   {
+    "id": "finger-of-death",
+    "name": "Finger of Death",
+    "level": 7,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 241,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "7d8+30",
+        "type": "Necrotic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 60 ft makes a Constitution save: 7d8 + 30 necrotic damage, half on a success.",
+      "A humanoid it kills rises at the start of your next turn as a zombie under your permanent command, carrying out your spoken orders as best it can."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "fire-bolt",
     "name": "Fire Bolt",
     "level": 0,
@@ -4394,6 +4936,43 @@
       "Wispy flames surround you for 10 minutes, giving bright light to 10 ft and dim light 10 ft beyond. You can end it early as an action.",
       "Warm shield: resistance to cold damage. Chill shield: resistance to fire damage.",
       "When a creature within 5 ft hits you with a melee attack, it takes 2d8 fire (warm) or 2d8 cold (chill)."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "fire-storm",
+    "name": "Fire Storm",
+    "level": 7,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "sorcerer"
+    ],
+    "page": 242,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "7d10",
+        "type": "Fire"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Roaring flame fills up to ten 10 ft cubes within 150 ft, arranged as you like, each sharing a face with another. Each creature in them makes a Dexterity save: 7d10 fire, half on a success.",
+      "It damages objects and lights unattended flammable ones. You can leave plants in the area unharmed."
     ],
     "textSource": "summary"
   },
@@ -4708,6 +5287,81 @@
     "textSource": "summary"
   },
   {
+    "id": "forcecage",
+    "name": "Forcecage",
+    "level": 7,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "100 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "warlock",
+      "wizard"
+    ],
+    "page": 243,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Ruby dust worth 1,500 gp",
+        "costGp": 1500,
+        "consumed": false
+      }
+    },
+    "description": [
+      "An invisible, immobile prison of force forms around an area within 100 ft, for 1 hour. Pick a cage, up to 20 ft a side with bars 1/2 inch thick and 1/2 inch apart, or a solid box, up to 10 ft a side, that stops all matter and spells going in or out.",
+      "Creatures wholly inside are trapped; anyone partly inside or too big is pushed out. A trapped creature can't leave by nonmagical means. Teleport or planar travel out needs a Charisma save first; on a failure that use is wasted. It also blocks ethereal travel, and dispel magic can't end it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "foresight",
+    "name": "Foresight",
+    "level": 9,
+    "school": "Divination",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Touch",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "warlock",
+      "wizard"
+    ],
+    "page": 244,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A hummingbird feather",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 8 hours, a willing creature you touch can't be surprised and gains advantage on attacks, ability checks and saves. Attackers have disadvantage against it.",
+      "Casting it again before it ends ends the first casting at once."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "freedom-of-movement",
     "name": "Freedom of Movement",
     "level": 4,
@@ -4819,6 +5473,43 @@
     "textSource": "summary"
   },
   {
+    "id": "gate",
+    "name": "Gate",
+    "level": 9,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 244,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A diamond worth 5,000 gp",
+        "costGp": 5000,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A circular portal 5 to 20 ft across opens in an empty space you can see within 60 ft, linking to a precise spot on another plane, facing any way you choose. Only stepping through its front works; travellers appear in the nearest free space on the far side. Deities and planar rulers can stop it opening near them or in their realms.",
+      "If you speak a creature's true name (not a nickname or title) and it is on another plane, the portal opens beside it and pulls it through to your side. You gain no control over it; the DM decides what it does."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "geas",
     "name": "Geas",
     "level": 5,
@@ -4921,6 +5612,36 @@
       "Within 30 ft, up to 10 centipedes, 3 spiders, 5 wasps or 1 scorpion grow into giant versions for up to 10 minutes (concentration). The DM may allow other bugs, like a bee becoming a giant wasp.",
       "They obey your spoken commands and act on your turn in combat; the DM has their stats and runs their actions and movement.",
       "Each stays giant until the spell ends, it drops to 0 HP, or you use an action to end it for that creature."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "glibness",
+    "name": "Glibness",
+    "level": 8,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "warlock"
+    ],
+    "page": 245,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "For 1 hour, whenever you make a Charisma check, you can swap the number rolled for a 15. Magic that checks whether you're telling the truth always says you are."
     ],
     "textSource": "summary"
   },

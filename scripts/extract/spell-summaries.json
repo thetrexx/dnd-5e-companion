@@ -2192,5 +2192,151 @@
       "You and up to 5 willing creatures within 5 ft teleport to your prepared sanctuary, arriving in the nearest free spaces to the spot you chose.",
       "Prepare a sanctuary by casting this spell in a place dedicated to or tied to your deity, such as a temple. Cast anywhere else, or without a sanctuary, it does nothing."
     ]
+  },
+  "animal-shapes": {
+    "description": [
+      "Any number of willing creatures you can see within 30 ft each become a Large or smaller beast of CR 4 or lower; each can get a different form. On later turns, your action gives them new forms.",
+      "Each keeps its alignment and its Int, Wis and Cha, but uses the beast's other stats and HP. When the form hits 0 HP it reverts and takes back its old HP; leftover damage carries over. It can only do what the beast can, can't talk or cast spells, and its gear merges into the form, unusable."
+    ]
+  },
+  "antimagic-field": {
+    "description": [
+      "An invisible 10 ft radius sphere of antimagic stays centred on you. Nobody can cast spells inside. Summoned or magically made creatures and objects wink out while in it, magic items act as mundane ones, and teleports or planar travel into or out of it fail; portals and extradimensional spaces close while inside.",
+      "Spells and magic effects in it, or aimed at something in it, are suppressed (artifacts and deities excepted), and their durations keep running. A slot spent on a suppressed spell is still used. Areas like fireball stop at its edge. A magic weapon is mundane against a target inside or in a wielder's hands inside. Dispel magic doesn't touch it, and two fields don't cancel."
+    ],
+    "material": "Powdered iron or iron filings (a pinch)"
+  },
+  "antipathy-sympathy": {
+    "description": [
+      "Choose a Huge or smaller creature or object, or up to a 200 ft cube, within 60 ft, and an intelligent creature type. For 10 days the target has one aura:",
+      "Antipathy: one that sees the target or comes within 60 ft makes a Wisdom save or is frightened while it sees it or is within 60 ft, fleeing to the nearest safe spot out of sight.",
+      "Sympathy: on a failed Wisdom save, it spends its movement each turn reaching the target and won't willingly leave. Harm from the target grants a save.",
+      "It saves again on ending a turn beyond 60 ft and out of sight, and every 24 hours; success frees it, then 1 minute of immunity."
+    ],
+    "material": "Alum soaked in vinegar (antipathy) or a drop of honey (sympathy)"
+  },
+  "astral-projection": {
+    "description": [
+      "You and up to 8 willing creatures within 10 ft project into the Astral Plane (fails if you're already there). Bodies left behind lie unconscious in suspended animation, needing no food or air and not ageing.",
+      "Each astral form copies its owner's stats and gear and trails a silver cord; if an effect cuts the cord, that creature dies. Harm to the astral form doesn't reach the body. Entering another plane, or your starting one, through a portal pulls your body there to rejoin.",
+      "Your action ends it for all. It ends for one creature whose body or astral form hits 0 HP or is dispelled; the cord pulls it home. If you're returned early, the others stay."
+    ],
+    "material": "Per creature: a jacinth worth 1,000 gp and a carved silver bar worth 100 gp, consumed"
+  },
+  "clone": {
+    "description": [
+      "You grow an inert copy of a living creature inside a sealed vessel. It reaches full size in 120 days, or you can make it a younger version. It lasts as long as the vessel stays undisturbed.",
+      "Once the clone has matured, if the original dies and its soul is free and willing, the soul moves into the clone. The clone has the same body, mind, memories and abilities, but none of the original's gear. The old remains go inert and can't be raised, since the soul is now elsewhere."
+    ],
+    "material": "A diamond worth 1,000 gp and 1 cubic inch of the creature's flesh (consumed), plus a sealable vessel worth 2,000 gp that fits a Medium creature"
+  },
+  "conjure-celestial": {
+    "description": [
+      "A celestial of CR 4 or lower appears in an empty space you can see within 90 ft. It is friendly to you and your allies, rolls its own initiative, and follows your spoken orders (no action needed) unless they go against its alignment. With no orders, it only defends itself. It vanishes at 0 hp or when the spell ends. The DM has its stats."
+    ],
+    "higherLevels": "With a 9th-level slot, the celestial can be CR 5 or lower."
+  },
+  "control-weather": {
+    "description": [
+      "You must be outdoors. For the duration you control the weather within 5 miles; going somewhere without open sky overhead ends it. When you cast it, you shift precipitation, temperature and wind each by one stage up or down (and can turn the wind). Changes take 1d4 × 10 minutes to arrive, then you can shift again. Once the spell is over, the weather slowly returns to normal.",
+      "Precipitation: clear (1), light clouds (2), overcast or fog (3), rain, hail or snow (4), torrential rain, heavy hail or blizzard (5).",
+      "Temperature: unbearable heat (1), hot (2), warm (3), cool (4), cold (5), arctic (6).",
+      "Wind: calm (1), moderate (2), strong (3), gale (4), storm (5)."
+    ],
+    "material": "Incense burning, plus earth and wood bits in water"
+  },
+  "delayed-blast-fireball": {
+    "description": [
+      "A glowing bead hangs at a point within 150 ft. When the spell ends (you drop concentration or choose to end it), it bursts in a 20 ft radius sphere that spreads around corners. Each creature there makes a Dexterity save: full fire damage on a failure, half on a success.",
+      "Damage starts at 12d6 and grows by 1d6 at the end of each of your turns it hasn't gone off.",
+      "A creature that touches the bead first makes a Dexterity save. On a failure it explodes at once; on a success the creature can throw it up to 40 ft, and it explodes when it hits a creature or solid object. The fire lights unattended flammable objects."
+    ],
+    "higherLevels": "Each slot level above 7 adds 1d6 to the base damage.",
+    "material": "A tiny ball of bat guano and sulfur"
+  },
+  "demiplane": {
+    "description": [
+      "A shadowy door, big enough for Medium creatures, appears on a flat solid surface you can see within 60 ft. It opens onto an empty room of wood or stone, 30 ft in each dimension. When the spell ends, the door vanishes and anyone or anything inside is stuck there.",
+      "Each casting can make a new demiplane or link to one you made before. If you know what another caster's demiplane from this spell is like and holds, you can link to that one instead."
+    ]
+  },
+  "divine-word": {
+    "description": [
+      "Any number of creatures of your choice within 30 ft that you can see and that can hear you make a Charisma save. On a failure, the effect depends on its current HP:",
+      "50 HP or less: deafened, 1 minute.",
+      "40 HP or less: blinded and deafened, 10 minutes.",
+      "30 HP or less: stunned, blinded and deafened, 1 hour.",
+      "20 HP or less: dies.",
+      "Whatever its HP, a celestial, elemental, fey or fiend that fails is also banished to its home plane unless already there, and can't come back to your plane for 24 hours except by wish."
+    ]
+  },
+  "dominate-monster": {
+    "description": [
+      "A creature you can see within 60 ft makes a Wisdom save (advantage if you or your allies are fighting it) or is charmed by you for up to 1 hour (concentration).",
+      "While on the same plane, you can give it simple orders telepathically (no action needed) and it does its best to obey; with no new orders it defends itself. As an action, take full control until the end of your next turn: it does only what you choose, and you can spend your reaction to make it use its own.",
+      "Each time it takes damage it repeats the save, ending the spell on a success."
+    ],
+    "higherLevels": "With a 9th-level slot, concentration lasts up to 8 hours."
+  },
+  "earthquake": {
+    "description": [
+      "A 100 ft radius around a point within 500 ft becomes difficult terrain. Grounded concentrating creatures there make a Constitution save or lose concentration. On casting and at each turn's end while you concentrate, grounded creatures there make a Dexterity save or fall prone.",
+      "Fissures: as your next turn starts, 1d6 fissures (1d10 × 10 ft deep, 10 ft wide) open; anyone over one makes a Dexterity save or falls in. Structures above one collapse.",
+      "Structures take 50 bludgeoning on casting and at the start of your turns. One at 0 HP collapses: creatures within half its height make a Dexterity save or take 5d6 bludgeoning, fall prone and are buried (DC 20 Athletics to escape); success halves it."
+    ],
+    "material": "Dirt (a pinch), a rock fragment and some clay"
+  },
+  "etherealness": {
+    "description": [
+      "For up to 8 hours (end it with an action) you're in the Border Ethereal, overlapping your plane. You can move in any direction, but up or down costs double. You see and hear your home plane in grey, out to 60 ft.",
+      "You only affect, and are affected by, creatures on the Ethereal Plane; others can't sense you without special magic. You move through objects of your home plane.",
+      "When it ends you return to your home plane where you are; if that space is filled, you're shunted to the nearest free space, taking force damage equal to twice the feet moved. It fails if cast on the Ethereal Plane or a plane not bordering it."
+    ],
+    "higherLevels": "Each slot level above 7 lets you bring up to 3 willing creatures (counting you) within 10 ft."
+  },
+  "feeblemind": {
+    "description": [
+      "A creature you can see within 150 ft takes 4d6 psychic damage and makes an Intelligence save. On a failure, its Intelligence and Charisma become 1: it can't cast spells, use magic items, understand language or communicate in any sensible way, though it still knows, follows and protects its friends.",
+      "It saves again at the end of every 30 days, ending the spell on a success. Greater restoration, heal or wish also ends it."
+    ],
+    "material": "A handful of clay, crystal, glass or mineral spheres"
+  },
+  "finger-of-death": {
+    "description": [
+      "A creature you can see within 60 ft makes a Constitution save: 7d8 + 30 necrotic damage, half on a success.",
+      "A humanoid it kills rises at the start of your next turn as a zombie under your permanent command, carrying out your spoken orders as best it can."
+    ]
+  },
+  "fire-storm": {
+    "description": [
+      "Roaring flame fills up to ten 10 ft cubes within 150 ft, arranged as you like, each sharing a face with another. Each creature in them makes a Dexterity save: 7d10 fire, half on a success.",
+      "It damages objects and lights unattended flammable ones. You can leave plants in the area unharmed."
+    ]
+  },
+  "forcecage": {
+    "description": [
+      "An invisible, immobile prison of force forms around an area within 100 ft, for 1 hour. Pick a cage, up to 20 ft a side with bars 1/2 inch thick and 1/2 inch apart, or a solid box, up to 10 ft a side, that stops all matter and spells going in or out.",
+      "Creatures wholly inside are trapped; anyone partly inside or too big is pushed out. A trapped creature can't leave by nonmagical means. Teleport or planar travel out needs a Charisma save first; on a failure that use is wasted. It also blocks ethereal travel, and dispel magic can't end it."
+    ],
+    "material": "Ruby dust worth 1,500 gp"
+  },
+  "foresight": {
+    "description": [
+      "For 8 hours, a willing creature you touch can't be surprised and gains advantage on attacks, ability checks and saves. Attackers have disadvantage against it.",
+      "Casting it again before it ends ends the first casting at once."
+    ],
+    "material": "A hummingbird feather"
+  },
+  "gate": {
+    "description": [
+      "A circular portal 5 to 20 ft across opens in an empty space you can see within 60 ft, linking to a precise spot on another plane, facing any way you choose. Only stepping through its front works; travellers appear in the nearest free space on the far side. Deities and planar rulers can stop it opening near them or in their realms.",
+      "If you speak a creature's true name (not a nickname or title) and it is on another plane, the portal opens beside it and pulls it through to your side. You gain no control over it; the DM decides what it does."
+    ],
+    "material": "A diamond worth 5,000 gp"
+  },
+  "glibness": {
+    "description": [
+      "For 1 hour, whenever you make a Charisma check, you can swap the number rolled for a 15. Magic that checks whether you're telling the truth always says you are."
+    ]
   }
 }

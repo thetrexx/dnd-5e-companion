@@ -337,7 +337,8 @@
   ],
   "page": 214,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "wis"
   }
  },
  {
@@ -3322,7 +3323,8 @@
   ],
   "page": 236,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "dex"
   }
  },
  {
@@ -4386,7 +4388,8 @@
   ],
   "page": 243,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "cha"
   }
  },
  {
