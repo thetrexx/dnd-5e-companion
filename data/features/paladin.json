@@ -1,0 +1,100 @@
+[
+  {
+    "id": "divine-sense",
+    "name": "Divine Sense",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 1,
+    "cost": "action",
+    "uses": "1 + Charisma modifier per long rest",
+    "description": [
+      "Until your next turn ends, your senses reveal celestials, fiends and undead within 60 ft, except any with total cover. You learn each one's type, not its identity. You also notice consecrated or desecrated places and objects in range.",
+      "Uses: 1 + your Charisma modifier. A long rest restores them all."
+    ],
+    "page": 84,
+    "textSource": "summary"
+  },
+  {
+    "id": "lay-on-hands",
+    "name": "Lay on Hands",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 1,
+    "cost": "action",
+    "resource": "Healing pool",
+    "uses": "Pool refills on a long rest",
+    "scaling": [
+      {
+        "label": "Pool",
+        "values": [
+          "5",
+          "10",
+          "15",
+          "20",
+          "25",
+          "30",
+          "35",
+          "40",
+          "45",
+          "50",
+          "55",
+          "60",
+          "65",
+          "70",
+          "75",
+          "80",
+          "85",
+          "90",
+          "95",
+          "100"
+        ]
+      }
+    ],
+    "description": [
+      "You have a healing pool of 5 x your paladin level hit points, refilled by a long rest. As an action, touch a creature and spend points from the pool to heal it by that amount.",
+      "Or spend 5 points to cure a disease or neutralize a poison on the target. You can do that several times in one use.",
+      "No effect on undead or constructs."
+    ],
+    "page": 84,
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-smite",
+    "name": "Divine Smite",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You hit with a melee weapon attack",
+    "resource": "Paladin spell slot",
+    "description": [
+      "On a melee weapon hit, spend a paladin spell slot to add radiant damage.",
+      "It is 2d8 with a 1st-level slot, plus 1d8 for every slot level above 1st, capped at 5d8. Undead and fiends take another 1d8."
+    ],
+    "page": 85,
+    "textSource": "summary"
+  },
+  {
+    "id": "cleansing-touch",
+    "name": "Cleansing Touch",
+    "source": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "level": 14,
+    "cost": "action",
+    "uses": "Charisma modifier (minimum 1) per long rest",
+    "description": [
+      "As an action, end a spell that is affecting you or a willing creature you touch.",
+      "You get as many uses as your Charisma modifier (at least 1). A long rest restores them."
+    ],
+    "page": 85,
+    "textSource": "summary"
+  }
+]

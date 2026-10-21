@@ -1,0 +1,69 @@
+[
+  {
+    "id": "primeval-awareness",
+    "name": "Primeval Awareness",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "Ranger spell slot",
+    "description": [
+      "Use your action and spend a ranger spell slot. You sense whether undead, fiends, fey, elementals, dragons, celestials or aberrations are present within 1 mile (6 miles in your favored terrain). The sense lasts 1 minute per level of the slot.",
+      "You learn only whether they are there, not their location or number."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  },
+  {
+    "id": "hide-in-plain-sight",
+    "name": "Hide in Plain Sight",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 10,
+    "cost": "other",
+    "description": [
+      "Spend 1 minute making camouflage from mud, dirt, plants, soot and similar materials you have on hand.",
+      "Then press against a solid surface (tree, wall) at least as large as you. While you stay there without moving, taking actions or reactions, you get +10 to Dexterity (Stealth) checks. Moving or acting breaks it, and you must camouflage again."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  },
+  {
+    "id": "vanish",
+    "name": "Vanish",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "description": [
+      "Hide as a bonus action.",
+      "Only magic can track you, unless you choose to leave a trail."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  },
+  {
+    "id": "foe-slayer",
+    "name": "Foe Slayer",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "You attack a favored enemy",
+    "uses": "Once per turn",
+    "description": [
+      "Once per turn, when you attack one of your favored enemies, add your Wisdom modifier to either the attack roll or the damage roll.",
+      "You can decide after seeing the roll, as long as the roll's effects are not yet applied."
+    ],
+    "page": 92,
+    "textSource": "summary"
+  }
+]

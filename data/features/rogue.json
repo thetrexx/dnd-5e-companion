@@ -1,0 +1,95 @@
+[
+  {
+    "id": "sneak-attack",
+    "name": "Sneak Attack",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You hit with a finesse or ranged weapon",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Sneak Attack",
+        "values": [
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "5d6",
+          "5d6",
+          "6d6",
+          "6d6",
+          "7d6",
+          "7d6",
+          "8d6",
+          "8d6",
+          "9d6",
+          "9d6",
+          "10d6",
+          "10d6"
+        ]
+      }
+    ],
+    "description": [
+      "Once per turn, add the Sneak Attack dice as extra damage to one creature you hit. The attack must use a finesse or ranged weapon, and you need either advantage on the attack roll, or another enemy of the target within 5 ft of it that is not incapacitated, with you having no disadvantage on the roll."
+    ],
+    "page": 96,
+    "textSource": "summary"
+  },
+  {
+    "id": "cunning-action",
+    "name": "Cunning Action",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "description": [
+      "Each turn you have a bonus action that can be used only for Dash, Disengage or Hide."
+    ],
+    "page": 96,
+    "textSource": "summary"
+  },
+  {
+    "id": "uncanny-dodge",
+    "name": "Uncanny Dodge",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 5,
+    "cost": "reaction",
+    "trigger": "An attacker you can see hits you",
+    "description": [
+      "When an attacker you can see hits you, use your reaction to halve the damage of that attack."
+    ],
+    "page": 96,
+    "textSource": "summary"
+  },
+  {
+    "id": "stroke-of-luck",
+    "name": "Stroke of Luck",
+    "source": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "Your attack misses, or you fail an ability check",
+    "uses": "1/short rest",
+    "description": [
+      "A missed attack against a target in range becomes a hit. Or a failed ability check counts as a natural 20 on the d20.",
+      "Needs a short or long rest before it can be used again."
+    ],
+    "page": 97,
+    "textSource": "summary"
+  }
+]

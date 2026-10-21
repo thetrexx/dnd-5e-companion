@@ -1,0 +1,257 @@
+[
+  {
+    "id": "martial-arts",
+    "name": "Martial Arts",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "scaling": [
+      {
+        "label": "Martial Arts Die",
+        "values": [
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10"
+        ]
+      }
+    ],
+    "description": [
+      "This works while you are unarmed or using only monk weapons (shortswords and simple melee weapons without two-handed or heavy), with no armor or shield. Use Dexterity for attack and damage if you like, and roll the Martial Arts die in place of the usual damage die.",
+      "Bonus action: one extra unarmed strike, available when your Attack action used an unarmed strike or a monk weapon."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "ki",
+    "name": "Ki",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "passive",
+    "resource": "Ki points",
+    "uses": "Refill on short or long rest",
+    "scaling": [
+      {
+        "label": "Ki Points",
+        "values": [
+          "",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      }
+    ],
+    "description": [
+      "Ki points pay for your ki features, 1 point each unless a card says otherwise. A short or long rest brings them all back (meditate for at least 30 minutes).",
+      "Your ki save DC is 8 plus your proficiency bonus plus your Wisdom modifier."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "flurry-of-blows",
+    "name": "Flurry of Blows",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "trigger": "Right after you take the Attack action",
+    "resource": "Ki points",
+    "description": [
+      "Right after you take the Attack action, spend 1 ki point to throw two unarmed strikes using your bonus action."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "patient-defense",
+    "name": "Patient Defense",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "Ki points",
+    "description": [
+      "Spend 1 ki point to Dodge with your bonus action: attacks against you have disadvantage and your Dexterity saves have advantage until your next turn."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "step-of-the-wind",
+    "name": "Step of the Wind",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "Ki points",
+    "description": [
+      "Spend 1 ki point and use your bonus action to Disengage or Dash. Your jump distance is also doubled for the turn."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "deflect-missiles",
+    "name": "Deflect Missiles",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A ranged weapon attack hits you",
+    "resource": "Ki points (optional, 1)",
+    "description": [
+      "When a ranged weapon attack hits you, roll 1d10, add your Dexterity modifier and monk level, and subtract the total from the damage.",
+      "If that takes the damage to 0 and the missile is small enough to hold, and you have a free hand, you catch it. You may then spend 1 ki point to fire it back right away, within the same reaction. You are proficient with it, and it counts as a monk weapon."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "slow-fall",
+    "name": "Slow Fall",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 4,
+    "cost": "reaction",
+    "trigger": "You fall",
+    "description": [
+      "When you fall, reduce the falling damage by 5 times your monk level."
+    ],
+    "page": 78,
+    "textSource": "summary"
+  },
+  {
+    "id": "stunning-strike",
+    "name": "Stunning Strike",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 5,
+    "cost": "free",
+    "trigger": "You hit with a melee weapon attack",
+    "resource": "Ki points",
+    "description": [
+      "After a melee weapon hit, spend 1 ki point to try to stun the target. On a failed Constitution save (your ki save DC) it is stunned until your next turn ends."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "stillness-of-mind",
+    "name": "Stillness of Mind",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 7,
+    "cost": "action",
+    "description": [
+      "Use your action to end one charm or fear effect that is on you.",
+      "It ends only one effect per use."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "diamond-soul",
+    "name": "Diamond Soul",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You fail a saving throw",
+    "resource": "Ki points",
+    "description": [
+      "Spend 1 ki point to reroll a saving throw you just failed. You must take the new result.",
+      "You are also proficient in all saving throws (always on)."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "empty-body",
+    "name": "Empty Body",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "Ki points (4 or 8)",
+    "description": [
+      "Spend 4 ki points to turn invisible for 1 minute. While invisible you resist every damage type except force.",
+      "Or spend 8 ki points to cast astral projection with no material components. You cannot bring other creatures along."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  },
+  {
+    "id": "perfect-self",
+    "name": "Perfect Self",
+    "source": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "You roll initiative with 0 ki points",
+    "description": [
+      "If you roll initiative with no ki points left, you get 4 ki points back."
+    ],
+    "page": 79,
+    "textSource": "summary"
+  }
+]
