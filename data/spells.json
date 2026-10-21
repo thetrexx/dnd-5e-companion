@@ -103,7 +103,7 @@
       }
     },
     "description": [
-      "A beast within 30 ft that can see and hear you makes a Wisdom save, or is charmed by you for 24 hours. If its Intelligence is 4 or higher, the spell fails.",
+      "Pick a beast you can see within 30 ft; it must be able to see and hear you. If its Intelligence is 4 or higher, the spell fails. Otherwise it makes a Wisdom save or is charmed by you for 24 hours.",
       "The charm ends if you or your companions harm it."
     ],
     "higherLevels": "Each slot level above 1 lets you affect 1 more beast.",
@@ -212,7 +212,7 @@
       }
     },
     "description": [
-      "Up to 3 creatures within 30 ft each make a Charisma save. On a failure, for the duration (concentration, 1 minute) the creature rolls a d4 on each attack roll and saving throw and subtracts it."
+      "Up to 3 creatures you can see within 30 ft each make a Charisma save. For the duration (concentration, 1 minute), each one that fails rolls a d4 whenever it makes an attack roll or saving throw, and lowers that result by the number rolled."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
     "textSource": "summary"
@@ -245,7 +245,7 @@
       "s": true
     },
     "description": [
-      "Your next turn ends the effect. Until then, weapon attacks that deal bludgeoning, piercing or slashing damage to you do only half."
+      "Until the end of your next turn, weapon attacks deal you only half their bludgeoning, piercing and slashing damage (you have resistance to those types)."
     ],
     "textSource": "summary"
   },
@@ -317,7 +317,7 @@
       "s": true
     },
     "description": [
-      "Flames fan out from your hands in a 15 ft cone. Each creature in the cone makes a Dexterity save, taking 3d6 fire damage on a failure or half on a success. Loose flammable objects in the cone ignite."
+      "Flames fan out from your hands in a 15 ft cone. Each creature in the cone makes a Dexterity save, taking 3d6 fire damage on a failure or half on a success. Flammable objects in the cone that nobody is wearing or carrying catch fire."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
     "textSource": "summary"
@@ -390,7 +390,7 @@
       "s": true
     },
     "description": [
-      "Ranged spell attack, 120 ft. A hit deals 1d8 necrotic damage, and the target cannot heal until your next turn begins. An undead target is also at disadvantage when it attacks you until then.",
+      "A ghostly hand grips a creature within 120 ft: make a ranged spell attack. A hit deals 1d8 necrotic damage, and the target cannot heal until your next turn starts. An undead target you hit also attacks you at disadvantage through the end of your next turn.",
       "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
     ],
     "textSource": "summary"
@@ -431,7 +431,7 @@
       }
     },
     "description": [
-      "Make a ranged spell attack against a creature within 90 ft. A hit deals 3d8 damage of a type you pick: acid, cold, fire, lightning, poison or thunder."
+      "Make a ranged spell attack against a creature you can see within 90 ft. Pick the orb's type first: acid, cold, fire, lightning, poison or thunder. A hit deals 3d8 damage of that type."
     ],
     "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
     "textSource": "summary"
@@ -499,8 +499,8 @@
       "s": false
     },
     "description": [
-      "Speak a one-word order to a creature within 60 ft that understands you. It makes a Wisdom save or obeys on its next turn. Undead are immune, as is anything the order would directly harm.",
-      "Sample words: Approach (walks toward you), Drop (releases what it holds), Flee (runs away), Grovel (falls prone), Halt (stands still, no actions)."
+      "Give a one-word order to a creature within 60 ft that you can see. It makes a Wisdom save or carries out the command on its next turn. Nothing happens if it is undead, does not understand your language, or the command would directly harm it.",
+      "Sample words: Approach (comes toward you, stopping within 5 ft), Drop (lets go of what it holds), Flee (moves away fast), Grovel (falls prone), Halt (no move, no actions). The DM rules on other words; if the target cannot obey, the spell ends."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other.",
     "textSource": "summary"
@@ -531,8 +531,8 @@
       "s": false
     },
     "description": [
-      "A creature within 30 ft that can see or hear you makes a Wisdom save. On a failure, for up to 1 minute (concentration) it has disadvantage on attacks against anyone but you, and needs a successful Wisdom save to willingly move more than 30 ft from you.",
-      "The effect ends if you attack someone else or cast a spell at a creature other than the target, if an ally of yours hurts the target, or if you end a turn more than 30 ft from it."
+      "A creature you can see within 30 ft makes a Wisdom save. If it fails, for 1 minute (concentration) it has disadvantage on attacks against anyone but you. To move more than 30 ft from you it needs a Wisdom save; success lifts the limit that turn.",
+      "The spell ends if you attack another creature or cast a spell at a hostile creature besides the target, if an ally damages the target or aims a harmful spell at it, or if you finish a turn over 30 ft away."
     ],
     "textSource": "summary"
   },
@@ -2604,8 +2604,8 @@
       "s": false
     },
     "description": [
-      "Your next melee weapon hit within 1 minute (concentration) also deals 1d6 fire damage and ignites the target. Each of its turns then opens with another 1d6 fire damage.",
-      "Right after taking that burn, it makes a Constitution save; success puts the flames out and ends the spell. The target, or a creature within 5 ft of it, can also use an action to put the fire out, or submerging it does."
+      "Your next melee weapon hit before the spell ends (concentration, up to 1 minute) deals an extra 1d6 fire damage and sets the target alight.",
+      "Each time one of its turns starts while it burns, the target makes a Constitution save. A failure deals it 1d6 fire damage; a success ends the spell with no damage. The fire also goes out, ending the spell, if the target or someone within 5 ft spends an action to smother it, or if something douses it, such as plunging under water."
     ],
     "higherLevels": "The extra damage on the hit rises by 1d6 for each slot level above 1.",
     "textSource": "summary"
