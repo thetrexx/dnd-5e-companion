@@ -6252,6 +6252,160 @@
     "textSource": "summary"
   },
   {
+    "id": "spirit-guardians",
+    "name": "Spirit Guardians",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (15-foot radius)",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 278,
+    "summary": {
+      "resolution": "save",
+      "save": "wis",
+      "damage": {
+        "dice": "3d8",
+        "type": "Radiant or Necrotic"
+      },
+      "upcast": "+1d8 per slot level above 3"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Holy symbol",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Spirits circle you to 15 ft for up to 10 minutes (concentration), angelic or fey if you are good or neutral, fiendish if evil. Choose any creatures you can see to be unaffected.",
+      "Affected creatures move at half speed in the area. Each time one enters it (first time that turn) or begins its turn there, it makes a Wisdom save, taking 3d8 radiant damage (necrotic if you are evil), half on a success."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d8 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "spiritual-weapon",
+    "name": "Spiritual Weapon",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "60 feet",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 278,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d8",
+        "type": "Force",
+        "plusMod": true
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A floating spectral weapon appears within 60 ft for 1 minute or until you recast this. As part of casting, attack a creature within 5 ft of it with a melee spell attack: a hit deals 1d8 + your spellcasting ability modifier force damage.",
+      "As a bonus action on your turn, move it up to 20 ft and attack again with it. It looks like whatever weapon you choose."
+    ],
+    "higherLevels": "Every 2 slot levels above 2 add 1d8 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "stinking-cloud",
+    "name": "Stinking Cloud",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 278,
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Rotten egg or a few skunk cabbage leaves",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 20 ft radius sphere of yellow, sickening gas fills a point within 90 ft for up to 1 minute (concentration), spreading around corners; the area is heavily obscured.",
+      "Each creature fully inside at the start of its turn makes a Constitution save against poison. On a failure it spends its action that turn retching and reeling. Creatures that needn't breathe or are immune to poison pass automatically.",
+      "A moderate wind (10 mph or more) clears it in 4 rounds; a strong wind (20 mph or more) in 1."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "suggestion",
+    "name": "Suggestion",
+    "level": 2,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 8 hours",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 279,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": false,
+      "m": {
+        "text": "Snake's tongue plus honeycomb or sweet oil",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Suggest a reasonable-sounding course of action, in a sentence or two, to a creature you can see within 30 ft that can hear and understand you. Charm-immune creatures are unaffected. Asking for an obviously harmful act ends the spell.",
+      "On a failed Wisdom save, it follows the suggestion as best it can for up to 8 hours (concentration), or until the task is done. You can set a trigger; if it never happens, nothing is done.",
+      "Damage from you or your companions ends it."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "tashas-hideous-laughter",
     "name": "Tasha's Hideous Laughter",
     "level": 1,
@@ -6472,6 +6626,43 @@
     "textSource": "summary"
   },
   {
+    "id": "tongues",
+    "name": "Tongues",
+    "level": 3,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 283,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false,
+      "m": {
+        "text": "Small clay model of a ziggurat",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 1 hour, the creature you touch understands every spoken language it hears, and when it talks, any listener who speaks some language understands it."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "true-strike",
     "name": "True Strike",
     "level": 0,
@@ -6540,6 +6731,43 @@
     "textSource": "summary"
   },
   {
+    "id": "vampiric-touch",
+    "name": "Vampiric Touch",
+    "level": 3,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 285,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "3d6",
+        "type": "Necrotic"
+      },
+      "upcast": "+1d6 per slot level above 3"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Shadows wreathe your hand for up to 1 minute (concentration). Attack a creature in your reach with a melee spell attack: a hit deals 3d6 necrotic damage, and you heal hit points equal to half the necrotic damage dealt.",
+      "On each of your turns while the spell lasts, you can use your action to repeat this attack."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d6 damage.",
+    "textSource": "summary"
+  },
+  {
     "id": "vicious-mockery",
     "name": "Vicious Mockery",
     "level": 0,
@@ -6572,6 +6800,191 @@
     "description": [
       "You hurl a cutting insult at a creature you can see within 60 ft. If it can hear you (it need not understand), it makes a Wisdom save or takes 1d4 psychic damage and has disadvantage on its next attack roll before the end of its next turn.",
       "Damage rises to 2d4 at level 5, 3d4 at level 11 and 4d4 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "warding-bond",
+    "name": "Warding Bond",
+    "level": 2,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 287,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "2 platinum rings worth 50 gp each, worn by you and the target",
+        "costGp": 50,
+        "consumed": false
+      }
+    },
+    "description": [
+      "You link yourself to a willing creature you touch for 1 hour. While it is within 60 ft of you, it gets +1 to AC and saves and resistance to all damage, but you take the same amount of damage it takes.",
+      "It ends if you drop to 0 hit points, you move more than 60 ft apart, either of you is targeted by it again, or you dismiss it as an action."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "water-breathing",
+    "name": "Water Breathing",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "druid",
+      "ranger",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 287,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Short reed or piece of straw",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 24 hours, as many as ten willing creatures you can see within 30 ft can breathe underwater, and still breathe air normally."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "water-walk",
+    "name": "Water Walk",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "cleric",
+      "druid",
+      "ranger",
+      "sorcerer"
+    ],
+    "page": 287,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Piece of cork",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 1 hour, as many as ten willing creatures you can see within 30 ft can walk on any liquid (water, acid, mud, snow, quicksand, lava) as if it were harmless solid ground, though lava's heat can still hurt.",
+      "A target submerged in liquid rises to the surface at 60 ft per round."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "web",
+    "name": "Web",
+    "level": 2,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 287,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Bit of spiderweb",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Sticky webs fill a 20 ft cube from a point within 60 ft for up to 1 hour (concentration): difficult terrain, lightly obscured. Unanchored webs (not strung between two solid masses or layered 5 ft deep on a surface) collapse at the start of your next turn, ending it.",
+      "Starting a turn in the webs or entering them: Dexterity save or restrained while there. Escape: action and Strength check vs your spell save DC.",
+      "Fire burns through a 5 ft cube of web within a round; creatures starting their turn in that fire take 2d4 fire damage."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "wind-wall",
+    "name": "Wind Wall",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 288,
+    "summary": {
+      "resolution": "save",
+      "save": "str",
+      "damage": {
+        "dice": "3d8",
+        "type": "Bludgeoning"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Tiny fan and an exotic feather",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A wall of strong wind, up to 50 ft long, 15 ft high and 1 ft thick, rises at a point within 120 ft for up to 1 minute (concentration), in any shape that follows one unbroken path on the ground. Creatures in it when it appears make a Strength save, taking 3d8 bludgeoning damage, half on a success.",
+      "It blocks fog, smoke and gases. Small or smaller flyers and objects, and gaseous creatures, can't cross. Ordinary arrows, bolts and other missiles fired through it automatically miss (boulders and siege ammo don't)."
     ],
     "textSource": "summary"
   },
@@ -6649,6 +7062,39 @@
     "description": [
       "Your next melee weapon hit within 1 minute (concentration) adds 1d6 psychic damage. The target also makes a Wisdom save or becomes frightened of you for the rest of the spell.",
       "Once frightened, it can spend an action on a Wisdom check, trying to beat your spell save DC. Success ends the spell."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "zone-of-truth",
+    "name": "Zone of Truth",
+    "level": 2,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "10 minutes",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "paladin"
+    ],
+    "page": 289,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 10 minutes, a 15 ft radius sphere on a point within 60 ft guards against lies. A creature entering it for the first time on a turn, or starting its turn there, makes a Charisma save; on a failure it can't deliberately lie while inside. You know who passed and who failed.",
+      "Affected creatures know about the spell, so they can dodge questions or give evasive but truthful answers."
     ],
     "textSource": "summary"
   }

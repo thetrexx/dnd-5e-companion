@@ -253,5 +253,17 @@
         "type": "Piercing"
       }
     }
+  },
+  "web": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "zone-of-truth": {
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    }
   }
 }
