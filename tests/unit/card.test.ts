@@ -12,6 +12,14 @@ test('diceRange', () => {
   expect(diceRange('1d4+1')).toEqual({ min: 2, max: 5 });
   expect(diceRange('8d6')).toEqual({ min: 8, max: 48 });
 });
+test('diceRange edge cases', () => {
+  expect(diceRange('1d6-1')).toEqual({ min: 0, max: 5 });
+  expect(() => diceRange('banana')).toThrow();
+});
+test('costBar other uses cast text', () => {
+  const s = { ...get('shield'), cast: { cost: 'other' as const, text: '1 minute' } };
+  expect(costBar(s).label).toBe('1 minute');
+});
 test('damageLine', () => {
   expect(damageLine(mm)).toEqual({ headline: '6~15 Damage', detail: '3 darts × 1d4+1 Force' });
   expect(damageLine(get('fire-bolt'))).toEqual({ headline: '1~10 Damage', detail: '1d10 Fire' });
@@ -42,6 +50,9 @@ test('material cost and consumed copy', () => {
   const mk = (m: { text: string; costGp?: number; consumed: boolean }) =>
     componentInfo({ ...base, components: { ...base.components, m } }).m!.body;
   expect(mk({ text: 'a pearl', costGp: 100, consumed: true })).toBe('a pearl. Costs 100 gp. The spell consumes it.');
-  expect(mk({ text: 'a pearl', costGp: 100, consumed: false })).toBe('a pearl. Costs 100 gp.');
   expect(mk({ text: 'a pearl', consumed: true })).toBe('a pearl. The spell consumes it.');
+  expect(mk({ text: 'a pearl', costGp: 100, consumed: false }))
+    .toBe("a pearl. Costs 100 gp. A component pouch or spellcasting focus can't stand in for it.");
+  expect(mk({ text: 'a pearl', consumed: false })).toBe('a pearl. A component pouch or spellcasting focus can stand in for it.');
+  expect(mk({ text: 'a pearl.', consumed: true })).toBe('a pearl. The spell consumes it.');
 });

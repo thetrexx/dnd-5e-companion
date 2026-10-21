@@ -50,10 +50,11 @@ export function componentInfo(s: Spell): { v: Explainer | null; s: Explainer | n
   const c = s.components;
   let m: Explainer | null = null;
   if (c.m) {
-    const tail = c.m.costGp !== undefined || c.m.consumed
-      ? [c.m.costGp !== undefined ? `Costs ${c.m.costGp} gp.` : '', c.m.consumed ? 'The spell consumes it.' : ''].filter(Boolean).join(' ')
-      : 'A component pouch or spellcasting focus can stand in for it.';
-    m = { title: 'Material', body: `${c.m.text}. ${tail}` };
+    const priced = c.m.costGp !== undefined;
+    const parts = [priced ? `Costs ${c.m.costGp} gp.` : ''];
+    if (c.m.consumed) parts.push('The spell consumes it.');
+    else parts.push(`A component pouch or spellcasting focus ${priced ? "can't" : 'can'} stand in for it.`);
+    m = { title: 'Material', body: `${c.m.text.replace(/\.$/, '')}. ${parts.filter(Boolean).join(' ')}` };
   }
   return {
     v: c.v ? { title: 'Verbal', body: "You must chant mystic words out loud. You can't cast it while gagged, unable to speak, or inside a Silence spell." } : null,
