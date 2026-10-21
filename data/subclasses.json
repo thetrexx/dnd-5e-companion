@@ -1010,5 +1010,24 @@
       ]
     },
     "options": []
+  },
+  {
+    "id": "hunter",
+    "cls": "ranger",
+    "name": "Hunter",
+    "page": 93,
+    "options": [
+      "hunters-prey",
+      "defensive-tactics",
+      "multiattack",
+      "superior-hunters-defense"
+    ]
+  },
+  {
+    "id": "beast-master",
+    "cls": "ranger",
+    "name": "Beast Master",
+    "page": 93,
+    "options": []
   }
 ]

@@ -65,5 +65,125 @@
       1,
       1
     ]
+  },
+  {
+    "id": "hunters-prey",
+    "name": "Hunter's Prey",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "defensive-tactics",
+    "name": "Defensive Tactics",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "multiattack",
+    "name": "Multiattack",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "superior-hunters-defense",
+    "name": "Superior Hunter's Defense",
+    "owner": {
+      "kind": "subclass",
+      "id": "hunter"
+    },
+    "picks": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   }
 ]

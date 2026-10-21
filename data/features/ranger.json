@@ -65,5 +65,252 @@
     ],
     "page": 92,
     "textSource": "summary"
+  },
+  {
+    "id": "hunters-prey-colossus-slayer",
+    "name": "Colossus Slayer",
+    "source": {
+      "kind": "option",
+      "id": "hunters-prey"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a wounded creature with a weapon attack",
+    "description": [
+      "Once per turn, a weapon hit on a creature that is below its maximum hit points adds 1d8 damage."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "hunters-prey-giant-killer",
+    "name": "Giant Killer",
+    "source": {
+      "kind": "option",
+      "id": "hunters-prey"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A Large or larger creature within 5 ft attacks you",
+    "description": [
+      "When a Large or bigger creature within 5 ft attacks you, hit or miss, you may answer with an attack against it right after, if you can see it."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "hunters-prey-horde-breaker",
+    "name": "Horde Breaker",
+    "source": {
+      "kind": "option",
+      "id": "hunters-prey"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a weapon attack",
+    "description": [
+      "Once per turn when you make a weapon attack, you get one more attack with the same weapon on a different creature. It must be within 5 ft of the first target and within your weapon's range."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-tactics-escape-the-horde",
+    "name": "Escape the Horde",
+    "source": {
+      "kind": "option",
+      "id": "defensive-tactics"
+    },
+    "level": 7,
+    "cost": "passive",
+    "description": [
+      "Opportunity attacks against you have disadvantage."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-tactics-multiattack-defense",
+    "name": "Multiattack Defense",
+    "source": {
+      "kind": "option",
+      "id": "defensive-tactics"
+    },
+    "level": 7,
+    "cost": "passive",
+    "description": [
+      "After a creature hits you, you gain +4 AC against its later attacks for the rest of that turn."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-tactics-steel-will",
+    "name": "Steel Will",
+    "source": {
+      "kind": "option",
+      "id": "defensive-tactics"
+    },
+    "level": 7,
+    "cost": "passive",
+    "description": [
+      "You have advantage on saves against being frightened."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "multiattack-volley",
+    "name": "Volley",
+    "source": {
+      "kind": "option",
+      "id": "multiattack"
+    },
+    "level": 11,
+    "cost": "action",
+    "description": [
+      "Choose a spot in view that lies inside your weapon's range. Shoot every creature within 10 ft of that spot, rolling a separate attack for each target and spending ammunition on each as usual."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "multiattack-whirlwind-attack",
+    "name": "Whirlwind Attack",
+    "source": {
+      "kind": "option",
+      "id": "multiattack"
+    },
+    "level": 11,
+    "cost": "action",
+    "description": [
+      "Make a melee attack against every creature within 5 ft of you, each with its own attack roll."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "superior-hunters-defense-evasion",
+    "name": "Evasion",
+    "source": {
+      "kind": "option",
+      "id": "superior-hunters-defense"
+    },
+    "level": 15,
+    "cost": "passive",
+    "description": [
+      "On a Dexterity save that halves damage, you take none if you pass and half if you fail."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "superior-hunters-defense-stand-against-the-tide",
+    "name": "Stand Against the Tide",
+    "source": {
+      "kind": "option",
+      "id": "superior-hunters-defense"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "A hostile creature misses you with a melee attack",
+    "description": [
+      "A hostile creature misses you with a melee attack: spend your reaction to make it redo that same attack on a different creature you pick (not itself)."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "superior-hunters-defense-uncanny-dodge",
+    "name": "Uncanny Dodge",
+    "source": {
+      "kind": "option",
+      "id": "superior-hunters-defense"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An attacker you can see hits you",
+    "description": [
+      "When an attacker you can see hits you, halve that attack's damage to you."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "rangers-companion",
+    "name": "Ranger's Companion",
+    "source": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "level": 3,
+    "cost": "free",
+    "uses": "Replace a dead companion in 8 hours",
+    "description": [
+      "You gain a beast companion: pick a beast of Medium size or smaller with challenge rating 1/4 or lower (hawk, mastiff and panther are in appendix D). Add your proficiency bonus to its AC, attack and damage rolls, and to its proficient saves and skills.",
+      "Its hit point maximum is its normal one or 4 x your ranger level, whichever is higher. It acts on your initiative but only moves unless you command it (see Companion Commands).",
+      "With only the beast along, you move stealthily at normal pace in favored terrain. When you cast a spell on yourself at level 15 or higher, it also affects the beast if it is within 30 ft.",
+      "If it dies, bond with another willing beast over 8 hours to get a new companion."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "companion-commands",
+    "name": "Companion Commands",
+    "source": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "level": 3,
+    "cost": "action",
+    "scaling": [
+      {
+        "label": "Companion attacks",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ],
+    "description": [
+      "On your turn you can direct where the beast moves for free. Spend your action to have it Attack, Dash, Disengage, Dodge or Help. Once you have Extra Attack, you may make one weapon attack yourself when you order its Attack.",
+      "From level 11 the companion makes two attacks when ordered to Attack."
+    ],
+    "page": 93,
+    "textSource": "summary"
+  },
+  {
+    "id": "exceptional-training",
+    "name": "Exceptional Training",
+    "source": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "description": [
+      "On a turn your beast doesn't attack, use a bonus action to have it Dash, Disengage, Dodge or Help on its turn."
+    ],
+    "page": 93,
+    "textSource": "summary"
   }
 ]
