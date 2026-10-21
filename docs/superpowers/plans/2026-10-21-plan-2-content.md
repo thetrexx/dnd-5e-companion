@@ -12,9 +12,37 @@
 
 **Owner decision (2026-10-21):** a plain class with no saved character asks for the level, then for a subclass ("No subclass" allowed) when the class has one at that level. The menu, actions and spells then show that subclass only, including its domain, oath, circle or patron spells.
 
+## Amendment (2026-10-21, owner decision): text sources
+
+Task 4's first run was stopped by the API content filter while copying PHB text. The owner chose: **SRD text word for word, everything else in our own words.** This amendment overrides any task text below that says "verbatim", "transcribe" or "PHB wording wins".
+
+- **`textSource`:** every Spell, Feature and FeatDef gains a required `textSource: 'srd' | 'summary'`.
+- **SRD entries (`'srd'`):**
+  - Text is the SRD 5.1 text from dnd5eapi, mapped by script. This covers spells, class and subclass features (`/api/2014/features`, `/subclasses`), racial traits (`/traits`, `/races`, `/subraces`) and the one SRD feat (`/feats`).
+  - Never hand-retyped.
+  - Where SRD wording differs from the PHB, the SRD wording stays. Only facts must match the book.
+  - The PHB name is still used where the SRD renamed a spell ("Tasha's Hideous Laughter").
+- **Summary entries (`'summary'`):** everything not in the SRD.
+  - `description` is 1-4 short paragraphs **in our own words**, written from the page image. They cover every mechanic a player needs at the table: cost, range, targets, duration, damage dice and type, save or attack, scaling, limits and recharge.
+  - Never copy the book's sentences: no run of 8 or more consecutive words may match the book.
+  - `higherLevels` follows the same rule.
+  - Names, numbers, levels, dice, ranges, durations and page numbers must match the book exactly.
+- **Checker (new Task 3b, before Task 4 resumes):**
+  - `compareToOcr` gains `longestSharedRun(text, ocr): number`, the longest run of consecutive normalized words shared with the OCR.
+  - `check:ocr` applies two modes by `textSource`:
+    - `srd`: today's checks. Failures caused purely by SRD-vs-PHB wording are accepted with the reason "SRD wording", after confirming the numbers match.
+    - `summary`: every number-bearing token must appear in the page's OCR (facts match), and `longestSharedRun < 8` (own words). Coverage and reverse are not used.
+- **Card:** a `summary` card ends with the line `Full rules: PHB p. <page>` (theme tokens only).
+- **Content tasks (4-11):**
+  - Import every SRD entry by script from dnd5eapi (cache in `.cache/srd/`).
+  - Write summaries for the rest from the page images.
+  - Task 1's hand-written fixtures (`fighting-style-*`, `land-terrain-*`, `weapon-bond`, `hold-person`) are re-sourced: SRD ones from the API, `weapon-bond` as a summary.
+  - The reviewer of each content task checks at least 10 random records against the page images for facts, and spot-checks that summaries don't copy book sentences.
+- Implementers never output long stretches of book text in their messages or reports. They quote at most a few words to identify a passage.
+
 ## Global Constraints
 
-- 2014 PHB only. Text is verbatim from the owner's PDF at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf`, keeping the book's own typos. No 2024 wording, no other books. Where SRD and PHB wording differ, the PHB wins.
+- 2014 PHB only. Text sources per the Amendment above; facts (names, numbers, levels, dice, ranges, durations, pages) from the owner's PDF at `C:\Users\trexx\Desktop\DnD5E PlayersHandbook.pdf`. No 2024 wording, no other books.
 - **Page numbers:** book page = PDF page − 1 (PHB p242 is PDF page 243). `page` fields hold book pages.
 - The PDF, page images and OCR text are never committed. They live in `.cache/phb/` (git-ignored).
 - **Text format:**
@@ -397,6 +425,63 @@ test('normalize', () => expect(normalizeOcr('Vou /ire IdlO')).toBe(normalizeOcr(
 
 ---
 
+### Task 3b: textSource, summary-mode checker, PHB reference line
+
+**Files:**
+- Modify: `src/data/types.ts`, `src/data/validate.ts`, `scripts/extract/ocr.ts`, `scripts/extract/check-ocr.ts`, `src/ui/screens/Card.tsx`, `src/styles/screens.css`, `data/spells.json`, `data/features/*.json`, `data/feats.json`
+- Test: `tests/unit/ocr.test.ts`, `tests/unit/validate.test.ts`, `tests/unit/screens.test.tsx`
+
+**Interfaces:**
+- Produces:
+
+```ts
+// types.ts: Spell, Feature, FeatDef gain  textSource: 'srd' | 'summary'
+// ocr.ts
+export function longestSharedRun(text: string, ocr: string): number;     // consecutive normalized words shared
+export function judgeRecord(source: 'srd' | 'summary', text: string, ocr: string, span?: { from: string; to?: string }):
+  { pass: boolean; reasons: string[] };
+// srd: coverage >= 0.92, no missingNumbers, reverse >= 0.85 (span end missing is its own reason)
+// summary: no missingNumbers, longestSharedRun < 8
+```
+
+- **Words:** split each side on whitespace and normalize each word with `normalizeOcr`, dropping empty words.
+- **check-ocr.ts** uses `judgeRecord` for every record and prints the mode next to each failure.
+- **Card:** a record with `textSource: 'summary'` ends with `Full rules: PHB p. <page>` in a small dim line.
+- **Fixture re-sourcing:**
+  - Spells and generic/class fixture features that came from dnd5eapi get `'srd'`.
+  - `fighting-style-protection` and `fighting-style-defense` take their text from dnd5eapi (`/api/2014/features/fighting-style-protection`, `…-defense`) and get `'srd'`.
+  - `land-terrain-arctic`, `land-terrain-coast` and `weapon-bond` get own-words summaries and `'summary'`.
+
+- [ ] **Step 1: Write the failing tests**
+
+```ts
+const ocr = readFileSync('tests/unit/fixtures/ocr-fire-bolt.txt', 'utf8');
+test('copied text has a long shared run', () =>
+  expect(longestSharedRun('You hurl a mote of fire at a creature or object within range.', ocr)).toBeGreaterThanOrEqual(8));
+test('own words stay short', () =>
+  expect(longestSharedRun('Ranged spell attack out to 120 feet; a hit deals 1d10 fire, and unattended flammable objects catch fire.', ocr)).toBeLessThan(8));
+test('summary mode: wrong number fails, own words pass', () => {
+  const own = 'Ranged spell attack out to 120 feet; a hit deals 1d10 fire, and unattended flammable objects catch fire.';
+  expect(judgeRecord('summary', own, ocr).pass).toBe(true);
+  expect(judgeRecord('summary', own.replace('1d10', '1d12'), ocr).reasons.join()).toContain('1d12');
+  expect(judgeRecord('summary', 'You hurl a mote of fire at a creature or object within range.', ocr).pass).toBe(false);
+});
+// validate.test.ts
+test('textSource required', () => {
+  const bad = structuredClone(DATA); delete (bad.spells[0] as any).textSource;
+  expect(validateDataset(bad).join('
+')).toContain('textSource');
+});
+// screens.test.tsx: Card for feature weapon-bond (fighter 3, eldritch-knight) shows "Full rules: PHB p. 75"; Card for spell fire-bolt shows no "Full rules"
+```
+
+- [ ] **Step 2: Run to verify they fail.** Expected: FAIL.
+- [ ] **Step 3: Implement.**
+- [ ] **Step 4: Run to verify they pass** — `npm test && npm run build && npm run check:ocr -- features`. Expected: unit tests PASS; the feature check passes for the re-sourced fixtures, or their failures are accepted with reasons.
+- [ ] **Step 5: Commit** — `git commit -m "feat: text sources (SRD or own-words summary), summary checker, PHB reference line"`
+
+---
+
 ### Task 4: Spells from the SRD, PHB names, pages and class lists
 
 **Files:**
@@ -431,7 +516,7 @@ export function phbId(name: string): string;                                    
   - **`phb-names.json`:** maps every SRD spell whose SRD name differs from the PHB (the wizard-named spells, e.g. `hideous-laughter` → `Tasha's Hideous Laughter`, `acid-arrow` → `Melf's Acid Arrow`). Complete it by comparing the SRD list with the PHB's own spell list pages.
 - **Pages:** run `extract:pages -- 207 289`, then fill `page` with `findSpellPage`. That function matches the normalized name at the start of an OCR line, followed by the school or level line. Hand-fix any `null`.
 - **`spell-lists.json`:** transcribed from the page images of PHB p207-211, as `{ "bard": ["Animal Friendship", …], … }` for the 8 casting classes, using PHB names. `extract:lists` sets every spell's `classes` from it, warns about names on the lists that have no spell record yet (expected until Task 5), and fails on names it can't match at all.
-- **Checking:** run `check:ocr -- spells` and fix every SRD spell whose text differs from the PHB.
+- **Checking:** run `check:ocr -- spells`. Fix every record whose facts (numbers, page, header fields) differ from the PHB. SRD wording stays as the SRD has it (Amendment).
 
 - [ ] **Step 1: Write the failing tests**
 
