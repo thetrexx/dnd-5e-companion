@@ -5,6 +5,7 @@ import './styles/fonts.css';
 import './styles/themes/faerun.css';
 import './styles/base.css';
 import './styles/components.css';
+import './styles/screens.css';
 
 applyTheme('faerun');
 render(<App />, document.getElementById('app')!);
