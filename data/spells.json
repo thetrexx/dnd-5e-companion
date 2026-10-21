@@ -6854,10 +6854,10 @@
       }
     },
     "description": [
-      "Your soul enters the container; your body goes catatonic. You perceive from there but can't move or react. Your only action: send your soul up to 100 ft, back to your body (ending the spell) or into a humanoid.",
-      "Possess: a humanoid you can see within 100 ft makes a Charisma save (protection from evil and good or magic circle blocks it). Fail: its soul swaps into the container. Success: no retry for 24 hours.",
-      "You use the host's stats but keep your alignment, Int, Wis, Cha and class features. Action: return to the container if within 100 ft.",
-      "If the host dies, Charisma save vs your own DC or you die (success: back to a container within 100 ft). If the container breaks or the spell ends, you return to your body, dying if it is dead or beyond 100 ft."
+      "Your soul enters the container; your body goes catatonic. You perceive from there but can't move or react. Only action: send your soul up to 100 ft, home (ending the spell) or into a humanoid.",
+      "Possess: a humanoid you can see within 100 ft makes a Charisma save (protection from evil and good or magic circle blocks it). Fail: souls swap. Success: no retry for 24 hours.",
+      "You use the host's stats but keep your alignment, Int, Wis, Cha and class features. Action: return to the container within 100 ft.",
+      "Host dies: Charisma save vs your DC, or you die. Container breaks or spell ends: you return to your body, dying if it is dead or over 100 ft away."
     ],
     "textSource": "summary"
   },

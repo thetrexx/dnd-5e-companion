@@ -3,7 +3,7 @@ import { spellSections, actionSections } from '../../src/logic/sections';
 
 test('wizard spell sections', () => {
   const sp = spellSections('wizard', 3);
-  expect(sp.map(s => s.id)).toEqual(['cantrips','lvl-1','lvl-2','lvl-3']);
+  expect(sp.map(s => s.id)).toEqual(['cantrips','lvl-1','lvl-2','lvl-3','lvl-4','lvl-5','lvl-6']);
   expect(sp.find(s => s.id === 'lvl-3')!.locked).toBe('Unlocks at Wizard 5');
   expect(sp.find(s => s.id === 'lvl-2')!.locked).toBeUndefined();
   expect(sp.find(s => s.id === 'lvl-2')!.subtitle).toBe('Wizard');
