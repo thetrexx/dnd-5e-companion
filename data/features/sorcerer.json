@@ -157,11 +157,11 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "A creature you can see makes an attack roll, ability check or saving throw",
+    "trigger": "Someone else you can see rolls an attack, ability check or save",
     "resource": "2 sorcery points",
     "description": [
-      "Another creature you can see is about to roll an attack, check or save. Spend 2 sorcery points and roll 1d4. You add that number to or subtract it from their roll, your choice.",
-      "Do this after their roll is made but before the result takes effect."
+      "Twist their fate with 2 sorcery points and your reaction: roll 1d4 and add it to their roll or take it away, as you prefer.",
+      "Decide after you see their roll but before its effects happen."
     ],
     "page": 103,
     "textSource": "summary",
@@ -313,10 +313,10 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You cast a spell that targets only one creature and is not range self",
+    "trigger": "Your spell targets a single creature and its range isn't self",
     "resource": "Sorcery points equal to the spell's level (1 for a cantrip)",
     "description": [
-      "Spend points equal to the spell's level (1 for a cantrip) to give a single-target spell a second target within range. The spell cannot have a range of self."
+      "Pay 1 sorcery point per spell level (a cantrip costs 1) and the spell picks up a second target, which also has to be within its range."
     ],
     "page": 102,
     "textSource": "summary"

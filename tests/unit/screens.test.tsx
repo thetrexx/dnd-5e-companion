@@ -48,7 +48,7 @@ test('Card shows scaling for the route level', () => {
 
 test('Card shows the reaction trigger on features and labels option sources', () => {
   const r = render(<Card kind="feature" id="fighting-style-protection" cls="fighter" level={1} />);
-  expect(r.container.querySelector('.card-cost')!.textContent).toContain('Reaction, A creature you can see attacks');
+  expect(r.container.querySelector('.card-cost')!.textContent).toContain('Reaction, An enemy you can see attacks');
   expect(r.container.querySelector('.card-sub')!.textContent).toContain('Fighting Style');
   expect(r.container.querySelector('a.back')!.getAttribute('href')).toBe('#/actions/fighter/1?s=opt-fighting-style');
 });

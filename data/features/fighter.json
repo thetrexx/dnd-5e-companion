@@ -117,9 +117,9 @@
     },
     "level": 1,
     "cost": "reaction",
-    "trigger": "A creature you can see attacks a target other than you within 5 feet of you",
+    "trigger": "An enemy you can see attacks someone else within 5 ft",
     "description": [
-      "While you wield a shield, you can use your reaction when a creature you can see attacks someone else within 5 ft of you. The attack roll gets disadvantage."
+      "Shield in hand, you can throw off attacks on allies beside you. If a creature you can see attacks another target within 5 ft of you, spend your reaction: that attack roll has disadvantage."
     ],
     "page": 72,
     "textSource": "summary",
@@ -334,7 +334,7 @@
     "trigger": "You use Action Surge",
     "resource": "Action Surge",
     "description": [
-      "When you use Action Surge, you can teleport up to 30 ft to an open space you can see. Teleport before or after the extra action."
+      "Action Surge now comes with a blink: teleport up to 30 ft into an unoccupied space you can see, either before or after the extra action."
     ],
     "page": 75,
     "textSource": "summary"
@@ -445,11 +445,11 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. The target makes a Strength save; on a failure it drops one held item of your choice, which lands at its feet.",
-      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+      "The die joins the damage roll. Name an item the target holds; it must pass a Strength save or let go, and the item falls at its feet.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
     ],
     "page": 74,
     "textSource": "summary"
@@ -463,10 +463,10 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. The next attack against that target by anyone other than you has advantage, if it happens before the start of your next turn."
+      "The die joins the damage roll, and you open the target up for your friends: until your next turn starts, the first attack roll someone else makes against it has advantage."
     ],
     "page": 74,
     "textSource": "summary"
@@ -515,11 +515,11 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. The target makes a Wisdom save. If it fails, its attacks against anyone other than you are made with disadvantage until your next turn ends.",
-      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+      "The die joins the damage roll, and the target must pass a Wisdom save or fixate on you. Until your next turn ends, it rolls with disadvantage when it attacks anyone but you.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
     ],
     "page": 74,
     "textSource": "summary"
@@ -550,10 +550,10 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. Pick an ally who sees or hears you; as a reaction it can walk up to half its speed, and the target gets no opportunity attack against it during that move."
+      "The die joins the damage roll. An ally who can see or hear you may then use its reaction for a move of up to half its speed, and your target can't make opportunity attacks against it for that move."
     ],
     "page": 74,
     "textSource": "summary"
@@ -567,11 +567,11 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. The target makes a Wisdom save. A failed save leaves it frightened of you through your next turn.",
-      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+      "The die joins the damage roll, and the target must pass a Wisdom save or be frightened of you. The fear lasts until your next turn ends.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
     ],
     "page": 74,
     "textSource": "summary"
@@ -621,11 +621,11 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. A target of Large size or smaller makes a Strength save; on a failure you push it up to 15 feet away from you.",
-      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+      "The die joins the damage roll. A Large or smaller target must pass a Strength save or you shove it up to 15 ft straight away from you.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
     ],
     "page": 74,
     "textSource": "summary"
@@ -641,7 +641,7 @@
     "cost": "bonus",
     "resource": "1 superiority die",
     "description": [
-      "Spend a bonus action to encourage a friendly creature that can see or hear you. It gains temporary hit points equal to the die roll plus your Charisma modifier."
+      "On your turn, spend a bonus action to steady an ally who can see or hear you. Roll the die; the ally gets that many temporary hit points plus your Charisma modifier."
     ],
     "page": 74,
     "textSource": "summary",
@@ -656,10 +656,10 @@
     },
     "level": 3,
     "cost": "reaction",
-    "trigger": "A creature misses you with a melee attack",
+    "trigger": "A melee attack misses you",
     "resource": "1 superiority die",
     "description": [
-      "Make one melee weapon attack against that creature. If it hits, add the die to the damage."
+      "Strike back at the creature that missed: one melee weapon attack against it. On a hit, the die joins the damage roll."
     ],
     "page": 74,
     "textSource": "summary",
@@ -674,10 +674,10 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a melee weapon attack",
+    "trigger": "Your melee weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Pick a second creature within 5 feet of the first and within your reach. If your original attack roll would also hit it, it takes damage equal to your die roll, of the same type as the original attack."
+      "Carry the swing into a second creature that is within 5 ft of the first target and within your reach. Compare your original attack roll to its AC; if that roll would hit it, it takes damage equal to the die, of the original attack's damage type."
     ],
     "page": 74,
     "textSource": "summary",
@@ -692,11 +692,11 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You hit a creature with a weapon attack",
+    "trigger": "Your weapon attack hits",
     "resource": "1 superiority die",
     "description": [
-      "Add the die to the damage. A target of Large size or smaller makes a Strength save; on a failure you knock it prone.",
-      "Save DC is 8 + your proficiency bonus + your Strength or Dexterity modifier."
+      "The die joins the damage roll. A Large or smaller target must pass a Strength save or fall prone.",
+      "DC: 8 + your proficiency bonus + your Str or Dex modifier."
     ],
     "page": 74,
     "textSource": "summary"

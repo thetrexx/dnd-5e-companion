@@ -152,10 +152,10 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "A creature makes an attack roll against you",
+    "trigger": "You are the target of an attack roll",
     "uses": "Once per short or long rest",
     "description": [
-      "When a creature rolls an attack against you, use your reaction to give that roll disadvantage. If it still misses, your next attack against that creature has advantage, provided you make it by the end of your following turn.",
+      "Spend your reaction to give the incoming attack roll disadvantage. Should it miss anyway, you have advantage on your next attack roll against that attacker, as long as you make it before your next turn ends.",
       "Recharges on a short or long rest."
     ],
     "page": 110,
@@ -303,7 +303,7 @@
       }
     ],
     "description": [
-      "Cast compulsion once by spending a warlock spell slot. You cannot do this again until you finish a long rest."
+      "Once per long rest, spend a warlock spell slot to cast compulsion."
     ],
     "page": 110,
     "textSource": "summary"

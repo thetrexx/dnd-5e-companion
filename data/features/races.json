@@ -107,9 +107,9 @@
     },
     "level": 1,
     "cost": "free",
-    "trigger": "You score a critical hit with a melee weapon attack",
+    "trigger": "Your melee weapon attack crits",
     "description": [
-      "On a critical hit with a melee weapon, add one more roll of that weapon's damage die to the extra critical damage."
+      "Crit with a melee weapon? Roll one of its damage dice once more and add that roll to the crit's extra damage."
     ],
     "page": 41,
     "textSource": "summary",

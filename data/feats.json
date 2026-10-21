@@ -40,8 +40,8 @@
     "prereq": "Strength 13 or higher",
     "page": 167,
     "description": [
-      "You attack with advantage against a creature you are grappling, and a target one size larger than you has no automatic success when escaping your grip.",
-      "As an action you can try to pin a creature you are grappling: a new grapple check, and if you win, you both stay restrained until the grapple ends."
+      "Holding someone in a grapple? Your attack rolls against them have advantage, and a creature one size bigger than you no longer escapes your hold automatically.",
+      "Spend an action and make a fresh grapple check to pin your victim. Win it, and the two of you are restrained until the grapple is over."
     ],
     "spells": [],
     "textSource": "summary"
@@ -51,8 +51,8 @@
     "name": "Great Weapon Master",
     "page": 167,
     "description": [
-      "During your own turn, scoring a critical hit with a melee weapon, or dropping a foe to 0 hit points with one, grants a bonus-action melee attack.",
-      "You may declare -5 to hit on a heavy-weapon melee attack you are proficient with, gaining +10 damage if it connects."
+      "On your own turn, a crit with a melee weapon or a kill with one lets you spend your bonus action on another melee weapon attack.",
+      "With a heavy weapon you're proficient with, you may declare -5 to hit before a melee attack; if it lands, add +10 damage."
     ],
     "spells": [],
     "textSource": "summary",
@@ -165,8 +165,8 @@
     "name": "Polearm Master",
     "page": 168,
     "description": [
-      "Attacking with only a glaive, halberd or quarterstaff gives you a bonus-action melee attack with the other end: a d4 die, bludgeoning damage.",
-      "While you hold a glaive, halberd, pike or quarterstaff, creatures provoke an opportunity attack from you as they enter your reach."
+      "Take the Attack action wielding only a glaive, halberd or quarterstaff, and your bonus action can be a melee attack with the butt end. That attack uses a d4 for damage, which is bludgeoning.",
+      "Holding a glaive, halberd, pike or quarterstaff, you get an opportunity attack on any creature that steps into your reach."
     ],
     "spells": [],
     "textSource": "summary"
@@ -205,7 +205,7 @@
     "name": "Savage Attacker",
     "page": 169,
     "description": [
-      "Once per turn, after rolling damage for a melee weapon attack, you may roll the weapon's damage dice again and keep whichever total you like."
+      "When a melee weapon attack's damage is rolled, you may reroll the weapon's damage dice and pick the better total. Once per turn."
     ],
     "spells": [],
     "textSource": "summary",
@@ -281,8 +281,8 @@
     "name": "Tavern Brawler",
     "page": 170,
     "description": [
-      "You are proficient with improvised weapons and unarmed strikes, and your unarmed strike deals d4 damage.",
-      "After landing an unarmed strike or improvised weapon hit during your turn, a bonus action lets you attempt to grapple that target."
+      "Improvised weapons and unarmed strikes count as proficient for you, and your unarmed strikes roll a d4 for damage.",
+      "On your turn, once an unarmed strike or improvised weapon connects, your bonus action can go on a grapple attempt against that target."
     ],
     "spells": [],
     "textSource": "summary",
@@ -294,8 +294,8 @@
     "prereq": "Able to cast at least one spell",
     "page": 170,
     "description": [
-      "You have advantage on Constitution saves to hold concentration when hurt, and can make somatic components with weapons or a shield in hand.",
-      "When a hostile creature's movement provokes an opportunity attack from you, you may react by casting a 1-action spell that targets only it instead of attacking."
+      "Concentration saves (Constitution) after you take damage have advantage. Weapons or a shield in your hands don't stop you from doing somatic components.",
+      "If a hostile creature moving away earns an opportunity attack from you, your reaction can instead cast a spell on it. The spell must have a 1-action casting time and target that creature alone."
     ],
     "spells": [],
     "textSource": "summary",

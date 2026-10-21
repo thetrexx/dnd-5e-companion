@@ -255,9 +255,9 @@
     },
     "level": 3,
     "cost": "bonus",
-    "trigger": "You are raging and not in heavy armor",
+    "trigger": "Raging, out of heavy armor",
     "description": [
-      "While you rage and wear no heavy armor, enemies have disadvantage on opportunity attacks against you, and you can take the Dash action as a bonus action."
+      "During a rage without heavy armor on, Dash costs you only a bonus action on your turn, and any opportunity attack made at you rolls with disadvantage."
     ],
     "page": 50,
     "textSource": "summary"
@@ -287,7 +287,7 @@
     "level": 6,
     "cost": "passive",
     "description": [
-      "You gain the might of a bear: you can carry and lift twice as much, and Strength checks to push, pull, lift or break things have advantage."
+      "Bear might: your carrying capacity, maximum load and maximum lift all double. You also roll Strength checks to push, pull, lift or break objects with advantage."
     ],
     "page": 50,
     "textSource": "summary"
@@ -361,9 +361,9 @@
     },
     "level": 14,
     "cost": "bonus",
-    "trigger": "You hit with a melee weapon attack while raging",
+    "trigger": "Raging, after a melee weapon hit",
     "description": [
-      "Once you hit a Large or smaller creature with a melee weapon attack during a rage, a bonus action on your turn lets you topple it prone."
+      "A rage-only takedown: once your melee weapon attack connects with a Large or smaller creature, a bonus action that same turn drops it prone."
     ],
     "page": 50,
     "textSource": "summary"

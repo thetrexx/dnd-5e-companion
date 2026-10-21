@@ -74,9 +74,9 @@
     },
     "level": 1,
     "cost": "bonus",
-    "trigger": "On your turn you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one",
+    "trigger": "On your turn, a melee weapon crit or a kill with a melee weapon",
     "description": [
-      "Make one extra melee weapon attack as a bonus action. This only happens on your own turn, right after the critical hit or the kill."
+      "Keep the momentum going: your bonus action becomes one more melee weapon attack. It only works during your own turn."
     ],
     "page": 167,
     "textSource": "summary",
@@ -91,9 +91,9 @@
     },
     "level": 1,
     "cost": "free",
-    "trigger": "You make a melee attack with a heavy weapon",
+    "trigger": "Before a heavy-weapon melee attack",
     "description": [
-      "Before a melee attack with a heavy weapon you are proficient with, you can take -5 on the attack roll. If the attack hits, it deals +10 damage."
+      "Swing for broke with a heavy weapon you're proficient with: accept -5 to the attack roll, and a hit gains +10 damage. Decide before you roll."
     ],
     "page": 167,
     "textSource": "summary"
@@ -229,10 +229,10 @@
     },
     "level": 1,
     "cost": "free",
-    "trigger": "You roll damage for a melee weapon attack",
+    "trigger": "Damage for your melee weapon attack is rolled",
     "uses": "Once per turn",
     "description": [
-      "After rolling damage for a melee weapon attack, you may roll the weapon's damage dice again and use either total."
+      "Roll the weapon's damage dice a second time, then pick which of the two totals counts."
     ],
     "page": 169,
     "textSource": "summary",
@@ -331,9 +331,9 @@
     },
     "level": 1,
     "cost": "reaction",
-    "trigger": "A hostile creature's movement provokes an opportunity attack from you",
+    "trigger": "A hostile creature's movement gives you an opportunity attack",
     "description": [
-      "Cast a spell at that creature in place of an opportunity attack. The spell must take 1 action to cast and target only that creature."
+      "Swap the opportunity attack for a spell aimed at the mover. Only a spell with a 1-action casting time that targets just that creature qualifies."
     ],
     "page": 170,
     "textSource": "summary",

@@ -118,9 +118,9 @@
     },
     "level": 17,
     "cost": "free",
-    "trigger": "First round of a combat",
+    "trigger": "Round 1 of a fight",
     "description": [
-      "In the first round of any combat you get two turns: one at your normal initiative and one at your initiative minus 10. You cannot do this if you are surprised."
+      "Combat's opening round gives you an extra turn: act once on your usual initiative count, then again 10 counts lower. Being surprised cancels this."
     ],
     "page": 97,
     "textSource": "summary"
@@ -134,9 +134,9 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You attack a creature that has not acted yet",
+    "trigger": "Attacking a foe that hasn't acted yet",
     "description": [
-      "You have advantage on attack rolls against creatures that have not yet taken a turn in the combat. Any hit you land on a surprised creature is a critical hit."
+      "Strike first and hard. Until a creature has had its first turn of the fight, your attack rolls against it have advantage. Against a surprised creature, every hit you land counts as a critical hit."
     ],
     "page": 97,
     "textSource": "summary"
@@ -214,11 +214,11 @@
     },
     "level": 17,
     "cost": "reaction",
-    "trigger": "A creature casts a spell that targets you or includes you in its area",
+    "trigger": "A spell targets you or catches you in its area",
     "uses": "Once per long rest",
     "description": [
-      "When a creature casts a spell that targets you or includes you in its area, force it to make a saving throw with its spellcasting ability. The DC is your spell save DC.",
-      "On a fail, the spell has no effect on you, and if it is level 1+ and a level you can cast, you learn it for 8 hours and cast it with your own slots. The caster cannot cast that spell for those 8 hours.",
+      "Right after the spell is cast, spend your reaction: the caster saves with its spellcasting ability modifier against your spell save DC.",
+      "If it fails, the spell does nothing to you. A spell of level 1 or higher that you have slots for (any class's list) is now yours for 8 hours, cast with your own slots, while the caster loses the use of it for those 8 hours.",
       "Recharges on a long rest."
     ],
     "page": 98,

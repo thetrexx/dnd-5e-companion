@@ -288,9 +288,9 @@
     },
     "level": 7,
     "cost": "free",
-    "trigger": "You hit a creature with an opportunity attack",
+    "trigger": "Your opportunity attack hits",
     "description": [
-      "After you hit with an opportunity attack, you may move up to half your speed as part of that same reaction. This movement does not provoke opportunity attacks."
+      "Chase down a fleeing foe: when your opportunity attack lands, the same reaction lets you move up to half your speed straight after it. Nobody gets opportunity attacks on you for that move."
     ],
     "page": 88,
     "textSource": "summary",

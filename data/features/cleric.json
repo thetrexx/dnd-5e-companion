@@ -347,9 +347,9 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "A creature within 30 ft takes acid, cold, fire, lightning or thunder damage",
+    "trigger": "Acid, cold, fire, lightning or thunder damage hits you or someone within 30 ft",
     "description": [
-      "When you or a creature within 30 ft takes acid, cold, fire, lightning or thunder damage, grant that creature resistance to that single instance of damage."
+      "Elemental harm (acid, cold, fire, lightning or thunder) strikes you or a creature within 30 ft: spend your reaction and that one hit is resisted, so it's halved."
     ],
     "page": 62,
     "textSource": "summary",
@@ -410,7 +410,7 @@
     "level": 17,
     "cost": "bonus",
     "description": [
-      "While creatures are charmed by Charm Animals and Plants, use a bonus action on your turn to tell each what to do on its next turn."
+      "Beasts and plants you've charmed with Charm Animals and Plants take your orders: on your turn, a bonus action and a spoken word set what each will do on its next turn."
     ],
     "page": 62,
     "textSource": "summary"
@@ -559,7 +559,7 @@
     "cost": "action",
     "resource": "1 Channel Divinity",
     "description": [
-      "You turn invisible until the end of your next turn. You become visible early if you attack or cast a spell."
+      "Spend your action and a use of Channel Divinity to vanish. You stay invisible until your next turn is over, though an attack or a spell from you reveals you at once."
     ],
     "page": 63,
     "textSource": "summary",

@@ -96,10 +96,10 @@
     },
     "level": 2,
     "cost": "bonus",
-    "trigger": "Right after you take the Attack action",
+    "trigger": "Just after your Attack action",
     "resource": "1 ki point",
     "description": [
-      "Right after you take the Attack action, spend 1 ki point to throw two unarmed strikes using your bonus action."
+      "Follow your Attack action at once with a bonus action costing 1 ki point: two unarmed strikes."
     ],
     "page": 78,
     "textSource": "summary",
@@ -369,8 +369,8 @@
     "cost": "action",
     "resource": "2 ki points",
     "description": [
-      "Spend 2 ki to cast darkness, darkvision, pass without trace or silence with no material components.",
-      "You also know the minor illusion cantrip."
+      "As an action, pay 2 ki to cast one of these: silence, darkness, darkvision or pass without trace. None of them needs material components.",
+      "Minor illusion joins your cantrips (if you didn't have it already)."
     ],
     "page": 80,
     "textSource": "summary"

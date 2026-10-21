@@ -10,8 +10,8 @@
     "cost": "free",
     "uses": "Once per day, after a short rest",
     "description": [
-      "When you finish a short rest, choose expended spell slots to get back. Their levels must add up to half your wizard level (rounded up) or less, and none can be 6th level or higher.",
-      "Example: at level 4 you can recover one 2nd-level slot or two 1st-level slots."
+      "A short rest over your spellbook can refill used spell slots. Pick slots whose levels total no more than half your wizard level, rounded up; slots of level 6 and above are off the table.",
+      "A 4th-level wizard, say, has 2 levels to spend: one level-2 slot, or a pair of level-1 slots."
     ],
     "page": 115,
     "textSource": "summary",
@@ -60,7 +60,7 @@
     },
     "level": 2,
     "cost": "free",
-    "trigger": "You cast an abjuration spell of 1st level or higher",
+    "trigger": "You cast a level 1+ abjuration spell",
     "resource": "Arcane Ward hit points (pool)",
     "uses": "Created once per long rest",
     "scaling": [
@@ -91,9 +91,9 @@
       }
     ],
     "description": [
-      "Cast any abjuration spell using a slot (level 1+) and you can also raise a ward around yourself, lasting until your next long rest. Its hit points are 2 x your wizard level + your Intelligence modifier.",
-      "Incoming damage hits the ward first; any excess carries over to you. At 0 it absorbs nothing but remains. Each slotted abjuration spell you cast afterward heals it for 2 x that spell's level.",
-      "You can raise it once per long rest."
+      "That first abjuration casting can also wrap you in a ward, which lasts till your next long rest. Its starting hit points equal 2 x your wizard level + your Intelligence modifier.",
+      "Damage to you drains the ward before it reaches you; whatever the ward can't soak spills over onto you. A ward at 0 HP stops absorbing but doesn't vanish. Later abjuration spells of level 1+ restore 2 x the spell's level to it.",
+      "You can create it only once per long rest."
     ],
     "page": 115,
     "textSource": "summary",
@@ -205,9 +205,9 @@
     },
     "level": 6,
     "cost": "free",
-    "trigger": "You cast a divination spell of 2nd level or higher with a slot",
+    "trigger": "You use a slot of level 2+ to cast a divination spell",
     "description": [
-      "Casting a divination spell with a slot of 2nd level or above refunds one spent slot. The refunded slot must be lower than the slot you used and cannot exceed 5th level."
+      "Get one spent slot back. It has to be lower in level than the spell you just cast, and no higher than level 5."
     ],
     "page": 116,
     "textSource": "summary",
@@ -293,10 +293,10 @@
     },
     "level": 14,
     "cost": "action",
-    "trigger": "You cast a charming enchantment spell",
+    "trigger": "You cast an enchantment spell that charms",
     "description": [
-      "When you cast an enchantment spell that charms creatures, one of them can be left unaware it was charmed.",
-      "Before the spell ends, use your action to make that creature forget some of its charmed time. It makes an Intelligence save against your wizard spell save DC or loses 1 + your Charisma modifier hours (minimum 1) of memory. You can choose less, but never more than the spell's duration."
+      "Pick one of the creatures your charm lands on; it doesn't realise it has been charmed.",
+      "Once before the spell ends, spend your action to blur its memory of the charm. It must beat your wizard spell save DC with an Intelligence save. On a failure it loses up to 1 + your Charisma modifier hours of memories (at least 1 hour). You may take less, but no more than the spell's duration."
     ],
     "page": 117,
     "textSource": "summary"
@@ -310,9 +310,9 @@
     },
     "level": 2,
     "cost": "free",
-    "trigger": "You cast an evocation spell that affects other creatures",
+    "trigger": "Your evocation spell affects creatures you can see",
     "description": [
-      "Cast an evocation spell that hits other creatures you can see, and shield some of them: 1 + the spell's level creatures of your choice. They pass the save automatically and take zero damage, even from a spell that would deal half on a save."
+      "Carve safe pockets into the blast. Choose up to 1 + the spell's level of those creatures: each one succeeds on its save automatically, and where a successful save would still mean half damage, it takes none."
     ],
     "page": 117,
     "textSource": "summary",
@@ -360,10 +360,10 @@
     },
     "level": 10,
     "cost": "reaction",
-    "trigger": "A creature makes an attack roll against you",
+    "trigger": "You are the target of an attack roll",
     "uses": "Once per short or long rest",
     "description": [
-      "When a creature attacks you, drop an illusory double between you and it. The attack automatically misses and the double vanishes.",
+      "React on instinct and an illusory copy of you steps into the attacker's way. The attack misses you no matter what, and the copy fades.",
       "Recharges on a short or long rest."
     ],
     "page": 118,
@@ -379,10 +379,10 @@
     },
     "level": 14,
     "cost": "bonus",
-    "trigger": "You maintain an illusion spell of 1st level or higher",
+    "trigger": "Your illusion spell of level 1+ is still running",
     "description": [
-      "While your illusion spell of 1st level or above is still running, pick one object in it that is inanimate and nonmagical, and make it real for 1 minute.",
-      "The object can never cause damage or directly harm anyone."
+      "On your turn, a bonus action turns one inanimate, nonmagical object inside the illusion into a real one for 1 minute (picture a fake bridge your party can actually cross).",
+      "The real object never deals damage or directly hurts anyone."
     ],
     "page": 118,
     "textSource": "summary"

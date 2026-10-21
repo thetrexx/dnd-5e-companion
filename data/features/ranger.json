@@ -110,9 +110,9 @@
     },
     "level": 3,
     "cost": "free",
-    "trigger": "You make a weapon attack",
+    "trigger": "You make a weapon attack (once per turn)",
     "description": [
-      "Once per turn when you make a weapon attack, you get one more attack with the same weapon on a different creature. It must be within 5 ft of the first target and within your weapon's range."
+      "Each of your turns, one weapon attack can earn a bonus swing: attack again with that weapon, aimed at a different creature standing within 5 ft of the first target and inside the weapon's range."
     ],
     "page": 93,
     "textSource": "summary"
@@ -222,9 +222,9 @@
     },
     "level": 15,
     "cost": "reaction",
-    "trigger": "A hostile creature misses you with a melee attack",
+    "trigger": "A hostile creature's melee attack misses you",
     "description": [
-      "A hostile creature misses you with a melee attack: spend your reaction to make it redo that same attack on a different creature you pick (not itself)."
+      "Turn the miss around. Spend your reaction to pick another creature (not the attacker); the attacker makes that same attack again, now against your pick."
     ],
     "page": 93,
     "textSource": "summary"
