@@ -2,3 +2,13 @@ Fallback icons from game-icons.net by Lorc (shouting, magic-palm, swap-bag, magi
 License: CC BY 3.0 https://creativecommons.org/licenses/by/3.0/
 Source: https://game-icons.net
 Modified: black background removed. Glyph fill stays light because currentColor cannot apply inside an <img>.
+
+School icons, all by Lorc on game-icons.net (CC BY 3.0, black background removed):
+school-abjuration: Shield Reflect
+school-conjuration: Magic Portal
+school-divination: Crystal Ball
+school-enchantment: Charm
+school-evocation: Fireball
+school-illusion: Domino Mask
+school-necromancy: Dread Skull
+school-transmutation: Cycle

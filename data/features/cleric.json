@@ -87,7 +87,8 @@
       "From level 5, an undead that fails the save is destroyed if its CR is at or below the value shown."
     ],
     "page": 59,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4c/Turn_Undead_Icon.webp"
   },
   {
     "id": "divine-intervention",
@@ -121,7 +122,8 @@
       "Pick one skill or tool. You are proficient with it for 10 minutes."
     ],
     "page": 59,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b9/Knowledge_of_the_Ages_Icon.webp"
   },
   {
     "id": "read-thoughts",
@@ -138,7 +140,8 @@
       "On a fail, you read its surface thoughts for 1 minute while it stays within 60 ft of you. During that time you can spend your action to end the reading and cast suggestion on it with no spell slot. It automatically fails the save against that spell."
     ],
     "page": 59,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7a/Read_Thoughts_Icon.webp"
   },
   {
     "id": "visions-of-the-past",
@@ -200,7 +203,8 @@
       "This cannot raise anyone above half of their hit point maximum, and it does not work on undead or constructs."
     ],
     "page": 60,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/72/Preserve_Life_Icon.webp"
   },
   {
     "id": "divine-strike",
@@ -262,7 +266,8 @@
       "When a creature within 30 ft that you can see attacks you, flare light at it so the attack roll has disadvantage. Attackers that cannot be blinded ignore this."
     ],
     "page": 61,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8f/Warding_Flare_Icon.webp"
   },
   {
     "id": "radiance-of-the-dawn",
@@ -279,7 +284,8 @@
       "A failed save takes 2d10 + your cleric level radiant damage; a pass takes half. Targets with total cover from you are unaffected."
     ],
     "page": 61,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c8/Radiance_of_the_Dawn_Icon.webp"
   },
   {
     "id": "improved-flare",
@@ -329,7 +335,8 @@
       "A creature that fails becomes your charmed friend (and a friend to anyone you name). The charm lasts 1 minute and breaks the moment it takes damage."
     ],
     "page": 62,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6e/Charm_Animals_and_Plants_Icon.webp"
   },
   {
     "id": "dampen-elements",
@@ -345,7 +352,8 @@
       "When you or a creature within 30 ft takes acid, cold, fire, lightning or thunder damage, grant that creature resistance to that single instance of damage."
     ],
     "page": 62,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d4/Dampen_Elements_Icon.webp"
   },
   {
     "id": "nature-domain-divine-strike",
@@ -422,7 +430,8 @@
       "A creature you can see that is within 5 ft and hits you must make a Dexterity save. Choose lightning or thunder: it takes 2d8 of that type, or half if it passes."
     ],
     "page": 62,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9b/Wrath_of_the_Storm_Icon.png"
   },
   {
     "id": "destructive-wrath",
@@ -439,7 +448,8 @@
       "When you roll lightning or thunder damage, spend a Channel Divinity use to take the maximum on each die instead of rolling."
     ],
     "page": 62,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/ca/Destructive_Wrath_Icon.webp"
   },
   {
     "id": "thunderbolt-strike",
@@ -455,7 +465,8 @@
       "Lightning damage you deal to a creature of size Large or smaller can also push it up to 10 ft away from you."
     ],
     "page": 62,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/86/Thunderbolt_Strike_Icon.webp"
   },
   {
     "id": "tempest-domain-divine-strike",
@@ -515,7 +526,8 @@
       "Touch someone willing (not yourself) to make their Dexterity (Stealth) checks advantaged for 1 hour. Using this again ends the earlier blessing."
     ],
     "page": 63,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1e/Blessing_of_the_Trickster_Icon.webp"
   },
   {
     "id": "invoke-duplicity",
@@ -533,7 +545,8 @@
       "When you and the copy are both within 5 ft of a creature that can see the copy, you have advantage on attacks against that creature."
     ],
     "page": 63,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fd/Invoke_Duplicity_Icon.webp"
   },
   {
     "id": "cloak-of-shadows",
@@ -549,7 +562,8 @@
       "You turn invisible until the end of your next turn. You become visible early if you attack or cast a spell."
     ],
     "page": 63,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3f/Cloak_of_Shadows_Icon.webp"
   },
   {
     "id": "trickery-domain-divine-strike",
@@ -626,7 +640,8 @@
       "When you take the Attack action, make 1 weapon attack as a bonus action."
     ],
     "page": 63,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b2/War_Priest_Icon.webp"
   },
   {
     "id": "guided-strike",
@@ -643,7 +658,8 @@
       "When you make an attack roll, spend a Channel Divinity use for a +10 bonus to it. Decide after seeing the roll, before the DM says if it hits."
     ],
     "page": 63,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/38/Guided_Strike_Icon.webp"
   },
   {
     "id": "war-gods-blessing",
@@ -660,7 +676,8 @@
       "When a creature within 30 ft makes an attack roll, spend a Channel Divinity use to give it a +10 bonus. Decide after seeing the roll, before the DM says if it hits."
     ],
     "page": 63,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/ce/War_God's_Blessing_Icon.webp"
   },
   {
     "id": "war-domain-divine-strike",

@@ -14,7 +14,8 @@
       "Example: at level 4 you can recover one 2nd-level slot or two 1st-level slots."
     ],
     "page": 115,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ed/Arcane_Recovery_Icon.webp"
   },
   {
     "id": "spell-mastery",
@@ -95,7 +96,8 @@
       "You can raise it once per long rest."
     ],
     "page": 115,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Arcane_Ward_Icon.webp"
   },
   {
     "id": "projected-ward",
@@ -111,7 +113,8 @@
       "When a creature you can see within 30 ft takes damage, your Arcane Ward soaks it instead. If that drops the ward to 0, the creature takes the remaining damage."
     ],
     "page": 115,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Projected_Ward_Icon.webp"
   },
   {
     "id": "minor-conjuration",
@@ -190,7 +193,8 @@
       "State the swap before that roll happens. Only one swap per turn. Leftover results vanish when you next finish a long rest."
     ],
     "page": 116,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1d/Portent_Icon.webp"
   },
   {
     "id": "expert-divination",
@@ -206,7 +210,8 @@
       "Casting a divination spell with a slot of 2nd level or above refunds one spent slot. The refunded slot must be lower than the slot you used and cannot exceed 5th level."
     ],
     "page": 116,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f4/Expert_Divination_Icon.webp"
   },
   {
     "id": "the-third-eye",
@@ -240,7 +245,8 @@
       "After it ends, or on a passed first save, you can't target that creature again until a long rest."
     ],
     "page": 117,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f6/Hypnotic_Gaze_Icon.webp"
   },
   {
     "id": "instinctive-charm",
@@ -258,7 +264,8 @@
       "If it passes, that attacker is off limits for this feature until you take a long rest. Use it before you learn whether the attack lands. Charm-immune creatures ignore it."
     ],
     "page": 117,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/92/Instinctive_Charm_Icon.webp"
   },
   {
     "id": "split-enchantment",
@@ -274,7 +281,8 @@
       "Your single-target enchantment spells (slot level 1+) can pick a second target as well."
     ],
     "page": 117,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b1/Split_Enchantment_Icon.webp"
   },
   {
     "id": "alter-memories",
@@ -307,7 +315,8 @@
       "Cast an evocation spell that hits other creatures you can see, and shield some of them: 1 + the spell's level creatures of your choice. They pass the save automatically and take zero damage, even from a spell that would deal half on a save."
     ],
     "page": 117,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/97/Sculpt_Spells_Icon.webp"
   },
   {
     "id": "overchannel",
@@ -358,7 +367,8 @@
       "Recharges on a short or long rest."
     ],
     "page": 118,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a8/Illusory_Self_Icon.webp"
   },
   {
     "id": "illusory-reality",
@@ -393,7 +403,8 @@
       "Constructs and undead give you nothing."
     ],
     "page": 118,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/59/Grim_Harvest_Icon.webp"
   },
   {
     "id": "command-undead",
@@ -443,7 +454,8 @@
       "After that, you can't do it again until a short or long rest, but you can still cast polymorph normally with a slot."
     ],
     "page": 119,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9d/Shapechanger_Icon.webp"
   },
   {
     "id": "master-transmuter",

@@ -14,7 +14,8 @@
       "Once used, you need a short or long rest before using it again."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/95/Second_Wind_Icon.webp"
   },
   {
     "id": "action-surge",
@@ -58,7 +59,8 @@
       "Needs a short or long rest to use again. From level 17 you get two uses between rests, but only one per turn."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Action_Surge_Icon.webp"
   },
   {
     "id": "indomitable",
@@ -103,7 +105,8 @@
       "Each use needs a long rest to recover. See Uses for how many uses you have."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/16/Indomitable_Icon.webp"
   },
   {
     "id": "fighting-style-protection",
@@ -119,7 +122,8 @@
       "While you wield a shield, you can use your reaction when a creature you can see attacks someone else within 5 ft of you. The attack roll gets disadvantage."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/73/Protection_Icon.webp"
   },
   {
     "id": "fighting-style-defense",
@@ -134,7 +138,8 @@
       "You get +1 AC for as long as you are wearing armor. Always on; it stops working when you take the armor off."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e2/Defence_Icon.webp"
   },
   {
     "id": "weapon-bond",
@@ -152,7 +157,8 @@
       "You can have up to 2 bonded weapons, but summon only one per bonus action. Bonding a third needs you to break one existing bond first."
     ],
     "page": 75,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Weapon_Bond_Icon.webp"
   },
   {
     "id": "superiority-dice",
@@ -263,7 +269,8 @@
       "Study or chat with a creature for 1 minute or more, away from combat. The DM tells you whether it ranks above, below or level with you in 2 traits you pick. Options: any of the 3 physical scores, AC, current HP, overall class levels, or fighter levels."
     ],
     "page": 73,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/30/Know_Your_Enemy_Icon.webp"
   },
   {
     "id": "relentless",
@@ -295,7 +302,8 @@
       "Cast a cantrip as your action, and you may follow it with 1 weapon attack as a bonus action."
     ],
     "page": 75,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1a/War_Magic_Icon.webp"
   },
   {
     "id": "eldritch-strike",
@@ -311,7 +319,8 @@
       "A creature you hit with a weapon attack suffers disadvantage on its next save against one of your spells. The spell must land before your next turn ends."
     ],
     "page": 75,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/95/Eldritch_Strike_Icon.webp"
   },
   {
     "id": "arcane-charge",
@@ -359,7 +368,8 @@
       "You get +2 to attack rolls made with ranged weapons. It is always on, so there is nothing to activate."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/83/Archery_Icon.webp"
   },
   {
     "id": "fighting-style-dueling",
@@ -389,7 +399,8 @@
       "Wielding a melee weapon with two hands, if a damage die shows 1 or 2 you may roll it again, and the second result stands even if it is low too. Only weapons that are two-handed or versatile qualify."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1f/Great_Weapon_Fighting_Icon.webp"
   },
   {
     "id": "fighting-style-two-weapon-fighting",
@@ -404,7 +415,8 @@
       "When fighting with two weapons, your second attack also adds your ability modifier to its damage."
     ],
     "page": 72,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/54/Two-Weapon_Fighting_Icon.webp"
   },
   {
     "id": "maneuvers-commanders-strike",
@@ -421,7 +433,8 @@
       "When you take the Attack action, trade one of your swings for a bonus action that sends a friendly creature who sees or hears you into battle. Spend the die: that creature uses its reaction for one weapon attack, with the die added to the damage."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d2/Commander's_Strike_Icon.webp"
   },
   {
     "id": "maneuvers-disarming-attack",
@@ -473,7 +486,8 @@
       "When you move, roll the die and add the result to your AC. The bonus lasts until you stop moving."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b6/Evasive_Footwork_Icon.webp"
   },
   {
     "id": "maneuvers-feinting-attack",
@@ -489,7 +503,8 @@
       "Use a bonus action to feint at a creature within 5 feet. Your next attack roll against it has advantage, and if that attack hits you add the die to the damage."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7a/Feinting_Attack_Icon.webp"
   },
   {
     "id": "maneuvers-goading-attack",
@@ -576,7 +591,8 @@
       "When another creature hits you with a melee attack, spend a reaction and the die to cut the damage by the die roll plus your Dexterity modifier."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/aa/Parry_Icon.webp"
   },
   {
     "id": "maneuvers-precision-attack",
@@ -593,7 +609,8 @@
       "Add the die to the attack roll. You can do this before or after rolling, but before the attack's effects are applied."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Precision_Attack_Icon.webp"
   },
   {
     "id": "maneuvers-pushing-attack",
@@ -627,7 +644,8 @@
       "Spend a bonus action to encourage a friendly creature that can see or hear you. It gains temporary hit points equal to the die roll plus your Charisma modifier."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d2/Rally_Icon.webp"
   },
   {
     "id": "maneuvers-riposte",
@@ -644,7 +662,8 @@
       "Make one melee weapon attack against that creature. If it hits, add the die to the damage."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9e/Riposte_Icon.webp"
   },
   {
     "id": "maneuvers-sweeping-attack",
@@ -661,7 +680,8 @@
       "Pick a second creature within 5 feet of the first and within your reach. If your original attack roll would also hit it, it takes damage equal to your die roll, of the same type as the original attack."
     ],
     "page": 74,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d5/Sweeping_Attack_Icon.webp"
   },
   {
     "id": "maneuvers-trip-attack",

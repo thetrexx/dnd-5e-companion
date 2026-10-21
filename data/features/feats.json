@@ -14,7 +14,8 @@
       "If you moved at least 10 ft in a straight line right before, a hit adds +5 damage, and a successful shove pushes the target up to 10 ft away."
     ],
     "page": 165,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/93/Charger_Icon.png"
   },
   {
     "id": "crossbow-expert",
@@ -30,7 +31,8 @@
       "After attacking with a one-handed weapon during your Attack action, you may fire a bonus-action shot from a hand crossbow you hold, if it is loaded."
     ],
     "page": 165,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/46/Crossbow_Expert_Icon.webp"
   },
   {
     "id": "defensive-duelist",
@@ -77,7 +79,8 @@
       "Make one extra melee weapon attack as a bonus action. This only happens on your own turn, right after the critical hit or the kill."
     ],
     "page": 167,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/63/Great_Weapon_Master_Icon.webp"
   },
   {
     "id": "great-weapon-master-power-attack",
@@ -127,7 +130,8 @@
       "A given creature cannot be boosted again until a short or long rest."
     ],
     "page": 167,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/01/Inspiring_Leader_Icon.webp"
   },
   {
     "id": "lucky-feat",
@@ -145,7 +149,8 @@
       "You can also spend one when an attack targets you: roll a d20 and choose whether the attack uses its die or yours. Opposing spends on one roll cancel out."
     ],
     "page": 167,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Lucky_Icon.png"
   },
   {
     "id": "mage-slayer",
@@ -161,7 +166,8 @@
       "Make one melee weapon attack against that spellcaster. It uses your reaction, so you get it once per round."
     ],
     "page": 168,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5a/Mage_Slayer_Icon.png"
   },
   {
     "id": "martial-adept",
@@ -179,7 +185,8 @@
       "You gain one d6 superiority die, or one extra die if you already have some. Spent dice return on a short or long rest."
     ],
     "page": 168,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp"
   },
   {
     "id": "polearm-master",
@@ -228,7 +235,8 @@
       "After rolling damage for a melee weapon attack, you may roll the weapon's damage dice again and use either total."
     ],
     "page": 169,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Savage_Attacker_Icon.webp"
   },
   {
     "id": "sentinel",
@@ -244,7 +252,8 @@
       "Make one melee weapon attack against the attacker, using your reaction. The reaction is spent whether you hit or not."
     ],
     "page": 169,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/56/Sentinel_Icon.png"
   },
   {
     "id": "sharpshooter",
@@ -260,7 +269,8 @@
       "Before a ranged attack with a weapon you are proficient with, you can take -5 on the attack roll. If the attack hits, it deals +10 damage."
     ],
     "page": 170,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/27/Sharpshooter_Icon.png"
   },
   {
     "id": "shield-master",
@@ -276,7 +286,8 @@
       "While wielding a shield, shove a creature within 5 ft of you using the shield."
     ],
     "page": 170,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2d/Shield_Master_Icon.webp"
   },
   {
     "id": "shield-master-evade",
@@ -308,7 +319,8 @@
       "Attempt to grapple the creature you just hit, using your bonus action. The usual grapple check applies."
     ],
     "page": 170,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/31/Tavern_Brawler_Icon.webp"
   },
   {
     "id": "war-caster",
@@ -324,6 +336,7 @@
       "Cast a spell at that creature in place of an opportunity attack. The spell must take 1 action to cast and target only that creature."
     ],
     "page": 170,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/75/War_Caster_Icon.png"
   }
 ]

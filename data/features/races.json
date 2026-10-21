@@ -13,7 +13,8 @@
       "A natural 1 on your d20 for an attack, ability check or saving throw lets you roll again. The second roll stands, even if it is lower."
     ],
     "page": 28,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Lucky_Icon.png"
   },
   {
     "id": "tinker",
@@ -94,7 +95,8 @@
       "It works once; a long rest resets it."
     ],
     "page": 41,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3a/Relentless_Endurance_Icon.webp"
   },
   {
     "id": "savage-attacks",
@@ -110,7 +112,8 @@
       "On a critical hit with a melee weapon, add one more roll of that weapon's damage die to the extra critical damage."
     ],
     "page": 41,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Savage_Attacks_Icon.webp"
   },
   {
     "id": "draconic-ancestry-black",

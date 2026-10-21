@@ -94,7 +94,8 @@
       "Pay 1 sorcery point and you also resist that type for 1 hour."
     ],
     "page": 102,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/63/Elemental_Affinity_Icon.png"
   },
   {
     "id": "dragon-wings",
@@ -144,7 +145,8 @@
       "After that it stays spent until you finish a long rest. The exception: if the DM triggers a Wild Magic Surge once you cast a sorcerer spell (1st level or above), you roll the surge and the feature is ready again."
     ],
     "page": 103,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8d/Tides_of_Chaos_Icon.webp"
   },
   {
     "id": "bend-luck",
@@ -162,7 +164,8 @@
       "Do this after their roll is made but before the result takes effect."
     ],
     "page": 103,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/55/Bend_Luck_Icon.webp"
   },
   {
     "id": "spell-bombardment",

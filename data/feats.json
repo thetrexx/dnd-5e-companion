@@ -8,7 +8,8 @@
       "Having moved 10 ft or more in a straight line just before that bonus action, a hit adds +5 damage, and a successful shove pushes the target up to 10 ft away."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/93/Charger_Icon.png"
   },
   {
     "id": "crossbow-expert",
@@ -19,7 +20,8 @@
       "When you attack with a one-handed weapon as part of the Attack action, a bonus action lets you also fire a loaded hand crossbow you are holding."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/46/Crossbow_Expert_Icon.webp"
   },
   {
     "id": "defensive-duelist",
@@ -53,7 +55,8 @@
       "You may declare -5 to hit on a heavy-weapon melee attack you are proficient with, gaining +10 damage if it connects."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/63/Great_Weapon_Master_Icon.webp"
   },
   {
     "id": "healer",
@@ -75,7 +78,8 @@
       "A 10-minute speech to as many as 6 allies (you included) within 30 ft, who must see or hear and understand you, hands each temporary hit points equal to your level + Charisma modifier. Nobody can be boosted again before a short or long rest."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/01/Inspiring_Leader_Icon.webp"
   },
   {
     "id": "lucky",
@@ -86,7 +90,8 @@
       "Points spent on the same roll cancel each other out. A long rest refills all 3."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Lucky_Icon.png"
   },
   {
     "id": "mage-slayer",
@@ -97,7 +102,8 @@
       "Creatures you damage while they concentrate have disadvantage on the save to keep their spell, and you save with advantage against spells cast by creatures within 5 ft."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5a/Mage_Slayer_Icon.png"
   },
   {
     "id": "magic-initiate",
@@ -151,7 +157,8 @@
       "If you have no superiority dice you gain one d6, otherwise you gain one more. They refill on a short or long rest."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp"
   },
   {
     "id": "polearm-master",
@@ -201,7 +208,8 @@
       "Once per turn, after rolling damage for a melee weapon attack, you may roll the weapon's damage dice again and keep whichever total you like."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Savage_Attacker_Icon.webp"
   },
   {
     "id": "sentinel",
@@ -212,7 +220,8 @@
       "When a creature within 5 ft attacks someone other than you, and that target lacks this feat, you can react with a melee weapon attack against the attacker."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/56/Sentinel_Icon.png"
   },
   {
     "id": "sharpshooter",
@@ -223,7 +232,8 @@
       "Before a ranged attack with a weapon you are proficient with, you may take -5 to hit for +10 damage on a hit."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/27/Sharpshooter_Icon.png"
   },
   {
     "id": "shield-master",
@@ -234,7 +244,8 @@
       "When a Dexterity save would let you take half damage, you can react to take none on a success."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2d/Shield_Master_Icon.webp"
   },
   {
     "id": "spell-sniper",
@@ -262,7 +273,8 @@
         "atLevel": 1
       }
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b0/Spell_Sniper_Icon.webp"
   },
   {
     "id": "tavern-brawler",
@@ -273,7 +285,8 @@
       "After landing an unarmed strike or improvised weapon hit during your turn, a bonus action lets you attempt to grapple that target."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/31/Tavern_Brawler_Icon.webp"
   },
   {
     "id": "war-caster",
@@ -285,6 +298,7 @@
       "When a hostile creature's movement provokes an opportunity attack from you, you may react by casting a 1-action spell that targets only it instead of attacking."
     ],
     "spells": [],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/75/War_Caster_Icon.png"
   }
 ]

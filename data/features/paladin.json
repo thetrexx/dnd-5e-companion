@@ -14,7 +14,8 @@
       "Uses: 1 + your Charisma modifier. A long rest restores them all."
     ],
     "page": 84,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/41/Divine_Sense_Icon.webp"
   },
   {
     "id": "lay-on-hands",
@@ -78,7 +79,8 @@
       "It is 2d8 with a 1st-level slot, plus 1d8 for every slot level above 1st, capped at 5d8. Undead and fiends take another 1d8."
     ],
     "page": 85,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4b/Divine_Smite_Icon.webp"
   },
   {
     "id": "cleansing-touch",
@@ -130,7 +132,8 @@
       "It sheds bright light in 20 ft and dim light 20 ft further, and counts as magical if it was not. You can end it on your turn as part of another action. It also ends if you drop it or fall unconscious."
     ],
     "page": 86,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/83/Sacred_Weapon_Icon.webp"
   },
   {
     "id": "turn-the-unholy",
@@ -147,7 +150,8 @@
       "Failures are turned for 1 minute, ending early if they take damage. A turned creature runs from you, can't voluntarily end up within 30 ft, and gets no reactions. Its action can only be Dash, or escaping something that holds it; with no room to flee, it Dodges."
     ],
     "page": 86,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/00/Turn_the_Unholy_Icon.webp"
   },
   {
     "id": "holy-nimbus",
@@ -182,7 +186,8 @@
       "The target saves again every time its own turn ends; passing frees it and the vines disappear."
     ],
     "page": 87,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/68/Nature's_Wrath_Icon.webp"
   },
   {
     "id": "turn-the-faithless",
@@ -200,7 +205,8 @@
       "A turned creature loses any illusion or shapeshift hiding its true form."
     ],
     "page": 87,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d3/Turn_the_Faithless_Icon.webp"
   },
   {
     "id": "undying-sentinel",
@@ -253,7 +259,8 @@
       "On a fail, it is frightened for 1 minute or until hurt. While frightened it can't move (speed 0) or use speed bonuses. On a success, it only has half speed, with the same 1-minute limit and the same end on damage."
     ],
     "page": 88,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b8/Abjure_Enemy_Icon.webp"
   },
   {
     "id": "vow-of-enmity",
@@ -269,7 +276,8 @@
       "Pick one visible creature 10 ft or less from you and swear a vow against it. For 1 minute your attack rolls against it have advantage. The vow ends early if the target falls unconscious or reaches 0 hit points."
     ],
     "page": 88,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/71/Vow_of_Enmity_Icon.webp"
   },
   {
     "id": "relentless-avenger",
@@ -285,7 +293,8 @@
       "After you hit with an opportunity attack, you may move up to half your speed as part of that same reaction. This movement does not provoke opportunity attacks."
     ],
     "page": 88,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ed/Relentless_Avenger_Icon.webp"
   },
   {
     "id": "soul-of-vengeance",

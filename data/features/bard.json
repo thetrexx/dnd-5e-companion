@@ -43,7 +43,8 @@
       "From level 5 a short rest also restores your uses."
     ],
     "page": 53,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/0a/Bardic_Inspiration_Icon.webp"
   },
   {
     "id": "song-of-rest",
@@ -86,7 +87,8 @@
       "During a short rest, perform soothing music or speech. You and each friendly creature that hears you and regains hit points at the end of that rest gets bonus healing in the die shown."
     ],
     "page": 54,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b1/Song_of_Rest_Icon.webp"
   },
   {
     "id": "countercharm",
@@ -102,7 +104,8 @@
       "It ends early if you are incapacitated or silenced, or if you choose to stop it (no action)."
     ],
     "page": 54,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/48/Countercharm_Icon.webp"
   },
   {
     "id": "superior-inspiration",
@@ -136,7 +139,8 @@
       "You can wait until after the roll, but you must act before the DM says whether it succeeds or before the damage is dealt. Creatures that cannot hear you, or are immune to being charmed, are unaffected."
     ],
     "page": 54,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5c/Cutting_Words_Icon.webp"
   },
   {
     "id": "peerless-skill",

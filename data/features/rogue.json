@@ -72,7 +72,8 @@
       "When an attacker you can see hits you, use your reaction to halve the damage of that attack."
     ],
     "page": 96,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Uncanny_Dodge_Icon.webp"
   },
   {
     "id": "stroke-of-luck",
@@ -105,7 +106,8 @@
       "Your Cunning Action bonus action can pay for any of these: a Sleight of Hand check, disarming a trap or opening a lock with thieves' tools, or the Use an Object action."
     ],
     "page": 97,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/dc/Fast_Hands_Icon.webp"
   },
   {
     "id": "thiefs-reflexes",
@@ -185,7 +187,8 @@
       "Cast a spell at a creature that can't see you (you are hidden from it) and that creature has disadvantage on its saves against the spell for the rest of the turn."
     ],
     "page": 98,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e1/Magical_Ambush_Icon.webp"
   },
   {
     "id": "versatile-trickster",

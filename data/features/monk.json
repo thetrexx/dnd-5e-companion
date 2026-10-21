@@ -102,7 +102,8 @@
       "Right after you take the Attack action, spend 1 ki point to throw two unarmed strikes using your bonus action."
     ],
     "page": 78,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ef/Flurry_of_Blows_Icon.webp"
   },
   {
     "id": "patient-defense",
@@ -118,7 +119,8 @@
       "Spend 1 ki point to Dodge with your bonus action: attacks against you have disadvantage and your Dexterity saves have advantage until your next turn."
     ],
     "page": 78,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/81/Patient_Defence_Icon.webp"
   },
   {
     "id": "step-of-the-wind",
@@ -152,7 +154,8 @@
       "If that takes the damage to 0 and the missile is small enough to hold, and you have a free hand, you catch it. You may then spend 1 ki point to fire it back right away, within the same reaction. You are proficient with it, and it counts as a monk weapon."
     ],
     "page": 78,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/75/Deflect_Missiles_Icon.webp"
   },
   {
     "id": "slow-fall",
@@ -168,7 +171,8 @@
       "When you fall, reduce the falling damage by 5 times your monk level."
     ],
     "page": 78,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/de/Slow_Fall_Icon.webp"
   },
   {
     "id": "stunning-strike",
@@ -201,7 +205,8 @@
       "It ends only one effect per use."
     ],
     "page": 79,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/25/Stillness_of_Mind_Icon.webp"
   },
   {
     "id": "diamond-soul",
@@ -314,7 +319,8 @@
       "Heal yourself for 3 times your monk level in hit points."
     ],
     "page": 79,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fe/Wholeness_of_Body_Icon.webp"
   },
   {
     "id": "tranquility",
@@ -330,7 +336,8 @@
       "At the end of each long rest you gain the effect of sanctuary, lasting until your next long rest (it can end early as normal). The save DC is 8 + Wisdom modifier + proficiency bonus."
     ],
     "page": 80,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/94/Tranquility_Icon.webp"
   },
   {
     "id": "quivering-palm",
@@ -382,7 +389,8 @@
       "Your first melee attack before that turn ends has advantage."
     ],
     "page": 80,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e9/Shadow_Step_Icon.webp"
   },
   {
     "id": "way-of-shadow-cloak-of-shadows",
@@ -397,7 +405,8 @@
       "While in dim light or darkness, turn invisible. It lasts until you attack, cast a spell, or end up in bright light."
     ],
     "page": 80,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3f/Cloak_of_Shadows_Icon.webp"
   },
   {
     "id": "opportunist",
@@ -594,7 +603,8 @@
       "When one of those attacks hits, spend 1 more ki point to add 1d10 fire damage."
     ],
     "page": 81,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d1/Fangs_of_the_Fire_Snake_Icon.webp"
   },
   {
     "id": "elemental-disciplines-fist-of-four-thunders",
@@ -633,7 +643,8 @@
       "Each extra ki point adds 1d10 damage."
     ],
     "page": 81,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7d/Fist_of_Unbroken_Air_Icon.webp"
   },
   {
     "id": "elemental-disciplines-flames-of-the-phoenix",
@@ -836,7 +847,8 @@
       "Each extra ki point adds 1d10 damage."
     ],
     "page": 81,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/64/Water_Whip_Icon.webp"
   },
   {
     "id": "elemental-disciplines-wave-of-rolling-earth",

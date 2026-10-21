@@ -13,7 +13,8 @@
     "check:ocr": "node scripts/extract/check-ocr.ts",
     "extract:lists": "node scripts/extract/apply-spell-lists.ts",
     "extract:facts": "node scripts/extract/spell-facts.ts",
-    "build:spells": "node scripts/extract/build-spells.ts"
+    "build:spells": "node scripts/extract/build-spells.ts",
+    "extract:icons": "node scripts/extract/icons.ts"
   },
   "dependencies": {
     "preact": "^11.0.1"

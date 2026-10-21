@@ -30,7 +30,8 @@
       "Then press against a solid surface (tree, wall) at least as large as you. While you stay there without moving, taking actions or reactions, you get +10 to Dexterity (Stealth) checks. Moving or acting breaks it, and you must camouflage again."
     ],
     "page": 92,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/04/Hide_in_Plain_Sight_Icon.webp"
   },
   {
     "id": "vanish",
@@ -80,7 +81,8 @@
       "Once per turn, a weapon hit on a creature that is below its maximum hit points adds 1d8 damage."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f0/Colossus_Slayer_Icon.webp"
   },
   {
     "id": "hunters-prey-giant-killer",
@@ -96,7 +98,8 @@
       "When a Large or bigger creature within 5 ft attacks you, hit or miss, you may answer with an attack against it right after, if you can see it."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bd/Giant_Killer_Icon.webp"
   },
   {
     "id": "hunters-prey-horde-breaker",
@@ -127,7 +130,8 @@
       "Opportunity attacks against you have disadvantage."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/78/Escape_the_Horde_Icon.webp"
   },
   {
     "id": "defensive-tactics-multiattack-defense",
@@ -142,7 +146,8 @@
       "After a creature hits you, you gain +4 AC against its later attacks for the rest of that turn."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/09/Multiattack_Defense_Icon.webp"
   },
   {
     "id": "defensive-tactics-steel-will",
@@ -157,7 +162,8 @@
       "You have advantage on saves against being frightened."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a6/Steel_Will_Icon.webp"
   },
   {
     "id": "multiattack-volley",
@@ -172,7 +178,8 @@
       "Choose a spot in view that lies inside your weapon's range. Shoot every creature within 10 ft of that spot, rolling a separate attack for each target and spending ammunition on each as usual."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a5/Volley_Icon.webp"
   },
   {
     "id": "multiattack-whirlwind-attack",
@@ -187,7 +194,8 @@
       "Make a melee attack against every creature within 5 ft of you, each with its own attack roll."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/90/Whirlwind_Attack_Icon.webp"
   },
   {
     "id": "superior-hunters-defense-evasion",
@@ -202,7 +210,8 @@
       "On a Dexterity save that halves damage, you take none if you pass and half if you fail."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7c/Evasion_Icon.webp"
   },
   {
     "id": "superior-hunters-defense-stand-against-the-tide",
@@ -234,7 +243,8 @@
       "When an attacker you can see hits you, halve that attack's damage to you."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Uncanny_Dodge_Icon.webp"
   },
   {
     "id": "rangers-companion",
@@ -311,7 +321,8 @@
       "On a turn your beast doesn't attack, use a bonus action to have it Dash, Disengage, Dodge or Help on its turn."
     ],
     "page": 93,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bf/Exceptional_Training_Icon.webp"
   },
   {
     "id": "favored-enemy-aberrations",
@@ -552,7 +563,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/03/Arctic_Icon.webp"
   },
   {
     "id": "natural-explorer-coast",
@@ -569,7 +581,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/96/Coast_Icon.webp"
   },
   {
     "id": "natural-explorer-desert",
@@ -586,7 +599,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/55/Desert_Icon.webp"
   },
   {
     "id": "natural-explorer-forest",
@@ -603,7 +617,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/07/Forest_Icon.webp"
   },
   {
     "id": "natural-explorer-grassland",
@@ -620,7 +635,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fc/Grassland_Icon.webp"
   },
   {
     "id": "natural-explorer-mountain",
@@ -637,7 +653,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bb/Mountain_Icon.webp"
   },
   {
     "id": "natural-explorer-swamp",
@@ -654,7 +671,8 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b5/Swamp_Icon.webp"
   },
   {
     "id": "natural-explorer-underdark",
@@ -671,6 +689,7 @@
       "You pick more favored terrain at 6th and 10th level."
     ],
     "page": 91,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/af/Underdark_Icon.webp"
   }
 ]

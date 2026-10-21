@@ -15,10 +15,10 @@ test('Card shows the spell icon top right', () => {
   expect(r.container.querySelector('.card-icon img')!.getAttribute('src')).toBe(mm.icon);
 });
 
-test('Card falls back when the spell has no icon', () => {
-  expect(spell('mage-armor').icon).toBeUndefined();
-  const r = render(<Card kind="spell" id="mage-armor" cls="wizard" level={3} />);
-  expect(r.container.querySelector('.card-icon img')!.getAttribute('src')).toContain('/icons/fallback/spell.svg');
+test('Card falls back to the school icon when the spell has no icon', () => {
+  expect(spell('alarm').icon).toBeUndefined();
+  const r = render(<Card kind="spell" id="alarm" cls="wizard" level={3} />);
+  expect(r.container.querySelector('.card-icon img')!.getAttribute('src')).toContain('/icons/fallback/school-abjuration.svg');
 });
 
 test('Card shows the reaction trigger with the cost', () => {

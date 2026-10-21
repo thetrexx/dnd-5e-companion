@@ -34,7 +34,8 @@
       "You hurl a bubble of acid at 1 creature within 60 ft, or at 2 creatures within 5 ft of each other. Each target makes a Dexterity save or takes 1d6 acid damage.",
       "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/99/Acid_Splash_Icon.webp"
   },
   {
     "id": "aid",
@@ -69,7 +70,8 @@
       "Pick up to 3 creatures within 30 ft. For 8 hours, each one gains 5 hit points to its hit point maximum and 5 to its current hit points."
     ],
     "higherLevels": "Each slot level above 2 adds another 5 hit points per target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/50/Aid_Icon.webp"
   },
   {
     "id": "alarm",
@@ -175,7 +177,8 @@
       "The charm ends if you or your companions harm it."
     ],
     "higherLevels": "Each slot level above 1 lets you affect 1 more beast.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/36/Animal_Friendship_Icon.webp"
   },
   {
     "id": "animal-messenger",
@@ -279,7 +282,8 @@
       "Control lasts 24 hours. Recasting on up to 4 of them before then renews control instead of raising one more."
     ],
     "higherLevels": "Each slot level above 3 raises or keeps 2 more undead, each from its own corpse or bone pile.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2f/Animate_Dead_Icon.webp"
   },
   {
     "id": "animate-objects",
@@ -455,7 +459,8 @@
       "An invisible eye appears within 30 ft and hovers for up to 1 hour (concentration). You see what it sees, in every direction, with normal vision and darkvision to 30 ft.",
       "Action: move the eye up to 30 ft. It can travel any distance from you but not to another plane. Solid barriers stop it, yet it slips through a gap 1 inch wide."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8e/Arcane_Eye_Icon.webp"
   },
   {
     "id": "arcane-gate",
@@ -487,7 +492,8 @@
       "Pick two points on the ground you can see, one within 10 ft of you and one within 500 ft. A ring portal 10 ft across opens over each for up to 10 minutes (concentration). If a creature occupies either point, the spell fails and the slot is lost.",
       "Each ring works from one side only (your choice); whatever enters exits the other ring as if they were adjacent. Mist in the rings blocks sight. Bonus action: turn the rings to face new directions."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6e/Arcane_Gate_Icon.webp"
   },
   {
     "id": "arcane-lock",
@@ -522,7 +528,8 @@
       "Touch a closed entryway (door, window, gate, chest and the like) to lock it until dispelled. You and creatures you name when casting open it normally. You can set a password: speaking it within 5 ft suppresses the spell for 1 minute.",
       "Anyone else finds it impassable until it is broken, dispelled or suppressed; knock suppresses it for 10 minutes. The DC to break it or pick its locks rises by 10."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Arcane_Lock_Icon.webp"
   },
   {
     "id": "armor-of-agathys",
@@ -557,7 +564,8 @@
       "You gain 5 temporary hit points for 1 hour, wrapped in spectral frost. While any remain, a creature that hits you with a melee attack takes 5 cold damage."
     ],
     "higherLevels": "Each slot level above 1 adds 5 temporary hit points and 5 cold damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/77/Armour_of_Agathys_Icon.webp"
   },
   {
     "id": "arms-of-hadar",
@@ -594,7 +602,8 @@
       "A creature that fails also cannot take reactions until its next turn."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3e/Arms_of_Hadar_Icon.webp"
   },
   {
     "id": "astral-projection",
@@ -836,7 +845,8 @@
       "Up to 3 creatures you can see within 30 ft each make a Charisma save. For the duration (concentration, 1 minute), each one that fails rolls a d4 whenever it makes an attack roll or saving throw, and lowers that result by the number rolled."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Bane_Icon.png"
   },
   {
     "id": "banishing-smite",
@@ -870,7 +880,8 @@
       "Your next weapon hit before the spell ends (concentration, up to 1 minute) deals an extra 5d10 force damage.",
       "If that hit leaves the target at 50 HP or fewer, it is banished. A creature from another plane is sent home. One native to your plane goes to a harmless demiplane, incapacitated, and returns to its old space (or the nearest free one) when the spell ends."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/22/Banishing_Smite_Icon.png"
   },
   {
     "id": "banishment",
@@ -911,7 +922,8 @@
       "From another plane: it is sent home. If the spell ends before 1 minute passes it comes back as above; if it lasts the full minute, it stays gone."
     ],
     "higherLevels": "Each slot level above 4 adds one more target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6d/Banishment_Icon.webp"
   },
   {
     "id": "barkskin",
@@ -945,7 +957,8 @@
     "description": [
       "You touch a willing creature. For up to 1 hour (concentration) its skin turns rough like bark, and its AC is never lower than 16, whatever armor it wears."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8b/Barkskin_Icon.webp"
   },
   {
     "id": "beacon-of-hope",
@@ -974,7 +987,8 @@
     "description": [
       "Choose any number of creatures within 30 ft. For up to 1 minute (concentration), each has advantage on Wisdom saves and death saves, and any healing it receives restores the maximum possible hit points instead of rolling."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5d/Beacon_of_Hope_Icon.webp"
   },
   {
     "id": "beast-sense",
@@ -1043,7 +1057,8 @@
       "Remove curse ends it. The DM may allow another curse of similar strength."
     ],
     "higherLevels": "Slot 4: concentration, up to 10 minutes; slot 5: 8 hours; slot 7: 24 hours; slot 9: until dispelled (slot 5 or higher needs no concentration).",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/00/Bestow_Curse_Icon.webp"
   },
   {
     "id": "bigbys-hand",
@@ -1121,7 +1136,8 @@
       "A wall of spinning magical blades appears within 90 ft for up to 10 minutes (concentration): straight, up to 100 ft long, or a ring up to 60 ft across; either way 20 ft high and 5 ft thick. It grants three-quarters cover, and its space is difficult terrain.",
       "A creature that starts its turn in the wall, or enters it for the first time that turn, makes a Dexterity save: 6d10 slashing, half on a success."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bb/Blade_Barrier_Icon.webp"
   },
   {
     "id": "blade-ward",
@@ -1153,7 +1169,8 @@
     "description": [
       "Until the end of your next turn, weapon attacks deal you only half their bludgeoning, piercing and slashing damage (you have resistance to those types)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/04/Blade_Ward_Icon.webp"
   },
   {
     "id": "bless",
@@ -1188,7 +1205,8 @@
       "Up to 3 creatures within 30 ft are blessed for 1 minute (concentration). Whenever a target attacks or saves, it can roll a d4 and add it to the result."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c4/Bless_Icon.webp"
   },
   {
     "id": "blight",
@@ -1228,7 +1246,8 @@
       "A plant creature or magical plant saves with disadvantage and takes maximum damage. An ordinary non-creature plant, like a tree or shrub, just withers and dies."
     ],
     "higherLevels": "Each slot level above 4 adds 1d8.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e0/Blight_Icon.webp"
   },
   {
     "id": "blinding-smite",
@@ -1263,7 +1282,8 @@
       "The next time you hit with a melee weapon attack before the spell ends (concentration, up to 1 minute), your weapon blazes with light: the hit deals an extra 3d8 radiant damage, and the target makes a Constitution save or is blinded until the spell ends.",
       "A blinded target repeats the save after each of its turns, ending the blindness on a success."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5e/Blinding_Smite_Icon.webp"
   },
   {
     "id": "blindness-deafness",
@@ -1329,7 +1349,8 @@
       "You return at the start of your next turn, or when the spell ends while ethereal, to a free space you can see within 10 ft of where you left (or the nearest free one).",
       "While ethereal you see your plane in gray out to 60 ft, and only ethereal creatures can affect you or be affected by you. End it early as an action."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b3/Blink_Icon.webp"
   },
   {
     "id": "blur",
@@ -1359,7 +1380,8 @@
     "description": [
       "Your outline blurs for up to 1 minute (concentration). Attacks against you are made at disadvantage, unless the attacker doesn't rely on sight (e.g. blindsight) or sees through illusions (e.g. truesight)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/0d/Blur_Icon.webp"
   },
   {
     "id": "branding-smite",
@@ -1471,7 +1493,8 @@
       "On later turns, until the spell ends, you can use your action to strike again at the same or a new point."
     ],
     "higherLevels": "Each slot level above 3 adds 1d10 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/99/Call_Lightning_Icon.webp"
   },
   {
     "id": "calm-emotions",
@@ -1504,7 +1527,8 @@
       "Suppress: any charm or fear on it is paused, resuming afterwards if its time hasn't run out.",
       "Indifference: it stops being hostile to creatures you choose, until it is attacked, harmed by a spell, or sees a friend harmed. Afterwards it is hostile again unless the DM rules otherwise."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d9/Calm_Emotions_Icon.webp"
   },
   {
     "id": "chain-lightning",
@@ -1546,7 +1570,8 @@
       "Every target makes a Dexterity save: 10d8 lightning, half on a success."
     ],
     "higherLevels": "Each slot level above 6 adds one more leaping bolt.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c9/Chain_Lightning_Icon.webp"
   },
   {
     "id": "charm-person",
@@ -1582,7 +1607,8 @@
       "It knows afterwards that you magically influenced it."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bc/Charm_Person_Icon.webp"
   },
   {
     "id": "chill-touch",
@@ -1660,7 +1686,8 @@
       "Make a ranged spell attack against a creature you can see within 90 ft. Pick the orb's type first: acid, cold, fire, lightning, poison or thunder. A hit deals 3d8 damage of that type."
     ],
     "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8e/Chromatic_Orb_Icon.webp"
   },
   {
     "id": "circle-of-death",
@@ -1703,7 +1730,8 @@
       "Negative energy bursts in a 60 ft radius sphere around a point within 150 ft. Every creature in it makes a Constitution save: 8d6 necrotic, half on a success."
     ],
     "higherLevels": "Each slot level above 6 adds 2d6.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f2/Circle_of_Death_Icon.webp"
   },
   {
     "id": "circle-of-power",
@@ -1848,7 +1876,8 @@
       "Spinning daggers fill a 5 ft cube centred on a point within 60 ft for up to 1 minute (concentration). Entering the cube on a turn (first time only) or beginning a turn inside deals 4d4 slashing damage to a creature. No save or attack roll."
     ],
     "higherLevels": "Each slot level above 2 adds 2d4 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3d/Cloud_of_Daggers_Icon.webp"
   },
   {
     "id": "cloudkill",
@@ -1887,7 +1916,8 @@
       "As each of your turns begins, the fog rolls 10 ft away from you, sinking into low ground and openings."
     ],
     "higherLevels": "Each slot level above 5 adds 1d8.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/74/Cloudkill_Icon.webp"
   },
   {
     "id": "color-spray",
@@ -1923,7 +1953,8 @@
       "Each creature whose hit points fit within what is left of the pool is blinded until the spell ends (1 round), and its hit points are subtracted from the pool."
     ],
     "higherLevels": "Each slot level above 1 adds 2d10 to the roll.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a8/Color_Spray_Icon.png"
   },
   {
     "id": "command",
@@ -1956,7 +1987,8 @@
       "Sample words: Approach (comes toward you, stopping within 5 ft), Drop (lets go of what it holds), Flee (moves away fast), Grovel (falls prone), Halt (no move, no actions). The DM rules on other words; if the target cannot obey, the spell ends."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7f/Command_Halt_Icon.webp"
   },
   {
     "id": "commune",
@@ -2052,7 +2084,8 @@
       "A creature you can see within 30 ft makes a Wisdom save. If it fails, for 1 minute (concentration) it has disadvantage on attacks against anyone but you. To move more than 30 ft from you it needs a Wisdom save; success lifts the limit that turn.",
       "The spell ends if you attack another creature or cast a spell at a hostile creature besides the target, if an ally damages the target or aims a harmful spell at it, or if you finish a turn over 30 ft away."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/73/Compelled_Duel_Icon.webp"
   },
   {
     "id": "comprehend-languages",
@@ -2089,7 +2122,8 @@
       "For 1 hour, you understand any spoken language you hear. If you touch a surface bearing writing, you can read it too, taking about 1 minute per page.",
       "It does not reveal hidden meaning, secret codes or non-written symbols. Ritual."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/99/Comprehend_Languages_Icon.webp"
   },
   {
     "id": "compulsion",
@@ -2161,7 +2195,8 @@
       "Freezing air blasts from your hands in a 60 ft cone. Each creature there makes a Constitution save: 8d8 cold, half on a success. A creature it kills turns into a frozen statue until it thaws."
     ],
     "higherLevels": "Each slot level above 5 adds 1d8.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ef/Cone_of_Cold_Icon.webp"
   },
   {
     "id": "confusion",
@@ -2204,7 +2239,8 @@
       "Each time it ends a turn it repeats the save, ending the effect on a success."
     ],
     "higherLevels": "Each slot level above 4 widens the sphere by 5 ft.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7b/Confusion_Icon.webp"
   },
   {
     "id": "contact-other-plane",
@@ -2274,7 +2310,8 @@
       "Seizure: disadvantage on Dexterity checks, saves and Dexterity attacks.",
       "Slimy Doom: disadvantage on Constitution checks and saves; any damage stuns it until its next turn ends."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ef/Contagion_Icon.png"
   },
   {
     "id": "contingency",
@@ -2462,7 +2499,8 @@
       "They count as fey, are friendly, and share one initiative; they obey your spoken orders (no action needed) or else just defend themselves. One reduced to 0 hit points vanishes. The DM has their stats."
     ],
     "higherLevels": "Slot 5 doubles the number of creatures, slot 7 triples it, slot 9 quadruples it.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Conjure_Animals_Icon.webp"
   },
   {
     "id": "conjure-barrage",
@@ -2500,7 +2538,8 @@
     "description": [
       "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/df/Conjure_Barrage_Icon.webp"
   },
   {
     "id": "conjure-celestial",
@@ -2567,7 +2606,8 @@
       "If your concentration breaks, it stays but turns hostile and may attack. You can't dismiss it; it vanishes 1 hour after you summoned it."
     ],
     "higherLevels": "Each slot level above 5 raises the CR by 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e6/Conjure_Elemental_Icon.webp"
   },
   {
     "id": "conjure-fey",
@@ -2790,7 +2830,8 @@
       "Higher-level spells (4th or above) need an ability check with your spellcasting ability, DC 10 + the spell's level; succeed and it fails."
     ],
     "higherLevels": "The spell fails automatically if its level is no higher than the slot you used.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/50/Counterspell_Icon.webp"
   },
   {
     "id": "create-food-and-water",
@@ -2857,7 +2898,8 @@
       "• Destroy: removes up to 10 gallons of water from an open container, or burns off fog in a 30 ft cube."
     ],
     "higherLevels": "Each slot level above 1 adds 10 gallons, or 5 ft to the cube's side.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d1/Create_Water_Icon.webp"
   },
   {
     "id": "create-undead",
@@ -2896,7 +2938,8 @@
       "Control lasts 24 hours. Recast before it ends to keep up to 3 of them for another 24 hours instead of making new ones."
     ],
     "higherLevels": "7th-level slot: 4 ghouls. 8th: 5 ghouls or 2 ghasts or wights. 9th: 6 ghouls, 3 ghasts or wights, or 2 mummies.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/da/Create_Undead_Icon.webp"
   },
   {
     "id": "creation",
@@ -2968,7 +3011,8 @@
       "Each of its turns, before moving, it must spend its action on a melee attack at a creature you mentally pick (not itself). If you pick none, or none is in reach, it acts normally.",
       "On your later turns you must use your action to keep control, or the spell ends. It repeats the save after each of its turns, ending the spell on a success."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/48/Crown_of_Madness_Icon.webp"
   },
   {
     "id": "crusaders-mantle",
@@ -3001,7 +3045,8 @@
     "description": [
       "A 30 ft radius aura of holy power surrounds you and moves with you for up to 1 minute (concentration). Every nonhostile creature in it, you included, adds 1d4 radiant damage to its weapon hits."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4d/Crusader's_Mantle_Icon.webp"
   },
   {
     "id": "cure-wounds",
@@ -3079,7 +3124,8 @@
       "Up to 4 torch-like lights hover at points within 120 ft for up to 1 minute (concentration), or you can fuse them into one glowing humanoid form. Each gives dim light in a 10 ft radius.",
       "Use a bonus action to shift any of them up to 60 ft. Keep them within 20 ft of one another; any that ends up over 120 ft from you vanishes."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/ba/Dancing_Lights_Icon.webp"
   },
   {
     "id": "darkness",
@@ -3116,7 +3162,8 @@
       "If you pick an object you hold or one nobody is wearing or carrying, the darkness moves with it; covering it with something opaque, like a bowl or helm, blocks the darkness.",
       "Any light from a spell of 2nd level or lower that overlaps it is dispelled."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bf/Darkness_Icon.webp"
   },
   {
     "id": "darkvision",
@@ -3152,7 +3199,8 @@
     "description": [
       "You touch a willing creature. For 8 hours it can see in the dark, with darkvision out to 60 ft."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/0d/Darkvision_Icon.webp"
   },
   {
     "id": "daylight",
@@ -3187,7 +3235,8 @@
       "If you pick an object you hold or one nobody is wearing or carrying, the light moves with it; covering it with something opaque, like a bowl or helm, blocks the light.",
       "Any darkness from a spell of 3rd level or lower that overlaps it is dispelled."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6e/Daylight_Icon.webp"
   },
   {
     "id": "death-ward",
@@ -3218,7 +3267,8 @@
       "You touch a creature and shield it for 8 hours. The first time damage would drop it to 0 HP, it stays at 1 HP and the spell ends.",
       "If it is still active when an effect would kill the target outright without dealing damage, that effect fails against it and the spell ends."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/84/Death_Ward_Icon.webp"
   },
   {
     "id": "delayed-blast-fireball",
@@ -3327,7 +3377,8 @@
       "You strike the ground and divine force ripples out. Each creature you choose within 30 ft makes a Constitution save.",
       "Fail: 5d6 thunder plus 5d6 radiant or necrotic (your choice), and it falls prone. Success: half damage, and it stays standing."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fd/Destructive_Wave_Icon.webp"
   },
   {
     "id": "detect-evil-and-good",
@@ -3358,7 +3409,8 @@
       "For up to 10 minutes (concentration) you sense whether aberrations, celestials, elementals, fey, fiends or undead are within 30 ft, and where. You also sense places or objects within 30 ft that are consecrated or desecrated.",
       "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood or dirt blocks it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ef/Detect_Evil_and_Good_Icon.webp"
   },
   {
     "id": "detect-magic",
@@ -3468,7 +3520,8 @@
       "Probe deeper (action): Wisdom save. Fail: you learn its reasoning, mood and what weighs on it. Success: spell ends. It notices; until you switch, it can use its action on an Intelligence contest to end the spell.",
       "Or, when casting or as an action, sense unseen thinking creatures within 30 ft (2 ft of rock, 2 inches of metal or any lead sheet blocks this; the same immunity applies), then read them while they stay in range."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b6/Detect_Thoughts_Icon.webp"
   },
   {
     "id": "dimension-door",
@@ -3503,7 +3556,8 @@
       "You can take objects you can carry, plus one willing creature your size or smaller within 5 ft, with its gear up to its carrying capacity.",
       "If the arrival space is occupied, you and anyone with you take 4d6 force damage and stay put."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/da/Dimension_Door_Icon.webp"
   },
   {
     "id": "disguise-self",
@@ -3535,7 +3589,8 @@
       "For 1 hour, or until you dismiss it as an action, you and your gear look different. You can seem 1 ft taller or shorter, thin, fat or in between, but must keep the same basic limb arrangement.",
       "It fails touch inspection: a fake hat would let hands pass through. A creature can use an action to inspect you and make an Investigation check against your spell save DC to see through it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8d/Disguise_Self_Icon.webp"
   },
   {
     "id": "disintegrate",
@@ -3578,7 +3633,8 @@
       "A Large or smaller nonmagical object or force creation is destroyed outright; a bigger one loses a 10 ft cube. Magic items are unaffected."
     ],
     "higherLevels": "Each slot level above 6 adds 3d6.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8a/Disintegrate_Icon.webp"
   },
   {
     "id": "dispel-evil-and-good",
@@ -3615,7 +3671,8 @@
       "Break Enchantment: as an action, touch a creature you can reach to free it from being charmed, frightened or possessed by one of those creature types.",
       "Dismissal: as an action, make a melee spell attack against one of those creatures in reach. On a hit it makes a Charisma save or is sent to its home plane (undead to the Shadowfell, fey to the Feywild if already home)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bc/Dispel_Evil_and_Good_Icon.png"
   },
   {
     "id": "dispel-magic",
@@ -3689,7 +3746,8 @@
       "On a failure it must also spend its reaction, if it has one, to move as far from you as its speed allows, steering clear of obvious hazards like fire or a pit. Deafened creatures pass the save automatically."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/40/Dissonant_Whispers_Icon.webp"
   },
   {
     "id": "divination",
@@ -3826,7 +3884,8 @@
       "Each time it takes damage it repeats the save, ending the spell on a success."
     ],
     "higherLevels": "Concentration rises to 10 minutes with a 5th-level slot, 1 hour with 6th, and 8 hours with 7th or higher.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/83/Dominate_Beast_Icon.webp"
   },
   {
     "id": "dominate-monster",
@@ -3897,7 +3956,8 @@
       "Each time it takes damage it repeats the save, ending the spell on a success."
     ],
     "higherLevels": "Concentration rises to 10 minutes with a 6th-level slot, 1 hour with 7th, and 8 hours with 8th or higher.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1d/Dominate_Person_Icon.webp"
   },
   {
     "id": "drawmijs-instant-summons",
@@ -4081,7 +4141,8 @@
       "Make a ranged spell attack against a creature within 120 ft. A hit deals 1d10 force damage.",
       "At level 5 you fire 2 beams, at level 11 3 beams and at level 17 4 beams. Each beam needs its own attack roll and may go at the same or different targets."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/db/Eldritch_Blast_Icon.webp"
   },
   {
     "id": "elemental-weapon",
@@ -4116,7 +4177,8 @@
       "A nonmagical weapon you touch turns magic for up to 1 hour (concentration). Pick acid, cold, fire, lightning or thunder: the weapon gains +1 on attack rolls, and each hit adds 1d4 damage of that type."
     ],
     "higherLevels": "Slot 5 or 6: +2 and 2d4; slot 7 or higher: +3 and 3d4.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/06/Elemental_Weapon_Icon.webp"
   },
   {
     "id": "enhance-ability",
@@ -4157,7 +4219,8 @@
       "Eagle's Splendor, Fox's Cunning, Owl's Wisdom: advantage on Charisma, Intelligence or Wisdom checks."
     ],
     "higherLevels": "Each slot level above 2 adds 1 more target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/65/Enhance_Ability_Icon.webp"
   },
   {
     "id": "enlarge-reduce",
@@ -4194,7 +4257,8 @@
       "Enlarge: twice the size (1 category up, as space allows), 8 times the weight. Advantage on Strength checks and saves; its weapons deal +1d4 damage.",
       "Reduce: half size (1 category down), one-eighth the weight. Disadvantage on Strength checks and saves; its weapons deal 1d4 less damage (minimum 1)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c7/Enlarge_Icon.webp"
   },
   {
     "id": "ensnaring-strike",
@@ -4231,7 +4295,8 @@
       "Each of its turns begins with 1d6 piercing damage while the vines hold. The target, or anyone able to touch it, can use an action and beat your spell save DC with a Strength check to free it, ending the vines."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a7/Ensnaring_Strike_Icon.png"
   },
   {
     "id": "entangle",
@@ -4262,7 +4327,8 @@
       "Thick weeds and vines sprout across a 20 ft square within 90 ft for up to 1 minute (concentration), making it difficult terrain. Anyone inside when you cast it makes a Strength save or is restrained.",
       "To break free, a restrained creature spends an action and beats your spell save DC with a Strength check. The growth fades when the spell ends."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d9/Entangle_Icon.webp"
   },
   {
     "id": "enthrall",
@@ -4294,7 +4360,8 @@
       "You speak a captivating stream of words. Creatures you choose that you can see within 60 ft and that hear you make a Wisdom save. Creatures immune to charm pass automatically; one your party is fighting has advantage.",
       "On a failure, for 1 minute or until it can't hear you, it has disadvantage on Wisdom (Perception) checks to notice anyone but you. Being incapacitated or unable to speak ends the spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/90/Enthrall_Icon.webp"
   },
   {
     "id": "etherealness",
@@ -4370,7 +4437,8 @@
       "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or takes 3d6 bludgeoning and is restrained until the spell ends. One already restrained takes 3d6 bludgeoning when its turn starts there.",
       "A restrained creature can use its action for a Strength or Dexterity check (its pick) against your spell save DC to break free."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d6/Evard's_Black_Tentacles_Icon.webp"
   },
   {
     "id": "expeditious-retreat",
@@ -4401,7 +4469,8 @@
     "description": [
       "For up to 10 minutes (concentration), you may Dash as a bonus action on every turn, starting with the turn you cast this."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d6/Expeditious_Retreat_Icon.webp"
   },
   {
     "id": "eyebite",
@@ -4437,7 +4506,8 @@
       "Panicked: frightened; on each turn it Dashes away from you by the safest short route unless trapped, until it is 60 ft or more away and can't see you.",
       "Sickened: disadvantage on attack rolls and ability checks. It repeats the save as each of its turns ends, ending this on a success."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/70/Eyebite_Icon.png"
   },
   {
     "id": "fabricate",
@@ -4499,7 +4569,8 @@
       "Pick a 20 ft cube within 60 ft. Objects in it glow blue, green or violet (your choice); each creature in it makes a Dexterity save and, on a failure, glows too. This lasts up to 1 minute (concentration).",
       "Glowing things shed dim light for 10 ft. Attacks against them have advantage if the attacker can see them, and invisibility does not hide them."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a1/Faerie_Fire_Icon.webp"
   },
   {
     "id": "false-life",
@@ -4535,7 +4606,8 @@
       "You gain 1d4+4 temporary hit points for 1 hour."
     ],
     "higherLevels": "Each slot level above 1 adds 5 temporary hit points.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f2/False_Life_Icon.webp"
   },
   {
     "id": "fear",
@@ -4573,7 +4645,8 @@
       "An illusion of their worst fears hits each creature in a 30 ft cone. Each makes a Wisdom save or drops what it holds and is frightened for up to 1 minute (concentration).",
       "A frightened creature must Dash away from you by the safest route on each of its turns, unless it has nowhere to go. If it ends its turn where it can't see you, it makes a Wisdom save; a success ends the spell on it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/ad/Fear_Icon.webp"
   },
   {
     "id": "feather-fall",
@@ -4609,7 +4682,8 @@
     "description": [
       "Reaction when you or a creature within 60 ft falls. Up to 5 falling creatures within range drop at only 60 ft per round for 1 minute. One that lands before then takes no falling damage and lands on its feet, and the spell ends for it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/00/Feather_Fall_Icon.webp"
   },
   {
     "id": "feeblemind",
@@ -4688,7 +4762,8 @@
       "You touch a willing creature and it falls into a deathlike trance for 1 hour, or until you touch it as an action to end it. Inspection and spells that check its status show it as dead.",
       "It is blinded and incapacitated, its speed is 0, and it resists all damage except psychic. Any disease or poison it has or gets does nothing until the spell ends."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fe/Feign_Death_Icon.webp"
   },
   {
     "id": "find-familiar",
@@ -4724,7 +4799,8 @@
       "Within 100 ft: telepathy; it delivers your touch spells by reaction. As an action, borrow its senses until your next turn; you are blind and deaf meanwhile.",
       "At 0 hit points it vanishes until recast. An action dismisses it to a pocket dimension (recall within 30 ft) or forever. Recast to change its form; only 1 familiar."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8a/Find_Familiar_Icon.png"
   },
   {
     "id": "find-steed",
@@ -4937,7 +5013,8 @@
       "Warm shield: resistance to cold damage. Chill shield: resistance to fire damage.",
       "When a creature within 5 ft hits you with a melee attack, it takes 2d8 fire (warm) or 2d8 cold (chill)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e0/Fire_Shield_Icon.webp"
   },
   {
     "id": "fire-storm",
@@ -5056,7 +5133,8 @@
       "Use your action to swing it as a melee spell attack, dealing 3d6 fire damage on a hit. It sheds bright light for 10 ft and dim light for 10 ft more."
     ],
     "higherLevels": "Every 2 slot levels above 2 add 1d6 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c8/Flame_Blade_Icon.webp"
   },
   {
     "id": "flame-strike",
@@ -5096,7 +5174,8 @@
       "Holy fire pours down in a 10 ft radius, 40 ft high cylinder around a point within 60 ft. Each creature in it makes a Dexterity save: 4d6 fire plus 4d6 radiant, half on a success."
     ],
     "higherLevels": "Each slot level above 5 adds 1d6 to the fire or the radiant damage (your pick).",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b8/Flame_Strike_Icon.webp"
   },
   {
     "id": "flaming-sphere",
@@ -5138,7 +5217,8 @@
       "As a bonus action, roll it up to 30 ft; a creature it rams makes the save and the sphere stops for the turn. It hops 5 ft barriers and 10 ft pits, ignites unattended flammables, and lights 20 ft bright plus 20 ft dim."
     ],
     "higherLevels": "Each slot level above 2 adds 1d6 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/66/Flaming_Sphere_Icon.webp"
   },
   {
     "id": "flesh-to-stone",
@@ -5175,7 +5255,8 @@
       "While restrained, it repeats the save at the end of each of its turns. 3 successes (not necessarily in a row) end the spell; 3 failures turn it to stone, petrified for the duration.",
       "If you keep concentration for the full minute, it stays stone until the effect is removed. Breaking the statue leaves matching injuries if it is restored."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/72/Flesh_to_Stone_Icon.webp"
   },
   {
     "id": "fly",
@@ -5211,7 +5292,8 @@
       "You touch a willing creature; it gains a flying speed of 60 ft for up to 10 minutes (concentration). When the spell ends, it falls if still in the air, unless it can stop itself."
     ],
     "higherLevels": "Each slot level above 3 adds 1 more target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f3/Fly_Icon.webp"
   },
   {
     "id": "fog-cloud",
@@ -5244,7 +5326,8 @@
       "You raise a 20 ft radius sphere of fog centred on a point within 120 ft, for up to 1 hour (concentration). It spreads around corners and heavily obscures the area. A wind of 10 mph or more disperses it early."
     ],
     "higherLevels": "Each slot level above 1 adds 20 ft to the radius.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c0/Fog_Cloud_Icon.webp"
   },
   {
     "id": "forbiddance",
@@ -5396,7 +5479,8 @@
       "For 1 hour, a willing creature you touch ignores difficult terrain, and no spell or magical effect can lower its speed, paralyze it or restrain it.",
       "It can spend 5 ft of movement to slip free of nonmagical restraints, such as manacles or a grapple. Being underwater doesn't hamper its movement or attacks."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f0/Freedom_of_Movement_Icon.webp"
   },
   {
     "id": "friends",
@@ -5433,7 +5517,8 @@
       "For up to 1 minute (concentration) you have advantage on Charisma checks aimed at one creature of your choice that is not hostile to you.",
       "When the spell ends, that creature realizes you used magic on it and turns hostile toward you. A violent one may attack you; others may seek revenge in other ways, at the DM's discretion."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/75/Friends_Icon.webp"
   },
   {
     "id": "gaseous-form",
@@ -5470,7 +5555,8 @@
       "As mist it only flies, at 10 ft, can enter others' spaces and slip through cracks (liquids count as solid surfaces), resists nonmagical damage, has advantage on Strength, Dexterity and Constitution saves, and hovers even if stunned.",
       "It can't speak, attack, cast spells, or handle objects, and can't use or drop what it carries."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/62/Gaseous_Form_Icon.webp"
   },
   {
     "id": "gate",
@@ -5679,7 +5765,8 @@
       "Spells cast from outside at 5th level or lower can't affect creatures or objects inside, even if cast with a higher slot. They can still target things inside, but do nothing, and their areas leave the inside untouched."
     ],
     "higherLevels": "Each slot level above 6 blocks spells one level higher.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7a/Globe_of_Invulnerability_Icon.webp"
   },
   {
     "id": "glyph-of-warding",
@@ -5719,7 +5806,8 @@
       "Spell Glyph: store a prepared spell (3rd level or lower, one target or an area). It fires at the intruder; summons appear beside it; concentration spells run their full duration."
     ],
     "higherLevels": "Each slot level above 3 adds 1d8 to explosive runes, and a spell glyph can hold a spell up to the slot's level.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/88/Glyph_of_Warding_Icon.webp"
   },
   {
     "id": "goodberry",
@@ -5754,7 +5842,8 @@
       "Up to 10 berries appear in your hand, magical for 24 hours. A creature can use its action to eat one: it restores 1 hit point and feeds the creature for a day.",
       "Berries not eaten within 24 hours lose their magic."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/42/Goodberry_Icon.webp"
   },
   {
     "id": "grasping-vine",
@@ -5786,7 +5875,8 @@
       "A vine sprouts in a free space you can see within 30 ft for up to 1 minute (concentration). When you cast it, it lashes at a creature you can see within 30 ft of it: Dexterity save or be pulled 20 ft straight toward the vine.",
       "Bonus action on each of your turns: lash at the same creature or a new one."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8b/Grasping_Vine_Icon.webp"
   },
   {
     "id": "grease",
@@ -5821,7 +5911,8 @@
       "Slick grease covers a 10 ft square on the ground within 60 ft for 1 minute, making it difficult terrain. Anyone standing in it when you cast it makes a Dexterity save or falls prone.",
       "A creature that enters or ends its turn there makes the same save."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7a/Grease_Icon.webp"
   },
   {
     "id": "greater-invisibility",
@@ -5852,7 +5943,8 @@
     "description": [
       "You or a creature you touch turns invisible for up to 1 minute (concentration), along with what it wears and carries while on its person. Unlike invisibility, attacking or casting spells doesn't end it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/28/Greater_Invisibility_Icon.webp"
   },
   {
     "id": "greater-restoration",
@@ -5892,7 +5984,8 @@
       "• any reduction to one of its ability scores",
       "• one effect reducing its hit point maximum"
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ee/Greater_Restoration_Icon.webp"
   },
   {
     "id": "guardian-of-faith",
@@ -5923,7 +6016,8 @@
       "A Large spectral guardian with your deity's sword and shield fills a free space you can see within 30 ft for 8 hours.",
       "Any creature hostile to you that first moves within 10 ft of it on a turn makes a Dexterity save: 20 radiant damage, half on a success. The guardian disappears once it has dealt 60 damage in total."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7d/Guardian_of_Faith_Icon.webp"
   },
   {
     "id": "guards-and-wards",
@@ -6029,7 +6123,8 @@
       "Make a ranged spell attack against a creature within 120 ft. A hit deals 4d6 radiant damage, and the next attack roll made against the target before the end of your next turn has advantage, thanks to the glow."
     ],
     "higherLevels": "Damage rises by 1d6 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2c/Guiding_Bolt_Icon.webp"
   },
   {
     "id": "gust-of-wind",
@@ -6067,7 +6162,8 @@
       "Moving toward you inside the line costs 2 ft per 1 ft. The wind clears gas and vapor, snuffs candles and torches, and gives shielded flames like lanterns a 50% chance to go out.",
       "Each turn, a bonus action turns the wind to a new direction."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/58/Gust_of_Wind_Icon.webp"
   },
   {
     "id": "hail-of-thorns",
@@ -6103,7 +6199,8 @@
       "Your next ranged weapon hit before the spell ends (concentration, up to 1 minute) makes thorns burst from your weapon or ammunition. Besides the attack's normal effect, the target and every creature within 5 ft of it make a Dexterity save, taking 1d10 piercing damage on a failure or half on a success."
     ],
     "higherLevels": "Damage rises by 1d10 for each slot level above 1, to a maximum of 6d10.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/63/Hail_of_Thorns_Icon.webp"
   },
   {
     "id": "hallow",
@@ -6212,7 +6309,8 @@
       "A creature you can see within 60 ft makes a Constitution save: 14d6 necrotic, half on a success. This can't drop it below 1 HP.",
       "On a failure, its hit point maximum also drops by the damage taken for 1 hour. Anything that cures disease restores the maximum early."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/09/Harm_Icon.webp"
   },
   {
     "id": "haste",
@@ -6247,7 +6345,8 @@
       "A willing creature you can see within 30 ft is sped up for up to 1 minute (concentration): double speed, +2 AC, advantage on Dexterity saves, and 1 extra action each turn. That action can only be Attack (a single weapon attack), Dash, Disengage, Hide or Use an Object.",
       "When the spell ends, a wave of lethargy hits: the target can't move or act until after its next turn."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/11/Haste_Icon.webp"
   },
   {
     "id": "heal",
@@ -6278,7 +6377,8 @@
       "A creature you can see within 60 ft regains 70 HP, and any blindness, deafness and diseases on it end. Constructs and undead are unaffected."
     ],
     "higherLevels": "Each slot level above 6 heals 10 more HP.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d3/Heal_Icon.webp"
   },
   {
     "id": "healing-word",
@@ -6317,7 +6417,8 @@
       "A creature you can see within 60 ft regains 1d4 hit points plus your spellcasting modifier. Undead and constructs are not healed."
     ],
     "higherLevels": "Healing rises by 1d4 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ef/Healing_Word_Icon.webp"
   },
   {
     "id": "heat-metal",
@@ -6359,7 +6460,8 @@
       "A creature holding or wearing it that takes the damage makes a Constitution save or drops it if able. If it can't or won't let go, it attacks and makes ability checks with disadvantage until your next turn begins."
     ],
     "higherLevels": "Each slot level above 2 adds 1d8 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a3/Heat_Metal_Icon.webp"
   },
   {
     "id": "hellish-rebuke",
@@ -6396,7 +6498,8 @@
       "Reaction when a creature you can see within 60 ft damages you. Flames wreath it, and it makes a Dexterity save, taking 2d10 fire damage on a failure or half on a success."
     ],
     "higherLevels": "Damage rises by 1d10 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/82/Hellish_Rebuke_Icon.webp"
   },
   {
     "id": "heroes-feast",
@@ -6432,7 +6535,8 @@
       "A grand feast appears for you and up to 12 other creatures. Eating takes 1 hour; the food then vanishes and the benefits begin.",
       "Each diner is cured of all disease and poison, becomes immune to poison and to being frightened, and has advantage on Wisdom saves. Its hit point maximum also rises by 2d10, and it gains that many HP. All of this lasts 24 hours."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a0/Heroes'_Feast_Icon.webp"
   },
   {
     "id": "heroism",
@@ -6464,7 +6568,8 @@
       "When the spell ends, it loses any temporary hit points this spell gave it."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/19/Heroism_Icon.webp"
   },
   {
     "id": "hex",
@@ -6504,7 +6609,8 @@
       "If it drops to 0 hit points, you can move the curse to a new creature within range as a bonus action on a later turn. Remove curse on the target ends the spell early."
     ],
     "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9f/Hex_Icon.webp"
   },
   {
     "id": "hold-monster",
@@ -6543,7 +6649,8 @@
       "It repeats the save as each of its turns ends, breaking free on a success."
     ],
     "higherLevels": "Each slot level above 5 adds a target; all must be within 30 ft of each other.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cf/Hold_Monster_Icon.webp"
   },
   {
     "id": "hold-person",
@@ -6583,7 +6690,8 @@
       "Pick a humanoid you can see within 60 ft. It makes a Wisdom save or is paralyzed. It repeats the save when each of its own turns finishes; a success frees it and ends the spell on it."
     ],
     "higherLevels": "A higher slot holds 1 extra humanoid per level above 2; targets must stand within 30 ft of one another.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/75/Hold_Person_Icon.webp"
   },
   {
     "id": "holy-aura",
@@ -6658,7 +6766,8 @@
       "A 20 ft radius sphere of freezing void opens on a point within 150 ft for up to 1 minute (concentration). No light can brighten it, creatures fully inside are blinded, it is difficult terrain, and its whispers carry 30 ft.",
       "A creature starting its turn inside takes 2d6 cold damage (no save). One ending its turn inside makes a Dexterity save or takes 2d6 acid damage."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/44/Hunger_of_Hadar_Icon.webp"
   },
   {
     "id": "hunters-mark",
@@ -6689,7 +6798,8 @@
       "If it drops to 0 hit points first, you can spend a bonus action on a later turn to move the mark to a new creature."
     ],
     "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f6/Hunter's_Mark_Icon.webp"
   },
   {
     "id": "hypnotic-pattern",
@@ -6727,7 +6837,8 @@
       "A swirl of colors flashes briefly in a 30 ft cube within 120 ft. Each creature in it that sees the pattern makes a Wisdom save or is charmed for up to 1 minute (concentration). While charmed it is incapacitated and its speed is 0.",
       "The effect ends for a creature if it takes any damage or someone uses an action to shake it awake."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/28/Hypnotic_Pattern_Icon.webp"
   },
   {
     "id": "ice-storm",
@@ -6767,7 +6878,8 @@
       "Until your next turn ends, the area is difficult terrain."
     ],
     "higherLevels": "Each slot level above 4 adds 1d8 bludgeoning.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9b/Ice_Storm_Icon.webp"
   },
   {
     "id": "identify",
@@ -6803,7 +6915,8 @@
       "Over 1 minute, touch an object throughout the casting. A magic item reveals what it does and how to use it, whether it needs attunement, and its charges. You also learn which spells, if any, are affecting it, what they are, and which spell made it, if one did.",
       "Touch a creature instead to learn which spells currently affect it. Ritual."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5e/Identify_Icon.webp"
   },
   {
     "id": "illusory-script",
@@ -6955,7 +7068,8 @@
       "You strike a creature you touch with a melee spell attack. If it hits, the target takes 3d10 necrotic damage."
     ],
     "higherLevels": "Damage rises by 1d10 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3d/Inflict_Wounds_Icon.webp"
   },
   {
     "id": "insect-plague",
@@ -6998,7 +7112,8 @@
       "Each creature in it when it appears makes a Constitution save: 4d10 piercing, half on a success. A creature also saves the first time each turn it enters, and whenever it ends its turn there."
     ],
     "higherLevels": "Each slot level above 5 adds 1d10.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a2/Insect_Plague_Icon.webp"
   },
   {
     "id": "invisibility",
@@ -7035,7 +7150,8 @@
       "A creature you touch turns invisible for up to 1 hour (concentration), along with whatever it wears or carries while on its person. The spell ends for a target as soon as it attacks or casts a spell."
     ],
     "higherLevels": "Each slot level above 2 adds 1 more target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b7/Invisibility_Icon.png"
   },
   {
     "id": "jump",
@@ -7071,7 +7187,8 @@
     "description": [
       "You touch a creature. For 1 minute its jump distance is 3 times normal."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/28/Jump_Icon.webp"
   },
   {
     "id": "knock",
@@ -7104,7 +7221,8 @@
       "An arcane lock on it is suppressed for 10 minutes; meanwhile the object opens and closes normally.",
       "Casting it makes a loud knock heard up to 300 ft away."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a4/Knock_Icon.webp"
   },
   {
     "id": "legend-lore",
@@ -7246,7 +7364,8 @@
     "description": [
       "You touch a creature and end one disease or one condition on it: blinded, deafened, paralyzed or poisoned."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e4/Lesser_Restoration_Icon.webp"
   },
   {
     "id": "levitate",
@@ -7282,7 +7401,8 @@
       "One creature or object you can see within 60 ft, weighing up to 500 pounds, rises up to 20 ft and hangs there for up to 10 minutes (concentration). An unwilling creature that passes a Constitution save is unaffected.",
       "It moves only by pushing or pulling on fixed things in reach, like climbing. Each turn you can raise or lower it up to 20 ft: within your move if it is you, otherwise with your action (it must stay in range). When the spell ends it floats gently down."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/46/Levitate_Icon.webp"
   },
   {
     "id": "light",
@@ -7320,7 +7440,8 @@
       "One object up to 10 ft across glows for 1 hour: bright light 20 ft out, dim light another 20 ft, in any colour you pick. Something opaque placed over it hides the glow. Casting the spell again, or dismissing it as an action, ends it.",
       "If a hostile creature is holding or wearing the object, it can make a Dexterity save to avoid the spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5c/Light_Icon.webp"
   },
   {
     "id": "lightning-arrow",
@@ -7356,7 +7477,8 @@
       "Hit or miss, each creature within 10 ft of the target makes a Dexterity save, taking 2d8 lightning damage, half on a success. The ammunition or weapon then returns to normal."
     ],
     "higherLevels": "Each slot level above 3 adds 1d8 to both damage rolls.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e3/Lightning_Arrow_Icon.webp"
   },
   {
     "id": "lightning-bolt",
@@ -7397,7 +7519,8 @@
       "A 100 ft long, 5 ft wide line of lightning blasts out from you, aimed where you like. Each creature in the line makes a Dexterity save, taking 8d6 lightning damage, half on a success. It sets fire to flammable objects nobody is wearing or carrying."
     ],
     "higherLevels": "Each slot level above 3 adds 1d6 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cb/Lightning_Bolt_Icon.webp"
   },
   {
     "id": "locate-animals-or-plants",
@@ -7547,7 +7670,8 @@
       "A creature you touch gains +10 ft of speed for 1 hour."
     ],
     "higherLevels": "Each slot level above 1 adds 1 target.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Longstrider_Icon.webp"
   },
   {
     "id": "mage-armor",
@@ -7581,7 +7705,8 @@
     "description": [
       "Touch a willing creature that wears no armor. For 8 hours its base AC becomes 13 plus its Dexterity modifier. The spell ends early if the target dons armor or you dismiss it as an action."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/0d/Mage_Armour_Icon.webp"
   },
   {
     "id": "mage-hand",
@@ -7614,7 +7739,8 @@
       "A floating hand appears at a point within 30 ft and stays for 1 minute. It vanishes if you dismiss it as an action, cast the spell again, or it is ever more than 30 ft from you.",
       "Use your action to control it, moving it up to 30 ft each time: handle an object, open an unlocked door or container, stow or fetch an item from an open container, or pour out a vial. It cannot attack, activate magic items, or carry over 10 lb."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f9/Mage_Hand_Icon.webp"
   },
   {
     "id": "magic-circle",
@@ -7657,7 +7783,8 @@
       "You can reverse it instead, trapping such creatures inside and shielding those outside."
     ],
     "higherLevels": "Each slot level above 3 adds 1 hour.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/ce/Magic_Circle_Icon.webp"
   },
   {
     "id": "magic-jar",
@@ -7695,7 +7822,8 @@
       "You use the host's stats but keep your alignment, Int, Wis, Cha and class features. Action: return to the container within 100 ft.",
       "Host dies: Charisma save vs your DC, or you die. Container breaks or spell ends: you return to your body, dying if it is dead or over 100 ft away."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c3/Magic_Jar_Icon.webp"
   },
   {
     "id": "magic-missile",
@@ -7801,7 +7929,8 @@
       "You touch a nonmagical weapon. For up to 1 hour (concentration) it becomes magic, with +1 to attack and damage rolls."
     ],
     "higherLevels": "Slot 4 or 5: +2; slot 6 or higher: +3.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9c/Magic_Weapon_Icon.webp"
   },
   {
     "id": "major-image",
@@ -7879,7 +8008,8 @@
       "Choose up to 6 creatures in a 30 ft radius sphere around a point within 60 ft. Each regains 3d8 + your spellcasting modifier HP. Constructs and undead are unaffected."
     ],
     "higherLevels": "Each slot level above 5 adds 1d8.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/32/Mass_Cure_Wounds_Icon.webp"
   },
   {
     "id": "mass-heal",
@@ -7945,7 +8075,8 @@
       "You call out words of healing: up to 6 creatures you choose and can see within 60 ft each regain 1d4 + your spellcasting ability modifier hit points. Undead and constructs are unaffected."
     ],
     "higherLevels": "Each slot level above 3 adds 1d4 healing.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f8/Mass_Healing_Word_Icon.webp"
   },
   {
     "id": "mass-suggestion",
@@ -8085,7 +8216,8 @@
       "Make a ranged spell attack against a target within 90 ft. On a hit it takes 4d4 acid damage now and 2d4 acid damage at the end of its next turn. On a miss it takes half the first damage and none later."
     ],
     "higherLevels": "Each slot level above 2 adds 1d4 to both the first and the later damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/67/Melf's_Acid_Arrow_Icon.webp"
   },
   {
     "id": "mending",
@@ -8123,7 +8255,8 @@
       "Touch a single break or rip no longer than 1 ft in any direction, such as a snapped chain link, torn cloak or leaking wineskin. It mends with no trace of damage.",
       "It can physically fix a magic item or construct, but cannot bring back any magic the object lost."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/ba/Mending_Icon.webp"
   },
   {
     "id": "message",
@@ -8259,7 +8392,8 @@
       "Within 30 ft you make either a sound or the image of an object, lasting 1 minute. A sound can be a whisper to a scream, steady or in bursts. An image fits in a 5 ft cube and makes no sound, smell or light. Dismiss it as an action, or recast to end it.",
       "A creature that spends an action examining it makes an Investigation check against your spell save DC to see through it, and it then looks faint to them. Touching it also exposes it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9d/Minor_Illusion_Icon.webp"
   },
   {
     "id": "mirage-arcane",
@@ -8324,7 +8458,8 @@
       "When a creature attacks you, roll a d20: with 3 copies left, 6 or higher makes it target a copy; with 2, 8 or higher; with 1, 11 or higher. A copy has AC 10 + your Dexterity modifier and is destroyed when hit; nothing else harms it. The spell ends with the last one.",
       "Blindsight or truesight ignores them."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/41/Mirror_Image_Icon.webp"
   },
   {
     "id": "mislead",
@@ -8464,7 +8599,8 @@
       "On each later turn you can use your action to move the beam up to 60 ft."
     ],
     "higherLevels": "Each slot level above 2 adds 1d10 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8b/Moonbeam_Icon.webp"
   },
   {
     "id": "mordenkainens-faithful-hound",
@@ -8770,7 +8906,8 @@
       "Or keep it as a sling-stone globe. You or someone you hand it to can throw it (40 ft) or sling it; it bursts on impact as above. It explodes on its own after 1 minute."
     ],
     "higherLevels": "Each slot level above 6 adds 1d6.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/af/Otiluke's_Freezing_Sphere_Icon.webp"
   },
   {
     "id": "otilukes-resilient-sphere",
@@ -8806,7 +8943,8 @@
       "Nothing passes in or out, though the creature inside can breathe. The sphere takes no damage, and no attack or effect crosses it either way. Disintegrate destroys it without harming what's inside.",
       "The weightless sphere can be lifted by others, or rolled from inside as an action at up to half the creature's speed."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/82/Otiluke's_Resilient_Sphere_Icon.webp"
   },
   {
     "id": "ottos-irresistible-dance",
@@ -8838,7 +8976,8 @@
       "While dancing it spends all its movement dancing without leaving its space, has disadvantage on Dexterity saves and attack rolls, and attacks against it have advantage.",
       "As an action, it can make a Wisdom save to stop; success ends the spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8c/Otto's_Irresistible_Dance_Icon.webp"
   },
   {
     "id": "pass-without-trace",
@@ -8872,7 +9011,8 @@
     "description": [
       "Shadow and hush surround you for up to 1 hour (concentration). You and each creature you choose within 30 ft of you get +10 to Dexterity (Stealth) checks, leave no tracks or other trace, and can't be tracked except by magic."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2b/Pass_Without_Trace_Icon.webp"
   },
   {
     "id": "passwall",
@@ -8948,7 +9088,8 @@
       "It believes the phantasm. As an action it can try an Investigation check vs your spell save DC; success ends the spell.",
       "Each of your turns, if it is in or within 5 ft of a phantasm that could plausibly hurt it, it takes 1d6 psychic damage."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/ac/Phantasmal_Force_Icon.webp"
   },
   {
     "id": "phantasmal-killer",
@@ -8985,7 +9126,8 @@
       "At the start of each of its turns while frightened, it makes another Wisdom save: failure deals 4d10 psychic; success ends the spell."
     ],
     "higherLevels": "Each slot level above 4 adds 1d10.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/da/Phantasmal_Killer_Icon.webp"
   },
   {
     "id": "phantom-steed",
@@ -9047,7 +9189,8 @@
       "It owes you nothing; you bargain for a task and payment. Rough guide: 100 gp per minute, 1,000 gp per hour, 10,000 gp per day (up to 10 days). Fitting tasks may cost half or nothing, safe ones half, risky ones more; suicidal tasks are rarely accepted.",
       "It leaves when done or when the term ends. With no deal it returns home at once. While serving it counts as a party member for XP."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f3/Planar_Ally_Icon.webp"
   },
   {
     "id": "planar-binding",
@@ -9087,7 +9230,8 @@
       "It follows your instructions as well as it can, but a hostile one twists your words. If done early, it reports to you on your plane, or waits where you bound it."
     ],
     "higherLevels": "Duration: 10 days at 6th level, 30 days at 7th, 180 days at 8th, a year and a day at 9th.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fa/Planar_Binding_Icon.webp"
   },
   {
     "id": "plane-shift",
@@ -9160,7 +9304,8 @@
       "1 action: normal plants in a 100 ft radius around a point within 150 ft grow thick and tangled. Creatures moving through spend 4 ft of movement per 1 ft. You can leave out any areas you like.",
       "8 hours: plants in a half-mile radius around a point within 150 ft are enriched for 1 year and give double the usual harvest."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/ad/Plant_Growth_Icon.webp"
   },
   {
     "id": "poison-spray",
@@ -9199,7 +9344,8 @@
       "You puff noxious gas at a creature you can see within 10 ft. It makes a Constitution save or takes 1d12 poison damage.",
       "Damage rises to 2d12 at level 5, 3d12 at level 11 and 4d12 at level 17."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1d/Poison_Spray_Icon.webp"
   },
   {
     "id": "polymorph",
@@ -9238,7 +9384,8 @@
       "It takes the beast's stats, mental scores included, keeping only alignment and personality. Gear melds in and can't be used. It can't speak, cast spells, or do anything needing hands or speech.",
       "It uses the beast's HP. At 0 HP it reverts with its old HP, and excess damage carries over; it ends early if the target dies."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f6/Polymorph_Icon.webp"
   },
   {
     "id": "power-word-heal",
@@ -9299,7 +9446,8 @@
     "description": [
       "Name a creature you can see within 60 ft. If its current HP is 100 or less, it dies on the spot. Otherwise nothing happens."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/1e/Power_Word_Kill_Icon.webp"
   },
   {
     "id": "power-word-stun",
@@ -9369,7 +9517,8 @@
       "Over 10 minutes of prayer, up to 6 creatures you choose and can see within 30 ft each regain 2d8 + your spellcasting ability modifier hit points. Undead and constructs are unaffected."
     ],
     "higherLevels": "Each slot level above 2 adds 1d8 healing.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e0/Prayer_of_Healing_Icon.webp"
   },
   {
     "id": "prestidigitation",
@@ -9670,7 +9819,8 @@
       "A willing creature you touch gains a ward for up to 10 minutes (concentration) against aberrations, celestials, elementals, fey, fiends and undead. Those creatures attack it at disadvantage and cannot possess it or charm or frighten it.",
       "If one of them already has it charmed, frightened or possessed, it has advantage on any new save against that effect."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Protection_from_Evil_and_Good_Icon.webp"
   },
   {
     "id": "protection-from-poison",
@@ -9703,7 +9853,8 @@
       "You touch a creature and cure a poison affecting it; if several afflict it, you end one you know about or a random one.",
       "For 1 hour it also has advantage on saves against being poisoned and resistance to poison damage."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3b/Protection_from_Poison_Icon.webp"
   },
   {
     "id": "purify-food-and-drink",
@@ -9838,7 +9989,8 @@
       "Make a ranged spell attack against a creature within 60 ft. On a hit, for up to 1 minute (concentration), its weapon attacks that use Strength deal only half damage.",
       "After each of its turns, it makes a Constitution save; a success ends the spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7b/Ray_of_Enfeeblement_Icon.webp"
   },
   {
     "id": "ray-of-frost",
@@ -9912,7 +10064,8 @@
       "Make a ranged spell attack against a creature within 60 ft. A hit deals 2d8 poison damage, and the target makes a Constitution save or is poisoned until the end of your next turn."
     ],
     "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/74/Ray_of_Sickness_Icon.webp"
   },
   {
     "id": "regenerate",
@@ -10020,7 +10173,8 @@
     "description": [
       "Your touch ends every curse on one creature or object. A cursed magic item keeps its curse, but its owner's attunement breaks, so the item can be taken off or thrown away."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7f/Remove_Curse_Icon.webp"
   },
   {
     "id": "resistance",
@@ -10054,7 +10208,8 @@
     "description": [
       "You touch a willing creature. Once before the spell ends, it can roll a d4 and add it to one saving throw of its choice, before or after rolling the save. The spell then ends."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Resistance_Icon.png"
   },
   {
     "id": "resurrection",
@@ -10164,7 +10319,8 @@
     "description": [
       "You touch a creature that died within the last minute; it comes back to life with 1 hit point. It can't revive a creature that died of old age, and doesn't restore lost body parts."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/59/Revivify_Icon.webp"
   },
   {
     "id": "rope-trick",
@@ -10235,7 +10391,8 @@
       "Radiance falls on a creature you can see within 60 ft. It makes a Dexterity save or takes 1d8 radiant damage. Cover gives it no bonus to this save.",
       "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/16/Sacred_Flame_Icon.webp"
   },
   {
     "id": "sanctuary",
@@ -10269,7 +10426,8 @@
       "Bonus action. Ward a creature within 30 ft for 1 minute. Anyone who targets it with an attack or harmful spell must first make a Wisdom save, or pick a new target or lose the attack or spell.",
       "Area effects such as a fireball are not stopped. The ward ends if the warded creature attacks, or targets or catches a foe with a spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c1/Sanctuary_Icon.webp"
   },
   {
     "id": "scorching-ray",
@@ -10307,7 +10465,8 @@
       "You fire 3 rays of fire at targets within 120 ft, all at one target or split among several. Make a separate ranged spell attack for each ray; each hit deals 2d6 fire damage."
     ],
     "higherLevels": "Each slot level above 2 adds 1 more ray.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8e/Scorching_Ray_Icon.webp"
   },
   {
     "id": "scrying",
@@ -10385,7 +10544,8 @@
       "Each time one of its turns starts while it burns, the target makes a Constitution save. A failure deals it 1d6 fire damage; a success ends the spell with no damage. The fire also goes out, ending the spell, if the target or someone within 5 ft spends an action to smother it, or if something douses it, such as plunging under water."
     ],
     "higherLevels": "The extra damage on the hit rises by 1d6 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/50/Searing_Smite_Icon.webp"
   },
   {
     "id": "see-invisibility",
@@ -10420,7 +10580,8 @@
     "description": [
       "For 1 hour, invisible creatures and objects are plainly visible to you. You also see into the Ethereal Plane, where creatures and things appear ghostly and see-through."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c3/See_Invisibility_Icon.webp"
   },
   {
     "id": "seeming",
@@ -10454,7 +10615,8 @@
       "You can change looks, clothing, armor, weapons and gear, and make each up to 1 ft shorter or taller, thinner or heavier. The body shape and limbs must stay the same.",
       "The disguise fails to touch. As an action, a creature can make an Investigation check vs your spell save DC to spot it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f4/Seeming_Icon.webp"
   },
   {
     "id": "sending",
@@ -10606,7 +10768,8 @@
       "A painful burst of ringing sound erupts at a point within 60 ft. Each creature in a 10 ft radius sphere makes a Constitution save, taking 3d8 thunder damage, half on a success. Creatures of stone, crystal, metal or other inorganic material save at disadvantage. Unattended nonmagical objects in the area take the damage too."
     ],
     "higherLevels": "Each slot level above 2 adds 1d8 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c5/Shatter_Icon.webp"
   },
   {
     "id": "shield",
@@ -10672,7 +10835,8 @@
     "description": [
       "A creature within 60 ft is surrounded by a shimmering field and gains +2 AC for up to 10 minutes (concentration)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/83/Shield_of_Faith_Icon.webp"
   },
   {
     "id": "shillelagh",
@@ -10742,7 +10906,8 @@
       "Make a melee spell attack against a creature you touch, with advantage if it wears metal armor. A hit deals 1d8 lightning damage, and the target cannot take reactions until its next turn begins.",
       "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/2f/Shocking_Grasp_Icon.webp"
   },
   {
     "id": "silence",
@@ -10774,7 +10939,8 @@
       "For up to 10 minutes (concentration), no sound can be made in or pass through a 20 ft radius sphere on a point within 120 ft.",
       "Anything entirely inside is immune to thunder damage, and creatures entirely inside are deafened. Spells with a verbal component can't be cast there."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/78/Silence_Icon.webp"
   },
   {
     "id": "silent-image",
@@ -10883,7 +11049,8 @@
       "Sleepers stay unconscious for 1 minute, or until they are hurt or someone spends an action shaking or slapping them. Undead and anything immune to charm are skipped."
     ],
     "higherLevels": "Each slot level above 1 adds 2d8 to the roll.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/ae/Sleep_Icon.webp"
   },
   {
     "id": "sleet-storm",
@@ -10920,7 +11087,8 @@
       "Freezing sleet fills a 40 ft radius, 20 ft tall cylinder on a point within 150 ft for up to 1 minute (concentration). The area is heavily obscured, open flames go out, and icy ground makes it difficult terrain.",
       "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or falls prone. Anyone concentrating inside must succeed on a Constitution save vs your spell save DC to keep concentrating."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/50/Sleet_Storm_Icon.webp"
   },
   {
     "id": "slow",
@@ -10957,7 +11125,8 @@
       "Slowed: half speed, -2 to AC and Dexterity saves, no reactions. On its turn it gets an action or a bonus action, not both, and only one attack. Casting a 1-action spell: roll a d20; on 11 or higher it takes effect next turn using that turn's action, or is lost.",
       "It repeats the save after each of its turns; a success frees it."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/be/Slow_Icon.webp"
   },
   {
     "id": "spare-the-dying",
@@ -11017,7 +11186,8 @@
     "description": [
       "For 10 minutes you can understand and talk with beasts. Their knowledge is limited, but they can tell you about nearby places and monsters, and may do a small favour at the DM's discretion. Ritual."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Speak_with_Animals_Icon.webp"
   },
   {
     "id": "speak-with-dead",
@@ -11052,7 +11222,8 @@
       "A corpse within 10 ft that still has a mouth, isn't undead, and wasn't targeted by this spell in the last 10 days can answer up to five of your questions within 10 minutes.",
       "It knows only what it knew alive, in the languages it knew. Answers are usually short, cryptic or repetitive, and it may lie if hostile to you. It learns nothing new and can't predict the future."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8c/Speak_with_Dead_Icon.webp"
   },
   {
     "id": "speak-with-plants",
@@ -11158,7 +11329,8 @@
       "The ground in a 20 ft radius around a point within 150 ft sprouts hard spikes and thorns for up to 10 minutes (concentration). It is difficult terrain; every 5 ft a creature moves into or through it deals it 2d4 piercing damage.",
       "The spikes look natural. A creature that couldn't see the area at casting must pass a Perception check vs your spell save DC to notice the danger before entering."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d4/Spike_Growth_Icon.webp"
   },
   {
     "id": "spirit-guardians",
@@ -11199,7 +11371,8 @@
       "Affected creatures move at half speed in the area. Each time one enters it (first time that turn) or begins its turn there, it makes a Wisdom save, taking 3d8 radiant damage (necrotic if you are evil), half on a success."
     ],
     "higherLevels": "Each slot level above 3 adds 1d8 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d6/Spirit_Guardians_Icon.webp"
   },
   {
     "id": "spiritual-weapon",
@@ -11235,7 +11408,8 @@
       "As a bonus action on your turn, move it up to 20 ft and attack again with it. It looks like whatever weapon you choose."
     ],
     "higherLevels": "Every 2 slot levels above 2 add 1d8 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/26/Spiritual_Weapon_Icon.webp"
   },
   {
     "id": "staggering-smite",
@@ -11270,7 +11444,8 @@
       "Your next melee weapon hit before the spell ends (concentration, up to 1 minute) deals an extra 4d6 psychic damage.",
       "The target then makes a Wisdom save. On a failure, until its next turn ends it can't take reactions and rolls attacks and ability checks with disadvantage."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/03/Staggering_Smite_Icon.webp"
   },
   {
     "id": "stinking-cloud",
@@ -11308,7 +11483,8 @@
       "Each creature fully inside at the start of its turn makes a Constitution save against poison. On a failure it spends its action that turn retching and reeling. Creatures that needn't breathe or are immune to poison pass automatically.",
       "A moderate wind (10 mph or more) clears it in 4 rounds; a strong wind (20 mph or more) in 1."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b7/Stinking_Cloud_Icon.webp"
   },
   {
     "id": "stone-shape",
@@ -11381,7 +11557,8 @@
     "description": [
       "A willing creature you touch gets skin as hard as stone for up to 1 hour (concentration), resisting nonmagical bludgeoning, piercing and slashing damage."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c3/Stoneskin_Icon.webp"
   },
   {
     "id": "storm-of-vengeance",
@@ -11497,7 +11674,8 @@
       "Each creature in the line makes a Constitution save: 6d8 radiant and blinded until your next turn, or half damage and not blinded on a success. Undead and oozes save with disadvantage.",
       "Your hand glows with sunlight meanwhile: bright light to 30 ft, dim light 30 ft further."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/63/Sunbeam_Icon.webp"
   },
   {
     "id": "sunburst",
@@ -11653,7 +11831,8 @@
       "A creature you can see within 30 ft, with Intelligence 5 or more, makes a Wisdom save. On a failure it collapses in fits of laughter, prone and incapacitated and unable to stand, for up to 1 minute (concentration).",
       "Each time its turn ends it repeats the save, and it also repeats it (with advantage) whenever it is hurt. Passing ends the spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/27/Tasha's_Hideous_Laughter_Icon.webp"
   },
   {
     "id": "telekinesis",
@@ -11685,7 +11864,8 @@
       "Creature (Huge or smaller): your spellcasting ability check vs its Strength. Win to move it up to 30 ft any direction within range; it is restrained (and hangs if lifted) until your next turn ends. Win again each round to hold it.",
       "Object (up to 1,000 pounds): unattended, it moves up to 30 ft automatically; worn or carried, win the same contest to pull it away. Fine work, like using a tool or opening a door, is possible."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c7/Telekinesis_Icon.webp"
   },
   {
     "id": "telepathy",
@@ -11863,7 +12043,8 @@
       "• Your eyes change appearance for 1 minute.",
       "Up to 3 of the 1-minute effects at once; dismiss one as an action."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3f/Thaumaturgy_Icon.webp"
   },
   {
     "id": "thorn-whip",
@@ -11902,7 +12083,8 @@
       "Make a melee spell attack against a creature within 30 ft. A hit deals 1d6 piercing damage, and if the target is Large or smaller you can yank it up to 10 ft closer to you.",
       "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e8/Thorn_Whip_Icon.webp"
   },
   {
     "id": "thunderous-smite",
@@ -11936,7 +12118,8 @@
     "description": [
       "Your next melee weapon hit within 1 minute (concentration) rings with a thunderclap audible 300 ft away and deals 2d6 extra thunder damage. The target makes a Strength save or is pushed 10 ft away and knocked prone."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/dd/Thunderous_Smite_Icon.webp"
   },
   {
     "id": "thunderwave",
@@ -12219,7 +12402,8 @@
     "description": [
       "A willing creature you touch gains truesight for 1 hour: within 120 ft it sees things as they truly are, notices secret doors hidden by magic, and sees into the Ethereal Plane."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b1/True_Seeing_Icon.webp"
   },
   {
     "id": "true-strike",
@@ -12251,7 +12435,8 @@
     "description": [
       "Point at a target within 30 ft. On your next turn, your first attack roll against it has advantage, provided the spell is still going (concentration, 1 round)."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/47/True_Strike_Icon.webp"
   },
   {
     "id": "tsunami",
@@ -12360,7 +12545,8 @@
       "On each of your turns while the spell lasts, you can use your action to repeat this attack."
     ],
     "higherLevels": "Each slot level above 3 adds 1d6 damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/85/Vampiric_Touch_Icon.webp"
   },
   {
     "id": "vicious-mockery",
@@ -12396,7 +12582,8 @@
       "You hurl a cutting insult at a creature you can see within 60 ft. If it can hear you (it need not understand), it makes a Wisdom save or takes 1d4 psychic damage and has disadvantage on its next attack roll before the end of its next turn.",
       "Damage rises to 2d4 at level 5, 3d4 at level 11 and 4d4 at level 17."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/66/Vicious_Mockery_Icon.webp"
   },
   {
     "id": "wall-of-fire",
@@ -12440,7 +12627,8 @@
       "Choose one side. A creature ending its turn within 10 ft of that side or inside the wall takes 5d8 fire, as does one entering it for the first time on a turn. The other side is harmless."
     ],
     "higherLevels": "Each slot level above 4 adds 1d8.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/ca/Wall_of_Fire_Icon.webp"
   },
   {
     "id": "wall-of-force",
@@ -12516,7 +12704,8 @@
       "Each 10 ft section has AC 12 and 30 HP and is vulnerable to fire. A destroyed section leaves frigid air; crossing it the first time on a turn calls for a Constitution save: 5d6 cold, half on a success."
     ],
     "higherLevels": "Each slot level above 6 adds 2d6 to the first blast and 1d6 to the frigid air.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d2/Wall_of_Ice_Icon.webp"
   },
   {
     "id": "wall-of-stone",
@@ -12554,7 +12743,8 @@
       "Creatures in its path are pushed aside. One about to be fully enclosed makes a Dexterity save; success lets it use its reaction to move up to its speed out.",
       "Each panel has AC 15 and 30 HP per inch of thickness. If you concentrate the full 10 minutes, it becomes permanent and can't be dispelled."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e2/Wall_of_Stone_Icon.webp"
   },
   {
     "id": "wall-of-thorns",
@@ -12596,7 +12786,8 @@
       "Moving through costs 4 ft per 1 ft. Entering it the first time on a turn or ending a turn there calls for a Dexterity save: 7d8 slashing, half on a success."
     ],
     "higherLevels": "Each slot level above 6 adds 1d8 to both kinds of damage.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6e/Wall_of_Thorns_Icon.webp"
   },
   {
     "id": "warding-bond",
@@ -12631,7 +12822,8 @@
       "You link yourself to a willing creature you touch for 1 hour. While it is within 60 ft of you, it gets +1 to AC and saves and resistance to all damage, but you take the same amount of damage it takes.",
       "It ends if you drop to 0 hit points, you move more than 60 ft apart, either of you is targeted by it again, or you dismiss it as an action."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ea/Warding_Bond_Icon.webp"
   },
   {
     "id": "water-breathing",
@@ -12741,7 +12933,8 @@
       "Starting a turn in or entering the webs: Dexterity save or is restrained while there. Escape: action and Strength check vs your spell save DC.",
       "Fire burns a 5 ft cube of web away in a round; creatures starting their turn in that fire take 2d4 fire damage."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8b/Web_Icon.webp"
   },
   {
     "id": "weird",
@@ -12811,7 +13004,8 @@
       "Switching form either way takes 1 minute, during which the creature is incapacitated and can't move.",
       "If the spell ends while one is flying as a cloud, it sinks 60 ft per round for 1 minute and lands safely; if it hasn't landed by then, it falls the rest of the way."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/06/Wind_Walk_Icon.webp"
   },
   {
     "id": "wind-wall",
@@ -12930,7 +13124,8 @@
       "On each later turn you can use your action to zap it for 1d12 lightning damage with no roll. The link breaks if you use your action on anything else, or if the target ends up out of range or behind full cover."
     ],
     "higherLevels": "The first hit's damage rises by 1d12 for each slot level above 1.",
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d2/Witch_Bolt_Icon.webp"
   },
   {
     "id": "word-of-recall",
@@ -12995,7 +13190,8 @@
       "Your next melee weapon hit within 1 minute (concentration) adds 1d6 psychic damage. The target also makes a Wisdom save or becomes frightened of you for the rest of the spell.",
       "Once frightened, it can spend an action on a Wisdom check, trying to beat your spell save DC. Success ends the spell."
     ],
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Wrathful_Smite_Icon.webp"
   },
   {
     "id": "zone-of-truth",

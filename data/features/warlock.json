@@ -32,7 +32,8 @@
       "Recharges on a short or long rest."
     ],
     "page": 109,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/47/Fey_Presence_Icon.webp"
   },
   {
     "id": "misty-escape",
@@ -50,7 +51,8 @@
       "Invisibility holds until your next turn begins, unless you attack or cast a spell first. Recharges on a short or long rest."
     ],
     "page": 109,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d1/Misty_Escape_Icon.webp"
   },
   {
     "id": "beguiling-defenses",
@@ -66,7 +68,8 @@
       "Charm cannot affect you. When a creature attempts it anyway, spend your reaction to reflect the effect back. That creature rolls a Wisdom save against your warlock spell save DC, and on a failure you have it charmed for 1 minute, or sooner if it is hurt."
     ],
     "page": 109,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/62/Beguiling_Defences_Icon.webp"
   },
   {
     "id": "dark-delirium",
@@ -100,7 +103,8 @@
       "Whenever you drop a hostile creature to 0 hit points, you receive temporary hit points: your Charisma modifier plus your warlock level, with a minimum of 1."
     ],
     "page": 109,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/73/Dark_One's_Blessing_Icon.webp"
   },
   {
     "id": "dark-ones-own-luck",
@@ -155,7 +159,8 @@
       "Recharges on a short or long rest."
     ],
     "page": 110,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ee/Entropic_Ward_Icon.webp"
   },
   {
     "id": "create-thrall",
@@ -189,7 +194,8 @@
       "Eldritch blast deals extra damage equal to your Charisma modifier on each beam that hits, so it grows with the extra beams you gain later."
     ],
     "page": 110,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/51/Agonizing_Blast_Icon.png"
   },
   {
     "id": "eldritch-invocations-armor-of-shadows",
@@ -273,7 +279,8 @@
       "You gain proficiency in Deception and in Persuasion. Nothing to activate; it is a permanent bonus whenever you roll those skills."
     ],
     "page": 110,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cc/Beguiling_Influence_Icon.webp"
   },
   {
     "id": "eldritch-invocations-bewitching-whispers",
@@ -338,7 +345,8 @@
       "You can copy more rituals you find into the book if the spell level is no more than half your warlock level, rounded up. Each spell level takes 2 hours and 50 gp of ink."
     ],
     "page": 110,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9a/Book_of_Ancient_Secrets_Icon.webp"
   },
   {
     "id": "eldritch-invocations-chains-of-carceri",
@@ -517,7 +525,8 @@
       "Every pact weapon hit adds necrotic damage equal to your Charisma modifier; the bonus is never below 1."
     ],
     "page": 111,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/79/Lifedrinker_Icon.webp"
   },
   {
     "id": "eldritch-invocations-mask-of-many-faces",
@@ -656,7 +665,8 @@
       "While you stand in dim light or darkness, use your action to turn invisible. You stay invisible until you move, take an action or take a reaction."
     ],
     "page": 111,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/12/One_with_Shadows_Icon.webp"
   },
   {
     "id": "eldritch-invocations-otherworldly-leap",
@@ -699,7 +709,8 @@
       "When eldritch blast hits a creature, you may shove it up to 10 feet directly away from you."
     ],
     "page": 111,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/65/Repelling_Blast_Icon.webp"
   },
   {
     "id": "eldritch-invocations-sculptor-of-flesh",
@@ -918,7 +929,8 @@
       "It vanishes if it is more than 5 feet from you for 1 minute, if you dismiss it (no action) or summon it again, or if you die. An hour-long ritual can bind a magic weapon as your pact weapon."
     ],
     "page": 107,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5f/Pact_of_the_Blade_Icon.webp"
   },
   {
     "id": "pact-boon-pact-of-the-tome",
@@ -951,6 +963,7 @@
       "If the book is lost, a 1-hour ceremony during a rest gets you a new one."
     ],
     "page": 108,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3e/Pact_of_the_Tome_Icon.webp"
   }
 ]

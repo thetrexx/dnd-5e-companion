@@ -44,7 +44,8 @@
       "If your speed is raised or cut, the Dash bonus changes by the same amount."
     ],
     "page": 192,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cc/Dash_Icon.webp"
   },
   {
     "id": "disengage",
@@ -60,7 +61,8 @@
       "Use it to slip away from enemies in reach without giving them a free swing. It does not move you by itself."
     ],
     "page": 192,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/94/Disengage_Icon.webp"
   },
   {
     "id": "dodge",
@@ -92,7 +94,8 @@
       "Or aid an attack: pick an enemy within 5 ft of you. The first attack roll an ally makes against it before your next turn has advantage."
     ],
     "page": 192,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/89/Help_Icon.webp"
   },
   {
     "id": "hide",
@@ -107,7 +110,8 @@
       "Make a Dexterity (Stealth) check to hide. If it succeeds, you gain the benefits of being hidden from creatures that cannot find you."
     ],
     "page": 192,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/32/Hide_Icon.webp"
   },
   {
     "id": "ready",
@@ -187,7 +191,8 @@
       "Make a Strength (Athletics) check against its Strength (Athletics) or Dexterity (Acrobatics), its choice. If you win, you either knock it prone or push it 5 ft away."
     ],
     "page": 195,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6b/Shove_Icon.webp"
   },
   {
     "id": "two-weapon-fighting",
@@ -203,7 +208,8 @@
       "You do not add your ability modifier to that bonus attack's damage unless it is negative. A thrown weapon can be thrown for either attack."
     ],
     "page": 195,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/54/Two-Weapon_Fighting_Icon.webp"
   },
   {
     "id": "opportunity-attack",
@@ -219,6 +225,7 @@
       "No opportunity attack if the creature took the Disengage action, teleported, or was moved without using its own movement, action or reaction."
     ],
     "page": 195,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/35/Opportunity_Attack_Icon.webp"
   }
 ]

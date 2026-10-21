@@ -4,7 +4,7 @@ import { costBar, damageLine, levelLine, tags } from '../../logic/card';
 import { effectiveSub } from '../../logic/subclass';
 import { toHash } from '../../router';
 import { ComponentIcons } from '../ComponentIcons';
-import { Icon } from '../Icon';
+import { Icon, spellFallback } from '../Icon';
 import { Separator } from '../Separator';
 
 const SYMBOL: Record<FeatureCost, { sym: string; token: string }> = {
@@ -78,7 +78,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
       {head}
       <div class="scroller">
         <article class="card">
-          <div class="card-icon"><Icon src={(spell ?? feature)!.icon} fallback={spell ? 'spell' : 'action'} alt="" size={54} /></div>
+          <div class="card-icon"><Icon src={(spell ?? feature)!.icon} fallback={spell ? spellFallback(spell) : 'action'} alt="" size={54} /></div>
           <h1 class="card-title">{spell ? spell.name : feature!.name}</h1>
           <div class="card-sub">{spell ? levelLine(spell) : `${source} Feature · Level ${feature!.level}`}</div>
           {dmg && <div class="card-dmg">{dmg.headline}</div>}

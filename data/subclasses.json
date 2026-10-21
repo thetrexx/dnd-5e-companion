@@ -4,7 +4,8 @@
     "cls": "fighter",
     "name": "Champion",
     "page": 72,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/b7/Class_Fighter_Champion_Hotbar_Icon.png"
   },
   {
     "id": "battle-master",
@@ -13,7 +14,8 @@
     "page": 73,
     "options": [
       "maneuvers"
-    ]
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/7/73/Class_Fighter_Battle_Master_Hotbar_Icon.png"
   },
   {
     "id": "eldritch-knight",
@@ -94,7 +96,8 @@
         4,
         4
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/7/7e/Class_Fighter_Eldritch_Knight_Hotbar_Icon.png"
   },
   {
     "id": "circle-of-the-land",
@@ -428,14 +431,16 @@
           "option": "land-terrain-underdark"
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/f/f1/Class_Druid_Land_Hotbar_Icon.png"
   },
   {
     "id": "path-of-the-berserker",
     "cls": "barbarian",
     "name": "Path of the Berserker",
     "page": 49,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/41/Class_Barbarian_Berserker_Hotbar_Icon.png"
   },
   {
     "id": "path-of-the-totem-warrior",
@@ -446,21 +451,24 @@
       "totem-spirit",
       "aspect-of-the-beast",
       "totemic-attunement"
-    ]
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/2f/Class_Barbarian_Wildheart_Hotbar_Icon.png"
   },
   {
     "id": "college-of-lore",
     "cls": "bard",
     "name": "College of Lore",
     "page": 54,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/82/Class_Bard_Lore_Hotbar_Icon.png"
   },
   {
     "id": "college-of-valor",
     "cls": "bard",
     "name": "College of Valor",
     "page": 55,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/9b/Class_Bard_Valour_Hotbar_Icon.png"
   },
   {
     "id": "knowledge-domain",
@@ -512,7 +520,8 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/2/2c/Class_Cleric_Knowledge_Hotbar_Icon.png"
   },
   {
     "id": "life-domain",
@@ -564,7 +573,8 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/7/72/Class_Cleric_Life_Hotbar_Icon.png"
   },
   {
     "id": "light-domain",
@@ -616,7 +626,8 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/5/56/Class_Cleric_Light_Hotbar_Icon.png"
   },
   {
     "id": "nature-domain",
@@ -668,7 +679,8 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/1/19/Class_Cleric_Nature_Hotbar_Icon.png"
   },
   {
     "id": "tempest-domain",
@@ -720,7 +732,8 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/1/14/Class_Cleric_Tempest_Hotbar_Icon.png"
   },
   {
     "id": "trickery-domain",
@@ -772,7 +785,8 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/9/98/Class_Cleric_Trickery_Hotbar_Icon.png"
   },
   {
     "id": "war-domain",
@@ -824,28 +838,32 @@
           "atLevel": 9
         }
       ]
-    }
+    },
+    "hotbarIcon": "https://bg3.wiki/w/images/a/a8/Class_Cleric_War_Hotbar_Icon.png"
   },
   {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
     "page": 69,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/f/fb/Class_Druid_Moon_Hotbar_Icon.png"
   },
   {
     "id": "way-of-the-open-hand",
     "cls": "monk",
     "name": "Way of the Open Hand",
     "page": 79,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/0/0a/Class_Monk_Open_Hand_Hotbar_Icon.png"
   },
   {
     "id": "way-of-shadow",
     "cls": "monk",
     "name": "Way of Shadow",
     "page": 80,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/4f/Class_Monk_Shadow_Hotbar_Icon.png"
   },
   {
     "id": "way-of-the-four-elements",
@@ -854,7 +872,8 @@
     "page": 80,
     "options": [
       "elemental-disciplines"
-    ]
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/bc/Class_Monk_Four_Elements_Hotbar_Icon.png"
   },
   {
     "id": "oath-of-devotion",
@@ -906,7 +925,8 @@
         }
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/34/Class_Paladin_Devotion_Hotbar_Icon.png"
   },
   {
     "id": "oath-of-the-ancients",
@@ -958,7 +978,8 @@
         }
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/2a/Class_Paladin_Ancients_Hotbar_Icon.png"
   },
   {
     "id": "oath-of-vengeance",
@@ -1010,7 +1031,8 @@
         }
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/81/Class_Paladin_Vengeance_Hotbar_Icon.png"
   },
   {
     "id": "hunter",
@@ -1022,28 +1044,32 @@
       "defensive-tactics",
       "multiattack",
       "superior-hunters-defense"
-    ]
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/93/Class_Ranger_Hunter_Hotbar_Icon.png"
   },
   {
     "id": "beast-master",
     "cls": "ranger",
     "name": "Beast Master",
     "page": 93,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/bd/Class_Ranger_Beast_Master_Hotbar_Icon.png"
   },
   {
     "id": "thief",
     "cls": "rogue",
     "name": "Thief",
     "page": 97,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/ee/Class_Rogue_Thief_Hotbar_Icon.png"
   },
   {
     "id": "assassin",
     "cls": "rogue",
     "name": "Assassin",
     "page": 97,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/c/c2/Class_Rogue_Assassin_Hotbar_Icon.png"
   },
   {
     "id": "arcane-trickster",
@@ -1124,7 +1150,8 @@
         4
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/1/12/Class_Rogue_Arcane_Trickster_Hotbar_Icon.png"
   },
   {
     "id": "draconic-bloodline",
@@ -1133,14 +1160,16 @@
     "page": 102,
     "options": [
       "draconic-ancestry-sorcerer"
-    ]
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/27/Class_Sorcerer_Draconic_Bloodline_Hotbar_Icon.png"
   },
   {
     "id": "wild-magic",
     "cls": "sorcerer",
     "name": "Wild Magic",
     "page": 103,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/e9/Class_Sorcerer_Wild_Magic_Hotbar_Icon.png"
   },
   {
     "id": "the-archfey",
@@ -1192,7 +1221,8 @@
         }
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/f/f2/Class_Warlock_Archfey_Hotbar_Icon.png"
   },
   {
     "id": "the-fiend",
@@ -1244,7 +1274,8 @@
         }
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/9f/Class_Warlock_Fiend_Hotbar_Icon.png"
   },
   {
     "id": "the-great-old-one",
@@ -1296,62 +1327,71 @@
         }
       ]
     },
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/4f/Class_Warlock_Great_Old_One_Hotbar_Icon.png"
   },
   {
     "id": "school-of-abjuration",
     "cls": "wizard",
     "name": "School of Abjuration",
     "page": 115,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/ef/Class_Wizard_Abjuration_Hotbar_Icon.png"
   },
   {
     "id": "school-of-conjuration",
     "cls": "wizard",
     "name": "School of Conjuration",
     "page": 116,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/a/ab/Class_Wizard_Conjuration_Hotbar_Icon.png"
   },
   {
     "id": "school-of-divination",
     "cls": "wizard",
     "name": "School of Divination",
     "page": 116,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/35/Class_Wizard_Divination_Hotbar_Icon.png"
   },
   {
     "id": "school-of-enchantment",
     "cls": "wizard",
     "name": "School of Enchantment",
     "page": 117,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/b/b5/Class_Wizard_Enchantment_Hotbar_Icon.png"
   },
   {
     "id": "school-of-evocation",
     "cls": "wizard",
     "name": "School of Evocation",
     "page": 117,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/6/63/Class_Wizard_Evocation_Hotbar_Icon.png"
   },
   {
     "id": "school-of-illusion",
     "cls": "wizard",
     "name": "School of Illusion",
     "page": 118,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/3d/Class_Wizard_Illusion_Hotbar_Icon.png"
   },
   {
     "id": "school-of-necromancy",
     "cls": "wizard",
     "name": "School of Necromancy",
     "page": 118,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/0/0c/Class_Wizard_Necromancy_Hotbar_Icon.png"
   },
   {
     "id": "school-of-transmutation",
     "cls": "wizard",
     "name": "School of Transmutation",
     "page": 119,
-    "options": []
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/25/Class_Wizard_Transmutation_Hotbar_Icon.png"
   }
 ]

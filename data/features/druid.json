@@ -93,7 +93,8 @@
       "Level 18: you can cast druid spells in beast form with verbal and somatic components only. Level 20: unlimited uses."
     ],
     "page": 66,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b9/Wild_Shape_Icon.webp"
   },
   {
     "id": "land-terrain-arctic",
@@ -108,7 +109,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: hold person, spike growth. Druid level 5: sleet storm, slow. Druid level 7: freedom of movement, ice storm. Druid level 9: commune with nature, cone of cold."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/03/Arctic_Icon.webp"
   },
   {
     "id": "land-terrain-coast",
@@ -123,7 +125,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: mirror image, misty step. Druid level 5: water breathing, water walk. Druid level 7: control water, freedom of movement. Druid level 9: conjure elemental, scrying."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/96/Coast_Icon.webp"
   },
   {
     "id": "natural-recovery",
@@ -167,7 +170,8 @@
       "For example, at druid level 4 you could get back one 2nd-level slot or two 1st-level slots."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/11/Natural_Recovery_Icon.webp"
   },
   {
     "id": "combat-wild-shape",
@@ -274,7 +278,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: blur, silence. Druid level 5: create food and water, protection from energy. Druid level 7: blight, hallucinatory terrain. Druid level 9: insect plague, wall of stone."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/55/Desert_Icon.webp"
   },
   {
     "id": "land-terrain-forest",
@@ -289,7 +294,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: barkskin, spider climb. Druid level 5: call lightning, plant growth. Druid level 7: divination, freedom of movement. Druid level 9: commune with nature, tree stride."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/07/Forest_Icon.webp"
   },
   {
     "id": "land-terrain-grassland",
@@ -304,7 +310,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: invisibility, pass without trace. Druid level 5: daylight, haste. Druid level 7: divination, freedom of movement. Druid level 9: dream, insect plague."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fc/Grassland_Icon.webp"
   },
   {
     "id": "land-terrain-mountain",
@@ -319,7 +326,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: spider climb, spike growth. Druid level 5: lightning bolt, meld into stone. Druid level 7: stone shape, stoneskin. Druid level 9: passwall, wall of stone."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bb/Mountain_Icon.webp"
   },
   {
     "id": "land-terrain-swamp",
@@ -334,7 +342,8 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: darkness, Melf's acid arrow. Druid level 5: water walk, stinking cloud. Druid level 7: freedom of movement, locate creature. Druid level 9: insect plague, scrying."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/b5/Swamp_Icon.webp"
   },
   {
     "id": "land-terrain-underdark",
@@ -349,6 +358,7 @@
       "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: spider climb, web. Druid level 5: gaseous form, stinking cloud. Druid level 7: greater invisibility, stone shape. Druid level 9: cloudkill, insect plague."
     ],
     "page": 68,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/af/Underdark_Icon.webp"
   }
 ]

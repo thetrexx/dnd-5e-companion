@@ -68,7 +68,8 @@
       "A rage lasts 1 minute. It stops sooner if you are knocked out, or if your turn ends having neither attacked a hostile creature nor taken damage since your previous turn. You may also drop it with a bonus action."
     ],
     "page": 48,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c9/Rage_Icon.webp"
   },
   {
     "id": "reckless-attack",
@@ -85,7 +86,8 @@
       "In return, enemies have advantage on their attacks against you until your next turn starts."
     ],
     "page": 48,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/21/Reckless_Attack_Icon.webp"
   },
   {
     "id": "relentless-rage",
@@ -103,7 +105,8 @@
       "Every later use adds 5 to the DC. A short or long rest resets it to 10."
     ],
     "page": 49,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e8/Relentless_Rage_Icon.webp"
   },
   {
     "id": "frenzy",
@@ -121,7 +124,8 @@
       "When the rage ends, you take 1 level of exhaustion."
     ],
     "page": 49,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/68/Frenzy_Icon.webp"
   },
   {
     "id": "intimidating-presence",
@@ -138,7 +142,8 @@
       "A target that passes the save is immune to this for 24 hours."
     ],
     "page": 49,
-    "textSource": "summary"
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/24/Intimidating_Presence_Icon.webp"
   },
   {
     "id": "retaliation",
