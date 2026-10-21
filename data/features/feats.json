@@ -1,0 +1,329 @@
+[
+  {
+    "id": "charger",
+    "name": "Charger",
+    "source": {
+      "kind": "feat",
+      "id": "charger"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "You took the Dash action",
+    "description": [
+      "Once you have used your action to Dash, spend your bonus action on one melee weapon attack or one shove.",
+      "If you moved at least 10 ft in a straight line right before, a hit adds +5 damage, and a successful shove pushes the target up to 10 ft away."
+    ],
+    "page": 165,
+    "textSource": "summary"
+  },
+  {
+    "id": "crossbow-expert",
+    "name": "Crossbow Expert",
+    "source": {
+      "kind": "feat",
+      "id": "crossbow-expert"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "You attacked with a one-handed weapon in your Attack action",
+    "description": [
+      "After attacking with a one-handed weapon during your Attack action, you may fire a bonus-action shot from a hand crossbow you hold, if it is loaded."
+    ],
+    "page": 165,
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-duelist",
+    "name": "Defensive Duelist",
+    "source": {
+      "kind": "feat",
+      "id": "defensive-duelist"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A melee attack hits you while you wield a finesse weapon you are proficient with",
+    "description": [
+      "Add your proficiency bonus to your AC against that one attack. It can turn the hit into a miss."
+    ],
+    "page": 165,
+    "textSource": "summary"
+  },
+  {
+    "id": "grappler",
+    "name": "Grappler",
+    "source": {
+      "kind": "feat",
+      "id": "grappler"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "Roll another grapple check against a creature you already hold. Win it and both of you are restrained until the grapple ends."
+    ],
+    "page": 167,
+    "textSource": "summary"
+  },
+  {
+    "id": "great-weapon-master",
+    "name": "Great Weapon Master",
+    "source": {
+      "kind": "feat",
+      "id": "great-weapon-master"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "On your turn you score a critical hit with a melee weapon or reduce a creature to 0 hit points with one",
+    "description": [
+      "Make one extra melee weapon attack as a bonus action. This only happens on your own turn, right after the critical hit or the kill."
+    ],
+    "page": 167,
+    "textSource": "summary"
+  },
+  {
+    "id": "great-weapon-master-power-attack",
+    "name": "Great Weapon Master: Power Attack",
+    "source": {
+      "kind": "feat",
+      "id": "great-weapon-master"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You make a melee attack with a heavy weapon",
+    "description": [
+      "Before a melee attack with a heavy weapon you are proficient with, you can take -5 on the attack roll. If the attack hits, it deals +10 damage."
+    ],
+    "page": 167,
+    "textSource": "summary"
+  },
+  {
+    "id": "healer",
+    "name": "Healer",
+    "source": {
+      "kind": "feat",
+      "id": "healer"
+    },
+    "level": 1,
+    "cost": "action",
+    "resource": "One healer's kit use",
+    "description": [
+      "Burn one use of a healer's kit to heal a creature for 1d6 + 4 plus a number equal to its maximum Hit Dice.",
+      "The creature needs a short or long rest before this feat can heal it again."
+    ],
+    "page": 167,
+    "textSource": "summary"
+  },
+  {
+    "id": "inspiring-leader",
+    "name": "Inspiring Leader",
+    "source": {
+      "kind": "feat",
+      "id": "inspiring-leader"
+    },
+    "level": 1,
+    "cost": "other",
+    "uses": "Once per creature per short or long rest",
+    "description": [
+      "Give a 10-minute pep talk to as many as 6 allies within 30 ft, yourself included, who can see or hear and understand you. Each gets temporary hit points equal to your level + Charisma modifier.",
+      "A given creature cannot be boosted again until a short or long rest."
+    ],
+    "page": 167,
+    "textSource": "summary"
+  },
+  {
+    "id": "lucky-feat",
+    "name": "Lucky",
+    "source": {
+      "kind": "feat",
+      "id": "lucky"
+    },
+    "level": 1,
+    "cost": "free",
+    "resource": "Luck points (3)",
+    "uses": "Refill on long rest",
+    "description": [
+      "You have 3 luck points. After rolling an attack, ability check or saving throw (before the outcome), spend one to roll an extra d20 and pick which d20 counts.",
+      "You can also spend one when an attack targets you: roll a d20 and choose whether the attack uses its die or yours. Opposing spends on one roll cancel out."
+    ],
+    "page": 167,
+    "textSource": "summary"
+  },
+  {
+    "id": "mage-slayer",
+    "name": "Mage Slayer",
+    "source": {
+      "kind": "feat",
+      "id": "mage-slayer"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature within 5 ft of you casts a spell",
+    "description": [
+      "Make one melee weapon attack against that spellcaster. It uses your reaction, so you get it once per round."
+    ],
+    "page": 168,
+    "textSource": "summary"
+  },
+  {
+    "id": "martial-adept",
+    "name": "Martial Adept",
+    "source": {
+      "kind": "feat",
+      "id": "martial-adept"
+    },
+    "level": 1,
+    "cost": "free",
+    "resource": "Superiority dice",
+    "uses": "Refill on short or long rest",
+    "description": [
+      "You know 2 Battle Master maneuvers. When one forces a save, the DC is 8 + proficiency bonus + your Strength or Dexterity modifier (pick one).",
+      "You gain one d6 superiority die, or one extra die if you already have some. Spent dice return on a short or long rest."
+    ],
+    "page": 168,
+    "textSource": "summary"
+  },
+  {
+    "id": "polearm-master",
+    "name": "Polearm Master",
+    "source": {
+      "kind": "feat",
+      "id": "polearm-master"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "You took the Attack action using only a glaive, halberd or quarterstaff",
+    "description": [
+      "Strike with the other end of the weapon: a melee attack dealing a d4 of bludgeoning damage."
+    ],
+    "page": 168,
+    "textSource": "summary"
+  },
+  {
+    "id": "polearm-master-opportunity",
+    "name": "Polearm Master: Reach Strike",
+    "source": {
+      "kind": "feat",
+      "id": "polearm-master"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature enters your reach",
+    "description": [
+      "While you hold a glaive, halberd, pike or quarterstaff, you get an opportunity attack against any creature as it comes within your reach."
+    ],
+    "page": 168,
+    "textSource": "summary"
+  },
+  {
+    "id": "savage-attacker",
+    "name": "Savage Attacker",
+    "source": {
+      "kind": "feat",
+      "id": "savage-attacker"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You roll damage for a melee weapon attack",
+    "uses": "Once per turn",
+    "description": [
+      "After rolling damage for a melee weapon attack, you may roll the weapon's damage dice again and use either total."
+    ],
+    "page": 169,
+    "textSource": "summary"
+  },
+  {
+    "id": "sentinel",
+    "name": "Sentinel",
+    "source": {
+      "kind": "feat",
+      "id": "sentinel"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature within 5 ft attacks a target other than you, and that target does not have this feat",
+    "description": [
+      "Make one melee weapon attack against the attacker, using your reaction. The reaction is spent whether you hit or not."
+    ],
+    "page": 169,
+    "textSource": "summary"
+  },
+  {
+    "id": "sharpshooter",
+    "name": "Sharpshooter",
+    "source": {
+      "kind": "feat",
+      "id": "sharpshooter"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You make a ranged weapon attack",
+    "description": [
+      "Before a ranged attack with a weapon you are proficient with, you can take -5 on the attack roll. If the attack hits, it deals +10 damage."
+    ],
+    "page": 170,
+    "textSource": "summary"
+  },
+  {
+    "id": "shield-master",
+    "name": "Shield Master",
+    "source": {
+      "kind": "feat",
+      "id": "shield-master"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "You took the Attack action on your turn",
+    "description": [
+      "While wielding a shield, shove a creature within 5 ft of you using the shield."
+    ],
+    "page": 170,
+    "textSource": "summary"
+  },
+  {
+    "id": "shield-master-evade",
+    "name": "Shield Master: Evade",
+    "source": {
+      "kind": "feat",
+      "id": "shield-master"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "An effect lets a successful Dexterity save halve the damage",
+    "description": [
+      "If you succeed on that Dexterity save, you take no damage at all, as you duck behind your shield. You must not be incapacitated."
+    ],
+    "page": 170,
+    "textSource": "summary"
+  },
+  {
+    "id": "tavern-brawler",
+    "name": "Tavern Brawler",
+    "source": {
+      "kind": "feat",
+      "id": "tavern-brawler"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "On your turn you hit with an unarmed strike or an improvised weapon",
+    "description": [
+      "Attempt to grapple the creature you just hit, using your bonus action. The usual grapple check applies."
+    ],
+    "page": 170,
+    "textSource": "summary"
+  },
+  {
+    "id": "war-caster",
+    "name": "War Caster",
+    "source": {
+      "kind": "feat",
+      "id": "war-caster"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A hostile creature's movement provokes an opportunity attack from you",
+    "description": [
+      "Cast a spell at that creature in place of an opportunity attack. The spell must take 1 action to cast and target only that creature."
+    ],
+    "page": 170,
+    "textSource": "summary"
+  }
+]

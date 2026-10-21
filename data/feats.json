@@ -1,1 +1,290 @@
-[]
+[
+  {
+    "id": "charger",
+    "name": "Charger",
+    "page": 165,
+    "description": [
+      "After you Dash as your action, your bonus action can be one melee weapon attack or a shove.",
+      "Having moved 10 ft or more in a straight line just before that bonus action, a hit adds +5 damage, and a successful shove pushes the target up to 10 ft away."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "crossbow-expert",
+    "name": "Crossbow Expert",
+    "page": 165,
+    "description": [
+      "Crossbows you are proficient with no longer need loading time. A hostile creature within 5 ft does not hamper your ranged attacks.",
+      "When you attack with a one-handed weapon as part of the Attack action, a bonus action lets you also fire a loaded hand crossbow you are holding."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-duelist",
+    "name": "Defensive Duelist",
+    "prereq": "Dexterity 13 or higher",
+    "page": 165,
+    "description": [
+      "While you wield a finesse weapon you are proficient with, you can use your reaction when a melee attack hits you to add your proficiency bonus to AC against it, which may make it miss."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "grappler",
+    "name": "Grappler",
+    "prereq": "Strength 13 or higher",
+    "page": 167,
+    "description": [
+      "You attack with advantage against a creature you are grappling, and a target one size larger than you has no automatic success when escaping your grip.",
+      "As an action you can try to pin a creature you are grappling: a new grapple check, and if you win, you both stay restrained until the grapple ends."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "great-weapon-master",
+    "name": "Great Weapon Master",
+    "page": 167,
+    "description": [
+      "During your own turn, scoring a critical hit with a melee weapon, or dropping a foe to 0 hit points with one, grants a bonus-action melee attack.",
+      "You may declare -5 to hit on a heavy-weapon melee attack you are proficient with, gaining +10 damage if it connects."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "healer",
+    "name": "Healer",
+    "page": 167,
+    "description": [
+      "Using a healer's kit to stabilize someone dying also returns 1 hit point to them.",
+      "As an action, burn one use of a healer's kit to heal a creature for 1d6 + 4 plus its maximum Hit Dice count. That creature must finish a short or long rest before the feat helps it again."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "inspiring-leader",
+    "name": "Inspiring Leader",
+    "prereq": "Charisma 13 or higher",
+    "page": 167,
+    "description": [
+      "A 10-minute speech to as many as 6 allies (you included) within 30 ft, who must see or hear and understand you, hands each temporary hit points equal to your level + Charisma modifier. Nobody can be boosted again before a short or long rest."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "lucky",
+    "name": "Lucky",
+    "page": 167,
+    "description": [
+      "You hold 3 luck points. Spend one on your own attack roll, ability check or saving throw to roll a second d20 and choose which result counts, or spend one when you are attacked to roll a d20 and decide whether the attacker's die or yours is used.",
+      "Points spent on the same roll cancel each other out. A long rest refills all 3."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "mage-slayer",
+    "name": "Mage Slayer",
+    "page": 168,
+    "description": [
+      "When a creature within 5 ft casts a spell, your reaction lets you make a melee weapon attack against it.",
+      "Creatures you damage while they concentrate have disadvantage on the save to keep their spell, and you save with advantage against spells cast by creatures within 5 ft."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "magic-initiate",
+    "name": "Magic Initiate",
+    "page": 168,
+    "description": [
+      "Pick one class from wizard, warlock, sorcerer, druid, cleric or bard. From its spell list you gain 2 cantrips and a single 1st-level spell.",
+      "That spell is cast at 1st level only, once per long rest. The class decides your casting ability: Charisma (bard, sorcerer, warlock), Wisdom (cleric, druid) or Intelligence (wizard)."
+    ],
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "bard",
+            "cleric",
+            "druid",
+            "sorcerer",
+            "warlock",
+            "wizard"
+          ],
+          "level": 0,
+          "count": 2
+        },
+        "atLevel": 1
+      },
+      {
+        "choose": {
+          "lists": [
+            "bard",
+            "cleric",
+            "druid",
+            "sorcerer",
+            "warlock",
+            "wizard"
+          ],
+          "level": 1,
+          "count": 1
+        },
+        "atLevel": 1,
+        "uses": "Once per long rest"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "martial-adept",
+    "name": "Martial Adept",
+    "page": 168,
+    "description": [
+      "You learn 2 Battle Master maneuvers. Your save DC for them is 8 + proficiency bonus + Strength or Dexterity modifier (choose one).",
+      "If you have no superiority dice you gain one d6, otherwise you gain one more. They refill on a short or long rest."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "polearm-master",
+    "name": "Polearm Master",
+    "page": 168,
+    "description": [
+      "Attacking with only a glaive, halberd or quarterstaff gives you a bonus-action melee attack with the other end: a d4 die, bludgeoning damage.",
+      "While you hold a glaive, halberd, pike or quarterstaff, creatures provoke an opportunity attack from you as they enter your reach."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "ritual-caster",
+    "name": "Ritual Caster",
+    "prereq": "Intelligence or Wisdom 13 or higher",
+    "page": 169,
+    "description": [
+      "You start with a ritual book holding 2 first-level spells. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability.",
+      "Found ritual spells can be copied in when they are on that class list and their level is at most half yours (round up). Each costs 2 hours and 50 gp per spell level."
+    ],
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "bard",
+            "cleric",
+            "druid",
+            "sorcerer",
+            "warlock",
+            "wizard"
+          ],
+          "level": 1,
+          "count": 2,
+          "ritual": true
+        },
+        "atLevel": 1
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "savage-attacker",
+    "name": "Savage Attacker",
+    "page": 169,
+    "description": [
+      "Once per turn, after rolling damage for a melee weapon attack, you may roll the weapon's damage dice again and keep whichever total you like."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "sentinel",
+    "name": "Sentinel",
+    "page": 169,
+    "description": [
+      "A creature you hit with an opportunity attack has its speed cut to 0 for the rest of the turn. Creatures provoke opportunity attacks from you within 5 ft even when they Disengage.",
+      "When a creature within 5 ft attacks someone other than you, and that target lacks this feat, you can react with a melee weapon attack against the attacker."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "sharpshooter",
+    "name": "Sharpshooter",
+    "page": 170,
+    "description": [
+      "Long range no longer gives disadvantage on your ranged weapon attacks, and half or three-quarters cover is ignored.",
+      "Before a ranged attack with a weapon you are proficient with, you may take -5 to hit for +10 damage on a hit."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "shield-master",
+    "name": "Shield Master",
+    "page": 170,
+    "description": [
+      "While wielding a shield: after the Attack action you can use a bonus action to shove a creature within 5 ft with it, and you add the shield's AC bonus to Dexterity saves against effects that target only you.",
+      "When a Dexterity save would let you take half damage, you can react to take none on a success."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-sniper",
+    "name": "Spell Sniper",
+    "prereq": "Able to cast at least one spell",
+    "page": 170,
+    "description": [
+      "Spells that need an attack roll have double range, and your ranged spell attacks ignore half and three-quarters cover.",
+      "You also learn one attack-roll cantrip from the bard, cleric, druid, sorcerer, warlock or wizard list. The class you take it from sets your casting ability for it."
+    ],
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "bard",
+            "cleric",
+            "druid",
+            "sorcerer",
+            "warlock",
+            "wizard"
+          ],
+          "level": 0,
+          "count": 1
+        },
+        "atLevel": 1
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "tavern-brawler",
+    "name": "Tavern Brawler",
+    "page": 170,
+    "description": [
+      "You are proficient with improvised weapons and unarmed strikes, and your unarmed strike deals d4 damage.",
+      "After landing an unarmed strike or improvised weapon hit during your turn, a bonus action lets you attempt to grapple that target."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "war-caster",
+    "name": "War Caster",
+    "prereq": "Able to cast at least one spell",
+    "page": 170,
+    "description": [
+      "You have advantage on Constitution saves to hold concentration when hurt, and can make somatic components with weapons or a shield in hand.",
+      "When a hostile creature's movement provokes an opportunity attack from you, you may react by casting a 1-action spell that targets only it instead of attacking."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  }
+]
