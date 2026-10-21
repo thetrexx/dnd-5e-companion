@@ -6400,7 +6400,8 @@
    "v": true,
    "s": true,
    "m": {
-    "consumed": true
+    "consumed": true,
+    "costGp": 10
    }
   },
   "classes": [

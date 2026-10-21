@@ -207,5 +207,12 @@
       "resolution": "save",
       "save": "con"
     }
+  },
+  "magic-mouth": {
+    "components": {
+      "m": {
+        "costGp": 10
+      }
+    }
   }
 }

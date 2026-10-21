@@ -4080,6 +4080,45 @@
     "textSource": "summary"
   },
   {
+    "id": "locate-object",
+    "name": "Locate Object",
+    "level": 2,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger",
+      "wizard"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Forked twig",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Name or describe an object familiar to you. For up to 10 minutes (concentration) you sense the direction to it if it is within 1,000 ft, and which way it moves if it is moving.",
+      "It finds a specific object only if you have seen it up close (within 30 ft) at least once, or else the nearest object of a kind, like a certain sort of weapon or jewelry. Any lead, even a thin sheet, in the direct path blocks it."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "longstrider",
     "name": "Longstrider",
     "level": 1,
@@ -4184,6 +4223,49 @@
     "textSource": "summary"
   },
   {
+    "id": "magic-circle",
+    "name": "Magic Circle",
+    "level": 3,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "10 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin",
+      "warlock",
+      "wizard"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Holy water or powdered silver and iron worth 100 gp, used up",
+        "costGp": 100,
+        "consumed": true
+      }
+    },
+    "description": [
+      "A 10 ft radius, 20 ft tall cylinder of glowing runes forms on the ground at a point within 10 ft for 1 hour. Pick one or more types: celestials, elementals, fey, fiends, undead. A creature of a chosen type:",
+      "• can't willingly enter by nonmagical means; teleporting or planar travel in needs a Charisma save first;",
+      "• has disadvantage on attack rolls against targets inside;",
+      "• can't charm, frighten or possess anyone inside.",
+      "You can reverse it instead, trapping such creatures inside and shielding those outside."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1 hour.",
+    "textSource": "summary"
+  },
+  {
     "id": "magic-missile",
     "name": "Magic Missile",
     "level": 1,
@@ -4220,6 +4302,220 @@
       "You fire 3 darts of force at creatures you choose within 120 ft that you can see. Each dart strikes automatically for 1d4+1 force damage. You can send every dart at one target or split them across several."
     ],
     "higherLevels": "Each slot level above 1 adds 1 dart.",
+    "textSource": "summary"
+  },
+  {
+    "id": "magic-mouth",
+    "name": "Magic Mouth",
+    "level": 2,
+    "school": "Illusion",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "30 feet",
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 257,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Honeycomb and jade dust worth 10 gp, used up",
+        "consumed": true,
+        "costGp": 10
+      }
+    },
+    "description": [
+      "You set a spoken message of 25 words or less (up to 10 minutes long) in an object you can see within 30 ft that nobody wears or carries, plus a trigger.",
+      "The trigger must be something seen or heard within 30 ft, like a creature coming close or a bell ringing. A mouth then appears (on a statue's mouth if any) and speaks in your voice. Choose whether it speaks once or every time."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "magic-weapon",
+    "name": "Magic Weapon",
+    "level": 2,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Touch",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "paladin",
+      "wizard"
+    ],
+    "page": 257,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You touch a nonmagical weapon. For up to 1 hour (concentration) it becomes magic, with +1 to attack and damage rolls."
+    ],
+    "higherLevels": "Slot 4 or 5: +2; slot 6 or higher: +3.",
+    "textSource": "summary"
+  },
+  {
+    "id": "major-image",
+    "name": "Major Image",
+    "level": 3,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 258,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Bit of fleece",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You make an illusion of an object, creature or other visible thing up to a 20 ft cube, at a spot you can see within 120 ft, for up to 10 minutes (concentration). It has sound, smell and temperature but can't harm or deafen.",
+      "While in range, use your action to move it within range and animate it, even making it talk.",
+      "Things pass through it. A creature can spend its action on an Investigation check vs your spell save DC; if it succeeds, the image turns faint for it."
+    ],
+    "higherLevels": "With a slot of 6th level or higher, it lasts until dispelled with no concentration.",
+    "textSource": "summary"
+  },
+  {
+    "id": "mass-healing-word",
+    "name": "Mass Healing Word",
+    "level": 3,
+    "school": "Evocation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 258,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d4",
+        "type": "Healing",
+        "healing": true,
+        "plusMod": true
+      },
+      "upcast": "+1d4 per slot level above 3"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You call out words of healing: up to 6 creatures you choose and can see within 60 ft each regain 1d4 + your spellcasting ability modifier hit points. Undead and constructs are unaffected."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d4 healing.",
+    "textSource": "summary"
+  },
+  {
+    "id": "meld-into-stone",
+    "name": "Meld Into Stone",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "cleric",
+      "druid"
+    ],
+    "page": 259,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Spend movement to merge, with your gear, into a stone object or surface big enough to hold you, for 8 hours. Nonmagical senses can't detect you.",
+      "Inside you can't see out, Perception checks to hear have disadvantage, and you can cast spells on yourself. You can't move, except to step out where you entered (ending it).",
+      "If the stone is partly destroyed or reshaped so you no longer fit, you are expelled and take 6d6 bludgeoning damage; total destruction or transmutation deals 50. You land prone in the nearest free space."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "melfs-acid-arrow",
+    "name": "Melf's Acid Arrow",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 259,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d4",
+        "type": "Acid"
+      },
+      "upcast": "+1d4 per slot level above 2"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Powdered rhubarb leaf and an adder's stomach",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Make a ranged spell attack against a target within 90 ft. On a hit it takes 4d4 acid damage now and 2d4 acid damage at the end of its next turn. On a miss it takes half the first damage and none later."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d4 to both the first and the later damage.",
     "textSource": "summary"
   },
   {
@@ -4334,6 +4630,39 @@
     "textSource": "summary"
   },
   {
+    "id": "mirror-image",
+    "name": "Mirror Image",
+    "level": 2,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "1 minute",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 260,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "3 illusory copies of you appear for 1 minute, moving with you so no one can tell which is real. Dismiss them as an action.",
+      "When a creature attacks you, roll a d20: with 3 copies left, 6 or higher makes it target a copy; with 2, 8 or higher; with 1, 11 or higher. A copy has AC 10 + your Dexterity modifier and is destroyed when hit; nothing else harms it. The spell ends with the last one.",
+      "Blindsight or truesight ignores them."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "misty-step",
     "name": "Misty Step",
     "level": 2,
@@ -4362,6 +4691,259 @@
     },
     "description": [
       "In a puff of silver mist you teleport up to 30 ft to an empty space you can see. It costs only a bonus action and needs just a spoken word, no gestures."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "moonbeam",
+    "name": "Moonbeam",
+    "level": 2,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "120 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid"
+    ],
+    "page": 261,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "2d10",
+        "type": "Radiant"
+      },
+      "upcast": "+1d10 per slot level above 2"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Moonseed seeds and a piece of opalescent feldspar",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A 5 ft radius, 40 ft tall cylinder of pale moonlight (dim light) shines on a point within 120 ft for up to 1 minute (concentration).",
+      "A creature entering it for the first time on a turn, or starting its turn there, makes a Constitution save: 2d10 radiant damage, half on a success. Shapechangers save at disadvantage and, on a failure, revert and can't change shape while in the light.",
+      "On each later turn you can use your action to move the beam up to 60 ft."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d10 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "nondetection",
+    "name": "Nondetection",
+    "level": 3,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "ranger",
+      "wizard"
+    ],
+    "page": 263,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Diamond dust worth 25 gp, sprinkled on the target and used up",
+        "costGp": 25,
+        "consumed": true
+      }
+    },
+    "description": [
+      "For 8 hours, a willing creature, place or object (up to 10 ft in any dimension) that you touch is hidden from divination. Divination magic can't target it, and magical scrying sensors can't see it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "nystuls-magic-aura",
+    "name": "Nystul's Magic Aura",
+    "level": 2,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 263,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Small square of silk",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Touch a willing creature or an object nobody else holds or wears. For 24 hours it fools divination; pick one or both effects. Repeat it on the target daily for 30 days and it lasts until dispelled.",
+      "False Aura: to magic detection, a mundane object seems magical, a magic one mundane, or its aura shows a school you choose. You can let anyone handling it sense the fake magic.",
+      "Mask: effects that sense creature type (Divine Sense, a symbol trigger) read it as the type or alignment you choose."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "pass-without-trace",
+    "name": "Pass Without Trace",
+    "level": 2,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 264,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Ashes of a burned mistletoe leaf and a spruce sprig",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Shadow and hush surround you for up to 1 hour (concentration). You and each creature you choose within 30 ft of you get +10 to Dexterity (Stealth) checks, leave no tracks or other trace, and can't be tracked except by magic."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "phantasmal-force",
+    "name": "Phantasmal Force",
+    "level": 2,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 264,
+    "summary": {
+      "resolution": "save",
+      "save": "int",
+      "damage": {
+        "dice": "1d6",
+        "type": "Psychic"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Bit of fleece",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you can see within 60 ft makes an Intelligence save. On a failure, for up to 1 minute (concentration), only it perceives an illusion you design (object, creature or effect up to a 10 ft cube), with sound and temperature. Undead and constructs are immune.",
+      "It believes the phantasm. As an action it can try an Investigation check vs your spell save DC; success ends the spell.",
+      "Each of your turns, if it is in or within 5 ft of a phantasm that could plausibly hurt it, it takes 1d6 psychic damage."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "phantom-steed",
+    "name": "Phantom Steed",
+    "level": 3,
+    "school": "Illusion",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "30 feet",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": true,
+    "classes": [
+      "wizard"
+    ],
+    "page": 265,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A Large, half-real horse with saddle, bit and bridle appears on the ground within 30 ft for 1 hour; you choose its look. Its gear vanishes if taken over 10 ft from it.",
+      "You or a creature you pick can ride it. It has riding horse stats, but speed 100 ft and 10 miles an hour (13 at a fast pace).",
+      "It ends if the steed takes damage or you dismiss it (action). The steed then fades over 1 minute so the rider can get off."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "plant-growth",
+    "name": "Plant Growth",
+    "level": 3,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action or 8 hours"
+    },
+    "range": "150 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "ranger"
+    ],
+    "page": 266,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Two uses:",
+      "1 action: normal plants in a 100 ft radius around a point within 150 ft grow thick and tangled. Creatures moving through spend 4 ft of movement per 1 ft. You can leave out any areas you like.",
+      "8 hours: plants in a half-mile radius around a point within 150 ft are enriched for 1 year and give double the usual harvest."
     ],
     "textSource": "summary"
   },
