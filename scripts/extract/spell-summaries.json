@@ -755,7 +755,7 @@
   },
   "conjure-animals": {
     "description": [
-      "Fey spirits in beast form appear in free spaces you can see within 60 ft, for up to 1 hour (concentration). Choose one group:",
+      "Fey spirits in beast form appear in free spaces you can see within 60 ft. Pick one group:",
       "• 1 beast of CR 2 or lower",
       "• 2 beasts of CR 1 or lower",
       "• 4 beasts of CR 1/2 or lower",
@@ -831,7 +831,7 @@
   },
   "detect-thoughts": {
     "description": [
-      "For up to 1 minute (concentration), as an action (and when casting), read the surface thoughts of one creature you see within 30 ft; Intelligence 3 or lower, or no language: immune.",
+      "As an action (and when casting), read the surface thoughts of one creature you see within 30 ft; Intelligence 3 or lower, or no language: immune.",
       "Probe deeper (action): Wisdom save. Fail: you learn its reasoning, mood and what weighs on it. Success: spell ends. It notices; until you switch, it can use its action on an Intelligence contest to end the spell.",
       "Or sense unseen thinking creatures within 30 ft (thick stone or metal, or thin lead, blocks this), then read them while in range."
     ],
@@ -891,7 +891,7 @@
   },
   "find-steed": {
     "description": [
-      "A spirit takes a steed's form in a free space within 30 ft: warhorse, pony, camel, elk, mastiff or another the DM allows. Beast stats, but celestial, fey or fiend (you pick); Intelligence 5 or less becomes 6; it understands one language you speak.",
+      "A spirit steed appears within 30 ft: warhorse, pony, camel, elk, mastiff or another the DM allows. Beast stats, but celestial, fey or fiend (you pick); Intelligence 5 or less becomes 6; it understands one language you speak.",
       "It serves as your mount. While you ride it, your self-only spells can also target it. Telepathy within 1 mile.",
       "At 0 hit points, or dismissed as an action, it vanishes; recasting restores it at full hit points. One steed only; an action releases it for good."
     ]
@@ -942,9 +942,9 @@
   },
   "glyph-of-warding": {
     "description": [
-      "You hide a glyph on a surface (up to 10 ft across) or in a closable object, which breaks it if moved over 10 ft. Finding it: Investigation vs your spell save DC. You set the trigger (creature traits, password). One use.",
-      "Explosive Runes: Dexterity save for each creature in a 20 ft radius sphere: 5d8 acid, cold, fire, lightning or thunder damage (set when made), half on a success.",
-      "Spell Glyph: store one of your prepared spells, up to 3rd level, aimed at one creature or an area; triggering it casts the spell at the intruder."
+      "You hide a glyph on a surface (up to 10 ft across) or in a closable object (moving it over 10 ft breaks the glyph). Finding it: Investigation vs your spell save DC. You set the trigger. One use.",
+      "Explosive Runes: each creature in a 20 ft radius sphere saves (Dexterity): 5d8 acid, cold, fire, lightning or thunder damage (set when made), half on a success.",
+      "Spell Glyph: store a prepared spell of up to 3rd level aimed at one creature or an area; it goes off at the intruder."
     ],
     "higherLevels": "Each slot level above 3 adds 1d8 to explosive runes, and a spell glyph can hold a spell up to the slot's level.",
     "material": "Incense and powdered diamond worth 200 gp, used up"
@@ -966,7 +966,7 @@
   },
   "heat-metal": {
     "description": [
-      "A manufactured metal object you can see within 60 ft, such as a metal weapon or medium or heavy metal armor, glows red-hot for up to 1 minute (concentration). Any creature touching it takes 2d8 fire damage on the cast, and again each time you use a bonus action on later turns.",
+      "A manufactured metal object you can see within 60 ft, such as a metal weapon or medium or heavy metal armor, glows red-hot. Any creature touching it takes 2d8 fire damage on the cast, and again each time you use a bonus action on later turns.",
       "A creature holding or wearing it that takes the damage makes a Constitution save or drops it if able. If it can't or won't let go, it attacks and makes ability checks with disadvantage until your next turn begins."
     ],
     "higherLevels": "Each slot level above 2 adds 1d8 damage.",
@@ -1088,7 +1088,7 @@
   },
   "meld-into-stone": {
     "description": [
-      "Spend movement to merge, with your gear, into a stone object or surface big enough to hold you, for 8 hours. Nonmagical senses can't detect you.",
+      "Spend movement to merge, with your gear, into a stone object or surface big enough to hold you. Nonmagical senses can't detect you.",
       "Inside you can't see out, Perception checks to hear have disadvantage, and you can cast spells on yourself. You can't move, except to step out where you entered (ending it).",
       "If the stone is partly destroyed or reshaped so you no longer fit, you are expelled and take 6d6 bludgeoning damage; total destruction or transmutation deals 50. You land prone in the nearest free space."
     ]
@@ -1138,7 +1138,7 @@
   },
   "phantasmal-force": {
     "description": [
-      "A creature you can see within 60 ft makes an Intelligence save. On a failure, for up to 1 minute (concentration), only it perceives an illusion you design (object, creature or effect up to a 10 ft cube), with sound and temperature. Undead and constructs are immune.",
+      "A creature you can see within 60 ft makes an Intelligence save. On a failure, only it perceives an illusion you design (object, creature or effect up to a 10 ft cube), with sound and temperature. Undead and constructs are immune.",
       "It believes the phantasm. As an action it can try an Investigation check vs your spell save DC; success ends the spell.",
       "Each of your turns, if it is in or within 5 ft of a phantasm that could plausibly hurt it, it takes 1d6 psychic damage."
     ],
@@ -1241,7 +1241,7 @@
   },
   "slow": {
     "description": [
-      "Up to six creatures you choose in a 40 ft cube within 120 ft each make a Wisdom save or are slowed for up to 1 minute (concentration).",
+      "Up to six creatures you choose in a 40 ft cube within 120 ft each make a Wisdom save or are slowed.",
       "Slowed: half speed, -2 to AC and Dexterity saves, no reactions. On its turn it gets an action or a bonus action, not both, and only one attack. Casting a 1-action spell: roll a d20; on 11 or higher it takes effect next turn using that turn's action, or is lost.",
       "It repeats the save after each of its turns; a success frees it."
     ],
@@ -1339,15 +1339,15 @@
   },
   "web": {
     "description": [
-      "Sticky webs fill a 20 ft cube from a point within 60 ft for up to 1 hour (concentration): difficult terrain, lightly obscured. Unanchored webs (not strung between two solid masses or layered 5 ft deep on a surface) collapse at the start of your next turn, ending it.",
-      "Starting a turn in the webs or entering them: Dexterity save or restrained while there. Escape: action and Strength check vs your spell save DC.",
-      "Fire burns through a 5 ft cube of web within a round; creatures starting their turn in that fire take 2d4 fire damage."
+      "Sticky webs fill a 20 ft cube from a point within 60 ft (difficult terrain, lightly obscured). Unless strung between two solid masses or layered on a surface (5 ft deep), they collapse at the start of your next turn, ending it.",
+      "Starting a turn in or entering the webs: Dexterity save or is restrained while there. Escape: action and Strength check vs your spell save DC.",
+      "Fire burns a 5 ft cube of web away in a round; creatures starting their turn in that fire take 2d4 fire damage."
     ],
     "material": "Bit of spiderweb"
   },
   "wind-wall": {
     "description": [
-      "A wall of strong wind, up to 50 ft long, 15 ft high and 1 ft thick, rises at a point within 120 ft for up to 1 minute (concentration), in any shape that follows one unbroken path on the ground. Creatures in it when it appears make a Strength save, taking 3d8 bludgeoning damage, half on a success.",
+      "A wall of strong wind, up to 50 ft long, 15 ft high and 1 ft thick, rises at a point within 120 ft, in any shape that follows one unbroken path on the ground. Creatures in it when it appears make a Strength save, taking 3d8 bludgeoning damage, half on a success.",
       "It blocks fog, smoke and gases. Small or smaller flyers and objects, and gaseous creatures, can't cross. Ordinary arrows, bolts and other missiles fired through it automatically miss (boulders and siege ammo don't)."
     ],
     "material": "Tiny fan and an exotic feather"
