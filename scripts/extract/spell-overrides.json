@@ -347,5 +347,29 @@
     "summary": {
       "upcast": "+1d10 per slot level above 4"
     }
+  },
+  "seeming": {
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    }
+  },
+  "wall-of-fire": {
+    "summary": {
+      "upcast": "+1d8 per slot level above 4"
+    }
+  },
+  "wall-of-stone": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    }
+  },
+  "wall-of-thorns": {
+    "summary": {
+      "damage": {
+        "type": "Piercing (Slashing to pass through)"
+      }
+    }
   }
 }

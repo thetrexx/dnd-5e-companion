@@ -8645,7 +8645,8 @@
   ],
   "page": 274,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "cha"
   }
  },
  {
@@ -10295,7 +10296,8 @@
    "damage": {
     "dice": "5d8",
     "type": "Fire"
-   }
+   },
+   "upcast": "+1d8 per slot level above 4"
   }
  },
  {
@@ -10387,7 +10389,8 @@
   ],
   "page": 287,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "dex"
   }
  },
  {
@@ -10419,7 +10422,7 @@
    "save": "dex",
    "damage": {
     "dice": "7d8",
-    "type": "Piercing"
+    "type": "Piercing (Slashing to pass through)"
    },
    "upcast": "+1d8 per slot level above 6"
   }

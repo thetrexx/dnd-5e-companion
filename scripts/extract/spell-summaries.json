@@ -2025,5 +2025,172 @@
       "It uses the beast's HP. At 0 HP it reverts with its old HP, and excess damage carries over; it ends early if the target dies."
     ],
     "material": "A caterpillar cocoon"
+  },
+  "programmed-illusion": {
+    "description": [
+      "You set up a hidden illusion of an object, creature or other visible thing, up to a 30 ft cube, within 120 ft. Choose its sounds and actions (up to 5 minutes long) and a trigger based on what can be seen or heard within 30 ft of the area, such as a spoken password.",
+      "When triggered it plays out, then goes dormant for 10 minutes before it can trigger again. It lasts until dispelled.",
+      "Touching it shows it's fake. As an action, a creature can study it with Investigation vs your spell save DC; on a success it sees through it and its noises sound hollow."
+    ],
+    "material": "Fleece, plus 25 gp of jade dust"
+  },
+  "raise-dead": {
+    "description": [
+      "Touch a creature dead no longer than 10 days. If its soul is willing and free, it returns with 1 HP. Poisons and nonmagical diseases it had are cured; magical diseases and curses stay unless removed first.",
+      "Mortal wounds close but lost body parts don't regrow; without a vital part, like the head, the spell fails. Undead can't be raised.",
+      "The target takes a -4 penalty to attack rolls, saves and ability checks, shrinking by 1 after each long rest."
+    ],
+    "material": "A diamond worth 500 gp, used up"
+  },
+  "rarys-telepathic-bond": {
+    "description": [
+      "Up to 8 willing creatures you choose within 30 ft are linked telepathically for 1 hour. Creatures with Intelligence 2 or lower can't join.",
+      "Linked creatures can talk mind to mind at any distance, with or without a shared language, but not across planes."
+    ],
+    "material": "Eggshell from two different kinds of creature"
+  },
+  "reincarnate": {
+    "description": [
+      "Touch a dead humanoid, or a piece of one, dead no more than 10 days. If its soul is free and willing, a new adult body forms and it returns to life. It keeps its memories and abilities but swaps its race and racial traits for the new one's.",
+      "The DM picks the new race or rolls d100: 01-04 dragonborn, 05-13 hill dwarf, 14-21 mountain dwarf, 22-25 dark elf, 26-34 high elf, 35-42 wood elf, 43-46 forest gnome, 47-52 rock gnome, 53-56 half-elf, 57-60 half-orc, 61-68 lightfoot halfling, 69-76 stout halfling, 77-96 human, 97-00 tiefling."
+    ],
+    "material": "Rare oils and unguents worth 1,000 gp, used up"
+  },
+  "scrying": {
+    "description": [
+      "Choose a creature on your plane to watch and hear for up to 10 minutes (concentration). It makes a Wisdom save, or may fail on purpose. On a success it's unaffected, and you can't scry it again for 24 hours.",
+      "Save modifiers: heard of it +5, met it +0, know it well -5; likeness or picture -2, possession or garment -4, body part such as hair or nail -10.",
+      "On a failure an invisible sensor follows within 10 ft of it, and you see and hear through it. Creatures that see invisible things see a fist-sized glowing orb. You can instead target a place you have seen; the sensor stays put there."
+    ],
+    "material": "A focus worth 1,000 gp, such as a crystal ball, silver mirror or font of holy water"
+  },
+  "seeming": {
+    "description": [
+      "Give any number of creatures you can see within 30 ft a new illusory look for 8 hours, or until you end it as an action. An unwilling target can make a Charisma save to avoid it.",
+      "You can change looks, clothing, armor, weapons and gear, and make each up to 1 ft shorter or taller, thinner or heavier. The body shape and limbs must stay the same.",
+      "The disguise fails to touch. As an action, a creature can make an Investigation check vs your spell save DC to spot it."
+    ]
+  },
+  "staggering-smite": {
+    "description": [
+      "Your next melee weapon hit before the spell ends (concentration, up to 1 minute) deals an extra 4d6 psychic damage.",
+      "The target then makes a Wisdom save. On a failure, until its next turn ends it can't take reactions and rolls attacks and ability checks with disadvantage."
+    ]
+  },
+  "stone-shape": {
+    "description": [
+      "Touch a Medium or smaller stone object, or a piece of stone up to 5 ft in every dimension, and mold it into any shape: a weapon, idol or coffer, a passage through a wall under 5 ft thick, or a sealed-up door.",
+      "The result can have at most 2 hinges and a latch; finer moving parts aren't possible."
+    ],
+    "material": "Soft clay, roughly shaped like the result"
+  },
+  "stoneskin": {
+    "description": [
+      "A willing creature you touch gets skin as hard as stone for up to 1 hour (concentration), resisting nonmagical bludgeoning, piercing and slashing damage."
+    ],
+    "material": "Diamond dust worth 100 gp, used up"
+  },
+  "sunbeam": {
+    "description": [
+      "For up to 1 minute (concentration) you can fire a 5 ft wide, 60 ft long line of light from your hand: once on casting, then as an action on later turns.",
+      "Each creature in the line makes a Constitution save: 6d8 radiant and blinded until your next turn, or half damage and not blinded on a success. Undead and oozes save with disadvantage.",
+      "Your hand glows with sunlight meanwhile: bright light to 30 ft, dim light 30 ft further."
+    ],
+    "material": "A magnifying glass"
+  },
+  "swift-quiver": {
+    "description": [
+      "Your quiver makes endless nonmagical ammunition for up to 1 minute (concentration). Each of your turns, as a bonus action, you can make 2 attacks with a weapon using its ammunition. Each piece fired is replaced.",
+      "The made ammunition crumbles when the spell ends. It also ends if the quiver leaves your possession."
+    ],
+    "material": "A quiver holding at least 1 piece of ammunition"
+  },
+  "telekinesis": {
+    "description": [
+      "For up to 10 minutes (concentration), on casting and as your action each round, you grip one creature or object you can see within 60 ft. Keep the target or switch; the old one is freed.",
+      "Creature (Huge or smaller): your spellcasting ability check vs its Strength. Win to move it up to 30 ft any direction within range; it is restrained (and hangs if lifted) until your next turn ends. Win again each round to hold it.",
+      "Object (up to 1,000 pounds): unattended, it moves up to 30 ft automatically; worn or carried, win the same contest to pull it away. Fine work, like using a tool or opening a door, is possible."
+    ]
+  },
+  "teleportation-circle": {
+    "description": [
+      "Draw a 10 ft circle linked to a permanent teleportation circle on your plane whose sigil sequence you know. A portal opens until the end of your next turn; anyone stepping in appears within 5 ft of that circle (or the nearest free space).",
+      "You start knowing 2 Material Plane sequences picked by the DM, and can memorize another after 1 minute of study. Casting it in the same spot daily for a year makes a permanent circle."
+    ],
+    "material": "Rare chalks and gem-infused inks worth 50 gp, used up"
+  },
+  "transport-via-plants": {
+    "description": [
+      "Link a Large or larger inanimate plant within 10 ft to another plant anywhere on your plane, one you've seen or touched before.",
+      "Until the end of your next turn, any creature can spend 5 ft of movement to step into the first plant and out of the other."
+    ]
+  },
+  "tree-stride": {
+    "description": [
+      "For up to 1 minute (concentration), spend 5 ft of movement to enter a living tree at least your size. You sense all trees of that kind within 500 ft and, with the same move, can pass into one or step back out.",
+      "You exit within 5 ft of the destination tree for another 5 ft of movement (with none left, you exit by the tree you entered). Once per round; end each turn outside a tree."
+    ]
+  },
+  "true-seeing": {
+    "description": [
+      "A willing creature you touch gains truesight for 1 hour: within 120 ft it sees things as they truly are, notices secret doors hidden by magic, and sees into the Ethereal Plane."
+    ],
+    "material": "Eye ointment of mushroom powder, saffron and fat worth 25 gp, used up"
+  },
+  "wall-of-fire": {
+    "description": [
+      "An opaque wall of fire stands on a solid surface within 120 ft for up to 1 minute (concentration): up to 60 ft long, 20 ft high and 1 ft thick, or a ring up to 20 ft across, 20 ft high and 1 ft thick.",
+      "Creatures in it when it appears make a Dexterity save: 5d8 fire, half on a success.",
+      "Choose one side. A creature ending its turn within 10 ft of that side or inside the wall takes 5d8 fire, as does one entering it for the first time on a turn. The other side is harmless."
+    ],
+    "higherLevels": "Each slot level above 4 adds 1d8.",
+    "material": "A small piece of phosphorus"
+  },
+  "wall-of-force": {
+    "description": [
+      "An invisible, 1/4 inch thick wall of force appears within 120 ft for up to 10 minutes (concentration), at any angle, floating or resting. Shape it as a dome or sphere up to 10 ft in radius, or as ten 10 by 10 ft panels, each touching another. Creatures in its path are pushed to a side you pick.",
+      "Nothing physical gets through, and it reaches into the Ethereal Plane. It takes no damage and dispel magic doesn't work, but disintegrate destroys it at once."
+    ],
+    "material": "Powder from a crushed clear gemstone"
+  },
+  "wall-of-ice": {
+    "description": [
+      "A 1 ft thick ice wall forms on a solid surface within 120 ft for up to 10 minutes (concentration): a dome or sphere up to 10 ft in radius, or ten 10 ft square panels, each touching another.",
+      "A creature in its space is pushed to one side and makes a Dexterity save: 10d6 cold, half on a success.",
+      "Each 10 ft section has AC 12 and 30 HP and is vulnerable to fire. A destroyed section leaves frigid air; crossing it the first time on a turn calls for a Constitution save: 5d6 cold, half on a success."
+    ],
+    "higherLevels": "Each slot level above 6 adds 2d6 to the first blast and 1d6 to the frigid air.",
+    "material": "A small piece of quartz"
+  },
+  "wall-of-stone": {
+    "description": [
+      "A nonmagical stone wall appears within 120 ft for up to 10 minutes (concentration): ten 10 by 10 ft panels 6 inches thick, or 10 by 20 ft panels 3 inches thick, each touching another. It needs no foundation but must join existing stone, so it can bridge gaps or form ramps; spans over 20 ft need half-size panels as supports.",
+      "Creatures in its path are pushed aside. One about to be fully enclosed makes a Dexterity save; success lets it use its reaction to move up to its speed out.",
+      "Each panel has AC 15 and 30 HP per inch of thickness. If you concentrate the full 10 minutes, it becomes permanent and can't be dispelled."
+    ],
+    "material": "A small block of granite"
+  },
+  "wall-of-thorns": {
+    "description": [
+      "A wall of thorny brush grows on a solid surface within 120 ft for up to 10 minutes (concentration), blocking sight: up to 60 ft long, 10 ft high and 5 ft thick, or a ring 20 ft across, up to 20 ft high and 5 ft thick.",
+      "Creatures in it when it appears make a Dexterity save: 7d8 piercing, half on a success.",
+      "Moving through costs 4 ft per 1 ft. Entering it the first time on a turn or ending a turn there calls for a Dexterity save: 7d8 slashing, half on a success."
+    ],
+    "higherLevels": "Each slot level above 6 adds 1d8 to both kinds of damage.",
+    "material": "A handful of thorns"
+  },
+  "wind-walk": {
+    "description": [
+      "You and up to 10 willing creatures you can see within 30 ft turn into wisps of cloud for 8 hours: flying speed 300 ft and resistance to damage from nonmagical weapons. In this form the only actions are Dash or changing back.",
+      "Switching form either way takes 1 minute, during which the creature is incapacitated and can't move.",
+      "If the spell ends while one is flying as a cloud, it sinks 60 ft per round for 1 minute and lands safely; if it hasn't landed by then, it falls the rest of the way."
+    ],
+    "material": "Fire and holy water"
+  },
+  "word-of-recall": {
+    "description": [
+      "You and up to 5 willing creatures within 5 ft teleport to your prepared sanctuary, arriving in the nearest free spaces to the spot you chose.",
+      "Prepare a sanctuary by casting this spell in a place dedicated to or tied to your deity, such as a temple. Cast anywhere else, or without a sanctuary, it does nothing."
+    ]
   }
 }
