@@ -2338,5 +2338,136 @@
     "description": [
       "For 1 hour, whenever you make a Charisma check, you can swap the number rolled for a 15. Magic that checks whether you're telling the truth always says you are."
     ]
+  },
+  "holy-aura": {
+    "description": [
+      "Holy light spreads 30 ft around you. Until it ends, creatures you pick in that radius when you cast it shed dim light out to 5 ft, gain advantage on every saving throw, and impose disadvantage on attacks made against them.",
+      "When a fiend or undead hits one of them with a melee attack, the attacker makes a Constitution save or is blinded until the spell ends."
+    ],
+    "material": "A tiny reliquary worth 1,000 gp holding a holy relic (such as a scrap of a saint's robe)"
+  },
+  "imprisonment": {
+    "description": [
+      "A creature you can see within 30 ft makes a Wisdom save or is bound (success: immune to your recasts). Bound, it needs no air, food or drink and doesn't age; divination can't find or perceive it. Choose:",
+      "Burial: a force sphere deep underground; nothing passes, even by teleport or planar travel.",
+      "Chaining: restrained by rooted chains; it can't move or be moved.",
+      "Hedged Prison: a tiny demiplane warded against teleport and planar travel.",
+      "Minimus Containment: shrunk to 1 inch inside an unbreakable gem only light passes.",
+      "Slumber: an unwakeable sleep.",
+      "You may set a DM-approved, observable release condition. Only a 9th-level dispel magic on the prison or component ends it. Reusing a component frees its earlier prisoner."
+    ],
+    "material": "A vellum picture or carved statuette of the target, plus a form-specific item worth 500 gp per Hit Die of the target (mithral orb, precious-metal chain, jade model of the prison, large clear gem, or rare sleep herbs)"
+  },
+  "incendiary-cloud": {
+    "description": [
+      "A 20 ft radius sphere of smoke and white-hot embers fills a point within 150 ft. It spreads around corners, is heavily obscured, and lasts until a wind of 10 mph or more blows it away.",
+      "Each creature in it when it appears makes a Dexterity save: 10d8 fire, half on a success. Anyone entering it for the first time in a turn, or finishing a turn inside, saves too.",
+      "Each time your turn begins, the cloud drifts 10 ft straight away from you, in a direction you pick."
+    ]
+  },
+  "mass-heal": {
+    "description": [
+      "You split up to 700 HP of healing as you like among any number of creatures you can see within 60 ft. Each creature healed is also cured of every disease and of anything leaving it blinded or deafened. Undead and constructs are unaffected."
+    ]
+  },
+  "maze": {
+    "description": [
+      "A creature you can see within 60 ft is banished to a labyrinth demiplane until the spell ends or it gets out. As its action it can try a DC 20 Intelligence check; success frees it and ends the spell (a minotaur or goristro demon always succeeds).",
+      "When the spell ends, it returns to the space it left, or the nearest free space if that one is taken."
+    ]
+  },
+  "meteor-swarm": {
+    "description": [
+      "Four blazing orbs slam into points you can see within 1 mile. Each creature in a 40 ft radius sphere around any point makes a Dexterity save: 20d6 fire plus 20d6 bludgeoning, half on a success. A creature caught in several blasts is hit only once.",
+      "The blasts spread around corners, damage objects, and set alight flammable objects nobody is wearing or carrying."
+    ]
+  },
+  "mind-blank": {
+    "description": [
+      "For 24 hours, the willing creature you touch can't take psychic damage and is immune to the charmed condition, to divination spells, and to anything that would sense its emotions or read its thoughts. Even wish and magic of that power can't touch its mind or gather information about it."
+    ]
+  },
+  "mirage-arcane": {
+    "description": [
+      "For 10 days, land covering up to 1 mile square looks, sounds, smells and even feels like different terrain, though its overall shape stays the same: a field can seem a swamp, a cliff a gentle slope. You can also change how structures look or add illusory ones. Creatures can't be hidden, disguised or added.",
+      "Because the illusion is solid to the touch, it can make clear ground difficult terrain (or the reverse) or otherwise block movement. Any piece carried out of the area vanishes. Truesight reveals the real terrain, but the illusion's other parts still work on that creature."
+    ]
+  },
+  "mordenkainens-magnificent-mansion": {
+    "description": [
+      "For 24 hours an extradimensional home exists within 300 ft, with one shimmering entrance 5 ft wide and 10 ft tall where you choose. You and creatures you name at casting can enter while it's open. Within 30 ft of it you can open or close it; closed, it is invisible.",
+      "Inside is a grand foyer and rooms up to 50 cubes of 10 ft each, laid out and furnished as you wish, with food for a nine-course feast for up to 100 people. 100 near-transparent servants obey you but can't attack or harm anyone, and can't leave. Objects taken outside turn to smoke. When it ends, everyone inside is expelled near the entrance."
+    ],
+    "material": "A miniature ivory portal, a bit of polished marble and a small silver spoon, 5 gp each"
+  },
+  "mordenkainens-sword": {
+    "description": [
+      "A floating sword of force appears within 60 ft for up to 1 minute. When it appears, make a melee spell attack against a target within 5 ft of it: 3d10 force on a hit.",
+      "On each of your turns, your bonus action moves it up to 20 ft to a spot you can see and repeats the attack, on the same target or another."
+    ],
+    "material": "A tiny platinum sword with a copper and zinc grip and pommel, worth 250 gp"
+  },
+  "plane-shift": {
+    "description": [
+      "You and up to 8 willing creatures holding hands in a circle travel to another plane. Name a destination in broad terms (a city or palace) and you arrive in or near it, at the DM's call. If you know a teleportation circle's sigil sequence on another plane, you can arrive there instead; anyone who doesn't fit lands in the nearest free spaces.",
+      "Banish: make a melee spell attack against a creature you can reach. On a hit it makes a Charisma save; on a failure it lands at a random spot on a plane you name and must find its own way back."
+    ],
+    "material": "A forked metal rod worth 250 gp, attuned to a plane"
+  },
+  "power-word-heal": {
+    "description": [
+      "A creature you touch regains all its HP. If it is charmed, frightened, paralyzed or stunned, that condition ends, and a prone target may stand up using its reaction. No effect on undead or constructs."
+    ]
+  },
+  "power-word-kill": {
+    "description": [
+      "Name a creature you can see within 60 ft. If its current HP is 100 or less, it dies on the spot. Otherwise nothing happens."
+    ]
+  },
+  "power-word-stun": {
+    "description": [
+      "Name a creature you can see within 60 ft. If its current HP is 150 or less, it is stunned; otherwise nothing happens. It makes a Constitution save as each of its turns ends, shaking off the stun on a success."
+    ]
+  },
+  "prismatic-spray": {
+    "description": [
+      "Eight coloured rays fill a 60 ft cone. Each creature there makes a Dexterity save; roll a d8 per creature for its ray. Rays 1-5 deal 10d6, half on a success.",
+      "1: Red, fire.",
+      "2: Orange, acid.",
+      "3: Yellow, lightning.",
+      "4: Green, poison.",
+      "5: Blue, cold.",
+      "6: Indigo. Restrained on a failure; it makes a Constitution save at each turn's end. Three successes end it; three failures petrify it permanently (needn't be consecutive).",
+      "7: Violet. Blinded on a failure; a Wisdom save at the start of your next turn ends it, while a failure sends it, sighted again, to another plane of the DM's choice.",
+      "8: Two rays hit it: roll the d8 two more times, rerolling 8s."
+    ]
+  },
+  "prismatic-wall": {
+    "description": [
+      "An opaque wall of light, up to 90 ft long, 30 ft high and 1 inch thick (or a sphere up to 30 ft across), stands within 60 ft for 10 minutes; placing it through a creature wastes the spell. Bright light 100 ft, dim 100 ft beyond. You and chosen creatures pass through safely.",
+      "Others that see it and come within 20 ft or start a turn there make a Constitution save or are blinded for 1 minute. Passing or reaching through takes a Dexterity save per layer; layers 1-5 deal half on a success. Layers fall in order. A rod of cancellation destroys it; antimagic field doesn't.",
+      "1: Red. 10d6 fire; blocks nonmagical ranged attacks. Destroyed by 25 cold.",
+      "2: Orange. 10d6 acid; blocks magical ranged attacks. Destroyed by strong wind.",
+      "3: Yellow. 10d6 lightning. Destroyed by 60 force.",
+      "4: Green. 10d6 poison. Destroyed by passwall or an equal portal spell.",
+      "5: Blue. 10d6 cold. Destroyed by 25 fire.",
+      "6: Indigo. Restrained; Constitution save each turn end, three successes free it, three failures petrify it. Blocks spells. Destroyed by daylight or equal.",
+      "7: Violet. Blinded; Wisdom save at the start of your next turn or sent to another plane. Destroyed by dispel magic or equal."
+    ]
+  },
+  "project-image": {
+    "description": [
+      "An intangible illusory copy of you appears anywhere within 500 miles that you have seen before, whatever lies between. It looks and sounds like you and mimics your mannerisms. It vanishes, ending the spell, if it takes any damage.",
+      "Your action moves it up to double your speed and lets it gesture, talk and act however you like. As a bonus action you switch between its senses and yours; while using its eyes and ears you are blinded and deafened to your own surroundings.",
+      "Touch shows it's fake. A creature that spends its action studying it sees through it with a successful Intelligence (Investigation) check vs your spell save DC."
+    ],
+    "material": "A small replica of you made of materials worth 5 gp"
+  },
+  "regenerate": {
+    "description": [
+      "A creature you touch regains 4d8 + 15 HP, then 1 HP whenever its turn starts, for 1 hour (10 HP per minute).",
+      "Severed body parts (fingers, legs, tails…) grow back after 2 minutes. If you hold the severed part to the stump, it reattaches at once."
+    ],
+    "material": "A prayer wheel and holy water"
   }
 }

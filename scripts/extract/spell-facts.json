@@ -5466,7 +5466,8 @@
   ],
   "page": 251,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "con"
   }
  },
  {
@@ -6777,10 +6778,7 @@
   "summary": {
    "resolution": "save",
    "save": "dex",
-   "damage": {
-    "dice": "20d6",
-    "type": "Fire"
-   }
+   "damage": null
   }
  },
  {
@@ -7722,7 +7720,8 @@
   ],
   "page": 267,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "con"
   }
  },
  {
@@ -7812,7 +7811,7 @@
    "save": "dex",
    "damage": {
     "dice": "10d6",
-    "type": ""
+    "type": "(type by ray)"
    }
   }
  },
@@ -7838,7 +7837,8 @@
   ],
   "page": 267,
   "summary": {
-   "resolution": "none"
+   "resolution": "save",
+   "save": "dex"
   }
  },
  {

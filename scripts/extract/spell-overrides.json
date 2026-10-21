@@ -123,7 +123,12 @@
     "range": "Self (100-foot line)"
   },
   "prismatic-spray": {
-    "range": "Self (60-foot cone)"
+    "range": "Self (60-foot cone)",
+    "summary": {
+      "damage": {
+        "type": "(type by ray)"
+      }
+    }
   },
   "speak-with-plants": {
     "range": "Self (30-foot radius)"
@@ -386,6 +391,29 @@
     "summary": {
       "resolution": "save",
       "save": "cha"
+    }
+  },
+  "meteor-swarm": {
+    "summary": {
+      "damage": null
+    }
+  },
+  "holy-aura": {
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    }
+  },
+  "power-word-stun": {
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    }
+  },
+  "prismatic-wall": {
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
     }
   }
 }

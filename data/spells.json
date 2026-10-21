@@ -6586,6 +6586,42 @@
     "textSource": "summary"
   },
   {
+    "id": "holy-aura",
+    "name": "Holy Aura",
+    "level": 8,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 251,
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A tiny reliquary worth 1,000 gp holding a holy relic (such as a scrap of a saint's robe)",
+        "costGp": 1000,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Holy light spreads 30 ft around you. Until it ends, creatures you pick in that radius when you cast it shed dim light out to 5 ft, gain advantage on every saving throw, and impose disadvantage on attacks made against them.",
+      "When a fiend or undead hits one of them with a melee attack, the attacker makes a Constitution save or is blinded until the spell ends."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "hunger-of-hadar",
     "name": "Hunger of Hadar",
     "level": 3,
@@ -6804,6 +6840,85 @@
       "Over 1 minute you write on parchment, paper or similar material, laying an illusion on it that lasts 10 days. You and anyone you name see it as normal writing with the meaning you intended. Everyone else sees an unreadable, unknown script.",
       "Alternatively, others can see a wholly different message, in another hand and a language you know.",
       "Dispelling it destroys both the script and the illusion. A creature with truesight can read the hidden message. Ritual."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "imprisonment",
+    "name": "Imprisonment",
+    "level": 9,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "30 feet",
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 252,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A vellum picture or carved statuette of the target, plus a form-specific item worth 500 gp per Hit Die of the target (mithral orb, precious-metal chain, jade model of the prison, large clear gem, or rare sleep herbs)",
+        "costGp": 500,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you can see within 30 ft makes a Wisdom save or is bound (success: immune to your recasts). Bound, it needs no air, food or drink and doesn't age; divination can't find or perceive it. Choose:",
+      "Burial: a force sphere deep underground; nothing passes, even by teleport or planar travel.",
+      "Chaining: restrained by rooted chains; it can't move or be moved.",
+      "Hedged Prison: a tiny demiplane warded against teleport and planar travel.",
+      "Minimus Containment: shrunk to 1 inch inside an unbreakable gem only light passes.",
+      "Slumber: an unwakeable sleep.",
+      "You may set a DM-approved, observable release condition. Only a 9th-level dispel magic on the prison or component ends it. Reusing a component frees its earlier prisoner."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "incendiary-cloud",
+    "name": "Incendiary Cloud",
+    "level": 8,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "150 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 253,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "10d8",
+        "type": "Fire"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A 20 ft radius sphere of smoke and white-hot embers fills a point within 150 ft. It spreads around corners, is heavily obscured, and lasts until a wind of 10 mph or more blows it away.",
+      "Each creature in it when it appears makes a Dexterity save: 10d8 fire, half on a success. Anyone entering it for the first time in a turn, or finishing a turn inside, saves too.",
+      "Each time your turn begins, the cloud drifts 10 ft straight away from you, in a direction you pick."
     ],
     "textSource": "summary"
   },
@@ -7767,6 +7882,35 @@
     "textSource": "summary"
   },
   {
+    "id": "mass-heal",
+    "name": "Mass Heal",
+    "level": 9,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric"
+    ],
+    "page": 258,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You split up to 700 HP of healing as you like among any number of creatures you can see within 60 ft. Each creature healed is also cured of every disease and of anything leaving it blinded or deafened. Undead and constructs are unaffected."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "mass-healing-word",
     "name": "Mass Healing Word",
     "level": 3,
@@ -7840,6 +7984,36 @@
       "An obviously harmful order, like stabbing itself, fails. You can set a trigger for the act; if it never happens, nothing is done. Damage from you or your companions frees that creature."
     ],
     "higherLevels": "Lasts 10 days with a 7th-level slot, 30 days with 8th, and a year and a day with 9th.",
+    "textSource": "summary"
+  },
+  {
+    "id": "maze",
+    "name": "Maze",
+    "level": 8,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 258,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 60 ft is banished to a labyrinth demiplane until the spell ends or it gets out. As its action it can try a DC 20 Intelligence check; success frees it and ends the spell (a minotaur or goristro demon always succeeds).",
+      "When the spell ends, it returns to the space it left, or the nearest free space if that one is taken."
+    ],
     "textSource": "summary"
   },
   {
@@ -7988,6 +8162,69 @@
     "textSource": "summary"
   },
   {
+    "id": "meteor-swarm",
+    "name": "Meteor Swarm",
+    "level": 9,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "1 mile",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 259,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": null
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Four blazing orbs slam into points you can see within 1 mile. Each creature in a 40 ft radius sphere around any point makes a Dexterity save: 20d6 fire plus 20d6 bludgeoning, half on a success. A creature caught in several blasts is hit only once.",
+      "The blasts spread around corners, damage objects, and set alight flammable objects nobody is wearing or carrying."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "mind-blank",
+    "name": "Mind Blank",
+    "level": 8,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 259,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 24 hours, the willing creature you touch can't take psychic damage and is immune to the charmed condition, to divination spells, and to anything that would sense its emotions or read its thoughts. Even wish and magic of that power can't touch its mind or gather information about it."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "minor-illusion",
     "name": "Minor Illusion",
     "level": 0,
@@ -8021,6 +8258,38 @@
     "description": [
       "Within 30 ft you make either a sound or the image of an object, lasting 1 minute. A sound can be a whisper to a scream, steady or in bursts. An image fits in a 5 ft cube and makes no sound, smell or light. Dismiss it as an action, or recast to end it.",
       "A creature that spends an action examining it makes an Investigation check against your spell save DC to see through it, and it then looks faint to them. Touching it also exposes it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "mirage-arcane",
+    "name": "Mirage Arcane",
+    "level": 7,
+    "school": "Illusion",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "Sight",
+    "duration": "10 days",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "druid",
+      "wizard"
+    ],
+    "page": 260,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "For 10 days, land covering up to 1 mile square looks, sounds, smells and even feels like different terrain, though its overall shape stays the same: a field can seem a swamp, a cliff a gentle slope. You can also change how structures look or add illusory ones. Creatures can't be hidden, disguised or added.",
+      "Because the illusion is solid to the touch, it can make clear ground difficult terrain (or the reverse) or otherwise block movement. Any piece carried out of the area vanishes. Truesight reveals the real terrain, but the illusion's other parts still work on that creature."
     ],
     "textSource": "summary"
   },
@@ -8237,6 +8506,42 @@
     "textSource": "summary"
   },
   {
+    "id": "mordenkainens-magnificent-mansion",
+    "name": "Mordenkainen's Magnificent Mansion",
+    "level": 7,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "300 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 261,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A miniature ivory portal, a bit of polished marble and a small silver spoon, 5 gp each",
+        "costGp": 5,
+        "consumed": false
+      }
+    },
+    "description": [
+      "For 24 hours an extradimensional home exists within 300 ft, with one shimmering entrance 5 ft wide and 10 ft tall where you choose. You and creatures you name at casting can enter while it's open. Within 30 ft of it you can open or close it; closed, it is invisible.",
+      "Inside is a grand foyer and rooms up to 50 cubes of 10 ft each, laid out and furnished as you wish, with food for a nine-course feast for up to 100 people. 100 near-transparent servants obey you but can't attack or harm anyone, and can't leave. Objects taken outside turn to smoke. When it ends, everyone inside is expelled near the entrance."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "mordenkainens-private-sanctum",
     "name": "Mordenkainen's Private Sanctum",
     "level": 4,
@@ -8275,6 +8580,46 @@
       "Casting it on the same spot daily for a year makes it permanent."
     ],
     "higherLevels": "Each slot level above 4 adds 100 ft to the cube's side (200 ft at 5th).",
+    "textSource": "summary"
+  },
+  {
+    "id": "mordenkainens-sword",
+    "name": "Mordenkainen's Sword",
+    "level": 7,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 262,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "3d10",
+        "type": "Force"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A tiny platinum sword with a copper and zinc grip and pommel, worth 250 gp",
+        "costGp": 250,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A floating sword of force appears within 60 ft for up to 1 minute. When it appears, make a melee spell attack against a target within 5 ft of it: 3d10 force on a hit.",
+      "On each of your turns, your bonus action moves it up to 20 ft to a spot you can see and repeats the attack, on the same target or another."
+    ],
     "textSource": "summary"
   },
   {
@@ -8745,6 +9090,46 @@
     "textSource": "summary"
   },
   {
+    "id": "plane-shift",
+    "name": "Plane Shift",
+    "level": 7,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 266,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A forked metal rod worth 250 gp, attuned to a plane",
+        "costGp": 250,
+        "consumed": false
+      }
+    },
+    "description": [
+      "You and up to 8 willing creatures holding hands in a circle travel to another plane. Name a destination in broad terms (a city or palace) and you arrive in or near it, at the DM's call. If you know a teleportation circle's sigil sequence on another plane, you can arrive there instead; anyone who doesn't fit lands in the nearest free spaces.",
+      "Banish: make a melee spell attack against a creature you can reach. On a hit it makes a Charisma save; on a failure it lands at a random spot on a plane you name and must find its own way back."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "plant-growth",
     "name": "Plant Growth",
     "level": 3,
@@ -8856,6 +9241,100 @@
     "textSource": "summary"
   },
   {
+    "id": "power-word-heal",
+    "name": "Power Word Heal",
+    "level": 9,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard"
+    ],
+    "page": 266,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you touch regains all its HP. If it is charmed, frightened, paralyzed or stunned, that condition ends, and a prone target may stand up using its reaction. No effect on undead or constructs."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "power-word-kill",
+    "name": "Power Word Kill",
+    "level": 9,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 266,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Name a creature you can see within 60 ft. If its current HP is 100 or less, it dies on the spot. Otherwise nothing happens."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "power-word-stun",
+    "name": "Power Word Stun",
+    "level": 8,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 267,
+    "summary": {
+      "resolution": "save",
+      "save": "con"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "Name a creature you can see within 60 ft. If its current HP is 150 or less, it is stunned; otherwise nothing happens. It makes a Constitution save as each of its turns ends, shaking off the stun on a success."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "prayer-of-healing",
     "name": "Prayer of Healing",
     "level": 2,
@@ -8932,6 +9411,87 @@
     "textSource": "summary"
   },
   {
+    "id": "prismatic-spray",
+    "name": "Prismatic Spray",
+    "level": 7,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (60-foot cone)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 267,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "10d6",
+        "type": "(type by ray)"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Eight coloured rays fill a 60 ft cone. Each creature there makes a Dexterity save; roll a d8 per creature for its ray. Rays 1-5 deal 10d6, half on a success.",
+      "1: Red, fire.",
+      "2: Orange, acid.",
+      "3: Yellow, lightning.",
+      "4: Green, poison.",
+      "5: Blue, cold.",
+      "6: Indigo. Restrained on a failure; it makes a Constitution save at each turn's end. Three successes end it; three failures petrify it permanently (needn't be consecutive).",
+      "7: Violet. Blinded on a failure; a Wisdom save at the start of your next turn ends it, while a failure sends it, sighted again, to another plane of the DM's choice.",
+      "8: Two rays hit it: roll the d8 two more times, rerolling 8s."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "prismatic-wall",
+    "name": "Prismatic Wall",
+    "level": 9,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "10 minutes",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 267,
+    "summary": {
+      "resolution": "save",
+      "save": "dex"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "An opaque wall of light, up to 90 ft long, 30 ft high and 1 inch thick (or a sphere up to 30 ft across), stands within 60 ft for 10 minutes; placing it through a creature wastes the spell. Bright light 100 ft, dim 100 ft beyond. You and chosen creatures pass through safely.",
+      "Others that see it and come within 20 ft or start a turn there make a Constitution save or are blinded for 1 minute. Passing or reaching through takes a Dexterity save per layer; layers 1-5 deal half on a success. Layers fall in order. A rod of cancellation destroys it; antimagic field doesn't.",
+      "1: Red. 10d6 fire; blocks nonmagical ranged attacks. Destroyed by 25 cold.",
+      "2: Orange. 10d6 acid; blocks magical ranged attacks. Destroyed by strong wind.",
+      "3: Yellow. 10d6 lightning. Destroyed by 60 force.",
+      "4: Green. 10d6 poison. Destroyed by passwall or an equal portal spell.",
+      "5: Blue. 10d6 cold. Destroyed by 25 fire.",
+      "6: Indigo. Restrained; Constitution save each turn end, three successes free it, three failures petrify it. Blocks spells. Destroyed by daylight or equal.",
+      "7: Violet. Blinded; Wisdom save at the start of your next turn or sent to another plane. Destroyed by dispel magic or equal."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "produce-flame",
     "name": "Produce Flame",
     "level": 0,
@@ -9002,6 +9562,43 @@
       "You set up a hidden illusion of an object, creature or other visible thing, up to a 30 ft cube, within 120 ft. Choose its sounds and actions (up to 5 minutes long) and a trigger based on what can be seen or heard within 30 ft of the area, such as a spoken password.",
       "When triggered it plays out, then goes dormant for 10 minutes before it can trigger again. It lasts until dispelled.",
       "Touching it shows it's fake. As an action, a creature can study it with Investigation vs your spell save DC; on a success it sees through it and its noises sound hollow."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "project-image",
+    "name": "Project Image",
+    "level": 7,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "500 miles",
+    "duration": "Concentration, up to 1 day",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 270,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A small replica of you made of materials worth 5 gp",
+        "costGp": 5,
+        "consumed": false
+      }
+    },
+    "description": [
+      "An intangible illusory copy of you appears anywhere within 500 miles that you have seen before, whatever lies between. It looks and sounds like you and mimics your mannerisms. It vanishes, ending the spell, if it takes any damage.",
+      "Your action moves it up to double your speed and lets it gesture, talk and act however you like. As a bonus action you switch between its senses and yours; while using its eyes and ears you are blinded and deafened to your own surroundings.",
+      "Touch shows it's fake. A creature that spends its action studying it sees through it with a successful Intelligence (Investigation) check vs your spell save DC."
     ],
     "textSource": "summary"
   },
@@ -9315,6 +9912,47 @@
       "Make a ranged spell attack against a creature within 60 ft. A hit deals 2d8 poison damage, and the target makes a Constitution save or is poisoned until the end of your next turn."
     ],
     "higherLevels": "Damage rises by 1d8 for each slot level above 1.",
+    "textSource": "summary"
+  },
+  {
+    "id": "regenerate",
+    "name": "Regenerate",
+    "level": 7,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Touch",
+    "duration": "1 hour",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "page": 271,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "4d8+15",
+        "type": "Healing",
+        "healing": true
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A prayer wheel and holy water",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you touch regains 4d8 + 15 HP, then 1 HP whenever its turn starts, for 1 hour (10 HP per minute).",
+      "Severed body parts (fingers, legs, tails…) grow back after 2 minutes. If you hold the severed part to the stump, it reattaches at once."
+    ],
     "textSource": "summary"
   },
   {

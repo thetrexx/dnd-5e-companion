@@ -40,7 +40,9 @@ function proseOf(s: Spell): string {
 
 function ocrPages(page: number): string {
   let out = '';
-  for (const p of [page, page + 1]) {
+  for (const p of [page, page + 1, page + 2]) {
+    // page + 2 only when page + 1 is a full-page illustration (no text), so the entry continues there
+    if (p === page + 2 && readFileSync(`${CACHE}/p${page + 1}.txt`, 'utf8').trim()) break;
     extractPage(p);
     out += readFileSync(`${CACHE}/p${p}.txt`, 'utf8') + '\n';
   }
