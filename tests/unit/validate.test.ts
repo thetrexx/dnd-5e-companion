@@ -51,3 +51,7 @@ test('class lists', () => {
   expect(s('cure-wounds').classes.sort()).toEqual(['bard', 'cleric', 'druid', 'paladin', 'ranger']);
   expect(s('fireball').page).toBe(241);
 });
+test('a feature with textSource srd is rejected', () => {
+  const bad = structuredClone(DATA); (bad.features[0] as any).textSource = 'srd';
+  expect(validateDataset(bad).join('\n')).toContain('textSource');
+});

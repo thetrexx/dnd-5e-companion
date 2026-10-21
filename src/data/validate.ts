@@ -10,8 +10,6 @@ const SOURCES = ['generic', 'class', 'subclass', 'option', 'race', 'feat'];
 const OWNERS = ['class', 'subclass', 'race'];
 const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron'];
 const TEXT_SOURCES = ['summary'];
-// Task 6 rewrites the Plan 1 fixture features and feats as summaries; until then they may still say 'srd'.
-const LEGACY_TEXT_SOURCES = ['srd', 'summary'];
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 const isInt = (n: unknown, min: number, max: number) => Number.isInteger(n) && (n as number) >= min && (n as number) <= max;
@@ -109,7 +107,7 @@ export function validateDataset(d: Dataset): string[] {
   for (const f of d.features) {
     const at = `feature "${f.id}"`;
     if (blank(f.name)) errs.push(`${at}: name is empty`);
-    if (!LEGACY_TEXT_SOURCES.includes(f.textSource as string)) errs.push(`${at}: textSource must be summary`);
+    if (!TEXT_SOURCES.includes(f.textSource as string)) errs.push(`${at}: textSource must be summary`);
     if (!f.source || !SOURCES.includes(f.source.kind)) errs.push(`${at}: source.kind is not valid`);
     else {
       const { kind, id } = f.source;
@@ -191,7 +189,7 @@ export function validateDataset(d: Dataset): string[] {
   for (const f of d.feats) {
     const at = `feat "${f.id}"`;
     if (blank(f.name)) errs.push(`${at}: name is empty`);
-    if (!LEGACY_TEXT_SOURCES.includes(f.textSource as string)) errs.push(`${at}: textSource must be summary`);
+    if (!TEXT_SOURCES.includes(f.textSource as string)) errs.push(`${at}: textSource must be summary`);
     if (!Array.isArray(f.description) || f.description.length === 0 || f.description.some(blank)) errs.push(`${at}: description must be non-empty paragraphs`);
     if (!isInt(f.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     grants(at, f.spells);

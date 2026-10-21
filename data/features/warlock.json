@@ -1,0 +1,19 @@
+[
+  {
+    "id": "eldritch-master",
+    "name": "Eldritch Master",
+    "source": {
+      "kind": "class",
+      "id": "warlock"
+    },
+    "level": 20,
+    "cost": "other",
+    "uses": "Once per long rest",
+    "description": [
+      "Spend 1 minute asking your patron for aid to get back every spent Pact Magic slot.",
+      "Then it is locked until your next long rest."
+    ],
+    "page": 108,
+    "textSource": "summary"
+  }
+]

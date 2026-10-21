@@ -1,0 +1,123 @@
+[
+  {
+    "id": "bardic-inspiration",
+    "name": "Bardic Inspiration",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "1 use per die given",
+    "uses": "Charisma modifier (minimum 1) per long rest; short rest too from level 5",
+    "scaling": [
+      {
+        "label": "Die",
+        "values": [
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action: choose another creature within 60 ft that can hear you. It gets a Bardic Inspiration die for the next 10 minutes.",
+      "Once in that time, it can roll the die and add the result to one ability check, attack roll or saving throw. It can see its d20 first, but must decide before the DM announces the outcome. A creature holds only one die at a time.",
+      "From level 5 a short rest also restores your uses."
+    ],
+    "page": 53,
+    "textSource": "summary"
+  },
+  {
+    "id": "song-of-rest",
+    "name": "Song of Rest",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 2,
+    "cost": "free",
+    "uses": "Once per short rest, no resource",
+    "scaling": [
+      {
+        "label": "Extra HP",
+        "values": [
+          "",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d6",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      }
+    ],
+    "description": [
+      "During a short rest, perform soothing music or speech. You and each friendly creature that hears you and regains hit points at the end of that rest gets bonus healing in the die shown."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  },
+  {
+    "id": "countercharm",
+    "name": "Countercharm",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 6,
+    "cost": "action",
+    "description": [
+      "Action: start a performance that lasts until the end of your next turn. You and each friendly creature within 30 ft that can hear you have advantage on saves against being frightened or charmed.",
+      "It ends early if you are incapacitated or silenced, or if you choose to stop it (no action)."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  },
+  {
+    "id": "superior-inspiration",
+    "name": "Superior Inspiration",
+    "source": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "You roll initiative with 0 uses left",
+    "description": [
+      "When you roll initiative and have no Bardic Inspiration uses left, you regain 1 use."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  }
+]

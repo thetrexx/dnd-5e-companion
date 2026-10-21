@@ -1,0 +1,109 @@
+[
+  {
+    "id": "channel-divinity",
+    "name": "Channel Divinity",
+    "source": {
+      "kind": "class",
+      "id": "cleric"
+    },
+    "level": 2,
+    "cost": "free",
+    "resource": "Channel Divinity uses (pool)",
+    "uses": "Refill on short or long rest",
+    "scaling": [
+      {
+        "label": "Uses",
+        "values": [
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "Channel Divinity powers Turn Undead and the effects your domain gives you. Each effect costs 1 use. Effects that call for a save use your spell save DC.",
+      "Short or long rests restore all your uses."
+    ],
+    "page": 58,
+    "textSource": "summary"
+  },
+  {
+    "id": "turn-undead",
+    "name": "Turn Undead",
+    "source": {
+      "kind": "class",
+      "id": "cleric"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity use",
+    "scaling": [
+      {
+        "label": "Destroys CR",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4"
+        ]
+      }
+    ],
+    "description": [
+      "Action: raise your holy symbol and pray against the undead. Every undead within 30 ft that can see or hear you rolls a Wisdom save. Failing means it is turned for 1 minute, ending early if it takes damage.",
+      "A turned undead runs from you as far as it can, never choosing to step within 30 ft of you, and cannot react. On its turn it may only Dash, try to break free of a restraint, or Dodge if it has nowhere to run.",
+      "From level 5, an undead that fails the save is destroyed if its CR is at or below the value shown."
+    ],
+    "page": 59,
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-intervention",
+    "name": "Divine Intervention",
+    "source": {
+      "kind": "class",
+      "id": "cleric"
+    },
+    "level": 10,
+    "cost": "action",
+    "uses": "Once per long rest (7 days after success)",
+    "description": [
+      "Action: describe the help you ask your deity for, then roll percentile dice. If the roll is no higher than your cleric level, the deity steps in and the DM picks the effect (any cleric or domain spell effect fits).",
+      "If it works, you cannot use this again for 7 days. If it fails, you can try again after a long rest. At level 20 it works automatically with no roll."
+    ],
+    "page": 59,
+    "textSource": "summary"
+  }
+]

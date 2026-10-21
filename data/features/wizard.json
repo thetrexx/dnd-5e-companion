@@ -8,12 +8,46 @@
     },
     "level": 1,
     "cost": "free",
-    "uses": "1/long rest",
+    "uses": "Once per day, after a short rest",
     "description": [
-      "You have learned to regain some of your magical energy by studying your spellbook. Once per day when you finish a short rest, you can choose expended spell slots to recover. The spell slots can have a combined level that is equal to or less than half your wizard level (rounded up), and none of the slots can be 6th level or higher.",
-      "For example, if you're a 4th-level wizard, you can recover up to two levels worth of spell slots. You can recover either a 2nd-level spell slot or two 1st-level spell slots."
+      "When you finish a short rest, choose expended spell slots to get back. Their levels must add up to half your wizard level (rounded up) or less, and none can be 6th level or higher.",
+      "Example: at level 4 you can recover one 2nd-level slot or two 1st-level slots."
     ],
-    "page": 112,
-    "textSource": "srd"
+    "page": 115,
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-mastery",
+    "name": "Spell Mastery",
+    "source": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "level": 18,
+    "cost": "free",
+    "uses": "At will, at lowest level",
+    "description": [
+      "Pick one 1st-level and one 2nd-level wizard spell from your spellbook. While you have them prepared, cast each at its lowest level at will, with no slot.",
+      "Casting at a higher level uses a slot as usual. After 8 hours of study you can swap either one for another spell of the same level."
+    ],
+    "page": 115,
+    "textSource": "summary"
+  },
+  {
+    "id": "signature-spells",
+    "name": "Signature Spells",
+    "source": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "level": 20,
+    "cost": "free",
+    "uses": "Once per spell per short or long rest",
+    "description": [
+      "Pick two 3rd-level wizard spells from your spellbook. Both are always prepared and do not count against your prepared total.",
+      "Cast each once at 3rd level with no slot. After you do, you cannot do so for that spell again until a short or long rest. A higher-level casting uses a slot as usual."
+    ],
+    "page": 115,
+    "textSource": "summary"
   }
 ]

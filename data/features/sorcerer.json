@@ -1,5 +1,50 @@
 [
   {
+    "id": "sorcery-points",
+    "name": "Sorcery Points",
+    "source": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "level": 2,
+    "cost": "free",
+    "resource": "Sorcery points (pool)",
+    "uses": "Refill on long rest",
+    "scaling": [
+      {
+        "label": "Sorcery Points",
+        "values": [
+          "",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      }
+    ],
+    "description": [
+      "Sorcery points pay for Flexible Casting and your Metamagic options. You can never hold more than the maximum for your level.",
+      "A long rest refills them all."
+    ],
+    "page": 101,
+    "textSource": "summary"
+  },
+  {
     "id": "font-of-magic",
     "name": "Font of Magic",
     "source": {
@@ -8,16 +53,29 @@
     },
     "level": 2,
     "cost": "bonus",
-    "resource": "Sorcery points",
+    "resource": "Sorcery points / spell slots",
     "description": [
-      "At 2nd level, you tap into a deep wellspring of magic within yourself. This wellspring is represented by sorcery points, which allow you to create a variety of magical effects.",
-      "Sorcery Points",
-      "You have 2 sorcery points, and you gain more as you reach higher levels, as shown in the Sorcery Points column of the Sorcerer table. You can never have more sorcery points than shown on the table for your level. You regain all spent sorcery points when you finish a long rest.",
-      "You can transform unexpended sorcery points into one spell slot as a bonus action on your turn. The Creating Spell Slots table shows the cost of creating a spell slot of a given level. You can create spell slots no higher in level than 5th.",
-      "Any spell slot you create with this feature vanishes when you finish a long rest.",
-      "As a bonus action on your turn, you can expend one spell slot and gain a number of sorcery points equal to the slot's level."
+      "Bonus action: swap between spell slots and sorcery points.",
+      "Make a slot: spend points to create one slot of 5th level or lower. Cost: 1st level 2 points, 2nd level 3, 3rd level 5, 4th level 6, 5th level 7.",
+      "Burn a slot: expend one slot and gain sorcery points equal to its level."
     ],
-    "page": 99,
-    "textSource": "srd"
+    "page": 101,
+    "textSource": "summary"
+  },
+  {
+    "id": "sorcerous-restoration",
+    "name": "Sorcerous Restoration",
+    "source": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "level": 20,
+    "cost": "free",
+    "uses": "Once per short rest",
+    "description": [
+      "When you finish a short rest, you regain 4 expended sorcery points."
+    ],
+    "page": 102,
+    "textSource": "summary"
   }
 ]

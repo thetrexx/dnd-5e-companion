@@ -28,3 +28,16 @@ test('own-words feature cards', () => {
   for (const x of DATA.features.filter(y => y.source.kind === 'generic' || y.source.id === 'fighter' || ['barbarian','monk','rogue','paladin','ranger'].includes(y.source.id)))
     expect(x.textSource, x.id).toBe('summary');
 });
+test('must-have caster features', () => {
+  for (const id of ['bardic-inspiration', 'countercharm', 'song-of-rest', 'turn-undead', 'divine-intervention',
+    'wild-shape', 'font-of-magic', 'arcane-recovery', 'eldritch-master', 'sorcery-points', 'channel-divinity']) expect(f(id), id).toBeTruthy();
+  expect(f('bardic-inspiration')!.scaling!.find(s => s.label === 'Die')!.values).toEqual(
+    ['d6','d6','d6','d6','d8','d8','d8','d8','d8','d10','d10','d10','d10','d10','d12','d12','d12','d12','d12','d12']);
+  expect(f('bardic-inspiration')!.cost).toBe('bonus');
+  expect(f('wild-shape')!.scaling!.find(s => s.label === 'Max CR')!.values[7]).toBe('1');
+  expect(f('sorcery-points')!.scaling![0].values[19]).toBe('20');
+  expect(f('channel-divinity')!.scaling![0].values[17]).toBe('3');
+});
+test('every feature is an own-words summary', () => {
+  for (const x of DATA.features) expect(x.textSource, x.id).toBe('summary');
+});
