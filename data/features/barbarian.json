@@ -104,5 +104,126 @@
     ],
     "page": 49,
     "textSource": "summary"
+  },
+  {
+    "id": "frenzy",
+    "name": "Frenzy",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-berserker"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "While raging in a frenzy",
+    "resource": "Rage",
+    "description": [
+      "Opt into frenzy as you start a rage. For its whole length, each later turn lets you spend a bonus action on 1 melee weapon attack.",
+      "When the rage ends, you take 1 level of exhaustion."
+    ],
+    "page": 49,
+    "textSource": "summary"
+  },
+  {
+    "id": "intimidating-presence",
+    "name": "Intimidating Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-berserker"
+    },
+    "level": 10,
+    "cost": "action",
+    "description": [
+      "Target one creature within 30 ft that can see or hear you. It makes a Wisdom save against DC 8 + proficiency bonus + Charisma modifier, or becomes frightened of you, lasting through your next turn.",
+      "Spend your action on later turns to extend the fear another round. It stops if the target loses line of sight to you or ends a turn over 60 ft away.",
+      "A target that passes the save is immune to this for 24 hours."
+    ],
+    "page": 49,
+    "textSource": "summary"
+  },
+  {
+    "id": "retaliation",
+    "name": "Retaliation",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-berserker"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "You take damage from a creature within 5 ft",
+    "description": [
+      "When a creature within 5 ft damages you, make 1 melee weapon attack against it as a reaction."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "spirit-seeker",
+    "name": "Spirit Seeker",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 3,
+    "cost": "other",
+    "description": [
+      "You can cast beast sense and speak with animals, but only as rituals (they take extra time and use no spell slot)."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit",
+    "name": "Totem Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 3,
+    "cost": "other",
+    "trigger": "While raging",
+    "resource": "Rage",
+    "description": [
+      "Pick a totem animal when you take this path. Its effect works only while you rage.",
+      "Bear: resistance to every damage type except psychic.",
+      "Eagle: while you wear no heavy armor, opportunity attacks against you have disadvantage, and you can Dash as a bonus action.",
+      "Wolf: allies have advantage on melee attacks against any enemy within 5 ft of you."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "spirit-walker",
+    "name": "Spirit Walker",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 10,
+    "cost": "other",
+    "description": [
+      "You can cast commune with nature as a ritual. A spirit version of one of your totem animals appears to deliver the answers."
+    ],
+    "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement",
+    "name": "Totemic Attunement",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-totem-warrior"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "While raging",
+    "resource": "Rage",
+    "description": [
+      "Pick a totem animal again (the same one or a new one). Its effect works only while you rage.",
+      "Bear: hostile creatures within 5 ft of you attack at disadvantage unless they target you or an ally with this same feature. Enemies that cannot see or hear you, or cannot be frightened, are immune.",
+      "Eagle: you fly at a speed matching your current walking speed, but only in short bursts. Land before your turn ends or you drop.",
+      "Wolf: after a melee weapon hit on a target no bigger than Large, spend a bonus action to topple it prone."
+    ],
+    "page": 50,
+    "textSource": "summary"
   }
 ]

@@ -119,5 +119,75 @@
     ],
     "page": 54,
     "textSource": "summary"
+  },
+  {
+    "id": "cutting-words",
+    "name": "Cutting Words",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-lore"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A creature within 60 ft rolls",
+    "resource": "1 Bardic Inspiration",
+    "description": [
+      "When a creature you can see within 60 ft makes an attack roll, ability check or damage roll, spend 1 Bardic Inspiration use and roll the die. Subtract the result from that roll.",
+      "You can wait until after the roll, but you must act before the DM says whether it succeeds or before the damage is dealt. Creatures that cannot hear you, or are immune to being charmed, are unaffected."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  },
+  {
+    "id": "peerless-skill",
+    "name": "Peerless Skill",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-lore"
+    },
+    "level": 14,
+    "cost": "free",
+    "resource": "1 Bardic Inspiration",
+    "description": [
+      "When you make an ability check, spend 1 Bardic Inspiration use, roll the die and add it to the check.",
+      "You can decide after rolling the d20, but before the DM tells you the outcome."
+    ],
+    "page": 54,
+    "textSource": "summary"
+  },
+  {
+    "id": "combat-inspiration",
+    "name": "Combat Inspiration",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-valor"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "Holder makes a weapon damage roll, or is attacked",
+    "resource": "Bardic Inspiration die",
+    "description": [
+      "A creature holding your Bardic Inspiration die can use it in battle, in one of two ways.",
+      "Damage: roll the die and add it to a weapon damage roll it just made.",
+      "Defense: when an attack targets it, use its reaction to roll the die and add the result to its AC against that attack. It can do this after seeing the attack roll, before learning whether it hits."
+    ],
+    "page": 55,
+    "textSource": "summary"
+  },
+  {
+    "id": "battle-magic",
+    "name": "Battle Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-valor"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "You cast a bard spell with your action",
+    "description": [
+      "Cast a bard spell using your action, and you may then make 1 weapon attack as a bonus action."
+    ],
+    "page": 55,
+    "textSource": "summary"
   }
 ]

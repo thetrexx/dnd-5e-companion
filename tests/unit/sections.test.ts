@@ -47,3 +47,16 @@ test('monk ki pool shows on the actions page', () => {
   expect(ki).toBeTruthy();
   expect(ki!.scaling!.find(s => s.label === 'Ki Points')!.values[4]).toBe('5');
 });
+
+test('locked spell levels list future subclass grants', () => {
+  const lvl3 = spellSections('cleric', 1, 'life-domain').find(s => s.id === 'lvl-3')!;
+  expect(lvl3.locked).toBeTruthy();
+  expect(lvl3.items.map(i => i.id)).toContain('beacon-of-hope');
+  expect(lvl3.tags?.['beacon-of-hope']).toBe('Domain');
+});
+
+test('land tag joins every terrain granting a spell', () => {
+  const l2 = spellSections('druid', 3, 'circle-of-the-land').find(s => s.id === 'lvl-2')!;
+  expect(l2.tags?.['misty-step']).toBe('Circle · Coast, Forest, Mountain');
+  expect(l2.tags?.['hold-person']).toBe('Circle · Arctic');
+});

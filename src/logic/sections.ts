@@ -31,13 +31,18 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   };
   mine.forEach(put);
   if (s?.bonusSpells) {
+    const base = BONUS_TAG[s.bonusSpells.kind];
+    const opts = new Map<string, string[]>();
+    // every grant is listed, so locked levels show the future bonus spells
     for (const g of s.bonusSpells.grants) {
-      const sp = g.spell && g.atLevel <= level ? DATA.spells.find(x => x.id === g.spell) : undefined;
+      const sp = g.spell ? DATA.spells.find(x => x.id === g.spell) : undefined;
       if (!sp) continue;
       const opt = g.option ? DATA.features.find(f => f.id === g.option)?.name : undefined;
-      const base = BONUS_TAG[s.bonusSpells.kind];
+      const names = opts.get(sp.id) ?? [];
+      if (opt && !names.includes(opt)) names.push(opt);
+      opts.set(sp.id, names);
       const tags = tagsByLevel.get(sp.level) ?? {};
-      tags[sp.id] = opt ? `${base} · ${opt}` : base;
+      tags[sp.id] = names.length ? `${base} · ${names.join(', ')}` : base;
       tagsByLevel.set(sp.level, tags);
       put(sp);
     }

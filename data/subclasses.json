@@ -112,5 +112,33 @@
         }
       ]
     }
+  },
+  {
+    "id": "path-of-the-berserker",
+    "cls": "barbarian",
+    "name": "Path of the Berserker",
+    "page": 49,
+    "options": []
+  },
+  {
+    "id": "path-of-the-totem-warrior",
+    "cls": "barbarian",
+    "name": "Path of the Totem Warrior",
+    "page": 50,
+    "options": []
+  },
+  {
+    "id": "college-of-lore",
+    "cls": "bard",
+    "name": "College of Lore",
+    "page": 54,
+    "options": []
+  },
+  {
+    "id": "college-of-valor",
+    "cls": "bard",
+    "name": "College of Valor",
+    "page": 55,
+    "options": []
   }
 ]
