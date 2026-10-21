@@ -332,5 +332,10 @@
         "type": "Fire or Cold"
       }
     }
+  },
+  "ice-storm": {
+    "summary": {
+      "damage": null
+    }
   }
 }

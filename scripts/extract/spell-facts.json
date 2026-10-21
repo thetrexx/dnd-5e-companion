@@ -5585,10 +5585,7 @@
   "summary": {
    "resolution": "save",
    "save": "dex",
-   "damage": {
-    "dice": "2d8",
-    "type": "Bludgeoning"
-   },
+   "damage": null,
    "upcast": "+1d8 per slot level above 4"
   }
  },

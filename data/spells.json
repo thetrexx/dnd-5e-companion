@@ -5529,6 +5529,37 @@
     "textSource": "summary"
   },
   {
+    "id": "heal",
+    "name": "Heal",
+    "level": 6,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 60 ft regains 70 HP, and any blindness, deafness and diseases on it end. Constructs and undead are unaffected."
+    ],
+    "higherLevels": "Each slot level above 6 heals 10 more HP.",
+    "textSource": "summary"
+  },
+  {
     "id": "healing-word",
     "name": "Healing Word",
     "level": 1,
@@ -5647,6 +5678,42 @@
     "textSource": "summary"
   },
   {
+    "id": "heroes-feast",
+    "name": "Heroes' Feast",
+    "level": 6,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "30 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid"
+    ],
+    "page": 250,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Gem-studded bowl worth 1,000 gp, used up",
+        "costGp": 1000,
+        "consumed": true
+      }
+    },
+    "description": [
+      "A grand feast appears for you and up to 12 other creatures. Eating takes 1 hour; the food then vanishes and the benefits begin.",
+      "Each diner is cured of all disease and poison, becomes immune to poison and to being frightened, and has advantage on Wisdom saves. Its hit point maximum also rises by 2d10, and it gains that many HP. All of this lasts 24 hours."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "heroism",
     "name": "Heroism",
     "level": 1,
@@ -5716,6 +5783,45 @@
       "If it drops to 0 hit points, you can move the curse to a new creature within range as a bonus action on a later turn. Remove curse on the target ends the spell early."
     ],
     "higherLevels": "A level 3 or 4 slot lets concentration last up to 8 hours; level 5 or higher, up to 24 hours.",
+    "textSource": "summary"
+  },
+  {
+    "id": "hold-monster",
+    "name": "Hold Monster",
+    "level": 5,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 251,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A small straight piece of iron",
+        "consumed": false
+      }
+    },
+    "description": [
+      "A creature you can see within 90 ft makes a Wisdom save or is paralyzed for up to 1 minute (concentration). Undead are unaffected.",
+      "It repeats the save as each of its turns ends, breaking free on a success."
+    ],
+    "higherLevels": "Each slot level above 5 adds a target; all must be within 30 ft of each other.",
     "textSource": "summary"
   },
   {
@@ -5867,6 +5973,46 @@
     "textSource": "summary"
   },
   {
+    "id": "ice-storm",
+    "name": "Ice Storm",
+    "level": 4,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "300 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 252,
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": null,
+      "upcast": "+1d8 per slot level above 4"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Some dust and a little water",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Hard hail pounds a 20 ft radius, 40 ft high cylinder around a point within 300 ft. Each creature in it makes a Dexterity save: 2d8 bludgeoning plus 4d6 cold, half on a success.",
+      "Until your next turn ends, the area is difficult terrain."
+    ],
+    "higherLevels": "Each slot level above 4 adds 1d8 bludgeoning.",
+    "textSource": "summary"
+  },
+  {
     "id": "identify",
     "name": "Identify",
     "level": 1,
@@ -5976,6 +6122,49 @@
     "textSource": "summary"
   },
   {
+    "id": "insect-plague",
+    "name": "Insect Plague",
+    "level": 5,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "300 feet",
+    "duration": "Concentration, up to 10 minutes",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "druid",
+      "sorcerer"
+    ],
+    "page": 254,
+    "summary": {
+      "resolution": "save",
+      "save": "con",
+      "damage": {
+        "dice": "4d10",
+        "type": "Piercing"
+      },
+      "upcast": "+1d10 per slot level above 5"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Some sugar grains, grain kernels and a smear of fat",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Biting locusts fill a 20 ft radius sphere around a point within 300 ft for up to 10 minutes (concentration). It spreads around corners, is lightly obscured and is difficult terrain.",
+      "Each creature in it when it appears makes a Constitution save: 4d10 piercing, half on a success. A creature also saves the first time each turn it enters, and whenever it ends its turn there."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d10.",
+    "textSource": "summary"
+  },
+  {
     "id": "invisibility",
     "name": "Invisibility",
     "level": 2,
@@ -6078,6 +6267,79 @@
       "Pick an object you can see within 60 ft that blocks access: a door, box, chest, manacles, padlock and so on. A mundane lock opens, or a stuck or barred object comes free; with several locks, only one opens.",
       "An arcane lock on it is suppressed for 10 minutes; meanwhile the object opens and closes normally.",
       "Casting it makes a loud knock heard up to 300 ft away."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "legend-lore",
+    "name": "Legend Lore",
+    "level": 5,
+    "school": "Divination",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "Self",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "wizard"
+    ],
+    "page": 254,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "Incense worth 250 gp (used up) and 4 ivory strips worth 50 gp each",
+        "costGp": 250,
+        "consumed": true
+      }
+    },
+    "description": [
+      "Pick a person, place or object by name or description, and a short summary of its notable lore comes to mind: current tales, forgotten stories, even secrets. Things of no legendary importance give nothing.",
+      "The more you already know about it, the more precise the result. The lore is true but may come as riddling or poetic language."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "leomunds-secret-chest",
+    "name": "Leomund's Secret Chest",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Touch",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 254,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A 3 by 2 by 2 ft chest of rare materials worth 5,000 gp and a Tiny replica worth 50 gp",
+        "costGp": 5000,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Touch the chest and its replica to hide the chest and contents (up to 12 cubic ft of nonliving matter) on the Ethereal Plane.",
+      "Action, touching the replica: the chest appears on the ground within 5 ft. Action, touching both: send it back.",
+      "From day 60, each day adds a cumulative 5% chance the spell ends. Recasting, losing the replica, or ending it as an action also ends it. If the chest is on the Ethereal Plane then, it is lost for good."
     ],
     "textSource": "summary"
   },
@@ -6337,6 +6599,45 @@
     "textSource": "summary"
   },
   {
+    "id": "locate-creature",
+    "name": "Locate Creature",
+    "level": 4,
+    "school": "Divination",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid",
+      "paladin",
+      "ranger",
+      "wizard"
+    ],
+    "page": 256,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A bit of bloodhound fur",
+        "consumed": false
+      }
+    },
+    "description": [
+      "For up to 1 hour (concentration) you sense the direction of a creature you name or describe, if it is within 1,000 ft, and which way it moves.",
+      "It finds a specific creature you know, or the nearest of a kind (like a human or a unicorn) if you have seen one within 30 ft at least once. It fails if the creature is in another form (such as polymorphed) or running water 10 ft wide lies directly between you."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "locate-object",
     "name": "Locate Object",
     "level": 2,
@@ -6523,6 +6824,44 @@
     "textSource": "summary"
   },
   {
+    "id": "magic-jar",
+    "name": "Magic Jar",
+    "level": 6,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "other",
+      "text": "1 minute"
+    },
+    "range": "Self",
+    "duration": "Until dispelled",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 257,
+    "summary": {
+      "resolution": "save",
+      "save": "cha"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A gem, crystal, reliquary or other ornate container worth 500 gp",
+        "costGp": 500,
+        "consumed": false
+      }
+    },
+    "description": [
+      "Your soul enters the container; your body goes catatonic. You perceive from there but can't move or react. Your only action: send your soul up to 100 ft, back to your body (ending the spell) or into a humanoid.",
+      "Possess: a humanoid you can see within 100 ft makes a Charisma save (protection from evil and good or magic circle blocks it). Fail: its soul swaps into the container. Success: no retry for 24 hours.",
+      "You use the host's stats but keep your alignment, Int, Wis, Cha and class features. Action: return to the container if within 100 ft.",
+      "If the host dies, Charisma save vs your own DC or you die (success: back to a container within 100 ft). If the container breaks or the spell ends, you return to your body, dying if it is dead or beyond 100 ft."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "magic-missile",
     "name": "Magic Missile",
     "level": 1,
@@ -6668,6 +7007,45 @@
     "textSource": "summary"
   },
   {
+    "id": "mass-cure-wounds",
+    "name": "Mass Cure Wounds",
+    "level": 5,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "cleric",
+      "druid"
+    ],
+    "page": 258,
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "3d8",
+        "type": "Healing",
+        "healing": true,
+        "plusMod": true
+      },
+      "upcast": "+1d8 per slot level above 5"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Choose up to 6 creatures in a 30 ft radius sphere around a point within 60 ft. Each regains 3d8 + your spellcasting modifier HP. Constructs and undead are unaffected."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8.",
+    "textSource": "summary"
+  },
+  {
     "id": "mass-healing-word",
     "name": "Mass Healing Word",
     "level": 3,
@@ -6702,6 +7080,45 @@
       "You call out words of healing: up to 6 creatures you choose and can see within 60 ft each regain 1d4 + your spellcasting ability modifier hit points. Undead and constructs are unaffected."
     ],
     "higherLevels": "Each slot level above 3 adds 1d4 healing.",
+    "textSource": "summary"
+  },
+  {
+    "id": "mass-suggestion",
+    "name": "Mass Suggestion",
+    "level": 6,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "24 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 258,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": false,
+      "m": {
+        "text": "A snake's tongue plus honeycomb or a drop of sweet oil",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Up to 12 creatures you can see within 60 ft that can hear and understand you make a Wisdom save (immune to charm: unaffected). On a failure, each follows a reasonable-sounding course of action you propose in a sentence or two, for up to 24 hours or until it's done.",
+      "An obviously harmful order, like stabbing itself, fails. You can set a trigger for the act; if it never happens, nothing is done. Damage from you or your companions frees that creature."
+    ],
+    "higherLevels": "Lasts 10 days with a 7th-level slot, 30 days with 8th, and a year and a day with 9th.",
     "textSource": "summary"
   },
   {
@@ -6920,6 +7337,38 @@
     "textSource": "summary"
   },
   {
+    "id": "mislead",
+    "name": "Mislead",
+    "level": 5,
+    "school": "Illusion",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 260,
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": false,
+      "s": true
+    },
+    "description": [
+      "You turn invisible and an illusory double appears where you stand, for up to 1 hour (concentration). Attacking or casting a spell ends your invisibility; the double remains.",
+      "Action: move the double up to twice your speed, making it gesture, talk and act as you like.",
+      "You can see and hear through it as if there. Bonus action each turn: switch between its senses and yours; while on its senses you are blind and deaf to your own surroundings."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "misty-step",
     "name": "Misty Step",
     "level": 2,
@@ -6949,6 +7398,40 @@
     "description": [
       "In a puff of silver mist you teleport up to 30 ft to an empty space you can see. It costs only a bonus action and needs just a spoken word, no gestures."
     ],
+    "textSource": "summary"
+  },
+  {
+    "id": "modify-memory",
+    "name": "Modify Memory",
+    "level": 5,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "wizard"
+    ],
+    "page": 261,
+    "summary": {
+      "resolution": "save",
+      "save": "wis"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "A creature you can see within 30 ft makes a Wisdom save (advantage if you're fighting it) or is charmed for up to 1 minute (concentration): incapacitated and oblivious to all but your voice. Damage or another spell targeting it ends the spell with no change.",
+      "While charmed, describe changes to an event from the last 24 hours that lasted 10 minutes or less: erase, sharpen, alter or invent. It must understand you; the change holds only if you finish first.",
+      "A false memory may not change behaviour; absurd ones are dismissed. Remove curse or greater restoration undoes it."
+    ],
+    "higherLevels": "Reach older events: 7 days at 6th level, 30 days at 7th, 1 year at 8th, any time at 9th.",
     "textSource": "summary"
   },
   {
@@ -6991,6 +7474,45 @@
       "On each later turn you can use your action to move the beam up to 60 ft."
     ],
     "higherLevels": "Each slot level above 2 adds 1d10 damage.",
+    "textSource": "summary"
+  },
+  {
+    "id": "mordenkainens-faithful-hound",
+    "name": "Mordenkainen's Faithful Hound",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "8 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 261,
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d8",
+        "type": "Piercing"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "A tiny silver whistle, a bit of bone and a thread",
+        "consumed": false
+      }
+    },
+    "description": [
+      "An invisible phantom watchdog sits in a free space you can see within 30 ft for 8 hours. It ends if you dismiss it (action) or move over 100 ft away. Only you see it; it can't be harmed.",
+      "It barks loudly if a Small or larger creature gets within 30 ft without saying your password. It sees invisible things and into the Ethereal Plane, and ignores illusions.",
+      "As each of your turns begins it bites a hostile creature within 5 ft: attack bonus = spellcasting modifier + proficiency bonus, 4d8 piercing."
+    ],
     "textSource": "summary"
   },
   {
