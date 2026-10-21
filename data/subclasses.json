@@ -109,6 +109,321 @@
           "spell": "hold-person",
           "atLevel": 3,
           "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "slow",
+          "atLevel": 5,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 7,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "commune-with-nature",
+          "atLevel": 9,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9,
+          "option": "land-terrain-arctic"
+        },
+        {
+          "spell": "mirror-image",
+          "atLevel": 3,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 3,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "water-breathing",
+          "atLevel": 5,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "water-walk",
+          "atLevel": 5,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "conjure-elemental",
+          "atLevel": 9,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9,
+          "option": "land-terrain-coast"
+        },
+        {
+          "spell": "blur",
+          "atLevel": 3,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "silence",
+          "atLevel": 3,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "create-food-and-water",
+          "atLevel": 5,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 5,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "blight",
+          "atLevel": 7,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "hallucinatory-terrain",
+          "atLevel": 7,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "wall-of-stone",
+          "atLevel": 9,
+          "option": "land-terrain-desert"
+        },
+        {
+          "spell": "barkskin",
+          "atLevel": 3,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "spider-climb",
+          "atLevel": 3,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "call-lightning",
+          "atLevel": 5,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "divination",
+          "atLevel": 7,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "commune-with-nature",
+          "atLevel": 9,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "tree-stride",
+          "atLevel": 9,
+          "option": "land-terrain-forest"
+        },
+        {
+          "spell": "invisibility",
+          "atLevel": 3,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "pass-without-trace",
+          "atLevel": 3,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "daylight",
+          "atLevel": 5,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "haste",
+          "atLevel": 5,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "divination",
+          "atLevel": 7,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "dream",
+          "atLevel": 9,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-grassland"
+        },
+        {
+          "spell": "spider-climb",
+          "atLevel": 3,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "lightning-bolt",
+          "atLevel": 5,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "meld-into-stone",
+          "atLevel": 5,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "stone-shape",
+          "atLevel": 7,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 7,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "passwall",
+          "atLevel": 9,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "wall-of-stone",
+          "atLevel": 9,
+          "option": "land-terrain-mountain"
+        },
+        {
+          "spell": "darkness",
+          "atLevel": 3,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "melfs-acid-arrow",
+          "atLevel": 3,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "water-walk",
+          "atLevel": 5,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "stinking-cloud",
+          "atLevel": 5,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "locate-creature",
+          "atLevel": 7,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 9,
+          "option": "land-terrain-swamp"
+        },
+        {
+          "spell": "spider-climb",
+          "atLevel": 3,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "web",
+          "atLevel": 3,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "gaseous-form",
+          "atLevel": 5,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "stinking-cloud",
+          "atLevel": 5,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "stone-shape",
+          "atLevel": 7,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "cloudkill",
+          "atLevel": 9,
+          "option": "land-terrain-underdark"
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 9,
+          "option": "land-terrain-underdark"
         }
       ]
     }
@@ -504,5 +819,12 @@
         }
       ]
     }
+  },
+  {
+    "id": "circle-of-the-moon",
+    "cls": "druid",
+    "name": "Circle of the Moon",
+    "page": 69,
+    "options": []
   }
 ]

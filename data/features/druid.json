@@ -102,10 +102,10 @@
       "kind": "option",
       "id": "land-terrain"
     },
-    "level": 3,
+    "level": 2,
     "cost": "passive",
     "description": [
-      "Circle spells, always prepared and outside your prepared-spell limit. Druid level 3: hold person, spike growth. Level 5: sleet storm, slow. Level 7: freedom of movement, ice storm. Level 9: commune with nature, cone of cold."
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: hold person, spike growth. Druid level 5: sleet storm, slow. Druid level 7: freedom of movement, ice storm. Druid level 9: commune with nature, cone of cold."
     ],
     "page": 68,
     "textSource": "summary"
@@ -117,10 +117,236 @@
       "kind": "option",
       "id": "land-terrain"
     },
-    "level": 3,
+    "level": 2,
     "cost": "passive",
     "description": [
-      "Circle spells, always prepared and outside your prepared-spell limit. Druid level 3: mirror image, misty step. Level 5: water breathing, water walk. Level 7: control water, freedom of movement. Level 9: conjure elemental, scrying."
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: mirror image, misty step. Druid level 5: water breathing, water walk. Druid level 7: control water, freedom of movement. Druid level 9: conjure elemental, scrying."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "natural-recovery",
+    "name": "Natural Recovery",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-land"
+    },
+    "level": 2,
+    "cost": "other",
+    "uses": "Once per long rest",
+    "scaling": [
+      {
+        "label": "Slot levels recoverable",
+        "values": [
+          "",
+          "1",
+          "2",
+          "2",
+          "3",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "Meditate during a short rest to get back spent spell slots. Add up the slot levels you recover: the total may not top half your druid level (round up), and no single slot can be 6th level or more.",
+      "For example, at druid level 4 you could get back one 2nd-level slot or two 1st-level slots."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "combat-wild-shape",
+    "name": "Combat Wild Shape",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-moon"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "Wild Shape use, or a spell slot to heal",
+    "description": [
+      "Enter Wild Shape as a bonus action instead of an action.",
+      "While in a beast form, you can also spend a bonus action and 1 spell slot to heal 1d8 hit points per level of the slot."
+    ],
+    "page": 69,
+    "textSource": "summary"
+  },
+  {
+    "id": "circle-forms",
+    "name": "Circle Forms",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-moon"
+    },
+    "level": 2,
+    "cost": "other",
+    "scaling": [
+      {
+        "label": "Max beast CR",
+        "values": [
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6"
+        ]
+      }
+    ],
+    "description": [
+      "Raises the toughest beast Wild Shape can turn you into. Disregard the Max. CR figure in the Beast Shapes table; every other limit there still holds.",
+      "The ceiling is challenge rating 1 at levels 2 to 5, then from level 6 it is one third of your druid level, dropping any remainder."
+    ],
+    "page": 69,
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-wild-shape",
+    "name": "Elemental Wild Shape",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-moon"
+    },
+    "level": 10,
+    "cost": "action",
+    "resource": "2 Wild Shape uses",
+    "description": [
+      "Spend 2 uses of Wild Shape at once to turn into an air, earth, fire or water elemental."
+    ],
+    "page": 69,
+    "textSource": "summary"
+  },
+  {
+    "id": "thousand-forms",
+    "name": "Thousand Forms",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-moon"
+    },
+    "level": 14,
+    "cost": "action",
+    "uses": "At will",
+    "description": [
+      "You can cast alter self whenever you like, with no spell slot."
+    ],
+    "page": 69,
+    "textSource": "summary"
+  },
+  {
+    "id": "land-terrain-desert",
+    "name": "Desert",
+    "source": {
+      "kind": "option",
+      "id": "land-terrain"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: blur, silence. Druid level 5: create food and water, protection from energy. Druid level 7: blight, hallucinatory terrain. Druid level 9: insect plague, wall of stone."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "land-terrain-forest",
+    "name": "Forest",
+    "source": {
+      "kind": "option",
+      "id": "land-terrain"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: barkskin, spider climb. Druid level 5: call lightning, plant growth. Druid level 7: divination, freedom of movement. Druid level 9: commune with nature, tree stride."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "land-terrain-grassland",
+    "name": "Grassland",
+    "source": {
+      "kind": "option",
+      "id": "land-terrain"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: invisibility, pass without trace. Druid level 5: daylight, haste. Druid level 7: divination, freedom of movement. Druid level 9: dream, insect plague."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "land-terrain-mountain",
+    "name": "Mountain",
+    "source": {
+      "kind": "option",
+      "id": "land-terrain"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: spider climb, spike growth. Druid level 5: lightning bolt, meld into stone. Druid level 7: stone shape, stoneskin. Druid level 9: passwall, wall of stone."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "land-terrain-swamp",
+    "name": "Swamp",
+    "source": {
+      "kind": "option",
+      "id": "land-terrain"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: darkness, Melf's acid arrow. Druid level 5: water walk, stinking cloud. Druid level 7: freedom of movement, locate creature. Druid level 9: insect plague, scrying."
+    ],
+    "page": 68,
+    "textSource": "summary"
+  },
+  {
+    "id": "land-terrain-underdark",
+    "name": "Underdark",
+    "source": {
+      "kind": "option",
+      "id": "land-terrain"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Pick this land as your circle's home and gain its circle spells. They are always prepared and do not count against your daily prepared limit. Druid level 3: spider climb, web. Druid level 5: gaseous form, stinking cloud. Druid level 7: greater invisibility, stone shape. Druid level 9: cloudkill, insect plague."
     ],
     "page": 68,
     "textSource": "summary"

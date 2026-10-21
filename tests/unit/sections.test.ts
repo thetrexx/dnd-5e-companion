@@ -57,6 +57,6 @@ test('locked spell levels list future subclass grants', () => {
 
 test('land tag joins every terrain granting a spell', () => {
   const l2 = spellSections('druid', 3, 'circle-of-the-land').find(s => s.id === 'lvl-2')!;
-  expect(l2.tags?.['misty-step']).toBe('Circle · Coast, Forest, Mountain');
+  expect(l2.tags?.['spike-growth']).toBe('Circle · Arctic, Mountain');
   expect(l2.tags?.['hold-person']).toBe('Circle · Arctic');
 });
