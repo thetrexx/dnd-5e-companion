@@ -4,6 +4,7 @@
 .sep .orn{font-family:var(--font-orn);font-size:24px;letter-spacing:0;line-height:1}
 .sep .flip{display:inline-block;transform:scaleX(-1)}
 .sep .ln{flex:1;height:1px;background:linear-gradient(90deg,transparent,currentColor,transparent)}
+.sep-card .ln{background:var(--card-sep-line)}
 .sep-label{white-space:nowrap}
 .sep-sub{white-space:nowrap;font-size:.8em}
 

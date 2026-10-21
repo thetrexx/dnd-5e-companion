@@ -24,13 +24,25 @@ test('non-caster has no magic', async ({ page }) => {
 });
 test('320px: long names wrap, no sideways scroll', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 640 });
-  await page.goto('./#/spells/wizard/5');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  for (const hash of ['./#/spells/wizard/5', './#/card/spell/magic-missile/wizard/5']) {
+    await page.goto(hash);
+    await expect(page.locator('.grid, .card').first()).toBeVisible();
+    const m = await page.evaluate(() => ({
+      doc: document.documentElement.scrollWidth <= innerWidth,
+      grid: [...document.querySelectorAll('.grid')].every((g) => g.scrollWidth <= g.clientWidth),
+      ic: [...document.querySelectorAll('.ic')].every((e) => e.scrollWidth <= e.clientWidth),
+      card: [...document.querySelectorAll('.card')].every((e) => e.scrollWidth <= e.clientWidth),
+    }));
+    expect(m, hash).toEqual({ doc: true, grid: true, ic: true, card: true });
+  }
 });
 test('bg3 icon failure shows fallback', async ({ page }) => {
   await page.route('https://bg3.wiki/**', r => r.abort());
   await page.goto('./#/spells/wizard/3');
-  await expect(page.locator('img[src*="/icons/fallback/"]').first()).toBeVisible();
+  const img = page.locator('.ic', { hasText: 'Magic Missile' }).locator('img');
+  await expect(img).toHaveAttribute('src', /\/icons\/fallback\//);
+  const srcs = await page.locator('.ic img').evaluateAll((els) => els.map((e) => e.getAttribute('src')));
+  expect(srcs.every((s) => s!.includes('/icons/fallback/'))).toBe(true);
 });
 test('class missing from data falls back to start', async ({ page }) => {
   await page.goto('./#/menu/cleric/3');

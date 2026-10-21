@@ -3,6 +3,7 @@ import type { ClassId, Cost, Feature } from '../../data/types';
 import { costBar, damageLine, levelLine, tags } from '../../logic/card';
 import { toHash } from '../../router';
 import { ComponentIcons } from '../ComponentIcons';
+import { Icon } from '../Icon';
 import { Separator } from '../Separator';
 
 const SYMBOL: Record<Cost | 'free', { sym: string; token: string }> = {
@@ -52,11 +53,12 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
       {head}
       <div class="scroller">
         <article class="card">
+          <div class="card-icon"><Icon src={(spell ?? feature)!.icon} fallback={spell ? 'spell' : 'action'} alt="" size={54} /></div>
           <h1 class="card-title">{spell ? spell.name : feature!.name}</h1>
           <div class="card-sub">{spell ? levelLine(spell) : `${source} Feature · Level ${feature!.level}`}</div>
           {dmg && <div class="card-dmg">{dmg.headline}</div>}
           {dmg && <div class="card-dmg-detail">{dmg.detail}</div>}
-          <Separator ornament={''} />
+          <Separator ornament={''} card />
           <div class="card-desc">
             {(spell ? spell.description : feature!.description).map((t, i) => <p key={i}>{t}</p>)}
             {spell?.higherLevels && <p><span class="orn">{'❦'}</span> <i>At Higher Levels.</i> {spell.higherLevels}</p>}
@@ -64,7 +66,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
           {spell && <div class="card-tags">{tags(spell).map((t) => <span key={t}>{t}</span>)}</div>}
           {spell && <ComponentIcons spell={spell} />}
           <div class="card-cost">
-            {bar && <CostItem cost={bar.cost} label={bar.label} />}
+            {bar && <CostItem cost={bar.cost} label={bar.trigger ? `${bar.label}, ${bar.trigger}` : bar.label} />}
             {bar?.slot && <span><span style={{ color: 'var(--cost-slot)' }}>■</span> {bar.slot}</span>}
             {feature && <CostItem cost={feature.cost} label={COST_LABEL[feature.cost] + (extra ? ` · ${extra}` : '')} />}
           </div>

@@ -2,6 +2,7 @@ import { DATA } from '../../data';
 import { CLASS_IDS } from '../../data/validate';
 import { toHash } from '../../router';
 import { GearButton } from '../GearButton';
+import { Icon } from '../Icon';
 import { IosTip } from '../IosTip';
 import type { ClassId } from '../../data/types';
 
@@ -22,7 +23,7 @@ export function Start() {
           return (
             <button type="button" key={id} class="tile" disabled={!c} style={{ '--tile': `var(--${id}-line)` }}
               onClick={() => { location.hash = toHash({ page: 'level', cls: id as ClassId }); }}>
-              {c && <img src={c.plainIcon} alt="" width={36} height={36} />}
+              {c && <Icon src={c.plainIcon} fallback="spell" alt="" size={36} />}
               <span>{c ? c.name : cap(id)}</span>
             </button>
           );

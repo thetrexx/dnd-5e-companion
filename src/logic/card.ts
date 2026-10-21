@@ -39,9 +39,10 @@ export function tags(s: Spell): string[] {
 
 const COST_LABEL: Record<Exclude<Cost, 'other'>, string> = { action: 'Action', bonus: 'Bonus Action', reaction: 'Reaction' };
 
-export function costBar(s: Spell): { cost: Cost; label: string; slot?: string } {
-  const { cost, text } = s.cast;
-  const bar: { cost: Cost; label: string; slot?: string } = { cost, label: cost === 'other' ? text : COST_LABEL[cost] };
+export function costBar(s: Spell): { cost: Cost; label: string; slot?: string; trigger?: string } {
+  const { cost, text, trigger } = s.cast;
+  const bar: { cost: Cost; label: string; slot?: string; trigger?: string } = { cost, label: cost === 'other' ? text : COST_LABEL[cost] };
+  if (cost === 'reaction' && trigger) bar.trigger = trigger;
   if (s.level >= 1) bar.slot = `Level ${s.level} Spell Slot`;
   return bar;
 }

@@ -1,7 +1,7 @@
-export function Separator(p: { label?: string; sub?: string; ornament: string; full?: boolean; color?: string }) {
+export function Separator(p: { label?: string; sub?: string; ornament: string; full?: boolean; card?: boolean; color?: string }) {
   const tint = p.color ? { color: p.color } : undefined;
   return (
-    <div class={`sep${p.full ? ' sep-full' : ''}`}>
+    <div class={`sep${p.full ? ' sep-full' : ''}${p.card ? ' sep-card' : ''}`}>
       <span class="orn" aria-hidden="true" style={tint}>{p.ornament}</span>
       <span class="ln" style={tint} />
       {p.label && <span class="sep-label">{p.label}</span>}

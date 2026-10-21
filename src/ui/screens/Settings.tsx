@@ -2,14 +2,14 @@ import { useState } from 'preact/hooks';
 import { THEMES, applyTheme } from '../../theme/themes';
 import { STRENGTHS, applyStrength, loadSettings, reducedMotion, saveSettings } from '../../settings/settings';
 import type { Settings as SettingsData } from '../../settings/settings';
+import { lastInAppRoute } from '../../lastRoute';
 import { Separator } from '../Separator';
 
 const ORN = '☙';
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
 
 function goBack() {
-  if (history.length > 1) history.back();
-  else location.hash = '#/';
+  location.hash = lastInAppRoute() ?? '#/';
 }
 
 export function Settings() {

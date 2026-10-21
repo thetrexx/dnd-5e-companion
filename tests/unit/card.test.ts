@@ -37,6 +37,10 @@ test('costBar', () => {
   expect(costBar(get('fire-bolt')).slot).toBeUndefined();
   expect(costBar(get('misty-step')).label).toBe('Bonus Action');
 });
+test('costBar reaction carries its trigger, others do not', () => {
+  expect(costBar(get('shield')).trigger).toBe('which you take when you are hit by an attack or targeted by the magic missile spell');
+  expect(costBar(mm).trigger).toBeUndefined();
+});
 test('componentInfo', () => {
   const fb = componentInfo(get('fireball'));
   expect(fb.m!.body).toContain('bat guano');

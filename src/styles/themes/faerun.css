@@ -33,8 +33,9 @@
   --card-cost-line:#3c342a;
   --cost-action:#5fbf6a;
   --cost-bonus:#f0a64a;
-  --cost-reaction:#7fc4ff;
-  --cost-slot:#c8bba3;
+  --cost-reaction:#e070b8;
+  --cost-slot:#7fc4ff;
+  --card-sep-line:linear-gradient(90deg,var(--accent),color-mix(in srgb,var(--accent) 60%,transparent) 50%,var(--accent));
   --font-body:'Inknut Antiqua',Georgia,serif;
   --font-desc:'Inknut Antiqua',Georgia,serif;
   --font-title:'IM Fell English',Georgia,serif;

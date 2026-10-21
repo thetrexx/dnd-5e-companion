@@ -6,7 +6,7 @@
 
 **Architecture:** Vite + Preact + TypeScript single-page app with hash routing, published to GitHub Pages as static files. All game content is JSON under `data/`, typed and validated at build and test time. Screen logic (which rows, which sections, what the card says) lives in pure functions under `src/logic/` so it is unit-tested without a browser; Preact components under `src/ui/` only render it. Every colour, font and strength lives in `src/styles/themes/faerun.css`.
 
-**Tech Stack:** Vite 5, Preact 10, TypeScript 5 (strict), Vitest + @testing-library/preact + jsdom, Playwright (Chromium, phone viewport), GitHub Actions + GitHub Pages.
+**Tech Stack:** Vite 8, Preact 11, TypeScript 7 (strict), Vitest + @testing-library/preact + jsdom, Playwright (Chromium, phone viewport), GitHub Actions + GitHub Pages.
 
 **Spec:** `docs/superpowers/specs/2026-10-21-dnd-cheatsheet-design.md`. Visual reference: `docs/superpowers/mockups/final.html` (lift colours, sizes and CSS from it).
 

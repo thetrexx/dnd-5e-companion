@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'preact/hooks';
 import { DATA } from './data';
+import { rememberRoute } from './lastRoute';
 import { parseHash } from './router';
 import { Start } from './ui/screens/Start';
 import { LevelPicker } from './ui/screens/LevelPicker';
@@ -12,7 +13,12 @@ import { Card } from './ui/screens/Card';
 export function App() {
   const [hash, setHash] = useState(location.hash);
   useEffect(() => {
-    const on = () => setHash(location.hash);
+    let current = location.hash;
+    const on = () => {
+      rememberRoute(current);
+      current = location.hash;
+      setHash(current);
+    };
     addEventListener('hashchange', on);
     return () => removeEventListener('hashchange', on);
   }, []);
