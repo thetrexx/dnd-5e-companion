@@ -7,6 +7,14 @@ export function readJSON<T>(key: string, fallback: T): T {
   }
 }
 
+export function removeKey(key: string): void {
+  try {
+    localStorage.removeItem(key);
+  } catch {
+    /* blocked storage: nothing to remove */
+  }
+}
+
 export function writeJSON(key: string, value: unknown): boolean {
   try {
     localStorage.setItem(key, JSON.stringify(value));
