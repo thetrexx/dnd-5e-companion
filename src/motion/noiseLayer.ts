@@ -12,7 +12,7 @@ const context = (cv: HTMLCanvasElement): CanvasRenderingContext2D | null => {
 
 // a noise field drawn at low resolution and scaled up soft; e is the gather / hang / fade envelope
 export function runNoise(cv: HTMLCanvasElement, host: Element, o: NoiseOptions): () => void {
-  const { width: W, height: H } = host.getBoundingClientRect(), w = Math.ceil(W / o.scale), h = Math.ceil(H / o.scale);
+  const { width: W, height: H } = host.getBoundingClientRect(), w = Math.max(1, Math.ceil(W / o.scale)), h = Math.max(1, Math.ceil(H / o.scale));
   cv.width = w; cv.height = h;
   const ctx = context(cv);
   if (!ctx) return () => {};
@@ -21,17 +21,21 @@ export function runNoise(cv: HTMLCanvasElement, host: Element, o: NoiseOptions):
     o.paint(img.data, w, h, t, e, W, H); ctx.putImageData(img, 0, 0); o.tick?.(t, e, dt);
   };
   if (!o.animate) { render(0, 1, 0); return () => {}; }
-  let id = 0, stopped = false, t0 = -1, last = -Infinity, prev = -1, paused = 0, hiddenAt = -1;
+  let id = 0, stopped = false, t0 = -1, last = -Infinity, prevEl = -1, paused = 0, hiddenAt = -1, seen = -1;
   const frame = (now: number) => {
     if (stopped || !o.alive()) return;
     id = requestAnimationFrame(frame);
+    // browsers suspend rAF in hidden tabs, so a long gap between callbacks counts as paused too
+    const gap = seen < 0 ? 0 : now - seen;
+    seen = now;
     if (document.hidden) { if (hiddenAt < 0) hiddenAt = now; return; }
+    if (gap > 1000 && hiddenAt < 0 && t0 >= 0) paused += gap;
     if (hiddenAt >= 0) { if (t0 >= 0) paused += now - hiddenAt; hiddenAt = -1; }
     if (now - last < 40) return;
     if (t0 < 0) t0 = now;
     const el = now - t0 - paused;
-    render(el / 1000, envelope((el % o.period) / o.period), prev < 0 ? 0 : (now - prev) / 1000);
-    last = prev = now;
+    render(el / 1000, envelope((el % o.period) / o.period), prevEl < 0 ? 0 : (el - prevEl) / 1000);
+    last = now; prevEl = el;
   };
   id = requestAnimationFrame(frame);
   return () => { if (stopped) return; stopped = true; cancelAnimationFrame(id); };

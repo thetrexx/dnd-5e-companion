@@ -77,11 +77,33 @@ test('hidden time is excluded and nothing paints while hidden; stop cancels', ()
   setHidden(true); step(100); step(5000);
   expect(o.paint).toHaveBeenCalledTimes(1);
   setHidden(false); step(5100);
-  expect(o.paint.mock.calls[1][3]).toBeCloseTo(.1 - 0, 5); // 5100 - 5000 hidden since 100
+  expect(o.paint.mock.calls[1][3]).toBeCloseTo(.1, 5); // 5100 - 5000 hidden since 100
   stop(); stop();
   expect(caf).toHaveBeenCalledTimes(1);
   step(5200);
   expect(o.paint).toHaveBeenCalledTimes(2);
+});
+
+test('long gap between frames (rAF suspended in hidden tab) is not elapsed time', () => {
+  const o = opts(), { host, cv } = setup();
+  runNoise(cv, host, o);
+  step(0); step(45); step(60045);
+  const t = o.paint.mock.calls.map((c: number[]) => c[3]);
+  expect(t[2]).toBeGreaterThanOrEqual(.045);
+  expect(t[2]).toBeLessThan(.045 + .1);
+});
+
+test('hidden before the first painted frame: no negative elapsed', () => {
+  const o = opts(), { host, cv } = setup();
+  runNoise(cv, host, o);
+  setHidden(true); step(100); setHidden(false); step(5000);
+  expect(o.paint.mock.calls[0][3]).toBe(0);
+});
+
+test('zero-size host still gets a 1x1 canvas', () => {
+  const { host, cv } = setup(0, 0);
+  runNoise(cv, host, opts());
+  expect([cv.width, cv.height]).toEqual([1, 1]);
 });
 
 test('alive() false ends the loop without painting', () => {
