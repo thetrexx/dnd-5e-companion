@@ -1,4 +1,4 @@
-import { useState } from 'preact/hooks';
+import { useEffect, useState } from 'preact/hooks';
 import type { Character } from '../../../character/types';
 import { charSpellSections, hasPickedSpells } from '../../../character/view';
 import { toHash } from '../../../router';
@@ -10,15 +10,13 @@ const has = (ch: Character, view: SpellView, section: string) => charSpellSectio
 
 export function MeSpells(p: { ch: Character; section?: string }) {
   const picked = hasPickedSpells(p.ch);
-  const [pref, setPref] = useState<SpellView>(() => {
-    const s = loadSettings();
-    // a jump to a section My hides opens All, and keeps it
-    if (picked && p.section && s.spellView === 'mine' && !has(p.ch, 'mine', p.section) && has(p.ch, 'all', p.section)) {
-      saveSettings({ ...s, spellView: 'all' });
-      return 'all';
-    }
-    return s.spellView;
-  });
+  // a jump to a section My hides opens All, and keeps it
+  const hidden = () => picked && !!p.section && loadSettings().spellView === 'mine'
+    && !has(p.ch, 'mine', p.section) && has(p.ch, 'all', p.section);
+  const [pref, setPref] = useState<SpellView>(() => (hidden() ? 'all' : loadSettings().spellView));
+  useEffect(() => {
+    if (hidden()) { saveSettings({ ...loadSettings(), spellView: 'all' }); setPref('all'); }
+  }, [p.section, p.ch]);
   const view: SpellView = picked ? pref : 'all';
   const set = (v: SpellView) => { saveSettings({ ...loadSettings(), spellView: v }); setPref(v); };
   const btn = (v: SpellView, label: string) => (

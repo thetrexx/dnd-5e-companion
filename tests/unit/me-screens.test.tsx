@@ -1,4 +1,4 @@
-import { fireEvent, render } from '@testing-library/preact';
+import { cleanup, fireEvent, render } from '@testing-library/preact';
 import { App } from '../../src/app';
 import { saveCharacter } from '../../src/character/store';
 import { emptyCharacter } from '../../src/character/types';
@@ -33,6 +33,14 @@ test('jumping to a section My hides switches to All', () => {
   render(<MeSpells ch={lyra} section="lvl-2-sorcerer" />);
   expect(loadSettings().spellView).toBe('all');
 });
+test('changing section later switches to All; a visible section stays on My', () => {
+  const r = render(<MeSpells ch={lyra} section="lvl-1-sorcerer" />);
+  expect(loadSettings().spellView).toBe('mine');
+  expect(r.getByRole('button', { name: 'My spells' }).getAttribute('aria-pressed')).toBe('true');
+  r.rerender(<MeSpells ch={lyra} section="lvl-2-sorcerer" />);
+  expect(r.getByRole('button', { name: 'All' }).getAttribute('aria-pressed')).toBe('true');
+  expect(loadSettings().spellView).toBe('all');
+});
 test('no picked spells: all spells, no toggle', () => {
   const r = render(<MeSpells ch={{ ...lyra, spells: [] }} />);
   expect(r.queryByRole('button', { name: 'All' })).toBeNull();
@@ -48,8 +56,9 @@ test('start tile', () => {
   fireEvent.click(r.getByText('My Character Sheet'));
   expect(location.hash).toBe('#/edit/basics');
   saveCharacter(lyra);
+  cleanup();
   const r2 = render(<Start />);
-  fireEvent.click(r2.getAllByText('My Character Sheet').at(-1)!);
+  fireEvent.click(r2.getByText('My Character Sheet'));
   expect(location.hash).toBe('#/me');
 });
 test('me routes without a character never crash', () => {
