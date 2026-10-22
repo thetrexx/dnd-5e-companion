@@ -63,3 +63,4 @@ export type Route =
   | { page: 'menu'; cls: ClassId; level: number; sub?: string }
   | { page: 'spells'|'actions'; cls: ClassId; level: number; sub?: string; section?: string }
   | { page: 'card'; kind: 'spell'|'feature'; id: string; cls: ClassId; level: number; sub?: string };
+export type EditStep = 'basics' | 'classes' | 'options' | 'feats' | 'spells';
