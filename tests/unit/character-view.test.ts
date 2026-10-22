@@ -1,4 +1,4 @@
-import { charSpellSections } from '../../src/character/view';
+import { charActionSections, charMenuRows, charSpellSections } from '../../src/character/view';
 import { emptyCharacter } from '../../src/character/types';
 import type { CharClass, Character } from '../../src/character/types';
 
@@ -40,4 +40,31 @@ test('non-caster: race and feature spells get their own sections', () => {
   expect(ids.some(i => i.endsWith('-monk'))).toBe(false);
   const dark = charSpellSections(ch([{ cls: 'barbarian', level: 3 }], { race: 'tiefling' }), 'all').find(x => x.id === 'lvl-2-race-tiefling')!;
   expect(dark.locked).toBe('Unlocks at character level 5');
+});
+test('character action sections', () => {
+  const c = ch([{ cls: 'fighter', level: 3, sub: 'battle-master' }, { cls: 'sorcerer', level: 3 }],
+    { race: 'dragonborn', feats: ['sentinel'], options: ['fighting-style-defense', 'maneuvers-trip-attack', 'metamagic-quickened-spell', 'draconic-ancestry-red'] });
+  const ids = charActionSections(c).map(s => s.id);
+  expect(ids).toEqual(['actions', 'bonus', 'reactions', 'class-fighter', 'subclass-fighter', 'opt-maneuvers', 'class-sorcerer', 'opt-metamagic', 'race', 'feats']);
+  expect(charActionSections(c).find(s => s.id === 'race')!.title).toBe('Dragonborn Actions');
+  expect(charActionSections(c).find(s => s.id === 'opt-metamagic')!.items.map(i => i.id)).toEqual(['metamagic-quickened-spell']);
+});
+test('single-class menu', () => {
+  const rows = charMenuRows(lyra);
+  expect(rows.map(r => r.label).slice(0, 8)).toEqual(['Actions', 'Bonus Actions', 'Reactions', 'Sorcerer Actions', 'MAGIC', 'Cantrips', 'Level 1 Spells', 'Level 2 Spells']);
+  expect(rows.find(r => r.label === 'Level 4 Spells')!.dimmed).toBe(true);
+  expect(rows.find(r => r.label === 'Level 1 Spells')!.target).toEqual({ page: 'me-spells', section: 'lvl-1-sorcerer' });
+  expect(rows.at(-1)).toMatchObject({ label: 'Tiefling Spells', target: { page: 'me-spells', section: 'cantrips-race-tiefling' } });
+});
+test('multiclass menu with a non-caster first', () => {
+  const rows = charMenuRows(ch([{ cls: 'fighter', level: 2 }, { cls: 'wizard', level: 3, mod: 3 }]));
+  expect(rows.filter(r => r.kind === 'class').map(r => r.label)).toEqual(['Fighter Actions', 'Wizard Actions']);
+  expect(rows.filter(r => r.kind === 'spells').every(r => r.motif === 'wizard')).toBe(true);
+  expect(rows.find(r => r.kind === 'cantrips')!.label).toBe('Cantrips');
+  const two = charMenuRows(ch([{ cls: 'sorcerer', level: 3 }, { cls: 'druid', level: 2 }]));
+  expect(two.filter(r => r.kind === 'spells').slice(0, 2).map(r => r.label)).toEqual(['Level 1 Sorcerer Spells', 'Level 1 Druid Spells']);
+});
+test('non-caster with racial spells gets a spells row', () => {
+  const rows = charMenuRows(ch([{ cls: 'barbarian', level: 3 }], { race: 'tiefling' }));
+  expect(rows.map(r => r.label)).toEqual(['Actions', 'Bonus Actions', 'Reactions', 'Barbarian Actions', 'MAGIC', 'Tiefling Spells']);
 });

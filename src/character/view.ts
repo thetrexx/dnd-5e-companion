@@ -1,17 +1,22 @@
 import { DATA } from '../data';
-import type { ClassId, Spell } from '../data/types';
+import type { ClassId, Feature, Route, Spell } from '../data/types';
+import { genericRows } from '../logic/menu';
+import type { MenuRow } from '../logic/menu';
+import { genericSections } from '../logic/sections';
 import type { Section } from '../logic/sections';
 import { listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
-import { castingInfo } from './derive';
+import { castingInfo, raceChain } from './derive';
 import { autoSpells, grantSources } from './grants';
 import type { GrantSource } from './grants';
-import type { Character } from './types';
+import { optionSlots } from './options';
+import type { OptionSlot } from './options';
+import type { CharClass, Character } from './types';
 
 interface Entry { spell: Spell; tag?: string; mine: boolean; locked: boolean; atLevel: number }
-/** Where spells are shown: a casting class, or a race / feat / feature of its own. */
-interface Place { key: string; subtitle: string; motif?: ClassId; entries: Entry[]; lock: (n: number, es: Entry[]) => string | undefined }
+/** Where spells are shown: a casting class, or a race / feat / feature of its own (`source` set). */
+interface Place { key: string; subtitle: string; motif?: ClassId; source?: GrantSource; entries: Entry[]; lock: (n: number, es: Entry[]) => string | undefined }
 
 const className = (id: ClassId) => DATA.classes.find(c => c.id === id)?.name ?? id;
 
@@ -55,7 +60,7 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
 function sourcePlace(s: GrantSource): Place {
   const byChar = s.key.startsWith('race:') || s.key.startsWith('feat:') || !s.cls;
   return {
-    key: s.key.replace(/:/g, '-'), subtitle: s.title, entries: [],
+    key: s.key.replace(/:/g, '-'), subtitle: s.title, source: s, entries: [],
     lock: (_, es) => {
       if (!es.every(e => e.locked)) return undefined;
       const at = Math.min(...es.map(e => e.atLevel));
@@ -64,7 +69,8 @@ function sourcePlace(s: GrantSource): Place {
   };
 }
 
-export function charSpellSections(ch: Character, view: SpellView): Section[] {
+/** Places in display order, and the sections built from them (by level, then place). */
+function spellLayout(ch: Character, view: SpellView): { places: Place[]; sections: { place: Place; sec: Section }[] } {
   const classes = new Map<ClassId, Place>();
   ch.classes.forEach((cc, i) => { const p = !classes.has(cc.cls) && classPlace(ch, i, view); if (p) classes.set(cc.cls, p); });
   const sources = grantSources(ch);
@@ -91,7 +97,7 @@ export function charSpellSections(ch: Character, view: SpellView): Section[] {
     place.entries.push({ spell: a.spell, tag, mine: a.unlocked, locked: !a.unlocked, atLevel: a.atLevel });
   }
   const places = [...classes.values(), ...sources.flatMap(s => own.get(s.key) ?? [])];
-  const out: Section[] = [];
+  const out: { place: Place; sec: Section }[] = [];
   for (let n = 0; n <= 9; n++) {
     for (const pl of places) {
       const merged = new Map<string, Entry>();
@@ -112,8 +118,101 @@ export function charSpellSections(ch: Character, view: SpellView): Section[] {
       if (view === 'all') sec.mine = es.filter(e => e.mine).map(e => e.spell.id);
       const locked = pl.lock(n, es);
       if (locked) sec.locked = locked;
-      out.push(sec);
+      out.push({ place: pl, sec });
     }
   }
+  return { places, sections: out };
+}
+
+export function charSpellSections(ch: Character, view: SpellView): Section[] {
+  return spellLayout(ch, view).sections.map(x => x.sec);
+}
+
+const chosenActions = (slot: OptionSlot): Feature[] => slot.chosen
+  .flatMap(id => DATA.features.find(f => f.id === id) ?? [])
+  .filter(f => f.cost !== 'passive' && (f.prereq?.level ?? 0) <= slot.level);
+
+/** Class, subclass (when it has cards) and option sections of one class. */
+function classActions(cc: CharClass, slots: OptionSlot[]): Section[] {
+  const c = DATA.classes.find(x => x.id === cc.cls);
+  if (!c) return [];
+  const s = effectiveSub(cc.cls, cc.level, cc.sub);
+  const features = (kind: 'class' | 'subclass', id: string) =>
+    DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive');
+  const out: Section[] = [{ id: `class-${cc.cls}`, title: `${c.name} Actions`, motif: cc.cls, items: features('class', cc.cls) }];
+  const subItems = s ? features('subclass', s.id) : [];
+  if (s && subItems.length) out.push({ id: `subclass-${cc.cls}`, title: s.name, motif: cc.cls, items: subItems });
+  for (const slot of slots) {
+    const items = slot.cls === cc.cls ? chosenActions(slot) : [];
+    if (items.length) out.push({ id: `opt-${slot.group.id}`, title: slot.group.name, motif: cc.cls, items });
+  }
   return out;
+}
+
+/** Race and feat sections, each only when it has cards. */
+function otherActions(ch: Character, slots: OptionSlot[]): Section[] {
+  const out: Section[] = [];
+  const chain = raceChain(ch.race);
+  const race = [
+    ...DATA.features.filter(f => f.source.kind === 'race' && chain.some(r => r.id === f.source.id) && f.cost !== 'passive'),
+    ...slots.filter(s => !s.cls).flatMap(chosenActions),
+  ];
+  if (race.length) out.push({ id: 'race', title: `${chain[0].name} Actions`, items: race });
+  const feats = [...new Set(ch.feats)].flatMap(id => DATA.features.filter(f => f.source.kind === 'feat' && f.source.id === id && f.cost !== 'passive'));
+  if (feats.length) out.push({ id: 'feats', title: 'Feats', items: feats });
+  return out;
+}
+
+export function charActionSections(ch: Character): Section[] {
+  const slots = optionSlots(ch);
+  return [...genericSections(), ...ch.classes.flatMap(cc => classActions(cc, slots)), ...otherActions(ch, slots)];
+}
+
+function sourceIcon(s: GrantSource): MenuRow['icon'] {
+  const [kind, id] = s.key.split(':');
+  if (kind === 'race') return { type: 'img', src: DATA.races.find(r => r.id === id)?.icon };
+  if (kind === 'feat') return { type: 'img', src: DATA.feats.find(f => f.id === id)?.icon };
+  return undefined;
+}
+
+export function charMenuRows(ch: Character): MenuRow[] {
+  const actions = (section: string): Route => ({ page: 'me-actions', section });
+  const spells = (section: string): Route => ({ page: 'me-spells', section });
+  const slots = optionSlots(ch);
+  const rows = genericRows(actions);
+  for (const cc of ch.classes) {
+    const c = DATA.classes.find(x => x.id === cc.cls);
+    if (!c) continue;
+    // the class row lands on the first class, subclass or option section that has cards
+    const first = classActions(cc, slots).find(x => x.items.length > 0)?.id ?? `class-${cc.cls}`;
+    const icon = effectiveSub(cc.cls, cc.level, cc.sub)?.hotbarIcon ?? c.hotbarIcon;
+    rows.push({ kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: icon }, target: actions(first) });
+  }
+  const raceIcon = raceChain(ch.race)[0]?.icon;
+  for (const sec of otherActions(ch, slots)) {
+    rows.push({ kind: 'class', label: sec.title, icon: { type: 'img', src: sec.id === 'race' ? raceIcon : undefined }, target: actions(sec.id) });
+  }
+  const { places, sections } = spellLayout(ch, 'all');
+  if (sections.length === 0) return rows;
+  rows.push({ kind: 'separator', label: 'MAGIC' });
+  const casters = ch.classes.flatMap(cc => { const info = castingInfo(cc); return info ? [{ cc, info }] : []; });
+  for (let n = 0; n <= 9; n++) {
+    for (const { cc, info } of casters) {
+      const id = `${n === 0 ? 'cantrips' : `lvl-${n}`}-${cc.cls}`;
+      // past the ceiling only for a spell of the character's own there (e.g. Mystic Arcanum)
+      if (n > info.ceiling && !sections.some(x => x.sec.id === id && x.sec.mine?.length)) continue;
+      const name = casters.length === 1 ? '' : `${className(cc.cls)} `;
+      rows.push(n === 0
+        ? { kind: 'cantrips', label: `${name}Cantrips`, icon: { type: 'img', src: DATA.classes.find(x => x.id === info.list)?.plainIcon },
+            target: spells(id), dimmed: info.cantrips === 0, motif: info.list }
+        : { kind: 'spells', label: `Level ${n} ${name}Spells`, icon: info.pact ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },
+            target: spells(id), dimmed: n > info.maxLevel, motif: info.list });
+    }
+  }
+  // grant sources standing alone (race, feat, feature): one row each, onto its first section
+  for (const pl of places) {
+    const first = pl.source && sections.find(x => x.place === pl);
+    if (first) rows.push({ kind: 'spells', label: `${pl.source!.title} Spells`, icon: sourceIcon(pl.source!), target: spells(first.sec.id) });
+  }
+  return rows;
 }

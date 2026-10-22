@@ -78,14 +78,21 @@ function optionItems(groupId: string, level: number): Feature[] {
     && (f.prereq?.level ?? 1) <= level && (!g.only || g.only.includes(f.id)));
 }
 
-export function actionSections(cls: ClassId, level: number, sub?: string): Section[] {
-  const c = DATA.classes.find(x => x.id === cls)!;
-  const s = effectiveSub(cls, level, sub);
+/** Actions, Bonus Actions and Reactions anyone can take. */
+export function genericSections(): Section[] {
   const generic = (cost: Feature['cost']) => DATA.features.filter(f => f.source.kind === 'generic' && f.cost === cost);
-  const out: Section[] = [
+  return [
     { id: 'actions', title: 'Actions', items: generic('action') },
     { id: 'bonus', title: 'Bonus Actions', items: generic('bonus') },
     { id: 'reactions', title: 'Reactions', items: generic('reaction') },
+  ];
+}
+
+export function actionSections(cls: ClassId, level: number, sub?: string): Section[] {
+  const c = DATA.classes.find(x => x.id === cls)!;
+  const s = effectiveSub(cls, level, sub);
+  const out: Section[] = [
+    ...genericSections(),
     {
       id: 'class', title: `${c.name} Actions`, motif: cls,
       items: DATA.features.filter(f => f.source.kind === 'class' && f.source.id === cls && f.level <= level && f.cost !== 'passive'),

@@ -18,6 +18,15 @@ export interface MenuRow {
   motif?: ClassId;
 }
 
+/** Actions, Bonus Actions and Reactions rows; `to` maps a section id to the route. */
+export function genericRows(to: (section: string) => Route): MenuRow[] {
+  return [
+    { kind: 'actions', label: 'Actions', icon: { type: 'img', src: ACTION_ICON }, target: to('actions') },
+    { kind: 'bonus', label: 'Bonus Actions', icon: { type: 'img', src: BONUS_ACTION_ICON }, target: to('bonus') },
+    { kind: 'reactions', label: 'Reactions', icon: { type: 'img', src: REACTION_ICON }, target: to('reactions') },
+  ];
+}
+
 export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
   const c = DATA.classes.find(x => x.id === cls)!;
   const s = effectiveSub(cls, level, sub);
@@ -27,9 +36,7 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
   const classSection = actionSections(cls, level, s?.id)
     .find(x => (x.id === 'class' || x.id === 'subclass' || x.id.startsWith('opt-')) && x.items.length > 0)?.id ?? 'class';
   const rows: MenuRow[] = [
-    { kind: 'actions', label: 'Actions', icon: { type: 'img', src: ACTION_ICON }, target: to('actions', 'actions') },
-    { kind: 'bonus', label: 'Bonus Actions', icon: { type: 'img', src: BONUS_ACTION_ICON }, target: to('actions', 'bonus') },
-    { kind: 'reactions', label: 'Reactions', icon: { type: 'img', src: REACTION_ICON }, target: to('actions', 'reactions') },
+    ...genericRows(section => to('actions', section)),
     { kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: s?.hotbarIcon ?? c.hotbarIcon }, target: to('actions', classSection) },
   ];
   // Subclass casting (Eldritch Knight, Arcane Trickster) on a non-caster class.
