@@ -106,3 +106,29 @@ test('high elf cantrip in the basics step', () => {
   fireEvent.click(r.getByText('Light'));
   expect(loadCharacter()!.spells).toEqual([{ id: 'light', grant: 'race:high-elf:0' }]);
 });
+test('spells step: guidance, picks and always prepared', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 1, sub: 'life-domain' }] });
+  const r = render(<Editor step="spells" />);
+  fireEvent.input(r.getByLabelText('WIS modifier'), { target: { value: '3' } });
+  expect(r.getByText(/Spells 0 of 4 prepared/)).toBeTruthy();
+  expect(r.getByText('Always prepared')).toBeTruthy();
+  fireEvent.click(r.getAllByText('Guidance')[0]);
+  expect(loadCharacter()!.spells).toEqual([{ id: 'guidance', cls: 'cleric' }]);
+  expect(loadCharacter()!.classes[0].mod).toBe(3);
+});
+test('spells step: another list', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'bard', level: 10 }] });
+  const r = render(<Editor step="spells" />);
+  fireEvent.input(r.getByLabelText('Add a spell from another list'), { target: { value: 'fireb' } });
+  fireEvent.click(r.getByText('Fireball'));
+  expect(loadCharacter()!.spells).toEqual([{ id: 'fireball', cls: 'bard', extra: true }]);
+});
+test('spells step: over the limit and non-casters', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }] });
+  const r = render(<Editor step="spells" />);
+  expect(r.getByText('None of your classes cast spells.')).toBeTruthy();
+  cleanup();
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'bard', level: 1 }], spells: [{ id: 'light', cls: 'bard' }, { id: 'mage-hand', cls: 'bard' }, { id: 'vicious-mockery', cls: 'bard' }] });
+  const r2 = render(<Editor step="spells" />);
+  expect(r2.getByText(/Cantrips 3 of 2 more than usual/)).toBeTruthy();
+});
