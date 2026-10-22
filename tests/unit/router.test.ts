@@ -16,3 +16,6 @@ test('subclass segment', () => {
   for (const r of [{ page: 'card', kind: 'spell', id: 'bless', cls: 'cleric', level: 5, sub: 'life-domain' }, { page: 'subclass', cls: 'wizard', level: 2 }] as Route[])
     expect(parseHash(toHash(r))).toEqual(r);
 });
+test.each(['#/me', '#/me/spells', '#/me/spells?s=lvl-1-sorcerer', '#/me/actions?s=class-fighter', '#/me/card/spell/fire-bolt?s=cantrips-sorcerer', '#/me/card/feature/second-wind', '#/edit/basics', '#/edit/spells'])
+  ('round-trips %s', h => expect(toHash(parseHash(h))).toBe(h));
+test.each(['#/edit/nope', '#/edit', '#/me/x', '#/me/card/spell', '#/me/card/thing/x'])('bad %s falls back', h => expect(parseHash(h)).toEqual({ page: 'start' }));

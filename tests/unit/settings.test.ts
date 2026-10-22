@@ -14,3 +14,11 @@ test('writes never throw when storage is full', () => {
   vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('quota'); });
   expect(() => saveSettings(DEFAULT_SETTINGS)).not.toThrow();
 });
+
+test('spellView defaults to mine, round trips, bad value falls back', () => {
+  expect(loadSettings().spellView).toBe('mine');
+  saveSettings({ ...DEFAULT_SETTINGS, spellView: 'all' });
+  expect(loadSettings().spellView).toBe('all');
+  localStorage.setItem('dndcs.settings', JSON.stringify({ ...DEFAULT_SETTINGS, spellView: 'everything' }));
+  expect(loadSettings().spellView).toBe('mine');
+});
