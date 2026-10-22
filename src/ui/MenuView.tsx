@@ -5,13 +5,14 @@ import { WARLOCK_SLOT_ICON } from '../logic/menu';
 import { toHash } from '../router';
 import { GearButton } from './GearButton';
 import { Icon } from './Icon';
+import { RowMotif } from './RowMotif';
 import { Separator } from './Separator';
 
 export const SLOT_ICON = 'https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png';
 
 function rowStyle(r: MenuRow) {
   const base = r.motif ? `var(--${r.motif})` : 'var(--accent)';
-  const amount = r.motif ? `calc(var(--${r.motif}-row-o) * var(--row-motif-scale))` : 'var(--row-wash)';
+  const amount = r.motif ? `calc(var(--${r.motif}-row-o) * var(--row-motif-scale) * var(--motion-i, 1))` : 'calc(var(--row-wash) * var(--motion-i, 1))';
   return { background: `linear-gradient(90deg, color-mix(in srgb, ${base} ${amount}, var(--surface)), var(--surface) 80%)` };
 }
 
@@ -42,6 +43,7 @@ export function MenuView(p: {
           ) : (
             <a key={r.kind + r.label} class={`row${r.dimmed ? ' dim' : ''}`} style={rowStyle(r)}
               href={r.target ? toHash(r.target) : undefined}>
+              {r.motif && <RowMotif cls={r.motif} />}
               <span class="rl">
                 {r.icon?.type === 'slot' ? (
                   <SlotIcon level={r.icon.level} warlock={r.icon.warlock} />

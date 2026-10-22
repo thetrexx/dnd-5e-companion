@@ -22,3 +22,8 @@ test('no colour literals outside theme files', () => {
   }
   expect(offenders, `stray colours at: ${offenders.join(', ')}`).toEqual([]);
 });
+
+test('the strength scale is always read with a fallback', () => {
+  const offenders = walk(SRC).filter((f) => /\.(ts|tsx|css)$/.test(f) && readFileSync(f, 'utf8').includes('var(--motion-i)'));
+  expect(offenders.map((f) => relative(process.cwd(), f))).toEqual([]);
+});

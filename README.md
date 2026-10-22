@@ -1,6 +1,6 @@
 # Spellbook & Steel — a D&D 5e companion
 
-> **Work in progress.** All 12 classes, 40 subclasses, 361 spells, class options, races and feats are in. Every card is a short summary in our own words with the PHB page for the full rules. The animated class backgrounds are still being built.
+> **Work in progress.** All 12 classes, 40 subclasses, 361 spells, class options, races and feats are in. Every card is a short summary in our own words with the PHB page for the full rules.
 
 A phone-first cheat sheet for D&D 5e (2014 Player's Handbook rules). Players pick their class and level and get quick access to their actions, reactions, cantrips and spells, each with a BG3-style card showing the description, cost, components and dice. The paper character sheet stays the source of truth; this is only a lookup.
 
@@ -32,6 +32,10 @@ Every push to `main` runs `.github/workflows/deploy.yml`: it installs dependenci
 ## Themes
 
 Colours live only in `src/styles/themes/`. To add a theme, copy `faerun.css` to a new file, change the selector and the tokens, and add the theme to `THEMES` in `src/theme/themes.ts` so it shows in Settings. A unit test fails if a colour is written anywhere else under `src/`.
+
+## Motion
+
+Spell rows and class backgrounds carry animated patterns; the Animation setting scales them (Faint, Medium, Strong), and Off removes the patterns entirely to save battery. The phone's reduced-motion setting shows them still.
 
 ## Credits
 

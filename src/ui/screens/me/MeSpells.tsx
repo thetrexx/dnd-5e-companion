@@ -14,9 +14,11 @@ export function MeSpells(p: { ch: Character; section?: string }) {
   const hidden = () => picked && !!p.section && loadSettings().spellView === 'mine'
     && !has(p.ch, 'mine', p.section) && has(p.ch, 'all', p.section);
   const [pref, setPref] = useState<SpellView>(() => (hidden() ? 'all' : loadSettings().spellView));
+  // keyed on the character's content: a re-render with an equal character must not force All again
+  const chKey = JSON.stringify(p.ch);
   useEffect(() => {
     if (hidden()) { saveSettings({ ...loadSettings(), spellView: 'all' }); setPref('all'); }
-  }, [p.section, p.ch]);
+  }, [p.section, chKey]);
   const view: SpellView = picked ? pref : 'all';
   const set = (v: SpellView) => { saveSettings({ ...loadSettings(), spellView: v }); setPref(v); };
   const btn = (v: SpellView, label: string) => (

@@ -16,9 +16,19 @@ import { MeMenu } from './ui/screens/me/MeMenu';
 import { MeSpells } from './ui/screens/me/MeSpells';
 import { MeActions } from './ui/screens/me/MeActions';
 import { MeCard } from './ui/screens/me/MeCard';
+import { Background } from './ui/Background';
+import { backgroundClass } from './logic/background';
+import { motionMode } from './motion/mode';
+import { SETTINGS_EVENT, loadSettings } from './settings/settings';
+import type { Route } from './data/types';
+import type { Character } from './character/types';
+
+const bgInputs = () => { const s = loadSettings(); return `${s.theme}|${s.strength}`; };
 
 export function App() {
   const [hash, setHash] = useState(location.hash);
+  // a saved theme or strength re-renders, so the background follows it at once; other saves leave the screens alone
+  const [, setBgInputs] = useState(bgInputs);
   useEffect(() => {
     let current = location.hash;
     const on = () => {
@@ -26,13 +36,26 @@ export function App() {
       current = location.hash;
       setHash(current);
     };
+    const saved = () => setBgInputs(bgInputs());
     addEventListener('hashchange', on);
-    return () => removeEventListener('hashchange', on);
+    addEventListener(SETTINGS_EVENT, saved);
+    return () => { removeEventListener('hashchange', on); removeEventListener(SETTINGS_EVENT, saved); };
   }, []);
   const r = parseHash(hash);
+  const ch = r.page === 'me' || r.page.startsWith('me-') ? loadCharacter() : null;
+  // one background behind every screen: it persists across navigation and restarts only when its key changes
+  const kind = backgroundClass(r, ch), theme = loadSettings().theme;
+  return (
+    <>
+      <Background key={`${kind}|${theme}|${motionMode()}`} kind={kind} theme={theme} />
+      {screen(r, ch)}
+    </>
+  );
+}
+
+function screen(r: Route, ch: Character | null) {
   if (r.page === 'edit') return <Editor step={r.step} />;
   if (r.page === 'me' || r.page.startsWith('me-')) {
-    const ch = loadCharacter();
     if (!ch || ch.classes.length === 0) return <Editor step={ch ? 'classes' : 'basics'} />;
     if (r.page === 'me') return <MeMenu ch={ch} />;
     if (r.page === 'me-spells') return <MeSpells ch={ch} section={r.section} />;
