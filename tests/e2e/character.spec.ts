@@ -19,9 +19,11 @@ async function createLyra(page: Page) {
   await page.getByLabel('Sorcerer level').selectOption('5');
   await page.getByLabel(/^Sorcerer (?!level)/).selectOption({ label: 'Draconic Bloodline' });
   await page.getByRole('button', { name: 'Next ›' }).click();
-  await page.getByRole('button', { name: /Quickened Spell/ }).click();
-  await page.getByRole('button', { name: /Twinned Spell/ }).click();
-  await page.getByRole('button', { name: /Draconic Ancestry|Black|Blue|Brass|Bronze|Copper|Gold|Green|Red|Silver|White/ }).first().click();
+  for (const n of [/Quickened Spell/, /Twinned Spell/, /^Red Dragon/]) {
+    const row = page.getByRole('button', { name: n });
+    await row.click();
+    await expect(row).toHaveAttribute('aria-pressed', 'true');
+  }
   await page.getByRole('button', { name: 'Next ›' }).click();
   await page.getByRole('button', { name: 'Next ›' }).click();
   for (const s of ['Fire Bolt', 'Shield', 'Fireball']) await page.getByRole('button', { name: s, exact: true }).click();
@@ -36,13 +38,18 @@ test('create a character and use it', async ({ page }) => {
   await expect(page.getByRole('link', { name: /Sorcerer Actions/ })).toBeVisible();
   await expect(page.getByRole('link', { name: /Tiefling Spells/ })).toBeVisible();
   await page.getByRole('link', { name: /Level 1 Spells/ }).click();
-  await expect(page.getByRole('button', { name: 'Shield', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Magic Missile', exact: true })).toHaveCount(0);
+  const sec = page.locator('#lvl-1-sorcerer');
+  const btn = (n: string) => sec.getByRole('button', { name: n, exact: true });
+  await expect(btn('Shield')).toBeVisible();
+  await expect(btn('Fire Bolt')).toHaveCount(0);
+  await expect(btn('Fireball')).toHaveCount(0);
+  await expect(btn('Magic Missile')).toHaveCount(0);
   await page.getByRole('button', { name: 'All', exact: true }).click();
-  await expect(page.getByRole('button', { name: 'Magic Missile', exact: true })).toBeVisible();
-  await expect(page.getByRole('button', { name: 'Shield', exact: true })).toHaveClass(/mine/);
+  await expect(btn('Magic Missile')).toBeVisible();
+  await expect(btn('Shield')).toHaveClass(/mine/);
   await page.reload();
   await expect(page.getByRole('button', { name: 'All', exact: true })).toHaveAttribute('aria-pressed', 'true');
+  await expect(btn('Shield')).toHaveClass(/mine/);
   await page.goto('./#/me');
   await expect(page.getByText('Lyra', { exact: true }).first()).toBeVisible();
 });
@@ -64,14 +71,25 @@ test('backup code restores the character', async ({ page }) => {
 test('320px: editor steps and character pages fit', async ({ page }) => {
   await createLyra(page);
   await page.setViewportSize({ width: 320, height: 640 });
-  for (const hash of ['basics', 'classes', 'options', 'feats', 'spells'].map((s) => `./#/edit/${s}`).concat(['./#/me', './#/me/spells'])) {
-    await page.goto(hash);
-    await expect(page.locator('.screen').first()).toBeVisible();
-    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), hash).toBe(true);
+  const fits = async (what: string) =>
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), what).toBe(true);
+  const steps: [string, string][] = [['basics', 'Race & name'], ['classes', 'Classes'], ['options', 'Options'], ['feats', 'Feats'], ['spells', 'Spells']];
+  for (const [step, label] of steps) {
+    await page.goto(`./#/edit/${step}`);
+    await expect(page.locator('.steps a[aria-current="step"]')).toHaveText(label);
+    await fits(step);
   }
+  await page.goto('./#/me');
+  await expect(page.getByText('Lyra', { exact: true }).first()).toBeVisible();
+  await fits('me');
+  await page.goto('./#/me/spells');
+  await expect(page.getByRole('button', { name: 'My spells' })).toBeVisible();
+  await expect(page.locator('section.sec').first()).toBeVisible();
+  await fits('me/spells');
 });
 
 test('no character: spells page shows the editor', async ({ page }) => {
   await fresh(page, './#/me/spells');
-  await expect(page.getByRole('heading', { name: 'Race & name' }).or(page.getByText('Race & name').first())).toBeVisible();
+  await expect(page.locator('.steps a[aria-current="step"]')).toHaveText('Race & name');
+  await expect(page.getByLabel('Name')).toBeVisible();
 });
