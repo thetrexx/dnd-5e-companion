@@ -3,6 +3,7 @@ import { DATA } from '../../data';
 import { deleteCharacter } from '../../character/store';
 import { raceChain } from '../../character/derive';
 import { Separator } from '../Separator';
+import { GrantPicker } from './GrantPicker';
 import type { StepProps } from './Editor';
 
 const ORN = '☙';
@@ -33,7 +34,7 @@ export function StepBasics({ ch, update }: StepProps) {
           </select>
         </label>
       )}
-      <p class="note">Coming in the next update.</p>
+      <GrantPicker ch={ch} update={update} step="basics" />
       <Separator ornament={ORN} full />
       <button type="button" class={`danger${sure ? ' sure' : ''}`}
         onClick={() => { if (!sure) return setSure(true); deleteCharacter(); location.hash = '#/'; }}>

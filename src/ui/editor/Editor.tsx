@@ -6,6 +6,8 @@ import { emptyCharacter } from '../../character/types';
 import type { Character } from '../../character/types';
 import { StepBasics } from './StepBasics';
 import { StepClasses } from './StepClasses';
+import { StepFeats } from './StepFeats';
+import { StepOptions } from './StepOptions';
 
 export const EDIT_STEPS: { step: EditStep; label: string }[] = [
   { step: 'basics', label: 'Race & name' },
@@ -44,7 +46,9 @@ export function Editor(p: { step: EditStep }) {
       {failed && <p class="warn">This browser won't keep your character. Make a backup code in Settings.</p>}
       {p.step === 'basics' && <StepBasics {...props} />}
       {p.step === 'classes' && <StepClasses {...props} />}
-      {(p.step === 'options' || p.step === 'feats' || p.step === 'spells') && SOON}
+      {p.step === 'options' && <StepOptions {...props} />}
+      {p.step === 'feats' && <StepFeats {...props} />}
+      {p.step === 'spells' && SOON}
       <div class="step-nav">
         <button type="button" class="btn" disabled={i <= 0} onClick={() => go(`#/edit/${EDIT_STEPS[i - 1].step}`)}>‹ Back</button>
         {last

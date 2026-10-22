@@ -82,3 +82,27 @@ test('app routes: me without a class opens the editor', () => {
   saveCharacter({ ...emptyCharacter(), name: 'X' });
   expect(render(<App />).getByLabelText('Add a class')).toBeTruthy();
 });
+
+test('options step picks metamagic', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'sorcerer', level: 3 }] });
+  const r = render(<Editor step="options" />);
+  expect(r.getByText('0 of 2 chosen')).toBeTruthy();
+  for (const n of ['Quickened Spell', 'Twinned Spell', 'Subtle Spell']) fireEvent.click(r.getByText(n));
+  expect(loadCharacter()!.options).toHaveLength(3);
+  expect(r.getByText(/more than usual/)).toBeTruthy();
+});
+test('feat with a spell choice', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }] });
+  const r = render(<Editor step="feats" />);
+  fireEvent.click(r.getByText('Magic Initiate'));
+  fireEvent.click(r.getAllByText('Fire Bolt')[0]);
+  expect(loadCharacter()!.spells).toEqual([{ id: 'fire-bolt', grant: 'feat:magic-initiate:0' }]);
+  fireEvent.click(r.getByText('Magic Initiate'));
+  expect(loadCharacter()!.spells).toEqual([]);
+});
+test('high elf cantrip in the basics step', () => {
+  saveCharacter({ ...emptyCharacter(), race: 'high-elf', classes: [{ cls: 'fighter', level: 1 }] });
+  const r = render(<Editor step="basics" />);
+  fireEvent.click(r.getByText('Light'));
+  expect(loadCharacter()!.spells).toEqual([{ id: 'light', grant: 'race:high-elf:0' }]);
+});
