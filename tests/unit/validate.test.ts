@@ -55,3 +55,25 @@ test('a feature with textSource srd is rejected', () => {
   const bad = structuredClone(DATA); (bad.features[0] as any).textSource = 'srd';
   expect(validateDataset(bad).join('\n')).toContain('textSource');
 });
+
+test('caster class needs spellAbility', () => {
+  const bad = structuredClone(DATA);
+  const c = bad.classes.find(x => x.caster === 'full')!;
+  delete c.spellAbility;
+  expect(validateDataset(bad)).toContain(`class "${c.id}": spellAbility required for a caster`);
+});
+test('grant option must be an option feature', () => {
+  const bad = structuredClone(DATA);
+  bad.subclasses.find(s => s.id === 'circle-of-the-land')!.bonusSpells!.grants[0].option = 'second-wind';
+  expect(validateDataset(bad)).toContain('subclass "circle-of-the-land": grant option "second-wind" is not an option');
+});
+test('prereq option must be an option feature', () => {
+  const bad = structuredClone(DATA);
+  bad.features.find(f => f.prereq?.option)!.prereq!.option = 'second-wind';
+  expect(validateDataset(bad).join('\n')).toContain('prereq option "second-wind" is not an option');
+});
+test('option group must be owned by the listing class', () => {
+  const bad = structuredClone(DATA);
+  bad.classes.find(c => c.id === 'fighter')!.options.push('metamagic');
+  expect(validateDataset(bad)).toContain('class "fighter": option group "metamagic" is owned by class "sorcerer"');
+});

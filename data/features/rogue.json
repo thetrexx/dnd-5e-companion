@@ -171,7 +171,13 @@
       "Beat the creature's Wisdom (Perception) with a Dexterity (Sleight of Hand) check and these tasks go unnoticed. Controlling the hand takes your Cunning Action bonus action."
     ],
     "page": 98,
-    "textSource": "summary"
+    "textSource": "summary",
+    "spells": [
+      {
+        "spell": "mage-hand",
+        "atLevel": 3
+      }
+    ]
   },
   {
     "id": "magical-ambush",

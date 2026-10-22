@@ -174,7 +174,19 @@
       "You can cast beast sense and speak with animals, but only as rituals (they take extra time and use no spell slot)."
     ],
     "page": 50,
-    "textSource": "summary"
+    "textSource": "summary",
+    "spells": [
+      {
+        "spell": "beast-sense",
+        "atLevel": 3,
+        "uses": "Ritual only"
+      },
+      {
+        "spell": "speak-with-animals",
+        "atLevel": 3,
+        "uses": "Ritual only"
+      }
+    ]
   },
   {
     "id": "totem-spirit",
@@ -209,7 +221,14 @@
       "You can cast commune with nature as a ritual. A spirit version of one of your totem animals appears to deliver the answers."
     ],
     "page": 50,
-    "textSource": "summary"
+    "textSource": "summary",
+    "spells": [
+      {
+        "spell": "commune-with-nature",
+        "atLevel": 10,
+        "uses": "Ritual only"
+      }
+    ]
   },
   {
     "id": "totemic-attunement",

@@ -429,6 +429,16 @@
           "spell": "insect-plague",
           "atLevel": 9,
           "option": "land-terrain-underdark"
+        },
+        {
+          "choose": {
+            "lists": [
+              "druid"
+            ],
+            "level": 0,
+            "count": 1
+          },
+          "atLevel": 2
         }
       ]
     },
@@ -677,6 +687,16 @@
         {
           "spell": "tree-stride",
           "atLevel": 9
+        },
+        {
+          "choose": {
+            "lists": [
+              "druid"
+            ],
+            "level": 0,
+            "count": 1
+          },
+          "atLevel": 1
         }
       ]
     },
