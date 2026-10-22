@@ -3,16 +3,22 @@ import { Menu } from '../../src/ui/screens/Menu';
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { motionMode } from '../../src/motion/mode';
 import { DEFAULT_SETTINGS, saveSettings } from '../../src/settings/settings';
+import { Background } from '../../src/ui/Background';
+import { App } from '../../src/app';
 
 const proto = SVGElement.prototype as unknown as Record<string, unknown>;
 const eproto = Element.prototype as unknown as Record<string, unknown>;
 beforeEach(() => {
   proto.getTotalLength = () => 100;
-  eproto.animate = vi.fn(() => ({ finished: Promise.resolve(), cancel: vi.fn() }));
+  // never finishes: a loop holds on its first frame instead of spinning through microtasks
+  eproto.animate = vi.fn(() => ({ finished: new Promise(() => {}), cancel: vi.fn() }));
+  // jsdom has no canvas
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation(() => null);
 });
 afterEach(() => {
-  cleanup(); vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllGlobals(); localStorage.clear();
-  delete proto.getTotalLength; delete eproto.animate;
+  cleanup(); vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllGlobals(); localStorage.clear(); location.hash = '';
+  document.documentElement.style.removeProperty('--warlock-mist');
+  delete proto.getTotalLength; delete eproto.animate; delete eproto.scrollTo;
 });
 
 test('motionMode: Off wins, reduced motion is static, otherwise animated', () => {
@@ -53,4 +59,48 @@ test('unmount stops the loop before its start delay ends', async () => {
   await vi.advanceTimersByTimeAsync(5000);
   expect(Element.prototype.animate).not.toHaveBeenCalled();
   expect(vi.getTimerCount()).toBe(0);
+});
+
+test('warlock background has mist, sorcerer has blood and cells, others neither', () => {
+  expect(render(<Background kind="warlock" theme="faerun" />).container.querySelector('canvas.fx-mist')).toBeTruthy();
+  const s = render(<Background kind="sorcerer" theme="faerun" />).container;
+  expect(s.querySelector('canvas.fx-blood') && s.querySelector('svg.fx-cells')).toBeTruthy();
+  expect(render(<Background kind="cleric" theme="faerun" />).container.querySelector('canvas')).toBeNull();
+});
+test('background layer: hidden, coloured by class, drawn by the loop', async () => {
+  const c = render(<Background kind="cleric" theme="faerun" />).container;
+  expect(c.querySelector('.fx-bg-wrap')!.getAttribute('aria-hidden')).toBe('true');
+  const svg = c.querySelector('svg.fx-bg')!;
+  expect(svg.getAttribute('style')).toContain('--fx-c: var(--cleric-line)');
+  expect(svg.getAttribute('style')).toContain('--fx-o: var(--cleric-bg-o)');
+  await waitFor(() => expect(svg.querySelector('path')).toBeTruthy());
+  expect(render(<Background kind="none" theme="faerun" />).container.querySelector('svg.fx-bg')!.getAttribute('style')).toContain('--fx-c: var(--none-line)');
+});
+test('mist paints once its colour token resolves', () => {
+  const ctx = { createImageData: (w: number, h: number) => ({ data: new Uint8ClampedArray(w * h * 4) }), putImageData: vi.fn() };
+  vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation((() => ctx) as never);
+  vi.stubGlobal('matchMedia', () => ({ matches: true }));
+  document.documentElement.style.setProperty('--warlock-mist', '#a77be0');
+  render(<Background kind="warlock" theme="faerun" />);
+  expect(ctx.putImageData).toHaveBeenCalledTimes(1);
+});
+test('Animation: Off renders no background layers', () => {
+  saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
+  const c = render(<Background kind="sorcerer" theme="faerun" />).container;
+  expect(c.querySelector('svg, canvas')).toBeNull();
+  expect(Element.prototype.animate).not.toHaveBeenCalled();
+});
+test('background persists across navigation within a class, restarts for another class', async () => {
+  eproto.scrollTo = () => {}; // jsdom has no scrolling
+  location.hash = '#/menu/bard/3';
+  const r = render(<App />);
+  const bg = r.container.querySelector('svg.fx-bg')!;
+  expect(bg.getAttribute('style')).toContain('--bard-line');
+  location.hash = '#/spells/bard/3';
+  await waitFor(() => expect(r.container.querySelector('.screen.fixed')).toBeTruthy());
+  expect(r.container.querySelector('svg.fx-bg')).toBe(bg);
+  expect(bg.isConnected).toBe(true);
+  location.hash = '#/menu/wizard/3';
+  await waitFor(() => expect(r.container.querySelector('svg.fx-bg')!.getAttribute('style')).toContain('--wizard-line'));
+  expect(bg.isConnected).toBe(false);
 });
