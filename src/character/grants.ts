@@ -1,8 +1,7 @@
 import { DATA } from '../data';
 import type { ClassId, EditStep, Feature, Spell, SpellGrant } from '../data/types';
-import { effectiveSub } from '../logic/subclass';
 import { featureLevel, raceChain, totalLevel } from './derive';
-import type { Character } from './types';
+import type { CharClass, Character } from './types';
 
 export interface GrantSource {
   key: string;            // 'race:<raceId>' | 'feat:<featId>' | 'feature:<featureId>' | 'sub:<subclassId>'
@@ -12,6 +11,9 @@ export interface GrantSource {
   grants: { grant: SpellGrant; index: number }[];   // index in the source's original grant array
   step: EditStep;         // where the editor offers its choices
 }
+
+/** Ownership only: level gating lives in `unlocked`, so lowering a level never drops picks. */
+const ownedSub = (c: CharClass) => { const s = DATA.subclasses.find(x => x.id === c.sub); return s && s.cls === c.cls ? s : undefined; };
 
 const BONUS_TITLE = { domain: 'Domain', oath: 'Oath', circle: 'Circle', patron: 'Patron' };
 
@@ -37,7 +39,7 @@ export function grantSources(ch: Character): GrantSource[] {
     if (grants.length) out.push({ ...s, grants });
   };
   for (const r of raceChain(ch.race)) add({ key: `race:${r.id}`, title: r.name, level: total, step: 'basics' }, r.spells);
-  for (const id of ch.feats) {
+  for (const id of new Set(ch.feats)) {
     const f = DATA.feats.find(x => x.id === id);
     if (f) add({ key: `feat:${f.id}`, title: f.name, level: total, step: 'feats' }, f.spells);
   }
@@ -47,13 +49,13 @@ export function grantSources(ch: Character): GrantSource[] {
     const f = DATA.features.find(x => x.id === id);
     if (f?.source.kind === 'option') feature(f, 'options');
   }
-  const subs = ch.classes.flatMap(c => effectiveSub(c.cls, c.level, c.sub) ?? []);
+  const subs = ch.classes.flatMap(c => ownedSub(c) ?? []);
   for (const f of DATA.features) {
     const { kind, id } = f.source;
     if ((kind === 'class' && ch.classes.some(c => c.cls === id)) || (kind === 'subclass' && subs.some(s => s.id === id))) feature(f, 'spells');
   }
   for (const c of ch.classes) {
-    const sub = effectiveSub(c.cls, c.level, c.sub);
+    const sub = ownedSub(c);
     const b = sub?.bonusSpells;
     if (sub && b && b.kind !== 'patron') add({ key: `sub:${sub.id}`, title: BONUS_TITLE[b.kind], cls: c.cls, level: c.level, step: 'spells' }, b.grants);
   }

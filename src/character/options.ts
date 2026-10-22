@@ -12,7 +12,7 @@ const groupsOf = (ids: string[]) => DATA.optionGroups.filter(g => ids.includes(g
 export function optionSlots(ch: Character): OptionSlot[] {
   const out: OptionSlot[] = [];
   const add = (group: OptionGroup, level: number, cls?: ClassId, sub?: string) => {
-    const count = (group.picks[level - 1] ?? 0) + (group.bonus ?? []).filter(b => b.subclass === sub && b.atLevel <= level).reduce((n, b) => n + b.count, 0);
+    const count = (group.picks[level - 1] ?? 0) + (group.bonus ?? []).filter(b => sub !== undefined && b.subclass === sub && b.atLevel <= level).reduce((n, b) => n + b.count, 0);
     if (!count) return;
     const choices = DATA.features.filter(f => f.source.kind === 'option' && f.source.id === (group.from ?? group.id)
       && (!group.only || group.only.includes(f.id)) && (f.prereq?.level ?? 0) <= level && (!f.prereq?.option || ch.options.includes(f.prereq.option)));

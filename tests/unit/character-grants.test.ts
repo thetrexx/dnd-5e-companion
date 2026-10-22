@@ -43,3 +43,10 @@ test('prune drops orphaned picks but keeps level-locked ones', () => {
   expect(p.spells).toEqual([{ id: 'hex', cls: 'warlock' }]);
   expect(prune(p)).toBe(p);
 });
+test('prune keeps subclass grant picks when the level drops, clears a foreign subclass', () => {
+  const i = DATA.subclasses.find(s => s.id === 'circle-of-the-land')!.bonusSpells!.grants.findIndex(g => g.choose);
+  const c = ch([{ cls: 'druid', level: 1, sub: 'circle-of-the-land' }], { spells: [{ id: 'guidance', grant: `sub:circle-of-the-land:${i}` }] });
+  expect(prune(c)).toBe(c);
+  const bad = ch([{ cls: 'druid', level: 3, sub: 'champion' }]);
+  expect(prune(bad).classes).toEqual([{ cls: 'druid', level: 3, sub: undefined }]);
+});
