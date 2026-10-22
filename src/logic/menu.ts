@@ -1,6 +1,6 @@
 import { DATA } from '../data';
 import type { ClassId, Route } from '../data/types';
-import { maxSpellLevel } from './rules';
+import { ceilingOf, maxSpellLevel } from './rules';
 import { actionSections } from './sections';
 import { effectiveSub } from './subclass';
 
@@ -12,7 +12,7 @@ export const WARLOCK_SLOT_ICON = 'https://bg3.wiki/w/images/6/6c/Warlock_Spell_S
 export interface MenuRow {
   kind: 'actions' | 'bonus' | 'reactions' | 'class' | 'cantrips' | 'spells' | 'separator';
   label: string;
-  icon?: { type: 'img'; src: string } | { type: 'slot'; level: number; warlock?: boolean };
+  icon?: { type: 'img'; src?: string } | { type: 'slot'; level: number; warlock?: boolean };
   target?: Route;
   dimmed?: boolean;
   motif?: ClassId;
@@ -44,7 +44,9 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
     kind: 'cantrips', label: 'Cantrips', icon: { type: 'img', src: listClass.plainIcon },
     target: to('spells', 'cantrips'), dimmed: !cantrips, motif,
   });
-  for (let n = 1; n <= 9; n++) {
+  // a subclass caster never reaches the top spell levels: leave those rows out
+  const ceiling = cast ? ceilingOf(cast.maxSpellLevel) : 9;
+  for (let n = 1; n <= ceiling; n++) {
     rows.push({
       kind: 'spells', label: `Level ${n} Spells`,
       icon: c.caster === 'pact' ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },
