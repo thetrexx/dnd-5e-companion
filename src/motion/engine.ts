@@ -4,7 +4,7 @@ import { range } from './rand';
 
 const NS = 'http://www.w3.org/2000/svg';
 export interface Rendered { part: Part; el: SVGElement; len?: number }
-export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal }
+export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal; gate?(sig?: AbortSignal): Promise<void> }
 
 function el(tag: string, attrs: Record<string, string | number>, parent: Element, cls?: string): SVGElement {
   const e = document.createElementNS(NS, tag) as SVGElement;
@@ -59,6 +59,13 @@ const visible = (sig?: AbortSignal) => wait(sig, done => {
   document.addEventListener('visibilitychange', on);
   return () => document.removeEventListener('visibilitychange', on);
 });
+// a gate that holds until el is on screen; without IntersectionObserver it never holds
+export const onScreen = (el: Element) => (sig?: AbortSignal) => wait(sig, done => {
+  if (typeof IntersectionObserver !== 'function') { done(); return () => {}; }
+  const io = new IntersectionObserver(es => { if (es.some(e => e.isIntersecting)) done(); });
+  io.observe(el);
+  return () => io.disconnect();
+});
 const settle = (as: Animation[], sig?: AbortSignal) => wait(sig, done => {
   void Promise.all(as.map(a => a.finished.catch(() => {}))).then(done);
   return () => {};
@@ -84,6 +91,8 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
   const stop = () => { for (const a of live) a.cancel(); live = []; };
   try {
     while (alive()) {
+      // o.gate holds each new cycle (a row off screen waits to scroll into view)
+      if (o.gate) await o.gate(sig);
       await visible(sig);
       if (!alive()) return;
       stop();

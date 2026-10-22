@@ -38,15 +38,18 @@ export function envelope(phase: number): number {
 type Fbm = (x: number, y: number) => number;
 const clamp01 = (v: number) => Math.max(0, Math.min(1, v));
 
-// Warlock: mist gathers from the bottom, hangs, then evaporates into holes
-export function paintMist(px: Uint8ClampedArray, w: number, h: number, t: number, e: number, fbm: Fbm, rgb: Rgb): void {
-  const thr = 1.02 - e * .7;
+// Warlock: mist gathers from the bottom, hangs, then evaporates into holes; k zooms the noise when the canvas is coarser than usual
+export function paintMist(px: Uint8ClampedArray, w: number, h: number, t: number, e: number, fbm: Fbm, rgb: Rgb, k = 1): void {
+  if (e <= 0) { for (let o = 3; o < w * h * 4; o += 4) px[o] = 0; return; }
+  const thr = 1.02 - e * .7, [r, g, b] = rgb;
   for (let j = 0; j < h; j++) {
     const yy = j / h, wgt = .2 + .8 * clamp01((yy - .3) / .7);
+    // noise never tops 1, so a row whose densest pixel stays under the threshold is clear (the top band always)
+    if (1.55 * wgt <= thr) { for (let o = j * w * 4 + 3; o < (j + 1) * w * 4; o += 4) px[o] = 0; continue; }
     for (let i = 0; i < w; i++) {
-      const nx = i / 12, ny = j / 12, n = fbm(nx + t * .04, ny + t * .1) * .65 + fbm(nx * 1.6 - t * .06, ny * 1.6 + t * .05) * .35, dens = (n + .55) * wgt,
+      const nx = i * k / 12, ny = j * k / 12, n = fbm(nx + t * .04, ny + t * .1) * .65 + fbm(nx * 1.6 - t * .06, ny * 1.6 + t * .05) * .35, dens = (n + .55) * wgt,
         a = clamp01((dens - thr) / .45), o = (j * w + i) * 4;
-      px[o] = rgb[0]; px[o + 1] = rgb[1]; px[o + 2] = rgb[2]; px[o + 3] = a * a * 230;
+      px[o] = r; px[o + 1] = g; px[o + 2] = b; px[o + 3] = a * a * 230;
     }
   }
 }

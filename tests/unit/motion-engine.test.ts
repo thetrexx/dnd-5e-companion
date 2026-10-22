@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { renderParts, runLoop } from '../../src/motion/engine';
+import { onScreen, renderParts, runLoop } from '../../src/motion/engine';
 import { ROW_MOTIFS } from '../../src/motion/rowMotifs';
 import { seeded } from '../../src/motion/rand';
 import { ROW_TIMING } from '../../src/motion/types';
@@ -20,6 +20,7 @@ beforeEach(() => {
 });
 afterEach(() => {
   vi.restoreAllMocks();
+  vi.unstubAllGlobals();
   delete proto.getTotalLength;
   delete eproto.animate;
   Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });
@@ -163,4 +164,40 @@ test('already-aborted signal returns before drawing', async () => {
   await runLoop(host, svg, gen, ROW_TIMING, { animate: true, alive: () => true, signal: AbortSignal.abort() });
   expect(gen).not.toHaveBeenCalled();
   expect(Element.prototype.animate).not.toHaveBeenCalled();
+});
+
+// a stand-in IntersectionObserver: tests fire its callback by hand
+class FakeIO {
+  static all: FakeIO[] = [];
+  observe = vi.fn(); disconnect = vi.fn();
+  constructor(public cb: (es: { isIntersecting: boolean }[]) => void) { FakeIO.all.push(this); }
+}
+test('gate: no new cycle while off screen, the cycle runs once on screen', async () => {
+  FakeIO.all = []; vi.stubGlobal('IntersectionObserver', FakeIO);
+  let cycles = 0;
+  const p = runLoop(host, svg, () => { cycles++; return []; }, ROW_TIMING, { animate: true, alive: () => cycles < 1, rnd: seeded(2), gate: onScreen(host) });
+  await new Promise(r => setTimeout(r, 10));
+  const [io] = FakeIO.all;
+  expect(io!.observe).toHaveBeenCalledWith(host);
+  io!.cb([{ isIntersecting: false }]);
+  await new Promise(r => setTimeout(r, 10));
+  expect(cycles).toBe(0);
+  io!.cb([{ isIntersecting: true }]);
+  await p;
+  expect(cycles).toBe(1);
+  expect(io!.disconnect).toHaveBeenCalled();
+});
+test('gate: abort while off screen disconnects the observer and never draws', async () => {
+  FakeIO.all = []; vi.stubGlobal('IntersectionObserver', FakeIO);
+  const gen = vi.fn(() => []), ac = new AbortController();
+  const p = runLoop(host, svg, gen, ROW_TIMING, { animate: true, alive: () => true, rnd: seeded(2), signal: ac.signal, gate: onScreen(host) });
+  await new Promise(r => setTimeout(r, 10));
+  ac.abort();
+  await p;
+  expect(FakeIO.all[0]!.disconnect).toHaveBeenCalled();
+  expect(gen).not.toHaveBeenCalled();
+});
+test('onScreen without IntersectionObserver lets the cycle run at once', async () => {
+  vi.stubGlobal('IntersectionObserver', undefined);
+  await onScreen(host)();
 });

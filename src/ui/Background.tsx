@@ -6,6 +6,7 @@ import { makeCells, makeNoise, paintBlood, paintMist, stepCells } from '../motio
 import { runNoise } from '../motion/noiseLayer';
 import { f1 } from '../motion/parts';
 import { BG_TIMING } from '../motion/types';
+import { useResized } from './useResized';
 
 const NS = 'http://www.w3.org/2000/svg';
 const none = () => {};
@@ -16,7 +17,7 @@ function mist(cv: HTMLCanvasElement, host: Element, o: Layer): () => void {
   const rgb = themeRgb('--warlock-mist');
   if (!rgb) return none;
   const { fbm } = makeNoise(Math.random);
-  return runNoise(cv, host, { scale: 5, period: 17000, ...o, paint: (px, w, h, t, e) => paintMist(px, w, h, t, e, fbm, rgb) });
+  return runNoise(cv, host, { scale: 5, period: 17000, ...o, paint: (px, w, h, t, e, _W, _H, k) => paintMist(px, w, h, t, e, fbm, rgb, k) });
 }
 
 // Sorcerer: a vein of blood with cells riding it, tumbling as they go
@@ -47,6 +48,8 @@ function blood(cv: HTMLCanvasElement, cellSvg: SVGSVGElement, host: Element, o: 
 export function Background(p: { kind: BgKey; theme: string }) {
   const mode = motionMode(), wrap = useRef<HTMLDivElement>(null), svg = useRef<SVGSVGElement>(null);
   const canvas = useRef<HTMLCanvasElement>(null), cells = useRef<SVGSVGElement>(null);
+  // a resize or rotation restarts the layers at the new size
+  const size = useResized(mode !== 'off');
   useEffect(() => {
     const host = wrap.current, bg = svg.current, cv = canvas.current;
     if (mode === 'off' || !host || !bg) return;
@@ -54,7 +57,7 @@ export function Background(p: { kind: BgKey; theme: string }) {
     void runLoop(host, bg, BG_MOTIFS[p.kind], BG_TIMING, { ...o, signal: ctrl.signal });
     const stop = !cv ? none : p.kind === 'warlock' ? mist(cv, host, o) : cells.current ? blood(cv, cells.current, host, o) : none;
     return () => { ctrl.abort(); stop(); };
-  }, [p.kind, p.theme, mode]);
+  }, [p.kind, p.theme, mode, size]);
   if (mode === 'off') return null;
   return (
     <div ref={wrap} class="fx-bg-wrap" aria-hidden="true">

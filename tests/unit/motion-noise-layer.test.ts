@@ -44,7 +44,7 @@ test('static: paints once with e = 1', () => {
   const tick = vi.fn(), o = opts({ animate: false, tick }), { host, cv } = setup();
   runNoise(cv, host, o);
   expect(o.paint).toHaveBeenCalledTimes(1);
-  expect((o.paint as ReturnType<typeof vi.fn>).mock.calls[0].slice(3)).toEqual([0, 1, 400, 800]);
+  expect((o.paint as ReturnType<typeof vi.fn>).mock.calls[0].slice(3)).toEqual([0, 1, 400, 800, 1]);
   expect(tick).toHaveBeenCalledWith(0, 1, 0);
   expect(raf).not.toHaveBeenCalled();
 });
@@ -55,6 +55,13 @@ test('throttles to 25 fps', () => {
   for (const t of [0, 10, 20, 45, 50, 95]) step(t);
   expect(o.paint).toHaveBeenCalledTimes(3);
   expect(o.paint.mock.calls.map((c: number[]) => c[3])).toEqual([0, .045, .095]);
+});
+
+test('draws 25 frames a second on a 60 Hz screen', () => {
+  const o = opts(), { host, cv } = setup();
+  runNoise(cv, host, o);
+  for (let k = 0; k < 120; k++) step(k * 1000 / 60);
+  expect(o.paint).toHaveBeenCalledTimes(50);
 });
 
 test('tick gets dt since the previous painted frame', () => {
@@ -119,4 +126,12 @@ test('canvas is 1/scale of the host', () => {
   const o = opts({ scale: 5 }), { host, cv } = setup(400, 800);
   runNoise(cv, host, o);
   expect([cv.width, cv.height]).toEqual([80, 160]);
+});
+
+test('a large host is capped to the low-res pixel budget, the noise zoomed to match', () => {
+  const o = opts({ scale: 5, animate: false }), { host, cv } = setup(1600, 1200);
+  runNoise(cv, host, o);
+  expect([cv.width, cv.height]).toEqual([179, 135]);
+  const k = (o.paint.mock.calls[0] as number[])[7];
+  expect(k).toBeCloseTo(Math.sqrt(3.2), 5);
 });

@@ -1,5 +1,5 @@
 .rl{position:relative;z-index:1}
-.fx-row,.fx-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:var(--fx-c);opacity:calc(var(--motion-i) * var(--fx-o))}
+.fx-row,.fx-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:var(--fx-c);opacity:calc(var(--motion-i, 1) * var(--fx-o))}
 .fx-row{-webkit-mask:var(--row-motif-mask);mask:var(--row-motif-mask)}
 .fx-bg{position:fixed;z-index:-1;-webkit-mask:var(--bg-motif-mask);mask:var(--bg-motif-mask)}
 .fx-row path,.fx-bg path{fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
@@ -16,9 +16,9 @@
 .fx-row .bloom,.fx-bg .bloom{fill:var(--druid-bloom);stroke:none}
 .fx-row .pop,.fx-bg .pop{transform-box:fill-box;transform-origin:center}
 .fx-mist,.fx-blood{position:fixed;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);z-index:-1;pointer-events:none}
-.fx-mist{opacity:calc(var(--motion-i) * var(--mist-o));filter:blur(var(--mist-blur))}
-.fx-blood{opacity:calc(var(--motion-i) * var(--blood-o));filter:blur(var(--blood-blur))}
-.fx-cells{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i) * var(--cells-o))}
+.fx-mist{opacity:calc(var(--motion-i, 1) * var(--mist-o));filter:blur(var(--mist-blur))}
+.fx-blood{opacity:calc(var(--motion-i, 1) * var(--blood-o));filter:blur(var(--blood-blur))}
+.fx-cells{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--cells-o))}
 .fx-bg-wrap{position:fixed;inset:0;pointer-events:none}
 .fx-cells .cell{fill:var(--sorcerer-cell)}
 .fx-cells .cell-core{fill:var(--sorcerer-cell-core)}

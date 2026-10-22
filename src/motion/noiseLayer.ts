@@ -2,7 +2,7 @@ import { envelope } from './noise';
 
 export interface NoiseOptions {
   scale: number; period: number; animate: boolean; alive(): boolean;
-  paint(px: Uint8ClampedArray, w: number, h: number, t: number, e: number, W: number, H: number): void;
+  paint(px: Uint8ClampedArray, w: number, h: number, t: number, e: number, W: number, H: number, k: number): void;
   tick?(t: number, e: number, dt: number): void;
 }
 
@@ -10,18 +10,22 @@ const context = (cv: HTMLCanvasElement): CanvasRenderingContext2D | null => {
   try { return cv.getContext('2d'); } catch { return null; }
 };
 
-// a noise field drawn at low resolution and scaled up soft; e is the gather / hang / fade envelope
+// low-res pixel budget: a tablet or desktop canvas gets coarser instead of costlier
+const BUDGET = 24000, GAP = 40;
+
+// a noise field drawn at low resolution and scaled up soft; e is the gather / hang / fade envelope, k how much coarser than o.scale it is
 export function runNoise(cv: HTMLCanvasElement, host: Element, o: NoiseOptions): () => void {
-  const { width: W, height: H } = host.getBoundingClientRect(), w = Math.max(1, Math.ceil(W / o.scale)), h = Math.max(1, Math.ceil(H / o.scale));
+  const { width: W, height: H } = host.getBoundingClientRect(), k = Math.max(1, Math.sqrt(W * H / (o.scale * o.scale * BUDGET)));
+  const w = Math.max(1, Math.ceil(W / (o.scale * k))), h = Math.max(1, Math.ceil(H / (o.scale * k)));
   cv.width = w; cv.height = h;
   const ctx = context(cv);
   if (!ctx) return () => {};
   const img = ctx.createImageData(w, h);
   const render = (t: number, e: number, dt: number) => {
-    o.paint(img.data, w, h, t, e, W, H); ctx.putImageData(img, 0, 0); o.tick?.(t, e, dt);
+    o.paint(img.data, w, h, t, e, W, H, k); ctx.putImageData(img, 0, 0); o.tick?.(t, e, dt);
   };
   if (!o.animate) { render(0, 1, 0); return () => {}; }
-  let id = 0, stopped = false, t0 = -1, last = -Infinity, prevEl = -1, paused = 0, hiddenAt = -1, seen = -1;
+  let id = 0, stopped = false, t0 = -1, due = -Infinity, prevEl = -1, paused = 0, hiddenAt = -1, seen = -1;
   const frame = (now: number) => {
     if (stopped || !o.alive()) return;
     id = requestAnimationFrame(frame);
@@ -31,11 +35,13 @@ export function runNoise(cv: HTMLCanvasElement, host: Element, o: NoiseOptions):
     if (document.hidden) { if (hiddenAt < 0) hiddenAt = now; return; }
     if (gap > 1000 && hiddenAt < 0 && t0 >= 0) paused += gap;
     if (hiddenAt >= 0) { if (t0 >= 0) paused += now - hiddenAt; hiddenAt = -1; }
-    if (now - last < 40) return;
+    // one frame every GAP ms on average (25 fps on a 60 Hz screen); after a stall, restart from now rather than catch up
+    if (now < due) return;
+    due = now - due > GAP ? now + GAP : due + GAP;
     if (t0 < 0) t0 = now;
     const el = now - t0 - paused;
     render(el / 1000, envelope((el % o.period) / o.period), prevEl < 0 ? 0 : (el - prevEl) / 1000);
-    last = now; prevEl = el;
+    prevEl = el;
   };
   id = requestAnimationFrame(frame);
   return () => { if (stopped) return; stopped = true; cancelAnimationFrame(id); };

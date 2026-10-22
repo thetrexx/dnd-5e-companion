@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, waitFor } from '@testing-library/preact';
+import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/preact';
 import { Menu } from '../../src/ui/screens/Menu';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { motionMode } from '../../src/motion/mode';
@@ -9,6 +9,8 @@ import { App } from '../../src/app';
 const proto = SVGElement.prototype as unknown as Record<string, unknown>;
 const eproto = Element.prototype as unknown as Record<string, unknown>;
 const TOKENS = ['--warlock-mist', '--sorcerer-blood', '--sorcerer-blood-hi'];
+// let fake time pass inside act, so re-renders it triggers are applied
+const pass = (ms: number) => act(async () => { await vi.advanceTimersByTimeAsync(ms); });
 const fakeCtx = () => ({ createImageData: (w: number, h: number) => ({ data: new Uint8ClampedArray(w * h * 4) }), putImageData: vi.fn() });
 beforeEach(() => {
   proto.getTotalLength = () => 100;
@@ -61,6 +63,35 @@ test('unmount stops the loop before its start delay ends', async () => {
   expect(Element.prototype.animate).not.toHaveBeenCalled();
   expect(vi.getTimerCount()).toBe(0);
 });
+test('reduced motion: a resize redraws the row motifs after a short pause', async () => {
+  vi.useFakeTimers();
+  vi.stubGlobal('matchMedia', () => ({ matches: true }));
+  const r = render(<Menu cls="wizard" level={3} />);
+  const first = r.container.querySelector('svg.fx-row path')!;
+  expect(first).toBeTruthy();
+  vi.stubGlobal('innerWidth', innerHeight); vi.stubGlobal('innerHeight', 1024); // rotated
+  dispatchEvent(new Event('orientationchange'));
+  await pass(200);
+  expect(first.isConnected).toBe(true);
+  await pass(100);
+  expect(first.isConnected).toBe(false);
+  expect(r.container.querySelector('svg.fx-row path')).toBeTruthy();
+});
+test('rows off screen hold their next cycle until they scroll into view', async () => {
+  vi.useFakeTimers();
+  const ios: { cb(es: { isIntersecting: boolean }[]): void; disconnect: ReturnType<typeof vi.fn> }[] = [];
+  vi.stubGlobal('IntersectionObserver', class { observe = vi.fn(); disconnect = vi.fn(); constructor(public cb: () => void) { ios.push(this); } });
+  const r = render(<Menu cls="wizard" level={3} />);
+  await vi.advanceTimersByTimeAsync(4000);
+  expect(ios.length).toBeGreaterThan(0);
+  expect(Element.prototype.animate).not.toHaveBeenCalled();
+  ios.forEach(io => io.cb([{ isIntersecting: true }]));
+  await vi.advanceTimersByTimeAsync(0);
+  expect(Element.prototype.animate).toHaveBeenCalled();
+  r.unmount();
+  await vi.advanceTimersByTimeAsync(200); // deferred effect cleanups run
+  expect(ios.every(io => io.disconnect.mock.calls.length > 0)).toBe(true);
+});
 
 describe('backgrounds', () => {
   // never finishes: a background loop (no start delay) holds on its first frame instead of spinning through microtasks
@@ -87,6 +118,26 @@ describe('backgrounds', () => {
     document.documentElement.style.setProperty('--warlock-mist', '#a77be0');
     render(<Background kind="warlock" theme="faerun" />);
     expect(ctx.putImageData).toHaveBeenCalledTimes(1);
+  });
+  test('a resize restarts the background after a short pause', async () => {
+    vi.useFakeTimers();
+    const r = render(<Background kind="cleric" theme="faerun" />), c = r.container;
+    await pass(0);
+    const first = c.querySelector('svg.fx-bg path')!;
+    expect(first).toBeTruthy();
+    // a phone's address bar sliding away: small height change, no restart
+    vi.stubGlobal('innerHeight', innerHeight - 60); dispatchEvent(new Event('resize'));
+    await pass(300);
+    expect(first.isConnected).toBe(true);
+    vi.stubGlobal('innerWidth', innerWidth - 300); dispatchEvent(new Event('resize')); dispatchEvent(new Event('resize'));
+    await pass(200);
+    expect(first.isConnected).toBe(true);
+    await pass(100);
+    expect(first.isConnected).toBe(false);
+    expect(c.querySelector('svg.fx-bg path')).toBeTruthy();
+    r.unmount();
+    await vi.advanceTimersByTimeAsync(200); // deferred effect cleanups run
+    expect(vi.getTimerCount()).toBe(0);
   });
   test('Animation: Off renders no background layers', () => {
     saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });

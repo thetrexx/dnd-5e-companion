@@ -12,7 +12,7 @@ export const SLOT_ICON = 'https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png';
 
 function rowStyle(r: MenuRow) {
   const base = r.motif ? `var(--${r.motif})` : 'var(--accent)';
-  const amount = r.motif ? `calc(var(--${r.motif}-row-o) * var(--row-motif-scale) * var(--motion-i))` : 'calc(var(--row-wash) * var(--motion-i))';
+  const amount = r.motif ? `calc(var(--${r.motif}-row-o) * var(--row-motif-scale) * var(--motion-i, 1))` : 'calc(var(--row-wash) * var(--motion-i, 1))';
   return { background: `linear-gradient(90deg, color-mix(in srgb, ${base} ${amount}, var(--surface)), var(--surface) 80%)` };
 }
 
