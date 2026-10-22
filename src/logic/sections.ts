@@ -7,6 +7,8 @@ export interface Section {
   id: string; title: string; subtitle?: string; motif?: ClassId; locked?: string;
   /** item id -> small source tag, e.g. 'Domain' */
   tags?: Record<string, string>;
+  /** character All view: ids of the items that are the character's own */
+  mine?: string[];
   items: (Spell | Feature)[];
 }
 

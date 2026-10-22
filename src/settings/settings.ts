@@ -2,6 +2,8 @@ import { readJSON, writeJSON } from './storage';
 import { THEMES } from '../theme/themes';
 
 export type Strength = 'off' | 'faint' | 'medium' | 'strong';
+/** Character spells: only the character's own, or the whole list with the character's ringed. */
+export type SpellView = 'mine' | 'all';
 export interface Settings { v: 1; theme: string; strength: Strength; iosTipSeen: boolean }
 
 export const STRENGTHS: Strength[] = ['off', 'faint', 'medium', 'strong'];
