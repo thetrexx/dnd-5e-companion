@@ -12,6 +12,7 @@ const LEVELS = Array.from({ length: 20 }, (_, i) => i + 1);
 export function StepClasses({ ch, update }: StepProps) {
   const free = DATA.classes.filter((c) => !ch.classes.some((x) => x.cls === c.id));
   const [pick, setPick] = useState('');
+  const [removing, setRemoving] = useState<ClassId | null>(null);
   const chosen = free.some((c) => c.id === pick) ? pick : free[0]?.id ?? '';
   const set = (i: number, patch: Partial<CharClass>) => update({ ...ch, classes: ch.classes.map((c, j) => (j === i ? { ...c, ...patch } : c)) });
   const total = totalLevel(ch);
@@ -37,7 +38,10 @@ export function StepClasses({ ch, update }: StepProps) {
                 </select>
               </label>
             )}
-            <button type="button" class="danger" onClick={() => update({ ...ch, classes: ch.classes.filter((_, j) => j !== i) })}>Remove</button>
+            <button type="button" class={`danger${removing === cc.cls ? ' sure' : ''}`}
+              onClick={() => (removing === cc.cls ? update({ ...ch, classes: ch.classes.filter((_, j) => j !== i) }) : setRemoving(cc.cls))}>
+              {removing === cc.cls ? 'Tap again to remove' : 'Remove'}
+            </button>
           </div>
         );
       })}

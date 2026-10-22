@@ -1,6 +1,6 @@
 import { cleanup, fireEvent, render } from '@testing-library/preact';
 import { App } from '../../src/app';
-import { saveCharacter } from '../../src/character/store';
+import { deleteCharacter, saveCharacter } from '../../src/character/store';
 import { emptyCharacter } from '../../src/character/types';
 import { loadSettings } from '../../src/settings/settings';
 import { MeCard } from '../../src/ui/screens/me/MeCard';
@@ -14,7 +14,7 @@ const lyra = { ...emptyCharacter(), name: 'Lyra', race: 'tiefling', classes: [{ 
 // jsdom has no scrolling
 Element.prototype.scrollTo = () => {};
 Element.prototype.scrollIntoView = () => {};
-beforeEach(() => { localStorage.clear(); location.hash = ''; });
+beforeEach(() => { deleteCharacter(); localStorage.clear(); location.hash = ''; });
 test('menu shows name, class line and character rows', () => {
   const r = render(<MeMenu ch={lyra} />);
   expect(r.container.textContent).toContain('Lyra');
@@ -60,6 +60,10 @@ test('start tile', () => {
   const r2 = render(<Start />);
   fireEvent.click(r2.getByText('My Character Sheet'));
   expect(location.hash).toBe('#/me');
+  expect(r2.getByText('Lyra')).toBeTruthy();
+  cleanup();
+  saveCharacter({ ...lyra, name: '' });
+  expect(render(<Start />).getByText('Sorcerer 5')).toBeTruthy();
 });
 test('me routes without a character never crash', () => {
   location.hash = '#/me/spells';

@@ -17,12 +17,18 @@ async function pipe(stream: { writable: WritableStream; readable: ReadableStream
 
 export async function encodeCharacter(ch: Character): Promise<string> {
   const json = new TextEncoder().encode(JSON.stringify(ch)) as Uint8Array<ArrayBuffer>;
-  if (typeof CompressionStream === 'undefined') return 'SS0-' + toBase64Url(json);
-  return 'SS1-' + toBase64Url(await pipe(new CompressionStream('deflate-raw'), json));
+  const plain = 'SS0-' + toBase64Url(json);
+  if (typeof CompressionStream === 'undefined') return plain;
+  try {
+    return 'SS1-' + toBase64Url(await pipe(new CompressionStream('deflate-raw'), json));
+  } catch {
+    return plain; // no 'deflate-raw' in this browser
+  }
 }
 
 export async function decodeCharacter(code: string): Promise<ParseResult> {
-  const s = code.replace(/\s+/g, '');
+  // pasted codes can carry line breaks and zero-width characters
+  const s = code.replace(/[\s\u200b-\u200d\ufeff]/g, '');
   const kind = s.slice(0, 4);
   if (kind !== 'SS1-' && kind !== 'SS0-') return { ok: false, error: ERR_NOT_CODE };
   let raw: unknown;

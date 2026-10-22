@@ -1,3 +1,4 @@
+import { classLine } from '../../character/derive';
 import { loadCharacter } from '../../character/store';
 import { DATA } from '../../data';
 import { CLASS_IDS } from '../../data/validate';
@@ -20,7 +21,7 @@ export function Start() {
         <button type="button" class="tile wide"
           onClick={() => { location.hash = ready ? '#/me' : '#/edit/basics'; }}>
           <span>My Character Sheet</span>
-          <small>{ch?.name || 'Create your character'}</small>
+          <small>{ch?.name || (ready ? classLine(ch) : 'Create your character')}</small>
         </button>
         {CLASS_IDS.map((id) => {
           const c = DATA.classes.find((x) => x.id === id);

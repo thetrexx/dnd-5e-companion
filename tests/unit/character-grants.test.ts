@@ -1,4 +1,4 @@
-import { autoSpells, grantSlots } from '../../src/character/grants';
+import { autoSpells, grantSlots, grantSources, unlockText } from '../../src/character/grants';
 import { optionSlots, prune } from '../../src/character/options';
 import { emptyCharacter } from '../../src/character/types';
 import type { CharClass, Character } from '../../src/character/types';
@@ -49,4 +49,10 @@ test('prune keeps subclass grant picks when the level drops, clears a foreign su
   expect(prune(c)).toBe(c);
   const bad = ch([{ cls: 'druid', level: 3, sub: 'champion' }]);
   expect(prune(bad).classes).toEqual([{ cls: 'druid', level: 3, sub: undefined }]);
+});
+test('unlock copy: class-owned by class level, the rest by character level', () => {
+  const c = ch([{ cls: 'warlock', level: 2 }], { race: 'tiefling', options: ['pact-boon-pact-of-the-tome'] });
+  const src = (key: string) => grantSources(c).find(s => s.key === key)!;
+  expect(unlockText(src('race:tiefling'), 5)).toBe('Unlocks at character level 5');
+  expect(unlockText(src('feature:pact-boon-pact-of-the-tome'), 3)).toBe('Unlocks at Warlock 3');
 });

@@ -2,7 +2,7 @@ import { ERR_NEWER, ERR_NOT_CHARACTER, parseCharacter } from '../../src/characte
 import { deleteCharacter, loadCharacter, saveCharacter } from '../../src/character/store';
 import type { Character } from '../../src/character/types';
 
-afterEach(() => { vi.restoreAllMocks(); localStorage.clear(); });
+afterEach(() => { vi.restoreAllMocks(); deleteCharacter(); localStorage.clear(); });
 
 const lyra = { v: 1, name: 'Lyra', race: 'tiefling', classes: [{ cls: 'sorcerer', level: 5, sub: 'draconic-bloodline' }],
   options: ['metamagic-quickened-spell', 'metamagic-twinned-spell', 'draconic-ancestry-red'], feats: [],
@@ -33,5 +33,13 @@ test('store survives blocked storage', () => {
   expect(loadCharacter()).toBeNull();
   expect(saveCharacter(lyra as Character)).toBe(false);
   expect(() => deleteCharacter()).not.toThrow();
+});
+test('blocked storage keeps the character for this session', () => {
+  vi.spyOn(Storage.prototype, 'getItem').mockImplementation(() => { throw new Error('denied'); });
+  vi.spyOn(Storage.prototype, 'setItem').mockImplementation(() => { throw new Error('denied'); });
+  expect(saveCharacter(lyra as Character)).toBe(false);
+  expect(loadCharacter()).toEqual(lyra);
+  deleteCharacter();
+  expect(loadCharacter()).toBeNull();
 });
 test('store round-trips', () => { saveCharacter(lyra as Character); expect(loadCharacter()).toEqual(lyra); deleteCharacter(); expect(loadCharacter()).toBeNull(); });

@@ -33,3 +33,15 @@ test('uncompressed fallback', async () => {
   expect(code.startsWith('SS0-')).toBe(true);
   expect((await decodeCharacter(code)).ok).toBe(true);
 });
+test('zero-width characters are ignored', async () => {
+  const code = await encodeCharacter(lyra);
+  const dirty = `\u200b${code.slice(0, 10)}\u200c${code.slice(10, 30)}\u200d\ufeff${code.slice(30)}\u00a0`;
+  expect((await decodeCharacter(dirty)).ok).toBe(true);
+});
+test('falls back to uncompressed when deflate-raw is missing', async () => {
+  vi.stubGlobal('CompressionStream', class { constructor() { throw new TypeError('Unsupported compression format'); } });
+  const code = await encodeCharacter(lyra);
+  vi.unstubAllGlobals();
+  expect(code.startsWith('SS0-')).toBe(true);
+  expect(await decodeCharacter(code)).toEqual({ ok: true, ch: lyra, dropped: [] });
+});

@@ -73,12 +73,21 @@ test('320px: editor steps and character pages fit', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 640 });
   const fits = async (what: string) =>
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth), what).toBe(true);
+  // iOS zooms into any text box under 16px on focus
+  const noZoom = async (what: string) => expect(await page.evaluate(() => [...document.querySelectorAll('input:not([type=radio]),select,textarea')]
+    .every((e) => parseFloat(getComputedStyle(e).fontSize) >= 16)), what).toBe(true);
   const steps: [string, string][] = [['basics', 'Race & name'], ['classes', 'Classes'], ['options', 'Options'], ['feats', 'Feats'], ['spells', 'Spells']];
   for (const [step, label] of steps) {
     await page.goto(`./#/edit/${step}`);
     await expect(page.locator('.steps a[aria-current="step"]')).toHaveText(label);
     await fits(step);
+    await noZoom(step);
   }
+  await page.goto('./#/settings');
+  await page.getByRole('button', { name: 'Make backup code' }).click();
+  await expect(page.getByLabel('Backup code', { exact: true })).not.toHaveValue('');
+  await fits('settings');
+  await noZoom('settings');
   await page.goto('./#/me');
   await expect(page.getByText('Lyra', { exact: true }).first()).toBeVisible();
   await fits('me');

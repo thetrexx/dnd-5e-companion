@@ -68,3 +68,19 @@ test('non-caster with racial spells gets a spells row', () => {
   const rows = charMenuRows(ch([{ cls: 'barbarian', level: 3 }], { race: 'tiefling' }));
   expect(rows.map(r => r.label)).toEqual(['Actions', 'Bonus Actions', 'Reactions', 'Barbarian Actions', 'MAGIC', 'Tiefling Spells']);
 });
+test('mystic arcanum: tagged, and a level with a pick of its own is not dimmed', () => {
+  // Warlock 11: level 6 arcanum reached; a level 7 pick is over the limit but still the character's own
+  const c = ch([{ cls: 'warlock', level: 11 }], { spells: [{ id: 'eyebite', cls: 'warlock' }, { id: 'finger-of-death', cls: 'warlock' },
+    { id: 'chain-lightning', cls: 'warlock', extra: true }, { id: 'fireball', cls: 'warlock', extra: true }] });
+  const s = charSpellSections(c, 'mine');
+  expect(s.find(x => x.id === 'lvl-6-warlock')!.tags).toEqual({ eyebite: 'Mystic Arcanum', 'chain-lightning': 'Mystic Arcanum' });
+  expect(s.find(x => x.id === 'lvl-3-warlock')!.tags).toEqual({ fireball: 'Other list' });
+  const dim = (label: string) => charMenuRows(c).find(r => r.label === label)!.dimmed;
+  expect([dim('Level 6 Spells'), dim('Level 7 Spells'), dim('Level 8 Spells')]).toEqual([false, false, true]);
+});
+test('a spell source not reached yet has a dimmed row', () => {
+  const rows = charMenuRows(ch([{ cls: 'barbarian', level: 3, sub: 'path-of-the-totem-warrior' }]));
+  expect(rows.find(r => r.label === 'Spirit Walker Spells')!.dimmed).toBe(true);
+  const tief = charMenuRows(ch([{ cls: 'barbarian', level: 3 }], { race: 'tiefling' }));
+  expect(tief.find(r => r.label === 'Tiefling Spells')!.dimmed).toBe(false);
+});

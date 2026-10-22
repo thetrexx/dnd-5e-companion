@@ -62,6 +62,12 @@ export function grantSources(ch: Character): GrantSource[] {
   return out;
 }
 
+/** When a grant not reached yet unlocks: class-owned sources by that class's level, the rest by character level. */
+export function unlockText(s: GrantSource, at: number): string {
+  const c = s.cls && DATA.classes.find(x => x.id === s.cls);
+  return c ? `Unlocks at ${c.name} ${at}` : `Unlocks at character level ${at}`;
+}
+
 export interface GrantSlot { key: string; source: GrantSource; choose: NonNullable<SpellGrant['choose']>; unlocked: boolean; candidates: Spell[] }
 
 export function grantSlots(ch: Character): GrantSlot[] {

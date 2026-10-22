@@ -1,8 +1,13 @@
 import { useRef, useState } from 'preact/hooks';
 import { decodeCharacter, encodeCharacter } from '../character/code';
+import { prune } from '../character/options';
+import type { ParseResult } from '../character/parse';
 import { loadCharacter, saveCharacter } from '../character/store';
 
 type Done = { name: string; dropped: string[] };
+type Decoded = Extract<ParseResult, { ok: true }>;
+
+const nameOf = (name: string) => name || 'your character';
 
 export function BackupCode() {
   const [ch, setCh] = useState(loadCharacter);
@@ -10,7 +15,8 @@ export function BackupCode() {
   const [exportErr, setExportErr] = useState('');
   const [copy, setCopy] = useState('');
   const [paste, setPaste] = useState('');
-  const [confirm, setConfirm] = useState(false);
+  // a valid code waiting for the second press, when it would replace a character
+  const [pending, setPending] = useState<Decoded | null>(null);
   const [err, setErr] = useState('');
   const [done, setDone] = useState<Done | null>(null);
   const out = useRef<HTMLTextAreaElement>(null);
@@ -29,14 +35,20 @@ export function BackupCode() {
     }
   }
   async function restore() {
-    setDone(null); setErr('');
-    if (ch && !confirm) { setConfirm(true); return; }
-    const r = await decodeCharacter(paste);
-    if (!r.ok) { setConfirm(false); setErr(r.error); return; }
-    if (!saveCharacter(r.ch)) { setConfirm(false); setErr("This browser won't keep your character."); return; }
-    setConfirm(false); setCh(r.ch); setCode(''); setPaste('');
-    setDone({ name: r.ch.name, dropped: r.dropped });
+    setDone(null); setErr(''); setPending(null);
+    let r = pending;
+    if (!r) {
+      const d = await decodeCharacter(paste);
+      if (!d.ok) { setErr(d.error); return; }
+      if (ch) { setPending(d); return; }
+      r = d;
+    }
+    const next = prune(r.ch);
+    if (!saveCharacter(next)) { setErr("This browser won't keep your character."); return; }
+    setCh(next); setCode(''); setPaste('');
+    setDone({ name: next.name, dropped: r.dropped });
   }
+  const onPaste = (v: string) => { setPaste(v); setPending(null); setErr(''); setDone(null); };
 
   return (
     <div class="backup">
@@ -58,14 +70,14 @@ export function BackupCode() {
       ) : <p class="note">Create a character first, or restore one below.</p>}
 
       <label class="field">Paste a backup code
-        <textarea class="code" rows={4} value={paste} onInput={(e) => { setPaste((e.currentTarget as HTMLTextAreaElement).value); setConfirm(false); }} />
+        <textarea class="code" rows={4} value={paste} onInput={(e) => onPaste((e.currentTarget as HTMLTextAreaElement).value)} />
       </label>
       <button type="button" class="btn" onClick={restore}>Restore</button>
-      {confirm && ch && <p class="warn">This replaces {ch.name}. Press Restore again.</p>}
+      {pending && ch && <p class="warn">This replaces {nameOf(ch.name)}. Press Restore again.</p>}
       {err && <p class="warn" role="alert">{err}</p>}
       {done && (
         <div>
-          <p class="note">Restored {done.name}.</p>
+          <p class="note">Restored {nameOf(done.name)}.</p>
           {done.dropped.length > 0 && <p class="note">Skipped, no longer in the app: {done.dropped.join(', ')}</p>}
           <a href="#/me">Open character</a>
         </div>

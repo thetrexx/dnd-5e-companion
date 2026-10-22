@@ -7,7 +7,7 @@ import { PickList } from '../../src/ui/editor/PickList';
 
 Element.prototype.scrollTo = () => {};
 Element.prototype.scrollIntoView = () => {};
-beforeEach(() => { localStorage.clear(); location.hash = ''; });
+beforeEach(() => { deleteCharacter(); localStorage.clear(); location.hash = ''; });
 afterEach(() => { cleanup(); vi.restoreAllMocks(); });
 
 test('editing saves on every change', () => {
@@ -31,6 +31,8 @@ test('classes: add, level, subclass, remove prunes spells', () => {
   fireEvent.change(r.getByLabelText('Wizard level'), { target: { value: '2' } });
   fireEvent.change(r.getByLabelText('Wizard Arcane Tradition'), { target: { value: 'school-of-evocation' } });
   fireEvent.click(r.getAllByText('Remove')[0]);
+  expect(loadCharacter()!.classes).toHaveLength(2);
+  fireEvent.click(r.getByText('Tap again to remove'));
   expect(loadCharacter()).toMatchObject({ classes: [{ cls: 'wizard', level: 2, sub: 'school-of-evocation' }], spells: [] });
   expect(r.getByText('Character level 2')).toBeTruthy();
 });
@@ -131,4 +133,39 @@ test('spells step: over the limit and non-casters', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'bard', level: 1 }], spells: [{ id: 'light', cls: 'bard' }, { id: 'mage-hand', cls: 'bard' }, { id: 'vicious-mockery', cls: 'bard' }] });
   const r2 = render(<Editor step="spells" />);
   expect(r2.getByText(/Cantrips 3 of 2 more than usual/)).toBeTruthy();
+});
+test('a choice not reached yet says when it unlocks', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'warlock', level: 2 }], options: ['pact-boon-pact-of-the-tome'] });
+  expect(render(<Editor step="options" />).getByText('Unlocks at Warlock 3')).toBeTruthy();
+});
+test('spells step: no cantrips and no spells yet', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'paladin', level: 1 }] });
+  const r = render(<Editor step="spells" />);
+  expect(r.getByText('Spells start at Paladin 2')).toBeTruthy();
+  expect(r.queryByText(/Cantrips|up to level/)).toBeNull();
+  cleanup();
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'paladin', level: 2 }] });
+  expect(render(<Editor step="spells" />).getByText(/^Spells 0 of 1 prepared · up to level 1$/)).toBeTruthy();
+});
+test('spells step: modifier is a whole number from -5 to 10', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 1 }] });
+  const r = render(<Editor step="spells" />);
+  const mod = () => loadCharacter()!.classes[0].mod;
+  const set = (v: string) => fireEvent.input(r.getByLabelText('WIS modifier'), { target: { value: v } });
+  set('12'); expect(mod()).toBe(10);
+  set('-7'); expect(mod()).toBe(-5);
+  set('2.6'); expect(mod()).toBe(3);
+  set(''); expect(mod()).toBeUndefined();
+});
+test('spells step: always prepared spells are not offered again', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 1, sub: 'life-domain' }] });
+  const r = render(<Editor step="spells" />);
+  expect(r.getAllByText('Bless')).toHaveLength(1);
+  expect(r.getAllByText('Cure Wounds')).toHaveLength(1);
+  expect(r.getAllByText('Healing Word')).toHaveLength(1);
+  cleanup();
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 1, sub: 'life-domain' }], spells: [{ id: 'bless', cls: 'cleric' }] });
+  const r2 = render(<Editor step="spells" />);
+  fireEvent.click(r2.getAllByText('Bless')[1]);
+  expect(loadCharacter()!.spells).toEqual([]);
 });

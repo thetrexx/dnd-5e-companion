@@ -23,15 +23,19 @@ function ClassSpells({ ch, update, cc, i }: StepProps & { cc: CharClass; i: numb
   const pickable = pickableSpells(cc);
   const onList = new Set(pickable.map((p) => p.spell.id));
   const always = autoSpells(ch).filter((a) => a.source.cls === cc.cls && a.unlocked).map((a) => a.spell);
+  // always-prepared spells aren't offered again, unless picked before (so the pick can be undone)
+  const grid = pickable.filter((p) => !always.includes(p.spell) || picked.includes(p.spell.id));
   const tags: Record<string, string> = {};
   for (const p of pickable) if (p.tag) tags[p.spell.id] = p.tag;
   const isPrepared = info.prepared !== undefined;
   const limit = isPrepared ? info.prepared! : info.known;
+  const start = (def.maxSpellLevel ?? []).findIndex((m) => m >= 1) + 1;
   const line = [
-    count('Cantrips', counts.cantrips, info.cantrips),
-    limit !== undefined && count('Spells', counts.spells, limit, isPrepared ? ' prepared' : ' known'),
-    `up to level ${info.maxLevel}`,
-  ].filter(Boolean).join(' · ');
+    (info.cantrips > 0 || counts.cantrips > 0) && count('Cantrips', counts.cantrips, info.cantrips),
+    info.maxLevel === 0
+      ? (start > 0 ? `Spells start at ${def.name} ${start}` : 'No spells yet')
+      : [limit !== undefined && count('Spells', counts.spells, limit, isPrepared ? ' prepared' : ' known'), `up to level ${info.maxLevel}`],
+  ].flat().filter(Boolean).join(' · ');
   const toggle = (id: string) => update({ ...ch, spells: picked.includes(id)
     ? ch.spells.filter((s) => !(s.id === id && s.cls === cc.cls && !s.extra))
     : [...ch.spells, { id, cls: cc.cls }] });
@@ -41,7 +45,7 @@ function ClassSpells({ ch, update, cc, i }: StepProps & { cc: CharClass; i: numb
   const found = text ? DATA.spells.filter((s) => s.name.toLowerCase().includes(text) && !onList.has(s.id) && !extras.includes(s.id)).slice(0, 20) : [];
   const levels = Array.from({ length: info.maxLevel + 1 }, (_, n) => n);
   const setMod = (v: string) => {
-    const n = v === '' ? NaN : Number(v);
+    const n = v === '' ? NaN : Math.min(10, Math.max(-5, Math.round(Number(v))));
     update({ ...ch, classes: ch.classes.map((c, j) => (j === i ? { ...c, mod: Number.isNaN(n) ? undefined : n } : c)) });
   };
   return (
@@ -60,7 +64,7 @@ function ClassSpells({ ch, update, cc, i }: StepProps & { cc: CharClass; i: numb
         </>
       )}
       {levels.map((n) => {
-        const items = pickable.filter((p) => p.spell.level === n).map((p) => p.spell);
+        const items = grid.filter((p) => p.spell.level === n).map((p) => p.spell);
         return items.length > 0 && (
           <div key={n}>
             <h3 class="lvl-name">{n === 0 ? 'Cantrips' : `Level ${n}`}</h3>

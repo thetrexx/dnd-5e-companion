@@ -8,7 +8,7 @@ import { listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
 import { castingInfo, raceChain } from './derive';
-import { autoSpells, grantSources } from './grants';
+import { autoSpells, grantSources, unlockText } from './grants';
 import type { GrantSource } from './grants';
 import { optionSlots } from './options';
 import type { OptionSlot } from './options';
@@ -38,7 +38,8 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
   for (const p of ch.spells) {
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
     if (!spell) continue;
-    const tag = p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
+    const tag = cc.cls === 'warlock' && spell.level >= 6 ? 'Mystic Arcanum'
+      : p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
       : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school' : undefined;
     entries.push({ spell, tag, mine: true, locked: false, atLevel: 1 });
   }
@@ -58,13 +59,11 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
 }
 
 function sourcePlace(s: GrantSource): Place {
-  const byChar = s.key.startsWith('race:') || s.key.startsWith('feat:') || !s.cls;
   return {
     key: s.key.replace(/:/g, '-'), subtitle: s.title, source: s, entries: [],
     lock: (_, es) => {
       if (!es.every(e => e.locked)) return undefined;
-      const at = Math.min(...es.map(e => e.atLevel));
-      return byChar ? `Unlocks at character level ${at}` : `Unlocks at ${className(s.cls!)} ${at}`;
+      return unlockText(s, Math.min(...es.map(e => e.atLevel)));
     },
   };
 }
@@ -200,19 +199,21 @@ export function charMenuRows(ch: Character): MenuRow[] {
     for (const { cc, info } of casters) {
       const id = `${n === 0 ? 'cantrips' : `lvl-${n}`}-${cc.cls}`;
       // past the ceiling only for a spell of the character's own there (e.g. Mystic Arcanum)
-      if (n > info.ceiling && !sections.some(x => x.sec.id === id && x.sec.mine?.length)) continue;
+      const own = sections.some(x => x.sec.id === id && x.sec.mine?.length);
+      if (n > info.ceiling && !own) continue;
       const name = casters.length === 1 ? '' : `${className(cc.cls)} `;
       rows.push(n === 0
         ? { kind: 'cantrips', label: `${name}Cantrips`, icon: { type: 'img', src: DATA.classes.find(x => x.id === info.list)?.plainIcon },
             target: spells(id), dimmed: info.cantrips === 0, motif: info.list }
         : { kind: 'spells', label: `Level ${n} ${name}Spells`, icon: info.pact ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },
-            target: spells(id), dimmed: n > info.maxLevel, motif: info.list });
+            target: spells(id), dimmed: n > info.maxLevel && !own, motif: info.list });
     }
   }
-  // grant sources standing alone (race, feat, feature): one row each, onto its first section
+  // grant sources standing alone (race, feat, feature): one row each, onto its first section; dimmed until one unlocks
   for (const pl of places) {
-    const first = pl.source && sections.find(x => x.place === pl);
-    if (first) rows.push({ kind: 'spells', label: `${pl.source!.title} Spells`, icon: sourceIcon(pl.source!), target: spells(first.sec.id) });
+    const own = pl.source ? sections.filter(x => x.place === pl) : [];
+    if (own.length) rows.push({ kind: 'spells', label: `${pl.source!.title} Spells`, icon: sourceIcon(pl.source!),
+      target: spells(own[0].sec.id), dimmed: own.every(x => x.sec.locked) });
   }
   return rows;
 }
