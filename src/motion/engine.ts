@@ -4,7 +4,7 @@ import { range } from './rand';
 
 const NS = 'http://www.w3.org/2000/svg';
 export interface Rendered { part: Part; el: SVGElement; len?: number }
-export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number }
+export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal }
 
 function el(tag: string, attrs: Record<string, string | number>, parent: Element, cls?: string): SVGElement {
   const e = document.createElementNS(NS, tag) as SVGElement;
@@ -42,17 +42,34 @@ function arm(rs: Rendered[], still: boolean): void {
   }
 }
 
-const sleep = (ms: number) => new Promise<void>(res => setTimeout(res, ms));
-const visible = () => new Promise<void>(res => {
-  if (!document.hidden) return res();
-  const on = () => { if (!document.hidden) { document.removeEventListener('visibilitychange', on); res(); } };
+// resolves once start() calls done or the signal aborts, whichever is first; start's cleanup always runs
+function wait(sig: AbortSignal | undefined, start: (done: () => void) => () => void): Promise<void> {
+  return new Promise(res => {
+    if (sig?.aborted) return res();
+    let undo = () => {};
+    const done = () => { undo(); sig?.removeEventListener('abort', done); res(); };
+    sig?.addEventListener('abort', done);
+    undo = start(done);
+  });
+}
+const sleep = (ms: number, sig?: AbortSignal) => wait(sig, done => { const t = setTimeout(done, ms); return () => clearTimeout(t); });
+const visible = (sig?: AbortSignal) => wait(sig, done => {
+  if (!document.hidden) { done(); return () => {}; }
+  const on = () => { if (!document.hidden) done(); };
   document.addEventListener('visibilitychange', on);
+  return () => document.removeEventListener('visibilitychange', on);
 });
-const settle = (as: Animation[]) => Promise.all(as.map(a => a.finished.catch(() => {})));
+const settle = (as: Animation[], sig?: AbortSignal) => wait(sig, done => {
+  void Promise.all(as.map(a => a.finished.catch(() => {}))).then(done);
+  return () => {};
+});
 
 // one grow / hold / wither loop; T holds the timings, alive() lets a newer loop take over
 export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Timing, o: LoopOptions): Promise<void> {
-  const rnd = o.rnd ?? Math.random, still = !o.animate || !canAnimate();
+  const rnd = o.rnd ?? Math.random, still = !o.animate || !canAnimate(), sig = o.signal;
+  // alive() is polled between phases; the signal also cuts every wait short
+  const alive = () => !sig?.aborted && o.alive();
+  if (sig?.aborted) return;
   const draw = () => {
     const { width: W, height: H } = host.getBoundingClientRect();
     svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
@@ -62,13 +79,13 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
     return rs;
   };
   if (still) { draw(); return; }
-  if (o.startDelay) await sleep(o.startDelay);
+  if (o.startDelay) await sleep(o.startDelay, sig);
   let live: Animation[] = [];
   const stop = () => { for (const a of live) a.cancel(); live = []; };
   try {
-    while (o.alive()) {
-      await visible();
-      if (!o.alive()) return;
+    while (alive()) {
+      await visible(sig);
+      if (!alive()) return;
       stop();
       const rs = draw();
       let end = 0;
@@ -85,8 +102,8 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
           { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' });
       });
       live = [...grow, svg.animate([], { duration: end + T.HOLD })];
-      await settle(live);
-      if (!o.alive()) return;
+      await settle(live, sig);
+      if (!alive()) return;
       // wither: a second wave erases everything in the order it grew (movers have already played out)
       const wither = rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
         const delay = p.at * T.WITHER;
@@ -96,7 +113,7 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
       });
       const pause = svg.animate([], { duration: range(rnd, 400, 1200) });
       live = [...grow, ...wither, pause];
-      await settle([...wither, pause]);
+      await settle([...wither, pause], sig);
     }
   } finally { stop(); }
 }

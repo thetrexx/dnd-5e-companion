@@ -115,3 +115,52 @@ test('renderParts: pop transform and scale, move group, shape attrs', () => {
   expect(r[0]!.el).toBe(pop!.querySelector('g.pop'));
   expect(r[1]!.el).toBe(move!.querySelector('g.pop'));
 });
+test('abort mid-grow cancels running animations and returns promptly', async () => {
+  const pending: ReturnType<typeof vi.fn>[] = [];
+  eproto.animate = vi.fn(() => {
+    let fail = (_: unknown) => {};
+    const finished = new Promise((_, rej) => { fail = rej; });
+    const cancel = vi.fn(() => fail(new DOMException('cancelled', 'AbortError')));
+    pending.push(cancel);
+    return { finished, cancel };
+  });
+  const ac = new AbortController();
+  const p = runLoop(host, svg, ROW_MOTIFS.bard!, ROW_TIMING, { animate: true, alive: () => true, rnd: seeded(2), signal: ac.signal });
+  await new Promise(r => setTimeout(r, 5));
+  expect(pending.length).toBeGreaterThan(0);
+  ac.abort();
+  await p;
+  expect(pending.every(c => c.mock.calls.length === 1)).toBe(true);
+});
+test('abort while hidden removes the visibility listener and never draws', async () => {
+  Object.defineProperty(document, 'hidden', { configurable: true, get: () => true });
+  const off = vi.spyOn(document, 'removeEventListener');
+  const gen = vi.fn(() => []);
+  const ac = new AbortController();
+  const p = runLoop(host, svg, gen, ROW_TIMING, { animate: true, alive: () => true, rnd: seeded(2), signal: ac.signal });
+  await new Promise(r => setTimeout(r, 5));
+  ac.abort();
+  await p;
+  expect(off).toHaveBeenCalledWith('visibilitychange', expect.any(Function));
+  Object.defineProperty(document, 'hidden', { configurable: true, get: () => false });
+  document.dispatchEvent(new Event('visibilitychange'));
+  await new Promise(r => setTimeout(r, 5));
+  expect(gen).not.toHaveBeenCalled();
+});
+test('abort during startDelay clears the timer and never calls gen', async () => {
+  const clear = vi.spyOn(globalThis, 'clearTimeout');
+  const gen = vi.fn(() => []);
+  const ac = new AbortController();
+  const p = runLoop(host, svg, gen, ROW_TIMING, { animate: true, alive: () => true, rnd: seeded(2), startDelay: 60000, signal: ac.signal });
+  await new Promise(r => setTimeout(r, 5));
+  ac.abort();
+  await p;
+  expect(clear).toHaveBeenCalled();
+  expect(gen).not.toHaveBeenCalled();
+});
+test('already-aborted signal returns before drawing', async () => {
+  const gen = vi.fn(() => []);
+  await runLoop(host, svg, gen, ROW_TIMING, { animate: true, alive: () => true, signal: AbortSignal.abort() });
+  expect(gen).not.toHaveBeenCalled();
+  expect(Element.prototype.animate).not.toHaveBeenCalled();
+});
