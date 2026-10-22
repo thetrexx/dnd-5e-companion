@@ -41,6 +41,22 @@ test('changing section later switches to All; a visible section stays on My', ()
   expect(r.getByRole('button', { name: 'All' }).getAttribute('aria-pressed')).toBe('true');
   expect(loadSettings().spellView).toBe('all');
 });
+test('in the app, My spells sticks after a jump to a section My hides', () => {
+  saveCharacter(lyra);
+  location.hash = '#/me/spells?s=lvl-2-sorcerer';
+  const r = render(<App />);
+  expect(loadSettings().spellView).toBe('all');
+  fireEvent.click(r.getByRole('button', { name: 'My spells' }));
+  expect(r.getByRole('button', { name: 'My spells' }).getAttribute('aria-pressed')).toBe('true');
+  expect(loadSettings().spellView).toBe('mine');
+});
+test('an equal character on re-render does not force All again', () => {
+  const r = render(<MeSpells ch={lyra} section="lvl-2-sorcerer" />);
+  fireEvent.click(r.getByRole('button', { name: 'My spells' }));
+  r.rerender(<MeSpells ch={{ ...lyra }} section="lvl-2-sorcerer" />);
+  expect(r.getByRole('button', { name: 'My spells' }).getAttribute('aria-pressed')).toBe('true');
+  expect(loadSettings().spellView).toBe('mine');
+});
 test('no picked spells: all spells, no toggle', () => {
   const r = render(<MeSpells ch={{ ...lyra, spells: [] }} />);
   expect(r.queryByRole('button', { name: 'All' })).toBeNull();

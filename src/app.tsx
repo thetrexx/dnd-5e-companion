@@ -23,10 +23,12 @@ import { SETTINGS_EVENT, loadSettings } from './settings/settings';
 import type { Route } from './data/types';
 import type { Character } from './character/types';
 
+const bgInputs = () => { const s = loadSettings(); return `${s.theme}|${s.strength}`; };
+
 export function App() {
   const [hash, setHash] = useState(location.hash);
-  // a saved setting re-renders, so the background follows a new theme or strength at once
-  const [, setSaves] = useState(0);
+  // a saved theme or strength re-renders, so the background follows it at once; other saves leave the screens alone
+  const [, setBgInputs] = useState(bgInputs);
   useEffect(() => {
     let current = location.hash;
     const on = () => {
@@ -34,7 +36,7 @@ export function App() {
       current = location.hash;
       setHash(current);
     };
-    const saved = () => setSaves((n) => n + 1);
+    const saved = () => setBgInputs(bgInputs());
     addEventListener('hashchange', on);
     addEventListener(SETTINGS_EVENT, saved);
     return () => { removeEventListener('hashchange', on); removeEventListener(SETTINGS_EVENT, saved); };
