@@ -6,6 +6,7 @@ import './styles/fonts.css';
 import './styles/base.css';
 import './styles/components.css';
 import './styles/screens.css';
+import './styles/motion.css';
 
 const settings = loadSettings();
 applyTheme(settings.theme);

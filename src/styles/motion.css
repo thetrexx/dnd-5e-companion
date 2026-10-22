@@ -1,0 +1,21 @@
+.rl{position:relative;z-index:1}
+.fx-row,.fx-bg{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;color:var(--fx-c);opacity:calc(var(--motion-i) * var(--fx-o))}
+.fx-row{-webkit-mask:var(--row-motif-mask);mask:var(--row-motif-mask)}
+.fx-bg{position:fixed;z-index:-1;-webkit-mask:var(--bg-motif-mask);mask:var(--bg-motif-mask)}
+.fx-row path,.fx-bg path{fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+.fx-row .thin{stroke-width:.7}
+.fx-row .thick{stroke-width:1.6}
+.fx-row .thicker{stroke-width:2.6}
+.fx-row .faint{opacity:.45}
+.fx-bg .thin{stroke-width:.8}
+.fx-bg .thick{stroke-width:1.6}
+.fx-bg .thicker{stroke-width:3}
+.fx-bg .faint{opacity:.5}
+.fx-row .fill,.fx-bg .fill{fill:currentColor;stroke:none}
+.fx-row .leaf,.fx-bg .leaf{fill:var(--druid-leaf);stroke:none}
+.fx-row .bloom,.fx-bg .bloom{fill:var(--druid-bloom);stroke:none}
+.fx-row .pop,.fx-bg .pop{transform-box:fill-box;transform-origin:center}
+.fx-mist,.fx-blood{position:fixed;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);z-index:-1;pointer-events:none}
+.fx-mist{opacity:calc(var(--motion-i) * var(--mist-o));filter:blur(var(--mist-blur))}
+.fx-blood{opacity:calc(var(--motion-i) * var(--blood-o));filter:blur(var(--blood-blur))}
+.fx-cells{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i) * var(--cells-o))}
