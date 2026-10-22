@@ -4,6 +4,7 @@ import { STRENGTHS, applyStrength, loadSettings, reducedMotion, saveSettings } f
 import type { Settings as SettingsData } from '../../settings/settings';
 import { lastInAppRoute } from '../../lastRoute';
 import { Separator } from '../Separator';
+import { BackupCode } from '../BackupCode';
 
 const ORN = '☙';
 const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
@@ -44,7 +45,7 @@ export function Settings() {
       {reducedMotion() && <p class="hint">Your phone's reduced-motion setting turns animations off.</p>}
 
       <Separator ornament={ORN} label="Backup code" full />
-      <p class="note">Available once you create a character.</p>
+      <BackupCode />
 
       <Separator ornament={ORN} label="About" full />
       <div class="about">

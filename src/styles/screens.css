@@ -87,3 +87,5 @@ a.row{text-decoration:none;box-sizing:border-box}
 .pick-row{display:flex;flex-direction:column;align-items:flex-start;gap:2px;text-align:left;font:inherit;font-size:13px;padding:10px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;cursor:pointer}
 .pick-row[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
 .pick-note{font-size:10.5px;color:var(--text-dim)}
+.backup .code{display:block;box-sizing:border-box;width:100%;max-width:100%;margin:4px 0 8px;padding:10px;font:inherit;font-size:12px;word-break:break-all;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px}
+.backup a{color:var(--accent)}
