@@ -1,16 +1,10 @@
 import type { ClassId } from '../data/types';
-import { ROW_TIMING, type Gen, type Part, type Rnd, type Shape } from './types';
+import { ROW_TIMING, type Gen, type Part, type Shape } from './types';
 import { range } from './rand';
-import { circ, curl, heading, toD, wander, type Pt } from './geom';
+import { circ, curl, heading, wander, type Pt } from './geom';
+import { f1, line, pop, r1, shape, sign } from './parts';
 
 const G = ROW_TIMING.G;
-const f1 = (n: number) => n.toFixed(1);
-const r1 = (n: number) => +n.toFixed(1);
-const line = (shape: string | Pt[], at: number, dur: number, cls?: string): Part =>
-  ({ kind: 'line', d: typeof shape === 'string' ? shape : toD(shape), at, dur, cls });
-const pop = (x: number, y: number, rot: number, at: number, shapes: Shape[]): Part => ({ kind: 'pop', x, y, rot, at, shapes });
-const shape = (tag: Shape['tag'], attrs: Shape['attrs'], cls?: string): Shape => cls ? { tag, attrs, cls } : { tag, attrs };
-const sign = (rnd: Rnd) => rnd() < .5 ? 1 : -1;
 
 export const ROW_MOTIFS: Partial<Record<ClassId, Gen>> = {
   // Druid: a vine creeps in, tendrils curl off it, leaves and blossoms open
