@@ -42,7 +42,7 @@ export function Settings() {
           </label>
         ))}
       </div>
-      {reducedMotion() && <p class="hint">Your phone's reduced-motion setting keeps the patterns still.</p>}
+      {reducedMotion() && s.strength !== 'off' && <p class="hint">Your phone's reduced-motion setting keeps the patterns still.</p>}
 
       <Separator ornament={ORN} label="Backup code" full />
       <BackupCode />
