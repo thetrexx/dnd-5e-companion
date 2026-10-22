@@ -1,12 +1,16 @@
 # Spellbook & Steel — a D&D 5e companion
 
-> **Work in progress.** All 12 classes, 40 subclasses, 361 spells, class options, races and feats are in. Every card is a short summary in our own words with the PHB page for the full rules. Character import and the animated class backgrounds are still being built.
+> **Work in progress.** All 12 classes, 40 subclasses, 361 spells, class options, races and feats are in. Every card is a short summary in our own words with the PHB page for the full rules. The animated class backgrounds are still being built.
 
 A phone-first cheat sheet for D&D 5e (2014 Player's Handbook rules). Players pick their class and level and get quick access to their actions, reactions, cantrips and spells, each with a BG3-style card showing the description, cost, components and dice. The paper character sheet stays the source of truth; this is only a lookup.
 
 Live site: https://thetrexx.github.io/dnd-5e-companion/
 
 On a phone, open the link and use "Add to Home Screen" so it opens full-screen like an app.
+
+## Your character
+
+Tap `My Character Sheet` on the start screen to build your character: race, classes, options, feats and spells. The menu and spell lists then show only what you picked, with an `All` toggle to see everything. It lives in this browser only, with no account. To move it to another device or restore it later, use the backup code in Settings: make a code, copy it, and paste it there.
 
 ## Development
 
