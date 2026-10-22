@@ -9,7 +9,7 @@ test('domain spells', () => {
   expect(life.kind).toBe('domain');
   expect(life.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['bless', 'cure-wounds']);
   for (const d of DATA.subclasses.filter(s => s.cls === 'cleric')) {
-    expect(d.bonusSpells!.grants.map(g => g.atLevel).sort()).toEqual([1, 1, 3, 3, 5, 5, 7, 7, 9, 9]);
+    expect(d.bonusSpells!.grants.filter(g => g.spell).map(g => g.atLevel).sort()).toEqual([1, 1, 3, 3, 5, 5, 7, 7, 9, 9]);
   }
 });
 test('land circle spells per terrain', () => {
@@ -44,4 +44,17 @@ test('subclass features B', () => {
   for (const id of ['sacred-weapon', 'vow-of-enmity', 'rangers-companion', 'fast-hands', 'assassinate', 'tides-of-chaos',
     'dark-ones-blessing', 'fey-presence', 'portent', 'arcane-ward'])
     expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+
+const feature = (id: string) => DATA.features.find(f => f.id === id)!;
+test('parked subclass spell grants', () => {
+  expect(feature('mage-hand-legerdemain').spells).toEqual([{ spell: 'mage-hand', atLevel: 3 }]);
+  expect(feature('shadow-arts').spells!.map(g => g.spell)).toEqual(['minor-illusion', 'darkness', 'darkvision', 'pass-without-trace', 'silence']);
+  expect(feature('shadow-arts').spells!.every(g => g.atLevel === 3)).toBe(true);
+  expect(feature('shadow-arts').spells!.filter(g => g.spell !== 'minor-illusion').every(g => g.uses === '2 ki points')).toBe(true);
+  expect(feature('spirit-seeker').spells!.map(g => g.spell)).toEqual(['beast-sense', 'speak-with-animals']);
+  expect(feature('spirit-seeker').spells!.every(g => g.uses === 'Ritual only')).toBe(true);
+  expect(feature('spirit-walker').spells).toEqual([expect.objectContaining({ spell: 'commune-with-nature', atLevel: 10, uses: 'Ritual only' })]);
+  expect(sub('nature-domain').bonusSpells!.grants).toContainEqual({ choose: { lists: ['druid'], level: 0, count: 1 }, atLevel: 1 });
+  expect(sub('circle-of-the-land').bonusSpells!.grants).toContainEqual({ choose: { lists: ['druid'], level: 0, count: 1 }, atLevel: 2 });
 });

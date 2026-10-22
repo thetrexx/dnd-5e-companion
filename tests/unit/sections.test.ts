@@ -1,4 +1,6 @@
 import type { Feature, Spell } from '../../src/data/types';
+import { DATA } from '../../src/data';
+import { listSpells } from '../../src/logic/rules';
 import { spellSections, actionSections } from '../../src/logic/sections';
 
 test('wizard spell sections', () => {
@@ -74,4 +76,13 @@ test('subclass casters omit spell levels they never reach', () => {
   expect(ek.map(s => s.id)).toEqual(['cantrips', 'lvl-1', 'lvl-2', 'lvl-3', 'lvl-4']);
   expect(ek.find(s => s.id === 'lvl-4')!.locked).toBe('Unlocks at Fighter 19');
   expect(spellSections('rogue', 20, 'arcane-trickster').some(s => s.id === 'lvl-5')).toBe(false);
+});
+
+test('listSpells: subclass caster list matches its spell sections', () => {
+  const cls = (id: string) => DATA.classes.find(c => c.id === id)!;
+  const ek = DATA.subclasses.find(s => s.id === 'eldritch-knight')!;
+  const fromSections = spellSections('fighter', 20, 'eldritch-knight').flatMap(s => s.items.map(i => i.id));
+  // sections drop levels above the subclass ceiling; listSpells keeps the whole filtered list
+  expect(listSpells(cls('fighter'), ek).filter(s => s.level <= 4).map(s => s.id).sort()).toEqual([...new Set(fromSections)].sort());
+  expect(listSpells(cls('wizard')).map(s => s.id)).toContain('fireball');
 });

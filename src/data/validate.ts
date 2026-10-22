@@ -46,6 +46,11 @@ export function validateDataset(d: Dataset): string[] {
   const raceIds = new Set(d.races.map(x => x.id));
   const featIds = new Set(d.feats.map(x => x.id));
   const featureIds = new Set(d.features.map(x => x.id));
+  const isOption = (id: string) => d.features.some(f => f.id === id && f.source.kind === 'option');
+  const ownedBy = (at: string, kind: 'class' | 'subclass' | 'race', id: string, g: string) => {
+    const o = d.optionGroups.find(x => x.id === g)?.owner;
+    if (o && (o.kind !== kind || o.id !== id)) errs.push(`${at}: option group "${g}" is owned by ${o.kind} "${o.id}"`);
+  };
   const optionsOf = (g: string) => d.features.filter(f => f.source.kind === 'option' && f.source.id === g).map(f => f.id);
 
   const grants = (at: string, gs: SpellGrant[] | undefined) => {
@@ -62,6 +67,7 @@ export function validateDataset(d: Dataset): string[] {
       if (!isInt(g.atLevel, 1, 20)) errs.push(`${at}: grant atLevel ${g.atLevel} must be 1-20`);
       if (g.ability !== undefined && !ABILITIES.includes(g.ability)) errs.push(`${at}: grant ability "${g.ability}" is not valid`);
       if (g.option !== undefined && !featureIds.has(g.option)) errs.push(`${at}: grant has unknown option "${g.option}"`);
+      else if (g.option !== undefined && !isOption(g.option)) errs.push(`${at}: grant option "${g.option}" is not an option`);
     }
   };
 
@@ -70,6 +76,7 @@ export function validateDataset(d: Dataset): string[] {
     if (!CLASS_IDS.includes(c.id)) errs.push(`class "${c.id}": unknown class id`);
     if (blank(c.name)) errs.push(`class "${c.id}": name is empty`);
     if (!CASTERS.includes(c.caster)) errs.push(`class "${c.id}": caster "${c.caster}" is not valid`);
+    if (c.caster !== 'none' && c.spellAbility === undefined) errs.push(`class "${c.id}": spellAbility required for a caster`);
     checkLevels(c, 'cantripsKnown', errs);
     checkLevels(c, 'maxSpellLevel', errs);
     if (c.spellsKnown !== undefined) table(`class "${c.id}"`, 'spellsKnown', c.spellsKnown, 0, 99, errs);
@@ -78,7 +85,10 @@ export function validateDataset(d: Dataset): string[] {
     if (!isInt(c.subclassLevel, 1, 20)) errs.push(`class "${c.id}": subclassLevel must be an integer 1-20`);
     if (blank(c.subclassLabel)) errs.push(`class "${c.id}": subclassLabel is empty`);
     if (!Array.isArray(c.options)) errs.push(`class "${c.id}": options must be an array`);
-    else for (const g of c.options) if (!groupIds.has(g)) errs.push(`class "${c.id}": unknown option group "${g}"`);
+    else for (const g of c.options) {
+      if (!groupIds.has(g)) errs.push(`class "${c.id}": unknown option group "${g}"`);
+      else ownedBy(`class "${c.id}"`, 'class', c.id, g);
+    }
   }
 
   checkIds('spell', d.spells, errs);
@@ -127,6 +137,7 @@ export function validateDataset(d: Dataset): string[] {
     for (const sc of f.scaling ?? [])
       if (!Array.isArray(sc.values) || sc.values.length !== 20 || !sc.values.every(v => typeof v === 'string')) errs.push(`${at}: scaling "${sc.label}" must have 20 string values`);
     if (f.prereq?.option !== undefined && !featureIds.has(f.prereq.option)) errs.push(`${at}: prereq has unknown option "${f.prereq.option}"`);
+    else if (f.prereq?.option !== undefined && !isOption(f.prereq.option)) errs.push(`${at}: prereq option "${f.prereq.option}" is not an option`);
     grants(at, f.spells);
   }
 
@@ -148,7 +159,10 @@ export function validateDataset(d: Dataset): string[] {
       table(at, 'casting.spellsKnown', c.spellsKnown, 0, 99, errs);
       table(at, 'casting.maxSpellLevel', c.maxSpellLevel, 0, 9, errs);
     }
-    for (const g of sc.options ?? []) if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
+    for (const g of sc.options ?? []) {
+      if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
+      else ownedBy(at, 'subclass', sc.id, g);
+    }
   }
 
   checkIds('option group', d.optionGroups, errs);
@@ -182,7 +196,10 @@ export function validateDataset(d: Dataset): string[] {
     if (r.parent !== undefined && !raceIds.has(r.parent)) errs.push(`${at}: unknown parent race "${r.parent}"`);
     if (!isInt(r.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     grants(at, r.spells);
-    for (const g of r.options ?? []) if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
+    for (const g of r.options ?? []) {
+      if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
+      else ownedBy(at, 'race', r.id, g);
+    }
   }
 
   checkIds('feat', d.feats, errs);

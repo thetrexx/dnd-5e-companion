@@ -43,3 +43,10 @@ test('class actions row targets the first non-empty class section', () => {
   expect(lock(menuRows('fighter', 1))).toMatchObject({ page: 'actions', section: 'class' });
   expect(lock(menuRows('warlock', 2))).toMatchObject({ page: 'actions', section: 'opt-eldritch-invocations' });
 });
+
+test('subclass casters stop at their highest spell level', () => {
+  const ek = menuRows('fighter', 3, 'eldritch-knight').filter(r => r.kind === 'spells');
+  expect(ek.map(r => r.label).at(-1)).toBe('Level 4 Spells');
+  expect(menuRows('rogue', 20, 'arcane-trickster').filter(r => r.kind === 'spells')).toHaveLength(4);
+  expect(menuRows('wizard', 1).filter(r => r.kind === 'spells')).toHaveLength(9);
+});

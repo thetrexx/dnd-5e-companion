@@ -2,10 +2,13 @@ import { readJSON, writeJSON } from './storage';
 import { THEMES } from '../theme/themes';
 
 export type Strength = 'off' | 'faint' | 'medium' | 'strong';
-export interface Settings { v: 1; theme: string; strength: Strength; iosTipSeen: boolean }
+/** Character spells: only the character's own, or the whole list with the character's ringed. */
+export type SpellView = 'mine' | 'all';
+export interface Settings { v: 1; theme: string; strength: Strength; iosTipSeen: boolean; spellView: SpellView }
 
 export const STRENGTHS: Strength[] = ['off', 'faint', 'medium', 'strong'];
-export const DEFAULT_SETTINGS: Settings = { v: 1, theme: 'faerun', strength: 'medium', iosTipSeen: false };
+export const SPELL_VIEWS: SpellView[] = ['mine', 'all'];
+export const DEFAULT_SETTINGS: Settings = { v: 1, theme: 'faerun', strength: 'medium', iosTipSeen: false, spellView: 'mine' };
 const KEY = 'dndcs.settings';
 
 export function loadSettings(): Settings {
@@ -16,6 +19,7 @@ export function loadSettings(): Settings {
     theme: THEMES.some((t) => t.id === raw.theme) ? (raw.theme as string) : DEFAULT_SETTINGS.theme,
     strength: STRENGTHS.includes(raw.strength as Strength) ? (raw.strength as Strength) : DEFAULT_SETTINGS.strength,
     iosTipSeen: raw.iosTipSeen === true,
+    spellView: SPELL_VIEWS.includes(raw.spellView as SpellView) ? (raw.spellView as SpellView) : DEFAULT_SETTINGS.spellView,
   };
 }
 

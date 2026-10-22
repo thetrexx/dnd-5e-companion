@@ -1,6 +1,6 @@
 import { DATA } from '../data';
 import type { ClassId, Route } from '../data/types';
-import { maxSpellLevel } from './rules';
+import { ceilingOf, maxSpellLevel } from './rules';
 import { actionSections } from './sections';
 import { effectiveSub } from './subclass';
 
@@ -12,10 +12,19 @@ export const WARLOCK_SLOT_ICON = 'https://bg3.wiki/w/images/6/6c/Warlock_Spell_S
 export interface MenuRow {
   kind: 'actions' | 'bonus' | 'reactions' | 'class' | 'cantrips' | 'spells' | 'separator';
   label: string;
-  icon?: { type: 'img'; src: string } | { type: 'slot'; level: number; warlock?: boolean };
+  icon?: { type: 'img'; src?: string } | { type: 'slot'; level: number; warlock?: boolean };
   target?: Route;
   dimmed?: boolean;
   motif?: ClassId;
+}
+
+/** Actions, Bonus Actions and Reactions rows; `to` maps a section id to the route. */
+export function genericRows(to: (section: string) => Route): MenuRow[] {
+  return [
+    { kind: 'actions', label: 'Actions', icon: { type: 'img', src: ACTION_ICON }, target: to('actions') },
+    { kind: 'bonus', label: 'Bonus Actions', icon: { type: 'img', src: BONUS_ACTION_ICON }, target: to('bonus') },
+    { kind: 'reactions', label: 'Reactions', icon: { type: 'img', src: REACTION_ICON }, target: to('reactions') },
+  ];
 }
 
 export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
@@ -27,9 +36,7 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
   const classSection = actionSections(cls, level, s?.id)
     .find(x => (x.id === 'class' || x.id === 'subclass' || x.id.startsWith('opt-')) && x.items.length > 0)?.id ?? 'class';
   const rows: MenuRow[] = [
-    { kind: 'actions', label: 'Actions', icon: { type: 'img', src: ACTION_ICON }, target: to('actions', 'actions') },
-    { kind: 'bonus', label: 'Bonus Actions', icon: { type: 'img', src: BONUS_ACTION_ICON }, target: to('actions', 'bonus') },
-    { kind: 'reactions', label: 'Reactions', icon: { type: 'img', src: REACTION_ICON }, target: to('actions', 'reactions') },
+    ...genericRows(section => to('actions', section)),
     { kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: s?.hotbarIcon ?? c.hotbarIcon }, target: to('actions', classSection) },
   ];
   // Subclass casting (Eldritch Knight, Arcane Trickster) on a non-caster class.
@@ -44,7 +51,9 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
     kind: 'cantrips', label: 'Cantrips', icon: { type: 'img', src: listClass.plainIcon },
     target: to('spells', 'cantrips'), dimmed: !cantrips, motif,
   });
-  for (let n = 1; n <= 9; n++) {
+  // a subclass caster never reaches the top spell levels: leave those rows out
+  const ceiling = cast ? ceilingOf(cast.maxSpellLevel) : 9;
+  for (let n = 1; n <= ceiling; n++) {
     rows.push({
       kind: 'spells', label: `Level ${n} Spells`,
       icon: c.caster === 'pact' ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },

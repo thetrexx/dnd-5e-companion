@@ -1,12 +1,14 @@
 import { DATA } from '../data';
 import type { ClassId, Feature, Spell } from '../data/types';
-import { maxSpellLevel } from './rules';
+import { ceilingOf, listSpells, maxSpellLevel } from './rules';
 import { effectiveSub } from './subclass';
 
 export interface Section {
   id: string; title: string; subtitle?: string; motif?: ClassId; locked?: string;
   /** item id -> small source tag, e.g. 'Domain' */
   tags?: Record<string, string>;
+  /** character All view: ids of the items that are the character's own */
+  mine?: string[];
   items: (Spell | Feature)[];
 }
 
@@ -16,10 +18,7 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   const c = DATA.classes.find(x => x.id === cls)!;
   const s = effectiveSub(cls, level, sub);
   const cast = c.caster === 'none' ? s?.casting : undefined;
-  const mine = cast
-    // the school limit applies to leveled spells only; cantrips come from the whole list
-    ? DATA.spells.filter(sp => sp.classes.includes(cast.list) && (sp.level === 0 || cast.schools.includes(sp.school)))
-    : DATA.spells.filter(sp => sp.classes.includes(cls));
+  const mine = listSpells(c, s);
   const maxTable = cast ? cast.maxSpellLevel : c.maxSpellLevel;
   const subtitle = cast ? s!.name : c.name;
   const motif: ClassId = cast ? cast.list : cls;
@@ -50,7 +49,7 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   }
   const max = cast ? (cast.maxSpellLevel[level - 1] ?? 0) : maxSpellLevel(c, level);
   // a subclass caster (Eldritch Knight, Arcane Trickster) never reaches levels 5-9: leave them out
-  const ceiling = cast ? Math.max(...cast.maxSpellLevel) : 9;
+  const ceiling = cast ? ceilingOf(cast.maxSpellLevel) : 9;
   const out: Section[] = [];
   for (let n = 0; n <= ceiling; n++) {
     const items = byLevel.get(n) ?? [];
@@ -79,14 +78,21 @@ function optionItems(groupId: string, level: number): Feature[] {
     && (f.prereq?.level ?? 1) <= level && (!g.only || g.only.includes(f.id)));
 }
 
-export function actionSections(cls: ClassId, level: number, sub?: string): Section[] {
-  const c = DATA.classes.find(x => x.id === cls)!;
-  const s = effectiveSub(cls, level, sub);
+/** Actions, Bonus Actions and Reactions anyone can take. */
+export function genericSections(): Section[] {
   const generic = (cost: Feature['cost']) => DATA.features.filter(f => f.source.kind === 'generic' && f.cost === cost);
-  const out: Section[] = [
+  return [
     { id: 'actions', title: 'Actions', items: generic('action') },
     { id: 'bonus', title: 'Bonus Actions', items: generic('bonus') },
     { id: 'reactions', title: 'Reactions', items: generic('reaction') },
+  ];
+}
+
+export function actionSections(cls: ClassId, level: number, sub?: string): Section[] {
+  const c = DATA.classes.find(x => x.id === cls)!;
+  const s = effectiveSub(cls, level, sub);
+  const out: Section[] = [
+    ...genericSections(),
     {
       id: 'class', title: `${c.name} Actions`, motif: cls,
       items: DATA.features.filter(f => f.source.kind === 'class' && f.source.id === cls && f.level <= level && f.cost !== 'passive'),

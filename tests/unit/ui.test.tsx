@@ -58,3 +58,9 @@ test('Separator shows label, sub in colour, mirrored ornament', () => {
   expect(orns[0].classList.contains('flip')).toBe(false);
   expect(orns[1].classList.contains('flip')).toBe(true);
 });
+
+test('IconGrid rings the given ids', () => {
+  const items = [DATA.spells.find(s => s.id === 'shield')!, DATA.spells.find(s => s.id === 'sleep')!];
+  const r = render(<IconGrid items={items} ringed={['shield']} onPick={() => {}} />);
+  expect([...r.container.querySelectorAll('.ic')].map(b => b.classList.contains('mine'))).toEqual([true, false]);
+});

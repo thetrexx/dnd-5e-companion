@@ -1,25 +1,25 @@
+import type { ComponentChildren } from 'preact';
 import { useEffect } from 'preact/hooks';
-import type { ClassId, Route } from '../../data/types';
 import type { Section } from '../../logic/sections';
-import { toHash } from '../../router';
 import { IconGrid } from '../IconGrid';
 import { Separator } from '../Separator';
 
-/** `sub` must already be a valid (effective) subclass id. */
 export function SectionPage(p: {
-  title: string; cls: ClassId; level: number; sub?: string; section?: string; sections: Section[];
-  kind: 'spell' | 'feature'; empty?: string;
+  title: string; back: { href: string; label: string }; section?: string; sections: Section[];
+  empty?: string; head?: ComponentChildren; onPick(id: string, section: string): void;
 }) {
   useEffect(() => {
     const el = p.section ? document.getElementById(p.section) : null;
     if (el) el.scrollIntoView();
     else document.getElementById('scroller')?.scrollTo(0, 0);
-  }, [p.section, p.cls, p.level, p.title]);
-  const withSub = p.sub ? { sub: p.sub } : {};
+  }, [p.section, p.back.href, p.title]);
   return (
     <div class="screen fixed">
       <header class="fixed-head">
-        <a class="back" href={toHash({ page: 'menu', cls: p.cls, level: p.level, ...withSub })}>‹ Menu</a>
+        <div class="head-row">
+          <a class="back" href={p.back.href}>{p.back.label}</a>
+          {p.head}
+        </div>
         <h1 class="page-title">{p.title}</h1>
       </header>
       <div class="scroller" id="scroller">
@@ -30,10 +30,7 @@ export function SectionPage(p: {
               color={s.motif ? `var(--${s.motif}-line)` : undefined} />
             {s.locked && <p class="locked-note">{s.locked}</p>}
             <div class="sec-grid">
-              <IconGrid items={s.items} tags={s.tags} onPick={(id) => {
-                const r: Route = { page: 'card', kind: p.kind, id, cls: p.cls, level: p.level, ...withSub };
-                location.hash = toHash(r);
-              }} />
+              <IconGrid items={s.items} tags={s.tags} ringed={s.mine} onPick={(id) => p.onPick(id, s.id)} />
             </div>
           </section>
         ))}

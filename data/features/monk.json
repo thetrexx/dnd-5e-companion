@@ -373,7 +373,33 @@
       "Minor illusion joins your cantrips (if you didn't have it already)."
     ],
     "page": 80,
-    "textSource": "summary"
+    "textSource": "summary",
+    "spells": [
+      {
+        "spell": "minor-illusion",
+        "atLevel": 3
+      },
+      {
+        "spell": "darkness",
+        "atLevel": 3,
+        "uses": "2 ki points"
+      },
+      {
+        "spell": "darkvision",
+        "atLevel": 3,
+        "uses": "2 ki points"
+      },
+      {
+        "spell": "pass-without-trace",
+        "atLevel": 3,
+        "uses": "2 ki points"
+      },
+      {
+        "spell": "silence",
+        "atLevel": 3,
+        "uses": "2 ki points"
+      }
+    ]
   },
   {
     "id": "shadow-step",
