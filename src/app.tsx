@@ -10,6 +10,11 @@ import { SpellsPage } from './ui/screens/SpellsPage';
 import { ActionsPage } from './ui/screens/ActionsPage';
 import { Settings } from './ui/screens/Settings';
 import { Card } from './ui/screens/Card';
+import { loadCharacter } from './character/store';
+import { MeMenu } from './ui/screens/me/MeMenu';
+import { MeSpells } from './ui/screens/me/MeSpells';
+import { MeActions } from './ui/screens/me/MeActions';
+import { MeCard } from './ui/screens/me/MeCard';
 
 export function App() {
   const [hash, setHash] = useState(location.hash);
@@ -24,6 +29,15 @@ export function App() {
     return () => removeEventListener('hashchange', on);
   }, []);
   const r = parseHash(hash);
+  if (r.page === 'edit') return <Start />; // Task 12: <Editor step={r.step} />
+  if (r.page === 'me' || r.page.startsWith('me-')) {
+    const ch = loadCharacter();
+    if (!ch || ch.classes.length === 0) return <Start />; // Task 12: <Editor step={ch ? 'classes' : 'basics'} />
+    if (r.page === 'me') return <MeMenu ch={ch} />;
+    if (r.page === 'me-spells') return <MeSpells ch={ch} section={r.section} />;
+    if (r.page === 'me-actions') return <MeActions ch={ch} section={r.section} />;
+    if (r.page === 'me-card') return <MeCard ch={ch} kind={r.kind} id={r.id} section={r.section} />;
+  }
   if ('cls' in r && !DATA.classes.some((c) => c.id === r.cls)) return <Start />;
   switch (r.page) {
     case 'level': return <LevelPicker cls={r.cls} />;

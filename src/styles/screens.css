@@ -62,3 +62,7 @@
 .row.pick{background:var(--surface)}
 a.row{text-decoration:none;box-sizing:border-box}
 .card-scaling{font-size:10.5px;color:var(--card-detail);margin:8px 0}
+.seg{display:flex;gap:4px}
+.seg-btn{font:inherit;font-size:12px;padding:4px 10px;color:var(--text);background:var(--surface);border:1px solid var(--border);border-radius:6px;cursor:pointer}
+.seg-btn[aria-pressed="true"]{border-color:var(--accent);color:var(--accent)}
+.edit-link{display:block;text-align:center;margin:4px 0 8px;font-size:13px;color:var(--accent)}
