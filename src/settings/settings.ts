@@ -23,8 +23,12 @@ export function loadSettings(): Settings {
   };
 }
 
+/** Fired on window after every save, so the app can follow a new theme or strength at once. */
+export const SETTINGS_EVENT = 'dndcs:settings';
+
 export function saveSettings(s: Settings): void {
   writeJSON(KEY, s);
+  try { dispatchEvent(new Event(SETTINGS_EVENT)); } catch { /* no window: nothing listens */ }
 }
 
 export function effectiveStrength(s: Settings, prefersReducedMotion: boolean): Strength {

@@ -19,12 +19,14 @@ import { MeCard } from './ui/screens/me/MeCard';
 import { Background } from './ui/Background';
 import { backgroundClass } from './logic/background';
 import { motionMode } from './motion/mode';
-import { loadSettings } from './settings/settings';
+import { SETTINGS_EVENT, loadSettings } from './settings/settings';
 import type { Route } from './data/types';
 import type { Character } from './character/types';
 
 export function App() {
   const [hash, setHash] = useState(location.hash);
+  // a saved setting re-renders, so the background follows a new theme or strength at once
+  const [, setSaves] = useState(0);
   useEffect(() => {
     let current = location.hash;
     const on = () => {
@@ -32,8 +34,10 @@ export function App() {
       current = location.hash;
       setHash(current);
     };
+    const saved = () => setSaves((n) => n + 1);
     addEventListener('hashchange', on);
-    return () => removeEventListener('hashchange', on);
+    addEventListener(SETTINGS_EVENT, saved);
+    return () => { removeEventListener('hashchange', on); removeEventListener(SETTINGS_EVENT, saved); };
   }, []);
   const r = parseHash(hash);
   const ch = r.page === 'me' || r.page.startsWith('me-') ? loadCharacter() : null;
