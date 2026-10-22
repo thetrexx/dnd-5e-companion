@@ -12,6 +12,7 @@
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px 6px}
 .ic{display:block;text-align:center;font:inherit;font-size:9.5px;line-height:1.2;color:var(--text);background:none;border:0;padding:0;cursor:pointer;text-shadow:var(--text-shadow)}
 .ic img{width:50px;height:50px;border-radius:6px;border:1px solid var(--icon-border);display:block;margin:0 auto 4px;background:var(--comp-bg);object-fit:cover}
+.ic.mine img{box-shadow:var(--mine-ring)}
 
 /* Component icons */
 .comps{display:flex;gap:10px;margin:10px 0 4px}

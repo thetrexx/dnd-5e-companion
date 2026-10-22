@@ -46,17 +46,19 @@ function sourceLabel(f: Feature, group: string): string {
   if (kind === 'generic') return 'General';
   if (kind === 'subclass') return DATA.subclasses.find((s) => s.id === id)?.name ?? cap(id.replace(/-/g, ' '));
   if (kind === 'option') return DATA.optionGroups.find((g) => g.id === id)?.name ?? cap(id.replace(/-/g, ' '));
+  if (kind === 'race') return DATA.races.find((r) => r.id === id)?.name ?? cap(id.replace(/-/g, ' '));
+  if (kind === 'feat') return DATA.feats.find((x) => x.id === id)?.name ?? cap(id.replace(/-/g, ' '));
   return cap(id.replace(/-/g, ' '));
 }
 
-export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; level: number; sub?: string }) {
+export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; level: number; sub?: string; back?: string }) {
   const spell = p.kind === 'spell' ? DATA.spells.find((s) => s.id === p.id) : undefined;
   const feature = p.kind === 'feature' ? DATA.features.find((f) => f.id === p.id) : undefined;
   const page = p.kind === 'spell' ? 'spells' : 'actions';
   const sub = effectiveSub(p.cls, p.level, p.sub)?.id;
   const group = feature ? optionGroupId(feature, p.cls, sub) : '';
   const section = spell ? (spell.level === 0 ? 'cantrips' : `lvl-${spell.level}`) : feature ? featureSection(feature, group) : undefined;
-  const back = toHash({ page, cls: p.cls, level: p.level, ...(sub && { sub }), section });
+  const back = p.back ?? toHash({ page, cls: p.cls, level: p.level, ...(sub && { sub }), section });
   const head = (
     <header class="fixed-head">
       <a class="back" href={back}>‹ {cap(page)}</a>

@@ -103,3 +103,12 @@ test('Card option back link points to the group that lists it for this class', (
   expect(r.container.querySelector('a.back')!.getAttribute('href')).toContain('opt-fighting-style-paladin');
   expect(r.container.querySelector('.card-sub')!.textContent).toContain('Fighting Style');
 });
+
+test('Card names the race on race features', () => {
+  const r = render(<Card kind="feature" id="breath-weapon" cls="fighter" level={1} />);
+  expect(r.container.querySelector('.card-sub')!.textContent).toContain('Dragonborn Feature');
+});
+test('Card back override', () => {
+  const r = render(<Card kind="spell" id="shield" cls="wizard" level={3} back="#/me/spells?s=lvl-1-wizard" />);
+  expect(r.container.querySelector('.back')!.getAttribute('href')).toBe('#/me/spells?s=lvl-1-wizard');
+});

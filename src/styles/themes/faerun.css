@@ -7,6 +7,7 @@
   --accent:#d9b45f;
   --comp-bg:#000;
   --icon-border:#6b5a3a;
+  --mine-ring:0 0 0 2px #e0b84a,0 0 8px 1px rgba(224,184,74,.55);
   --comp-label:#c8bba3;
   --explain-bg:#0d0b09;
   --comp-icon-filter:sepia(1) saturate(2) hue-rotate(5deg) brightness(.95);

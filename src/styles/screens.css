@@ -26,8 +26,9 @@
 .slot b{position:absolute;font:500 10px/1 var(--font-body);color:var(--slot-num);text-shadow:var(--slot-num-shadow)}
 
 .screen.fixed{display:flex;flex-direction:column;height:100dvh;min-height:0;padding-bottom:0}
-.fixed-head{flex:none;border-bottom:1px solid var(--border);padding-bottom:4px}
+.fixed-head{position:relative;flex:none;border-bottom:1px solid var(--border);padding-bottom:4px}
 .fixed-head .page-title{margin:0 0 4px}
+.head-extra{position:absolute;top:0;right:0}
 .scroller{flex:1;overflow-y:auto;overflow-x:hidden;margin:0 -16px;padding:0 16px 24px}
 .sec.locked .sec-grid{opacity:var(--dimmed-opacity)}
 .locked-note{margin:0 0 8px;font-size:10.5px;color:var(--text-dim);text-align:center}
