@@ -16,8 +16,10 @@ export function SectionPage(p: {
   return (
     <div class="screen fixed">
       <header class="fixed-head">
-        <a class="back" href={p.back.href}>{p.back.label}</a>
-        {p.head && <div class="head-extra">{p.head}</div>}
+        <div class="head-row">
+          <a class="back" href={p.back.href}>{p.back.label}</a>
+          {p.head}
+        </div>
         <h1 class="page-title">{p.title}</h1>
       </header>
       <div class="scroller" id="scroller">
