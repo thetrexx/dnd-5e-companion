@@ -7,7 +7,7 @@ const CASTERS = ['full', 'half', 'third', 'pact', 'none'];
 const RESOLUTIONS = ['attack', 'save', 'auto', 'none'];
 const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 const SOURCES = ['generic', 'class', 'subclass', 'option', 'race', 'feat'];
-const OWNERS = ['class', 'subclass', 'race'];
+const OWNERS = ['class', 'subclass', 'race', 'feat'];
 const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron', 'subclass'];
 const TEXT_SOURCES = ['summary'];
 const BOOK_IDS: string[] = ['phb', 'xge', 'tce', 'scag', 'dmg', 'bgg'];
@@ -52,7 +52,7 @@ export function validateDataset(d: Dataset): string[] {
   const featIds = new Set(d.feats.map(x => x.id));
   const featureIds = new Set(d.features.map(x => x.id));
   const isOption = (id: string) => d.features.some(f => f.id === id && f.source.kind === 'option');
-  const ownedBy = (at: string, kind: 'class' | 'subclass' | 'race', id: string, g: string) => {
+  const ownedBy = (at: string, kind: 'class' | 'subclass' | 'race' | 'feat', id: string, g: string) => {
     const o = d.optionGroups.find(x => x.id === g)?.owner;
     if (o && (o.kind !== kind || o.id !== id)) errs.push(`${at}: option group "${g}" is owned by ${o.kind} "${o.id}"`);
   };
@@ -191,7 +191,7 @@ export function validateDataset(d: Dataset): string[] {
     if (blank(g.name)) errs.push(`${at}: name is empty`);
     const o = g.owner;
     if (!o || !OWNERS.includes(o.kind)) errs.push(`${at}: owner.kind is not valid`);
-    else if ((o.kind === 'class' && !CLASS_IDS.includes(o.id)) || (o.kind === 'subclass' && !subIds.has(o.id)) || (o.kind === 'race' && !raceIds.has(o.id))) errs.push(`${at}: owner has unknown ${o.kind} "${o.id}"`);
+    else if ((o.kind === 'class' && !CLASS_IDS.includes(o.id)) || (o.kind === 'subclass' && !subIds.has(o.id)) || (o.kind === 'race' && !raceIds.has(o.id)) || (o.kind === 'feat' && !featIds.has(o.id))) errs.push(`${at}: owner has unknown ${o.kind} "${o.id}"`);
     table(at, 'picks', g.picks, 0, 99, errs);
     if (Array.isArray(g.picks) && g.picks.some((n, i) => i > 0 && n < g.picks[i - 1])) errs.push(`${at}: picks must not decrease`);
     if (g.from !== undefined && !groupIds.has(g.from)) errs.push(`${at}: unknown from group "${g.from}"`);
@@ -233,6 +233,10 @@ export function validateDataset(d: Dataset): string[] {
     if (!isInt(f.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     checkBook(at, f.book, errs);
     grants(at, f.spells);
+    for (const g of f.options ?? []) {
+      if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
+      else ownedBy(at, 'feat', f.id, g);
+    }
   }
 
   return errs;

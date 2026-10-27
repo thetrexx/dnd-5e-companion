@@ -1,6 +1,7 @@
 import { DATA } from '../../src/data';
 import { actionSections } from '../../src/logic/sections';
-import { optionSlots, replaced } from '../../src/character/options';
+import { optionSlots, prune, replaced } from '../../src/character/options';
+import { charActionSections } from '../../src/character/view';
 import { emptyCharacter } from '../../src/character/types';
 import type { Character } from '../../src/character/types';
 
@@ -118,3 +119,27 @@ test('ranger optional features', () => {
   expect(f('optional-beast-master-primal-companion')).toMatchObject({ level: 3, replaces: ['rangers-companion', 'companion-commands'], page: 61 });
   expect(f('optional-beast-master-primal-companion').description.join(' ')).toContain("Stat block: Tasha's p. 61");
 });
+
+test('martial adept picks two maneuvers from the shared pool', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }], feats: ['martial-adept'],
+    options: ['maneuvers-parry', 'maneuvers-riposte', 'maneuvers-rally', 'maneuvers-trip-attack', 'maneuvers-feinting-attack'] } as Character;
+  const slots = optionSlots(ch).filter(s => (s.group.from ?? s.group.id) === 'maneuvers');
+  expect(slots.map(s => s.count).sort()).toEqual([2, 3]);
+  expect(slots.flatMap(s => s.chosen).sort()).toEqual([...ch.options].sort());   // each counted once
+  expect(charActionSections(ch).find(s => s.id === 'feats')!.items.map(f => f.id)).toEqual(expect.arrayContaining(['martial-adept']));
+});
+test('martial adept maneuver cards join the feats section, not race', () => {
+  const ch = { ...emptyCharacter(), race: 'human', classes: [{ cls: 'wizard', level: 4 }], feats: ['martial-adept'], options: ['maneuvers-parry', 'maneuvers-riposte'] } as Character;
+  const secs = charActionSections(ch);
+  expect(secs.find(s => s.id === 'feats')!.items.map(f => f.id)).toEqual(expect.arrayContaining(['maneuvers-parry', 'maneuvers-riposte']));
+  expect(secs.find(s => s.id === 'race')?.items.map(f => f.id) ?? []).not.toContain('maneuvers-parry');
+});
+test('martial adept group shape', () => {
+  expect(g('martial-adept')).toMatchObject({ owner: { kind: 'feat', id: 'martial-adept' }, from: 'maneuvers' });
+  expect(g('martial-adept').picks).toEqual(Array(20).fill(2));
+  expect(DATA.feats.find(f => f.id === 'martial-adept')!.options).toEqual(['martial-adept']);
+});
+test('feat slot leaves with the feat', () =>
+  expect(prune({ ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], options: ['maneuvers-parry'] } as Character).options).toEqual([]));
+test('feat slot is kept while the feat stays', () =>
+  expect(prune({ ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], feats: ['martial-adept'], options: ['maneuvers-parry'] } as Character).options).toEqual(['maneuvers-parry']));

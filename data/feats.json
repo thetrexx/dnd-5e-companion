@@ -277,7 +277,10 @@
     ],
     "spells": [],
     "textSource": "summary",
-    "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp"
+    "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp",
+    "options": [
+      "martial-adept"
+    ]
   },
   {
     "id": "orcish-fury",

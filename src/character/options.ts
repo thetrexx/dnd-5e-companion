@@ -29,6 +29,8 @@ export function optionSlots(ch: Character): OptionSlot[] {
   }
   const total = totalLevel(ch);
   for (const r of raceChain(ch.race)) for (const g of groupsOf(r.options)) add(g, total);
+  // a chosen feat's groups sit at total level, with no class
+  for (const id of new Set(ch.feats)) for (const g of groupsOf(DATA.feats.find(f => f.id === id)?.options ?? [])) add(g, total);
   assign(out, ch.options);
   // a replaced group's picks stay in ch.options, so unticking the replacement brings them back
   const gone = replaced(ch);
@@ -95,6 +97,7 @@ export function prune(ch: Character): Character {
     if (c.sub) own(DATA.subclasses.find(s => s.id === c.sub)?.options ?? []);
   }
   for (const r of raceChain(ch.race)) own(r.options);
+  for (const id of new Set(ch.feats)) own(DATA.feats.find(f => f.id === id)?.options ?? []);
   const options = ch.options.filter(o => { const f = DATA.features.find(x => x.id === o); return f?.source.kind === 'option' && owned.has(f.source.id); });
   const step1 = classes.some((c, i) => c !== ch.classes[i]) ? { ...ch, classes } : ch;
   const step2 = options.length === ch.options.length ? step1 : { ...step1, options };

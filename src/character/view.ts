@@ -171,10 +171,13 @@ function otherActions(ch: Character, slots: OptionSlot[]): Section[] {
   const chain = raceChain(ch.race);
   const race = [
     ...DATA.features.filter(f => f.source.kind === 'race' && chain.some(r => r.id === f.source.id) && f.cost !== 'passive'),
-    ...slots.filter(s => !s.cls).flatMap(chosenActions),
+    ...slots.filter(s => !s.cls && s.group.owner.kind !== 'feat').flatMap(chosenActions),
   ];
   if (race.length) out.push({ id: 'race', title: `${chain[0].name} Actions`, items: race });
-  const feats = [...new Set(ch.feats)].flatMap(id => DATA.features.filter(f => f.source.kind === 'feat' && f.source.id === id && f.cost !== 'passive'));
+  const feats = [
+    ...[...new Set(ch.feats)].flatMap(id => DATA.features.filter(f => f.source.kind === 'feat' && f.source.id === id && f.cost !== 'passive')),
+    ...slots.filter(s => s.group.owner.kind === 'feat').flatMap(chosenActions),
+  ];
   if (feats.length) out.push({ id: 'feats', title: 'Feats', items: feats });
   return out;
 }

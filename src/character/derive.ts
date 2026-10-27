@@ -87,6 +87,7 @@ export function featureLevel(ch: Character, f: Feature): number {
   if (kind === 'class') return levelOf(id as ClassId) ?? totalLevel(ch);
   if (kind === 'subclass') { const k = subClass(id); return (k && levelOf(k)) ?? totalLevel(ch); }
   if (kind === 'option') {
+    // a pool only a feat's group reaches (no class or subclass owner in the build) falls through to total level
     for (const g of DATA.optionGroups) {
       if ((g.from ?? g.id) !== id) continue;
       const cls = g.owner.kind === 'class' ? g.owner.id as ClassId : g.owner.kind === 'subclass' ? subClass(g.owner.id) : undefined;

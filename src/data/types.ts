@@ -55,7 +55,7 @@ export interface SubclassDef {
   options: string[];
 }
 export interface OptionGroup {
-  id: string; name: string; owner: { kind: 'class'|'subclass'|'race'; id: string };
+  id: string; name: string; owner: { kind: 'class'|'subclass'|'race'|'feat'; id: string };
   picks: number[];
   from?: string; only?: string[];
   reuse?: true; // a pick counted in another slot of the same pool may also fill this one
@@ -64,7 +64,7 @@ export interface OptionGroup {
   optional?: true;
 }
 export interface RaceDef { id: string; name: string; parent?: string; page: number; book?: BookId; icon?: string; spells: SpellGrant[]; options: string[] }
-export interface FeatDef { id: string; name: string; prereq?: string; page: number; book?: BookId; icon?: string; description: string[]; spells: SpellGrant[]; textSource: TextSource }
+export interface FeatDef { id: string; name: string; prereq?: string; page: number; book?: BookId; icon?: string; description: string[]; spells: SpellGrant[]; options?: string[]; textSource: TextSource }
 export interface Dataset {
   classes: ClassDef[]; subclasses: SubclassDef[]; optionGroups: OptionGroup[];
   races: RaceDef[]; feats: FeatDef[]; spells: Spell[]; features: Feature[];

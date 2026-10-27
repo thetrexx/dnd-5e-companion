@@ -217,3 +217,14 @@ test('options step: a subclass optional slot names the subclass', () => {
   expect(r.getByText('Optional Features')).toBeTruthy();
   expect(r.getByText('Optional Features · Beast Master')).toBeTruthy();
 });
+test('options step: a feat-owned slot names its feat', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], feats: ['martial-adept'] });
+  const r = render(<Editor step="options" />);
+  expect(r.getByText('Maneuvers · Martial Adept')).toBeTruthy();
+  expect(r.getByText('0 of 2 chosen')).toBeTruthy();
+});
+test('options step: a maneuver taken by a battle master slot reads Chosen for its owner', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }], feats: ['martial-adept'], options: ['maneuvers-parry', 'maneuvers-riposte', 'maneuvers-rally'] });
+  const r = render(<Editor step="options" />);
+  expect(r.getAllByText('Chosen for Fighter').length).toBeGreaterThan(0);
+});

@@ -22,6 +22,7 @@ function owningClass(ch: Character, f: Feature): ClassId | undefined {
   if (kind === 'class') return id as ClassId;
   if (kind === 'subclass') return subCls(id);
   if (kind !== 'option') return undefined;
+  // a feat-owned group has no class, so a pool reached only through a feat stays class-less
   for (const g of DATA.optionGroups) {
     if ((g.from ?? g.id) !== id) continue;
     const cls = g.owner.kind === 'class' ? g.owner.id as ClassId : g.owner.kind === 'subclass' ? subCls(g.owner.id) : undefined;

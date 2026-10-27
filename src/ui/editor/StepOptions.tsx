@@ -8,7 +8,9 @@ import { GrantPicker } from './GrantPicker';
 import { PickList } from './PickList';
 import type { StepProps } from './Editor';
 
-const ownerName = (s: OptionSlot) => s.cls ? DATA.classes.find((c) => c.id === s.cls)?.name : DATA.races.find((r) => r.id === s.group.owner.id)?.name;
+const ownerName = (s: OptionSlot) => s.cls ? DATA.classes.find((c) => c.id === s.cls)?.name
+  : s.group.owner.kind === 'feat' ? DATA.feats.find((f) => f.id === s.group.owner.id)?.name
+  : DATA.races.find((r) => r.id === s.group.owner.id)?.name;
 const takenBy = (slots: OptionSlot[], me: OptionSlot, id: string) => {
   const pool = me.group.from ?? me.group.id;
   const home = slots.find((o) => o !== me && (o.group.from ?? o.group.id) === pool && o.chosen.includes(id));
@@ -30,7 +32,8 @@ export function StepOptions(p: StepProps) {
       {!slots.length && <p class="note">Nothing to choose yet.</p>}
       {slots.map((s) => {
         const n = s.chosen.length;
-        const cls = s.cls && ch.classes.length > 1 ? ` · ${DATA.classes.find((c) => c.id === s.cls)?.name}` : '';
+        const feat = s.group.owner.kind === 'feat' ? DATA.feats.find((f) => f.id === s.group.owner.id)?.name : undefined;
+        const cls = feat ? ` · ${feat}` : s.cls && ch.classes.length > 1 ? ` · ${DATA.classes.find((c) => c.id === s.cls)?.name}` : '';
         const opt = s.group.optional;
         const note = (f: Feature) => opt ? joinTag(f.replaces && `Replaces ${replacedNames(f.replaces)}`, f.prereq?.text)
           : joinTag(f.optional && 'Optional', f.prereq?.text);
