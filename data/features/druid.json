@@ -88,7 +88,7 @@
       }
     ],
     "description": [
-      "Action: turn into a beast you have seen, within the Max CR and limits for your level. You can stay in the form for hours equal to half your druid level (rounded down), then revert unless you spend another use. A bonus action ends it early; dropping to 0 HP also ends it and spare damage carries over to your normal form.",
+      "Action: turn into a beast you have seen, within the Max CR and limits for your level. Each form lasts 1 hour per 2 full druid levels; then you revert unless you spend another use. A bonus action ends it early; dropping to 0 HP also ends it and spare damage carries over to your normal form.",
       "You use the beast's stats and HP but keep your mental scores, alignment and proficiencies (take the better bonus). You can't cast spells, though a spell already running stays on. Gear falls off, merges or is worn, your choice.",
       "Level 18: you can cast druid spells in beast form with verbal and somatic components only. Level 20: unlimited uses."
     ],
@@ -370,7 +370,7 @@
     },
     "level": 2,
     "cost": "reaction",
-    "trigger": "A creature you can see moves within 10 ft of you or starts its turn there",
+    "trigger": "A visible creature comes within 10 ft of you or begins its turn that close",
     "scaling": [
       {
         "label": "Necrotic damage",
@@ -539,7 +539,7 @@
       "Bonus action: spend a Wild Shape use to take a starry form instead of a beast shape. You keep your statistics and shed bright light in 10 ft and dim light 10 ft beyond. It lasts 10 minutes, ending early if you dismiss it (no action), are incapacitated, die, or use this feature again.",
       "Each time you take the form, choose which constellation shines on you:",
       "Archer: as you take the form, and with a bonus action on later turns while it lasts, make a ranged spell attack at one creature within 60 ft. On a hit it takes 1d8 + your Wisdom modifier radiant damage.",
-      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature within 30 ft of you also regains 1d8 + your Wisdom modifier hit points.",
+      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature no more than 30 ft away also regains hit points equal to 1d8 + your Wisdom modifier.",
       "Dragon: on Intelligence or Wisdom checks, and on Constitution saves to keep concentration, a d20 roll of 9 or lower counts as a 10.",
       "Level 10 (Twinkling Constellations): the Archer and Chalice dice become 2d8, the Dragon also gives you a 20-ft flying speed and hover, and as each of your turns begins in the form you may switch constellation.",
       "Level 14 (Full of Stars): in the form you resist bludgeoning, piercing and slashing damage."
@@ -558,7 +558,7 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "A creature you can see within 30 ft is about to make an attack roll, save or ability check",
+    "trigger": "A visible creature no more than 30 ft away is about to roll an attack, save or ability check",
     "uses": "Proficiency bonus per long rest",
     "description": [
       "After each long rest, consult your Star Map and roll any die. Until your next long rest, its result sets which reaction you have:",
@@ -569,5 +569,190 @@
     "book": "tce",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/3/33/Cosmic_Omen_Icon.webp"
+  },
+  {
+    "id": "balm-of-the-summer-court",
+    "name": "Balm of the Summer Court",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-dreams"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "Fey energy dice",
+    "uses": "Pool regained on a long rest",
+    "page": 22,
+    "scaling": [
+      {
+        "label": "Pool (d6)",
+        "values": [
+          "",
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      },
+      {
+        "label": "Most dice per use",
+        "values": [
+          "",
+          "1",
+          "1",
+          "2",
+          "2",
+          "3",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "You have a pool of fey energy: as many d6s as your druid level. A long rest refills it.",
+      "Bonus action: pick a creature in your sight no more than 120 ft away and spend dice from the pool, up to half your druid level. Roll them; the creature regains hit points equal to the total, plus 1 temporary hit point for each die spent."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "hearth-of-moonlight-and-shadow",
+    "name": "Hearth of Moonlight and Shadow",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-dreams"
+    },
+    "level": 6,
+    "cost": "other",
+    "page": 22,
+    "description": [
+      "As a short or long rest begins, touch a point in space: an unseen sphere of magic, 30 ft in radius, forms around it. Total cover blocks it.",
+      "Inside it, you and your allies add +5 to Wisdom (Perception) and Dexterity (Stealth) checks, and light from open flames within it (a campfire, torches and so on) can't be seen from outside.",
+      "It vanishes when the rest ends or when you step out of it."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "hidden-paths",
+    "name": "Hidden Paths",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-dreams"
+    },
+    "level": 10,
+    "cost": "bonus",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "page": 22,
+    "description": [
+      "Bonus action on your turn: teleport to an unoccupied spot in your sight, no more than 60 ft away.",
+      "Or use your action instead to send a willing creature you touch to an unoccupied spot you can see, no more than 30 ft away."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "walker-in-dreams",
+    "name": "Walker in Dreams",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-dreams"
+    },
+    "level": 14,
+    "cost": "other",
+    "uses": "Once per long rest",
+    "page": 23,
+    "spells": [
+      {
+        "spell": "dream",
+        "atLevel": 14,
+        "uses": "After a short rest, no slot or material; once per long rest"
+      },
+      {
+        "spell": "scrying",
+        "atLevel": 14,
+        "uses": "After a short rest, no slot or material; once per long rest"
+      },
+      {
+        "spell": "teleportation-circle",
+        "atLevel": 14,
+        "uses": "After a short rest, no slot or material; once per long rest"
+      }
+    ],
+    "description": [
+      "At the end of a short rest, you may cast dream (with yourself as the messenger), scrying or teleportation circle, using no spell slot and no material components.",
+      "This teleportation circle doesn't link to a permanent circle: its portal leads to the spot where your most recent long rest on this plane took place. With no long rest yet on this plane, the spell fails but isn't wasted.",
+      "After using it, finish a long rest before you use it again."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "spirit-totem",
+    "name": "Spirit Totem",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-shepherd"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "page": 23,
+    "description": [
+      "Bonus action: magically call an incorporeal spirit to a point in your sight no more than 60 ft away. Around that point it projects an aura with a 30-ft radius. The spirit is not a creature or an object, but it looks like a spectral form of the animal it stands for. It lasts 1 minute or until you are incapacitated.",
+      "Bonus action: shift the spirit as far as 60 ft, to a point in your sight.",
+      "Choose the spirit each time you call it:",
+      "Bear: as it appears, creatures you choose in the aura gain 5 + your druid level in temporary hit points. While in the aura, you and your allies make Strength checks and Strength saves with advantage.",
+      "Hawk: when anyone attacks a target inside the aura, your reaction can grant that attack roll advantage. Allies in the aura, and you too, roll Wisdom (Perception) checks with advantage.",
+      "Unicorn: ability checks that you and your allies make to detect creatures in the aura have advantage. Whenever a spell you cast with a spell slot heals anyone (inside the aura or not), creatures you pick in the aura also regain as many hit points as your druid level.",
+      "Level 10 (Guardian Spirit): any beast or fey created or summoned by your spells heals half your druid level in hit points when it ends its turn in the aura."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "faithful-summons",
+    "name": "Faithful Summons",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-the-shepherd"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You fall to 0 hit points, or something incapacitates you against your will",
+    "uses": "Once per long rest",
+    "page": 24,
+    "description": [
+      "Nature spirits protect you: you at once get the effect of conjure animals as if cast with a 9th-level slot. Four beasts of your choice, challenge rating 2 or lower, appear no more than 20 ft from you. Uses the stats of the chosen beasts (Monster Manual).",
+      "Without orders from you, they guard you and attack your foes. It lasts 1 hour and needs no concentration; you can end it early at no action cost."
+    ],
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

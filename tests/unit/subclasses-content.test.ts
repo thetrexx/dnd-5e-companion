@@ -1,6 +1,7 @@
 import { DATA } from '../../src/data';
 import { autoSpells } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
+import { actionSections, spellSections } from '../../src/logic/sections';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
 const A = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk'];
@@ -35,7 +36,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('58 subclasses', () => expect(DATA.subclasses).toHaveLength(58));
+test('80 subclasses', () => expect(DATA.subclasses).toHaveLength(80));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -113,3 +114,189 @@ test('level 3 free riders: giants havoc and fancy footwork', () => {
 });
 test('swarmkeeper mage hand only if not already known', () =>
   expect(sub('swarmkeeper').bonusSpells!.grants.find(g => g.spell === 'mage-hand')!.uses).toMatch(/already know/i));
+
+const T5 = ['path-of-the-ancestral-guardian', 'path-of-the-storm-herald', 'path-of-the-zealot', 'college-of-whispers', 'forge-domain', 'grave-domain', 'circle-of-dreams', 'circle-of-the-shepherd'];
+test('xanathar subclasses (task 5)', () => { for (const id of T5) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every new feature and option names its book', () => {
+  const ids = new Set(T5);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  for (const f of DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id))))
+    expect(f.book, f.id).toBe('xge');
+});
+test('grave domain spells', () => expect(sub('grave-domain').bonusSpells).toMatchObject({ kind: 'domain' }));
+test('task 5 must-have features', () => {
+  for (const id of ['ancestral-protectors', 'spirit-shield', 'consult-the-spirits', 'vengeful-ancestors', 'divine-fury', 'zealous-presence',
+    'psychic-blades', 'words-of-terror', 'mantle-of-whispers', 'shadow-lore', 'blessing-of-the-forge', 'artisans-blessing', 'forge-domain-divine-strike',
+    'circle-of-mortality', 'path-to-the-grave', 'sentinel-at-deaths-door', 'balm-of-the-summer-court', 'hidden-paths', 'walker-in-dreams',
+    'spirit-totem', 'faithful-summons'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('storm herald picks one storm aura environment', () => {
+  expect(sub('path-of-the-storm-herald').options).toEqual(['storm-aura']);
+  const g = DATA.optionGroups.find(x => x.id === 'storm-aura')!;
+  expect(g.owner).toEqual({ kind: 'subclass', id: 'path-of-the-storm-herald' });
+  expect([g.picks[1], g.picks[2], g.picks[19]]).toEqual([0, 1, 1]);
+  for (const e of ['desert', 'sea', 'tundra']) expect(feature(`storm-aura-${e}`), e).toMatchObject({ level: 3, book: 'xge', page: 10 });
+});
+test('storm herald raging storm: desert and sea are level 14 reactions gated by the chosen environment', () => {
+  for (const e of ['desert', 'sea']) {
+    expect(feature(`raging-storm-${e}`), e).toMatchObject({
+      source: { kind: 'subclass', id: 'path-of-the-storm-herald' }, level: 14, cost: 'reaction', book: 'xge', page: 11,
+      prereq: { option: `storm-aura-${e}` },
+    });
+    expect(feature(`raging-storm-${e}`).trigger, e).toBeTruthy();
+    // the bonus-action aura card no longer carries the reaction
+    expect(feature(`storm-aura-${e}`).description.join(' '), e).not.toMatch(/Raging Storm|reaction/);
+  }
+  // tundra's raging storm rides on the aura itself, not a reaction
+  expect(DATA.features.find(f => f.id === 'raging-storm-tundra')).toBeUndefined();
+  expect(feature('storm-aura-tundra').description.join(' ')).toMatch(/Raging Storm/);
+});
+test('class browse: a level 14 storm herald lists both raging storm reactions (no environment chosen)', () => {
+  const ids = (level: number) => actionSections('barbarian', level, 'path-of-the-storm-herald').find(s => s.id === 'subclass')?.items.map(i => i.id) ?? [];
+  expect(ids(14)).toEqual(expect.arrayContaining(['raging-storm-desert', 'raging-storm-sea']));
+  expect(ids(13)).not.toContain('raging-storm-desert');
+});
+test('forge and grave domain spells', () => {
+  expect(sub('forge-domain').bonusSpells!.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['identify', 'searing-smite']);
+  expect(sub('grave-domain').bonusSpells!.grants.filter(g => g.atLevel === 9).map(g => g.spell).sort()).toEqual(['antilife-shell', 'raise-dead']);
+  expect(feature('circle-of-mortality').spells).toEqual([expect.objectContaining({ spell: 'spare-the-dying', atLevel: 1 })]);
+});
+
+const T6 = ['cavalier', 'samurai', 'way-of-the-kensei', 'way-of-the-sun-soul', 'oath-of-conquest', 'oath-of-redemption', 'horizon-walker', 'monster-slayer'];
+test('xanathar subclasses (task 6)', () => { for (const id of T6) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every task 6 feature names its book', () => {
+  const ids = new Set(T6);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('xge');
+});
+test('task 6 must-have features', () => {
+  for (const id of ['unwavering-mark', 'warding-maneuver', 'hold-the-line', 'ferocious-charger', 'vigilant-defender',
+    'fighting-spirit', 'tireless-spirit', 'rapid-strike', 'strength-before-death',
+    'agile-parry', 'kenseis-shot', 'deft-strike', 'sharpen-the-blade', 'unerring-accuracy',
+    'radiant-sun-bolt', 'searing-arc-strike', 'searing-sunburst', 'sun-shield',
+    'conquering-presence', 'oath-of-conquest-guided-strike', 'aura-of-conquest', 'scornful-rebuke', 'invincible-conqueror',
+    'emissary-of-peace', 'rebuke-the-violent', 'aura-of-the-guardian', 'protective-spirit', 'emissary-of-redemption',
+    'detect-portal', 'planar-warrior', 'ethereal-step', 'distant-strike', 'spectral-defense',
+    'hunters-sense', 'slayers-prey', 'supernatural-defense', 'magic-users-nemesis', 'slayers-counter'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('task 6 usable reactions are reaction cards', () => {
+  for (const id of ['warding-maneuver', 'hold-the-line', 'vigilant-defender', 'strength-before-death', 'sun-shield', 'rebuke-the-violent',
+    'aura-of-the-guardian', 'spectral-defense', 'magic-users-nemesis', 'slayers-counter'])
+    expect(feature(id).cost, id).toBe('reaction');
+});
+test('conquest guided strike is prefixed; war domain keeps its id', () => {
+  expect(feature('guided-strike').source).toEqual({ kind: 'subclass', id: 'war-domain' });
+  expect(feature('oath-of-conquest-guided-strike')).toMatchObject({ name: 'Guided Strike', source: { kind: 'subclass', id: 'oath-of-conquest' }, resource: '1 Channel Divinity', page: 38 });
+});
+test('conquest and redemption oath spells', () => {
+  expect(sub('oath-of-conquest').bonusSpells).toMatchObject({ kind: 'oath' });
+  expect(sub('oath-of-conquest').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['armor-of-agathys', 'command']);
+  expect(sub('oath-of-redemption').bonusSpells).toMatchObject({ kind: 'oath' });
+  expect(sub('oath-of-redemption').bonusSpells!.grants.filter(g => g.atLevel === 13).map(g => g.spell).sort()).toEqual(['otilukes-resilient-sphere', 'stoneskin']);
+  for (const id of ['oath-of-conquest', 'oath-of-redemption'])
+    expect(sub(id).bonusSpells!.grants.map(g => g.atLevel).sort((a, b) => a - b), id).toEqual([3, 3, 5, 5, 9, 9, 13, 13, 17, 17]);
+});
+test('horizon walker and monster slayer magic', () => {
+  expect(sub('horizon-walker').bonusSpells).toMatchObject({ kind: 'subclass' });
+  expect(sub('horizon-walker').bonusSpells!.grants.map(g => g.spell)).toEqual(['protection-from-evil-and-good', 'misty-step', 'haste', 'banishment', 'teleportation-circle']);
+  expect(sub('monster-slayer').bonusSpells).toMatchObject({ kind: 'subclass' });
+  expect(sub('monster-slayer').bonusSpells!.grants.map(g => g.spell)).toEqual(['protection-from-evil-and-good', 'zone-of-truth', 'magic-circle', 'banishment', 'hold-monster']);
+});
+test('sun soul: burning hands costs ki; sunburst is its own card', () => {
+  expect(feature('searing-arc-strike').spells).toEqual([expect.objectContaining({ spell: 'burning-hands', atLevel: 6 })]);
+  expect(feature('searing-arc-strike').spells![0].uses).toMatch(/2 ki points/i);
+  expect(feature('searing-sunburst')).toMatchObject({ cost: 'action', level: 11, page: 35 });
+  expect(feature('ethereal-step').spells).toEqual([expect.objectContaining({ spell: 'etherealness', atLevel: 7 })]);
+});
+test('kensei weapons are described, not an option group', () => {
+  expect(sub('way-of-the-kensei').options).toEqual([]);
+  expect(feature('kenseis-shot')).toMatchObject({ cost: 'bonus', level: 3, page: 34 });
+});
+
+const T7 = ['inquisitive', 'mastermind', 'scout', 'divine-soul', 'the-celestial', 'war-magic'];
+test('xanathar subclasses (task 7)', () => { for (const id of T7) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every task 7 feature and option names its book', () => {
+  const ids = new Set(T7);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.filter(f => f.source.kind === 'option').length).toBe(5); // the five Divine Magic affinities
+  for (const f of fs) expect(f.book, f.id).toBe('xge');
+});
+test('task 7 must-have features', () => {
+  for (const id of ['eye-for-detail', 'insightful-fighting', 'unerring-eye', 'eye-for-weakness',
+    'master-of-tactics', 'insightful-manipulator', 'misdirection',
+    'skirmisher', 'ambush-master', 'sudden-strike',
+    'favored-by-the-gods', 'empowered-healing', 'otherworldly-wings', 'unearthly-recovery',
+    'the-celestial-bonus-cantrips', 'healing-light', 'radiant-soul', 'celestial-resilience', 'searing-vengeance',
+    'arcane-deflection', 'power-surge', 'deflecting-shroud'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('task 7 usable reactions are reaction cards', () => {
+  for (const id of ['misdirection', 'skirmisher', 'arcane-deflection']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('task 7 riders are free cards with a trigger', () => {
+  for (const id of ['eye-for-weakness', 'ambush-master', 'favored-by-the-gods', 'empowered-healing', 'radiant-soul', 'celestial-resilience', 'searing-vengeance', 'power-surge', 'deflecting-shroud']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+  expect(feature('favored-by-the-gods')).toMatchObject({ source: { kind: 'subclass', id: 'divine-soul' }, level: 1, page: 50 });
+});
+test('divine soul affinity picks one bonus spell', () => {
+  expect(sub('divine-soul').options).toEqual(['divine-magic-affinity']);
+  const g = DATA.optionGroups.find(x => x.id === 'divine-magic-affinity')!;
+  expect(g.owner).toEqual({ kind: 'subclass', id: 'divine-soul' });
+  expect(g.picks).toEqual(Array(20).fill(1));
+  const b = sub('divine-soul').bonusSpells!;
+  expect(b.kind).toBe('subclass');
+  const pairs: [string, string][] = [['good', 'cure-wounds'], ['evil', 'inflict-wounds'], ['law', 'bless'], ['chaos', 'bane'], ['neutrality', 'protection-from-evil-and-good']];
+  expect(b.grants).toHaveLength(5);
+  for (const [a, spell] of pairs) {
+    expect(b.grants).toContainEqual({ spell, atLevel: 1, option: `divine-magic-affinity-${a}` });
+    expect(feature(`divine-magic-affinity-${a}`)).toMatchObject({ cost: 'passive', book: 'xge', page: 50, level: 1 });
+  }
+});
+test('divine soul widens to the cleric list', () => {
+  expect(sub('divine-soul').extraLists).toEqual(['cleric']);
+  const lvl1 = spellSections('sorcerer', 1, 'divine-soul').find(s => s.id === 'lvl-1')!;
+  expect(lvl1.items.map(s => s.id)).toContain('cure-wounds');
+  expect(lvl1.tags!['bless']).toBeDefined();               // 'Cleric list' or the affinity tag
+  expect(lvl1.items.map(s => s.id)).toContain('guiding-bolt');
+  expect(lvl1.tags!['guiding-bolt']).toBe('Cleric list');  // cleric only, not an affinity spell
+  expect(spellSections('sorcerer', 1).find(s => s.id === 'lvl-1')!.items.map(s => s.id)).not.toContain('cure-wounds');
+  expect(spellSections('sorcerer', 1).find(s => s.id === 'lvl-1')!.items.map(s => s.id)).not.toContain('guiding-bolt');
+});
+test('ambush master: initiative advantage every time, the exposed target in the first round', () => {
+  expect(feature('ambush-master').uses).toBeUndefined();
+  expect(feature('ambush-master').trigger).toMatch(/initiative/i);
+  expect(feature('ambush-master').trigger).toMatch(/first round/i);
+});
+test('celestial resilience is a rest card', () => {
+  expect(feature('celestial-resilience')).toMatchObject({ source: { kind: 'subclass', id: 'the-celestial' }, level: 10, cost: 'free', page: 55, book: 'xge' });
+  expect(feature('celestial-resilience').trigger).toMatch(/rest/i);
+  expect(DATA.features.find(f => f.id === 'bonus-cantrips')).toBeUndefined();
+});
+test('celestial patron spells and bonus cantrips', () => {
+  const b = sub('the-celestial').bonusSpells!;
+  expect(b.kind).toBe('patron');
+  expect(b.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['cure-wounds', 'guiding-bolt']);
+  expect(b.grants.filter(g => g.atLevel === 9).map(g => g.spell).sort()).toEqual(['flame-strike', 'greater-restoration']);
+  expect(b.grants.map(g => g.atLevel).sort((x, y) => x - y)).toEqual([1, 1, 3, 3, 5, 5, 7, 7, 9, 9]);
+  expect(feature('the-celestial-bonus-cantrips')).toMatchObject({ source: { kind: 'subclass', id: 'the-celestial' }, level: 1, page: 54 });
+  expect(feature('the-celestial-bonus-cantrips').spells).toEqual([{ spell: 'light', atLevel: 1 }, { spell: 'sacred-flame', atLevel: 1 }]);
+  const c = { ...emptyCharacter(), classes: [{ cls: 'warlock' as const, level: 1, sub: 'the-celestial' }] };
+  const ids = autoSpells(c).map(a => a.spell.id);
+  expect(ids).toEqual(expect.arrayContaining(['light', 'sacred-flame']));
+  expect(ids).not.toContain('cure-wounds');
+});
+test('healing light pool is 1 + warlock level', () => {
+  const pool = feature('healing-light').scaling!.find(s => /pool/i.test(s.label))!;
+  expect([pool.values[0], pool.values[19]]).toEqual(['2', '21']);
+  expect(feature('healing-light')).toMatchObject({ cost: 'bonus', level: 1, page: 54 });
+});

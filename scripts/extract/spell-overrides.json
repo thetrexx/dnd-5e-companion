@@ -63,12 +63,12 @@
   },
   "counterspell": {
     "cast": {
-      "trigger": "when you see a creature within 60 ft casting a spell"
+      "trigger": "on seeing a creature cast a spell no more than 60 ft away"
     }
   },
   "feather-fall": {
     "cast": {
-      "trigger": "when you or a creature within 60 ft falls"
+      "trigger": "as you or someone no more than 60 ft away falls"
     }
   },
   "hellish-rebuke": {

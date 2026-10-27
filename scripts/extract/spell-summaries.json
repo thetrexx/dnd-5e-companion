@@ -67,7 +67,7 @@
   },
   "misty-step": {
     "description": [
-      "In a puff of silver mist you teleport up to 30 ft to an empty space you can see. It costs only a bonus action and needs just a spoken word, no gestures."
+      "Wrapped in silvery mist, you teleport to a free space in sight up to 30 ft away. It costs only a bonus action and needs just a spoken word, no gestures."
     ]
   },
   "fireball": {
@@ -154,7 +154,7 @@
   "message": {
     "description": [
       "Point at a creature within 120 ft and whisper. Only it hears you, and it can whisper an answer only you hear.",
-      "It works through solid objects if you know the target is behind the barrier and are familiar with it. Magical silence, 1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood blocks it. It bends around corners and through openings."
+      "It works through solid objects if you know the target is behind the barrier and are familiar with it. Magical silence or a thin lead sheet stops it, as does stone 1 ft thick, metal 1 inch thick or wood 3 ft thick. It bends around corners and through openings."
     ],
     "material": "a short piece of copper wire"
   },
@@ -177,7 +177,7 @@
       "• Harmless sensory effect: sparks, a gust, soft notes, an odd smell.",
       "• Light or snuff a candle, torch or small campfire.",
       "• Clean or soil an object up to 1 cubic ft.",
-      "• Chill, warm or flavour 1 cubic ft of non-living material for 1 hour.",
+      "• For 1 hour, a block of nonliving material up to 1 cubic ft becomes colder, warmer or flavoured.",
       "• A colour, mark or symbol on a surface for 1 hour.",
       "• A hand-sized trinket or illusory image until your next turn ends.",
       "Up to 3 timed effects at once; dismiss one as an action."
@@ -284,7 +284,7 @@
       "Pick a humanoid you can see within 30 ft. It makes a Wisdom save, with advantage if you or your allies are fighting it. Failing, it is charmed for 1 hour, and sees you as a friendly acquaintance. Harming it ends the charm.",
       "It knows afterwards that you magically influenced it."
     ],
-    "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other."
+    "higherLevels": "Each slot level above 1 adds 1 target; they must be no more than 30 ft apart."
   },
   "chromatic-orb": {
     "description": [
@@ -306,7 +306,7 @@
       "Give a one-word order to a creature within 60 ft that you can see. It makes a Wisdom save or carries out the command on its next turn. Nothing happens if it is undead, does not understand your language, or the command would directly harm it.",
       "Sample words: Approach (comes toward you, stopping within 5 ft), Drop (lets go of what it holds), Flee (moves away fast), Grovel (falls prone), Halt (no move, no actions). The DM rules on other words; if the target cannot obey, the spell ends."
     ],
-    "higherLevels": "Each slot level above 1 adds 1 target; they must be within 30 ft of each other."
+    "higherLevels": "Each slot level above 1 adds 1 target; they must be no more than 30 ft apart."
   },
   "compelled-duel": {
     "description": [
@@ -344,7 +344,7 @@
   },
   "detect-poison-and-disease": {
     "description": [
-      "For up to 10 minutes (concentration) you sense poisons, poisonous creatures and diseases within 30 ft, learning what kind each one is and where.",
+      "For up to 10 minutes (concentration) you sense any poison, poisonous creature or disease within 30 ft, learning what kind each one is and where.",
       "1 ft of stone, 1 inch of metal, thin lead or 3 ft of wood or dirt blocks it. Ritual."
     ],
     "material": "a yew leaf"
@@ -521,7 +521,7 @@
   },
   "purify-food-and-drink": {
     "description": [
-      "All non-magical food and drink in a 5 ft radius sphere centred on a point within 10 ft is cleansed of poison and disease. Ritual."
+      "All non-magical food and drink within 5 ft of a point you pick up to 10 ft away is cleansed of poison and disease. Ritual."
     ]
   },
   "ray-of-sickness": {
@@ -768,7 +768,7 @@
     "description": [
       "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
     ],
-    "material": "1 piece of ammunition or a thrown weapon"
+    "material": "A thrown weapon or 1 piece of ammunition"
   },
   "continual-flame": {
     "description": [
@@ -824,7 +824,7 @@
   },
   "daylight": {
     "description": [
-      "For 1 hour, a 60 ft radius sphere of bright light, with dim light for another 60 ft, spreads from a point within 60 ft.",
+      "For 1 hour, bright light fills a 60 ft radius around a point within 60 ft, and dim light reaches 60 ft beyond that.",
       "If you pick an object you hold or one nobody is wearing or carrying, the light moves with it; covering it with something opaque, like a bowl or helm, blocks the light.",
       "Any darkness from a spell of 3rd level or lower that overlaps it is dispelled."
     ]
@@ -912,7 +912,7 @@
   },
   "flaming-sphere": {
     "description": [
-      "A 5 ft wide ball of fire appears in a free space within 60 ft for up to 1 minute (concentration). A creature that ends its turn within 5 ft of it makes a Dexterity save: 2d6 fire damage, half on a success.",
+      "A 5 ft wide ball of fire appears in a free space within 60 ft for up to 1 minute (concentration). Any creature finishing its turn no more than 5 ft from it makes a Dexterity save: 2d6 fire damage, half on a success.",
       "As a bonus action, roll it up to 30 ft; a creature it rams makes the save and the sphere stops for the turn. It hops 5 ft barriers and 10 ft pits, ignites unattended flammables, and lights 20 ft bright plus 20 ft dim."
     ],
     "higherLevels": "Each slot level above 2 adds 1d6 damage.",
@@ -920,7 +920,7 @@
   },
   "fly": {
     "description": [
-      "You touch a willing creature; it gains a flying speed of 60 ft for up to 10 minutes (concentration). When the spell ends, it falls if still in the air, unless it can stop itself."
+      "You touch a willing creature; it can fly at 60 ft for up to 10 minutes (concentration). When the spell ends, it falls if still in the air, unless it can stop itself."
     ],
     "higherLevels": "Each slot level above 3 adds 1 more target.",
     "material": "Wing feather from any bird"
@@ -1024,7 +1024,7 @@
   "lightning-arrow": {
     "description": [
       "Your next ranged weapon attack before the spell ends (concentration, up to 1 minute) turns the ammunition, or the thrown weapon, into lightning. Roll the attack normally: 4d8 lightning damage on a hit, half on a miss, instead of the weapon's damage.",
-      "Hit or miss, each creature within 10 ft of the target makes a Dexterity save, taking 2d8 lightning damage, half on a success. The ammunition or weapon then returns to normal."
+      "Hit or miss, the bolt then bursts: creatures no more than 10 ft from the target make Dexterity saves, taking 2d8 lightning damage, half on a success. The ammunition or weapon then returns to normal."
     ],
     "higherLevels": "Each slot level above 3 adds 1d8 to both damage rolls."
   },
@@ -1044,13 +1044,13 @@
   "locate-object": {
     "description": [
       "Name or describe an object familiar to you. For up to 10 minutes (concentration) you sense the direction to it if it is within 1,000 ft, and which way it moves if it is moving.",
-      "It finds a specific object only if you have seen it up close (within 30 ft) at least once, or else the nearest object of a kind, like a certain sort of weapon or jewelry. Any lead, even a thin sheet, in the direct path blocks it."
+      "It finds a specific object only if you once saw it from 30 ft or nearer, or else the nearest object of a kind, like a certain sort of weapon or jewelry. Any lead, even a thin sheet, in the direct path blocks it."
     ],
     "material": "Forked twig"
   },
   "magic-circle": {
     "description": [
-      "A 10 ft radius, 20 ft tall cylinder of glowing runes forms on the ground at a point within 10 ft for 1 hour. Pick one or more types: celestials, elementals, fey, fiends, undead. A creature of a chosen type:",
+      "Glowing runes mark a cylinder on the ground at a point within 10 ft for 1 hour: 10 ft in radius and 20 ft tall. Pick one or more types: celestials, elementals, fey, fiends, undead. A creature of a chosen type:",
       "• can't willingly enter by nonmagical means; teleporting or planar travel in needs a Charisma save first;",
       "• has disadvantage on attack rolls against targets inside;",
       "• can't charm, frighten or possess anyone inside.",
@@ -1133,7 +1133,7 @@
   },
   "pass-without-trace": {
     "description": [
-      "Shadow and hush surround you for up to 1 hour (concentration). You and each creature you choose within 30 ft of you get +10 to Dexterity (Stealth) checks, leave no tracks or other trace, and can't be tracked except by magic."
+      "Shadow and hush surround you for up to 1 hour (concentration). You and any creatures you pick no more than 30 ft away get +10 to Dexterity (Stealth) checks, leave no tracks or other trace, and can't be tracked except by magic."
     ],
     "material": "Ashes of a burned mistletoe leaf and a spruce sprig"
   },
@@ -1222,21 +1222,21 @@
   },
   "shatter": {
     "description": [
-      "A painful burst of ringing sound erupts at a point within 60 ft. Each creature in a 10 ft radius sphere makes a Constitution save, taking 3d8 thunder damage, half on a success. Creatures of stone, crystal, metal or other inorganic material save at disadvantage. Unattended nonmagical objects in the area take the damage too."
+      "A painful burst of ringing sound erupts at a point within 60 ft. Creatures within 10 ft of the spot each make a Constitution save, taking 3d8 thunder damage, half on a success. Creatures of stone, crystal, metal or other inorganic material save at disadvantage. Unattended nonmagical objects in the area take the damage too."
     ],
     "higherLevels": "Each slot level above 2 adds 1d8 damage.",
     "material": "Chip of mica"
   },
   "silence": {
     "description": [
-      "For up to 10 minutes (concentration), no sound can be made in or pass through a 20 ft radius sphere on a point within 120 ft.",
+      "For up to 10 minutes (concentration), no sound can be made in, or cross, the space within 20 ft of a point you pick up to 120 ft away.",
       "Anything entirely inside is immune to thunder damage, and creatures entirely inside are deafened. Spells with a verbal component can't be cast there."
     ]
   },
   "sleet-storm": {
     "description": [
       "Freezing sleet fills a 40 ft radius, 20 ft tall cylinder on a point within 150 ft for up to 1 minute (concentration). The area is heavily obscured, open flames go out, and icy ground makes it difficult terrain.",
-      "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or falls prone. Anyone concentrating inside must succeed on a Constitution save vs your spell save DC to keep concentrating."
+      "Any creature that starts its turn in the storm, or moves into it for the first time on a turn, must pass a Dexterity save or fall prone. A creature concentrating inside must pass a Constitution save against your spell save DC or its concentration breaks."
     ],
     "material": "Dust and a few water drops"
   },
@@ -1348,14 +1348,14 @@
   },
   "wind-wall": {
     "description": [
-      "A wall of strong wind, up to 50 ft long, 15 ft high and 1 ft thick, rises at a point within 120 ft, in any shape that follows one unbroken path on the ground. Creatures in it when it appears make a Strength save, taking 3d8 bludgeoning damage, half on a success.",
+      "A wall of strong wind, at most 50×15×1 ft (length × height × thickness), rises at a point within 120 ft, in any shape that follows one unbroken path on the ground. Creatures in it when it appears make a Strength save, taking 3d8 bludgeoning damage, half on a success.",
       "It blocks fog, smoke and gases. Small or smaller flyers and objects, and gaseous creatures, can't cross. Ordinary arrows, bolts and other missiles fired through it automatically miss (boulders and siege ammo don't)."
     ],
     "material": "Tiny fan and an exotic feather"
   },
   "zone-of-truth": {
     "description": [
-      "For 10 minutes, a 15 ft radius sphere on a point within 60 ft guards against lies. A creature entering it for the first time on a turn, or starting its turn there, makes a Charisma save; on a failure it can't deliberately lie while inside. You know who passed and who failed.",
+      "For 10 minutes, a 15 ft radius sphere on a point within 60 ft guards against lies. A creature makes a Charisma save when it first comes in on a turn or begins its turn inside; on a failure it can't deliberately lie while inside. You know who passed and who failed.",
       "Affected creatures know about the spell, so they can dodge questions or give evasive but truthful answers."
     ]
   },
@@ -1482,11 +1482,11 @@
       "You reach your deity or a divine agent and ask up to 3 yes-or-no questions within the minute. Each gets a true answer, though the DM may say \"unclear\" if it lies outside the deity's knowledge, or give a short phrase if one word would mislead.",
       "Each casting after the first before your next long rest has a cumulative 25% chance of no answer, rolled secretly by the DM."
     ],
-    "material": "Incense and a vial of holy or unholy water"
+    "material": "Incense, plus holy or unholy water in a vial"
   },
   "commune-with-nature": {
     "description": [
-      "You learn up to 3 facts of your choice about the land within 3 miles of you outdoors, or 300 ft in caves and natural underground. It fails where building has replaced nature, such as towns and dungeons.",
+      "You gain up to 3 facts you pick about the surrounding land, out to 3 miles when outdoors or 300 ft in caves and natural underground. It fails where building has replaced nature, such as towns and dungeons.",
       "Topics: land and bodies of water; dominant flora, fauna, minerals or peoples; mighty celestials, elementals, fey, fiends or undead; the pull of other planes; buildings."
     ]
   },
@@ -1505,7 +1505,7 @@
   },
   "confusion": {
     "description": [
-      "Each creature in a 10 ft radius sphere around a point within 90 ft makes a Wisdom save or is confused for up to 1 minute (concentration). It can't take reactions and rolls a d10 at the start of each turn:",
+      "Every creature within 10 ft of a point you pick up to 90 ft away makes a Wisdom save or is confused for up to 1 minute (concentration). It has no reactions, and as each of its turns begins it rolls a d10:",
       "1: It moves its full speed in a random direction (roll a d8) and takes no action.",
       "2-6: It doesn't move or act.",
       "7-8: It uses its action to melee attack a random creature in reach, or does nothing if none is in reach.",
@@ -1595,7 +1595,7 @@
       "Redirect Flow: the water moves the way you choose, even uphill.",
       "Whirlpool (water 50 ft square, 25 ft deep): pulls things within 25 ft 10 ft closer. Entering or starting a turn there: Strength save or 2d8 bludgeoning and caught (half, free on a success). Swim out: Athletics vs your save DC (disadvantage if caught)."
     ],
-    "material": "A drop of water and a pinch of dust"
+    "material": "A pinch of dust and a drop of water"
   },
   "create-undead": {
     "description": [
@@ -1603,7 +1603,7 @@
       "Bonus action: command any of them within 120 ft (one order for all); unordered, they just defend themselves. An order holds until the task is done.",
       "Control lasts 24 hours. Recast before it ends to keep up to 3 of them for another 24 hours instead of making new ones."
     ],
-    "higherLevels": "7th-level slot: 4 ghouls. 8th: 5 ghouls or 2 ghasts or wights. 9th: 6 ghouls, 3 ghasts or wights, or 2 mummies.",
+    "higherLevels": "7th-level slot: 4 ghouls. 8th: 2 ghasts or wights, or 5 ghouls. 9th: 2 mummies, 3 ghasts or wights, or 6 ghouls.",
     "material": "Per corpse: a clay pot of grave dirt, a clay pot of brackish water, and a black onyx stone worth 150 gp"
   },
   "creation": {
@@ -1856,12 +1856,12 @@
       "A creature you can see within 90 ft makes a Wisdom save or is paralyzed for up to 1 minute (concentration). Undead are unaffected.",
       "It repeats the save as each of its turns ends, breaking free on a success."
     ],
-    "higherLevels": "Each slot level above 5 adds a target; all must be within 30 ft of each other.",
+    "higherLevels": "Each slot level above 5 adds a target; all must be no more than 30 ft apart.",
     "material": "A small straight piece of iron"
   },
   "ice-storm": {
     "description": [
-      "Hard hail pounds a 20 ft radius, 40 ft high cylinder around a point within 300 ft. Each creature in it makes a Dexterity save: 2d8 bludgeoning plus 4d6 cold, half on a success.",
+      "Hard hail pounds a cylinder around a point within 300 ft: 20 ft in radius, 40 ft tall. Each creature in it makes a Dexterity save: 2d8 bludgeoning plus 4d6 cold, half on a success.",
       "Until your next turn ends, the area is difficult terrain."
     ],
     "higherLevels": "Each slot level above 4 adds 1d8 bludgeoning.",
@@ -1869,7 +1869,7 @@
   },
   "insect-plague": {
     "description": [
-      "Biting locusts fill a 20 ft radius sphere around a point within 300 ft for up to 10 minutes (concentration). It spreads around corners, is lightly obscured and is difficult terrain.",
+      "Biting locusts swarm within 20 ft of a point you choose up to 300 ft away for up to 10 minutes (concentration). It spreads around corners, is lightly obscured and is difficult terrain.",
       "Each creature in it when it appears makes a Constitution save: 4d10 piercing, half on a success. A creature also saves the first time each turn it enters, and whenever it ends its turn there."
     ],
     "higherLevels": "Each slot level above 5 adds 1d10.",
@@ -1991,7 +1991,7 @@
   },
   "passwall": {
     "description": [
-      "A passage up to 5 ft wide, 8 ft tall and 20 ft deep opens for 1 hour at a point you can see within 30 ft on wood, plaster or stone (wall, ceiling or floor). It doesn't weaken the structure around it.",
+      "For 1 hour a passage opens at a point you can see within 30 ft on wood, plaster or stone (wall, ceiling or floor), with a maximum width of 5 ft, height of 8 ft and depth of 20 ft. It doesn't weaken the structure around it.",
       "When it closes, anything still inside is pushed safely out to the nearest free space by the surface you cast it on."
     ],
     "material": "A pinch of sesame seeds"
@@ -2092,7 +2092,7 @@
   },
   "sunbeam": {
     "description": [
-      "For up to 1 minute (concentration) you can fire a 5 ft wide, 60 ft long line of light from your hand: once on casting, then as an action on later turns.",
+      "For up to 1 minute (concentration) you can fire a beam of light from your hand, 60 ft long and 5 ft wide: once on casting, then as an action on later turns.",
       "Each creature in the line makes a Constitution save: 6d8 radiant and blinded until your next turn, or half damage and not blinded on a success. Undead and oozes save with disadvantage.",
       "Your hand glows with sunlight meanwhile: bright light to 30 ft, dim light 30 ft further."
     ],
@@ -2114,7 +2114,7 @@
   },
   "teleportation-circle": {
     "description": [
-      "Inscribe a 10 ft wide circle of sigils that links to a permanent teleportation circle on your current plane, one whose sigil sequence you know. A portal shimmers open until your next turn ends; whoever enters arrives within 5 ft of the destination circle, or in the closest free space.",
+      "Inscribe a 10 ft wide circle of sigils that links to a permanent teleportation circle on your current plane, one whose sigil sequence you know. A portal shimmers open until your next turn ends; whoever steps in appears at the destination circle, no more than 5 ft from it, or in the nearest open space if that is full.",
       "When you first gain the spell you know 2 sequences for Material Plane circles, chosen by the DM, and 1 minute of study lets you memorise any new one you find. Cast it at one spot every day for a year to create a permanent circle there."
     ],
     "material": "Gem-infused inks and rare chalks worth 50 gp, consumed"
@@ -2139,7 +2139,7 @@
   },
   "wall-of-fire": {
     "description": [
-      "An opaque wall of fire stands on a solid surface within 120 ft for up to 1 minute (concentration): up to 60 ft long, 20 ft high and 1 ft thick, or a ring up to 20 ft across, 20 ft high and 1 ft thick.",
+      "An opaque wall of fire stands on a solid surface within 120 ft for up to 1 minute (concentration): at most 60×20×1 ft (length × height × thickness), or a ring at most 20 ft across, 20 ft high and 1 ft thick.",
       "Creatures in it when it appears make a Dexterity save: 5d8 fire, half on a success.",
       "Choose one side. A creature ending its turn within 10 ft of that side or inside the wall takes 5d8 fire, as does one entering it for the first time on a turn. The other side is harmless."
     ],
@@ -2172,7 +2172,7 @@
   },
   "wall-of-thorns": {
     "description": [
-      "A wall of thorny brush grows on a solid surface within 120 ft for up to 10 minutes (concentration), blocking sight: up to 60 ft long, 10 ft high and 5 ft thick, or a ring 20 ft across, up to 20 ft high and 5 ft thick.",
+      "A wall of thorny brush grows on a solid surface within 120 ft for up to 10 minutes (concentration), blocking sight: at most 60×10×5 ft (length × height × thickness), or a ring 20 ft across, as tall as 20 ft and 5 ft thick.",
       "Creatures in it when it appears make a Dexterity save: 7d8 piercing, half on a success.",
       "Moving through costs 4 ft per 1 ft. Entering it the first time on a turn or ending a turn there calls for a Dexterity save: 7d8 slashing, half on a success."
     ],
@@ -2181,7 +2181,7 @@
   },
   "wind-walk": {
     "description": [
-      "You and up to 10 willing creatures you can see within 30 ft turn into wisps of cloud for 8 hours: flying speed 300 ft and resistance to damage from nonmagical weapons. In this form the only actions are Dash or changing back.",
+      "You, plus up to 10 willing creatures in sight within 30 ft, become wisps of cloud for 8 hours: flying speed 300 ft and resistance to damage from nonmagical weapons. In this form the only actions are Dash or changing back.",
       "Switching form either way takes 1 minute, during which the creature is incapacitated and can't move.",
       "If the spell ends while one is flying as a cloud, it sinks 60 ft per round for 1 minute and lands safely; if it hasn't landed by then, it falls the rest of the way."
     ],
@@ -2189,7 +2189,7 @@
   },
   "word-of-recall": {
     "description": [
-      "You and up to 5 willing creatures within 5 ft teleport to your prepared sanctuary, arriving in the nearest free spaces to the spot you chose.",
+      "You teleport to your prepared sanctuary, taking up to 5 willing creatures that are within 5 ft of you, arriving in the nearest free spaces to the spot you chose.",
       "Prepare a sanctuary by casting this spell in a place dedicated to or tied to your deity, such as a temple. Cast anywhere else, or without a sanctuary, it does nothing."
     ]
   },
@@ -2217,7 +2217,7 @@
   },
   "astral-projection": {
     "description": [
-      "You and up to 8 willing creatures within 10 ft project into the Astral Plane (fails if you're already there). Bodies left behind lie unconscious in suspended animation, needing no food or air and not ageing.",
+      "Up to 8 willing creatures within 10 ft, plus you, project into the Astral Plane (fails if you're already there). Bodies left behind lie unconscious in suspended animation, needing no food or air and not ageing.",
       "Each astral form copies its owner's stats and gear and trails a silver cord; if an effect cuts the cord, that creature dies. Harm to the astral form doesn't reach the body. Entering another plane, or your starting one, through a portal pulls your body there to rejoin.",
       "Your action ends it for all. It ends for one creature whose body or astral form hits 0 HP or is dispelled; the cord pulls it home. If you're returned early, the others stay."
     ],
@@ -2299,7 +2299,7 @@
       "A creature you can see within 150 ft takes 4d6 psychic damage and makes an Intelligence save. On a failure, its Intelligence and Charisma become 1: it can't cast spells, use magic items, understand language or communicate in any sensible way, though it still knows, follows and protects its friends.",
       "It saves again at the end of every 30 days, ending the spell on a success. Greater restoration, heal or wish also ends it."
     ],
-    "material": "A handful of clay, crystal, glass or mineral spheres"
+    "material": "A handful of small spheres of clay, crystal, glass or mineral"
   },
   "finger-of-death": {
     "description": [
@@ -2378,7 +2378,7 @@
   },
   "meteor-swarm": {
     "description": [
-      "Four blazing orbs slam into points you can see within 1 mile. Each creature in a 40 ft radius sphere around any point makes a Dexterity save: 20d6 fire plus 20d6 bludgeoning, half on a success. A creature caught in several blasts is hit only once.",
+      "Four blazing orbs slam into points you can see within 1 mile. Every creature within 40 ft of any impact point makes a Dexterity save: 20d6 fire plus 20d6 bludgeoning, half on a success. A creature caught in several blasts is hit only once.",
       "The blasts spread around corners, damage objects, and set alight flammable objects nobody is wearing or carrying."
     ]
   },
@@ -2444,7 +2444,7 @@
   },
   "prismatic-wall": {
     "description": [
-      "An opaque wall of light, up to 90 ft long, 30 ft high and 1 inch thick (or a sphere up to 30 ft across), stands within 60 ft for 10 minutes; placing it through a creature wastes the spell. Bright light 100 ft, dim 100 ft beyond. You and chosen creatures pass through safely.",
+      "An opaque wall of light (as large as 90 ft by 30 ft and 1 inch thick, or a sphere as wide as 30 ft), stands within 60 ft for 10 minutes; placing it through a creature wastes the spell. Bright light 100 ft, dim 100 ft beyond. You and chosen creatures pass through safely.",
       "Others that see it and come within 20 ft or start a turn there make a Constitution save or are blinded for 1 minute. Passing or reaching through takes a Dexterity save per layer; layers 1-5 deal half on a success. Layers fall in order. A rod of cancellation destroys it; antimagic field doesn't.",
       "1: Red. 10d6 fire; blocks nonmagical ranged attacks. Destroyed by 25 cold.",
       "2: Orange. 10d6 acid; blocks magical ranged attacks. Destroyed by strong wind.",
@@ -2582,14 +2582,14 @@
   },
   "tsunami": {
     "description": [
-      "A wall of water up to 300 ft long, 300 ft high and 50 ft thick rises at a point you can see. Each creature in it makes a Strength save: 6d10 bludgeoning, half on a success.",
+      "A wall of water, at most 300×300×50 ft (length × height × thickness), rises at a point you can see. Each creature in it makes a Strength save: 6d10 bludgeoning, half on a success.",
       "As each of your turns begins, it rolls 50 ft away from you with everyone inside. Each Huge or smaller creature inside or in its path makes a Strength save or takes 5d10 bludgeoning (once per round). Then it loses 50 ft of height and later damage drops 1d10; at 0 ft it ends.",
       "Swimming in it needs a Strength (Athletics) check vs your spell save DC. Leaving it, a creature falls."
     ]
   },
   "weird": {
     "description": [
-      "Each creature in a 30 ft radius sphere around a point within 120 ft makes a Wisdom save or is frightened by phantoms of its worst fears that only it can see, until the spell ends.",
+      "Every creature within 30 ft of a point you pick up to 120 ft away makes a Wisdom save or is frightened by phantoms of its worst fears that only it can see, until the spell ends.",
       "At the start of each of its turns, a frightened creature makes a Wisdom save or takes 4d10 psychic damage. A success ends the spell for it."
     ]
   },
@@ -2603,6 +2603,728 @@
       "• Force a reroll of any one roll from the last round (your last turn included), optionally with advantage or disadvantage; you pick which result stands.",
       "Other wishes: tell the DM; bigger ones risk failure or twisted results.",
       "Any use besides copying a spell strains you: until a long rest, each spell you cast deals you 1d10 necrotic per spell level (unpreventable); your Strength drops to 3 for 2d4 days (2 days fewer per day of rest); 33 percent chance you lose wish forever."
+    ]
+  },
+  "control-flames": {
+    "description": [
+      "Pick a nonmagical flame you can see within range that fits in a 5-ft cube, then choose one effect:",
+      "• Spread it 5 ft in one direction, if wood or other fuel is there.",
+      "• Snuff out the flames in the cube.",
+      "• For 1 hour, double or halve its bright and dim light, change its color, or both.",
+      "• For 1 hour, simple moving shapes (a creature, an object, a place) dance in it.",
+      "Up to 3 of the lasting effects at once; dismiss one as an action."
+    ]
+  },
+  "create-bonfire": {
+    "description": [
+      "A magic bonfire fills a 5-ft cube of visible ground within range for the duration. A creature there when it appears makes a Dexterity save or takes 1d8 fire damage. A creature also saves on first entering the space during a turn, and when it ends its turn there.",
+      "It sets alight flammable objects in the area that nobody is wearing or carrying.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ]
+  },
+  "frostbite": {
+    "description": [
+      "Numbing frost forms on a creature you can see within range. It makes a Constitution save; on a failure it takes 1d6 cold damage and has disadvantage on its next weapon attack roll before its next turn ends.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ]
+  },
+  "gust": {
+    "description": [
+      "Bend the air at a visible point within range to make one effect:",
+      "• Push: a Medium or smaller creature you choose makes a Strength save or is shoved up to 5 ft away from you.",
+      "• Shove: an object of up to 5 pounds that nobody holds or carries slides up to 10 ft away from you, too gently to deal damage.",
+      "• Breeze: a harmless effect, such as rustling leaves, slamming shutters or rippling clothes."
+    ]
+  },
+  "infestation": {
+    "description": [
+      "Mites and fleas swarm over a creature you can see within range. It makes a Constitution save or takes 1d6 poison damage and is driven 5 ft in a random direction, but only if it is able to move and its speed is 5 ft or more. Roll a d4: 1 north, 2 south, 3 east, 4 west. The move provokes no opportunity attacks, and if that way is blocked it stays put.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "material": "a living flea"
+  },
+  "magic-stone": {
+    "description": [
+      "Touch 1 to 3 pebbles to charge them. You or anyone else can make a ranged spell attack by throwing one (range 60 ft) or slinging it. Another attacker adds your spellcasting modifier to the attack roll, not their own.",
+      "A hit deals 1d6 + your spellcasting modifier bludgeoning damage. Hit or miss, that pebble loses its magic. Casting the spell again ends it on any pebbles left from before."
+    ]
+  },
+  "mold-earth": {
+    "description": [
+      "Pick dirt or stone you can see within range that fits in a 5-ft cube, then choose one effect:",
+      "• Dig: instantly scoop out loose earth and drop it up to 5 ft away, too gently to deal damage.",
+      "• Mark: shapes, colors or both appear on it, forming words, pictures or patterns, for 1 hour.",
+      "• Terrain: ground there turns into difficult terrain, or difficult terrain turns normal, for 1 hour.",
+      "Up to 2 of the lasting effects at once; dismiss one as an action."
+    ]
+  },
+  "primal-savagery": {
+    "description": [
+      "Your teeth or nails grow sharp and corrosive. Make a melee spell attack against a creature within 5 ft of you; a hit deals 1d10 acid damage. Afterwards your teeth or nails go back to normal.",
+      "Damage rises to 2d10 at level 5, 3d10 at level 11 and 4d10 at level 17."
+    ]
+  },
+  "shape-water": {
+    "description": [
+      "Pick water you can see within range that fits in a 5-ft cube, then choose one effect:",
+      "• Flow: instantly move it or redirect its flow up to 5 ft in any direction, too gently to deal damage.",
+      "• Shapes: it forms simple shapes that move as you direct, for 1 hour.",
+      "• Tint: change its color or opacity evenly, for 1 hour.",
+      "• Freeze: it turns to ice if no creature is in it, and thaws after 1 hour.",
+      "Up to 2 of the lasting effects at once; dismiss one as an action."
+    ]
+  },
+  "thunderclap": {
+    "description": [
+      "A booming crack, audible 100 ft away, bursts from you. Every other creature within 5 ft makes a Constitution save or takes 1d6 thunder damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ]
+  },
+  "toll-the-dead": {
+    "description": [
+      "A mournful bell tolls around a creature you can see within range. It makes a Wisdom save or takes 1d8 necrotic damage, or 1d12 if it is already missing any hit points.",
+      "Damage rises to 2d8 (2d12) at level 5, 3d8 (3d12) at level 11 and 4d8 (4d12) at level 17."
+    ]
+  },
+  "word-of-radiance": {
+    "description": [
+      "You speak a holy word and searing light bursts from you. Each creature you choose that you can see within 5 ft makes a Constitution save or takes 1d6 radiant damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "material": "a holy symbol"
+  },
+  "absorb-elements": {
+    "description": [
+      "Reaction when acid, cold, fire, lightning or thunder damage hits you. You resist that damage type, the triggering hit included, until your next turn starts.",
+      "On your next turn, your first melee hit adds 1d6 damage of that type to the target, and then the spell ends."
+    ],
+    "higherLevels": "The extra damage rises by 1d6 for each slot level above 1."
+  },
+  "beast-bond": {
+    "description": [
+      "Touch a beast that is charmed by you or friendly toward you to link minds with it; the spell fails if its Intelligence is 4 or higher. While you can see each other, it understands your telepathic messages and can send back simple feelings and ideas.",
+      "While the link holds, the beast has advantage on attack rolls against creatures you can see within 5 ft of you."
+    ],
+    "material": "fur wrapped in cloth"
+  },
+  "catapult": {
+    "description": [
+      "Pick an object of 1 to 5 pounds in range that nobody is wearing or carrying. It flies up to 90 ft in a straight line in a direction you choose, stopping early if it meets a solid surface.",
+      "A creature in its path makes a Dexterity save. On a failure, the object strikes it and stops, and both take 3d8 bludgeoning damage."
+    ],
+    "higherLevels": "Each slot level above 1 adds 5 pounds to the weight limit and 1d8 to the damage."
+  },
+  "cause-fear": {
+    "description": [
+      "A creature you can see within range makes a Wisdom save or is frightened of you until the spell ends. Constructs and undead are immune. It saves again after each of its turns, ending the fear on a success."
+    ],
+    "higherLevels": "Each slot level above 1 adds one more target; all targets must be no more than 30 ft apart."
+  },
+  "ceremony": {
+    "description": [
+      "Pick one rite; its target must remain no more than 10 ft from you for the whole casting.",
+      "Atonement: a willing creature whose alignment changed regains its old one if you pass a DC 20 Wisdom (Insight) check.",
+      "Bless Water: a vial of water becomes holy water.",
+      "Coming of Age: a young adult humanoid adds a d4 to its ability checks for 24 hours.",
+      "Dedication: a humanoid who wishes to serve your god adds a d4 to its saving throws for 24 hours.",
+      "Funeral Rite: a corpse can't become undead for 7 days, short of a wish spell.",
+      "Wedding: willing adult humanoids you marry get +2 AC for 7 days while within 30 ft of each other.",
+      "Coming of Age and Dedication work once per creature; Wedding works again only if widowed."
+    ],
+    "material": "powdered silver worth 25 gp, consumed"
+  },
+  "chaos-bolt": {
+    "description": [
+      "Make a ranged spell attack against a creature within range. A hit deals 2d8 + 1d6 damage. Pick one of the d8s; its number sets the type:",
+      "1: Acid",
+      "2: Cold",
+      "3: Fire",
+      "4: Force",
+      "5: Lightning",
+      "6: Poison",
+      "7: Psychic",
+      "8: Thunder",
+      "If both d8s match, the bolt jumps to another creature you choose within 30 ft of the target: roll a new attack and new damage, which can jump again. Each creature can be hit only once per casting."
+    ],
+    "higherLevels": "Each target takes an extra 1d6 damage of the rolled type for each slot level above 1."
+  },
+  "earth-tremor": {
+    "description": [
+      "The ground within range shakes. Every other creature there makes a Dexterity save; on a failure it takes 1d6 bludgeoning damage and falls prone.",
+      "If that ground is loose earth or stone, it turns into difficult terrain until cleared; each 5-ft-diameter patch needs 1 minute or more of clearing by hand."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1d6 to the damage."
+  },
+  "ice-knife": {
+    "description": [
+      "Fling a shard of ice at a creature within range with a ranged spell attack; a hit deals 1d10 piercing damage.",
+      "Either way, the shard then bursts. The target and every creature within 5 ft of it make a Dexterity save or take 2d6 cold damage."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1d6 to the cold damage.",
+    "material": "a water drop or an ice chip"
+  },
+  "snare": {
+    "description": [
+      "Lay the rope in a 5-ft-radius circle on the ground or floor; it vanishes and the circle turns into a magic trap. Spotting it needs an Intelligence (Investigation) check versus your spell save DC.",
+      "The first Small, Medium or Large creature to step onto the ground inside makes a Dexterity save or is hoisted to hang upside down 3 ft up, restrained until the spell ends.",
+      "It retries the save after each of its turns, or it (or anyone in reach) can use an action on an Intelligence (Arcana) check against your DC to free it. Once sprung, the spell ends when nothing is held."
+    ],
+    "material": "25 ft of rope, consumed"
+  },
+  "zephyr-strike": {
+    "description": [
+      "Until the spell ends, your movement provokes no opportunity attacks.",
+      "Once during the spell, on your turn, pick one weapon attack to roll with advantage; if it hits, add 1d8 force damage. Whether or not it hits, you gain +30 ft walking speed for the rest of that turn."
+    ]
+  },
+  "aganazzars-scorcher": {
+    "description": [
+      "A blazing line of fire, 30 ft long and 5 ft wide, shoots out from you in a direction you pick. Each creature in the line makes a Dexterity save, taking 3d8 fire damage on a failure or half as much on a success."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d8 damage.",
+    "material": "a scale from a red dragon"
+  },
+  "dragons-breath": {
+    "description": [
+      "Touch a willing creature that has a mouth and pick acid, cold, fire, lightning or poison. For up to 1 minute (concentration), it can spend its action to breathe out a 15-ft cone of that energy.",
+      "Each creature in the cone makes a Dexterity save, taking 3d6 damage of the picked type on a failure or half on a success."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d6 damage.",
+    "material": "a hot pepper"
+  },
+  "dust-devil": {
+    "description": [
+      "An elemental force shaped like a small dust devil fills an unoccupied 5-ft cube of air you can see within 60 ft for up to 1 minute (concentration).",
+      "Any creature finishing its turn no more than 5 ft from it makes a Strength save. On a failure it takes 1d8 bludgeoning damage and is shoved 10 ft away from the whirlwind; on a success it takes half and stays put.",
+      "Bonus action: move it up to 30 ft. Moving it over loose ground (sand, dust, dirt or fine gravel) stirs up a 10-ft-radius debris cloud around it, heavily obscuring that area until the start of your next turn."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d8 damage.",
+    "material": "a pinch of dust"
+  },
+  "earthbind": {
+    "description": [
+      "Bands of yellow energy wrap a creature you can see within 300 ft. On a failed Strength save, its flying speed (if it has one) drops to 0 ft for up to 1 minute (concentration).",
+      "A creature already in the air sinks gently at 60 ft per round until it lands or the spell ends."
+    ]
+  },
+  "healing-spirit": {
+    "description": [
+      "An intangible nature spirit, shaped like a see-through beast or fey, occupies a 5-ft cube in sight no more than 60 ft away, for up to 1 minute (concentration).",
+      "When you or a creature you can see first enters its space on a turn, or starts a turn there, you can have the spirit heal that creature 1d6 hit points (no action). It can't heal undead or constructs.",
+      "Bonus action: shift the spirit as far as 30 ft to a spot in sight."
+    ],
+    "higherLevels": "Healing rises by 1d6 for each slot level above 2."
+  },
+  "maximilians-earthen-grasp": {
+    "description": [
+      "A Medium hand of packed soil rises from an unoccupied 5-ft square of ground you can see within 30 ft and reaches for a creature in your sight no more than 5 ft from it. If it fails a Strength save, it takes 2d6 bludgeoning damage and is held restrained for up to 1 minute (concentration).",
+      "Action: the hand squeezes its captive, which makes a Strength save, taking 2d6 bludgeoning damage or half on a success.",
+      "Action: send the hand after another creature or to another free space in range; it lets go of its captive.",
+      "To get free, the captive uses its action and wins a Strength check versus your spell save DC."
+    ],
+    "material": "a tiny hand shaped from clay"
+  },
+  "mind-spike": {
+    "description": [
+      "Drive a spike into the mind of a creature you can see within 60 ft. It makes a Wisdom save, taking 3d8 psychic damage on a failure or half on a success.",
+      "On a failure you also always know where it is for up to 1 hour (concentration), while you are both on the same plane. It can't hide from you, and being invisible gives it no benefit against you."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d6 damage."
+  },
+  "pyrotechnics": {
+    "description": [
+      "Pick a nonmagical fire you can see within 60 ft that fits in a 5-ft cube. You snuff it out and make it erupt as one of these:",
+      "Fireworks: colorful bursts; each creature within 10 ft of the fire must pass a Constitution save or be blinded until your next turn ends.",
+      "Smoke: dense black smoke pours out to a 20-ft radius, flowing around corners. That area is heavily obscured for 1 minute, unless a strong wind blows it away first."
+    ]
+  },
+  "shadow-blade": {
+    "description": [
+      "A sword of solid shadow forms in your hand for up to 1 minute (concentration). It counts as a simple melee weapon you are proficient with, hits for 2d8 psychic damage, and is a light, finesse weapon you can also throw (range 20/60).",
+      "Your attacks with it against a target in dim light or darkness have advantage.",
+      "If you drop or throw it, it fades at the end of the turn; while the spell lasts, a bonus action calls it back to your hand."
+    ],
+    "higherLevels": "A level 3 or 4 slot raises the damage to 3d8, level 5 or 6 to 4d8, and level 7 or higher to 5d8."
+  },
+  "skywrite": {
+    "description": [
+      "Spell out up to ten words in cloud across a patch of sky you can see. They stay put for up to 1 hour (concentration), then fade. A strong gust can break them up early, ending the spell."
+    ]
+  },
+  "snillocs-snowball-swarm": {
+    "description": [
+      "A flurry of magic snowballs bursts at a point you choose within 90 ft. Creatures within 5 ft of that point each make a Dexterity save, taking 3d6 cold damage on a failure or half on a success."
+    ],
+    "higherLevels": "Each slot level above 2 adds 1d6 damage.",
+    "material": "a bit of ice or a little white stone chip"
+  },
+  "warding-wind": {
+    "description": [
+      "A strong wind (20 miles per hour) swirls in a 10-ft radius around you and moves with you for up to 10 minutes (concentration). While it blows:",
+      "• You and other creatures in it are deafened.",
+      "• Unprotected flames in it no bigger than a torch go out.",
+      "• It keeps out vapor, gas and fog that strong wind could scatter.",
+      "• Its area is difficult terrain for everyone but you.",
+      "• Ranged weapon attacks that pass into or out of it have disadvantage."
+    ]
+  },
+  "catnap": {
+    "description": [
+      "Up to three willing creatures you choose that you can see within 30 ft fall unconscious for 10 minutes. One wakes early if it takes damage or someone spends an action shaking or slapping it.",
+      "Sleeping out the whole 10 minutes counts as a short rest for that target, which is then immune to this spell until its next long rest."
+    ],
+    "higherLevels": "Each slot level above 3 adds one willing target.",
+    "material": "a pinch of sand"
+  },
+  "enemies-abound": {
+    "description": [
+      "A creature you can see within 120 ft makes an Intelligence save; one immune to being frightened succeeds automatically. On a failure, for up to 1 minute (concentration), it can't tell friend from foe and treats every creature it can see as an enemy.",
+      "When it picks a target for an attack, spell or other ability, it chooses at random among the creatures it can see in range. It is compelled to take any opportunity attack an enemy offers it, if able.",
+      "It repeats the save each time it takes damage, ending the effect on a success."
+    ]
+  },
+  "erupting-earth": {
+    "description": [
+      "Earth and stone burst upward in a 20-ft cube centered on a point on the ground you can see within 120 ft. Each creature there makes a Dexterity save, taking 3d12 bludgeoning damage on a failure or half on a success.",
+      "The area turns to difficult terrain until someone clears it, at least 1 minute of hand work per 5-ft square."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d12 damage.",
+    "material": "a bit of obsidian"
+  },
+  "flame-arrows": {
+    "description": [
+      "Touch a quiver holding arrows or bolts. For up to 1 hour (concentration), a target hit by a ranged weapon attack with ammunition drawn from it takes an extra 1d6 fire damage.",
+      "A piece's magic fades after its attack, hit or miss, and the spell ends once 12 pieces have left the quiver."
+    ],
+    "higherLevels": "Each slot level above 3 lets 2 more pieces of ammunition be drawn."
+  },
+  "life-transference": {
+    "description": [
+      "You trade your own life for another's: you suffer 4d8 necrotic damage, and a creature you choose that you can see within 30 ft is healed by double the necrotic damage you took."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d8 to the damage you take, and so to the healing."
+  },
+  "melfs-minute-meteors": {
+    "description": [
+      "Six tiny meteors appear in your space and circle you for up to 10 minutes (concentration).",
+      "On casting, and with a bonus action on each later turn, you can launch one or two of them at points of your choice up to 120 ft away. Each one bursts when it arrives or hits a solid surface: every creature within 5 ft of it makes a Dexterity save, taking 2d6 fire damage on a failure or half on a success."
+    ],
+    "higherLevels": "Each slot level above 3 adds 2 meteors.",
+    "material": "a bead made of niter, sulfur and pine tar"
+  },
+  "summon-lesser-demons": {
+    "description": [
+      "Roll a d6 for what appears. The DM picks the demons (manes or dretches, say) and you pick unoccupied spaces you can see within 60 ft. They use their Monster Manual stats:",
+      "1-2: 2 demons, each CR 1 or lower.",
+      "3-4: 4 demons, each CR 1/2 or lower.",
+      "5-6: 8 demons, each CR 1/4 or lower.",
+      "They are hostile to all, you included, act as one group on their own initiative, and attack the nearest non-demons. A demon dropped to 0 hit points vanishes, and all of them go when the spell ends (concentration, up to 1 hour).",
+      "If you draw a circle of the blood around your space while casting, they can't cross it, harm it or target anyone inside; the blood is consumed when the spell ends."
+    ],
+    "higherLevels": "A level 6 or 7 slot summons twice as many demons; a level 8 or 9 slot, three times as many.",
+    "material": "a vial of blood from a humanoid slain in the last 24 hours"
+  },
+  "thunder-step": {
+    "description": [
+      "You teleport up to 90 ft to a free space you can see, and a boom fills the spot you left. Each creature within 10 ft of that spot makes a Constitution save, taking 3d10 thunder damage on a failure or half on a success. The noise carries 300 ft.",
+      "You bring anything you can carry, and can bring one willing creature your size or smaller within 5 ft of you, with gear up to its carrying capacity. It comes only if there is a free space within 5 ft of where you land; otherwise it stays behind."
+    ],
+    "higherLevels": "Each slot level above 3 adds 1d10 damage."
+  },
+  "tidal-wave": {
+    "description": [
+      "A wave of water crashes down on an area within 120 ft, up to 30 ft long, 10 ft wide and 10 ft tall. Each creature there makes a Dexterity save: failing means 4d8 bludgeoning damage and being knocked prone; succeeding means half damage and staying on its feet.",
+      "The water then washes out over the ground, dousing unprotected flames there and up to 30 ft away, then vanishes."
+    ],
+    "material": "a drop of water"
+  },
+  "tiny-servant": {
+    "description": [
+      "Touch a Tiny nonmagical object that isn't fixed to anything and isn't carried by another creature. It grows little arms and legs and becomes a creature under your control for 8 hours or until it drops to 0 hit points. It uses the tiny servant stat block printed with the spell, on the next page of Xanathar's.",
+      "Bonus action: command it mentally while it is within 120 ft (one command can go to all your servants). Name its action and move, or give a simple standing order, like fetching a key, which it follows until done. Without orders it only defends itself.",
+      "At 0 hit points it turns back into the object, and leftover damage carries over."
+    ],
+    "higherLevels": "Each slot level above 3 animates 2 more objects."
+  },
+  "wall-of-sand": {
+    "description": [
+      "Whirling sand forms a wall of at most 30×10×10 ft (length × height × thickness), standing on the ground somewhere you can see within 90 ft, for up to 10 minutes (concentration).",
+      "You can't see through it, but you can walk through it: a creature in the sand is blinded, and every foot it moves inside costs 3 ft of movement."
+    ],
+    "material": "a handful of sand"
+  },
+  "wall-of-water": {
+    "description": [
+      "A wall of water stands on the ground somewhere you can see within 60 ft for up to 10 minutes (concentration): at most 30×10×1 ft (length × height × thickness), or a ring at most 20 ft across, 20 ft high and 1 ft thick. Its space is difficult terrain.",
+      "Ranged weapon attacks that enter it have disadvantage, and fire that passes through it to reach a target deals half damage.",
+      "A cold-damage spell passing through freezes the part it crosses (at least a 5-ft square). A frozen 5-ft section can be smashed (AC 5, 15 hit points), leaving a gap the water doesn't fill."
+    ],
+    "material": "a drop of water"
+  },
+  "charm-monster": {
+    "description": [
+      "A creature you can see within 30 ft makes a Wisdom save, with advantage if you or your allies are fighting it. If it fails, it is charmed by you for 1 hour, but the charm breaks early if you or your allies harm it. While charmed it regards you as friendly.",
+      "When the charm ends, it knows you charmed it."
+    ],
+    "higherLevels": "Each slot level above 4 adds one target; the targets must be no more than 30 ft apart."
+  },
+  "elemental-bane": {
+    "description": [
+      "Choose a target you can see within 90 ft and an element: acid, cold, fire, lightning or thunder. On a failed Constitution save it is afflicted for up to 1 minute (concentration).",
+      "While afflicted it loses any resistance to that type, and the first time each turn it takes damage of that type, it takes an extra 2d6 of it."
+    ],
+    "higherLevels": "Each slot level above 4 adds one target; the targets must be no more than 30 ft apart."
+  },
+  "find-greater-steed": {
+    "description": [
+      "A loyal spirit mount appears in an unoccupied space within 30 ft in a form you pick: griffon, pegasus, peryton, dire wolf, rhinoceros or saber-toothed tiger. It uses that creature's stats (Monster Manual) but is a celestial, fey or fiend (your choice); Intelligence 5 or less becomes 6, and it understands one language you speak.",
+      "You control it in combat. You share telepathy within 1 mile, and while you ride it your self-only spells can also target it.",
+      "At 0 hit points, or dismissed as an action, it vanishes and drops its gear; recasting brings it back healed and free of conditions. Only one mount from this spell or find steed at a time; an action releases it for good."
+    ]
+  },
+  "guardian-of-nature": {
+    "description": [
+      "A nature spirit transforms you for up to 1 minute (concentration). Pick a form:",
+      "Primal Beast: +10 ft walking speed, darkvision 120 ft, advantage on Strength-based attack rolls, and your melee weapon hits deal an extra 1d6 force damage.",
+      "Great Tree: 10 temporary hit points, advantage on Constitution saves and on Dexterity- and Wisdom-based attack rolls, and while you are standing on the ground, your enemies treat the ground within 15 ft as difficult terrain."
+    ]
+  },
+  "shadow-of-moil": {
+    "description": [
+      "Shadows like dark flames cloak you for up to 1 minute (concentration), making you heavily obscured to others. Within 10 ft of you, dim light becomes darkness and bright light becomes dim.",
+      "You resist radiant damage, and any creature within 10 ft that lands an attack on you takes 2d8 necrotic damage as the shadows strike back."
+    ],
+    "material": "an undead eyeball set in a gem worth 150 gp or more"
+  },
+  "sickening-radiance": {
+    "description": [
+      "Faint green light spreads 30 ft in every direction from a point within 120 ft for up to 10 minutes (concentration), spreading around corners.",
+      "Any creature that starts its turn in the light, or first moves into it on a turn, makes a Constitution save. On a failure it takes 4d10 radiant damage, gains one level of exhaustion, and glows with dim green light in a 5-ft radius, so it can't benefit from being invisible.",
+      "The glow and any exhaustion from this spell vanish when the spell ends."
+    ]
+  },
+  "storm-sphere": {
+    "description": [
+      "A 20-ft-radius sphere of churning air forms around a point within 150 ft for up to 1 minute (concentration). Its space is difficult terrain.",
+      "A creature inside when it forms, or ending its turn inside, makes a Strength save or takes 2d6 bludgeoning damage.",
+      "Bonus action each turn: lightning arcs from the sphere's middle toward a creature up to 60 ft from that point; roll a ranged spell attack, with advantage if the target is inside the sphere. A hit deals 4d6 lightning damage.",
+      "The roar of the storm gives creatures within 30 ft of it disadvantage on Wisdom (Perception) checks that rely on hearing."
+    ],
+    "higherLevels": "Each slot level above 4 adds 1d6 to both the bludgeoning and the lightning damage."
+  },
+  "summon-greater-demon": {
+    "description": [
+      "A demon of challenge rating 5 or lower that you choose (a shadow demon or barlgura, say) shows up for up to 1 hour (concentration) in a free space within 60 ft that you can see. It uses its Monster Manual stats, has its own initiative, and leaves at 0 hit points or once the spell ends.",
+      "Each turn you can give it a spoken order (no action); with no order, it attacks anyone in reach who attacked it.",
+      "After each of its turns it rolls a Charisma save, with disadvantage if you speak its true name. Once it succeeds, your control is gone for the rest of the spell and it hunts the nearest non-demons. If you drop concentration early, an uncontrolled demon lingers 1d6 rounds.",
+      "If you draw a circle of the blood around your space while casting, the demon can't cross it, harm it or target anyone inside; the blood is consumed when the spell ends."
+    ],
+    "higherLevels": "Each slot level above 4 raises the challenge rating by 1.",
+    "material": "a vial of blood from a humanoid slain in the last 24 hours"
+  },
+  "vitriolic-sphere": {
+    "description": [
+      "A glowing 1-ft ball of green acid streaks to a spot within 150 ft and bursts, splashing everything within 20 ft. Each creature in the splash makes a Dexterity save.",
+      "A failed save means 10d4 acid damage, plus a further 5d4 acid when its next turn ends. A success means half the first burst and nothing later."
+    ],
+    "higherLevels": "Each slot level above 4 adds 2d4 to the first burst.",
+    "material": "a drop of bile from a giant slug"
+  },
+  "watery-sphere": {
+    "description": [
+      "A 5-ft-radius ball of water appears at a point you can see within 90 ft, hovering up to 10 ft up, for up to 1 minute (concentration).",
+      "A creature in its space makes a Strength save: on a success it is pushed to the nearest free space outside; on a failure it is engulfed and restrained, with a fresh save after each of its turns. Huge or larger creatures always succeed; Large or smaller ones may choose to fail.",
+      "Capacity is one Large creature or up to four creatures of Medium size or less. Overfilled, it drops a random captive prone within 5 ft.",
+      "Action: roll it as far as 30 ft along a straight path with its captives, forcing saves from creatures it rams; over a drop it sinks gently to 10 ft up.",
+      "When the spell ends it splashes down, dousing normal flames within 30 ft, and captives fall prone."
+    ],
+    "material": "a droplet of water"
+  },
+  "control-winds": {
+    "description": [
+      "You command the air in a 100-ft cube you can see within 300 ft, choosing one effect below. It holds for the whole spell; on a later turn you can spend an action to change to another effect, or to pause it or restart it.",
+      "Gusts: wind blows steadily one horizontal way you pick, at calm, moderate or strong force. At moderate or strong, ranged weapon attacks entering, leaving or crossing the cube have disadvantage. At strong, moving against the wind costs 1 extra foot per foot.",
+      "Downdraft: strong wind pushes down from the cube's top. Ranged weapon attacks through the cube or at targets inside it have disadvantage. A flyer makes a Strength save or falls prone when it first enters the cube on a turn, or if it begins its turn airborne inside.",
+      "Updraft: wind rises from the cube's floor. Falls that end inside deal half damage, and vertical jumps there go up to 10 ft higher."
+    ]
+  },
+  "danse-macabre": {
+    "description": [
+      "Choose as many as five corpses, each Small or Medium, in sight within 60 ft; they rise as undead you control for up to 1 hour (concentration). Each becomes your choice of zombie or skeleton, using that creature's stats (Monster Manual), and adds your spellcasting ability modifier to its attack and damage rolls.",
+      "Bonus action: give one mental command to all of them within 60 ft, naming their action and movement next turn, or set a general task like guarding a hall. Without orders they only defend themselves; an order holds until the task is done. When the spell ends they fall lifeless again."
+    ],
+    "higherLevels": "Each slot level above 5 animates 2 more corpses."
+  },
+  "dawn": {
+    "description": [
+      "A 30-ft-radius, 40-ft-tall cylinder of sunlight (bright light) shines down on a spot within 60 ft for up to 1 minute. Each creature inside when it appears makes a Constitution save, taking 4d10 radiant damage on a failure or half on a success, and a creature repeats the save each time it ends its turn inside.",
+      "Bonus action, while within 60 ft of the cylinder: move it up to 60 ft."
+    ],
+    "material": "a sunburst pendant worth 100 gp or more"
+  },
+  "enervation": {
+    "description": [
+      "A dark tendril reaches a creature you can see within 60 ft, which makes a Dexterity save. A successful save limits it to 2d8 necrotic damage and ends the spell. A failed save costs it 4d8 necrotic damage, and on each of your later turns your action can drain another 4d8 necrotic from it automatically.",
+      "Spending your action on any other task ends the spell early, as does the target moving out of range or getting total cover from you. Each time it is hurt by the spell, you heal half the necrotic damage dealt."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8 to the damage."
+  },
+  "far-step": {
+    "description": [
+      "Vanish and reappear in an unoccupied space you can see up to 60 ft away. For up to 1 minute (concentration), you can make the same jump again as a bonus action on each of your turns."
+    ]
+  },
+  "holy-weapon": {
+    "description": [
+      "A weapon you touch glows with holy power for up to 1 hour, shedding light: bright to 30 ft, dim for 30 ft more. Each weapon attack with it that hits adds 2d8 radiant damage, and a nonmagical weapon counts as magic until the spell ends.",
+      "Bonus action: end the spell in a burst of radiance. Creatures of your choice in sight within 30 ft each make a Constitution save, taking 4d8 radiant damage and being blinded for 1 minute on a failure, or half damage and no blindness on a success. A blinded creature tries the save again after each of its turns, recovering on a success."
+    ]
+  },
+  "immolation": {
+    "description": [
+      "Fire engulfs a creature you can see within 90 ft. It makes a Dexterity save, taking 8d6 fire damage on a failure or half on a success.",
+      "A creature that failed keeps burning for up to 1 minute and sheds light: bright to 30 ft, dim for 30 ft more. After each of its turns it rolls the save again: failing deals 4d6 fire damage, succeeding ends the spell. Nonmagical means can't put the flames out, and a creature this spell kills turns to ash."
+    ]
+  },
+  "infernal-calling": {
+    "description": [
+      "A devil you pick of challenge rating 6 or lower (a barbed or bearded devil, say) appears in an unoccupied space you can see within 90 ft for up to 1 hour (concentration), vanishing at 0 hit points. Unfriendly to you and your allies, it has its own initiative and the DM runs it from its stat block; it may attack you, or trade brief service for an evil act.",
+      "Each turn you may give it a spoken order (no action). It obeys if it likes the result, especially one leading you toward evil; otherwise win a Charisma check (Deception, Intimidation or Persuasion) against its Wisdom (Insight), with advantage if you use its true name. Fail and it ignores your orders for the rest of the spell, though it may still follow them; succeed and it does the task, then reports back.",
+      "If your concentration breaks early while it ignores you, it stays 3d6 minutes doing as it likes. With a devil's talisman you can call that devil at 1 challenge rating above the limit, and it obeys every order without checks."
+    ],
+    "higherLevels": "Each slot level above 5 raises the challenge rating by 1.",
+    "material": "a ruby worth 999 gp or more"
+  },
+  "maelstrom": {
+    "description": [
+      "A swirling pool of water 5 ft deep fills a 30-ft radius around a point you can see within 120 ft (the point has to be ground or open water) for up to 1 minute. The area is difficult terrain.",
+      "A creature that starts its turn there makes a Strength save; on a failure it takes 6d6 bludgeoning damage and is dragged 10 ft toward the center."
+    ],
+    "material": "a funnel shaped from paper or a leaf"
+  },
+  "negative-energy-flood": {
+    "description": [
+      "Ribbons of negative energy strike a creature you can see within 60 ft. A target that is not undead makes a Constitution save, taking 5d12 necrotic damage on a failure or half on a success. If this kills it, it rises as a zombie (Monster Manual) when your next turn starts and chases the nearest creature it can see.",
+      "An undead target makes no save: roll 5d12 and it gets temporary hit points equal to half the roll."
+    ],
+    "material": "a broken bone plus a black silk square"
+  },
+  "skill-empowerment": {
+    "description": [
+      "For up to 1 hour (concentration), a willing creature you touch gains expertise in one skill you pick: it doubles its proficiency bonus on ability checks using that skill.",
+      "The skill must be one it is proficient in and that isn't already doubled by another effect, such as the Expertise feature."
+    ]
+  },
+  "steel-wind-strike": {
+    "description": [
+      "You flourish the weapon and vanish, striking like the wind. Make a melee spell attack against each of as many as five creatures in sight within 30 ft; a hit deals 6d10 force damage.",
+      "Afterwards you may reappear in an empty space you can see next to (within 5 ft of) any target, hit or missed."
+    ],
+    "material": "a melee weapon worth 1 sp or more"
+  },
+  "synaptic-static": {
+    "description": [
+      "Psychic energy bursts at a point within 120 ft. Creatures within 20 ft of that point each make an Intelligence save, taking 8d6 psychic damage on a failure or half on a success; creatures with Intelligence 2 or lower are unaffected.",
+      "A creature that fails is muddled for 1 minute: it rolls a d6 and subtracts it from its attack rolls, ability checks and Constitution saves to keep concentration. It retries the Intelligence save after each of its turns, shaking off the effect on a success."
+    ]
+  },
+  "transmute-rock": {
+    "description": [
+      "Choose stone or mud you can see within 120 ft that fits in a 40-ft cube, then pick one effect.",
+      "Rock to Mud: nonmagical rock there turns into the same volume of thick, flowing mud for the spell's duration. Each foot of movement through it costs 4 ft. Creatures on the ground when you cast it, and any that move in (once per turn) or finish a turn inside, make a Strength save or sink in and are restrained; a restrained creature can spend an action to pull free. Cast on a ceiling, the mud drops: creatures beneath make a Dexterity save, taking 4d8 bludgeoning damage on a failure or half on a success.",
+      "Mud to Rock: mud or quicksand (nonmagical, no deeper than 10 ft) hardens into soft stone. Each creature in it makes a Dexterity save; a success pops it safely out to an unoccupied space on top, a failure traps it, restrained, in the rock. Freeing it takes an action, by the trapped creature or someone within reach: either a DC 20 Strength check or damaging the rock (AC 15, 25 hit points, immune to poison and psychic damage)."
+    ],
+    "material": "clay and water"
+  },
+  "wall-of-light": {
+    "description": [
+      "A shimmering wall of bright light (at most 60×10×5 ft, length × height × thickness) appears at a point within 120 ft in any orientation, floating or resting on a surface, for up to 10 minutes. Nothing sees through it, though creatures and objects pass through freely, and it sheds bright light 120 ft out and dim light 120 ft beyond that.",
+      "When it appears, each creature in it makes a Constitution save: on a failure 4d8 radiant damage and blinded for 1 minute, on a success half damage and not blinded. A blinded creature saves again after each of its turns, recovering on a success. Finishing a turn inside the wall deals 4d8 radiant damage to that creature.",
+      "Action: a beam leaps from the wall toward one visible creature no more than 60 ft from the wall; make a ranged spell attack, and a hit deals 4d8 radiant damage. Hit or miss, the wall loses 10 ft of length; at 0 ft the spell ends."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8 to the damage.",
+    "material": "a hand mirror"
+  },
+  "wrath-of-nature": {
+    "description": [
+      "Nature spirits animate the trees, rocks and grass in a 60-ft cube centered on a point you can see within 120 ft, for up to 1 minute.",
+      "Grasses and Undergrowth: your enemies treat grassy or overgrown ground in the cube as difficult terrain.",
+      "Trees: whenever your turn begins, each enemy near a tree in the cube (within 10 ft) makes a Dexterity save or takes 4d6 slashing damage from thrashing limbs.",
+      "Roots and Vines: as each of your turns ends, pick one creature standing in the cube; it makes a Strength save or is restrained until the spell ends. To break loose it can use an action and beat your spell save DC with a Strength (Athletics) check.",
+      "Rocks: bonus action, launch a loose rock in the cube at a visible creature there with a ranged spell attack; a hit deals 3d8 nonmagical bludgeoning damage and the target must pass a Strength save or fall prone."
+    ]
+  },
+  "bones-of-the-earth": {
+    "description": [
+      "Up to six stone pillars, each 5 ft across and up to 30 ft tall, burst from ground you can see within 120 ft. The ground must be wide enough for a pillar. You can raise one under a creature of Medium size or smaller: it makes a Dexterity save (it may choose to fail) or rides the pillar up.",
+      "A pillar stopped short by a ceiling or other obstacle deals 6d6 bludgeoning damage to a creature on top and restrains it, squeezed in between. As an action, that creature makes a Strength or Dexterity check (its pick) against your spell save DC; on a success it is free and must step off the pillar or fall.",
+      "Pillars are AC 5 with 30 hit points apiece. One that is destroyed collapses into rubble: difficult terrain in a 10-ft radius until cleared, each 5-ft-diameter patch needing at least 1 minute of work by hand."
+    ],
+    "higherLevels": "Each slot level above 6 adds 2 more pillars."
+  },
+  "create-homunculus": {
+    "description": [
+      "During a long incantation you cut yourself with a jeweled dagger, taking 2d4 piercing damage that nothing can reduce, then drip your blood on the clay, ash and mandrake root and touch them. They become a homunculus, a construct that uses the homunculus stats (Monster Manual).",
+      "It is your loyal companion and dies if you die. After each long rest, if it shares your plane, you may put as many as half your Hit Dice into it: roll them and add your Constitution modifier to each. Your hit point maximum drops by the total and its maximum and current hit points rise by it, until your next long rest. This never takes you below 1 hit point, and only its death restores your maximum early.",
+      "You can have one homunculus at a time; casting while it lives fails."
+    ],
+    "material": "clay, ash and mandrake root (all consumed), plus a jeweled dagger worth 1,000 gp or more (kept)"
+  },
+  "druid-grove": {
+    "description": [
+      "Nature spirits guard an outdoor or underground area, a cube 30 to 90 ft on a side excluding buildings, for 24 hours (cast there daily for a year and it lasts until dispelled). Name immune friends, and a password that grants immunity when spoken. Dispel magic removes only one effect per success (its caster picks); the spell ends when none remain.",
+      "Solid Fog: fill any 5-ft squares with 10-ft-high fog; it is heavily obscured and each foot of movement in it costs 2 extra.",
+      "Grasping Undergrowth: any unfogged 5-ft squares sprout weeds and vines that work like entangle.",
+      "Grove Guardians: up to four trees uproot as speechless awakened trees (Monster Manual). They fight intruders who are not immune until driven off or slain, obey your spoken orders (no action) while you are in the area, never leave it, and re-root when the spell ends.",
+      "Extra Effect: add one of: gust of wind blowing nonstop in two spots, spike growth in one spot, or wind wall in two spots.",
+      "Immune creatures ignore all these effects."
+    ],
+    "material": "mistletoe cut with a golden sickle under a full moon, consumed"
+  },
+  "investiture-of-flame": {
+    "description": [
+      "Harmless flames cover you for up to 10 minutes. You shed light: bright to 30 ft, dim for 30 ft more. Fire damage can't hurt you, and you resist cold damage.",
+      "Moving to within 5 ft of you costs a creature 1d10 fire damage (once per turn), and so does finishing its turn that close.",
+      "Action: shoot fire from you along a 5-ft-wide, 15-ft-long line, aimed where you like. Creatures in the line make Dexterity saves, taking 4d8 fire damage on a failure or half on a success."
+    ]
+  },
+  "investiture-of-ice": {
+    "description": [
+      "Ice rimes your body for up to 10 minutes. Cold damage can't hurt you, you resist fire damage, and you pay no extra movement for difficult terrain made of ice or snow.",
+      "Icy ground surrounds you to 10 ft and travels with you; it is difficult terrain for every creature except you.",
+      "Action: a 15-ft cone of freezing wind sweeps out from your hand. Each creature in it makes a Constitution save, taking 4d6 cold damage and having its speed halved until your next turn starts on a failure, or half damage on a success."
+    ]
+  },
+  "investiture-of-stone": {
+    "description": [
+      "Rock spreads over your body for up to 10 minutes, and you resist bludgeoning, piercing and slashing damage dealt by nonmagical attacks.",
+      "Action: shake the ground in a 15-ft radius around you; other creatures standing on it make a Dexterity save or fall prone.",
+      "Difficult terrain of earth or stone costs you no extra movement, and you can travel through solid earth or rock as though through air, leaving it stable. Stop your move inside it and you get shoved out into the nearest unoccupied space, lose the spell, and are stunned through your next turn."
+    ]
+  },
+  "investiture-of-wind": {
+    "description": [
+      "Wind swirls around you for up to 10 minutes. Ranged weapon attacks against you have disadvantage, and you gain a 60-ft flying speed; if you are still flying as it ends, you drop unless you can stop yourself.",
+      "Action: whip up a 15-ft cube of swirling wind around a point in sight within 60 ft. Creatures inside make Constitution saves, taking 2d10 bludgeoning damage on a failure or half on a success; a failed save also shoves a Large or smaller creature as far as 10 ft from the cube's center."
+    ]
+  },
+  "mental-prison": {
+    "description": [
+      "One creature you can see within 60 ft makes an Intelligence save; it succeeds automatically if it can't be charmed. Either way it takes 5d10 psychic damage, and on a success the spell ends there.",
+      "On a failure, an illusory cell only it perceives surrounds it for up to 1 minute, its edges looking deadly (flames, floating blades, toothy maws or the like). It is restrained and can't see or hear past the illusion. If it is moved out of the cell, makes a melee attack through it, or pokes any body part past it, it suffers 10d10 psychic damage, ending the spell."
+    ]
+  },
+  "primordial-ward": {
+    "description": [
+      "For up to 1 minute (concentration) you resist acid, cold, fire, lightning and thunder damage.",
+      "If one of those types damages you, you can use your reaction to swap the resistances for immunity to that type, covering the triggering damage too. The immunity lasts until your next turn ends, and then the spell is over."
+    ]
+  },
+  "scatter": {
+    "description": [
+      "The air shimmers around up to five creatures you choose and can see within 30 ft; an unwilling one can resist with a Wisdom save. Each one affected is teleported to a spot you pick: unoccupied, on a floor or the ground, in your sight, and no more than 120 ft from you."
+    ]
+  },
+  "soul-cage": {
+    "description": [
+      "You trap the dying humanoid's soul in your tiny silver cage. It stays there for 8 hours or until the cage is destroyed, either of which ends the spell, and meanwhile its body can't be revived. You can use the soul up to six times in the ways below; after the sixth use it goes free and the spell ends.",
+      "Steal Life: bonus action, regain 2d8 hit points.",
+      "Query Soul: ask it one question (no action) and get a short, truthful telepathic reply you understand in any language, limited to what it knew alive; it may be cryptic.",
+      "Borrow Experience: bonus action, gain advantage on the next attack roll, ability check or save you make; it is lost if unused by the start of your next turn.",
+      "Eyes of the Dead: action, name somewhere the humanoid saw while alive to place an invisible sensor there, if it is on your plane. You see and hear through it while you concentrate, up to 10 minutes. Anyone who can perceive the sensor sees a faint image of the tormented soul."
+    ],
+    "material": "a 100 gp miniature silver cage"
+  },
+  "tensers-transformation": {
+    "description": [
+      "Magic grants you a warrior's endurance and skill for up to 10 minutes, but you can't cast spells while it lasts. You gain:",
+      "50 temporary hit points, lost if any remain when the spell ends.",
+      "Advantage on attack rolls with simple and martial weapons, and an extra 2d12 force damage when you hit with a weapon attack.",
+      "Proficiency with all armor, shields, simple and martial weapons, and in Strength and Constitution saves.",
+      "Two attacks, not one, whenever you use the Attack action on your turn (no effect if Extra Attack or a similar feature already gives you more).",
+      "When the spell ends, make a DC 15 Constitution save or gain one level of exhaustion."
+    ],
+    "material": "a few bull hairs"
+  },
+  "crown-of-stars": {
+    "description": [
+      "Seven star-like motes circle your head for up to 1 hour. As a bonus action, fling one at a creature or object within 120 ft with a ranged spell attack; a hit deals 4d12 radiant damage. The mote is spent either way, and the spell ends when the last one goes.",
+      "Light from the motes: 4 or more left means bright to 30 ft and dim for 30 ft more; 1 to 3 left means dim to 30 ft only."
+    ],
+    "higherLevels": "Each slot level above 7 adds 2 more motes."
+  },
+  "power-word-pain": {
+    "description": [
+      "You speak a word that floods one creature you can see within 60 ft with pain. Targets above 100 hit points, or immune to being charmed, are unaffected.",
+      "An affected target's speeds can't exceed 10 ft, and it makes attack rolls, ability checks and all saves other than Constitution with disadvantage. Each spell it tries to cast needs a Constitution save first, or the spell is lost. After each of its turns it may try a Constitution save, and a success ends the pain."
+    ]
+  },
+  "temple-of-the-gods": {
+    "description": [
+      "A temple to your god or philosophy shimmers into being on ground you can see within 120 ft, filling an unoccupied cube up to 120 ft on a side, for 24 hours. You design it, with one door, any windows, an altar or idol, and your choice of bright, dim or no light. Only you and creatures you name at casting can open or close the door.",
+      "Choose any of celestials, elementals, fey, fiends and undead. Such a creature must pass a Charisma save to enter (failing bars it for 24 hours), and inside it subtracts a d4 from its attack rolls, ability checks and saves.",
+      "Divination sensors can't appear inside, and divination spells can't target anyone within. Spells of 1st level and up that heal someone inside restore your Wisdom modifier in extra hit points (minimum 1).",
+      "Its opaque force walls reach into the Ethereal Plane and block all passage. Dispel magic and antimagic field have no effect on it; disintegrate destroys it. Recast on the same spot daily for a year, it becomes permanent."
+    ],
+    "material": "a holy symbol worth 5 gp or more"
+  },
+  "whirlwind": {
+    "description": [
+      "A howling whirlwind, a cylinder 10 ft in radius and 30 ft high, touches down on ground you can see within 300 ft. Each turn, your action can move it up to 30 ft along the ground. It pulls in unsecured Medium or smaller objects that no one is wearing or carrying.",
+      "A creature makes a Dexterity save the first time on a turn it enters the whirlwind or the whirlwind moves onto it, including when it appears: 10d6 bludgeoning damage on a failure, half on a success. A Large or smaller creature that fails then makes a Strength save or is restrained inside until the spell ends.",
+      "A restrained creature is lifted 5 ft each time its turn starts (unless already at the top), is carried along wherever the whirlwind goes, and drops when the spell ends if it has no way to stay up. Using its action, it can try a Strength or Dexterity check versus your spell save DC; if it succeeds, it breaks loose and is thrown 3d6 × 10 ft in a random direction."
+    ],
+    "material": "a single straw"
+  },
+  "abi-dalzims-horrid-wilting": {
+    "description": [
+      "Moisture is drawn out of all creatures inside a 30-ft cube around a point you choose within 150 ft. Each makes a Constitution save, taking 12d8 necrotic damage on a failure or half on a success. Constructs and undead are untouched; plants and water elementals roll with disadvantage.",
+      "Ordinary plants in the cube that aren't creatures, like trees and bushes, shrivel and die at once."
+    ],
+    "material": "a scrap of sponge"
+  },
+  "illusory-dragon": {
+    "description": [
+      "Shadow stuff from the Shadowfell forms a Huge dragon in an unoccupied space you can see within 120 ft. It fills its space like a creature for up to 1 minute. Enemies who can see it when it appears make a Wisdom save or are frightened for 1 minute; one that ends its turn without line of sight to the dragon repeats the save.",
+      "Bonus action: move it up to 60 ft, and at any point of that move have it breathe a 60-ft cone of the damage type you chose at casting (acid, cold, fire, lightning, necrotic or poison). Creatures in the cone make an Intelligence save: 7d6 damage on a failure, half on a success.",
+      "Attacks against it always miss; it passes every save and ignores all damage and conditions. A creature that spends its action studying it and beats your spell save DC with an Intelligence (Investigation) check knows it is fake: it sees through it and has advantage on saves against the breath."
+    ]
+  },
+  "maddening-darkness": {
+    "description": [
+      "Magical darkness fills a 60-ft-radius sphere centered on a point within 150 ft for up to 10 minutes, flowing around corners. Darkvision can't see through it, and neither nonmagical light nor light from spells of 8th level or lower can brighten it.",
+      "Shrieks, gibbering and mad laughter echo inside. A creature that starts its turn in the sphere makes a Wisdom save, taking 8d8 psychic damage on a failure or half on a success."
+    ],
+    "material": "pitch and mercury, a drop of each, mixed"
+  },
+  "mighty-fortress": {
+    "description": [
+      "A stone fortress rises from a clear 120-ft square of ground (no buildings) you can see within 1 mile, gently lifting any creatures there. Four 30-ft turrets stand at the corners, linked by 1-ft-thick stone walls, with up to four stone doors you place in the outer wall.",
+      "Inside is a three-floor keep you lay out and furnish as you like, with a nine-course feast for up to 100 each day. Anything the spell made turns to dust if taken out.",
+      "One hundred invisible servants, each like an unseen servant, obey creatures you name at casting.",
+      "Every 10-ft-by-10-ft piece of stone is AC 15, with 30 hit points for each inch it is thick, and poison and psychic damage don't affect it. At 0 hit points a section is destroyed, and the DM may have neighboring sections buckle or fall.",
+      "After 7 days, or if you cast it elsewhere, it sinks harmlessly into the ground, setting anyone inside down safely. Recast on that spot at least every 7 days for a year, it becomes permanent."
+    ],
+    "material": "a diamond worth 500 gp or more, consumed"
+  },
+  "invulnerability": {
+    "description": [
+      "For up to 10 minutes (concentration), no damage of any kind can hurt you: you are immune to all of it. The spell uses up a piece of adamantine each time you cast it."
+    ],
+    "material": "a small piece of adamantine worth 500 gp or more, consumed"
+  },
+  "mass-polymorph": {
+    "description": [
+      "Up to ten creatures you choose and can see within 120 ft turn into beasts for up to 1 hour. An unwilling target makes a Wisdom save to resist; an unwilling shapechanger resists automatically.",
+      "Pick a beast form for each, the same or different. It must be one you have seen, with a challenge rating no higher than the target's (or half its level if it has no rating). The target takes the beast's statistics, mental scores included, but keeps its own hit points, alignment and personality.",
+      "Each target also gains temporary hit points equal to the new form's hit points, which no other temporary hit points can replace. It returns to normal when these run out or it dies, or loses them and returns when the spell ends. It can only do what the beast's body allows: no speech, no spells, nothing needing hands or words. Its gear merges into the form and can't be used."
+    ],
+    "material": "a caterpillar cocoon"
+  },
+  "psychic-scream": {
+    "description": [
+      "Your mind strikes out at up to ten creatures you choose and can see within 90 ft; any with Intelligence 2 or lower are unaffected. Each makes an Intelligence save. A failed save means 14d6 psychic damage and the stunned condition; a success means half damage and no stun. A creature killed by the damage has its head explode, if it has one.",
+      "A stunned target gets a new Intelligence save after each of its turns; succeeding ends the stun."
     ]
   }
 }

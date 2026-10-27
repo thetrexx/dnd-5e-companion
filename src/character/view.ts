@@ -4,7 +4,7 @@ import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
 import { genericSections, joinTag } from '../logic/sections';
 import type { Section } from '../logic/sections';
-import { listSpells } from '../logic/rules';
+import { extraListTag, listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
 import { castingInfo, raceChain } from './derive';
@@ -14,7 +14,8 @@ import { optionSlots } from './options';
 import type { OptionSlot } from './options';
 import type { CharClass, Character } from './types';
 
-interface Entry { spell: Spell; tag?: string; mine: boolean; locked: boolean; atLevel: number }
+/** `listTag`: the tag only names the extra list the spell comes from, so a grant's own tag replaces it. */
+interface Entry { spell: Spell; tag?: string; listTag?: boolean; mine: boolean; locked: boolean; atLevel: number }
 /** Where spells are shown: a casting class, or a race / feat / feature of its own (`source` set). */
 interface Place { key: string; subtitle: string; motif?: ClassId; source?: GrantSource; entries: Entry[]; lock: (n: number, es: Entry[]) => string | undefined }
 
@@ -38,14 +39,17 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
   for (const p of ch.spells) {
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
     if (!spell) continue;
-    const tag = cc.cls === 'warlock' && spell.level >= 6 ? 'Mystic Arcanum'
+    const extra = extraListTag(c, sub, spell);
+    const arcanum = cc.cls === 'warlock' && spell.level >= 6;
+    const tag = arcanum ? 'Mystic Arcanum'
+      : extra ? extra
       : p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
       : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school' : undefined;
-    entries.push({ spell, tag, mine: true, locked: false, atLevel: 1 });
+    entries.push({ spell, tag, listTag: !arcanum && !!extra, mine: true, locked: false, atLevel: 1 });
   }
   if (view === 'all') {
     // the whole list up to the ceiling, so levels not reached yet show dimmed
-    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, mine: false, locked: false, atLevel: 1 });
+    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, tag: extraListTag(c, sub, spell), listTag: true, mine: false, locked: false, atLevel: 1 });
     for (const spell of patron) if (spell.level <= info.ceiling) entries.push({ spell, tag: 'Patron', mine: false, locked: false, atLevel: 1 });
   }
   return {
@@ -104,7 +108,9 @@ function spellLayout(ch: Character, view: SpellView): { places: Place[]; section
         if (e.spell.level !== n || (view === 'mine' && !e.mine)) continue;
         const m = merged.get(e.spell.id);
         if (!m) { merged.set(e.spell.id, { ...e }); continue; }
-        m.mine ||= e.mine; m.tag ??= e.tag; m.locked &&= e.locked; m.atLevel = Math.min(m.atLevel, e.atLevel);
+        // a grant's tag (Domain, Divine Soul...) beats a tag that only names the extra list
+        if (e.tag && (!m.tag || (m.listTag && !e.listTag))) { m.tag = e.tag; m.listTag = e.listTag; }
+        m.mine ||= e.mine; m.locked &&= e.locked; m.atLevel = Math.min(m.atLevel, e.atLevel);
       }
       if (merged.size === 0) continue;
       const es = [...merged.values()].sort((a, b) => a.spell.name.localeCompare(b.spell.name));
@@ -136,8 +142,11 @@ function classActions(cc: CharClass, slots: OptionSlot[]): Section[] {
   const c = DATA.classes.find(x => x.id === cc.cls);
   if (!c) return [];
   const s = effectiveSub(cc.cls, cc.level, cc.sub);
+  // a feature tied to an option (Storm Herald's Raging Storm reactions) shows only with that option chosen
+  const chosen = new Set(slots.flatMap(x => x.chosen));
   const features = (kind: 'class' | 'subclass', id: string) =>
-    DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive');
+    DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive'
+      && (!f.prereq?.option || chosen.has(f.prereq.option)));
   const out: Section[] = [{ id: `class-${cc.cls}`, title: `${c.name} Actions`, motif: cc.cls, items: features('class', cc.cls) }];
   const subItems = s ? features('subclass', s.id) : [];
   if (s && subItems.length) out.push({ id: `subclass-${cc.cls}`, title: s.name, motif: cc.cls, items: subItems });

@@ -746,5 +746,65 @@
       1,
       1
     ]
+  },
+  {
+    "id": "storm-aura",
+    "name": "Storm Aura",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-storm-herald"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "divine-magic-affinity",
+    "name": "Divine Magic Affinity",
+    "owner": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   }
 ]

@@ -154,7 +154,7 @@
     "description": [
       "A 1-hour ritual (a short rest works) ties you to one weapon. Keep it within reach throughout, and touch it at the end to seal the bond.",
       "A bonded weapon cannot be disarmed from you unless you are incapacitated. While it is on your plane, you can call it to your hand as a bonus action on your turn; it teleports there instantly.",
-      "You can have up to 2 bonded weapons, but summon only one per bonus action. Bonding a third needs you to break one existing bond first."
+      "At most 2 weapons can be bonded to you at once, and each bonus action summons only one of them. Bonding a third needs you to break one existing bond first."
     ],
     "page": 75,
     "textSource": "summary",
@@ -760,7 +760,7 @@
     "cost": "bonus",
     "trigger": "Your attack with a magic arrow misses",
     "description": [
-      "Bonus action: reroll the missed attack against a different target within 60 ft of the original one."
+      "Bonus action: reroll the missed attack at another target no more than 60 ft from the first."
     ],
     "page": 28,
     "book": "xge",
@@ -885,7 +885,7 @@
       }
     ],
     "description": [
-      "Enchantment. The target takes an extra 2d6 psychic damage. Pick an ally within 30 ft of the target: the target makes a Wisdom save or is charmed by that ally until your next turn starts. The charm breaks early if that ally attacks it, damages it or forces it to save.",
+      "Enchantment. The target takes an extra 2d6 psychic damage. Pick one of your allies no more than 30 ft from the target: the target makes a Wisdom save or is charmed by that ally until your next turn starts. The charm breaks early if that ally attacks it, damages it or forces it to save.",
       "Level 18: 4d6 psychic."
     ],
     "page": 29,
@@ -932,7 +932,7 @@
       }
     ],
     "description": [
-      "Evocation. Right after your attack, force energy bursts out: the target and every other creature within 10 ft of it take 2d6 force damage each.",
+      "Evocation. Right after your attack, force energy bursts out: the target and all others no more than 10 ft from it each take 2d6 force damage.",
       "Level 18: 4d6 force."
     ],
     "page": 29,
@@ -1026,7 +1026,7 @@
       }
     ],
     "description": [
-      "Conjuration. Poisonous brambles wrap the target: it takes an extra 2d6 poison damage and its speed drops by 10 ft. The first time on each turn that it moves 1 ft or more without teleporting, it takes 2d6 slashing damage.",
+      "Conjuration. Poisonous brambles wrap the target: it takes an extra 2d6 poison damage and its speed drops by 10 ft. Each turn, the first time it moves at least 1 ft other than by teleporting, it takes 2d6 slashing damage.",
       "The brambles stay for 1 minute, or until you fire another Grasping Arrow. Anyone able to reach the target (the target included) can spend an action to pull them off by beating your Arcane Shot save DC with a Strength (Athletics) check.",
       "Level 18: the poison and slashing damage both become 4d6."
     ],
@@ -1178,5 +1178,223 @@
     "book": "xge",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/8/86/Arcane_Shot_Shadow_Arrow_Icon.webp"
+  },
+  {
+    "id": "unwavering-mark",
+    "name": "Unwavering Mark",
+    "source": {
+      "kind": "subclass",
+      "id": "cavalier"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "A creature you marked damages someone other than you",
+    "uses": "Strength modifier (minimum 1) per long rest",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "1",
+          "2",
+          "2",
+          "3",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "Mark: whenever your melee weapon attack hits a creature, you may mark it. The mark lasts until your next turn is over, and it ends early if you die or are incapacitated, or once another creature marks the target.",
+      "While a marked creature is within 5 ft of you, it has disadvantage on attack rolls aimed at anyone else.",
+      "Punish: if a creature you marked deals damage to someone who is not you, then on your next turn you can use a bonus action for a special melee weapon attack on it, with advantage. A hit adds half your fighter level to the weapon's damage.",
+      "Uses of the special attack per long rest equal your Strength modifier (minimum 1), shared across all your marks."
+    ],
+    "page": 30,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "warding-maneuver",
+    "name": "Warding Maneuver",
+    "source": {
+      "kind": "subclass",
+      "id": "cavalier"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "An attack hits you or a visible creature no more than 5 ft away",
+    "uses": "Constitution modifier (minimum 1) per long rest",
+    "description": [
+      "You need a shield or melee weapon in hand. Roll 1d8 and add the roll to the target's AC for that attack only. Should it hit anyway, the target resists that attack's damage."
+    ],
+    "page": 30,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "hold-the-line",
+    "name": "Hold the Line",
+    "source": {
+      "kind": "subclass",
+      "id": "cavalier"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "A creature moves 5 ft or more while inside your reach",
+    "description": [
+      "Spend your reaction on an opportunity attack against it. Moving 5 ft or more within your reach provokes you, even if the creature never leaves it.",
+      "Whenever your opportunity attack hits, the target's speed becomes 0 for the rest of that turn."
+    ],
+    "page": 30,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "ferocious-charger",
+    "name": "Ferocious Charger",
+    "source": {
+      "kind": "subclass",
+      "id": "cavalier"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You hit a creature after moving 10 ft or more straight toward it",
+    "uses": "Once per turn",
+    "description": [
+      "Mounted or on foot, charge 10 ft or more in a straight line, then attack a creature. On a hit it makes a Strength save or is knocked prone. DC 8 + your Strength modifier + your proficiency bonus."
+    ],
+    "page": 31,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "vigilant-defender",
+    "name": "Vigilant Defender",
+    "source": {
+      "kind": "subclass",
+      "id": "cavalier"
+    },
+    "level": 18,
+    "cost": "reaction",
+    "trigger": "A creature provokes an opportunity attack from you on someone else's turn",
+    "description": [
+      "In combat you get one special reaction on each other creature's turn, never on your own. It is good only for opportunity attacks, and it is unavailable on any turn where you already took your normal reaction."
+    ],
+    "page": 31,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-spirit",
+    "name": "Fighting Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "samurai"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "uses": "3 per long rest",
+    "scaling": [
+      {
+        "label": "Temporary HP",
+        "values": [
+          "",
+          "",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "10",
+          "10",
+          "10",
+          "10",
+          "10",
+          "15",
+          "15",
+          "15",
+          "15",
+          "15",
+          "15"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action on your turn: your weapon attack rolls have advantage until this turn ends, and you gain 5 temporary hit points. The temporary hit points rise to 10 at fighter level 10 and to 15 at level 15.",
+      "You have 3 uses, restored by a long rest."
+    ],
+    "page": 31,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "tireless-spirit",
+    "name": "Tireless Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "samurai"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "You roll initiative with no Fighting Spirit uses left",
+    "description": [
+      "You get 1 use of Fighting Spirit back."
+    ],
+    "page": 31,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "rapid-strike",
+    "name": "Rapid Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "samurai"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "During your Attack action, you have advantage on one of your attack rolls",
+    "uses": "Once per turn",
+    "description": [
+      "Give up the advantage on that roll to gain one extra weapon attack against that same target, inside the same Attack action."
+    ],
+    "page": 31,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "strength-before-death",
+    "name": "Strength before Death",
+    "source": {
+      "kind": "subclass",
+      "id": "samurai"
+    },
+    "level": 18,
+    "cost": "reaction",
+    "trigger": "Damage drops you to 0 HP without killing you outright",
+    "uses": "Once per long rest",
+    "description": [
+      "Use your reaction to put off falling unconscious and take an extra turn at once, interrupting the current one.",
+      "During that turn, damage you take at 0 hit points still causes death save failures, and 3 failures still kill you. You drop unconscious at the end of that extra turn unless you have regained hit points."
+    ],
+    "page": 31,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

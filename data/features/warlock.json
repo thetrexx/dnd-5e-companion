@@ -47,7 +47,7 @@
     "trigger": "You take damage",
     "uses": "Once per short or long rest",
     "description": [
-      "Taking damage lets you dissolve into mist. Use your reaction to go invisible and teleport up to 60 ft to a free space in sight.",
+      "Taking damage lets you dissolve into mist. As a reaction, become invisible and teleport to a free space in sight as far as 60 ft away.",
       "Invisibility holds until your next turn begins, unless you attack or cast a spell first. Recharges on a short or long rest."
     ],
     "page": 109,
@@ -98,9 +98,9 @@
     },
     "level": 1,
     "cost": "free",
-    "trigger": "You reduce a hostile creature to 0 hit points",
+    "trigger": "A hostile creature drops to 0 hit points from you",
     "description": [
-      "Whenever you drop a hostile creature to 0 hit points, you receive temporary hit points: your Charisma modifier plus your warlock level, with a minimum of 1."
+      "Each time a hostile creature falls to 0 hit points by your hand, you receive temporary hit points: your Charisma modifier plus your warlock level, with a minimum of 1."
     ],
     "page": 109,
     "textSource": "summary",
@@ -894,6 +894,316 @@
     "textSource": "summary"
   },
   {
+    "id": "eldritch-invocations-aspect-of-the-moon",
+    "name": "Aspect of the Moon",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "option": "pact-boon-pact-of-the-tome"
+    },
+    "description": [
+      "Sleep is optional for you, and no magic or other means can make you fall asleep. A long rest still takes 8 hours, but you can spend all of it on light activity, like reading your Book of Shadows or standing watch."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-cloak-of-flies",
+    "name": "Cloak of Flies",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "prereq": {
+      "level": 5
+    },
+    "description": [
+      "Wrap yourself in a magical aura of buzzing flies that reaches 5 ft around you, stopped only by total cover. It ends if you are incapacitated or when you dismiss it with a bonus action.",
+      "While it lasts, Charisma (Intimidation) checks get advantage and all your other Charisma checks get disadvantage. Any other creature starting its turn inside the aura suffers poison damage of your Charisma modifier (min 0)."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-eldritch-smite",
+    "name": "Eldritch Smite",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "free",
+    "trigger": "Your pact weapon hits a creature",
+    "resource": "Warlock spell slot",
+    "uses": "Once per turn",
+    "prereq": {
+      "level": 5,
+      "option": "pact-boon-pact-of-the-blade"
+    },
+    "description": [
+      "Spend a warlock spell slot to add 1d8 force damage, plus 1d8 more for each level of the slot. If the target is Huge or smaller, you can also knock it prone."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-ghostly-gaze",
+    "name": "Ghostly Gaze",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 7,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "prereq": {
+      "level": 7
+    },
+    "description": [
+      "For 1 minute you see through solid objects out to 30 ft, and you have darkvision in that range if you lack it. Objects appear to you as ghostly, see-through images. Like a spell, it needs your concentration and ends early if that breaks."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-gift-of-the-depths",
+    "name": "Gift of the Depths",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "action",
+    "uses": "Once per long rest, no slot",
+    "prereq": {
+      "level": 5
+    },
+    "spells": [
+      {
+        "spell": "water-breathing",
+        "atLevel": 5,
+        "uses": "Once per long rest, no slot"
+      }
+    ],
+    "description": [
+      "You can breathe water, and your swimming speed equals your walking speed.",
+      "Once per long rest you can also cast water breathing without spending a spell slot."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-gift-of-the-ever-living-ones",
+    "name": "Gift of the Ever-Living Ones",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "option": "pact-boon-pact-of-the-chain"
+    },
+    "description": [
+      "While your familiar is no more than 100 ft from you, any dice you roll to regain hit points count as their highest possible result."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-grasp-of-hadar",
+    "name": "Grasp of Hadar",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "Your eldritch blast hits a creature",
+    "uses": "Once on each of your turns",
+    "prereq": {
+      "text": "Eldritch blast cantrip"
+    },
+    "description": [
+      "Drag that creature 10 ft closer to you in a straight line."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-improved-pact-weapon",
+    "name": "Improved Pact Weapon",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "option": "pact-boon-pact-of-the-blade"
+    },
+    "description": [
+      "Weapons you summon with Pact of the Blade can serve as your spellcasting focus for warlock spells.",
+      "The weapon gains +1 to hit and damage, except a magic weapon already carrying a bonus to those rolls.",
+      "Your conjured weapon can also be a longbow, shortbow, heavy crossbow or light crossbow."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-lance-of-lethargy",
+    "name": "Lance of Lethargy",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "Your eldritch blast hits a creature",
+    "uses": "Once on each of your turns",
+    "prereq": {
+      "text": "Eldritch blast cantrip"
+    },
+    "description": [
+      "That creature loses 10 ft of speed until your next turn ends."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-maddening-hex",
+    "name": "Maddening Hex",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "bonus",
+    "prereq": {
+      "level": 5,
+      "text": "Hex spell, or a cursing warlock feature"
+    },
+    "description": [
+      "Stir up a psychic disturbance around the creature under your curse, from hex or a cursing warlock feature (Hexblade's Curse, Sign of Ill Omen and the like). You must see it, and it must be within 30 ft.",
+      "It and any creatures you choose within 5 ft of it that you can see take psychic damage equal to your Charisma modifier (minimum 1)."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-relentless-hex",
+    "name": "Relentless Hex",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "prereq": {
+      "level": 7,
+      "text": "Hex spell, or a cursing warlock feature"
+    },
+    "description": [
+      "Your curse ties you to its target. Teleport by magic to a spot within 5 ft of the creature under your curse (from hex or a cursing warlock feature like Hexblade's Curse or Sign of Ill Omen). The spot must be unoccupied, visible to you and no more than 30 ft away, and you must see the cursed target."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-shroud-of-shadow",
+    "name": "Shroud of Shadow",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 15,
+    "cost": "action",
+    "uses": "At will, no slot",
+    "prereq": {
+      "level": 15
+    },
+    "spells": [
+      {
+        "spell": "invisibility",
+        "atLevel": 15,
+        "uses": "At will, no slot"
+      }
+    ],
+    "description": [
+      "Cast invisibility whenever you want, without spending a spell slot."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-tomb-of-levistus",
+    "name": "Tomb of Levistus",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "reaction",
+    "trigger": "You take damage",
+    "uses": "Once per short or long rest",
+    "prereq": {
+      "level": 5
+    },
+    "description": [
+      "Encase yourself in ice, which melts when your next turn ends. Your warlock level times 10 becomes temporary hit points, which absorb the triggering damage first, as far as they go.",
+      "Once that damage lands, you are vulnerable to fire, your speed is 0 and you are incapacitated. When the ice melts, all of this ends, along with any temporary hit points left."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-invocations-tricksters-escape",
+    "name": "Trickster's Escape",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 7,
+    "cost": "action",
+    "uses": "Once per long rest, no slot",
+    "prereq": {
+      "level": 7
+    },
+    "spells": [
+      {
+        "spell": "freedom-of-movement",
+        "atLevel": 7,
+        "uses": "Once per long rest, no slot, on yourself only"
+      }
+    ],
+    "description": [
+      "Once per long rest, cast freedom of movement on yourself without spending a spell slot."
+    ],
+    "page": 57,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
     "id": "pact-boon-pact-of-the-chain",
     "name": "Pact of the Chain",
     "source": {
@@ -977,7 +1287,7 @@
     "cost": "bonus",
     "uses": "Once per short or long rest",
     "description": [
-      "Bonus action: curse one creature you can see within 30 ft for 1 minute. It ends early if the target dies, or if you die or are incapacitated.",
+      "Bonus action: curse a creature in sight no more than 30 ft away, for 1 minute. It ends early if the target dies, or if you die or are incapacitated.",
       "While it lasts, your damage rolls against the target gain a bonus equal to your proficiency bonus, and your attack rolls against it score a critical hit on a 19 or 20. If it dies, you heal by your warlock level + your Charisma modifier (at least 1 hit point)."
     ],
     "page": 55,
@@ -1017,7 +1327,7 @@
     "cost": "reaction",
     "trigger": "An attack roll from your Hexblade's Curse target hits you",
     "description": [
-      "Roll a d6. On a 4 or higher, the attack misses you instead, whatever its roll."
+      "Roll a d6: a 4, 5 or 6 turns the hit into a miss, whatever it rolled."
     ],
     "page": 56,
     "book": "xge",
@@ -1038,6 +1348,132 @@
       "Shift the curse onto another creature within 30 ft that you can see, as long as you aren't incapacitated. Doing so means no healing from the first target's death."
     ],
     "page": 56,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "the-celestial-bonus-cantrips",
+    "name": "Bonus Cantrips",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "light",
+        "atLevel": 1
+      },
+      {
+        "spell": "sacred-flame",
+        "atLevel": 1
+      }
+    ],
+    "description": [
+      "You learn light and sacred flame. Both are warlock cantrips for you, and neither takes up one of your cantrips known."
+    ],
+    "page": 54,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "healing-light",
+    "name": "Healing Light",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "d6s from your Healing Light pool",
+    "scaling": [
+      {
+        "label": "Pool (d6)",
+        "values": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21"
+        ]
+      }
+    ],
+    "description": [
+      "You have a pool of d6s: 1 + your warlock level dice. All spent dice come back when you finish a long rest.",
+      "Bonus action: pick a creature in sight no more than 60 ft away to heal. Spend dice from the pool, no more than your Charisma modifier at a time (at least 1), roll them, and the creature regains hit points equal to the total."
+    ],
+    "page": 54,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "radiant-soul",
+    "name": "Radiant Soul",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "Your spell deals radiant or fire damage",
+    "description": [
+      "You resist radiant damage.",
+      "When a spell you cast deals radiant or fire damage, choose one of its targets: one radiant or fire damage roll against it gains a bonus equal to your Charisma modifier."
+    ],
+    "page": 55,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "celestial-resilience",
+    "name": "Celestial Resilience",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "A short or long rest of yours ends",
+    "description": [
+      "You gain warlock level + Charisma modifier in temporary hit points.",
+      "As the rest ends, choose up to five creatures in sight: each gains half your warlock level + your Charisma modifier as temporary hit points."
+    ],
+    "page": 55,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "searing-vengeance",
+    "name": "Searing Vengeance",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "Your turn starts and you need to roll a death saving throw",
+    "uses": "Once per long rest",
+    "description": [
+      "Skip the save: you heal by half your hit point maximum and may stand up.",
+      "Radiant energy bursts out: creatures you choose within 30 ft each take 2d8 + your Charisma modifier radiant damage and are blinded until this turn ends."
+    ],
+    "page": 55,
     "book": "xge",
     "textSource": "summary"
   }

@@ -93,3 +93,33 @@ test('a granted cantrip lights the Cantrips row of a class with none', () => {
   expect(charMenuRows(ch([{ cls: 'ranger', level: 3, sub: 'swarmkeeper' }])).find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
   expect(charMenuRows(ch([{ cls: 'ranger', level: 3, sub: 'hunter' }])).find(r => r.kind === 'cantrips')!.dimmed).toBe(true);
 });
+test('all view: a Divine Soul affinity spell keeps its bonus-spell tag over the extra-list tag', () => {
+  const good = ch([{ cls: 'sorcerer', level: 1, sub: 'divine-soul' }], { options: ['divine-magic-affinity-good'] });
+  const all = charSpellSections(good, 'all').find(x => x.id === 'lvl-1-sorcerer')!;
+  expect(all.tags!['cure-wounds']).toBe('Divine Soul');
+  expect(all.tags!['guiding-bolt']).toBe('Cleric list');
+  expect(charSpellSections(good, 'mine').find(x => x.id === 'lvl-1-sorcerer')!.tags!['cure-wounds']).toBe('Divine Soul');
+  const law = ch([{ cls: 'sorcerer', level: 1, sub: 'divine-soul' }], { options: ['divine-magic-affinity-law'] });
+  expect(charSpellSections(law, 'all').find(x => x.id === 'lvl-1-sorcerer')!.tags!['bless']).toBe('Divine Soul');
+});
+test('a picked extra-list spell that is also the affinity spell keeps the bonus-spell tag', () => {
+  const c = ch([{ cls: 'sorcerer', level: 1, sub: 'divine-soul' }], { options: ['divine-magic-affinity-good'], spells: [{ id: 'cure-wounds', cls: 'sorcerer' }] });
+  for (const v of ['mine', 'all'] as const) expect(charSpellSections(c, v).find(x => x.id === 'lvl-1-sorcerer')!.tags!['cure-wounds'], v).toBe('Divine Soul');
+});
+test('storm herald: only the chosen environment raging storm reaction shows, from level 14', () => {
+  const herald = (level: number, env: string) => ch([{ cls: 'barbarian', level, sub: 'path-of-the-storm-herald' }], { options: [`storm-aura-${env}`] });
+  const sub = (c: Character) => charActionSections(c).find(s => s.id === 'subclass-barbarian')?.items.map(i => i.id) ?? [];
+  expect(sub(herald(14, 'desert'))).toContain('raging-storm-desert');
+  expect(sub(herald(14, 'desert'))).not.toContain('raging-storm-sea');
+  expect(sub(herald(14, 'sea'))).toContain('raging-storm-sea');
+  expect(sub(herald(14, 'sea'))).not.toContain('raging-storm-desert');
+  expect(sub(herald(14, 'tundra')).filter(id => id.startsWith('raging-storm'))).toEqual([]);
+  expect(sub(herald(13, 'desert'))).not.toContain('raging-storm-desert');
+  expect(charActionSections(herald(14, 'desert')).find(s => s.id === 'opt-storm-aura')!.items.map(i => i.id)).toEqual(['storm-aura-desert']);
+});
+test('all view: domain spells keep the Domain tag', () => {
+  const c = ch([{ cls: 'cleric', level: 1, sub: 'life-domain', mod: 3 }]);
+  const l1 = charSpellSections(c, 'all').find(x => x.id === 'lvl-1-cleric')!;
+  expect(l1.tags!['bless']).toBe('Domain');
+  expect(l1.tags!['guiding-bolt']).toBeUndefined();
+});

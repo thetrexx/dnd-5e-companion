@@ -100,7 +100,7 @@
     "level": 6,
     "cost": "action",
     "description": [
-      "Action: start a performance that lasts until the end of your next turn. You and each friendly creature within 30 ft that can hear you have advantage on saves against being frightened or charmed.",
+      "Action: start a performance that runs through your next turn. You and each friendly creature within 30 ft that can hear you have advantage on saves against being frightened or charmed.",
       "It ends early if you are incapacitated or silenced, or if you choose to stop it (no action)."
     ],
     "page": 54,
@@ -254,7 +254,7 @@
     "description": [
       "After you perform for at least 1 minute (song, poem or dance), pick humanoids within 60 ft who saw and heard the whole performance (as many as your Charisma modifier, minimum 1). Each makes a Wisdom save against your spell save DC or is charmed by you.",
       "A charmed target adores you: it praises you to anyone who talks with it and gets in the way of your opponents, but it won't turn violent for you unless it already meant to fight on your side.",
-      "The charm lasts 1 hour. It ends early if the target takes any damage, if you attack it, or if it sees you attack or hurt one of its allies.",
+      "The charm lasts 1 hour. Damage to the target ends it early, as does you attacking it or it watching you attack or harm an ally of its own.",
       "A target that saves never learns you tried to charm it."
     ],
     "page": 14,
@@ -342,6 +342,111 @@
       "Roll a d6 and use it as the flourish die, so you keep your Bardic Inspiration use."
     ],
     "page": 16,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "psychic-blades",
+    "name": "Psychic Blades",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-whispers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "One of your weapon attacks hits a creature",
+    "resource": "1 Bardic Inspiration",
+    "uses": "Once per round, on your turn",
+    "page": 16,
+    "scaling": [
+      {
+        "label": "Psychic damage",
+        "values": [
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "8d6",
+          "8d6",
+          "8d6",
+          "8d6",
+          "8d6",
+          "8d6"
+        ]
+      }
+    ],
+    "description": [
+      "Spend one use of Bardic Inspiration to add 2d6 psychic damage to the hit. You can do this only on your own turn, and no more than once per round.",
+      "The extra damage becomes 3d6 at bard level 5, 5d6 at level 10 and 8d6 at level 15."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "words-of-terror",
+    "name": "Words of Terror",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-whispers"
+    },
+    "level": 3,
+    "cost": "other",
+    "uses": "Once per short or long rest",
+    "page": 16,
+    "description": [
+      "Talk privately with a humanoid for 1 minute or more. When the talk is over, it makes a Wisdom save against your spell save DC. If it fails, it becomes frightened of you or of another creature you choose.",
+      "The fear lasts 1 hour. It ends sooner if the target is attacked or damaged, or sees one of its allies attacked or damaged. A target that saves never suspects you tried."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "mantle-of-whispers",
+    "name": "Mantle of Whispers",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-whispers"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A humanoid dies no more than 30 ft from you",
+    "uses": "One capture per short or long rest",
+    "page": 16,
+    "description": [
+      "Use your reaction to seize the dead humanoid's shadow by magic. You hold it until you use it or finish a long rest.",
+      "Action: spend the shadow to wear a magical disguise of that person, looking alive and well. It lasts 1 hour, or until you drop it as a bonus action.",
+      "In the disguise you know whatever the person would freely tell a casual acquaintance (general background and personal life, no secrets), enough to pass yourself off as them.",
+      "Anyone can see through it by beating your Charisma (Deception) check with a Wisdom (Insight) check. You add +5 to your roll."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "shadow-lore",
+    "name": "Shadow Lore",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-whispers"
+    },
+    "level": 14,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "page": 16,
+    "description": [
+      "Action: whisper by magic to one creature you choose within 30 ft; only it can hear. It makes a Wisdom save against your spell save DC, passing automatically if it can't hear you or has no language in common with you. If it passes, it hears only mumbling.",
+      "If it fails, you charm it for 8 hours. The charm breaks early if you or your allies attack or damage it, or if any of you make it roll a save. It believes you know its most shameful secret, though you learn nothing.",
+      "Out of fear, it obeys your commands, but it won't fight for you or risk its life unless it already would. It offers you the favors and gifts it would give a close friend. Afterward it has no idea why it feared you."
+    ],
     "book": "xge",
     "textSource": "summary"
   }

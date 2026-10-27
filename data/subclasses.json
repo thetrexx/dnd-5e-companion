@@ -127,6 +127,22 @@
     "hotbarIcon": "https://bg3.wiki/w/images/d/dc/Class_Fighter_Arcane_Archer_Hotbar_Icon.png"
   },
   {
+    "id": "cavalier",
+    "cls": "fighter",
+    "name": "Cavalier",
+    "page": 30,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "samurai",
+    "cls": "fighter",
+    "name": "Samurai",
+    "page": 31,
+    "book": "xge",
+    "options": []
+  },
+  {
     "id": "circle-of-the-land",
     "cls": "druid",
     "name": "Circle of the Land",
@@ -529,6 +545,32 @@
     "hotbarIcon": "https://bg3.wiki/w/images/8/89/Class_Barbarian_Giant_Hotbar_Icon.png"
   },
   {
+    "id": "path-of-the-ancestral-guardian",
+    "cls": "barbarian",
+    "name": "Path of the Ancestral Guardian",
+    "page": 9,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "path-of-the-storm-herald",
+    "cls": "barbarian",
+    "name": "Path of the Storm Herald",
+    "page": 10,
+    "book": "xge",
+    "options": [
+      "storm-aura"
+    ]
+  },
+  {
+    "id": "path-of-the-zealot",
+    "cls": "barbarian",
+    "name": "Path of the Zealot",
+    "page": 11,
+    "book": "xge",
+    "options": []
+  },
+  {
     "id": "college-of-lore",
     "cls": "bard",
     "name": "College of Lore",
@@ -563,6 +605,14 @@
       "fighting-style-swords"
     ],
     "hotbarIcon": "https://bg3.wiki/w/images/3/35/Class_Bard_Swords_Hotbar_Icon.png"
+  },
+  {
+    "id": "college-of-whispers",
+    "cls": "bard",
+    "name": "College of Whispers",
+    "page": 16,
+    "book": "xge",
+    "options": []
   },
   {
     "id": "knowledge-domain",
@@ -1018,6 +1068,112 @@
     "hotbarIcon": "https://bg3.wiki/w/images/2/25/Class_Cleric_Death_Hotbar_Icon.png"
   },
   {
+    "id": "forge-domain",
+    "cls": "cleric",
+    "name": "Forge Domain",
+    "page": 18,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "identify",
+          "atLevel": 1
+        },
+        {
+          "spell": "searing-smite",
+          "atLevel": 1
+        },
+        {
+          "spell": "heat-metal",
+          "atLevel": 3
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "elemental-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 5
+        },
+        {
+          "spell": "fabricate",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "animate-objects",
+          "atLevel": 9
+        },
+        {
+          "spell": "creation",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "grave-domain",
+    "cls": "cleric",
+    "name": "Grave Domain",
+    "page": 19,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "bane",
+          "atLevel": 1
+        },
+        {
+          "spell": "false-life",
+          "atLevel": 1
+        },
+        {
+          "spell": "gentle-repose",
+          "atLevel": 3
+        },
+        {
+          "spell": "ray-of-enfeeblement",
+          "atLevel": 3
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "vampiric-touch",
+          "atLevel": 5
+        },
+        {
+          "spell": "blight",
+          "atLevel": 7
+        },
+        {
+          "spell": "death-ward",
+          "atLevel": 7
+        },
+        {
+          "spell": "antilife-shell",
+          "atLevel": 9
+        },
+        {
+          "spell": "raise-dead",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
@@ -1085,6 +1241,22 @@
     "hotbarIcon": "https://bg3.wiki/w/images/3/39/Class_Druid_Stars_Hotbar_Icon.png"
   },
   {
+    "id": "circle-of-dreams",
+    "cls": "druid",
+    "name": "Circle of Dreams",
+    "page": 22,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "circle-of-the-shepherd",
+    "cls": "druid",
+    "name": "Circle of the Shepherd",
+    "page": 23,
+    "book": "xge",
+    "options": []
+  },
+  {
     "id": "way-of-the-open-hand",
     "cls": "monk",
     "name": "Way of the Open Hand",
@@ -1118,6 +1290,22 @@
     "book": "xge",
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/4/49/Class_Monk_Drunken_Master_Hotbar_Icon.png"
+  },
+  {
+    "id": "way-of-the-kensei",
+    "cls": "monk",
+    "name": "Way of the Kensei",
+    "page": 34,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "way-of-the-sun-soul",
+    "cls": "monk",
+    "name": "Way of the Sun Soul",
+    "page": 35,
+    "book": "xge",
+    "options": []
   },
   {
     "id": "oath-of-devotion",
@@ -1387,6 +1575,112 @@
     "hotbarIcon": "https://bg3.wiki/w/images/3/3a/Class_Paladin_Crown_Hotbar_Icon.png"
   },
   {
+    "id": "oath-of-conquest",
+    "cls": "paladin",
+    "name": "Oath of Conquest",
+    "page": 37,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "armor-of-agathys",
+          "atLevel": 3
+        },
+        {
+          "spell": "command",
+          "atLevel": 3
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 5
+        },
+        {
+          "spell": "spiritual-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "bestow-curse",
+          "atLevel": 9
+        },
+        {
+          "spell": "fear",
+          "atLevel": 9
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 13
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 13
+        },
+        {
+          "spell": "cloudkill",
+          "atLevel": 17
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "oath-of-redemption",
+    "cls": "paladin",
+    "name": "Oath of Redemption",
+    "page": 38,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "sanctuary",
+          "atLevel": 3
+        },
+        {
+          "spell": "sleep",
+          "atLevel": 3
+        },
+        {
+          "spell": "calm-emotions",
+          "atLevel": 5
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 5
+        },
+        {
+          "spell": "counterspell",
+          "atLevel": 9
+        },
+        {
+          "spell": "hypnotic-pattern",
+          "atLevel": 9
+        },
+        {
+          "spell": "otilukes-resilient-sphere",
+          "atLevel": 13
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        },
+        {
+          "spell": "wall-of-force",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "hunter",
     "cls": "ranger",
     "name": "Hunter",
@@ -1479,6 +1773,72 @@
     },
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/3/3f/Class_Ranger_Swarmkeeper_Hotbar_Icon.png"
+  },
+  {
+    "id": "horizon-walker",
+    "cls": "ranger",
+    "name": "Horizon Walker",
+    "page": 42,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 3
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "haste",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "teleportation-circle",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "monster-slayer",
+    "cls": "ranger",
+    "name": "Monster Slayer",
+    "page": 43,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 3
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 5
+        },
+        {
+          "spell": "magic-circle",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "thief",
@@ -1908,5 +2268,133 @@
     "book": "tce",
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/9/91/Class_Wizard_Bladesinging_Hotbar_Icon.png"
+  },
+  {
+    "id": "inquisitive",
+    "cls": "rogue",
+    "name": "Inquisitive",
+    "page": 45,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "mastermind",
+    "cls": "rogue",
+    "name": "Mastermind",
+    "page": 46,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "scout",
+    "cls": "rogue",
+    "name": "Scout",
+    "page": 47,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "divine-soul",
+    "cls": "sorcerer",
+    "name": "Divine Soul",
+    "page": 50,
+    "book": "xge",
+    "extraLists": [
+      "cleric"
+    ],
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "cure-wounds",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-good"
+        },
+        {
+          "spell": "inflict-wounds",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-evil"
+        },
+        {
+          "spell": "bless",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-law"
+        },
+        {
+          "spell": "bane",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-chaos"
+        },
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-neutrality"
+        }
+      ]
+    },
+    "options": [
+      "divine-magic-affinity"
+    ]
+  },
+  {
+    "id": "the-celestial",
+    "cls": "warlock",
+    "name": "The Celestial",
+    "page": 54,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "cure-wounds",
+          "atLevel": 1
+        },
+        {
+          "spell": "guiding-bolt",
+          "atLevel": 1
+        },
+        {
+          "spell": "flaming-sphere",
+          "atLevel": 3
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 3
+        },
+        {
+          "spell": "daylight",
+          "atLevel": 5
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "greater-restoration",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "war-magic",
+    "cls": "wizard",
+    "name": "War Magic",
+    "page": 59,
+    "book": "xge",
+    "options": []
   }
 ]

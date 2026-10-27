@@ -1,5 +1,8 @@
 import { DATA } from '../../src/data';
 import { actionSections } from '../../src/logic/sections';
+import { optionSlots } from '../../src/character/options';
+import { emptyCharacter } from '../../src/character/types';
+import type { Character } from '../../src/character/types';
 
 const g = (id: string) => DATA.optionGroups.find(x => x.id === id)!;
 const opts = (id: string) => DATA.features.filter(f => f.source.kind === 'option' && f.source.id === id);
@@ -20,7 +23,7 @@ test('browse shows usable options only', () => {
   expect(ids).not.toContain('eldritch-invocations-thirsting-blade');     // needs level 5
 });
 test('group sizes and ownership', () => {
-  expect(opts('eldritch-invocations')).toHaveLength(32);
+  expect(opts('eldritch-invocations')).toHaveLength(46);
   expect(opts('pact-boon')).toHaveLength(3);
   expect(opts('elemental-disciplines')).toHaveLength(16);
   for (const id of ['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement']) expect(opts(id)).toHaveLength(3);
@@ -52,4 +55,29 @@ test('class and subclass hooks', () => {
   expect(s('battle-master')).toEqual(['maneuvers']);
   expect(s('way-of-the-four-elements')).toEqual(['elemental-disciplines']);
   expect(s('path-of-the-totem-warrior')).toEqual(['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement']);
+});
+test('option choices are sorted by name in the editor and the browse view', () => {
+  const sorted = (names: string[]) => [...names].sort((a, b) => a.localeCompare(b, 'en'));
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 20 }], options: ['pact-boon-pact-of-the-blade'] } as Character;
+  const editor = optionSlots(ch).find(s => s.group.id === 'eldritch-invocations')!.choices.map(f => f.name);
+  expect(editor).toEqual(sorted(editor));
+  const smite = editor.indexOf('Eldritch Smite');
+  expect(editor.slice(smite - 1, smite + 2)).toEqual(['Eldritch Sight', 'Eldritch Smite', 'Eldritch Spear']);
+  const browse = actionSections('warlock', 20).find(s => s.id === 'opt-eldritch-invocations')!.items.map(i => i.name);
+  expect(browse).toEqual(sorted(browse));
+  expect(browse.indexOf('Eldritch Smite')).toBe(browse.indexOf('Eldritch Sight') + 1);
+});
+test('xanathar invocations need their pact', () => {
+  const inv = DATA.features.filter(f => f.source.id === 'eldritch-invocations' && f.book === 'xge');
+  expect(inv).toHaveLength(14);
+  const blade = inv.filter(f => f.prereq?.option === 'pact-boon-pact-of-the-blade');
+  expect(blade.map(f => f.id).sort()).toEqual(['eldritch-invocations-eldritch-smite', 'eldritch-invocations-improved-pact-weapon']);
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 12 }], options: ['pact-boon-pact-of-the-chain'] } as Character;
+  const offered = optionSlots(ch).find(s => s.group.id === 'eldritch-invocations')!.choices.map(f => f.id);
+  for (const f of blade) expect(offered, f.id).not.toContain(f.id);
+  expect(offered).toContain('eldritch-invocations-gift-of-the-ever-living-ones');
+  expect(offered).not.toContain('eldritch-invocations-shroud-of-shadow');   // needs level 15
+  const f = (id: string) => DATA.features.find(x => x.id === id)!;
+  expect(f('eldritch-invocations-maddening-hex').prereq).toMatchObject({ level: 5, text: expect.stringMatching(/hex/i) });
+  expect(f('eldritch-invocations-tricksters-escape').spells).toEqual([expect.objectContaining({ spell: 'freedom-of-movement', atLevel: 7, uses: expect.any(String) })]);
 });

@@ -19,7 +19,41 @@ export function missingNumbers(text: string, ocr: string): string[] {
 
 const MAX_RUN = 8;
 
-const normWords = (s: string): string[] => s.split(/\s+/).map(normalizeOcr).filter(Boolean);
+/**
+ * Rejoins words the page split with a hyphen at a line break ("crea-\nture" becomes "creature"). A hyphen
+ * after a digit is a compound size ("30-\nfoot"), so it becomes a space and the unit stays its own word.
+ */
+export function joinHyphenation(s: string): string {
+  return s.replace(/(\d)[-­‐]\s*\r?\n\s*(\w)/g, '$1 $2').replace(/(\w)[-­‐]\s*\r?\n\s*(\w)/g, '$1$2');
+}
+
+/** "ft", "foot" and "feet" (as `normalizeOcr` folds them) count as one word. */
+const UNIT = new Set(['ft', 'foot', 'feet'].map(normalizeOcr));
+
+const CARDINALS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+  'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
+const TENS: [string, number][] = [['thirty', 30], ['forty', 40], ['fifty', 50], ['sixty', 60], ['seventy', 70], ['eighty', 80], ['ninety', 90]];
+const ORDINALS = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'];
+const suffix = (n: number) => (n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th');
+
+/**
+ * Number words fold to the digits a card uses ("three" to 3, "third" to 3rd), so a copy that only swaps
+ * the one for the other is still caught. Keys and values are both normalized, so the fold only joins a
+ * number word to its digits: any word it also catches was already equal to that number word.
+ */
+const NUMBER = new Map<string, string>([
+  ...CARDINALS.map((w, i): [string, string] => [w, String(i + 1)]),
+  ...TENS.map(([w, n]): [string, string] => [w, String(n)]),
+  ...ORDINALS.map((w, i): [string, string] => [w, `${i + 1}${suffix(i + 1)}`]),
+].map(([w, d]) => [normalizeOcr(w), normalizeOcr(d)]));
+
+/**
+ * Words for run matching: line-break hyphenation rejoined, then compound hyphens and "×" split, so
+ * "30-ft-radius" and "30-foot radius" both give 30 / ft / radius; unit words fold to one, number words to digits.
+ */
+const normWords = (s: string): string[] =>
+  joinHyphenation(s).replace(/[-­‐–×]/g, ' ').split(/\s+/).map(normalizeOcr).filter(Boolean)
+    .map(w => (UNIT.has(w) ? 'leet' : NUMBER.get(w) ?? w));
 
 /**
  * Two normalized words match when equal, or when both have 4+ letters and differ by one edit
@@ -40,17 +74,24 @@ export function wordsMatch(a: string, b: string): boolean {
   return edits + (a.length - i) + (b.length - j) <= 1;
 }
 
-/** Longest run of consecutive normalized words that `text` shares with `ocr`, tolerating one misread letter per word. */
+/**
+ * Longest run of consecutive normalized words that `text` shares with `ocr`, tolerating one misread letter
+ * per word. A text-layer word that is two of ours run together ("ifyou") counts as both.
+ */
 export function longestSharedRun(text: string, ocr: string): number {
   const a = normWords(text);
   const b = normWords(ocr);
   let best = 0;
+  let prev2 = new Array<number>(b.length + 1).fill(0);
   let prev = new Array<number>(b.length + 1).fill(0);
   for (let i = 1; i <= a.length; i++) {
     const cur = new Array<number>(b.length + 1).fill(0);
     for (let j = 1; j <= b.length; j++) {
-      if (wordsMatch(a[i - 1], b[j - 1])) { cur[j] = prev[j - 1] + 1; if (cur[j] > best) best = cur[j]; }
+      if (wordsMatch(a[i - 1], b[j - 1])) cur[j] = prev[j - 1] + 1;
+      if (i >= 2 && b[j - 1] === a[i - 2] + a[i - 1]) cur[j] = Math.max(cur[j], prev2[j - 1] + 2);
+      if (cur[j] > best) best = cur[j];
     }
+    prev2 = prev;
     prev = cur;
   }
   return best;

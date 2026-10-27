@@ -42,6 +42,8 @@ export interface ClassDef {
 export interface SubclassDef {
   id: string; cls: ClassId; name: string; page: number; book?: BookId; hotbarIcon?: string;
   bonusSpells?: { kind: 'domain'|'oath'|'circle'|'patron'|'subclass'; grants: SpellGrant[] };
+  /** class spell lists this subclass may also pick from (Divine Soul: ['cleric']) */
+  extraLists?: ClassId[];
   casting?: { list: ClassId; schools: string[]; ability: Ability;
               cantripsKnown: number[]; spellsKnown: number[]; maxSpellLevel: number[] };
   options: string[];

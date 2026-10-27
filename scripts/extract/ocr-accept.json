@@ -3,5 +3,8 @@
   "features:elemental-cleaver": "Giants PDF has no text layer; facts and the 8-word rule hand-checked against the page image",
   "features:mighty-impel": "Giants PDF has no text layer; facts and the 8-word rule hand-checked against the page image",
   "features:giants-power-druidcraft": "Giants PDF has no text layer; facts and the 8-word rule hand-checked against the page image",
-  "features:giants-power-thaumaturgy": "Giants PDF has no text layer; facts and the 8-word rule hand-checked against the page image"
+  "features:giants-power-thaumaturgy": "Giants PDF has no text layer; facts and the 8-word rule hand-checked against the page image",
+  "spells:dawn": "Xanathar text layer on p. 154 drops the dice: 4d10 radiant checked against the page image; no copied run (longest 6)",
+  "spells:investiture-of-wind": "Xanathar text layer on p. 160 drops the dice: 2d10 bludgeoning checked against the page image; no copied run",
+  "spells:mighty-fortress": "Xanathar text layer on p. 161 drops the level line: 8th-level conjuration checked against the page image; no copied run"
 }

@@ -32,6 +32,11 @@ test('pickable spells', () => {
   expect(ek.every(p => p.spell.level <= 1)).toBe(true);
   expect(pickableSpells({ cls: 'warlock', level: 1, sub: 'the-fiend' }).find(p => p.spell.id === 'burning-hands')!.tag).toBe('Patron');
 });
+test('pickable spells: extra-list spells carry their list tag', () => {
+  const ds = pickableSpells({ cls: 'sorcerer', level: 1, sub: 'divine-soul' });
+  expect(ds.find(p => p.spell.id === 'guiding-bolt')!.tag).toBe('Cleric list');
+  expect(ds.find(p => p.spell.id === 'magic-missile')!.tag).toBeUndefined();
+});
 test('pick counts skip Mystic Arcanum', () => {
   const c = ch([{ cls: 'warlock', level: 11 }], { spells: [{ id: 'eldritch-blast', cls: 'warlock' }, { id: 'hex', cls: 'warlock' }, { id: 'mass-suggestion', cls: 'warlock' }] });
   expect(pickCounts(c, 'warlock')).toEqual({ cantrips: 1, spells: 1 });

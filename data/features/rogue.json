@@ -278,8 +278,8 @@
     "level": 9,
     "cost": "action",
     "description": [
-      "Action: make a Charisma (Persuasion) check contested by a creature's Wisdom (Insight) check. It only works on a creature that can hear you and that shares a language with you.",
-      "Hostile creature, you win: for 1 minute it has disadvantage on attack rolls against anyone but you, and can't make opportunity attacks against anyone but you. It ends early if one of your companions attacks it or affects it with a spell, or if you and it end up more than 60 ft apart.",
+      "Action: roll Charisma (Persuasion) against the target's Wisdom (Insight). The target must hear you and share a language with you.",
+      "Hostile creature, you win: for 1 minute its attack rolls against anyone but you have disadvantage, and it can make opportunity attacks only against you. It ends early if one of your companions attacks it or affects it with a spell, or if you and it end up more than 60 ft apart.",
       "Non-hostile creature, you win: for 1 minute you have it charmed, and it sees you as a friendly acquaintance. Harming it in any way, by you or your companions, ends the charm at once."
     ],
     "page": 47,
@@ -316,6 +316,178 @@
     "uses": "Once per short or long rest",
     "description": [
       "Roll the missed attack again, with advantage."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eye-for-detail",
+    "name": "Eye for Detail",
+    "source": {
+      "kind": "subclass",
+      "id": "inquisitive"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "Bonus action: roll a Wisdom (Perception) check to find a hidden creature or object, or an Intelligence (Investigation) check to work out or read clues."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "insightful-fighting",
+    "name": "Insightful Fighting",
+    "source": {
+      "kind": "subclass",
+      "id": "inquisitive"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "Bonus action: choose a creature in sight that isn't incapacitated and pit your Wisdom (Insight) check against its Charisma (Deception) check.",
+      "If you win, for 1 minute you can Sneak Attack that creature even when you lack advantage on the attack roll, though never while you have disadvantage. A later success against a new target ends it early."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "unerring-eye",
+    "name": "Unerring Eye",
+    "source": {
+      "kind": "subclass",
+      "id": "inquisitive"
+    },
+    "level": 13,
+    "cost": "action",
+    "uses": "Wisdom modifier times (at least once) per long rest",
+    "description": [
+      "Action, as long as you aren't blinded or deafened: you notice any illusions, shapechangers wearing a false form, and other senses-fooling magic within 30 ft of you.",
+      "You learn only that something is deceiving you, not what it conceals or what it really is."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eye-for-weakness",
+    "name": "Eye for Weakness",
+    "source": {
+      "kind": "subclass",
+      "id": "inquisitive"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You Sneak Attack the target of your Insightful Fighting",
+    "uses": "Once per turn (Sneak Attack)",
+    "description": [
+      "While Insightful Fighting covers a creature, add 3d6 to your Sneak Attack damage against it."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "master-of-tactics",
+    "name": "Master of Tactics",
+    "source": {
+      "kind": "subclass",
+      "id": "mastermind"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "You can take the Help action as a bonus action.",
+      "When your Help aids an ally's attack, the creature being attacked may be up to 30 ft away from you instead of 5 ft, provided it can see or hear you."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "insightful-manipulator",
+    "name": "Insightful Manipulator",
+    "source": {
+      "kind": "subclass",
+      "id": "mastermind"
+    },
+    "level": 9,
+    "cost": "other",
+    "description": [
+      "Outside combat, watch or talk with a creature for 1 minute or more. Then pick two of these: its Intelligence, Wisdom or Charisma score, or its class levels (if it has any). For each, the DM tells you if it is higher than, lower than or equal to yours.",
+      "The DM may also reveal a fact from its past, or a personality trait if it has one."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "misdirection",
+    "name": "Misdirection",
+    "source": {
+      "kind": "subclass",
+      "id": "mastermind"
+    },
+    "level": 13,
+    "cost": "reaction",
+    "trigger": "Something attacks you while you have cover from a creature at most 5 ft away",
+    "description": [
+      "Make the attack target the creature providing your cover instead of you."
+    ],
+    "page": 46,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "skirmisher",
+    "name": "Skirmisher",
+    "source": {
+      "kind": "subclass",
+      "id": "scout"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "An enemy finishes its turn 5 ft or less from you",
+    "description": [
+      "Move up to half your speed without provoking opportunity attacks."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "ambush-master",
+    "name": "Ambush Master",
+    "source": {
+      "kind": "subclass",
+      "id": "scout"
+    },
+    "level": 13,
+    "cost": "free",
+    "trigger": "You roll initiative, or you hit your first creature in the first round of a combat",
+    "description": [
+      "Every time you roll initiative, you roll it with advantage.",
+      "The first creature you hit during a combat's opening round is left exposed: every attack roll against it, from anyone, has advantage until your next turn starts."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "sudden-strike",
+    "name": "Sudden Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "scout"
+    },
+    "level": 17,
+    "cost": "bonus",
+    "description": [
+      "On a turn when you take the Attack action, one extra attack is yours as a bonus action.",
+      "That attack can deal Sneak Attack damage even if you already did so this turn, but one target can't take your Sneak Attack twice in a turn."
     ],
     "page": 47,
     "book": "xge",

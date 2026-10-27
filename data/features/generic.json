@@ -172,7 +172,7 @@
     "description": [
       "Replace one of your attacks with a grapple. The target can be at most one size larger and must be in reach. You need a free hand.",
       "Make a Strength (Athletics) check against its Strength (Athletics) or Dexterity (Acrobatics), its choice. On a win, it is grappled. You can let go at any time.",
-      "A grappled creature escapes with its action by winning that contest against you. If you move, you drag it along at half speed, unless it is 2 or more sizes smaller than you."
+      "A grappled creature escapes with its action by winning that contest against you. If you move, you drag it along at half speed, unless it is smaller than you by 2 sizes or more."
     ],
     "page": 195,
     "textSource": "summary"

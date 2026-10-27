@@ -378,7 +378,7 @@
     "cost": "bonus",
     "resource": "3 sorcery points",
     "description": [
-      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts one creature you can see within 120 ft. It appears in an unoccupied space of your choice within 30 ft of that target and rolls its own initiative.",
+      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts a target in your sight no more than 120 ft away. It appears in an unoccupied space of your choice within 30 ft of that target and rolls its own initiative.",
       "Uses the dire wolf stats (Monster Manual), with changes: it is Medium and a monstrosity, and starts with half your sorcerer level in temporary hit points. It passes through creatures and objects as difficult terrain; ending its turn inside an object costs it 5 force damage. At the start of its turn it knows where its target is, so the target can't stay hidden from it.",
       "It heads straight for its target by the shortest route, uses its action only to attack that target, and makes opportunity attacks only against it. While the hound stays within 5 ft of its target, that creature makes saves against your spells at disadvantage.",
       "It disappears after 5 minutes, or sooner if either it or its target hits 0 hit points."
@@ -489,7 +489,7 @@
     "cost": "bonus",
     "uses": "Each round",
     "description": [
-      "If it is windy, use a bonus action each round to pick the wind's direction in a 100-ft-radius sphere centered on you. It blows that way until the end of your next turn.",
+      "If it is windy, use a bonus action each round to set the wind's direction everywhere within 100 ft of you. It blows that way until the end of your next turn.",
       "The wind's speed doesn't change."
     ],
     "page": 52,
@@ -526,9 +526,165 @@
     "uses": "Once per short or long rest",
     "description": [
       "You are immune to lightning and thunder damage and have a magical flying speed of 60 ft.",
-      "Action: lower your flying speed to 30 ft for 1 hour, and choose up to 3 + your Charisma modifier creatures within 30 ft. They gain a magical flying speed of 30 ft for 1 hour."
+      "Action: pick a number of creatures no more than 30 ft away, up to 3 + your Charisma modifier. For 1 hour they can fly at 30 ft by magic, while your own flying speed falls to 30 ft."
     ],
     "page": 52,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-good",
+    "name": "Good",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick good as your Divine Magic affinity and you learn cure wounds. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be eagle wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-evil",
+    "name": "Evil",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick evil as your Divine Magic affinity and you learn inflict wounds. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be bat wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-law",
+    "name": "Law",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick law as your Divine Magic affinity and you learn bless. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be eagle wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-chaos",
+    "name": "Chaos",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick chaos as your Divine Magic affinity and you learn bane. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be bat wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-neutrality",
+    "name": "Neutrality",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick neutrality as your Divine Magic affinity and you learn protection from evil and good. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be dragonfly wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-by-the-gods",
+    "name": "Favored by the Gods",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "Your saving throw fails, or your attack roll misses",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Roll 2d4 and add the result to the total, which may turn the failure or miss into a success."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "empowered-healing",
+    "name": "Empowered Healing",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You or an ally within 5 ft roll dice for the hit points a spell restores",
+    "resource": "1 sorcery point",
+    "uses": "Once per turn",
+    "description": [
+      "Spend 1 sorcery point to reroll as many of those healing dice as you like, once. You can't do this while incapacitated."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "otherworldly-wings",
+    "name": "Otherworldly Wings",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "description": [
+      "Bonus action: spectral wings spread from your back, giving you a flying speed of 30 ft. They stay until you die or are incapacitated, or until you use another bonus action to dismiss them.",
+      "Your Divine Magic affinity sets their look: good or law gives eagle wings, evil or chaos gives bat wings, and neutrality gives dragonfly wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "unearthly-recovery",
+    "name": "Unearthly Recovery",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 18,
+    "cost": "bonus",
+    "uses": "Once per long rest",
+    "description": [
+      "Bonus action, while you are below half your hit points: heal by half your hit point maximum."
+    ],
+    "page": 50,
     "book": "xge",
     "textSource": "summary"
   }

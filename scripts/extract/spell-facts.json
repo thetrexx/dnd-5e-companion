@@ -1,5 +1,75 @@
 [
  {
+  "id": "abi-dalzims-horrid-wilting",
+  "name": "Abi-Dalzim's Horrid Wilting",
+  "level": 8,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 150,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "12d8",
+    "type": "Necrotic"
+   }
+  }
+ },
+ {
+  "id": "absorb-elements",
+  "name": "Absorb Elements",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "reaction",
+   "text": "1 reaction",
+   "trigger": "on taking acid, cold, fire, lightning or thunder damage"
+  },
+  "range": "Self",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 150,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d6",
+    "type": "Varies (the absorbed type)"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
   "id": "acid-splash",
   "name": "Acid Splash",
   "level": 0,
@@ -29,6 +99,42 @@
     "type": "Acid"
    },
    "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "aganazzars-scorcher",
+  "name": "Aganazzar's Scorcher",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 150,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d8",
+    "type": "Fire"
+   },
+   "upcast": "+1d8 per slot level above 2"
   }
  },
  {
@@ -802,6 +908,36 @@
   }
  },
  {
+  "id": "beast-bond",
+  "name": "Beast Bond",
+  "level": 1,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 150,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "beast-sense",
   "name": "Beast Sense",
   "level": 2,
@@ -1121,6 +1257,38 @@
   }
  },
  {
+  "id": "bones-of-the-earth",
+  "name": "Bones of the Earth",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 150,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "6d6",
+    "type": "Bludgeoning (pinned against a ceiling)"
+   },
+   "upcast": "+2 pillars per slot level above 6"
+  }
+ },
+ {
   "id": "branding-smite",
   "name": "Branding Smite",
   "level": 2,
@@ -1242,6 +1410,130 @@
   }
  },
  {
+  "id": "catapult",
+  "name": "Catapult",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 150,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d8",
+    "type": "Bludgeoning"
+   },
+   "upcast": "+1d8 per slot level above 1"
+  }
+ },
+ {
+  "id": "catnap",
+  "name": "Catnap",
+  "level": 3,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "10 minutes",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 151,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "upcast": "+1 creature per slot level above 3"
+  }
+ },
+ {
+  "id": "cause-fear",
+  "name": "Cause Fear",
+  "level": 1,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 151,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
+  "id": "ceremony",
+  "name": "Ceremony",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 25,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 151,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "chain-lightning",
   "name": "Chain Lightning",
   "level": 6,
@@ -1274,6 +1566,65 @@
     "type": "Lightning"
    },
    "upcast": "+1 bolt per slot level above 6"
+  }
+ },
+ {
+  "id": "chaos-bolt",
+  "name": "Chaos Bolt",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer"
+  ],
+  "page": 151,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "charm-monster",
+  "name": "Charm Monster",
+  "level": 4,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 151,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "upcast": "+1 creature per slot level above 4"
   }
  },
  {
@@ -1938,6 +2289,34 @@
   }
  },
  {
+  "id": "control-flames",
+  "name": "Control Flames",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous or 1 hour (see below)",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 152,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "control-water",
   "name": "Control Water",
   "level": 4,
@@ -2000,6 +2379,35 @@
   "page": 228,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "control-winds",
+  "name": "Control Winds",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 152,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str"
   }
  },
  {
@@ -2271,7 +2679,7 @@
   "cast": {
    "cost": "reaction",
    "text": "1 reaction",
-   "trigger": "when you see a creature within 60 ft casting a spell"
+   "trigger": "on seeing a creature cast a spell no more than 60 ft away"
   },
   "range": "60 feet",
   "duration": "Instantaneous",
@@ -2289,6 +2697,41 @@
   "page": 228,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "create-bonfire",
+  "name": "Create Bonfire",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 152,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d8",
+    "type": "Fire"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
   }
  },
  {
@@ -2313,6 +2756,36 @@
    "paladin"
   ],
   "page": 229,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "create-homunculus",
+  "name": "Create Homunculus",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "Touch",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false,
+    "costGp": 1000
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 152,
+  "book": "xge",
   "summary": {
    "resolution": "none"
   }
@@ -2436,6 +2909,39 @@
   }
  },
  {
+  "id": "crown-of-stars",
+  "name": "Crown of Stars",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "1 hour",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 152,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d12",
+    "type": "Radiant"
+   },
+   "upcast": "+2 motes per slot level above 7"
+  }
+ },
+ {
   "id": "crusaders-mantle",
   "name": "Crusader's Mantle",
   "level": 3,
@@ -2532,6 +3038,34 @@
   }
  },
  {
+  "id": "danse-macabre",
+  "name": "Danse Macabre",
+  "level": 5,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 153,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "upcast": "+2 corpses per slot level above 5"
+  }
+ },
+ {
   "id": "darkness",
   "name": "Darkness",
   "level": 2,
@@ -2590,6 +3124,42 @@
   "page": 230,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "dawn",
+  "name": "Dawn",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false,
+    "costGp": 100
+   }
+  },
+  "classes": [
+   "cleric",
+   "wizard"
+  ],
+  "page": 153,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "4d10",
+    "type": "Radiant"
+   }
   }
  },
  {
@@ -3207,6 +3777,42 @@
   }
  },
  {
+  "id": "dragons-breath",
+  "name": "Dragon's Breath",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 154,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d6",
+    "type": "Chosen type (acid, cold, fire, lightning or poison)"
+   },
+   "upcast": "+1d6 per slot level above 2"
+  }
+ },
+ {
   "id": "drawmijs-instant-summons",
   "name": "Drawmij's Instant Summons",
   "level": 6,
@@ -3271,6 +3877,35 @@
   }
  },
  {
+  "id": "druid-grove",
+  "name": "Druid Grove",
+  "level": 6,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "Touch",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": true
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 154,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "druidcraft",
   "name": "Druidcraft",
   "level": 0,
@@ -3293,6 +3928,108 @@
   "page": 236,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "dust-devil",
+  "name": "Dust Devil",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 154,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "1d8",
+    "type": "Bludgeoning"
+   },
+   "upcast": "+1d8 per slot level above 2"
+  }
+ },
+ {
+  "id": "earth-tremor",
+  "name": "Earth Tremor",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "10 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 155,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d6",
+    "type": "Bludgeoning"
+   },
+   "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "earthbind",
+  "name": "Earthbind",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 154,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str"
   }
  },
  {
@@ -3357,6 +4094,40 @@
   }
  },
  {
+  "id": "elemental-bane",
+  "name": "Elemental Bane",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "warlock",
+   "wizard"
+  ],
+  "page": 155,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "2d6",
+    "type": "Chosen type (extra, first time each turn)"
+   },
+   "upcast": "+1 creature per slot level above 4"
+  }
+ },
+ {
   "id": "elemental-weapon",
   "name": "Elemental Weapon",
   "level": 3,
@@ -3384,6 +4155,70 @@
     "type": "Varies"
    },
    "upcast": "slots 5-6: +2 bonus and 2d4; slots 7+: +3 bonus and 3d4"
+  }
+ },
+ {
+  "id": "enemies-abound",
+  "name": "Enemies Abound",
+  "level": 3,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 155,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "int"
+  }
+ },
+ {
+  "id": "enervation",
+  "name": "Enervation",
+  "level": 5,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 155,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "4d8",
+    "type": "Necrotic (2d8 on a success)"
+   },
+   "upcast": "+1d8 per slot level above 5"
   }
  },
  {
@@ -3529,6 +4364,43 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
+  }
+ },
+ {
+  "id": "erupting-earth",
+  "name": "Erupting Earth",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 155,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d12",
+    "type": "Bludgeoning"
+   },
+   "upcast": "+1d12 per slot level above 3"
   }
  },
  {
@@ -3731,6 +4603,34 @@
   }
  },
  {
+  "id": "far-step",
+  "name": "Far Step",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 155,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "fear",
   "name": "Fear",
   "level": 3,
@@ -3770,7 +4670,7 @@
   "cast": {
    "cost": "reaction",
    "text": "1 reaction",
-   "trigger": "when you or a creature within 60 ft falls"
+   "trigger": "as you or someone no more than 60 ft away falls"
   },
   "range": "60 feet",
   "duration": "1 minute",
@@ -3885,6 +4785,32 @@
    "wizard"
   ],
   "page": 240,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "find-greater-steed",
+  "name": "Find Greater Steed",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "paladin"
+  ],
+  "page": 156,
+  "book": "xge",
   "summary": {
    "resolution": "none"
   }
@@ -4135,6 +5061,40 @@
    "upcast": "+1d6 per slot level above 3"
   },
   "icon": "https://bg3.wiki/w/images/c/cb/Fireball_Icon.webp"
+ },
+ {
+  "id": "flame-arrows",
+  "name": "Flame Arrows",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 156,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d6",
+    "type": "Fire"
+   },
+   "upcast": "+2 pieces of ammunition per slot level above 3"
+  }
  },
  {
   "id": "flame-blade",
@@ -4481,6 +5441,41 @@
   "page": 244,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "frostbite",
+  "name": "Frostbite",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 156,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d6",
+    "type": "Cold"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
   }
  },
  {
@@ -4888,6 +5883,33 @@
   }
  },
  {
+  "id": "guardian-of-nature",
+  "name": "Guardian of Nature",
+  "level": 4,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 157,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "guards-and-wards",
   "name": "Guards and Wards",
   "level": 6,
@@ -4972,6 +5994,35 @@
     "type": "Radiant"
    },
    "upcast": "+1d6 per slot level above 1"
+  }
+ },
+ {
+  "id": "gust",
+  "name": "Gust",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 157,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str"
   }
  },
  {
@@ -5180,6 +6231,39 @@
   "page": 250,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "healing-spirit",
+  "name": "Healing Spirit",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 157,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d6",
+    "type": "Healing",
+    "healing": true
+   },
+   "upcast": "+1d6 per slot level above 2"
   }
  },
  {
@@ -5469,6 +6553,37 @@
   }
  },
  {
+  "id": "holy-weapon",
+  "name": "Holy Weapon",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "paladin"
+  ],
+  "page": 157,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d8",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
   "id": "hunger-of-hadar",
   "name": "Hunger of Hadar",
   "level": 3,
@@ -5559,6 +6674,38 @@
   }
  },
  {
+  "id": "ice-knife",
+  "name": "Ice Knife",
+  "level": 1,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 157,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "upcast": "+1d6 cold per slot level above 1"
+  }
+ },
+ {
   "id": "ice-storm",
   "name": "Ice Storm",
   "level": 4,
@@ -5621,6 +6768,37 @@
   }
  },
  {
+  "id": "illusory-dragon",
+  "name": "Illusory Dragon",
+  "level": 8,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 157,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "7d6",
+    "type": "Chosen type (acid, cold, fire, lightning, necrotic or poison)"
+   }
+  }
+ },
+ {
   "id": "illusory-script",
   "name": "Illusory Script",
   "level": 1,
@@ -5649,6 +6827,38 @@
   "page": 252,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "immolation",
+  "name": "Immolation",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 158,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "8d6",
+    "type": "Fire (then 4d6 each turn it keeps burning)"
+   }
   }
  },
  {
@@ -5711,6 +6921,76 @@
     "dice": "10d8",
     "type": "Fire"
    }
+  }
+ },
+ {
+  "id": "infernal-calling",
+  "name": "Infernal Calling",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false,
+    "costGp": 999
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 158,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "upcast": "+1 challenge rating per slot level above 5"
+  }
+ },
+ {
+  "id": "infestation",
+  "name": "Infestation",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 158,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d6",
+    "type": "Poison"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
   }
  },
  {
@@ -5780,6 +7060,138 @@
   }
  },
  {
+  "id": "investiture-of-flame",
+  "name": "Investiture of Flame",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 159,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "4d8",
+    "type": "Fire"
+   }
+  }
+ },
+ {
+  "id": "investiture-of-ice",
+  "name": "Investiture of Ice",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 159,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "4d6",
+    "type": "Cold"
+   }
+  }
+ },
+ {
+  "id": "investiture-of-stone",
+  "name": "Investiture of Stone",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 159,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "investiture-of-wind",
+  "name": "Investiture of Wind",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 160,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "2d10",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
   "id": "invisibility",
   "name": "Invisibility",
   "level": 2,
@@ -5806,6 +7218,36 @@
    "wizard"
   ],
   "page": 254,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "invulnerability",
+  "name": "Invulnerability",
+  "level": 9,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 160,
+  "book": "xge",
   "summary": {
    "resolution": "none"
   }
@@ -6014,6 +7456,38 @@
   "summary": {
    "resolution": "save",
    "save": "con"
+  }
+ },
+ {
+  "id": "life-transference",
+  "name": "Life Transference",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "wizard"
+  ],
+  "page": 160,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "4d8",
+    "type": "Necrotic (to you)"
+   },
+   "upcast": "+1d8 per slot level above 3"
   }
  },
  {
@@ -6241,6 +7715,75 @@
   }
  },
  {
+  "id": "maddening-darkness",
+  "name": "Maddening Darkness",
+  "level": 8,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 160,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "8d8",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "maelstrom",
+  "name": "Maelstrom",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 160,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "6d6",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
   "id": "mage-armor",
   "name": "Mage Armor",
   "level": 1,
@@ -6425,6 +7968,38 @@
   }
  },
  {
+  "id": "magic-stone",
+  "name": "Magic Stone",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Touch",
+  "duration": "1 minute",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "warlock"
+  ],
+  "page": 160,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d6",
+    "type": "Bludgeoning",
+    "plusMod": true
+   }
+  }
+ },
+ {
   "id": "magic-weapon",
   "name": "Magic Weapon",
   "level": 2,
@@ -6573,6 +8148,38 @@
   }
  },
  {
+  "id": "mass-polymorph",
+  "name": "Mass Polymorph",
+  "level": 9,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 160,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
   "id": "mass-suggestion",
   "name": "Mass Suggestion",
   "level": 6,
@@ -6602,6 +8209,41 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
+  }
+ },
+ {
+  "id": "maximilians-earthen-grasp",
+  "name": "Maximilian's Earthen Grasp",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 161,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "2d6",
+    "type": "Bludgeoning"
+   }
   }
  },
  {
@@ -6689,6 +8331,42 @@
   }
  },
  {
+  "id": "melfs-minute-meteors",
+  "name": "Melf's Minute Meteors",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 161,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "2d6",
+    "type": "Fire"
+   },
+   "upcast": "+2 meteors per slot level above 3"
+  }
+ },
+ {
   "id": "mending",
   "name": "Mending",
   "level": 0,
@@ -6718,6 +8396,39 @@
   "page": 259,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "mental-prison",
+  "name": "Mental Prison",
+  "level": 6,
+  "school": "Illusion",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 161,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "5d10",
+    "type": "Psychic (even on a success; 10d10 if it breaks out)"
+   }
   }
  },
  {
@@ -6778,6 +8489,36 @@
   }
  },
  {
+  "id": "mighty-fortress",
+  "name": "Mighty Fortress",
+  "level": 8,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "1 mile",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": true
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 161,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "mind-blank",
   "name": "Mind Blank",
   "level": 8,
@@ -6801,6 +8542,40 @@
   "page": 259,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "mind-spike",
+  "name": "Mind Spike",
+  "level": 2,
+  "school": "Divination",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 162,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "3d8",
+    "type": "Psychic"
+   },
+   "upcast": "+1d6 per slot level above 2"
   }
  },
  {
@@ -6967,6 +8742,34 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
+  }
+ },
+ {
+  "id": "mold-earth",
+  "name": "Mold Earth",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous or 1 hour (see below)",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 162,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
   }
  },
  {
@@ -7155,6 +8958,41 @@
   "page": 263,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "negative-energy-flood",
+  "name": "Negative Energy Flood",
+  "level": 5,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 163,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "5d12",
+    "type": "Necrotic"
+   }
   }
  },
  {
@@ -7692,6 +9530,35 @@
   }
  },
  {
+  "id": "power-word-pain",
+  "name": "Power Word Pain",
+  "level": 7,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 163,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con"
+  }
+ },
+ {
   "id": "power-word-stun",
   "name": "Power Word Stun",
   "level": 8,
@@ -7776,6 +9643,63 @@
    "wizard"
   ],
   "page": 267,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "primal-savagery",
+  "name": "Primal Savagery",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 163,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d10",
+    "type": "Acid"
+   },
+   "upcast": "2d10 at level 5, 3d10 at level 11, 4d10 at level 17"
+  }
+ },
+ {
+  "id": "primordial-ward",
+  "name": "Primordial Ward",
+  "level": 6,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid"
+  ],
+  "page": 163,
+  "book": "xge",
   "summary": {
    "resolution": "none"
   }
@@ -8017,6 +9941,40 @@
   }
  },
  {
+  "id": "psychic-scream",
+  "name": "Psychic Scream",
+  "level": 9,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 163,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "14d6",
+    "type": "Psychic"
+   }
+  }
+ },
+ {
   "id": "purify-food-and-drink",
   "name": "Purify Food and Drink",
   "level": 1,
@@ -8041,6 +9999,35 @@
   "page": 270,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "pyrotechnics",
+  "name": "Pyrotechnics",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 163,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con"
   }
  },
  {
@@ -8493,6 +10480,35 @@
   }
  },
  {
+  "id": "scatter",
+  "name": "Scatter",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 164,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis"
+  }
+ },
+ {
   "id": "scorching-ray",
   "name": "Scorching Ray",
   "level": 2,
@@ -8708,6 +10724,101 @@
   }
  },
  {
+  "id": "shadow-blade",
+  "name": "Shadow Blade",
+  "level": 2,
+  "school": "Illusion",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 164,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "2d8",
+    "type": "Psychic"
+   },
+   "upcast": "slots 3-4: 3d8; slots 5-6: 4d8; slots 7+: 5d8"
+  }
+ },
+ {
+  "id": "shadow-of-moil",
+  "name": "Shadow of Moil",
+  "level": 4,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false,
+    "costGp": 150
+   }
+  },
+  "classes": [
+   "warlock"
+  ],
+  "page": 164,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d8",
+    "type": "Necrotic"
+   }
+  }
+ },
+ {
+  "id": "shape-water",
+  "name": "Shape Water",
+  "level": 0,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous or 1 hour (see below)",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 164,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "shapechange",
   "name": "Shapechange",
   "level": 9,
@@ -8892,6 +11003,39 @@
   }
  },
  {
+  "id": "sickening-radiance",
+  "name": "Sickening Radiance",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 164,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "4d10",
+    "type": "Radiant"
+   }
+  }
+ },
+ {
   "id": "silence",
   "name": "Silence",
   "level": 2,
@@ -8973,6 +11117,62 @@
    "wizard"
   ],
   "page": 276,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "skill-empowerment",
+  "name": "Skill Empowerment",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Touch",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 165,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "skywrite",
+  "name": "Skywrite",
+  "level": 2,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Sight",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": true,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "wizard"
+  ],
+  "page": 165,
+  "book": "xge",
   "summary": {
    "resolution": "none"
   }
@@ -9066,6 +11266,111 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
+  }
+ },
+ {
+  "id": "snare",
+  "name": "Snare",
+  "level": 1,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": true
+   }
+  },
+  "classes": [
+   "druid",
+   "ranger",
+   "wizard"
+  ],
+  "page": 165,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
+  }
+ },
+ {
+  "id": "snillocs-snowball-swarm",
+  "name": "Snilloc's Snowball Swarm",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 165,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "3d6",
+    "type": "Cold"
+   },
+   "upcast": "+1d6 per slot level above 2"
+  }
+ },
+ {
+  "id": "soul-cage",
+  "name": "Soul Cage",
+  "level": 6,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "reaction",
+   "text": "1 reaction",
+   "trigger": "on seeing a humanoid die within 60 ft of you"
+  },
+  "range": "60 feet",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false,
+    "costGp": 100
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 165,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d8",
+    "type": "Healing (Steal Life)",
+    "healing": true
+   }
   }
  },
  {
@@ -9334,6 +11639,40 @@
   }
  },
  {
+  "id": "steel-wind-strike",
+  "name": "Steel Wind Strike",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "ranger",
+   "wizard"
+  ],
+  "page": 166,
+  "book": "xge",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "6d10",
+    "type": "Force"
+   }
+  }
+ },
+ {
   "id": "stinking-cloud",
   "name": "Stinking Cloud",
   "level": 3,
@@ -9453,6 +11792,35 @@
   }
  },
  {
+  "id": "storm-sphere",
+  "name": "Storm Sphere",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 166,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "upcast": "+1d6 to each damage per slot level above 4"
+  }
+ },
+ {
   "id": "suggestion",
   "name": "Suggestion",
   "level": 2,
@@ -9482,6 +11850,68 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
+  }
+ },
+ {
+  "id": "summon-greater-demon",
+  "name": "Summon Greater Demon",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 166,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "upcast": "+1 challenge rating per slot level above 4"
+  }
+ },
+ {
+  "id": "summon-lesser-demons",
+  "name": "Summon Lesser Demons",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "warlock",
+   "wizard"
+  ],
+  "page": 167,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "upcast": "slots 6-7: twice as many demons; slots 8-9: three times as many"
   }
  },
  {
@@ -9611,6 +12041,40 @@
   "page": 280,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "synaptic-static",
+  "name": "Synaptic Static",
+  "level": 5,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 167,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "8d6",
+    "type": "Psychic"
+   }
   }
  },
  {
@@ -9756,6 +12220,37 @@
   }
  },
  {
+  "id": "temple-of-the-gods",
+  "name": "Temple of the Gods",
+  "level": 7,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "1 hour"
+  },
+  "range": "120 feet",
+  "duration": "24 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false,
+    "costGp": 5
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 167,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "cha"
+  }
+ },
+ {
   "id": "tensers-floating-disk",
   "name": "Tenser's Floating Disk",
   "level": 1,
@@ -9781,6 +12276,39 @@
   "page": 282,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "tensers-transformation",
+  "name": "Tenser's Transformation",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 168,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "2d12",
+    "type": "Force"
+   }
   }
  },
  {
@@ -9837,6 +12365,76 @@
    "damage": {
     "dice": "1d6",
     "type": "Piercing"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "thunder-step",
+  "name": "Thunder Step",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 168,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "3d10",
+    "type": "Thunder"
+   },
+   "upcast": "+1d10 per slot level above 3"
+  }
+ },
+ {
+  "id": "thunderclap",
+  "name": "Thunderclap",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "5 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 168,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d6",
+    "type": "Thunder"
    },
    "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
   }
@@ -9907,6 +12505,42 @@
   "icon": "https://bg3.wiki/w/images/0/04/Thunderwave_Icon.webp"
  },
  {
+  "id": "tidal-wave",
+  "name": "Tidal Wave",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 168,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "4d8",
+    "type": "Bludgeoning"
+   }
+  }
+ },
+ {
   "id": "time-stop",
   "name": "Time Stop",
   "level": 9,
@@ -9930,6 +12564,67 @@
   "page": 283,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "tiny-servant",
+  "name": "Tiny Servant",
+  "level": 3,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "other",
+   "text": "1 minute"
+  },
+  "range": "Touch",
+  "duration": "8 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 168,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "upcast": "+2 objects per slot level above 3"
+  }
+ },
+ {
+  "id": "toll-the-dead",
+  "name": "Toll the Dead",
+  "level": 0,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "cleric",
+   "warlock",
+   "wizard"
+  ],
+  "page": 169,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "wis",
+   "damage": {
+    "dice": "1d8",
+    "type": "Necrotic (1d12 if hurt)"
+   },
+   "upcast": "2d8 or 2d12 at level 5, 3d8 or 3d12 at level 11, 4d8 or 4d12 at level 17"
   }
  },
  {
@@ -9962,6 +12657,37 @@
   "page": 283,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "transmute-rock",
+  "name": "Transmute Rock",
+  "level": 5,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Until dispelled",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "wizard"
+  ],
+  "page": 169,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str"
   }
  },
  {
@@ -10260,6 +12986,42 @@
   }
  },
  {
+  "id": "vitriolic-sphere",
+  "name": "Vitriolic Sphere",
+  "level": 4,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "150 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 170,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d4",
+    "type": "Acid (+5d4 at the end of its next turn on a fail)"
+   },
+   "upcast": "+2d4 to the first burst per slot level above 4"
+  }
+ },
+ {
   "id": "wall-of-fire",
   "name": "Wall of Fire",
   "level": 4,
@@ -10358,6 +13120,72 @@
   }
  },
  {
+  "id": "wall-of-light",
+  "name": "Wall of Light",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "sorcerer",
+   "warlock",
+   "wizard"
+  ],
+  "page": 170,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "4d8",
+    "type": "Radiant"
+   },
+   "upcast": "+1d8 per slot level above 5"
+  }
+ },
+ {
+  "id": "wall-of-sand",
+  "name": "Wall of Sand",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "wizard"
+  ],
+  "page": 170,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "wall-of-stone",
   "name": "Wall of Stone",
   "level": 5,
@@ -10423,6 +13251,37 @@
   }
  },
  {
+  "id": "wall-of-water",
+  "name": "Wall of Water",
+  "level": 3,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 170,
+  "book": "xge",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
   "id": "warding-bond",
   "name": "Warding Bond",
   "level": 2,
@@ -10447,6 +13306,35 @@
    "cleric"
   ],
   "page": 287,
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "warding-wind",
+  "name": "Warding Wind",
+  "level": 2,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 10 minutes",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "bard",
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 170,
+  "book": "xge",
   "summary": {
    "resolution": "none"
   }
@@ -10514,6 +13402,38 @@
   }
  },
  {
+  "id": "watery-sphere",
+  "name": "Watery Sphere",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 170,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "str"
+  }
+ },
+ {
   "id": "web",
   "name": "Web",
   "level": 2,
@@ -10570,6 +13490,42 @@
    "damage": {
     "dice": "4d10",
     "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "whirlwind",
+  "name": "Whirlwind",
+  "level": 7,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "300 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "druid",
+   "sorcerer",
+   "wizard"
+  ],
+  "page": 171,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "10d6",
+    "type": "Bludgeoning"
    }
   }
  },
@@ -10697,6 +13653,41 @@
   }
  },
  {
+  "id": "word-of-radiance",
+  "name": "Word of Radiance",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "5 feet",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [
+   "cleric"
+  ],
+  "page": 171,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "con",
+   "damage": {
+    "dice": "1d6",
+    "type": "Radiant"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
   "id": "word-of-recall",
   "name": "Word of Recall",
   "level": 6,
@@ -10719,6 +13710,34 @@
   "page": 289,
   "summary": {
    "resolution": "none"
+  }
+ },
+ {
+  "id": "wrath-of-nature",
+  "name": "Wrath of Nature",
+  "level": 5,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "120 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [
+   "druid",
+   "ranger"
+  ],
+  "page": 171,
+  "book": "xge",
+  "summary": {
+   "resolution": "save",
+   "save": "dex"
   }
  },
  {
@@ -10748,6 +13767,36 @@
    "damage": {
     "dice": "1d6",
     "type": "Psychic"
+   }
+  }
+ },
+ {
+  "id": "zephyr-strike",
+  "name": "Zephyr Strike",
+  "level": 1,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [
+   "ranger"
+  ],
+  "page": 171,
+  "book": "xge",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d8",
+    "type": "Force"
    }
   }
  },

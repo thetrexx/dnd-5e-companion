@@ -11,7 +11,7 @@
     "trigger": "You took the Dash action",
     "description": [
       "Once you have used your action to Dash, spend your bonus action on one melee weapon attack or one shove.",
-      "If you moved at least 10 ft in a straight line right before, a hit adds +5 damage, and a successful shove pushes the target up to 10 ft away."
+      "If you covered 10 ft or more in a straight line just before, a hit deals +5 damage, and a successful shove sends the target as far as 10 ft away."
     ],
     "page": 165,
     "textSource": "summary",
@@ -161,7 +161,7 @@
     },
     "level": 1,
     "cost": "reaction",
-    "trigger": "A creature within 5 ft of you casts a spell",
+    "trigger": "A creature no more than 5 ft away casts a spell",
     "description": [
       "Make one melee weapon attack against that spellcaster. It uses your reaction, so you get it once per round."
     ],
@@ -283,7 +283,7 @@
     "cost": "bonus",
     "trigger": "You took the Attack action on your turn",
     "description": [
-      "While wielding a shield, shove a creature within 5 ft of you using the shield."
+      "With a shield in hand, use it to shove a creature no more than 5 ft away."
     ],
     "page": 170,
     "textSource": "summary",
@@ -338,5 +338,146 @@
     "page": 170,
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/7/75/War_Caster_Icon.png"
+  },
+  {
+    "id": "bountiful-luck",
+    "name": "Bountiful Luck",
+    "source": {
+      "kind": "feat",
+      "id": "bountiful-luck"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A visible ally no more than 30 ft away rolls a 1 on the d20 of an attack roll, ability check or saving throw",
+    "description": [
+      "The ally rolls that d20 again and has to use the new result. Your own Lucky trait is unusable until your next turn ends."
+    ],
+    "page": 73,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "dragon-fear",
+    "name": "Dragon Fear",
+    "source": {
+      "kind": "feat",
+      "id": "dragon-fear"
+    },
+    "level": 1,
+    "cost": "action",
+    "resource": "One Breath Weapon use",
+    "description": [
+      "Roar instead of breathing. Every creature you pick within 30 ft makes a Wisdom save (DC 8 + proficiency bonus + Charisma modifier) or is frightened of you for 1 minute. Anyone unable to see or hear you passes automatically. A frightened creature repeats the save whenever it takes damage, ending the fear on a success."
+    ],
+    "page": 74,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "dwarven-fortitude",
+    "name": "Dwarven Fortitude",
+    "source": {
+      "kind": "feat",
+      "id": "dwarven-fortitude"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You take the Dodge action in combat",
+    "resource": "One Hit Die",
+    "description": [
+      "Roll the Hit Die you spend and add your Constitution modifier. You heal that many hit points, never less than 1."
+    ],
+    "page": 74,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "fade-away",
+    "name": "Fade Away",
+    "source": {
+      "kind": "feat",
+      "id": "fade-away"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "You take damage",
+    "uses": "Once per short or long rest",
+    "description": [
+      "You turn invisible by magic until your next turn ends. Attacking, dealing damage or making anyone roll a saving throw ends it early."
+    ],
+    "page": 74,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "flames-of-phlegethos",
+    "name": "Flames of Phlegethos",
+    "source": {
+      "kind": "feat",
+      "id": "flames-of-phlegethos"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "A spell you cast deals fire damage",
+    "description": [
+      "Flames cloak you until your next turn ends, harming neither you nor your gear. They light the area: bright for 30 ft, then dim for another 30 ft. Any creature within 5 ft whose melee attack hits you takes 1d4 fire damage.",
+      "Any 1s on the spell's fire damage dice can be rerolled; you keep the rerolled result, even if it is 1 again."
+    ],
+    "page": 74,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "orcish-fury",
+    "name": "Orcish Fury",
+    "source": {
+      "kind": "feat",
+      "id": "orcish-fury"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You hit with a simple or martial weapon attack",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Pick one of the weapon's damage dice, roll it again and add it to the damage, as the weapon's damage type."
+    ],
+    "page": 75,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "orcish-fury-reprisal",
+    "name": "Orcish Fury: Reprisal",
+    "source": {
+      "kind": "feat",
+      "id": "orcish-fury"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "You have just used Relentless Endurance",
+    "description": [
+      "Make one weapon attack."
+    ],
+    "page": 75,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "second-chance",
+    "name": "Second Chance",
+    "source": {
+      "kind": "feat",
+      "id": "second-chance"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "An attack roll from a creature you can see hits you",
+    "uses": "Once, then again after you roll initiative or finish a short or long rest",
+    "description": [
+      "The attacker has to reroll the attack."
+    ],
+    "page": 75,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

@@ -1,5 +1,18 @@
 [
   {
+    "id": "bountiful-luck",
+    "name": "Bountiful Luck",
+    "prereq": "Halfling",
+    "page": 73,
+    "book": "xge",
+    "description": [
+      "If an ally no more than 30 ft away whom you can see rolls a natural 1 on an attack roll, ability check or saving throw, spend your reaction to let them roll that d20 again. They keep the new result.",
+      "After you do, your Lucky racial trait is off limits until your next turn ends."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
     "id": "charger",
     "name": "Charger",
     "page": 165,
@@ -30,6 +43,112 @@
     "page": 165,
     "description": [
       "While you wield a finesse weapon you are proficient with, you can use your reaction when a melee attack hits you to add your proficiency bonus to AC against it, which may make it miss."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "dragon-fear",
+    "name": "Dragon Fear",
+    "prereq": "Dragonborn",
+    "page": 74,
+    "book": "xge",
+    "description": [
+      "+1 to Strength, Constitution or Charisma (max 20).",
+      "You can spend a use of Breath Weapon on a roar in place of the breath. Each creature you pick within 30 ft makes a Wisdom save (DC 8 + proficiency bonus + Charisma modifier) or is frightened of you for 1 minute. A creature unable to hear or see you succeeds automatically, and a frightened one that takes damage may repeat the save, shaking off the fear on a success."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "drow-high-magic",
+    "name": "Drow High Magic",
+    "prereq": "Elf (drow)",
+    "page": 74,
+    "book": "xge",
+    "description": [
+      "You learn detect magic and may cast it at will, never spending a spell slot on it.",
+      "Levitate and dispel magic join your spells too, and each can be cast once per long rest with no spell slot. All three use Charisma as your spellcasting ability."
+    ],
+    "spells": [
+      {
+        "spell": "detect-magic",
+        "atLevel": 1,
+        "ability": "cha",
+        "uses": "At will, no slot"
+      },
+      {
+        "spell": "levitate",
+        "atLevel": 1,
+        "ability": "cha",
+        "uses": "Once per long rest, no slot"
+      },
+      {
+        "spell": "dispel-magic",
+        "atLevel": 1,
+        "ability": "cha",
+        "uses": "Once per long rest, no slot"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "dwarven-fortitude",
+    "name": "Dwarven Fortitude",
+    "prereq": "Dwarf",
+    "page": 74,
+    "book": "xge",
+    "description": [
+      "+1 to Constitution (max 20).",
+      "Whenever you Dodge in combat, you may also spend one Hit Die on healing: roll it, add your Constitution modifier, and recover that many hit points (at least 1)."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "fade-away",
+    "name": "Fade Away",
+    "prereq": "Gnome",
+    "page": 74,
+    "book": "xge",
+    "description": [
+      "+1 to Dexterity or Intelligence (max 20).",
+      "Right after you take damage, your reaction can turn you invisible by magic. The invisibility ends when your next turn ends, or sooner if you attack, deal damage or force a saving throw on anyone. Once per short or long rest."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "fey-teleportation",
+    "name": "Fey Teleportation",
+    "prereq": "Elf (high)",
+    "page": 74,
+    "book": "xge",
+    "description": [
+      "+1 to Intelligence or Charisma (max 20).",
+      "You can speak, read and write Sylvan.",
+      "You learn misty step. You may cast it once with no spell slot, and that free casting returns after a short or long rest. It uses Intelligence as your spellcasting ability."
+    ],
+    "spells": [
+      {
+        "spell": "misty-step",
+        "atLevel": 1,
+        "ability": "int",
+        "uses": "Once per short or long rest, no slot"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "flames-of-phlegethos",
+    "name": "Flames of Phlegethos",
+    "prereq": "Tiefling",
+    "page": 74,
+    "book": "xge",
+    "description": [
+      "+1 to Intelligence or Charisma (max 20).",
+      "When a spell you cast deals fire damage, you can reroll any 1s on its fire damage dice, and must keep the result, even a second 1.",
+      "Casting a spell that deals fire damage also lets you wrap yourself in flames until your next turn ends. They never hurt you or your belongings, shed bright light 30 ft out and dim light 30 ft past that, and burn any creature within 5 ft whose melee attack hits you for 1d4 fire damage."
     ],
     "spells": [],
     "textSource": "summary"
@@ -99,7 +218,7 @@
     "page": 168,
     "description": [
       "When a creature within 5 ft casts a spell, your reaction lets you make a melee weapon attack against it.",
-      "Creatures you damage while they concentrate have disadvantage on the save to keep their spell, and you save with advantage against spells cast by creatures within 5 ft."
+      "Creatures you damage while they concentrate have disadvantage on the save to keep their spell, and you have advantage on saves against spells whose caster is no more than 5 ft away."
     ],
     "spells": [],
     "textSource": "summary",
@@ -161,6 +280,20 @@
     "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp"
   },
   {
+    "id": "orcish-fury",
+    "name": "Orcish Fury",
+    "prereq": "Half-orc",
+    "page": 75,
+    "book": "xge",
+    "description": [
+      "+1 to Strength or Constitution (max 20).",
+      "Once per short or long rest, when a simple or martial weapon attack hits, pick one of the weapon's damage dice, roll it again and add it to the damage (same damage type).",
+      "Right after you use Relentless Endurance, your reaction can make one weapon attack."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
     "id": "polearm-master",
     "name": "Polearm Master",
     "page": 168,
@@ -177,7 +310,7 @@
     "prereq": "Intelligence or Wisdom 13 or higher",
     "page": 169,
     "description": [
-      "You start with a ritual book holding 2 first-level spells. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability. You can cast them only as rituals, with the book in your hand.",
+      "You gain a ritual book; it starts with 2 spells, both 1st level. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability. You can cast them only as rituals, with the book in your hand.",
       "Found ritual spells can be copied in when they are on that class list and their level is at most half yours (round up). Each costs 2 hours and 50 gp per spell level."
     ],
     "spells": [
@@ -210,6 +343,19 @@
     "spells": [],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/2/24/Savage_Attacker_Icon.webp"
+  },
+  {
+    "id": "second-chance",
+    "name": "Second Chance",
+    "prereq": "Halfling",
+    "page": 75,
+    "book": "xge",
+    "description": [
+      "+1 to Dexterity, Constitution or Charisma (max 20).",
+      "If an attack roll from a creature you can see hits you, spend your reaction to make the attacker roll again. It recharges when combat begins and you roll initiative, or when you finish a short or long rest."
+    ],
+    "spells": [],
+    "textSource": "summary"
   },
   {
     "id": "sentinel",
@@ -301,5 +447,42 @@
     "spells": [],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/7/75/War_Caster_Icon.png"
+  },
+  {
+    "id": "wood-elf-magic",
+    "name": "Wood Elf Magic",
+    "prereq": "Elf (wood)",
+    "page": 75,
+    "book": "xge",
+    "description": [
+      "Pick one druid cantrip to learn.",
+      "You also learn longstrider and pass without trace, and can cast each once per long rest with no spell slot. All three use Wisdom as your spellcasting ability."
+    ],
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "druid"
+          ],
+          "level": 0,
+          "count": 1
+        },
+        "atLevel": 1,
+        "ability": "wis"
+      },
+      {
+        "spell": "longstrider",
+        "atLevel": 1,
+        "ability": "wis",
+        "uses": "Once per long rest, no slot"
+      },
+      {
+        "spell": "pass-without-trace",
+        "atLevel": 1,
+        "ability": "wis",
+        "uses": "Once per long rest, no slot"
+      }
+    ],
+    "textSource": "summary"
   }
 ]

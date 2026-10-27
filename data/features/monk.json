@@ -445,7 +445,7 @@
     "cost": "reaction",
     "trigger": "A creature within 5 ft is hit by another creature's attack",
     "description": [
-      "When a creature within 5 ft of you is hit by an attack from someone other than you, make 1 melee attack against that creature."
+      "When another attacker hits a creature no more than 5 ft from you, you can make 1 melee attack against it."
     ],
     "page": 80,
     "textSource": "summary"
@@ -931,7 +931,7 @@
     "trigger": "A melee attack roll against you misses",
     "resource": "1 ki point",
     "description": [
-      "Redirect Attack: spend 1 ki point and your reaction to make the missed attack hit another creature of your choice that you can see within 5 ft of you (not the attacker).",
+      "Redirect Attack: spend 1 ki point and your reaction to redirect the missed attack onto a different creature you pick, in your sight and no more than 5 ft away (not the attacker).",
       "Leap to Your Feet: standing up from prone costs you only 5 ft of movement, not half your speed."
     ],
     "page": 34,
@@ -972,6 +972,286 @@
       "Your Flurry of Blows can include up to 3 extra attacks (5 Flurry attacks in total), as long as each Flurry attack this turn targets a different creature."
     ],
     "page": 34,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "kenseis-shot",
+    "name": "Kensei's Shot",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-kensei"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "scaling": [
+      {
+        "label": "Kensei weapons",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action on your turn: until the turn ends, every ranged hit you land with a kensei weapon adds 1d4 damage of that weapon's type.",
+      "Kensei weapons (Path of the Kensei): at level 3 you choose 2 weapon types, one melee and one ranged. Each is a simple or martial weapon without the heavy or special property, or a longbow. You gain proficiency with them and they count as monk weapons for you. You add one more type, melee or ranged, at monk levels 6, 11 and 17."
+    ],
+    "page": 34,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "agile-parry",
+    "name": "Agile Parry",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-kensei"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make an unarmed strike in your Attack action while holding a melee kensei weapon",
+    "description": [
+      "Parry with the weapon: +2 AC until your next turn starts, provided you keep holding the weapon and are not incapacitated."
+    ],
+    "page": 34,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "deft-strike",
+    "name": "Deft Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-kensei"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "Your kensei weapon hits a target",
+    "resource": "1 ki point",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10"
+        ]
+      }
+    ],
+    "description": [
+      "Spend 1 ki point to add extra damage equal to one roll of your Martial Arts die.",
+      "One with the Blade also makes your kensei weapon attacks magical when it comes to resistance or immunity against nonmagical damage."
+    ],
+    "page": 35,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "sharpen-the-blade",
+    "name": "Sharpen the Blade",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-kensei"
+    },
+    "level": 11,
+    "cost": "bonus",
+    "resource": "1 to 3 ki points",
+    "description": [
+      "Spend up to 3 ki points and touch one of your kensei weapons. For 1 minute its attack and damage rolls get a bonus equal to the ki you spent. Using this feature again ends the earlier bonus.",
+      "A magic weapon that already has an attack and damage bonus gains nothing."
+    ],
+    "page": 35,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "unerring-accuracy",
+    "name": "Unerring Accuracy",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-kensei"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "Your monk weapon attack roll misses on your turn",
+    "uses": "Once per turn",
+    "description": [
+      "Reroll the missed attack roll."
+    ],
+    "page": 35,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "radiant-sun-bolt",
+    "name": "Radiant Sun Bolt",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-sun-soul"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 ki point (optional, for 2 bolts as a bonus action)",
+    "scaling": [
+      {
+        "label": "Bolt die",
+        "values": [
+          "",
+          "",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10"
+        ]
+      }
+    ],
+    "description": [
+      "A new attack you can make as part of the Attack action: a ranged spell attack with a 30 ft range. You are proficient with it, you use Dexterity for its attack and damage rolls, and it deals radiant damage. Its damage die starts as a d4 and rises as your Martial Arts die does (monk table).",
+      "Once you have Extra Attack, every attack in your Attack action can be a bolt.",
+      "When a bolt is part of your Attack action on your turn, you can pay 1 ki point for two more bolts as a bonus action."
+    ],
+    "page": 35,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "searing-arc-strike",
+    "name": "Searing Arc Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-sun-soul"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "trigger": "Immediately after your Attack action on your turn",
+    "resource": "2 ki points, +1 per spell level above 1st",
+    "scaling": [
+      {
+        "label": "Most ki per cast",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "3",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "spells": [
+      {
+        "spell": "burning-hands",
+        "atLevel": 6,
+        "uses": "2 ki points; +1 ki per spell level above 1st, up to half your monk level in ki"
+      }
+    ],
+    "description": [
+      "Pay 2 ki points and you cast burning hands, using your bonus action.",
+      "Each extra ki point you add raises the spell's level by 1. The ki spent on one casting, base 2 included, can't be more than half your monk level."
+    ],
+    "page": 35,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cf/Burning_Hands_Icon.webp"
+  },
+  {
+    "id": "searing-sunburst",
+    "name": "Searing Sunburst",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-sun-soul"
+    },
+    "level": 11,
+    "cost": "action",
+    "resource": "0 to 3 ki points (optional)",
+    "description": [
+      "Hurl a magical orb of light at a point you choose up to 150 ft away. It bursts in a 20 ft radius sphere: each creature inside makes a Constitution save or takes 2d6 radiant damage. A creature behind opaque total cover doesn't have to save.",
+      "Spend up to 3 ki points to add 2d6 radiant damage per point."
+    ],
+    "page": 35,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "sun-shield",
+    "name": "Sun Shield",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-sun-soul"
+    },
+    "level": 17,
+    "cost": "reaction",
+    "trigger": "A melee attack hits you while you glow",
+    "description": [
+      "Light radiates from you: bright out to 30 ft, then dim for another 30 ft. A bonus action puts the light out or brings it back.",
+      "Your reaction scorches the attacker for 5 + your Wisdom modifier radiant damage."
+    ],
+    "page": 35,
     "book": "xge",
     "textSource": "summary"
   }
