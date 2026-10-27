@@ -47,3 +47,22 @@ test('totemic attunement summary is not a bonus action', () => {
 test('opportunity attack has a trigger', () => {
   expect(DATA.features.find(x => x.id === 'opportunity-attack')!.trigger).toMatch(/hostile creature .*sight.* reach/);
 });
+
+test('xanathar racial feats', () => {
+  for (const id of ['bountiful-luck', 'dragon-fear', 'drow-high-magic', 'dwarven-fortitude', 'fade-away', 'fey-teleportation', 'flames-of-phlegethos', 'orcish-fury', 'second-chance', 'wood-elf-magic'])
+    expect(DATA.feats.find(f => f.id === id), id).toMatchObject({ book: 'xge' });
+  for (const id of ['elven-accuracy', 'prodigy', 'squat-nimbleness', 'infernal-constitution', 'dragon-hide'])
+    expect(DATA.feats.find(f => f.id === id), id).toBeUndefined();
+  expect(DATA.feats).toHaveLength(30);
+});
+test('fey teleportation grants misty step', () =>
+  expect(DATA.feats.find(f => f.id === 'fey-teleportation')!.spells.map(g => g.spell)).toContain('misty-step'));
+test('xanathar feat spells and cards', () => {
+  const spells = (id: string) => DATA.feats.find(f => f.id === id)!.spells.map(g => [g.spell ?? g.choose?.lists.join(), g.ability, g.uses !== undefined]);
+  expect(spells('drow-high-magic')).toEqual([['detect-magic', 'cha', true], ['levitate', 'cha', true], ['dispel-magic', 'cha', true]]);
+  expect(spells('wood-elf-magic')).toEqual([['druid', 'wis', false], ['longstrider', 'wis', true], ['pass-without-trace', 'wis', true]]);
+  const f = (id: string) => DATA.features.find(x => x.id === id)!;
+  expect([f('bountiful-luck'), f('fade-away'), f('second-chance'), f('orcish-fury-reprisal')].map(x => [x.source.kind, x.cost, x.book]))
+    .toEqual(Array(4).fill(['feat', 'reaction', 'xge']));
+  expect(f('dragon-fear').source.id).toBe('dragon-fear');
+});
