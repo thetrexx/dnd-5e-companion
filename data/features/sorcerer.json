@@ -531,5 +531,161 @@
     "page": 52,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-good",
+    "name": "Good",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick good as your Divine Magic affinity and you learn cure wounds. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be eagle wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-evil",
+    "name": "Evil",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick evil as your Divine Magic affinity and you learn inflict wounds. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be bat wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-law",
+    "name": "Law",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick law as your Divine Magic affinity and you learn bless. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be eagle wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-chaos",
+    "name": "Chaos",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick chaos as your Divine Magic affinity and you learn bane. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be bat wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-magic-affinity-neutrality",
+    "name": "Neutrality",
+    "source": {
+      "kind": "option",
+      "id": "divine-magic-affinity"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Pick neutrality as your Divine Magic affinity and you learn protection from evil and good. It is a sorcerer spell for you and sits outside your number of sorcerer spells known. Should you swap it out later, its replacement must come from the cleric list.",
+      "Your Otherworldly Wings (sorcerer 14) will be dragonfly wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "favored-by-the-gods",
+    "name": "Favored by the Gods",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "Your saving throw fails, or your attack roll misses",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Roll 2d4 and add the result to the total, which may turn the failure or miss into a success."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "empowered-healing",
+    "name": "Empowered Healing",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You or an ally within 5 ft roll dice for the hit points a spell restores",
+    "resource": "1 sorcery point",
+    "uses": "Once per turn",
+    "description": [
+      "Spend 1 sorcery point to reroll as many of those healing dice as you like, once. You can't do this while incapacitated."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "otherworldly-wings",
+    "name": "Otherworldly Wings",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "description": [
+      "Bonus action: spectral wings spread from your back, giving you a flying speed of 30 ft. They stay until you die or are incapacitated, or until you use another bonus action to dismiss them.",
+      "Your Divine Magic affinity sets their look: good or law gives eagle wings, evil or chaos gives bat wings, and neutrality gives dragonfly wings."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "unearthly-recovery",
+    "name": "Unearthly Recovery",
+    "source": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "level": 18,
+    "cost": "bonus",
+    "uses": "Once per long rest",
+    "description": [
+      "Bonus action, while you are below half your hit points: heal by half your hit point maximum."
+    ],
+    "page": 50,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

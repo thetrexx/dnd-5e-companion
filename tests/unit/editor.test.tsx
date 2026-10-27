@@ -170,6 +170,16 @@ test('spells step: always prepared spells are not offered again', () => {
   expect(loadCharacter()!.spells).toEqual([]);
 });
 
+test('spells step: a divine soul sorcerer is offered cleric spells', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'sorcerer', level: 1, sub: 'divine-soul' }] });
+  const r = render(<Editor step="spells" />);
+  fireEvent.click(r.getAllByText('Cure Wounds')[0]);
+  expect(loadCharacter()!.spells).toEqual([{ id: 'cure-wounds', cls: 'sorcerer' }]);
+  cleanup();
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'sorcerer', level: 1 }] });
+  expect(render(<Editor step="spells" />).queryByText('Cure Wounds')).toBeNull();
+});
+
 test('a shared fighting style is chosen once and disabled in the other slot', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense'] });
   const r = render(<Editor step="options" />);

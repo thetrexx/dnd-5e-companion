@@ -776,5 +776,35 @@
       1,
       1
     ]
+  },
+  {
+    "id": "divine-magic-affinity",
+    "name": "Divine Magic Affinity",
+    "owner": {
+      "kind": "subclass",
+      "id": "divine-soul"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   }
 ]

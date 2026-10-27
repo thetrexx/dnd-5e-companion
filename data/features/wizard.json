@@ -516,5 +516,114 @@
     "book": "tce",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/f/f9/Song_of_Defence_Icon.webp"
+  },
+  {
+    "id": "arcane-deflection",
+    "name": "Arcane Deflection",
+    "source": {
+      "kind": "subclass",
+      "id": "war-magic"
+    },
+    "level": 2,
+    "cost": "reaction",
+    "trigger": "An attack hits you, or you fail a saving throw",
+    "description": [
+      "Add +2 to your AC against the triggering attack, or +4 to the failed save.",
+      "Afterwards you can't cast any spell except a cantrip until your next turn ends."
+    ],
+    "page": 59,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "power-surge",
+    "name": "Power Surge",
+    "source": {
+      "kind": "subclass",
+      "id": "war-magic"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "A wizard spell of yours damages a creature or object",
+    "resource": "1 power surge",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra force damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "3",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "You can hold power surges, up to your Intelligence modifier (at least 1). A long rest resets you to exactly one. You gain one each time your dispel magic or counterspell succeeds in ending a spell, and one if a short rest ends while you have none.",
+      "Spend a surge: that target takes extra force damage, half your wizard level."
+    ],
+    "page": 60,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "deflecting-shroud",
+    "name": "Deflecting Shroud",
+    "source": {
+      "kind": "subclass",
+      "id": "war-magic"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You use Arcane Deflection",
+    "scaling": [
+      {
+        "label": "Force damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "Magic arcs out from you to up to three creatures you choose and can see within 60 ft: each takes half your wizard level in force damage."
+    ],
+    "page": 60,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

@@ -1040,5 +1040,113 @@
     "page": 56,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "bonus-cantrips",
+    "name": "Bonus Cantrips",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "light",
+        "atLevel": 1
+      },
+      {
+        "spell": "sacred-flame",
+        "atLevel": 1
+      }
+    ],
+    "description": [
+      "You learn light and sacred flame. Both are warlock cantrips for you, and neither takes up one of your cantrips known."
+    ],
+    "page": 54,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "healing-light",
+    "name": "Healing Light",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "d6s from your Healing Light pool",
+    "scaling": [
+      {
+        "label": "Pool (d6)",
+        "values": [
+          "2",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20",
+          "21"
+        ]
+      }
+    ],
+    "description": [
+      "You have a pool of d6s: 1 + your warlock level dice. All spent dice come back when you finish a long rest.",
+      "Bonus action: pick a creature in sight no more than 60 ft away to heal. Spend dice from the pool, no more than your Charisma modifier at a time (at least 1), roll them, and the creature regains hit points equal to the total."
+    ],
+    "page": 54,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "radiant-soul",
+    "name": "Radiant Soul",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "Your spell deals radiant or fire damage",
+    "description": [
+      "You resist radiant damage.",
+      "When a spell you cast deals radiant or fire damage, choose one of its targets: one radiant or fire damage roll against it gains a bonus equal to your Charisma modifier."
+    ],
+    "page": 55,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "searing-vengeance",
+    "name": "Searing Vengeance",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "Your turn starts and you need to roll a death saving throw",
+    "uses": "Once per long rest",
+    "description": [
+      "Skip the save: you heal by half your hit point maximum and may stand up.",
+      "Radiant energy bursts out: creatures you choose within 30 ft each take 2d8 + your Charisma modifier radiant damage and are blinded until this turn ends."
+    ],
+    "page": 55,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

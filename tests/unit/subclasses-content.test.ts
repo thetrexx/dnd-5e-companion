@@ -1,6 +1,7 @@
 import { DATA } from '../../src/data';
 import { autoSpells } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
+import { spellSections } from '../../src/logic/sections';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
 const A = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk'];
@@ -35,7 +36,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('74 subclasses', () => expect(DATA.subclasses).toHaveLength(74));
+test('80 subclasses', () => expect(DATA.subclasses).toHaveLength(80));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -195,4 +196,78 @@ test('sun soul: burning hands costs ki; sunburst is its own card', () => {
 test('kensei weapons are described, not an option group', () => {
   expect(sub('way-of-the-kensei').options).toEqual([]);
   expect(feature('kenseis-shot')).toMatchObject({ cost: 'bonus', level: 3, page: 34 });
+});
+
+const T7 = ['inquisitive', 'mastermind', 'scout', 'divine-soul', 'the-celestial', 'war-magic'];
+test('xanathar subclasses (task 7)', () => { for (const id of T7) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every task 7 feature and option names its book', () => {
+  const ids = new Set(T7);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.filter(f => f.source.kind === 'option').length).toBe(5); // the five Divine Magic affinities
+  for (const f of fs) expect(f.book, f.id).toBe('xge');
+});
+test('task 7 must-have features', () => {
+  for (const id of ['eye-for-detail', 'insightful-fighting', 'unerring-eye', 'eye-for-weakness',
+    'master-of-tactics', 'insightful-manipulator', 'misdirection',
+    'skirmisher', 'ambush-master', 'sudden-strike',
+    'favored-by-the-gods', 'empowered-healing', 'otherworldly-wings', 'unearthly-recovery',
+    'bonus-cantrips', 'healing-light', 'radiant-soul', 'searing-vengeance',
+    'arcane-deflection', 'power-surge', 'deflecting-shroud'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('task 7 usable reactions are reaction cards', () => {
+  for (const id of ['misdirection', 'skirmisher', 'arcane-deflection']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('task 7 riders are free cards with a trigger', () => {
+  for (const id of ['eye-for-weakness', 'ambush-master', 'favored-by-the-gods', 'empowered-healing', 'radiant-soul', 'searing-vengeance', 'power-surge', 'deflecting-shroud']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+  expect(feature('favored-by-the-gods')).toMatchObject({ source: { kind: 'subclass', id: 'divine-soul' }, level: 1, page: 50 });
+});
+test('divine soul affinity picks one bonus spell', () => {
+  expect(sub('divine-soul').options).toEqual(['divine-magic-affinity']);
+  const g = DATA.optionGroups.find(x => x.id === 'divine-magic-affinity')!;
+  expect(g.owner).toEqual({ kind: 'subclass', id: 'divine-soul' });
+  expect(g.picks).toEqual(Array(20).fill(1));
+  const b = sub('divine-soul').bonusSpells!;
+  expect(b.kind).toBe('subclass');
+  const pairs: [string, string][] = [['good', 'cure-wounds'], ['evil', 'inflict-wounds'], ['law', 'bless'], ['chaos', 'bane'], ['neutrality', 'protection-from-evil-and-good']];
+  expect(b.grants).toHaveLength(5);
+  for (const [a, spell] of pairs) {
+    expect(b.grants).toContainEqual({ spell, atLevel: 1, option: `divine-magic-affinity-${a}` });
+    expect(feature(`divine-magic-affinity-${a}`)).toMatchObject({ cost: 'passive', book: 'xge', page: 50, level: 1 });
+  }
+});
+test('divine soul widens to the cleric list', () => {
+  expect(sub('divine-soul').extraLists).toEqual(['cleric']);
+  const lvl1 = spellSections('sorcerer', 1, 'divine-soul').find(s => s.id === 'lvl-1')!;
+  expect(lvl1.items.map(s => s.id)).toContain('cure-wounds');
+  expect(lvl1.tags!['bless']).toBeDefined();               // 'Cleric list' or the affinity tag
+  expect(lvl1.items.map(s => s.id)).toContain('guiding-bolt');
+  expect(lvl1.tags!['guiding-bolt']).toBe('Cleric list');  // cleric only, not an affinity spell
+  expect(spellSections('sorcerer', 1).find(s => s.id === 'lvl-1')!.items.map(s => s.id)).not.toContain('cure-wounds');
+  expect(spellSections('sorcerer', 1).find(s => s.id === 'lvl-1')!.items.map(s => s.id)).not.toContain('guiding-bolt');
+});
+test('celestial patron spells and bonus cantrips', () => {
+  const b = sub('the-celestial').bonusSpells!;
+  expect(b.kind).toBe('patron');
+  expect(b.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['cure-wounds', 'guiding-bolt']);
+  expect(b.grants.filter(g => g.atLevel === 9).map(g => g.spell).sort()).toEqual(['flame-strike', 'greater-restoration']);
+  expect(b.grants.map(g => g.atLevel).sort((x, y) => x - y)).toEqual([1, 1, 3, 3, 5, 5, 7, 7, 9, 9]);
+  expect(feature('bonus-cantrips')).toMatchObject({ source: { kind: 'subclass', id: 'the-celestial' }, level: 1, page: 54 });
+  expect(feature('bonus-cantrips').spells).toEqual([{ spell: 'light', atLevel: 1 }, { spell: 'sacred-flame', atLevel: 1 }]);
+  const c = { ...emptyCharacter(), classes: [{ cls: 'warlock' as const, level: 1, sub: 'the-celestial' }] };
+  const ids = autoSpells(c).map(a => a.spell.id);
+  expect(ids).toEqual(expect.arrayContaining(['light', 'sacred-flame']));
+  expect(ids).not.toContain('cure-wounds');
+});
+test('healing light pool is 1 + warlock level', () => {
+  const pool = feature('healing-light').scaling!.find(s => /pool/i.test(s.label))!;
+  expect([pool.values[0], pool.values[19]]).toEqual(['2', '21']);
+  expect(feature('healing-light')).toMatchObject({ cost: 'bonus', level: 1, page: 54 });
 });

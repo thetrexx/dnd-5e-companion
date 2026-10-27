@@ -2268,5 +2268,133 @@
     "book": "tce",
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/9/91/Class_Wizard_Bladesinging_Hotbar_Icon.png"
+  },
+  {
+    "id": "inquisitive",
+    "cls": "rogue",
+    "name": "Inquisitive",
+    "page": 45,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "mastermind",
+    "cls": "rogue",
+    "name": "Mastermind",
+    "page": 46,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "scout",
+    "cls": "rogue",
+    "name": "Scout",
+    "page": 47,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "divine-soul",
+    "cls": "sorcerer",
+    "name": "Divine Soul",
+    "page": 50,
+    "book": "xge",
+    "extraLists": [
+      "cleric"
+    ],
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "cure-wounds",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-good"
+        },
+        {
+          "spell": "inflict-wounds",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-evil"
+        },
+        {
+          "spell": "bless",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-law"
+        },
+        {
+          "spell": "bane",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-chaos"
+        },
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 1,
+          "option": "divine-magic-affinity-neutrality"
+        }
+      ]
+    },
+    "options": [
+      "divine-magic-affinity"
+    ]
+  },
+  {
+    "id": "the-celestial",
+    "cls": "warlock",
+    "name": "The Celestial",
+    "page": 54,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "cure-wounds",
+          "atLevel": 1
+        },
+        {
+          "spell": "guiding-bolt",
+          "atLevel": 1
+        },
+        {
+          "spell": "flaming-sphere",
+          "atLevel": 3
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 3
+        },
+        {
+          "spell": "daylight",
+          "atLevel": 5
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "greater-restoration",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "war-magic",
+    "cls": "wizard",
+    "name": "War Magic",
+    "page": 59,
+    "book": "xge",
+    "options": []
   }
 ]
