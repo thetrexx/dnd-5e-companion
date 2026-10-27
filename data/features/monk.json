@@ -1422,7 +1422,7 @@
   },
   {
     "id": "body-of-the-astral-self",
-    "name": "Body of the Astral Self",
+    "name": "Body of the Astral Self (Empowered Arms)",
     "source": {
       "kind": "subclass",
       "id": "way-of-the-astral-self"
@@ -1430,7 +1430,7 @@
     "level": 11,
     "cost": "free",
     "trigger": "You hit a target with your astral arms",
-    "uses": "Once per turn",
+    "uses": "Once on each of your turns",
     "page": 51,
     "description": [
       "Empowered Arms: deal extra damage, one roll of your Martial Arts die.",

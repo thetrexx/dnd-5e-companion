@@ -989,7 +989,7 @@
     "description": [
       "For 1 minute:",
       "• Truesight out to 120 ft.",
-      "• Advantage on attack rolls against aberrations, celestials, elementals, fey and fiends.",
+      "• Your attack rolls have advantage against fiends, fey, elementals, celestials and aberrations.",
       "• Whenever an attack roll of yours hits and damages a creature, you can also call for a Charisma save against your spell save DC. Failure: it is banished to its home plane, if it isn't already there. Success: this feature can't banish it for 24 hours."
     ],
     "book": "tce",
