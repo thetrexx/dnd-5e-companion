@@ -4809,12 +4809,12 @@
       }
     },
     "description": [
-      "Nature spirits guard an outdoor or underground area, a cube 30 to 90 ft on a side with buildings left out, for 24 hours; cast there daily for a year, it lasts until dispelled. You can name friends who are immune, and a password that makes whoever speaks it immune. A successful dispel magic on the area removes only one effect (its caster chooses); the spell ends when all are gone.",
-      "Solid Fog: any 5-ft squares of ground fill with fog 10 ft high, heavily obscured; each foot of movement in it costs 2 extra feet.",
+      "Nature spirits guard an outdoor or underground area, a cube 30 to 90 ft on a side excluding buildings, for 24 hours (cast there daily for a year and it lasts until dispelled). Name immune friends, and a password that grants immunity when spoken. Dispel magic removes only one effect per success (its caster picks); the spell ends when none remain.",
+      "Solid Fog: fill any 5-ft squares with 10-ft-high fog; it is heavily obscured and each foot of movement in it costs 2 extra.",
       "Grasping Undergrowth: any unfogged 5-ft squares sprout weeds and vines that work like entangle.",
-      "Grove Guardians: up to four trees uproot and act as awakened trees (Monster Manual) that can't speak. They fight any intruder who isn't immune until it flees or dies, obey your spoken orders (no action) while you are in the area, and never leave it. When the spell ends they root again if they can.",
+      "Grove Guardians: up to four trees uproot as speechless awakened trees (Monster Manual). They fight intruders who are not immune until driven off or slain, obey your spoken orders (no action) while you are in the area, never leave it, and re-root when the spell ends.",
       "Extra Effect: add one of: gust of wind blowing nonstop in two spots, spike growth in one spot, or wind wall in two spots.",
-      "Immune creatures find the fog a light mist, the vines soft seats, the wind a gentle breeze and the spikes harmless."
+      "Immune creatures ignore all these effects."
     ],
     "textSource": "summary"
   },
@@ -5193,7 +5193,7 @@
     },
     "description": [
       "A dark tendril reaches a creature you can see within 60 ft, which makes a Dexterity save. A successful save limits it to 2d8 necrotic damage and ends the spell. A failed save costs it 4d8 necrotic damage, and on each of your later turns your action can drain another 4d8 necrotic from it automatically.",
-      "The spell ends if you use your action for anything else, or if the target leaves range or gains total cover from you. You heal half of all necrotic damage the spell deals."
+      "Spending your action on any other task ends the spell early, as does the target moving out of range or getting total cover from you. Each time it is hurt by the spell, you heal half the necrotic damage dealt."
     ],
     "higherLevels": "Each slot level above 5 adds 1d8 to the damage.",
     "textSource": "summary"
@@ -8075,7 +8075,7 @@
     },
     "description": [
       "A weapon you touch glows with holy power for up to 1 hour: bright light in a 30-ft radius, dim light 30 ft farther. Each weapon attack with it that hits adds 2d8 radiant damage, and a nonmagical weapon counts as magic until the spell ends.",
-      "Bonus action: end the spell in a burst of radiance. Each creature you choose that you can see within 30 ft makes a Constitution save, taking 4d8 radiant damage and being blinded for 1 minute on a failure, or half damage and no blindness on a success. A blinded creature tries the save again after each of its turns, recovering on a success."
+      "Bonus action: end the spell in a burst of radiance. Creatures of your choice in sight within 30 ft each make a Constitution save, taking 4d8 radiant damage and being blinded for 1 minute on a failure, or half damage and no blindness on a success. A blinded creature tries the save again after each of its turns, recovering on a success."
     ],
     "textSource": "summary"
   },
@@ -8531,7 +8531,7 @@
       }
     },
     "description": [
-      "A devil you pick of challenge rating 6 or lower (a barbed or bearded devil, say) appears in an unoccupied space you can see within 90 ft for up to 1 hour (concentration), vanishing at 0 hit points. Unfriendly to you and your allies, it has its own initiative and is run by the DM with its Monster Manual stats; it may attack you, or trade brief service for an evil act.",
+      "A devil you pick of challenge rating 6 or lower (a barbed or bearded devil, say) appears in an unoccupied space you can see within 90 ft for up to 1 hour (concentration), vanishing at 0 hit points. Unfriendly to you and your allies, it has its own initiative and the DM runs it from its stat block; it may attack you, or trade brief service for an evil act.",
       "Each turn you may give it a spoken order (no action). It obeys if it likes the result, especially one leading you toward evil; otherwise win a Charisma check (Deception, Intimidation or Persuasion) against its Wisdom (Insight), with advantage if you use its true name. Fail and it ignores your orders for the rest of the spell, though it may still follow them; succeed and it does the task, then reports back.",
       "If your concentration breaks early while it ignores you, it stays 3d6 minutes doing as it likes. With a devil's talisman you can call that devil at 1 challenge rating above the limit, and it obeys every order without checks."
     ],
@@ -8698,7 +8698,7 @@
     "description": [
       "Harmless flames cover you for up to 10 minutes, shedding bright light in a 30-ft radius and dim light 30 ft beyond. Fire damage can't hurt you, and you resist cold damage.",
       "Moving to within 5 ft of you costs a creature 1d10 fire damage (once per turn), and so does finishing its turn that close.",
-      "Action: shoot fire from you in a line 15 ft long and 5 ft wide, aimed where you like. Creatures in the line make Dexterity saves, taking 4d8 fire damage on a failure or half on a success."
+      "Action: shoot fire from you along a 5-ft-wide, 15-ft-long line, aimed where you like. Creatures in the line make Dexterity saves, taking 4d8 fire damage on a failure or half on a success."
     ],
     "textSource": "summary"
   },
@@ -8813,7 +8813,7 @@
     },
     "description": [
       "Wind swirls around you for up to 10 minutes. Ranged weapon attacks against you have disadvantage, and you gain a 60-ft flying speed; if you are still flying as it ends, you drop unless you can stop yourself.",
-      "Action: whip up a 15-ft cube of swirling wind around a point in sight within 60 ft. Creatures inside make Constitution saves, taking 2d10 bludgeoning damage on a failure or half on a success; a Large or smaller one that fails is also shoved up to 10 ft away from the cube's center."
+      "Action: whip up a 15-ft cube of swirling wind around a point in sight within 60 ft. Creatures inside make Constitution saves, taking 2d10 bludgeoning damage on a failure or half on a success; a failed save also shoves a Large or smaller creature as far as 10 ft from the cube's center."
     ],
     "textSource": "summary"
   },
@@ -10412,11 +10412,11 @@
       }
     },
     "description": [
-      "A stone fortress rises from a 120-ft square of ground you can see within 1 mile; the square must be free of buildings, and creatures on it are lifted unharmed. It has a 30-ft-tall turret with a 20-ft square base at each corner, 80-ft walls 1 ft thick between them, and as many as four stone doors you may set into the outer wall.",
-      "Inside, a keep with a 50-ft square base has three floors with 10-ft ceilings and stone stairs. You lay out rooms, doors, furniture and decor; each day it provides a nine-course feast for up to 100 guests. Anything the spell made turns to dust if taken out.",
-      "One hundred invisible servants, each like an unseen servant, obey any orders from creatures you name when casting.",
+      "A stone fortress rises from a clear 120-ft square of ground (no buildings) you can see within 1 mile, gently lifting any creatures there. Four 30-ft turrets stand at the corners, linked by 1-ft-thick stone walls, with up to four stone doors you place in the outer wall.",
+      "Inside is a three-floor keep you lay out and furnish as you like, with a nine-course feast for up to 100 each day. Anything the spell made turns to dust if taken out.",
+      "One hundred invisible servants, each like an unseen servant, obey creatures you name at casting.",
       "Every 10-ft-by-10-ft piece of stone is AC 15, with 30 hit points for each inch it is thick, and poison and psychic damage don't affect it. At 0 hit points a section is destroyed, and the DM may have neighboring sections buckle or fall.",
-      "After 7 days, or if you cast it elsewhere, the fortress sinks harmlessly into the ground, setting anyone inside safely down. A year of recasting it on that spot at least every 7 days makes it permanent."
+      "After 7 days, or if you cast it elsewhere, it sinks harmlessly into the ground, setting anyone inside down safely. Recast on that spot at least every 7 days for a year, it becomes permanent."
     ],
     "textSource": "summary"
   },
@@ -12844,7 +12844,7 @@
       "s": false
     },
     "description": [
-      "The air shimmers around up to five creatures you choose and can see within 30 ft; an unwilling one can resist with a Wisdom save. Each one affected lands in a free space of your choice, on the ground or a floor, that you can see within 120 ft of you."
+      "The air shimmers around up to five creatures you choose and can see within 30 ft; an unwilling one can resist with a Wisdom save. Each one affected is teleported to a spot you pick: unoccupied, on a floor or the ground, in your sight, and no more than 120 ft from you."
     ],
     "textSource": "summary"
   },
@@ -14971,10 +14971,10 @@
       }
     },
     "description": [
-      "A temple shimmers into being on ground you can see within 120 ft, filling an unoccupied cube up to 120 ft on a side, for 24 hours. It is devoted to the god, pantheon or philosophy your holy symbol stands for. You design it: floor, walls, roof, one door, any windows, an idol or altar inside, and bright, dim or no light. Only you and creatures you name at casting can open or close the door.",
-      "Pick one or more of celestials, elementals, fey, fiends and undead. A creature of a chosen type trying to enter makes a Charisma save or is kept out for 24 hours; even inside, it subtracts a d4 from every attack roll, ability check and save it makes there.",
-      "Divination sensors cannot appear inside, and no one within can be targeted by divination spells. A creature inside healed by any spell of 1st level or above gets bonus hit points: add your Wisdom modifier, at least 1.",
-      "Its walls are opaque force reaching into the Ethereal Plane, so nothing gets in physically or ethereally. Dispel magic can't end it and antimagic field has no hold on it, but disintegrate destroys it at once. Cast it on the same spot daily for a year to make it permanent."
+      "A temple to your god or philosophy shimmers into being on ground you can see within 120 ft, filling an unoccupied cube up to 120 ft on a side, for 24 hours. You design it, with one door, any windows, an altar or idol, and your choice of bright, dim or no light. Only you and creatures you name at casting can open or close the door.",
+      "Choose any of celestials, elementals, fey, fiends and undead. Such a creature must pass a Charisma save to enter (failing bars it for 24 hours), and inside it subtracts a d4 from its attack rolls, ability checks and saves.",
+      "Divination sensors can't appear inside, and divination spells can't target anyone within. Spells of 1st level and up that heal someone inside restore your Wisdom modifier in extra hit points (minimum 1).",
+      "Its opaque force walls reach into the Ethereal Plane and block all passage. Dispel magic and antimagic field have no effect on it; disintegrate destroys it. Recast on the same spot daily for a year, it becomes permanent."
     ],
     "textSource": "summary"
   },
@@ -16069,9 +16069,9 @@
       }
     },
     "description": [
-      "A shimmering wall of bright light, up to 60 ft long, 10 ft high and 5 ft thick, appears at a point within 120 ft in any orientation, floating or resting on a surface, for up to 10 minutes. Nothing sees through it, though creatures and objects pass through freely, and it sheds bright light 120 ft out and dim light 120 ft beyond that.",
+      "A shimmering wall of bright light (at most 60×10×5 ft, length × height × thickness) appears at a point within 120 ft in any orientation, floating or resting on a surface, for up to 10 minutes. Nothing sees through it, though creatures and objects pass through freely, and it sheds bright light 120 ft out and dim light 120 ft beyond that.",
       "When it appears, each creature in it makes a Constitution save: on a failure 4d8 radiant damage and blinded for 1 minute, on a success half damage and not blinded. A blinded creature saves again after each of its turns, recovering on a success. Finishing a turn inside the wall deals 4d8 radiant damage to that creature.",
-      "Action: fire a beam from the wall at a creature you can see within 60 ft of it with a ranged spell attack, dealing 4d8 radiant damage on a hit. Hit or miss, the wall loses 10 ft of length; at 0 ft the spell ends."
+      "Action: a beam leaps from the wall toward one visible creature no more than 60 ft from the wall; make a ranged spell attack, and a hit deals 4d8 radiant damage. Hit or miss, the wall loses 10 ft of length; at 0 ft the spell ends."
     ],
     "higherLevels": "Each slot level above 5 adds 1d8 to the damage.",
     "textSource": "summary"
