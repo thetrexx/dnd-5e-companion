@@ -400,7 +400,7 @@
     "resource": "1 Channel Divinity",
     "description": [
       "Each creature you choose that you can see within 30 ft makes a Wisdom save. On a fail, it can't willingly move more than 30 ft away from you.",
-      "It ends for a creature if you are incapacitated or die, or if that creature is moved more than 30 ft away from you.",
+      "The hold on a creature breaks once you die or become incapacitated, or once it is moved over 30 ft from you.",
       "The book names no action type for this option; it is usually played as an action, like other Channel Divinity options."
     ],
     "page": 133,

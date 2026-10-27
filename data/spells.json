@@ -1723,7 +1723,7 @@
     },
     "description": [
       "Up to three willing creatures you choose that you can see within 30 ft fall unconscious for 10 minutes. One wakes early if it takes damage or someone spends an action shaking or slapping it.",
-      "A target that sleeps the full 10 minutes gains the benefits of a short rest, and this spell can't affect it again until it finishes a long rest."
+      "Sleeping out the whole 10 minutes counts as a short rest for that target, which is then immune to this spell until its next long rest."
     ],
     "higherLevels": "Each slot level above 3 adds one willing target.",
     "textSource": "summary"
@@ -4581,7 +4581,7 @@
       }
     },
     "description": [
-      "A small whirling air elemental fills an unoccupied 5-ft cube of air you can see within 60 ft for up to 1 minute (concentration).",
+      "An elemental force shaped like a small dust devil fills an unoccupied 5-ft cube of air you can see within 60 ft for up to 1 minute (concentration).",
       "A creature that ends its turn within 5 ft of it makes a Strength save. On a failure it takes 1d8 bludgeoning damage and is shoved 10 ft away from the whirlwind; on a success it takes half and stays put.",
       "Bonus action: move it up to 30 ft. Moving it over loose ground (sand, dust, dirt or fine gravel) stirs up a 10-ft-radius debris cloud around it, heavily obscuring that area until the start of your next turn."
     ],
@@ -4845,7 +4845,7 @@
     },
     "description": [
       "A creature you can see within 120 ft makes an Intelligence save; one immune to being frightened succeeds automatically. On a failure, for up to 1 minute (concentration), it can't tell friend from foe and treats every creature it can see as an enemy.",
-      "When it picks a target for an attack, spell or other ability, it chooses at random among the creatures it can see in range. If an enemy provokes an opportunity attack from it, it must make that attack if it can.",
+      "When it picks a target for an attack, spell or other ability, it chooses at random among the creatures it can see in range. It is compelled to take any opportunity attack an enemy offers it, if able.",
       "It repeats the save each time it takes damage, ending the effect on a success."
     ],
     "textSource": "summary"
@@ -12597,7 +12597,7 @@
     },
     "description": [
       "Freezing sleet fills a 40 ft radius, 20 ft tall cylinder on a point within 150 ft for up to 1 minute (concentration). The area is heavily obscured, open flames go out, and icy ground makes it difficult terrain.",
-      "A creature entering it for the first time on a turn, or starting its turn there, makes a Dexterity save or falls prone. Anyone concentrating inside must succeed on a Constitution save vs your spell save DC to keep concentrating."
+      "Any creature that starts its turn in the storm, or moves into it for the first time on a turn, must pass a Dexterity save or fall prone. A creature concentrating inside must pass a Constitution save against your spell save DC or its concentration breaks."
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/5/50/Sleet_Storm_Icon.webp"
@@ -13219,7 +13219,7 @@
       "A 20-ft-radius sphere of churning air forms around a point within 150 ft for up to 1 minute (concentration). Its space is difficult terrain.",
       "A creature inside when it forms, or ending its turn inside, makes a Strength save or takes 2d6 bludgeoning damage.",
       "Bonus action each turn: lightning arcs from the sphere's middle toward a creature up to 60 ft from that point; roll a ranged spell attack, with advantage if the target is inside the sphere. A hit deals 4d6 lightning damage.",
-      "Creatures within 30 ft of the sphere have disadvantage on Wisdom (Perception) checks to listen."
+      "The roar of the storm gives creatures within 30 ft of it disadvantage on Wisdom (Perception) checks that rely on hearing."
     ],
     "higherLevels": "Each slot level above 4 adds 1d6 to both the bludgeoning and the lightning damage.",
     "textSource": "summary"
@@ -13298,7 +13298,7 @@
       "A demon of challenge rating 5 or lower that you choose (a shadow demon or barlgura, say) shows up for up to 1 hour (concentration) in a free space within 60 ft that you can see. It uses its Monster Manual stats, has its own initiative, and leaves at 0 hit points or once the spell ends.",
       "Each turn you can give it a spoken order (no action); with no order, it attacks anyone in reach who attacked it.",
       "After each of its turns it rolls a Charisma save, with disadvantage if you speak its true name. Once it succeeds, your control is gone for the rest of the spell and it hunts the nearest non-demons. If you drop concentration early, an uncontrolled demon lingers 1d6 rounds.",
-      "If you draw a circle of the blood around your space while casting, the demon can't cross it, harm it or target anyone inside; the blood is then consumed."
+      "If you draw a circle of the blood around your space while casting, the demon can't cross it, harm it or target anyone inside; the blood is consumed when the spell ends."
     ],
     "higherLevels": "Each slot level above 4 raises the challenge rating by 1.",
     "textSource": "summary"
@@ -13340,7 +13340,7 @@
       "3-4: 4 demons, each CR 1/2 or lower.",
       "5-6: 8 demons, each CR 1/4 or lower.",
       "They are hostile to all, you included, act as one group on their own initiative, and attack the nearest non-demons. A demon dropped to 0 hit points vanishes, and all of them go when the spell ends (concentration, up to 1 hour).",
-      "If you draw a circle of the blood around your space while casting, they can't cross it, harm it or target anyone inside; the blood is then consumed."
+      "If you draw a circle of the blood around your space while casting, they can't cross it, harm it or target anyone inside; the blood is consumed when the spell ends."
     ],
     "higherLevels": "A level 6 or 7 slot summons twice as many demons; a level 8 or 9 slot, three times as many.",
     "textSource": "summary"
@@ -15368,7 +15368,7 @@
     },
     "description": [
       "Until the spell ends, your movement provokes no opportunity attacks.",
-      "Once before it ends, on your turn, you can give yourself advantage on one weapon attack roll. On a hit it deals an extra 1d8 force damage. Hit or miss, your walking speed rises by 30 ft until that turn ends."
+      "Once during the spell, on your turn, pick one weapon attack to roll with advantage; if it hits, add 1d8 force damage. Whether or not it hits, you gain +30 ft walking speed for the rest of that turn."
     ],
     "textSource": "summary"
   },

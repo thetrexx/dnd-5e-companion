@@ -33,6 +33,13 @@ test('wordsMatch tolerates one misread letter in words of 4+ letters', () => {
   expect(wordsMatch('the', 'tha')).toBe(false); // short words match only exactly
   expect(wordsMatch('spell', 'spellbook')).toBe(false);
 });
+test('a word the page hyphenates across a line break still counts toward a copied run', () => {
+  // the invented fixture, with "ereature" and "radiant" split at line ends as a book layout would
+  const hyphenated = ocr.replace('the ereature takes', 'the erea-\nture takes').replace('Id8 radiant', 'Id8 radi-\r\nant');
+  expect(hyphenated).not.toBe(ocr);
+  expect(longestSharedRun(copied, hyphenated)).toBe(longestSharedRun(copied, ocr));
+  expect(judgeRecord(copied, hyphenated).pass).toBe(false);
+});
 test('a single misread does not break a copied run', () => {
   const misread = ocr.replace('radiant', 'radiamt').replace('takes', 'takcs');
   expect(longestSharedRun(copied, misread)).toBe(longestSharedRun(copied, ocr));

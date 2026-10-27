@@ -278,8 +278,8 @@
     "level": 9,
     "cost": "action",
     "description": [
-      "Action: make a Charisma (Persuasion) check contested by a creature's Wisdom (Insight) check. It only works on a creature that can hear you and that shares a language with you.",
-      "Hostile creature, you win: for 1 minute it has disadvantage on attack rolls against anyone but you, and can't make opportunity attacks against anyone but you. It ends early if one of your companions attacks it or affects it with a spell, or if you and it end up more than 60 ft apart.",
+      "Action: roll Charisma (Persuasion) against the target's Wisdom (Insight). The target must hear you and share a language with you.",
+      "Hostile creature, you win: for 1 minute its attack rolls against anyone but you have disadvantage, and it can make opportunity attacks only against you. It ends early if one of your companions attacks it or affects it with a spell, or if you and it end up more than 60 ft apart.",
       "Non-hostile creature, you win: for 1 minute you have it charmed, and it sees you as a friendly acquaintance. Harming it in any way, by you or your companions, ends the charm at once."
     ],
     "page": 47,

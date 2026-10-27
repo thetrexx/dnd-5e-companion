@@ -19,7 +19,12 @@ export function missingNumbers(text: string, ocr: string): string[] {
 
 const MAX_RUN = 8;
 
-const normWords = (s: string): string[] => s.split(/\s+/).map(normalizeOcr).filter(Boolean);
+/** Rejoins words the page split with a hyphen at a line break ("crea-\nture" becomes "creature"). */
+export function joinHyphenation(s: string): string {
+  return s.replace(/(\w)[-­‐]\s*\r?\n\s*(\w)/g, '$1$2');
+}
+
+const normWords = (s: string): string[] => joinHyphenation(s).split(/\s+/).map(normalizeOcr).filter(Boolean);
 
 /**
  * Two normalized words match when equal, or when both have 4+ letters and differ by one edit
