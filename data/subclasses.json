@@ -1698,7 +1698,9 @@
     "cls": "ranger",
     "name": "Beast Master",
     "page": 93,
-    "options": [],
+    "options": [
+      "optional-beast-master"
+    ],
     "hotbarIcon": "https://bg3.wiki/w/images/b/bd/Class_Ranger_Beast_Master_Hotbar_Icon.png"
   },
   {

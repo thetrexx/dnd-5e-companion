@@ -113,25 +113,37 @@ export function genericSections(): Section[] {
   ];
 }
 
+/** 'Optional' tags for the optional items (Tasha's optional features), or undefined when there are none. */
+export function tagOptional(items: Feature[]): Record<string, string> | undefined {
+  const opt = items.filter(i => i.optional);
+  return opt.length ? Object.fromEntries(opt.map(i => [i.id, 'Optional'])) : undefined;
+}
+
 export function actionSections(cls: ClassId, level: number, sub?: string): Section[] {
   const c = DATA.classes.find(x => x.id === cls)!;
   const s = effectiveSub(cls, level, sub);
-  const out: Section[] = [
-    ...genericSections(),
-    {
-      id: 'class', title: `${c.name} Actions`, motif: cls,
-      items: DATA.features.filter(f => f.source.kind === 'class' && f.source.id === cls && f.level <= level && f.cost !== 'passive'),
-    },
+  const groups = DATA.optionGroups.filter(g => ((g.owner.kind === 'class' && g.owner.id === cls) || (g.owner.kind === 'subclass' && g.owner.id === s?.id))
+    && (g.picks[level - 1] ?? 0) > 0);
+  // an optional group has no section of its own: its options join the owner's section
+  const optionalItems = (kind: 'class' | 'subclass', id: string) =>
+    groups.filter(g => g.optional && g.owner.kind === kind && g.owner.id === id).flatMap(g => optionItems(g.id, level));
+  const features = (kind: 'class' | 'subclass', id: string) => [
+    ...DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= level && f.cost !== 'passive'),
+    ...optionalItems(kind, id),
   ];
+  const section = (id: string, title: string, items: Feature[]): Section => {
+    const tags = tagOptional(items);
+    return { id, title, motif: cls, items, ...(tags && { tags }) };
+  };
+  const out: Section[] = [...genericSections(), section('class', `${c.name} Actions`, features('class', cls))];
   if (s) {
-    const items = DATA.features.filter(f => f.source.kind === 'subclass' && f.source.id === s.id && f.level <= level && f.cost !== 'passive');
-    if (items.length > 0) out.push({ id: 'subclass', title: s.name, motif: cls, items });
+    const items = features('subclass', s.id);
+    if (items.length > 0) out.push(section('subclass', s.name, items));
   }
-  for (const g of DATA.optionGroups) {
-    const owned = (g.owner.kind === 'class' && g.owner.id === cls) || (g.owner.kind === 'subclass' && g.owner.id === s?.id);
-    if (!owned || !(g.picks[level - 1] > 0)) continue;
+  for (const g of groups) {
+    if (g.optional) continue;
     const items = optionItems(g.id, level);
-    if (items.length > 0) out.push({ id: `opt-${g.id}`, title: g.name, motif: cls, items });
+    if (items.length > 0) out.push(section(`opt-${g.id}`, g.name, items));
   }
   return out;
 }

@@ -146,6 +146,14 @@ export function validateDataset(d: Dataset): string[] {
     if (f.prereq?.option !== undefined && !featureIds.has(f.prereq.option)) errs.push(`${at}: prereq has unknown option "${f.prereq.option}"`);
     else if (f.prereq?.option !== undefined && !isOption(f.prereq.option)) errs.push(`${at}: prereq option "${f.prereq.option}" is not an option`);
     grants(at, f.spells);
+    const group = f.source?.kind === 'option' ? d.optionGroups.find(g => g.id === f.source.id) : undefined;
+    if (group?.optional) {
+      if (f.optional !== true) errs.push(`${at}: an option of an optional group must be optional`);
+      if (f.prereq?.level !== f.level) errs.push(`${at}: prereq.level must equal level in an optional group`);
+    }
+    for (const r of f.replaces ?? []) if (!featureIds.has(r) && !groupIds.has(r)) errs.push(`${at}: replaces unknown feature or option group "${r}"`);
+    if (f.expandsList !== undefined && !(group?.optional && group.owner.kind === 'class' && group.owner.id === f.expandsList))
+      errs.push(`${at}: expandsList "${f.expandsList}" only fits an option of the optional group of that class`);
   }
 
   checkIds('subclass', d.subclasses, errs);

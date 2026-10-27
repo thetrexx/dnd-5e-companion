@@ -2,7 +2,7 @@ import { DATA } from '../data';
 import type { ClassId, Feature, Route, Spell } from '../data/types';
 import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
-import { genericSections, joinTag } from '../logic/sections';
+import { genericSections, joinTag, tagOptional } from '../logic/sections';
 import type { Section } from '../logic/sections';
 import { extraListTag, listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
@@ -10,7 +10,7 @@ import type { SpellView } from '../settings/settings';
 import { castingInfo, raceChain } from './derive';
 import { autoSpells, grantSources, unlockText } from './grants';
 import type { GrantSource } from './grants';
-import { optionSlots } from './options';
+import { optionSlots, replaced } from './options';
 import type { OptionSlot } from './options';
 import type { CharClass, Character } from './types';
 
@@ -138,21 +138,29 @@ const chosenActions = (slot: OptionSlot): Feature[] => slot.chosen
   .filter(f => f.cost !== 'passive' && (f.prereq?.level ?? 0) <= slot.level);
 
 /** Class, subclass (when it has cards) and option sections of one class. */
-function classActions(cc: CharClass, slots: OptionSlot[]): Section[] {
+function classActions(cc: CharClass, slots: OptionSlot[], gone: Set<string>): Section[] {
   const c = DATA.classes.find(x => x.id === cc.cls);
   if (!c) return [];
   const s = effectiveSub(cc.cls, cc.level, cc.sub);
   // a feature tied to an option (Storm Herald's Raging Storm reactions) shows only with that option chosen
   const chosen = new Set(slots.flatMap(x => x.chosen));
-  const features = (kind: 'class' | 'subclass', id: string) =>
-    DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive'
-      && (!f.prereq?.option || chosen.has(f.prereq.option)));
-  const out: Section[] = [{ id: `class-${cc.cls}`, title: `${c.name} Actions`, motif: cc.cls, items: features('class', cc.cls) }];
+  const mine = slots.filter(x => x.cls === cc.cls);
+  // chosen options of an optional group join their owner's section; a feature they replace drops out
+  const features = (kind: 'class' | 'subclass', id: string) => [
+    ...DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive'
+      && (!f.prereq?.option || chosen.has(f.prereq.option)) && !gone.has(f.id)),
+    ...mine.filter(x => x.group.optional && x.group.owner.kind === kind && x.group.owner.id === id).flatMap(chosenActions),
+  ];
+  const section = (sid: string, title: string, items: Feature[]): Section => {
+    const tags = tagOptional(items);
+    return { id: sid, title, motif: cc.cls, items, ...(tags && { tags }) };
+  };
+  const out: Section[] = [section(`class-${cc.cls}`, `${c.name} Actions`, features('class', cc.cls))];
   const subItems = s ? features('subclass', s.id) : [];
-  if (s && subItems.length) out.push({ id: `subclass-${cc.cls}`, title: s.name, motif: cc.cls, items: subItems });
-  for (const slot of slots) {
-    const items = slot.cls === cc.cls ? chosenActions(slot) : [];
-    if (items.length) out.push({ id: `opt-${slot.group.id}`, title: slot.group.name, motif: cc.cls, items });
+  if (s && subItems.length) out.push(section(`subclass-${cc.cls}`, s.name, subItems));
+  for (const slot of mine) {
+    const items = slot.group.optional ? [] : chosenActions(slot);
+    if (items.length) out.push(section(`opt-${slot.group.id}`, slot.group.name, items));
   }
   return out;
 }
@@ -173,7 +181,8 @@ function otherActions(ch: Character, slots: OptionSlot[]): Section[] {
 
 export function charActionSections(ch: Character): Section[] {
   const slots = optionSlots(ch);
-  return [...genericSections(), ...ch.classes.flatMap(cc => classActions(cc, slots)), ...otherActions(ch, slots)];
+  const gone = replaced(ch);
+  return [...genericSections(), ...ch.classes.flatMap(cc => classActions(cc, slots, gone)), ...otherActions(ch, slots)];
 }
 
 function sourceIcon(s: GrantSource): MenuRow['icon'] {
@@ -187,12 +196,13 @@ export function charMenuRows(ch: Character): MenuRow[] {
   const actions = (section: string): Route => ({ page: 'me-actions', section });
   const spells = (section: string): Route => ({ page: 'me-spells', section });
   const slots = optionSlots(ch);
+  const gone = replaced(ch);
   const rows = genericRows(actions);
   for (const cc of ch.classes) {
     const c = DATA.classes.find(x => x.id === cc.cls);
     if (!c) continue;
     // the class row lands on the first class, subclass or option section that has cards
-    const first = classActions(cc, slots).find(x => x.items.length > 0)?.id ?? `class-${cc.cls}`;
+    const first = classActions(cc, slots, gone).find(x => x.items.length > 0)?.id ?? `class-${cc.cls}`;
     const icon = effectiveSub(cc.cls, cc.level, cc.sub)?.hotbarIcon ?? c.hotbarIcon;
     rows.push({ kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: icon }, target: actions(first) });
   }

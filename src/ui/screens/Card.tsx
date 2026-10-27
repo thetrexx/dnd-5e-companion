@@ -1,6 +1,6 @@
 import { DATA } from '../../data';
 import type { ClassId, Cost, Feature, FeatureCost } from '../../data/types';
-import { bookRef, costBar, damageLine, levelLine, tags } from '../../logic/card';
+import { bookRef, costBar, damageLine, levelLine, replacedNames, tags } from '../../logic/card';
 import { effectiveSub } from '../../logic/subclass';
 import { toHash } from '../../router';
 import { ComponentIcons } from '../ComponentIcons';
@@ -33,16 +33,31 @@ function optionGroupId(f: Feature, cls: ClassId, sub?: string): string {
   return own.find((g) => g.from)?.id ?? own[0]?.id ?? f.source.id;
 }
 
+/** The owner of an optional group (Tasha's optional features), whose section and name its options take. */
+const optionalOwner = (f: Feature, group: string) => {
+  const g = f.source.kind === 'option' ? DATA.optionGroups.find((x) => x.id === group) : undefined;
+  return g?.optional ? g.owner : undefined;
+};
+
 function featureSection(f: Feature, group: string): string {
+  const owner = optionalOwner(f, group);
+  if (owner) return owner.kind === 'subclass' ? 'subclass' : 'class';
   if (f.source.kind === 'subclass') return 'subclass';
   if (f.source.kind === 'option') return `opt-${group}`;
   if (f.source.kind !== 'generic') return 'class';
   return f.cost === 'bonus' ? 'bonus' : f.cost === 'reaction' ? 'reactions' : 'actions';
 }
 
+/** ' · Optional', plus what it replaces, by feature name else option group name. */
+function optionalNote(f: Feature): string {
+  if (!f.optional) return '';
+  return ` · Optional${f.replaces?.length ? `, replaces ${replacedNames(f.replaces)}` : ''}`;
+}
+
 function sourceLabel(f: Feature, group: string): string {
-  const { kind } = f.source;
-  const id = kind === 'option' ? group : f.source.id;
+  const owner = optionalOwner(f, group);
+  const kind = owner?.kind ?? f.source.kind;
+  const id = owner?.id ?? (kind === 'option' ? group : f.source.id);
   if (kind === 'generic') return 'General';
   if (kind === 'subclass') return DATA.subclasses.find((s) => s.id === id)?.name ?? cap(id.replace(/-/g, ' '));
   if (kind === 'option') return DATA.optionGroups.find((g) => g.id === id)?.name ?? cap(id.replace(/-/g, ' '));
@@ -82,7 +97,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
         <article class="card">
           <div class="card-icon"><Icon src={(spell ?? feature)!.icon} fallback={spell ? spellFallback(spell) : 'action'} alt="" size={54} /></div>
           <h1 class="card-title">{spell ? spell.name : feature!.name}</h1>
-          <div class="card-sub">{spell ? levelLine(spell) : `${source} Feature · Level ${feature!.level}`}</div>
+          <div class="card-sub">{spell ? levelLine(spell) : `${source} Feature · Level ${feature!.level}${optionalNote(feature!)}`}</div>
           {dmg && <div class="card-dmg">{dmg.headline}</div>}
           {dmg && <div class="card-dmg-detail">{dmg.detail}</div>}
           <Separator ornament={''} card />

@@ -109,3 +109,19 @@ test('swarmkeeper spells tagged with the subclass name', () => {
 });
 test('star map guiding bolt shows its limit', () =>
   expect(spellSections('druid', 2, 'circle-of-stars').find(x => x.id === 'lvl-1')!.tags!['guiding-bolt']).toMatch(/^Star Map · /));
+
+test('browse shows optional features in the class section, tagged', () => {
+  const sec = actionSections('ranger', 10).find(s => s.id === 'class')!;
+  expect(sec.items.map(f => f.id)).toEqual(expect.arrayContaining(['optional-ranger-favored-foe', 'hide-in-plain-sight', 'optional-ranger-natures-veil', 'deft-explorer-tireless']));
+  expect(sec.items.map(f => f.id)).not.toContain('optional-ranger-deft-explorer');   // passive
+  expect(sec.tags!['optional-ranger-favored-foe']).toBe('Optional');
+  expect(sec.tags!['deft-explorer-tireless']).toBe('Optional');
+  expect(sec.tags!['hide-in-plain-sight']).toBeUndefined();
+  expect(actionSections('ranger', 10).map(s => s.id)).not.toContain('opt-optional-ranger');
+  expect(actionSections('ranger', 5).find(s => s.id === 'class')!.items.map(f => f.id)).not.toContain('optional-ranger-natures-veil');
+});
+test('primal companion is a beast master option', () => {
+  const sec = actionSections('ranger', 3, 'beast-master').find(s => s.id === 'subclass')!;
+  expect(sec.tags!['optional-beast-master-primal-companion']).toBe('Optional');
+  expect(sec.items.map(f => f.id)).toContain('rangers-companion');
+});

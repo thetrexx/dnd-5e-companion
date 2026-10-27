@@ -1,4 +1,7 @@
 import { DATA } from '../../data';
+import type { Feature } from '../../data/types';
+import { replacedNames } from '../../logic/card';
+import { joinTag } from '../../logic/sections';
 import { optionSlots, type OptionSlot } from '../../character/options';
 import { Separator } from '../Separator';
 import { GrantPicker } from './GrantPicker';
@@ -22,12 +25,17 @@ export function StepOptions(p: StepProps) {
       {slots.map((s) => {
         const n = s.chosen.length;
         const cls = s.cls && ch.classes.length > 1 ? ` · ${DATA.classes.find((c) => c.id === s.cls)?.name}` : '';
+        const opt = s.group.optional;
+        const note = (f: Feature) => opt ? joinTag(f.replaces && `Replaces ${replacedNames(f.replaces)}`, f.prereq?.text)
+          : joinTag(f.optional && 'Optional', f.prereq?.text);
         return (
           <div key={`${s.group.id}:${s.cls ?? ''}`}>
-            <Separator ornament="☙" label={`${s.group.name}${cls}`} full />
-            <p class={n > s.count ? 'warn' : 'note'}>{n} of {s.count} chosen{n > s.count ? ' (more than usual)' : ''}</p>
+            <Separator ornament="☙" label={`${opt ? 'Optional Features' : s.group.name}${cls}`} full />
+            {opt
+              ? <p class="note">Tick the ones your DM allows.</p>
+              : <p class={n > s.count ? 'warn' : 'note'}>{n} of {s.count} chosen{n > s.count ? ' (more than usual)' : ''}</p>}
             <PickList
-              items={s.choices.map((f) => { const t = s.taken.includes(f.id); return { id: f.id, label: f.name, note: t ? `Chosen for ${takenBy(slots, s, f.id)}` : f.prereq?.text, disabled: t }; })}
+              items={s.choices.map((f) => { const t = s.taken.includes(f.id); return { id: f.id, label: f.name, note: t ? `Chosen for ${takenBy(slots, s, f.id)}` : note(f), disabled: t }; })}
               picked={s.chosen}
               onToggle={toggle}
             />

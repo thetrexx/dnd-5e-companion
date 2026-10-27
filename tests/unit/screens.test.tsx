@@ -120,3 +120,14 @@ test('Card uses the data name for race and feat sources', () => {
   const feat = render(<Card kind="feature" id="great-weapon-master" cls="fighter" level={1} />);
   expect(feat.container.querySelector('.card-sub')!.textContent).toContain('Great Weapon Master Feature');
 });
+
+test('Card marks optional features and what they replace', () => {
+  const foe = render(<Card kind="feature" id="optional-ranger-favored-foe" cls="ranger" level={1} />);
+  expect(foe.container.querySelector('.card-sub')!.textContent).toBe('Ranger Feature · Level 1 · Optional, replaces Favored Enemy');
+  expect(foe.container.querySelector('a.back')!.getAttribute('href')).toBe('#/actions/ranger/1?s=class');
+  const pc = render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={3} sub="beast-master" />);
+  expect(pc.container.querySelector('.card-sub')!.textContent).toBe("Beast Master Feature · Level 3 · Optional, replaces Ranger's Companion, Companion Commands");
+  expect(pc.container.querySelector('a.back')!.getAttribute('href')).toContain('s=subclass');
+  const t = render(<Card kind="feature" id="deft-explorer-tireless" cls="ranger" level={10} />);
+  expect(t.container.querySelector('.card-sub')!.textContent).toBe('Ranger Feature · Level 10 · Optional');
+});

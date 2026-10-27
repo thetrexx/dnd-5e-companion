@@ -30,6 +30,12 @@ export interface Feature {
   prereq?: { level?: number; option?: string; text?: string };
   spells?: SpellGrant[];
   description: string[]; page: number; book?: BookId; icon?: string; textSource: TextSource;
+  /** a Tasha's optional class feature, or a Tasha's option in an existing pool: tagged "Optional" */
+  optional?: true;
+  /** feature ids or option group ids hidden while this option is chosen */
+  replaces?: string[];
+  /** ticked, this class's optional list spells join its list */
+  expandsList?: ClassId;
 }
 export interface ClassDef {
   id: ClassId; name: string; caster: 'full'|'half'|'third'|'pact'|'none';
@@ -54,6 +60,8 @@ export interface OptionGroup {
   from?: string; only?: string[];
   reuse?: true; // a pick counted in another slot of the same pool may also fill this one
   bonus?: { subclass: string; atLevel: number; count: number }[];
+  /** tick-any: no count limit, the player ticks what their DM allows */
+  optional?: true;
 }
 export interface RaceDef { id: string; name: string; parent?: string; page: number; book?: BookId; icon?: string; spells: SpellGrant[]; options: string[] }
 export interface FeatDef { id: string; name: string; prereq?: string; page: number; book?: BookId; icon?: string; description: string[]; spells: SpellGrant[]; textSource: TextSource }

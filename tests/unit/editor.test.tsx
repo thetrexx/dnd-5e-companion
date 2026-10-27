@@ -196,3 +196,18 @@ test('a legal build never reads as an over-pick', () => {
   expect(r.queryByText(/more than usual/)).toBeNull();
   expect(r.getByText('Chosen for Paladin')).toBeTruthy();
 });
+
+test('options step: optional features are ticked, and a replacement hides the old slot', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'ranger', level: 1 }] });
+  const r = render(<Editor step="options" />);
+  expect(r.getByText('Optional Features')).toBeTruthy();
+  expect(r.getByText('Tick the ones your DM allows.')).toBeTruthy();
+  expect(r.getByText('Replaces Favored Enemy')).toBeTruthy();
+  expect(r.getByText('Favored Enemy')).toBeTruthy();
+  fireEvent.click(r.getByText('Favored Foe'));
+  expect(loadCharacter()!.options).toEqual(['optional-ranger-favored-foe']);
+  expect(r.queryByText('Favored Enemy')).toBeNull();
+  expect(r.getByText('Natural Explorer')).toBeTruthy();
+  fireEvent.click(r.getByText('Favored Foe'));
+  expect(r.getByText('Favored Enemy')).toBeTruthy();
+});

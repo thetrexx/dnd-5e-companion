@@ -123,3 +123,29 @@ test('all view: domain spells keep the Domain tag', () => {
   expect(l1.tags!['bless']).toBe('Domain');
   expect(l1.tags!['guiding-bolt']).toBeUndefined();
 });
+
+const ranger = (lvl: number, options: string[] = [], sub?: string) =>
+  ch([{ cls: 'ranger', level: lvl, ...(sub && { sub }) }], { options });
+test('chosen optional features join the class section, tagged', () => {
+  const sec = charActionSections(ranger(5, ['favored-enemy-undead', 'optional-ranger-favored-foe'])).find(s => s.id === 'class-ranger')!;
+  expect(sec.items.map(f => f.id)).toContain('optional-ranger-favored-foe');
+  expect(sec.tags!['optional-ranger-favored-foe']).toBe('Optional');
+  expect(charActionSections(ranger(5)).find(s => s.id === 'class-ranger')!.items.map(f => f.id)).not.toContain('optional-ranger-favored-foe');
+  expect(charActionSections(ranger(5)).map(s => s.id)).not.toContain('opt-optional-ranger');
+});
+test('replaced class feature hides', () => {
+  const ids = (c: Character) => charActionSections(c).flatMap(s => s.items.map(f => f.id));
+  expect(ids(ranger(10))).toContain('hide-in-plain-sight');
+  expect(ids(ranger(10, ['optional-ranger-natures-veil']))).not.toContain('hide-in-plain-sight');
+  expect(ids(ranger(10, ['optional-ranger-natures-veil']))).toContain('optional-ranger-natures-veil');
+  expect(ids(ranger(10))).not.toContain('deft-explorer-tireless');
+  expect(ids(ranger(10, ['optional-ranger-deft-explorer']))).toContain('deft-explorer-tireless');
+  const bm = charActionSections(ranger(3, ['optional-beast-master-primal-companion'], 'beast-master')).find(s => s.id === 'subclass-ranger')!;
+  expect(bm.items.map(f => f.id)).toEqual(['optional-beast-master-primal-companion']);
+  expect(bm.tags).toEqual({ 'optional-beast-master-primal-companion': 'Optional' });
+});
+test('primal awareness spells come with the tick', () => {
+  const names = (c: Character) => charSpellSections(c, 'mine').flatMap(s => s.items.map(i => i.id));
+  expect(names(ranger(5))).not.toContain('beast-sense');
+  expect(names(ranger(5, ['optional-ranger-primal-awareness']))).toEqual(expect.arrayContaining(['speak-with-animals', 'beast-sense']));
+});

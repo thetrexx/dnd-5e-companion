@@ -1,6 +1,6 @@
 import { DATA } from '../../src/data';
 import { actionSections } from '../../src/logic/sections';
-import { optionSlots } from '../../src/character/options';
+import { optionSlots, replaced } from '../../src/character/options';
 import { emptyCharacter } from '../../src/character/types';
 import type { Character } from '../../src/character/types';
 
@@ -80,4 +80,41 @@ test('xanathar invocations need their pact', () => {
   const f = (id: string) => DATA.features.find(x => x.id === id)!;
   expect(f('eldritch-invocations-maddening-hex').prereq).toMatchObject({ level: 5, text: expect.stringMatching(/hex/i) });
   expect(f('eldritch-invocations-tricksters-escape').spells).toEqual([expect.objectContaining({ spell: 'freedom-of-movement', atLevel: 7, uses: expect.any(String) })]);
+});
+
+const ranger = (lvl: number, options: string[] = [], sub?: string) =>
+  ({ ...emptyCharacter(), classes: [{ cls: 'ranger', level: lvl, ...(sub && { sub }) }], options }) as Character;
+test('old ranger keeps favored enemy (no tick)', () => {
+  const ch = ranger(5, ['favored-enemy-undead']);
+  expect(optionSlots(ch).map(s => s.group.id)).toEqual(expect.arrayContaining(['favored-enemy', 'natural-explorer', 'optional-ranger']));
+  expect(optionSlots(ch).find(s => s.group.id === 'favored-enemy')!.chosen).toEqual(['favored-enemy-undead']);
+});
+test('favored foe replaces favored enemy, untick restores', () => {
+  const on = ranger(5, ['favored-enemy-undead', 'optional-ranger-favored-foe']);
+  expect(optionSlots(on).map(s => s.group.id)).not.toContain('favored-enemy');
+  expect(replaced(on)).toEqual(new Set(['favored-enemy']));
+  expect(optionSlots(ranger(5, ['favored-enemy-undead'])).find(s => s.group.id === 'favored-enemy')!.chosen).toEqual(['favored-enemy-undead']);
+});
+test('optional slot counts every choice reached', () => {
+  const s = optionSlots(ranger(3)).find(x => x.group.id === 'optional-ranger')!;
+  expect(s.count).toBe(s.choices.length);
+  expect(s.choices.map(f => f.id)).not.toContain('optional-ranger-natures-veil');   // level 10
+  expect(optionSlots(ranger(3, [], 'beast-master')).find(x => x.group.id === 'optional-beast-master')!.choices.map(f => f.id))
+    .toEqual(['optional-beast-master-primal-companion']);
+});
+test('ranger optional features', () => {
+  const f = (id: string) => DATA.features.find(x => x.id === id)!;
+  expect(g('optional-ranger')).toMatchObject({ owner: { kind: 'class', id: 'ranger' }, optional: true });
+  expect(g('optional-beast-master')).toMatchObject({ owner: { kind: 'subclass', id: 'beast-master' }, optional: true });
+  expect(opts('optional-ranger').map(x => x.id).sort()).toEqual(['optional-ranger-deft-explorer', 'optional-ranger-favored-foe', 'optional-ranger-natures-veil', 'optional-ranger-primal-awareness']);
+  expect(f('optional-ranger-favored-foe')).toMatchObject({ level: 1, cost: 'free', replaces: ['favored-enemy'], book: 'tce', page: 56, optional: true });
+  expect(f('optional-ranger-favored-foe').scaling![0].values.filter((v, i) => [0, 5, 13].includes(i))).toEqual(['1d4', '1d6', '1d8']);
+  expect(f('optional-ranger-deft-explorer')).toMatchObject({ level: 1, cost: 'passive', replaces: ['natural-explorer'] });
+  expect(f('deft-explorer-tireless')).toMatchObject({ level: 10, cost: 'action', optional: true, prereq: { option: 'optional-ranger-deft-explorer' } });
+  expect(f('optional-ranger-primal-awareness').spells!.map(s => [s.spell, s.atLevel])).toEqual([
+    ['speak-with-animals', 3], ['beast-sense', 5], ['speak-with-plants', 9], ['locate-creature', 13], ['commune-with-nature', 17]]);
+  expect(f('optional-ranger-primal-awareness').replaces).toEqual(['primeval-awareness']);
+  expect(f('optional-ranger-natures-veil')).toMatchObject({ level: 10, cost: 'bonus', replaces: ['hide-in-plain-sight'], page: 57 });
+  expect(f('optional-beast-master-primal-companion')).toMatchObject({ level: 3, replaces: ['rangers-companion', 'companion-commands'], page: 61 });
+  expect(f('optional-beast-master-primal-companion').description.join(' ')).toContain("Stat block: Tasha's p. 61");
 });

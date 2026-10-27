@@ -89,3 +89,21 @@ test('option group must be owned by the listing class', () => {
   bad.classes.find(c => c.id === 'fighter')!.options.push('metamagic');
   expect(validateDataset(bad)).toContain('class "fighter": option group "metamagic" is owned by class "sorcerer"');
 });
+
+test('optional features', () => {
+  const bad = structuredClone(DATA);
+  delete (bad.features.find(f => f.id === 'optional-ranger-favored-foe') as any).optional;
+  bad.features.find(f => f.id === 'optional-ranger-natures-veil')!.prereq = { level: 3 };
+  bad.features.find(f => f.id === 'optional-ranger-deft-explorer')!.replaces = ['no-such-feature'];
+  bad.features.find(f => f.id === 'hide-in-plain-sight')!.expandsList = 'ranger';
+  const errs = validateDataset(bad).join('\n');
+  expect(errs).toContain('"optional-ranger-favored-foe": an option of an optional group must be optional');
+  expect(errs).toContain('"optional-ranger-natures-veil": prereq.level must equal level');
+  expect(errs).toContain('no-such-feature');
+  expect(errs).toContain('"hide-in-plain-sight": expandsList');
+  const ok = structuredClone(DATA);
+  ok.features.find(f => f.id === 'optional-ranger-deft-explorer')!.expandsList = 'ranger';
+  expect(validateDataset(ok)).toEqual([]);
+  ok.features.find(f => f.id === 'optional-ranger-deft-explorer')!.expandsList = 'druid';
+  expect(validateDataset(ok).join('\n')).toContain('expandsList');
+});

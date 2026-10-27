@@ -561,6 +561,68 @@
     ]
   },
   {
+    "id": "optional-ranger",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-beast-master",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
     "id": "draconic-ancestry",
     "name": "Draconic Ancestry",
     "owner": {
