@@ -1254,5 +1254,69 @@
     "page": 35,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-monk-ki-fueled-attack",
+    "name": "Ki-Fueled Attack",
+    "source": {
+      "kind": "option",
+      "id": "optional-monk"
+    },
+    "level": 3,
+    "prereq": {
+      "level": 3
+    },
+    "cost": "bonus",
+    "trigger": "You spent at least 1 ki point as part of your action this turn",
+    "description": [
+      "Attack once, using a monk weapon or an unarmed strike, any time before your turn ends."
+    ],
+    "page": 48,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-monk-quickened-healing",
+    "name": "Quickened Healing",
+    "source": {
+      "kind": "option",
+      "id": "optional-monk"
+    },
+    "level": 4,
+    "prereq": {
+      "level": 4
+    },
+    "cost": "action",
+    "resource": "2 ki points",
+    "description": [
+      "Roll your Martial Arts die. You heal hit points equal to the result plus your proficiency bonus."
+    ],
+    "page": 49,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-monk-focused-aim",
+    "name": "Focused Aim",
+    "source": {
+      "kind": "option",
+      "id": "optional-monk"
+    },
+    "level": 5,
+    "prereq": {
+      "level": 5
+    },
+    "cost": "free",
+    "trigger": "You miss with an attack roll",
+    "resource": "1 to 3 ki points",
+    "description": [
+      "Each ki point you spend raises that attack roll by 2, which may turn the miss into a hit."
+    ],
+    "page": 49,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

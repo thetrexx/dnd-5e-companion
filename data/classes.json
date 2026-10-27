@@ -230,7 +230,9 @@
     "plainIcon": "https://bg3.wiki/w/images/0/02/Class_Monk_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Monastic Tradition",
-    "options": []
+    "options": [
+      "optional-monk"
+    ]
   },
   {
     "id": "paladin",

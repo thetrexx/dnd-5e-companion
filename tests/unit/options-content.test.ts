@@ -13,7 +13,7 @@ test('groups', () => {
   expect(g('eldritch-invocations').picks).toEqual([0,2,2,2,3,3,4,4,5,5,5,6,6,6,7,7,7,8,8,8]);
   expect(g('pact-boon').picks).toEqual([0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
   expect(g('metamagic').picks).toEqual([0,0,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4]);
-  expect(opts('metamagic')).toHaveLength(8);
+  expect(opts('metamagic')).toHaveLength(10);   // 8 PHB + 2 Tasha's
   expect(opts('maneuvers')).toHaveLength(23);   // 16 PHB + 7 Tasha's
   expect(opts('fighting-style')).toHaveLength(13);   // 6 PHB + 7 Tasha's
   expect(g('fighting-style-paladin').only!.slice().sort()).toEqual(['fighting-style-blessed-warrior', 'fighting-style-blind-fighting', 'fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting', 'fighting-style-interception', 'fighting-style-protection']);
@@ -29,8 +29,8 @@ test('browse shows usable options only', () => {
   expect(ids).not.toContain('eldritch-invocations-thirsting-blade');     // needs level 5
 });
 test('group sizes and ownership', () => {
-  expect(opts('eldritch-invocations')).toHaveLength(46);
-  expect(opts('pact-boon')).toHaveLength(3);
+  expect(opts('eldritch-invocations')).toHaveLength(54);   // 46 + 8 Tasha's
+  expect(opts('pact-boon')).toHaveLength(4);   // + Pact of the Talisman
   expect(opts('elemental-disciplines')).toHaveLength(16);
   for (const id of ['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement']) expect(opts(id)).toHaveLength(3);
   expect(opts('favored-enemy')).toHaveLength(14);
@@ -59,6 +59,7 @@ test('class and subclass hooks', () => {
   expect(c('paladin')).toEqual(['fighting-style-paladin', 'optional-paladin']);
   expect(c('barbarian')).toEqual(['optional-barbarian']);
   expect(c('rogue')).toEqual(['optional-rogue']);
+  expect(c('monk')).toEqual(['optional-monk']);
   expect(c('fighter')).toEqual(['fighting-style']);
   expect(c('ranger')).toEqual(expect.arrayContaining(['fighting-style-ranger', 'favored-enemy', 'natural-explorer']));
   expect(s('battle-master')).toEqual(['maneuvers']);
@@ -198,4 +199,68 @@ test('blessed warrior cantrips are offered once picked, also to a fighter/paladi
     .find(s => s.key.startsWith('feature:fighting-style-blessed-warrior'));
   expect(slot([{ cls: 'paladin', level: 2 }])).toMatchObject({ unlocked: true, choose: { lists: ['cleric'], count: 2 } });
   expect(slot([{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }])).toMatchObject({ unlocked: true });
+});
+
+// Task 6: Tasha's optional features of the casters and the monk, new Metamagic, Pact of the Talisman, new invocations
+test('blessed strikes replaces every divine strike', () => {
+  const ds = DATA.features.filter(x => x.name === 'Divine Strike' && x.source.kind === 'subclass').map(x => x.id);
+  expect(ds.length).toBeGreaterThanOrEqual(7);
+  expect(f('optional-cleric-blessed-strikes').replaces!.slice().sort()).toEqual(ds.sort());
+});
+test('talisman invocations need the talisman', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 12 }], options: ['pact-boon-pact-of-the-blade'] } as Character;
+  const offered = optionSlots(ch).find(s => s.group.id === 'eldritch-invocations')!.choices.map(x => x.id);
+  expect(offered).not.toContain('eldritch-invocations-rebuke-of-the-talisman');
+  expect(offered).toContain('eldritch-invocations-eldritch-mind');
+  const tal = optionSlots({ ...ch, options: ['pact-boon-pact-of-the-talisman'] } as Character)
+    .find(s => s.group.id === 'eldritch-invocations')!.choices.map(x => x.id);
+  expect(tal).toEqual(expect.arrayContaining(['eldritch-invocations-rebuke-of-the-talisman', 'eldritch-invocations-protection-of-the-talisman', 'eldritch-invocations-bond-of-the-talisman']));
+  expect(tal).not.toContain('eldritch-invocations-far-scribe');
+});
+test('task 6 optional features', () => {
+  for (const id of ['optional-cleric-harness-divine-power', 'optional-cleric-blessed-strikes', 'optional-druid-wild-companion',
+    'optional-monk-ki-fueled-attack', 'optional-monk-quickened-healing', 'optional-monk-focused-aim', 'optional-sorcerer-magical-guidance'])
+    expect(f(id), id).toMatchObject({ book: 'tce', optional: true, textSource: 'summary' });
+  expect(f('optional-cleric-harness-divine-power')).toMatchObject({ level: 2, prereq: { level: 2 }, cost: 'bonus', page: 30 });
+  expect(f('optional-cleric-harness-divine-power').scaling![0].values.filter((v, i) => [1, 5, 17].includes(i))).toEqual(['1', '2', '3']);
+  expect(f('optional-cleric-blessed-strikes')).toMatchObject({ level: 8, prereq: { level: 8 }, cost: 'free', page: 31 });
+  expect(f('optional-druid-wild-companion')).toMatchObject({ level: 2, prereq: { level: 2 }, cost: 'action', page: 35 });
+  expect(f('optional-druid-wild-companion').spells).toEqual([{ spell: 'find-familiar', atLevel: 2, uses: expect.stringMatching(/wild shape/i) }]);
+  expect(f('optional-monk-ki-fueled-attack')).toMatchObject({ level: 3, prereq: { level: 3 }, cost: 'bonus', page: 48 });
+  expect(f('optional-monk-quickened-healing')).toMatchObject({ level: 4, prereq: { level: 4 }, cost: 'action', resource: '2 ki points', page: 49 });
+  expect(f('optional-monk-focused-aim')).toMatchObject({ level: 5, prereq: { level: 5 }, cost: 'free', page: 49 });
+  expect(f('optional-sorcerer-magical-guidance')).toMatchObject({ level: 5, prereq: { level: 5 }, cost: 'free', resource: '1 sorcery point', page: 66 });
+});
+test('monk optional group', () => {
+  expect(g('optional-monk')).toMatchObject({ name: 'Optional Features', owner: { kind: 'class', id: 'monk' }, optional: true });
+  expect(DATA.classes.find(x => x.id === 'monk')!.options).toEqual(['optional-monk']);
+  expect(opts('optional-monk').map(x => x.id).sort()).toEqual(['optional-monk-focused-aim', 'optional-monk-ki-fueled-attack', 'optional-monk-quickened-healing']);
+  expect(opts('optional-cleric').map(x => x.id).sort()).toEqual(['optional-cleric-additional-spells', 'optional-cleric-blessed-strikes', 'optional-cleric-harness-divine-power']);
+  expect(opts('optional-druid').map(x => x.id).sort()).toEqual(['optional-druid-additional-spells', 'optional-druid-wild-companion']);
+  expect(opts('optional-sorcerer').map(x => x.id).sort()).toEqual(['optional-sorcerer-additional-spells', 'optional-sorcerer-magical-guidance']);
+  const monk = (level: number) => optionSlots({ ...emptyCharacter(), classes: [{ cls: 'monk', level }] } as Character).find(s => s.group.id === 'optional-monk');
+  expect(monk(2)).toBeUndefined();
+  expect(monk(4)!.choices.map(x => x.id)).toEqual(['optional-monk-ki-fueled-attack', 'optional-monk-quickened-healing']);
+});
+test('new metamagic, pact boon and invocations', () => {
+  const tce = [...poolOptions('metamagic'), ...poolOptions('pact-boon'), ...poolOptions('eldritch-invocations')].filter(x => x.book === 'tce');
+  expect(tce.map(x => x.id).sort()).toEqual(['eldritch-invocations-bond-of-the-talisman', 'eldritch-invocations-eldritch-mind',
+    'eldritch-invocations-far-scribe', 'eldritch-invocations-gift-of-the-protectors', 'eldritch-invocations-investment-of-the-chain-master',
+    'eldritch-invocations-protection-of-the-talisman', 'eldritch-invocations-rebuke-of-the-talisman', 'eldritch-invocations-undying-servitude',
+    'metamagic-seeking-spell', 'metamagic-transmuted-spell', 'pact-boon-pact-of-the-talisman']);
+  for (const x of tce) expect(x, x.id).toMatchObject({ optional: true, textSource: 'summary' });
+  expect(f('metamagic-seeking-spell')).toMatchObject({ resource: '2 sorcery points', page: 66 });
+  expect(f('metamagic-transmuted-spell')).toMatchObject({ resource: '1 sorcery point', page: 66 });
+  expect(f('pact-boon-pact-of-the-talisman')).toMatchObject({ level: 3, page: 70 });
+  const tal = 'pact-boon-pact-of-the-talisman', tome = 'pact-boon-pact-of-the-tome';
+  expect(f('eldritch-invocations-bond-of-the-talisman').prereq).toEqual({ level: 12, option: tal });
+  expect(f('eldritch-invocations-protection-of-the-talisman').prereq).toEqual({ level: 7, option: tal });
+  expect(f('eldritch-invocations-rebuke-of-the-talisman').prereq).toEqual({ option: tal });
+  expect(f('eldritch-invocations-far-scribe').prereq).toEqual({ level: 5, option: tome });
+  expect(f('eldritch-invocations-gift-of-the-protectors').prereq).toEqual({ level: 9, option: tome });
+  expect(f('eldritch-invocations-investment-of-the-chain-master').prereq).toEqual({ option: 'pact-boon-pact-of-the-chain' });
+  expect(f('eldritch-invocations-undying-servitude').prereq).toEqual({ level: 5 });
+  expect(f('eldritch-invocations-eldritch-mind').prereq).toBeUndefined();
+  expect(f('eldritch-invocations-far-scribe').spells).toEqual([{ spell: 'sending', atLevel: 5, uses: expect.any(String) }]);
+  expect(f('eldritch-invocations-undying-servitude').spells).toEqual([{ spell: 'animate-dead', atLevel: 5, uses: expect.any(String) }]);
 });

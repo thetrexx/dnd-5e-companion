@@ -1007,5 +1007,87 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "optional-cleric-harness-divine-power",
+    "name": "Harness Divine Power",
+    "source": {
+      "kind": "option",
+      "id": "optional-cleric"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "uses": "1 per long rest at cleric 2, 2 at 6, 3 at 18",
+    "scaling": [
+      {
+        "label": "Uses per long rest",
+        "values": [
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "Spend a Channel Divinity use: hold up your holy symbol, pray, and recover one expended spell slot. The slot's level can't be above half your proficiency bonus, rounded up (1st at +2, 2nd at +3 or +4, 3rd at +5 or +6).",
+      "Uses: once at cleric 2, twice at 6, three times at 18. A long rest restores them all."
+    ],
+    "page": 30,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-cleric-blessed-strikes",
+    "name": "Blessed Strikes",
+    "source": {
+      "kind": "option",
+      "id": "optional-cleric"
+    },
+    "level": 8,
+    "prereq": {
+      "level": 8
+    },
+    "cost": "free",
+    "trigger": "Your cantrip or weapon attack damages a creature",
+    "uses": "Once per round (back at the start of your next turn)",
+    "replaces": [
+      "divine-strike",
+      "nature-domain-divine-strike",
+      "tempest-domain-divine-strike",
+      "trickery-domain-divine-strike",
+      "war-domain-divine-strike",
+      "death-domain-divine-strike",
+      "forge-domain-divine-strike"
+    ],
+    "description": [
+      "Add 1d8 radiant damage to that creature.",
+      "Once used, it is spent until your next turn begins. It takes the place of your domain's Divine Strike or Potent Spellcasting."
+    ],
+    "page": 31,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

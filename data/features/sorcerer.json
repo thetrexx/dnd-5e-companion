@@ -709,5 +709,66 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "optional-sorcerer-magical-guidance",
+    "name": "Magical Guidance",
+    "source": {
+      "kind": "option",
+      "id": "optional-sorcerer"
+    },
+    "level": 5,
+    "prereq": {
+      "level": 5
+    },
+    "cost": "free",
+    "trigger": "You fail an ability check",
+    "resource": "1 sorcery point",
+    "description": [
+      "Reroll the d20. The new result stands, and it may turn the failure into a success."
+    ],
+    "page": 66,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "metamagic-seeking-spell",
+    "name": "Seeking Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You miss with a spell attack roll",
+    "resource": "2 sorcery points",
+    "description": [
+      "Reroll the d20; you have to keep the second roll.",
+      "Allowed even when another Metamagic option is already on the same casting."
+    ],
+    "page": 66,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "metamagic-transmuted-spell",
+    "name": "Transmuted Spell",
+    "source": {
+      "kind": "option",
+      "id": "metamagic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You cast a spell that deals acid, cold, fire, lightning, poison or thunder damage",
+    "resource": "1 sorcery point",
+    "description": [
+      "Switch that damage to another of those six types."
+    ],
+    "page": 66,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

@@ -1197,5 +1197,36 @@
       1
     ],
     "optional": true
+  },
+  {
+    "id": "optional-monk",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
   }
 ]

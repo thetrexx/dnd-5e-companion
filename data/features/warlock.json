@@ -1498,5 +1498,213 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "pact-boon-pact-of-the-talisman",
+    "name": "Pact of the Talisman",
+    "source": {
+      "kind": "option",
+      "id": "pact-boon"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Whoever wears your talisman fails an ability check",
+    "uses": "Proficiency bonus times per long rest",
+    "description": [
+      "Your patron gives you an amulet. Its wearer, you or anyone you hand it to, adds a d4 to the failed check and may succeed after all.",
+      "If you lose it, a 1-hour ceremony during a short or long rest brings a new one from your patron and destroys the old. It turns to ash when you die."
+    ],
+    "page": 70,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-bond-of-the-talisman",
+    "name": "Bond of the Talisman",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 12,
+    "cost": "action",
+    "uses": "Proficiency bonus times per long rest",
+    "prereq": {
+      "level": 12,
+      "option": "pact-boon-pact-of-the-talisman"
+    },
+    "description": [
+      "While another creature wears your talisman and shares your plane, teleport to the free space nearest to it.",
+      "The wearer can also spend its action to teleport to you in the same way."
+    ],
+    "page": 70,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-eldritch-mind",
+    "name": "Eldritch Mind",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "passive",
+    "description": [
+      "Your Constitution saves to keep concentrating on a spell are rolled with advantage."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-far-scribe",
+    "name": "Far Scribe",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "action",
+    "uses": "At will, no slot",
+    "prereq": {
+      "level": 5,
+      "option": "pact-boon-pact-of-the-tome"
+    },
+    "spells": [
+      {
+        "spell": "sending",
+        "atLevel": 5,
+        "uses": "At will, no slot, only to a creature named on the page"
+      }
+    ],
+    "description": [
+      "Cast sending, with no slot and no material components, to any creature named on a special page of your Book of Shadows. You write the message on the page, and any reply appears there instead of in your head. The writing fades after 1 minute.",
+      "The page holds as many names as your proficiency bonus. A creature signs it with its action, if you allow it. Action: touch the page to erase a name."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-gift-of-the-protectors",
+    "name": "Gift of the Protectors",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "A creature named on the page drops to 0 hit points without being killed outright",
+    "uses": "Once per long rest, for the whole page",
+    "prereq": {
+      "level": 9,
+      "option": "pact-boon-pact-of-the-tome"
+    },
+    "description": [
+      "It is left at 1 hit point instead. After that, no one on the page can be saved this way until you finish a long rest.",
+      "The page is a new one in your Book of Shadows and holds as many names as your proficiency bonus. A creature signs it with its action, if you allow it. Action: touch the page to erase a name."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-investment-of-the-chain-master",
+    "name": "Investment of the Chain Master",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "prereq": {
+      "option": "pact-boon-pact-of-the-chain"
+    },
+    "description": [
+      "Bonus action: order your familiar to take the Attack action.",
+      "Reaction, when your familiar takes damage: it resists that damage.",
+      "Each time you cast find familiar, the familiar also gets a 40 ft flying or swimming speed (you pick), its weapon attacks count as magical against resistance and immunity, and saves it forces use your spell save DC."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-protection-of-the-talisman",
+    "name": "Protection of the Talisman",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 7,
+    "cost": "free",
+    "trigger": "Whoever wears your talisman fails a saving throw",
+    "uses": "Proficiency bonus times per long rest",
+    "prereq": {
+      "level": 7,
+      "option": "pact-boon-pact-of-the-talisman"
+    },
+    "description": [
+      "The wearer adds a d4 to that save and may succeed after all."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-rebuke-of-the-talisman",
+    "name": "Rebuke of the Talisman",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 2,
+    "cost": "reaction",
+    "trigger": "Whoever wears your talisman is hit by an attacker within 30 ft that you can see",
+    "prereq": {
+      "option": "pact-boon-pact-of-the-talisman"
+    },
+    "description": [
+      "Psychic damage equal to your proficiency bonus hits the attacker, which is also pushed as far as 10 ft from the wearer."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "eldritch-invocations-undying-servitude",
+    "name": "Undying Servitude",
+    "source": {
+      "kind": "option",
+      "id": "eldritch-invocations"
+    },
+    "level": 5,
+    "cost": "other",
+    "uses": "Once per long rest, no slot",
+    "prereq": {
+      "level": 5
+    },
+    "spells": [
+      {
+        "spell": "animate-dead",
+        "atLevel": 5,
+        "uses": "Once per long rest, no slot"
+      }
+    ],
+    "description": [
+      "Once per long rest, cast animate dead without spending a spell slot."
+    ],
+    "page": 71,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]
