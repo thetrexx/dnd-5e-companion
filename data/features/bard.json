@@ -493,5 +493,168 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "mote-of-potential",
+    "name": "Mote of Potential",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-creation"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hand out a Bardic Inspiration die",
+    "page": 28,
+    "description": [
+      "A Tiny, intangible, invulnerable mote circles within 5 ft of the creature until the die is used or lost. When the die is spent, the mote adds an effect that depends on the roll:",
+      "Ability check: the creature rolls the Bardic Inspiration die a second time and keeps the result it prefers.",
+      "Attack roll: right after the die is rolled, the target and any creatures you choose within 5 ft of it make a Constitution save against your spell save DC; on a failure each takes thunder damage equal to the die result.",
+      "Saving throw: right after the die is rolled, the creature gains temporary hit points equal to the die result + your Charisma modifier (minimum 1)."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "performance-of-creation",
+    "name": "Performance of Creation",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-creation"
+    },
+    "level": 3,
+    "cost": "action",
+    "uses": "Once per long rest, then a spell slot (2nd level or higher) per use",
+    "page": 28,
+    "scaling": [
+      {
+        "label": "Max size",
+        "values": [
+          "",
+          "",
+          "Medium",
+          "Medium",
+          "Medium",
+          "Large",
+          "Large",
+          "Large",
+          "Large",
+          "Large",
+          "Large",
+          "Large",
+          "Large",
+          "Huge",
+          "Huge",
+          "Huge",
+          "Huge",
+          "Huge",
+          "Huge",
+          "Huge"
+        ]
+      },
+      {
+        "label": "Max value",
+        "values": [
+          "",
+          "",
+          "60 gp",
+          "80 gp",
+          "100 gp",
+          "120 gp",
+          "140 gp",
+          "160 gp",
+          "180 gp",
+          "200 gp",
+          "220 gp",
+          "240 gp",
+          "260 gp",
+          "No limit",
+          "No limit",
+          "No limit",
+          "No limit",
+          "No limit",
+          "No limit",
+          "No limit"
+        ]
+      }
+    ],
+    "description": [
+      "Action: a nonmagical item of your choice appears in an unoccupied space within 10 ft, resting on a surface or a liquid that can hold it. It is worth at most 20 gp × your bard level and is Medium or smaller. It glimmers, and anyone touching it hears faint music. It vanishes once hours equal to your proficiency bonus have passed.",
+      "You keep only one such item: making a new one makes the old one vanish at once. The size limit rises to Large at bard level 6 and Huge at 14. For ideas, see the equipment chapter of the Player's Handbook.",
+      "Level 14 (Creative Crescendo): make several items in one use, up to your Charisma modifier (minimum 2). Going past that number, you pick which older items vanish. Only one item may be the largest size you can make; the rest are Small or Tiny. The gp limit no longer applies."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "animating-performance",
+    "name": "Animating Performance",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-creation"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Once per long rest, then a spell slot (3rd level or higher) per use",
+    "page": 29,
+    "description": [
+      "Action: bring to life a nonmagical item, Large or smaller, that you can see within 30 ft. It becomes a Dancing Item using your proficiency bonus, friendly to you and your companions and obeying your orders. It lasts 1 hour, or until it drops to 0 hit points or you die.",
+      "It shares your initiative and acts right after you. It moves and reacts by itself, but its only action is Dodge unless you spend a bonus action to command it (an action from its stat block or any other). The bonus action you use for Bardic Inspiration can also command it. While you are incapacitated it acts as it likes.",
+      "One Dancing Item at a time: animating another makes the first go inanimate.",
+      "Stat block: Tasha's p. 29."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "unsettling-words",
+    "name": "Unsettling Words",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-eloquence"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 Bardic Inspiration",
+    "page": 30,
+    "description": [
+      "Bonus action: pick a creature you can see within 60 ft and roll a Bardic Inspiration die. The creature takes the result off the next saving throw it makes before your next turn starts."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "universal-speech",
+    "name": "Universal Speech",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-eloquence"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Once per long rest, or spend a spell slot of any level",
+    "page": 30,
+    "description": [
+      "Action: choose creatures within 60 ft, as many as your Charisma modifier (minimum 1). For 1 hour they magically understand you, whatever language you speak."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infectious-inspiration",
+    "name": "Infectious Inspiration",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-eloquence"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "A creature within 60 ft succeeds on an ability check, attack roll or save after adding one of your Bardic Inspiration dice",
+    "uses": "Charisma modifier (minimum 1) per long rest",
+    "page": 30,
+    "description": [
+      "Give a Bardic Inspiration die to a different creature (not you) within 60 ft that can hear you. None of your Bardic Inspiration uses are spent."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

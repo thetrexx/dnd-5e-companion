@@ -832,5 +832,80 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "summon-wildfire-spirit",
+    "name": "Summon Wildfire Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Wild Shape use",
+    "page": 40,
+    "description": [
+      "Action: spend a Wild Shape use to call your wildfire spirit instead of taking a beast shape. It appears in an unoccupied space you can see within 30 ft. Every creature within 10 ft of it, except you, makes a Dexterity save against your spell save DC; on a failure it takes 2d6 fire damage.",
+      "It is an ally of you and your companions and follows your orders; it uses your proficiency bonus. It shares your initiative and acts right after you. It moves and reacts by itself, but its only action is Dodge unless you spend a bonus action to command it (Flame Seed, Fiery Teleportation or any other action). While you are incapacitated it acts as it likes.",
+      "It stays for 1 hour, until it drops to 0 hit points, until you summon it again, or until you die.",
+      "Stat block: Tasha's p. 40."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "enhanced-bond",
+    "name": "Enhanced Bond",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "While your wildfire spirit is summoned, you cast a spell that heals or deals fire damage",
+    "page": 40,
+    "description": [
+      "Roll a d8 and add it to one damage or healing roll of that spell.",
+      "Also, while the spirit is summoned, a spell you cast with a range other than self can start from you or from the spirit."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "cauterizing-flames",
+    "name": "Cauterizing Flames",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "A creature you can see enters the space of a spectral flame",
+    "uses": "Proficiency bonus per long rest",
+    "page": 40,
+    "description": [
+      "When a Small or larger creature dies no more than 30 ft from you or your wildfire spirit, a spectral flame (harmless) flickers in its space for 1 minute.",
+      "Use your reaction to put that flame out and either heal the creature that entered or burn it: 2d10 + your Wisdom modifier, as hit points regained or fire damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "blazing-revival",
+    "name": "Blazing Revival",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You drop to 0 hit points and fall unconscious while your wildfire spirit is within 120 ft",
+    "uses": "Once per long rest",
+    "page": 40,
+    "description": [
+      "Your spirit drops to 0 hit points instead: you regain half your hit points and get straight back on your feet."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

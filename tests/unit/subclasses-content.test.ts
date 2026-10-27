@@ -36,7 +36,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('80 subclasses', () => expect(DATA.subclasses).toHaveLength(80));
+test('87 subclasses', () => expect(DATA.subclasses).toHaveLength(87));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -299,4 +299,78 @@ test('healing light pool is 1 + warlock level', () => {
   const pool = feature('healing-light').scaling!.find(s => /pool/i.test(s.label))!;
   expect([pool.values[0], pool.values[19]]).toEqual(['2', '21']);
   expect(feature('healing-light')).toMatchObject({ cost: 'bonus', level: 1, page: 54 });
+});
+
+// Plan 7 (batch 3), Task 7: Tasha's subclasses, barbarian to druid
+const TCE7 = ['path-of-the-beast', 'college-of-creation', 'college-of-eloquence', 'order-domain', 'peace-domain', 'twilight-domain', 'circle-of-wildfire'];
+test('tasha subclasses (task 7)', () => { for (const id of TCE7) expect(sub(id), id).toMatchObject({ book: 'tce' }); });
+test('every tasha task 7 feature and option names its book', () => {
+  const ids = new Set(TCE7);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('tce');
+  for (const id of TCE7) expect(sub(id).options, id).toEqual([]);
+});
+test('twilight domain spells', () => expect(sub('twilight-domain').bonusSpells).toMatchObject({ kind: 'domain' }));
+test('tasha task 7 domain and circle spell tables', () => {
+  const at = (id: string, lvl: number) => sub(id).bonusSpells!.grants.filter(g => g.atLevel === lvl).map(g => g.spell).sort();
+  expect(sub('order-domain').bonusSpells!.kind).toBe('domain');
+  expect(sub('peace-domain').bonusSpells!.kind).toBe('domain');
+  expect(sub('circle-of-wildfire').bonusSpells!.kind).toBe('circle');
+  expect(at('order-domain', 1)).toEqual(['command', 'heroism']);
+  expect(at('order-domain', 5)).toEqual(['mass-healing-word', 'slow']);
+  expect(at('order-domain', 9)).toEqual(['commune', 'dominate-person']);
+  expect(at('peace-domain', 7)).toEqual(['aura-of-purity', 'otilukes-resilient-sphere']);
+  expect(at('peace-domain', 9)).toEqual(['greater-restoration', 'rarys-telepathic-bond']);
+  expect(at('twilight-domain', 5)).toEqual(['aura-of-vitality', 'leomunds-tiny-hut']);
+  expect(at('twilight-domain', 9)).toEqual(['circle-of-power', 'mislead']);
+  expect(at('circle-of-wildfire', 2)).toEqual(['burning-hands', 'cure-wounds']);
+  expect(at('circle-of-wildfire', 3)).toEqual(['flaming-sphere', 'scorching-ray']);
+  expect(at('circle-of-wildfire', 9)).toEqual(['flame-strike', 'mass-cure-wounds']);
+  expect(sub('circle-of-wildfire').bonusSpells!.grants.map(g => g.atLevel).sort((a, b) => a - b)).toEqual([2, 2, 3, 3, 5, 5, 7, 7, 9, 9]);
+});
+test('tasha task 7 must-have features', () => {
+  for (const id of ['form-of-the-beast', 'form-of-the-beast-tail', 'bestial-soul', 'infectious-fury', 'call-the-hunt',
+    'mote-of-potential', 'performance-of-creation', 'animating-performance',
+    'unsettling-words', 'universal-speech', 'infectious-inspiration',
+    'voice-of-authority', 'orders-demand', 'embodiment-of-the-law', 'order-domain-divine-strike', 'orders-wrath',
+    'emboldening-bond', 'balm-of-peace', 'protective-bond',
+    'eyes-of-night', 'vigilant-blessing', 'twilight-sanctuary', 'steps-of-night', 'twilight-domain-divine-strike',
+    'summon-wildfire-spirit', 'enhanced-bond', 'cauterizing-flames', 'blazing-revival'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('tasha task 7 reactions are reaction cards with a trigger', () => {
+  for (const id of ['form-of-the-beast-tail', 'infectious-inspiration', 'protective-bond', 'cauterizing-flames']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('tasha task 7 channel divinity options cost a Channel Divinity', () => {
+  for (const id of ['orders-demand', 'balm-of-peace', 'twilight-sanctuary'])
+    expect(feature(id), id).toMatchObject({ cost: 'action', resource: '1 Channel Divinity', level: 2 });
+});
+test('order and twilight divine strike: prefixed ids, hidden by blessed strikes', () => {
+  expect(feature('order-domain-divine-strike')).toMatchObject({ name: 'Divine Strike', level: 8, cost: 'free', page: 32, source: { kind: 'subclass', id: 'order-domain' } });
+  expect(feature('twilight-domain-divine-strike')).toMatchObject({ name: 'Divine Strike', level: 8, cost: 'free', page: 35, source: { kind: 'subclass', id: 'twilight-domain' } });
+  const bs = feature('optional-cleric-blessed-strikes').replaces!;
+  expect(bs).toContain('order-domain-divine-strike');
+  expect(bs).toContain('twilight-domain-divine-strike');
+});
+test('tasha summons cite their stat block page', () => {
+  expect(feature('animating-performance')).toMatchObject({ cost: 'action', level: 6, page: 29 });
+  expect(feature('animating-performance').description.join(' ')).toContain("Stat block: Tasha's p. 29");
+  expect(feature('summon-wildfire-spirit')).toMatchObject({ cost: 'action', level: 2, page: 40, resource: '1 Wild Shape use' });
+  expect(feature('summon-wildfire-spirit').description.join(' ')).toContain("Stat block: Tasha's p. 40");
+});
+test('blazing revival is a free once-per-long-rest trigger', () => {
+  expect(feature('blazing-revival')).toMatchObject({ cost: 'free', uses: 'Once per long rest', level: 14, page: 40 });
+  expect(feature('blazing-revival').trigger).toMatch(/0 hit points/i);
+});
+test('tasha task 7 riders are free cards with a trigger', () => {
+  for (const id of ['form-of-the-beast', 'infectious-fury', 'call-the-hunt', 'mote-of-potential', 'voice-of-authority',
+    'embodiment-of-the-law', 'orders-wrath', 'enhanced-bond']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
 });

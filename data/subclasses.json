@@ -517,6 +517,14 @@
     "hotbarIcon": "https://bg3.wiki/w/images/6/6b/Class_Barbarian_Wild_Magic_Hotbar_Icon.png"
   },
   {
+    "id": "path-of-the-beast",
+    "cls": "barbarian",
+    "name": "Path of the Beast",
+    "page": 24,
+    "book": "tce",
+    "options": []
+  },
+  {
     "id": "path-of-giants",
     "cls": "barbarian",
     "name": "Path of the Giant",
@@ -612,6 +620,22 @@
     "name": "College of Whispers",
     "page": 16,
     "book": "xge",
+    "options": []
+  },
+  {
+    "id": "college-of-creation",
+    "cls": "bard",
+    "name": "College of Creation",
+    "page": 28,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "college-of-eloquence",
+    "cls": "bard",
+    "name": "College of Eloquence",
+    "page": 29,
+    "book": "tce",
     "options": []
   },
   {
@@ -1174,6 +1198,165 @@
     "options": []
   },
   {
+    "id": "order-domain",
+    "cls": "cleric",
+    "name": "Order Domain",
+    "page": 31,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "command",
+          "atLevel": 1
+        },
+        {
+          "spell": "heroism",
+          "atLevel": 1
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 3
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 3
+        },
+        {
+          "spell": "mass-healing-word",
+          "atLevel": 5
+        },
+        {
+          "spell": "slow",
+          "atLevel": 5
+        },
+        {
+          "spell": "compulsion",
+          "atLevel": 7
+        },
+        {
+          "spell": "locate-creature",
+          "atLevel": 7
+        },
+        {
+          "spell": "commune",
+          "atLevel": 9
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "peace-domain",
+    "cls": "cleric",
+    "name": "Peace Domain",
+    "page": 32,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "heroism",
+          "atLevel": 1
+        },
+        {
+          "spell": "sanctuary",
+          "atLevel": 1
+        },
+        {
+          "spell": "aid",
+          "atLevel": 3
+        },
+        {
+          "spell": "warding-bond",
+          "atLevel": 3
+        },
+        {
+          "spell": "beacon-of-hope",
+          "atLevel": 5
+        },
+        {
+          "spell": "sending",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-purity",
+          "atLevel": 7
+        },
+        {
+          "spell": "otilukes-resilient-sphere",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-restoration",
+          "atLevel": 9
+        },
+        {
+          "spell": "rarys-telepathic-bond",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "twilight-domain",
+    "cls": "cleric",
+    "name": "Twilight Domain",
+    "page": 34,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "faerie-fire",
+          "atLevel": 1
+        },
+        {
+          "spell": "sleep",
+          "atLevel": 1
+        },
+        {
+          "spell": "moonbeam",
+          "atLevel": 3
+        },
+        {
+          "spell": "see-invisibility",
+          "atLevel": 3
+        },
+        {
+          "spell": "aura-of-vitality",
+          "atLevel": 5
+        },
+        {
+          "spell": "leomunds-tiny-hut",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-life",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7
+        },
+        {
+          "spell": "circle-of-power",
+          "atLevel": 9
+        },
+        {
+          "spell": "mislead",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
@@ -1239,6 +1422,59 @@
     "book": "tce",
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/3/39/Class_Druid_Stars_Hotbar_Icon.png"
+  },
+  {
+    "id": "circle-of-wildfire",
+    "cls": "druid",
+    "name": "Circle of Wildfire",
+    "page": 39,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "circle",
+      "grants": [
+        {
+          "spell": "burning-hands",
+          "atLevel": 2
+        },
+        {
+          "spell": "cure-wounds",
+          "atLevel": 2
+        },
+        {
+          "spell": "flaming-sphere",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-life",
+          "atLevel": 7
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "mass-cure-wounds",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "circle-of-dreams",

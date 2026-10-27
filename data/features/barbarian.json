@@ -1001,5 +1001,102 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "form-of-the-beast",
+    "name": "Form of the Beast",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-beast"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You enter your rage",
+    "page": 24,
+    "description": [
+      "Each time you rage you can grow one natural weapon, which lasts until the rage ends. You treat it as a simple melee weapon and add your Strength modifier to its attack and damage rolls. Pick the form each rage:",
+      "Bite: 1d8 piercing. Once per turn, if your bite damages a creature while you are below half your hit points, you regain hit points equal to your proficiency bonus.",
+      "Claws: 1d6 slashing, one per empty hand. Once per turn, when you attack with a claw as part of the Attack action, that action gives you one more claw attack.",
+      "Tail: 1d8 piercing, with reach. It also unlocks the Form of the Beast (Tail) reaction.",
+      "Level 6 (Bestial Soul): they count as magical when overcoming resistance or immunity to nonmagical damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "form-of-the-beast-tail",
+    "name": "Form of the Beast (Tail)",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-beast"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "Your tail is out and a creature you can see no more than 10 ft away hits you with an attack roll",
+    "page": 24,
+    "description": [
+      "Lash out with the tail: roll a d8 and add the result to your AC against that attack, which can turn the hit into a miss."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "bestial-soul",
+    "name": "Bestial Soul",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-beast"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You finish a short or long rest",
+    "page": 25,
+    "description": [
+      "Pick one adaptation; it holds until the end of your next short or long rest:",
+      "Swim: swim speed matching your walking speed; you can also breathe underwater.",
+      "Climb: climb speed matching your walking speed. You scale difficult surfaces, upside down across ceilings included, with no ability check.",
+      "Jump: when you jump, make a Strength (Athletics) check and add its total, in feet, to the distance. Only once per turn."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infectious-fury",
+    "name": "Infectious Fury",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-beast"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "Your natural weapon hits a creature while you rage",
+    "uses": "Proficiency bonus per long rest",
+    "page": 25,
+    "description": [
+      "The target makes a Wisdom save (DC 8 + your proficiency bonus + your Constitution modifier). If it fails, you pick one effect:",
+      "• It spends its reaction attacking, in melee, another creature you can see that you choose.",
+      "• It takes 2d12 psychic damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "call-the-hunt",
+    "name": "Call the Hunt",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-beast"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You enter your rage",
+    "uses": "Proficiency bonus per long rest",
+    "page": 25,
+    "description": [
+      "Choose willing creatures you can see within 30 ft, as many as your Constitution modifier (minimum 1). For each one that accepts, you gain 5 temporary hit points.",
+      "Until the rage ends, each chosen creature, once on each of its turns, can roll a d6 and add it to the damage when its attack roll hits and damages a target."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]
