@@ -464,5 +464,291 @@
     "page": 133,
     "book": "scag",
     "textSource": "summary"
+  },
+  {
+    "id": "conquering-presence",
+    "name": "Conquering Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-conquest"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Pick any number of creatures in sight and no more than 30 ft away; each makes a Wisdom save. On a failure it is frightened of you for 1 minute. It can save again whenever one of its turns ends, ending the fear on a success."
+    ],
+    "page": 38,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "oath-of-conquest-guided-strike",
+    "name": "Guided Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-conquest"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make an attack roll",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Add +10 to the roll. Choose to do so once you have seen the roll, as long as the DM hasn't yet announced a hit or a miss."
+    ],
+    "page": 38,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/38/Guided_Strike_Icon.webp"
+  },
+  {
+    "id": "aura-of-conquest",
+    "name": "Aura of Conquest",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-conquest"
+    },
+    "level": 7,
+    "cost": "free",
+    "trigger": "A creature frightened of you starts its turn in your aura",
+    "scaling": [
+      {
+        "label": "Aura radius",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "30 ft",
+          "30 ft",
+          "30 ft"
+        ]
+      },
+      {
+        "label": "Psychic damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "While you aren't incapacitated, a menacing aura spreads 10 ft around you (30 ft from paladin level 18). Total cover blocks it.",
+      "A creature frightened of you has speed 0 while in the aura, and if it starts its turn there it takes psychic damage: half your paladin level."
+    ],
+    "page": 38,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "scornful-rebuke",
+    "name": "Scornful Rebuke",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-conquest"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "A creature hits you with an attack",
+    "description": [
+      "If you aren't incapacitated, the attacker suffers psychic damage: your Charisma modifier, minimum 1. No action is needed."
+    ],
+    "page": 38,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "invincible-conqueror",
+    "name": "Invincible Conqueror",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-conquest"
+    },
+    "level": 20,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Action: you become an avatar of conquest for 1 minute, gaining:",
+      "• Resistance to all damage.",
+      "• Your Attack action on your turn includes one more attack.",
+      "• Your melee weapon attacks are critical hits on a d20 roll of 19 or 20.",
+      "Once used, it needs a long rest."
+    ],
+    "page": 38,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "emissary-of-peace",
+    "name": "Emissary of Peace",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-redemption"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "For the next 10 minutes you gain +5 on Charisma (Persuasion) checks."
+    ],
+    "page": 39,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "rebuke-the-violent",
+    "name": "Rebuke the Violent",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-redemption"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "An attacker within 30 ft damages a creature other than you with an attack",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Right after that damage, the attacker makes a Wisdom save. On a failure it suffers radiant damage matching what it just dealt; on a success, half that."
+    ],
+    "page": 39,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "aura-of-the-guardian",
+    "name": "Aura of the Guardian",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-redemption"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "A creature within 10 ft of you (30 ft from level 18) takes damage",
+    "scaling": [
+      {
+        "label": "Range",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "10 ft",
+          "30 ft",
+          "30 ft",
+          "30 ft"
+        ]
+      }
+    ],
+    "description": [
+      "Your reaction magically shifts that damage onto you instead. Only the damage moves to you, not any other effect that came with it, and nothing can lower the damage you take."
+    ],
+    "page": 39,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "protective-spirit",
+    "name": "Protective Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-redemption"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "Your turn ends in combat while you are below half your hit points",
+    "scaling": [
+      {
+        "label": "Healing",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d6+7",
+          "1d6+8",
+          "1d6+8",
+          "1d6+9",
+          "1d6+9",
+          "1d6+10"
+        ]
+      }
+    ],
+    "description": [
+      "If you aren't incapacitated, you heal 1d6 + half your paladin level."
+    ],
+    "page": 39,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "emissary-of-redemption",
+    "name": "Emissary of Redemption",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-redemption"
+    },
+    "level": 20,
+    "cost": "free",
+    "trigger": "A creature hits you with an attack",
+    "description": [
+      "You resist all damage that other creatures deal you, whether from attacks, spells or other effects.",
+      "An attacker that hits you suffers radiant damage worth half of what the hit did to you.",
+      "Both benefits stop working against a creature you attack, target with a spell or harm in any other way (this feature aside), until your next long rest."
+    ],
+    "page": 39,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

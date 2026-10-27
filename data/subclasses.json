@@ -127,6 +127,22 @@
     "hotbarIcon": "https://bg3.wiki/w/images/d/dc/Class_Fighter_Arcane_Archer_Hotbar_Icon.png"
   },
   {
+    "id": "cavalier",
+    "cls": "fighter",
+    "name": "Cavalier",
+    "page": 30,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "samurai",
+    "cls": "fighter",
+    "name": "Samurai",
+    "page": 31,
+    "book": "xge",
+    "options": []
+  },
+  {
     "id": "circle-of-the-land",
     "cls": "druid",
     "name": "Circle of the Land",
@@ -1276,6 +1292,22 @@
     "hotbarIcon": "https://bg3.wiki/w/images/4/49/Class_Monk_Drunken_Master_Hotbar_Icon.png"
   },
   {
+    "id": "way-of-the-kensei",
+    "cls": "monk",
+    "name": "Way of the Kensei",
+    "page": 34,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "way-of-the-sun-soul",
+    "cls": "monk",
+    "name": "Way of the Sun Soul",
+    "page": 35,
+    "book": "xge",
+    "options": []
+  },
+  {
     "id": "oath-of-devotion",
     "cls": "paladin",
     "name": "Oath of Devotion",
@@ -1543,6 +1575,112 @@
     "hotbarIcon": "https://bg3.wiki/w/images/3/3a/Class_Paladin_Crown_Hotbar_Icon.png"
   },
   {
+    "id": "oath-of-conquest",
+    "cls": "paladin",
+    "name": "Oath of Conquest",
+    "page": 37,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "armor-of-agathys",
+          "atLevel": 3
+        },
+        {
+          "spell": "command",
+          "atLevel": 3
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 5
+        },
+        {
+          "spell": "spiritual-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "bestow-curse",
+          "atLevel": 9
+        },
+        {
+          "spell": "fear",
+          "atLevel": 9
+        },
+        {
+          "spell": "dominate-beast",
+          "atLevel": 13
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 13
+        },
+        {
+          "spell": "cloudkill",
+          "atLevel": 17
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "oath-of-redemption",
+    "cls": "paladin",
+    "name": "Oath of Redemption",
+    "page": 38,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "sanctuary",
+          "atLevel": 3
+        },
+        {
+          "spell": "sleep",
+          "atLevel": 3
+        },
+        {
+          "spell": "calm-emotions",
+          "atLevel": 5
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 5
+        },
+        {
+          "spell": "counterspell",
+          "atLevel": 9
+        },
+        {
+          "spell": "hypnotic-pattern",
+          "atLevel": 9
+        },
+        {
+          "spell": "otilukes-resilient-sphere",
+          "atLevel": 13
+        },
+        {
+          "spell": "stoneskin",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        },
+        {
+          "spell": "wall-of-force",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "hunter",
     "cls": "ranger",
     "name": "Hunter",
@@ -1635,6 +1773,72 @@
     },
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/3/3f/Class_Ranger_Swarmkeeper_Hotbar_Icon.png"
+  },
+  {
+    "id": "horizon-walker",
+    "cls": "ranger",
+    "name": "Horizon Walker",
+    "page": 42,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 3
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "haste",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "teleportation-circle",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "monster-slayer",
+    "cls": "ranger",
+    "name": "Monster Slayer",
+    "page": 43,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 3
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 5
+        },
+        {
+          "spell": "magic-circle",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "thief",

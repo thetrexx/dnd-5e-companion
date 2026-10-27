@@ -35,7 +35,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('66 subclasses', () => expect(DATA.subclasses).toHaveLength(66));
+test('74 subclasses', () => expect(DATA.subclasses).toHaveLength(74));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -141,4 +141,58 @@ test('forge and grave domain spells', () => {
   expect(sub('forge-domain').bonusSpells!.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['identify', 'searing-smite']);
   expect(sub('grave-domain').bonusSpells!.grants.filter(g => g.atLevel === 9).map(g => g.spell).sort()).toEqual(['antilife-shell', 'raise-dead']);
   expect(feature('circle-of-mortality').spells).toEqual([expect.objectContaining({ spell: 'spare-the-dying', atLevel: 1 })]);
+});
+
+const T6 = ['cavalier', 'samurai', 'way-of-the-kensei', 'way-of-the-sun-soul', 'oath-of-conquest', 'oath-of-redemption', 'horizon-walker', 'monster-slayer'];
+test('xanathar subclasses (task 6)', () => { for (const id of T6) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every task 6 feature names its book', () => {
+  const ids = new Set(T6);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('xge');
+});
+test('task 6 must-have features', () => {
+  for (const id of ['unwavering-mark', 'warding-maneuver', 'hold-the-line', 'ferocious-charger', 'vigilant-defender',
+    'fighting-spirit', 'tireless-spirit', 'rapid-strike', 'strength-before-death',
+    'agile-parry', 'kenseis-shot', 'deft-strike', 'sharpen-the-blade', 'unerring-accuracy',
+    'radiant-sun-bolt', 'searing-arc-strike', 'searing-sunburst', 'sun-shield',
+    'conquering-presence', 'oath-of-conquest-guided-strike', 'aura-of-conquest', 'scornful-rebuke', 'invincible-conqueror',
+    'emissary-of-peace', 'rebuke-the-violent', 'aura-of-the-guardian', 'protective-spirit', 'emissary-of-redemption',
+    'detect-portal', 'planar-warrior', 'ethereal-step', 'distant-strike', 'spectral-defense',
+    'hunters-sense', 'slayers-prey', 'supernatural-defense', 'magic-users-nemesis', 'slayers-counter'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('task 6 usable reactions are reaction cards', () => {
+  for (const id of ['warding-maneuver', 'vigilant-defender', 'strength-before-death', 'sun-shield', 'rebuke-the-violent',
+    'aura-of-the-guardian', 'spectral-defense', 'magic-users-nemesis', 'slayers-counter'])
+    expect(feature(id).cost, id).toBe('reaction');
+});
+test('conquest guided strike is prefixed; war domain keeps its id', () => {
+  expect(feature('guided-strike').source).toEqual({ kind: 'subclass', id: 'war-domain' });
+  expect(feature('oath-of-conquest-guided-strike')).toMatchObject({ name: 'Guided Strike', source: { kind: 'subclass', id: 'oath-of-conquest' }, resource: '1 Channel Divinity', page: 38 });
+});
+test('conquest and redemption oath spells', () => {
+  expect(sub('oath-of-conquest').bonusSpells).toMatchObject({ kind: 'oath' });
+  expect(sub('oath-of-conquest').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['armor-of-agathys', 'command']);
+  expect(sub('oath-of-redemption').bonusSpells).toMatchObject({ kind: 'oath' });
+  expect(sub('oath-of-redemption').bonusSpells!.grants.filter(g => g.atLevel === 13).map(g => g.spell).sort()).toEqual(['otilukes-resilient-sphere', 'stoneskin']);
+  for (const id of ['oath-of-conquest', 'oath-of-redemption'])
+    expect(sub(id).bonusSpells!.grants.map(g => g.atLevel).sort((a, b) => a - b), id).toEqual([3, 3, 5, 5, 9, 9, 13, 13, 17, 17]);
+});
+test('horizon walker and monster slayer magic', () => {
+  expect(sub('horizon-walker').bonusSpells).toMatchObject({ kind: 'subclass' });
+  expect(sub('horizon-walker').bonusSpells!.grants.map(g => g.spell)).toEqual(['protection-from-evil-and-good', 'misty-step', 'haste', 'banishment', 'teleportation-circle']);
+  expect(sub('monster-slayer').bonusSpells).toMatchObject({ kind: 'subclass' });
+  expect(sub('monster-slayer').bonusSpells!.grants.map(g => g.spell)).toEqual(['protection-from-evil-and-good', 'zone-of-truth', 'magic-circle', 'banishment', 'hold-monster']);
+});
+test('sun soul: burning hands costs ki; sunburst is its own card', () => {
+  expect(feature('searing-arc-strike').spells).toEqual([expect.objectContaining({ spell: 'burning-hands', atLevel: 6 })]);
+  expect(feature('searing-arc-strike').spells![0].uses).toMatch(/2 ki points/i);
+  expect(feature('searing-sunburst')).toMatchObject({ cost: 'action', level: 11, page: 35 });
+  expect(feature('ethereal-step').spells).toEqual([expect.objectContaining({ spell: 'etherealness', atLevel: 7 })]);
+});
+test('kensei weapons are described, not an option group', () => {
+  expect(sub('way-of-the-kensei').options).toEqual([]);
+  expect(feature('kenseis-shot')).toMatchObject({ cost: 'bonus', level: 3, page: 34 });
 });

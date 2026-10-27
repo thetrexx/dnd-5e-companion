@@ -832,5 +832,210 @@
     "page": 60,
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "detect-portal",
+    "name": "Detect Portal",
+    "source": {
+      "kind": "subclass",
+      "id": "horizon-walker"
+    },
+    "level": 3,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "description": [
+      "You sense the distance and direction to the nearest planar portal no more than 1 mile from you. The Dungeon Master's Guide (chapter 2, planar travel) has example portals."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "planar-warrior",
+    "name": "Planar Warrior",
+    "source": {
+      "kind": "subclass",
+      "id": "horizon-walker"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "scaling": [
+      {
+        "label": "Extra force damage",
+        "values": [
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Choose a creature you can see within 30 ft. Your next weapon hit on it this turn turns all of that attack's damage into force damage and adds 1d8 force damage (2d8 from ranger level 11)."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "ethereal-step",
+    "name": "Ethereal Step",
+    "source": {
+      "kind": "subclass",
+      "id": "horizon-walker"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "spells": [
+      {
+        "spell": "etherealness",
+        "atLevel": 7,
+        "uses": "Bonus action, no spell slot; ends with your turn; once per short or long rest"
+      }
+    ],
+    "description": [
+      "Cast etherealness as a bonus action without spending a spell slot. The spell lasts only until this turn is over."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "distant-strike",
+    "name": "Distant Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "horizon-walker"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "You take the Attack action",
+    "description": [
+      "Before each of its attacks, teleport up to 10 ft into an unoccupied space in sight.",
+      "Once you have attacked 2 or more different creatures with the action, you get 1 more attack in it, aimed at a third creature."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "spectral-defense",
+    "name": "Spectral Defense",
+    "source": {
+      "kind": "subclass",
+      "id": "horizon-walker"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An attack deals damage to you",
+    "description": [
+      "Slip between the planes: you resist all the damage from that attack this turn."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "hunters-sense",
+    "name": "Hunter's Sense",
+    "source": {
+      "kind": "subclass",
+      "id": "monster-slayer"
+    },
+    "level": 3,
+    "cost": "action",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "description": [
+      "Pick a creature you can see within 60 ft. You instantly know its damage immunities, resistances and vulnerabilities, if it has any. A target shielded from divination magic reads as having none."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "slayers-prey",
+    "name": "Slayer's Prey",
+    "source": {
+      "kind": "subclass",
+      "id": "monster-slayer"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "Choose a visible creature no more than 60 ft away as your prey. Your first weapon hit on it in each turn adds 1d6 damage from the weapon.",
+      "It stays your prey until your next short or long rest, or until you pick a new target."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "supernatural-defense",
+    "name": "Supernatural Defense",
+    "source": {
+      "kind": "subclass",
+      "id": "monster-slayer"
+    },
+    "level": 7,
+    "cost": "free",
+    "trigger": "Your Slayer's Prey target forces you to save, or you check to escape its grapple",
+    "description": [
+      "Add 1d6 to that saving throw or ability check."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "magic-users-nemesis",
+    "name": "Magic-User's Nemesis",
+    "source": {
+      "kind": "subclass",
+      "id": "monster-slayer"
+    },
+    "level": 11,
+    "cost": "reaction",
+    "trigger": "You see a creature within 60 ft cast a spell or teleport",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Try to foil it: the creature makes a Wisdom save against your spell save DC. On a failure the spell or teleport is wasted with no effect."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "slayers-counter",
+    "name": "Slayer's Counter",
+    "source": {
+      "kind": "subclass",
+      "id": "monster-slayer"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "Your Slayer's Prey target forces you to make a saving throw",
+    "description": [
+      "Make one weapon attack against it right before you roll the save. If it hits, you pass the save automatically, on top of the attack's normal effects."
+    ],
+    "page": 43,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]
