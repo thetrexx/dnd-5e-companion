@@ -7,7 +7,9 @@
     "plainIcon": "https://bg3.wiki/w/images/e/e9/Class_Barbarian_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Primal Path",
-    "options": []
+    "options": [
+      "optional-barbarian"
+    ]
   },
   {
     "id": "bard",
@@ -381,7 +383,9 @@
     "plainIcon": "https://bg3.wiki/w/images/f/f0/Class_Rogue_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Roguish Archetype",
-    "options": []
+    "options": [
+      "optional-rogue"
+    ]
   },
   {
     "id": "sorcerer",

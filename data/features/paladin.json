@@ -772,5 +772,80 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "optional-paladin-harness-divine-power",
+    "name": "Harness Divine Power",
+    "source": {
+      "kind": "option",
+      "id": "optional-paladin"
+    },
+    "level": 3,
+    "prereq": {
+      "level": 3
+    },
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "uses": "1 per long rest at paladin 3, 2 at 7, 3 at 15",
+    "scaling": [
+      {
+        "label": "Uses per long rest",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      },
+      {
+        "label": "Highest slot regained",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "Spend a Channel Divinity use: touch your holy symbol, say a prayer, and get back one spell slot you have spent. Its level can be at most half your proficiency bonus, rounded up.",
+      "Uses: once at paladin 3, twice at 7, three times at 15. A long rest restores them all."
+    ],
+    "page": 53,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

@@ -1,9 +1,11 @@
-import { DATA } from '../../src/data';
+import { DATA, poolOptions } from '../../src/data';
 import { actionSections } from '../../src/logic/sections';
 import { optionSlots, prune, replaced } from '../../src/character/options';
 import { charActionSections } from '../../src/character/view';
+import { grantSlots } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
 import type { Character } from '../../src/character/types';
+import type { ClassId } from '../../src/data/types';
 
 const g = (id: string) => DATA.optionGroups.find(x => x.id === id)!;
 const opts = (id: string) => DATA.features.filter(f => f.source.kind === 'option' && f.source.id === id);
@@ -12,9 +14,12 @@ test('groups', () => {
   expect(g('pact-boon').picks).toEqual([0,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1]);
   expect(g('metamagic').picks).toEqual([0,0,2,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4]);
   expect(opts('metamagic')).toHaveLength(8);
-  expect(opts('maneuvers')).toHaveLength(16);
-  expect(opts('fighting-style')).toHaveLength(6);
-  expect(g('fighting-style-paladin').only!.sort()).toEqual(['fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting', 'fighting-style-protection']);
+  expect(opts('maneuvers')).toHaveLength(23);   // 16 PHB + 7 Tasha's
+  expect(opts('fighting-style')).toHaveLength(13);   // 6 PHB + 7 Tasha's
+  expect(g('fighting-style-paladin').only!.slice().sort()).toEqual(['fighting-style-blessed-warrior', 'fighting-style-blind-fighting', 'fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting', 'fighting-style-interception', 'fighting-style-protection']);
+  expect(g('fighting-style-ranger').only!.slice().sort()).toEqual(['fighting-style-archery', 'fighting-style-blind-fighting', 'fighting-style-defense', 'fighting-style-druidic-warrior', 'fighting-style-dueling', 'fighting-style-thrown-weapon-fighting', 'fighting-style-two-weapon-fighting']);
+  expect(g('fighting-style').only!.slice().sort()).toEqual(['fighting-style-archery', 'fighting-style-blind-fighting', 'fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting', 'fighting-style-interception', 'fighting-style-protection', 'fighting-style-superior-technique', 'fighting-style-thrown-weapon-fighting', 'fighting-style-two-weapon-fighting', 'fighting-style-unarmed-fighting']);
+  expect(g('fighting-style-swords').only!.slice().sort()).toEqual(['fighting-style-dueling', 'fighting-style-two-weapon-fighting']);
   expect(DATA.features.find(f => f.id === 'eldritch-invocations-agonizing-blast')!.prereq?.text).toMatch(/eldritch blast/i);
   expect(DATA.features.find(f => f.id === 'eldritch-invocations-thirsting-blade')!.prereq).toMatchObject({ level: 5, option: 'pact-boon-pact-of-the-blade' });
   expect(DATA.features.find(f => f.id === 'maneuvers-riposte')!.cost).toBe('reaction');
@@ -52,6 +57,9 @@ test('class and subclass hooks', () => {
   expect(c('warlock')).toEqual(['eldritch-invocations', 'pact-boon', 'optional-warlock']);
   expect(c('sorcerer')).toEqual(['metamagic', 'optional-sorcerer']);
   expect(c('paladin')).toEqual(['fighting-style-paladin', 'optional-paladin']);
+  expect(c('barbarian')).toEqual(['optional-barbarian']);
+  expect(c('rogue')).toEqual(['optional-rogue']);
+  expect(c('fighter')).toEqual(['fighting-style']);
   expect(c('ranger')).toEqual(expect.arrayContaining(['fighting-style-ranger', 'favored-enemy', 'natural-explorer']));
   expect(s('battle-master')).toEqual(['maneuvers']);
   expect(s('way-of-the-four-elements')).toEqual(['elemental-disciplines']);
@@ -143,3 +151,51 @@ test('feat slot leaves with the feat', () =>
   expect(prune({ ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], options: ['maneuvers-parry'] } as Character).options).toEqual([]));
 test('feat slot is kept while the feat stays', () =>
   expect(prune({ ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], feats: ['martial-adept'], options: ['maneuvers-parry'] } as Character).options).toEqual(['maneuvers-parry']));
+
+// Task 5: Tasha's optional features of the martial classes, new fighting styles and maneuvers
+const f = (id: string) => DATA.features.find(x => x.id === id)!;
+test('task 5 optional features', () => {
+  for (const id of ['optional-barbarian-instinctive-pounce', 'optional-bard-magical-inspiration', 'optional-paladin-harness-divine-power', 'optional-rogue-steady-aim'])
+    expect(f(id), id).toMatchObject({ book: 'tce', optional: true });
+});
+test('styles land on the right classes', () => {
+  const offered = (cls: ClassId) => optionSlots({ ...emptyCharacter(), classes: [{ cls, level: 2 }] } as Character)
+    .find(s => (s.group.from ?? s.group.id) === 'fighting-style')!.choices.map(x => x.id);
+  expect(offered('fighter')).toContain('fighting-style-superior-technique');
+  expect(offered('fighter')).not.toContain('fighting-style-blessed-warrior');
+  expect(offered('paladin')).toContain('fighting-style-blessed-warrior');
+  expect(offered('ranger')).toContain('fighting-style-druidic-warrior');
+  expect(offered('ranger')).not.toContain('fighting-style-interception');
+});
+test('seven new maneuvers', () => expect(poolOptions('maneuvers').filter(x => x.book === 'tce')).toHaveLength(7));
+test('new pool options are tagged optional', () => {
+  const tce = [...poolOptions('fighting-style'), ...poolOptions('maneuvers')].filter(x => x.book === 'tce');
+  expect(tce).toHaveLength(14);
+  for (const x of tce) expect(x.optional, x.id).toBe(true);
+  expect(poolOptions('maneuvers').filter(x => x.book === 'tce').map(x => x.id).sort()).toEqual(['maneuvers-ambush', 'maneuvers-bait-and-switch',
+    'maneuvers-brace', 'maneuvers-commanding-presence', 'maneuvers-grappling-strike', 'maneuvers-quick-toss', 'maneuvers-tactical-assessment']);
+  const adept = { ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], feats: ['martial-adept'] } as Character;
+  expect(optionSlots(adept).find(s => s.group.id === 'martial-adept')!.choices.map(x => x.id)).toContain('maneuvers-brace');
+});
+test('warrior styles grant two cantrips', () => {
+  expect(f('fighting-style-blessed-warrior').spells).toEqual([{ choose: { lists: ['cleric'], level: 0, count: 2 }, atLevel: 1, ability: 'cha' }]);
+  expect(f('fighting-style-druidic-warrior').spells).toEqual([{ choose: { lists: ['druid'], level: 0, count: 2 }, atLevel: 1, ability: 'wis' }]);
+});
+test('barbarian and rogue optional groups', () => {
+  for (const cls of ['barbarian', 'rogue'])
+    expect(g(`optional-${cls}`)).toMatchObject({ name: 'Optional Features', owner: { kind: 'class', id: cls }, optional: true });
+  expect(opts('optional-barbarian').map(x => x.id)).toEqual(['optional-barbarian-instinctive-pounce']);
+  expect(opts('optional-rogue').map(x => x.id)).toEqual(['optional-rogue-steady-aim']);
+  expect(f('optional-barbarian-instinctive-pounce')).toMatchObject({ level: 7, prereq: { level: 7 }, page: 24 });
+  expect(f('optional-rogue-steady-aim')).toMatchObject({ level: 3, cost: 'bonus', prereq: { level: 3 }, page: 62 });
+  expect(f('optional-bard-magical-inspiration')).toMatchObject({ level: 2, prereq: { level: 2 }, page: 27 });
+  expect(f('optional-paladin-harness-divine-power')).toMatchObject({ level: 3, cost: 'bonus', prereq: { level: 3 }, page: 53 });
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'barbarian', level: 6 }] } as Character;
+  expect(optionSlots(ch).find(s => s.group.id === 'optional-barbarian')).toBeUndefined();   // nothing reached before 7
+});
+test('blessed warrior cantrips are offered once picked, also to a fighter/paladin', () => {
+  const slot = (classes: Character['classes']) => grantSlots({ ...emptyCharacter(), classes, options: ['fighting-style-blessed-warrior'] } as Character)
+    .find(s => s.key.startsWith('feature:fighting-style-blessed-warrior'));
+  expect(slot([{ cls: 'paladin', level: 2 }])).toMatchObject({ unlocked: true, choose: { lists: ['cleric'], count: 2 } });
+  expect(slot([{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }])).toMatchObject({ unlocked: true });
+});

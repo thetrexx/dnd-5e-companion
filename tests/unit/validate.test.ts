@@ -117,3 +117,8 @@ test('optionalLists: known classes, none already on the base list', () => {
   expect(errs).toContain('necromancer');
   expect(errs).toContain('"sunburst": optionalLists must be a non-empty array');
 });
+test('a pool group may narrow its own pool with only', () => {
+  const bad = structuredClone(DATA);
+  bad.optionGroups.find(g => g.id === 'fighting-style')!.only!.push('maneuvers-parry');
+  expect(validateDataset(bad)).toContain('option group "fighting-style": only has "maneuvers-parry" which is not an option of "fighting-style"');
+});

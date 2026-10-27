@@ -1396,5 +1396,293 @@
     "page": 31,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-blind-fighting",
+    "name": "Blind Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "You have blindsight out to 10 ft. Inside that range you see anything not behind total cover, even while blinded or in darkness.",
+      "Invisible creatures in that range are visible to you too, unless one manages to hide from you."
+    ],
+    "page": 41,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-interception",
+    "name": "Interception",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "An attack by a creature you can see hits another target within 5 ft of you",
+    "description": [
+      "Reduce the damage to that target by 1d10 + your proficiency bonus (never below 0).",
+      "Only works while you wield a shield or any simple or martial weapon."
+    ],
+    "page": 41,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-superior-technique",
+    "name": "Superior Technique",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "free",
+    "resource": "Superiority dice (pool)",
+    "uses": "1 die (d6), refills on short or long rest",
+    "description": [
+      "Pick one maneuver from the Maneuvers list (the Battle Master options) and note it. If it calls for a save, the DC is 8 + proficiency bonus + Str or Dex modifier (your choice).",
+      "You also gain one superiority die, a d6, which pays for your maneuvers and adds to any superiority dice you already have. Spent dice return on a short or long rest."
+    ],
+    "page": 41,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-thrown-weapon-fighting",
+    "name": "Thrown Weapon Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Drawing a thrown weapon happens during the attack you make with it.",
+      "A ranged attack with a thrown weapon deals +2 damage when it hits."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-unarmed-fighting",
+    "name": "Unarmed Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Your unarmed strikes can deal 1d6 + Strength modifier bludgeoning damage. If you hold no weapon or shield when you roll the attack, use 1d8 instead.",
+      "When each of your turns starts, you may deal 1d4 bludgeoning damage to one creature you are grappling."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-blessed-warrior",
+    "name": "Blessed Warrior",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 2,
+    "cost": "passive",
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "cleric"
+          ],
+          "level": 0,
+          "count": 2
+        },
+        "atLevel": 1,
+        "ability": "cha"
+      }
+    ],
+    "description": [
+      "Pick 2 cleric cantrips. For you they are paladin spells, cast with Charisma.",
+      "Each time you gain a paladin level, you may swap one of them for a different cleric cantrip."
+    ],
+    "page": 52,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-druidic-warrior",
+    "name": "Druidic Warrior",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 2,
+    "cost": "passive",
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "druid"
+          ],
+          "level": 0,
+          "count": 2
+        },
+        "atLevel": 1,
+        "ability": "wis"
+      }
+    ],
+    "description": [
+      "Pick 2 druid cantrips. For you they are ranger spells, cast with Wisdom.",
+      "Each time you gain a ranger level, you may swap one of them for a different druid cantrip."
+    ],
+    "page": 57,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-ambush",
+    "name": "Ambush",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a Dexterity (Stealth) check or roll initiative",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the roll. Not while you're incapacitated."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-bait-and-switch",
+    "name": "Bait and Switch",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "On your turn, a willing creature is within 5 ft of you",
+    "resource": "1 superiority die",
+    "description": [
+      "Trade places with that creature by spending at least 5 ft of movement; it can't be incapacitated. This move draws no opportunity attacks.",
+      "Roll the die: you or that creature (your pick) adds the roll to AC until your next turn starts."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-brace",
+    "name": "Brace",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A creature you can see moves into your melee weapon's reach",
+    "resource": "1 superiority die",
+    "description": [
+      "Make one attack against it with that weapon. On a hit, the die joins the damage roll."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-commanding-presence",
+    "name": "Commanding Presence",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a Charisma (Intimidation, Performance or Persuasion) check",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the check."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-grappling-strike",
+    "name": "Grappling Strike",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "Your melee attack hits a creature during your turn",
+    "resource": "1 superiority die",
+    "description": [
+      "Straight after that hit, spend a bonus action to attempt a grapple on the creature, adding the die to your Strength (Athletics) check. Grappling rules: Player's Handbook."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-quick-toss",
+    "name": "Quick Toss",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 superiority die",
+    "description": [
+      "Make a ranged attack with a thrown weapon, drawing it as part of the attack. On a hit, the die joins the damage roll."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-tactical-assessment",
+    "name": "Tactical Assessment",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make an Intelligence (Investigation or History) or Wisdom (Insight) check",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the check."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

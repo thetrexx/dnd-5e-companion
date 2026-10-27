@@ -980,5 +980,26 @@
     ],
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-barbarian-instinctive-pounce",
+    "name": "Instinctive Pounce",
+    "source": {
+      "kind": "option",
+      "id": "optional-barbarian"
+    },
+    "level": 7,
+    "prereq": {
+      "level": 7
+    },
+    "cost": "free",
+    "trigger": "You use your bonus action to start a rage",
+    "description": [
+      "Starting a rage comes with a leap forward: as part of that same bonus action, you may move up to half your speed."
+    ],
+    "page": 24,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

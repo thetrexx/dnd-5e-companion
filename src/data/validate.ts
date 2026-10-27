@@ -204,11 +204,10 @@ export function validateDataset(d: Dataset): string[] {
     if (g.from !== undefined && !groupIds.has(g.from)) errs.push(`${at}: unknown from group "${g.from}"`);
     if (g.reuse !== undefined && g.reuse !== true) errs.push(`${at}: reuse must be true when present`);
     if (g.only !== undefined) {
-      if (g.from === undefined) errs.push(`${at}: only requires from`);
-      else {
-        const have = optionsOf(g.from);
-        for (const x of g.only) if (!have.includes(x)) errs.push(`${at}: only has "${x}" which is not an option of "${g.from}"`);
-      }
+      // a pool's own group may narrow it too (the fighter's styles leave out Blessed Warrior)
+      const pool = g.from ?? g.id;
+      const have = optionsOf(pool);
+      for (const x of g.only) if (!have.includes(x)) errs.push(`${at}: only has "${x}" which is not an option of "${pool}"`);
     }
     for (const b of g.bonus ?? []) {
       if (!subIds.has(b.subclass)) errs.push(`${at}: bonus has unknown subclass "${b.subclass}"`);

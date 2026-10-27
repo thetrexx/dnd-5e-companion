@@ -60,7 +60,8 @@ test('subclass spell sections', () => {
 
 test('option and subclass action sections', () => {
   const fa = actionSections('fighter', 1);
-  expect(fa.find(s => s.id === 'opt-fighting-style')!.items.map(i => i.id)).toEqual(['fighting-style-protection']);
+  expect(fa.find(s => s.id === 'opt-fighting-style')!.items.map(i => i.id)).toEqual(['fighting-style-interception', 'fighting-style-protection', 'fighting-style-superior-technique']);
+  expect(fa.find(s => s.id === 'opt-fighting-style')!.tags).toEqual({ 'fighting-style-interception': 'Optional', 'fighting-style-superior-technique': 'Optional' });
   expect(fa.find(s => s.id === 'opt-fighting-style')!.title).toBe('Fighting Style');
   expect(actionSections('fighter', 3, 'eldritch-knight').find(s => s.id === 'subclass')!.items.map(i => i.id)).toContain('weapon-bond');
   expect(actionSections('fighter', 3).some(s => s.id === 'subclass')).toBe(false);

@@ -471,5 +471,27 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "optional-bard-magical-inspiration",
+    "name": "Magical Inspiration",
+    "source": {
+      "kind": "option",
+      "id": "optional-bard"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "free",
+    "trigger": "A creature holding your Bardic Inspiration die casts a spell that heals or deals damage",
+    "description": [
+      "The creature may spend your die on that spell: it rolls the die, picks one target the spell affects, and adds the roll to the hit points that target regains or the damage it takes.",
+      "The die is then used up."
+    ],
+    "page": 27,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

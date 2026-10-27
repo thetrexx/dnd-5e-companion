@@ -492,5 +492,26 @@
     "page": 47,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-rogue-steady-aim",
+    "name": "Steady Aim",
+    "source": {
+      "kind": "option",
+      "id": "optional-rogue"
+    },
+    "level": 3,
+    "prereq": {
+      "level": 3
+    },
+    "cost": "bonus",
+    "description": [
+      "Usable only if you haven't moved yet this turn: your next attack roll this turn has advantage.",
+      "Once you use it, your speed is 0 for the rest of the turn."
+    ],
+    "page": 62,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]
