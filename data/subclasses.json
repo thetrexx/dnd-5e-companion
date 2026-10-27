@@ -529,6 +529,32 @@
     "hotbarIcon": "https://bg3.wiki/w/images/8/89/Class_Barbarian_Giant_Hotbar_Icon.png"
   },
   {
+    "id": "path-of-the-ancestral-guardian",
+    "cls": "barbarian",
+    "name": "Path of the Ancestral Guardian",
+    "page": 9,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "path-of-the-storm-herald",
+    "cls": "barbarian",
+    "name": "Path of the Storm Herald",
+    "page": 10,
+    "book": "xge",
+    "options": [
+      "storm-aura"
+    ]
+  },
+  {
+    "id": "path-of-the-zealot",
+    "cls": "barbarian",
+    "name": "Path of the Zealot",
+    "page": 11,
+    "book": "xge",
+    "options": []
+  },
+  {
     "id": "college-of-lore",
     "cls": "bard",
     "name": "College of Lore",
@@ -563,6 +589,14 @@
       "fighting-style-swords"
     ],
     "hotbarIcon": "https://bg3.wiki/w/images/3/35/Class_Bard_Swords_Hotbar_Icon.png"
+  },
+  {
+    "id": "college-of-whispers",
+    "cls": "bard",
+    "name": "College of Whispers",
+    "page": 16,
+    "book": "xge",
+    "options": []
   },
   {
     "id": "knowledge-domain",
@@ -1018,6 +1052,112 @@
     "hotbarIcon": "https://bg3.wiki/w/images/2/25/Class_Cleric_Death_Hotbar_Icon.png"
   },
   {
+    "id": "forge-domain",
+    "cls": "cleric",
+    "name": "Forge Domain",
+    "page": 18,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "identify",
+          "atLevel": 1
+        },
+        {
+          "spell": "searing-smite",
+          "atLevel": 1
+        },
+        {
+          "spell": "heat-metal",
+          "atLevel": 3
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "elemental-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 5
+        },
+        {
+          "spell": "fabricate",
+          "atLevel": 7
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 7
+        },
+        {
+          "spell": "animate-objects",
+          "atLevel": 9
+        },
+        {
+          "spell": "creation",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "grave-domain",
+    "cls": "cleric",
+    "name": "Grave Domain",
+    "page": 19,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "bane",
+          "atLevel": 1
+        },
+        {
+          "spell": "false-life",
+          "atLevel": 1
+        },
+        {
+          "spell": "gentle-repose",
+          "atLevel": 3
+        },
+        {
+          "spell": "ray-of-enfeeblement",
+          "atLevel": 3
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "vampiric-touch",
+          "atLevel": 5
+        },
+        {
+          "spell": "blight",
+          "atLevel": 7
+        },
+        {
+          "spell": "death-ward",
+          "atLevel": 7
+        },
+        {
+          "spell": "antilife-shell",
+          "atLevel": 9
+        },
+        {
+          "spell": "raise-dead",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
@@ -1083,6 +1223,22 @@
     "book": "tce",
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/3/39/Class_Druid_Stars_Hotbar_Icon.png"
+  },
+  {
+    "id": "circle-of-dreams",
+    "cls": "druid",
+    "name": "Circle of Dreams",
+    "page": 22,
+    "book": "xge",
+    "options": []
+  },
+  {
+    "id": "circle-of-the-shepherd",
+    "cls": "druid",
+    "name": "Circle of the Shepherd",
+    "page": 23,
+    "book": "xge",
+    "options": []
   },
   {
     "id": "way-of-the-open-hand",

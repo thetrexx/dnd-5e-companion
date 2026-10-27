@@ -746,5 +746,35 @@
       1,
       1
     ]
+  },
+  {
+    "id": "storm-aura",
+    "name": "Storm Aura",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-the-storm-herald"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   }
 ]

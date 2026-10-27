@@ -604,5 +604,343 @@
     "book": "bgg",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/3/3f/Thaumaturgy_Icon.webp"
+  },
+  {
+    "id": "ancestral-protectors",
+    "name": "Ancestral Protectors",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-ancestral-guardian"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your first hit on a creature during your turn while raging",
+    "page": 10,
+    "description": [
+      "Spectral warriors answer your rage. On each of your turns while it lasts, they mark the first target your attacks hit, and the mark holds until your next turn starts.",
+      "The marked creature has disadvantage on attack rolls aimed at anyone except you, and any other creature it hits resists that attack's damage. The mark also ends if your rage ends."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "spirit-shield",
+    "name": "Spirit Shield",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-ancestral-guardian"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "While raging, another creature no more than 30 ft away that you can see takes damage",
+    "page": 10,
+    "scaling": [
+      {
+        "label": "Damage reduced",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Spend your reaction to have your guardian spirits shield that creature: roll 2d6 and take the result off the damage.",
+      "The reduction grows to 3d6 at barbarian level 10 and 4d6 at level 14."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "consult-the-spirits",
+    "name": "Consult the Spirits",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-ancestral-guardian"
+    },
+    "level": 10,
+    "cost": "other",
+    "uses": "Once per short or long rest",
+    "page": 10,
+    "spells": [
+      {
+        "spell": "augury",
+        "atLevel": 10,
+        "ability": "wis",
+        "uses": "No slot or material; once per short or long rest"
+      },
+      {
+        "spell": "clairvoyance",
+        "atLevel": 10,
+        "ability": "wis",
+        "uses": "No slot or material; once per short or long rest"
+      }
+    ],
+    "description": [
+      "Cast augury or clairvoyance without a spell slot or material components. Wisdom is your spellcasting ability for them.",
+      "Your clairvoyance makes no sensor: instead, one of your ancestral spirits goes, unseen, to the place you picked.",
+      "Once you cast either spell this way, finish a short or long rest before doing it again."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "vengeful-ancestors",
+    "name": "Vengeful Ancestors",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-ancestral-guardian"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "Your Spirit Shield reduces the damage of an attack",
+    "page": 10,
+    "description": [
+      "Your ancestors strike back: the attacker takes force damage equal to the damage your Spirit Shield prevented."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "storm-aura-desert",
+    "name": "Desert",
+    "source": {
+      "kind": "option",
+      "id": "storm-aura"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "You enter your rage, or later turns of it (bonus action)",
+    "page": 10,
+    "scaling": [
+      {
+        "label": "Fire damage",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6"
+        ]
+      }
+    ],
+    "description": [
+      "While you rage, a stormy aura reaches 10 ft from you in all directions (total cover blocks it). Its effect fires as the rage starts, and on each later turn of that rage you can fire it again with a bonus action. Its save DC is 8 + your Constitution modifier + your proficiency bonus. Each time you gain a barbarian level you may switch to another environment.",
+      "Desert: each time the effect fires, every other creature inside the aura takes 2 fire damage. This rises to 3 at barbarian level 5, 4 at level 10, 5 at level 15 and 6 at level 20.",
+      "Level 6 (Storm Soul): you resist fire damage and shrug off extreme heat. You can also use your action to set fire to a flammable object you touch, provided nobody else is wearing or carrying it.",
+      "Level 10 (Shielding Storm): creatures you choose also resist fire damage while they are in your aura.",
+      "Level 14 (Raging Storm): when a creature inside your aura lands an attack on you, you can respond at once with your reaction: it makes a Dexterity save and, on a failure, it takes half your barbarian level in fire damage."
+    ],
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/55/Desert_Icon.webp"
+  },
+  {
+    "id": "storm-aura-sea",
+    "name": "Sea",
+    "source": {
+      "kind": "option",
+      "id": "storm-aura"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "You enter your rage, or later turns of it (bonus action)",
+    "page": 10,
+    "scaling": [
+      {
+        "label": "Lightning damage",
+        "values": [
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "While you rage, a stormy aura reaches 10 ft from you in all directions (total cover blocks it). Its effect fires as the rage starts, and on each later turn of that rage you can fire it again with a bonus action. Its save DC is 8 + your Constitution modifier + your proficiency bonus. Each time you gain a barbarian level you may switch to another environment.",
+      "Sea: each time the effect fires, pick one other creature in the aura that you can see. It makes a Dexterity save, taking 1d6 lightning damage if it fails or half that if it succeeds. The damage becomes 2d6 at barbarian level 10, 3d6 at level 15 and 4d6 at level 20.",
+      "Level 6 (Storm Soul): you resist lightning damage, can breathe underwater and swim at a speed of 30 ft.",
+      "Level 10 (Shielding Storm): creatures you choose also resist lightning damage while they are in your aura.",
+      "Level 14 (Raging Storm): after your attack hits a creature inside your aura, you can use your reaction to make it attempt a Strength save; on a failure it is knocked prone, like a wave hit it."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "storm-aura-tundra",
+    "name": "Tundra",
+    "source": {
+      "kind": "option",
+      "id": "storm-aura"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "You enter your rage, or later turns of it (bonus action)",
+    "page": 10,
+    "scaling": [
+      {
+        "label": "Temp HP",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "6"
+        ]
+      }
+    ],
+    "description": [
+      "While you rage, a stormy aura reaches 10 ft from you in all directions (total cover blocks it). Its effect fires as the rage starts, and on each later turn of that rage you can fire it again with a bonus action. Its save DC is 8 + your Constitution modifier + your proficiency bonus. Each time you gain a barbarian level you may switch to another environment.",
+      "Tundra: each time the effect fires, creatures you choose inside the aura gain 2 temporary hit points. This rises to 3 at barbarian level 5, 4 at level 10, 5 at level 15 and 6 at level 20.",
+      "Level 6 (Storm Soul): you resist cold damage and shrug off extreme cold. You can also use your action to turn a 5-ft cube of water you touch into ice. The ice thaws after 1 minute. You can't do it while a creature is inside that cube.",
+      "Level 10 (Shielding Storm): creatures you choose also resist cold damage while they are in your aura.",
+      "Level 14 (Raging Storm): whenever the effect fires, you can pick one creature in the aura that you can see. Unless it passes a Strength save, magical frost drops its speed to 0 until your next turn starts."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "divine-fury",
+    "name": "Divine Fury",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-zealot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your first weapon hit on each of your turns while raging",
+    "page": 11,
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "1d6+1",
+          "1d6+2",
+          "1d6+2",
+          "1d6+3",
+          "1d6+3",
+          "1d6+4",
+          "1d6+4",
+          "1d6+5",
+          "1d6+5",
+          "1d6+6",
+          "1d6+6",
+          "1d6+7",
+          "1d6+7",
+          "1d6+8",
+          "1d6+8",
+          "1d6+9",
+          "1d6+9",
+          "1d6+10"
+        ]
+      }
+    ],
+    "description": [
+      "While you rage, the first creature your weapon attacks hit on each of your turns also takes 1d6 + half your barbarian level in extra damage.",
+      "The damage is necrotic or radiant; you pick one of the two when you gain this feature."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "fanatical-focus",
+    "name": "Fanatical Focus",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-zealot"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You fail a saving throw while raging",
+    "uses": "Once per rage",
+    "page": 11,
+    "description": [
+      "Roll the failed save again. You must keep the new result."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "zealous-presence",
+    "name": "Zealous Presence",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-zealot"
+    },
+    "level": 10,
+    "cost": "bonus",
+    "uses": "Once per long rest",
+    "page": 11,
+    "description": [
+      "Bonus action: let loose a battle cry charged with divine power. Choose up to 10 other creatures no more than 60 ft away that can hear it; until your next turn starts, they have advantage on attack rolls and saving throws."
+    ],
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

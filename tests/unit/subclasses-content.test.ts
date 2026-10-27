@@ -35,7 +35,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('58 subclasses', () => expect(DATA.subclasses).toHaveLength(58));
+test('66 subclasses', () => expect(DATA.subclasses).toHaveLength(66));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -113,3 +113,32 @@ test('level 3 free riders: giants havoc and fancy footwork', () => {
 });
 test('swarmkeeper mage hand only if not already known', () =>
   expect(sub('swarmkeeper').bonusSpells!.grants.find(g => g.spell === 'mage-hand')!.uses).toMatch(/already know/i));
+
+const T5 = ['path-of-the-ancestral-guardian', 'path-of-the-storm-herald', 'path-of-the-zealot', 'college-of-whispers', 'forge-domain', 'grave-domain', 'circle-of-dreams', 'circle-of-the-shepherd'];
+test('xanathar subclasses (task 5)', () => { for (const id of T5) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every new feature and option names its book', () => {
+  const ids = new Set(T5);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  for (const f of DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id))))
+    expect(f.book, f.id).toBe('xge');
+});
+test('grave domain spells', () => expect(sub('grave-domain').bonusSpells).toMatchObject({ kind: 'domain' }));
+test('task 5 must-have features', () => {
+  for (const id of ['ancestral-protectors', 'spirit-shield', 'consult-the-spirits', 'vengeful-ancestors', 'divine-fury', 'zealous-presence',
+    'psychic-blades', 'words-of-terror', 'mantle-of-whispers', 'shadow-lore', 'blessing-of-the-forge', 'artisans-blessing', 'forge-domain-divine-strike',
+    'circle-of-mortality', 'path-to-the-grave', 'sentinel-at-deaths-door', 'balm-of-the-summer-court', 'hidden-paths', 'walker-in-dreams',
+    'spirit-totem', 'faithful-summons'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('storm herald picks one storm aura environment', () => {
+  expect(sub('path-of-the-storm-herald').options).toEqual(['storm-aura']);
+  const g = DATA.optionGroups.find(x => x.id === 'storm-aura')!;
+  expect(g.owner).toEqual({ kind: 'subclass', id: 'path-of-the-storm-herald' });
+  expect([g.picks[1], g.picks[2], g.picks[19]]).toEqual([0, 1, 1]);
+  for (const e of ['desert', 'sea', 'tundra']) expect(feature(`storm-aura-${e}`), e).toMatchObject({ level: 3, book: 'xge', page: 10 });
+});
+test('forge and grave domain spells', () => {
+  expect(sub('forge-domain').bonusSpells!.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['identify', 'searing-smite']);
+  expect(sub('grave-domain').bonusSpells!.grants.filter(g => g.atLevel === 9).map(g => g.spell).sort()).toEqual(['antilife-shell', 'raise-dead']);
+  expect(feature('circle-of-mortality').spells).toEqual([expect.objectContaining({ spell: 'spare-the-dying', atLevel: 1 })]);
+});

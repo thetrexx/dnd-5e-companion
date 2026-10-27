@@ -808,5 +808,182 @@
     "book": "dmg",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/6/65/Divine_Strike_Melee_Icon.webp"
+  },
+  {
+    "id": "blessing-of-the-forge",
+    "name": "Blessing of the Forge",
+    "source": {
+      "kind": "subclass",
+      "id": "forge-domain"
+    },
+    "level": 1,
+    "cost": "other",
+    "uses": "Once per long rest",
+    "page": 19,
+    "description": [
+      "When you finish a long rest, touch one nonmagical suit of armor or simple or martial weapon. It stays a magic item until your next long rest finishes or you die: armor gives +1 to AC, a weapon +1 to attack and damage rolls."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "artisans-blessing",
+    "name": "Artisan's Blessing",
+    "source": {
+      "kind": "subclass",
+      "id": "forge-domain"
+    },
+    "level": 2,
+    "cost": "other",
+    "resource": "1 Channel Divinity",
+    "page": 19,
+    "description": [
+      "Perform an hour-long ritual to craft a nonmagical item that has some metal in it: a weapon (simple or martial), armor, a bundle of 10 pieces of ammunition, a tool set, or some other object made of metal. When the hour ends it forms in an unoccupied space on a surface no more than 5 ft away.",
+      "It can be worth at most 100 gp, and you must set out metal (coins count) of the same value. That metal is used up and becomes the item, even its nonmetal parts.",
+      "If you have a nonmagical item containing metal, such as a key, the ritual can make a copy of it."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "forge-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "forge-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "page": 19,
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 fire damage to it. The extra damage becomes 2d8 at cleric level 14."
+    ],
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/65/Divine_Strike_Melee_Icon.webp"
+  },
+  {
+    "id": "circle-of-mortality",
+    "name": "Circle of Mortality",
+    "source": {
+      "kind": "subclass",
+      "id": "grave-domain"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "page": 20,
+    "spells": [
+      {
+        "spell": "spare-the-dying",
+        "atLevel": 1,
+        "uses": "Bonus action, 30 ft range"
+      }
+    ],
+    "description": [
+      "You know spare the dying, outside your count of cleric cantrips. When you cast it, its range is 30 ft and its casting time is a bonus action.",
+      "When you cast a spell that heals a creature who is at 0 hit points, don't roll the healing dice: use the highest number on each."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "eyes-of-the-grave",
+    "name": "Eyes of the Grave",
+    "source": {
+      "kind": "subclass",
+      "id": "grave-domain"
+    },
+    "level": 1,
+    "cost": "action",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "page": 20,
+    "description": [
+      "Action: until your next turn ends, you sense the location of every undead within 60 ft, unless it has total cover or protection from divination magic. You learn nothing about what it is or what it can do."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "path-to-the-grave",
+    "name": "Path to the Grave",
+    "source": {
+      "kind": "subclass",
+      "id": "grave-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "page": 20,
+    "description": [
+      "Action: curse a creature in your sight no more than 30 ft away, lasting until your next turn ends. The first time you or an ally hits it with an attack before then, it is vulnerable to every bit of that attack's damage, and the curse is spent."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "sentinel-at-deaths-door",
+    "name": "Sentinel at Death's Door",
+    "source": {
+      "kind": "subclass",
+      "id": "grave-domain"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A critical hit lands on you or on a visible creature no more than 30 ft away",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "page": 20,
+    "description": [
+      "Use your reaction to make the critical hit a normal hit. Anything the critical hit would have set off is canceled."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "keeper-of-souls",
+    "name": "Keeper of Souls",
+    "source": {
+      "kind": "subclass",
+      "id": "grave-domain"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "An enemy you can see dies no more than 60 ft from you",
+    "uses": "Once until the start of your next turn",
+    "page": 20,
+    "description": [
+      "You, or one creature you choose no more than 60 ft from you, regain hit points equal to the dead enemy's number of Hit Dice.",
+      "It doesn't work while you are incapacitated. After using it, wait until your next turn starts to use it again."
+    ],
+    "book": "xge",
+    "textSource": "summary"
   }
 ]
