@@ -99,7 +99,7 @@
     "page": 168,
     "description": [
       "When a creature within 5 ft casts a spell, your reaction lets you make a melee weapon attack against it.",
-      "Creatures you damage while they concentrate have disadvantage on the save to keep their spell, and you save with advantage against spells cast by creatures within 5 ft."
+      "Creatures you damage while they concentrate have disadvantage on the save to keep their spell, and you have advantage on saves against spells whose caster is no more than 5 ft away."
     ],
     "spells": [],
     "textSource": "summary",

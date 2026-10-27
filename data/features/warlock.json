@@ -47,7 +47,7 @@
     "trigger": "You take damage",
     "uses": "Once per short or long rest",
     "description": [
-      "Taking damage lets you dissolve into mist. Use your reaction to go invisible and teleport up to 60 ft to a free space in sight.",
+      "Taking damage lets you dissolve into mist. As a reaction, become invisible and teleport to a free space in sight as far as 60 ft away.",
       "Invisibility holds until your next turn begins, unless you attack or cast a spell first. Recharges on a short or long rest."
     ],
     "page": 109,
@@ -98,9 +98,9 @@
     },
     "level": 1,
     "cost": "free",
-    "trigger": "You reduce a hostile creature to 0 hit points",
+    "trigger": "A hostile creature drops to 0 hit points from you",
     "description": [
-      "Whenever you drop a hostile creature to 0 hit points, you receive temporary hit points: your Charisma modifier plus your warlock level, with a minimum of 1."
+      "Each time a hostile creature falls to 0 hit points by your hand, you receive temporary hit points: your Charisma modifier plus your warlock level, with a minimum of 1."
     ],
     "page": 109,
     "textSource": "summary",
@@ -977,7 +977,7 @@
     "cost": "bonus",
     "uses": "Once per short or long rest",
     "description": [
-      "Bonus action: curse one creature you can see within 30 ft for 1 minute. It ends early if the target dies, or if you die or are incapacitated.",
+      "Bonus action: curse a creature in sight no more than 30 ft away, for 1 minute. It ends early if the target dies, or if you die or are incapacitated.",
       "While it lasts, your damage rolls against the target gain a bonus equal to your proficiency bonus, and your attack rolls against it score a critical hit on a 19 or 20. If it dies, you heal by your warlock level + your Charisma modifier (at least 1 hit point)."
     ],
     "page": 55,
@@ -1017,7 +1017,7 @@
     "cost": "reaction",
     "trigger": "An attack roll from your Hexblade's Curse target hits you",
     "description": [
-      "Roll a d6. On a 4 or higher, the attack misses you instead, whatever its roll."
+      "Roll a d6: a 4, 5 or 6 turns the hit into a miss, whatever it rolled."
     ],
     "page": 56,
     "book": "xge",

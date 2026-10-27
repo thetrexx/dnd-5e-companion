@@ -445,7 +445,7 @@
     "cost": "reaction",
     "trigger": "A creature within 5 ft is hit by another creature's attack",
     "description": [
-      "When a creature within 5 ft of you is hit by an attack from someone other than you, make 1 melee attack against that creature."
+      "When another attacker hits a creature no more than 5 ft from you, you can make 1 melee attack against it."
     ],
     "page": 80,
     "textSource": "summary"
@@ -931,7 +931,7 @@
     "trigger": "A melee attack roll against you misses",
     "resource": "1 ki point",
     "description": [
-      "Redirect Attack: spend 1 ki point and your reaction to make the missed attack hit another creature of your choice that you can see within 5 ft of you (not the attacker).",
+      "Redirect Attack: spend 1 ki point and your reaction to redirect the missed attack onto a different creature you pick, in your sight and no more than 5 ft away (not the attacker).",
       "Leap to Your Feet: standing up from prone costs you only 5 ft of movement, not half your speed."
     ],
     "page": 34,

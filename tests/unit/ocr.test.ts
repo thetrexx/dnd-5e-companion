@@ -45,3 +45,27 @@ test('a single misread does not break a copied run', () => {
   expect(longestSharedRun(copied, misread)).toBe(longestSharedRun(copied, ocr));
   expect(longestSharedRun(copied, misread)).toBeGreaterThanOrEqual(8);
 });
+
+// Invented sentences, not from any book. Each card differs from its page only by the normalisation under
+// test, placed mid-run so that without it neither half reaches 8 words (each test fails on the old matcher).
+const page = 'Motes drift and fill a 30-foot radius with soft light until the lantern dies out.';
+test('hyphenated sizes match however the hyphens fall', () => {
+  const card = 'Motes drift and fill a 30-foot-radius with soft light until the lantern';
+  expect(longestSharedRun(card, page)).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord(card, page).pass).toBe(false);
+});
+test('ft, foot and feet are one word', () => {
+  const card = 'Motes drift and fill a 30 ft radius with soft light until the lantern';
+  expect(longestSharedRun(card, page)).toBeGreaterThanOrEqual(8);
+  expect(longestSharedRun(card, page.replace('30-foot radius', '30 feet radius'))).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord(card, page).pass).toBe(false);
+});
+test('two words the text layer merged still count toward a copied run', () => {
+  const merged = 'The moth circles twice and settles ifyou stay still, then it glows until the next dawn breaks.';
+  const card = 'The moth circles twice and settles if you stay still, then it glows until the';
+  expect(longestSharedRun(card, merged)).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord(card, merged).pass).toBe(false);
+});
+test('the new normalisations do not make own words match', () => {
+  expect(longestSharedRun('Motes of light orbit you; the glow reaches 30 ft, then fades.', page)).toBeLessThan(8);
+});

@@ -100,7 +100,7 @@
     "level": 6,
     "cost": "action",
     "description": [
-      "Action: start a performance that lasts until the end of your next turn. You and each friendly creature within 30 ft that can hear you have advantage on saves against being frightened or charmed.",
+      "Action: start a performance that runs through your next turn. You and each friendly creature within 30 ft that can hear you have advantage on saves against being frightened or charmed.",
       "It ends early if you are incapacitated or silenced, or if you choose to stop it (no action)."
     ],
     "page": 54,
@@ -254,7 +254,7 @@
     "description": [
       "After you perform for at least 1 minute (song, poem or dance), pick humanoids within 60 ft who saw and heard the whole performance (as many as your Charisma modifier, minimum 1). Each makes a Wisdom save against your spell save DC or is charmed by you.",
       "A charmed target adores you: it praises you to anyone who talks with it and gets in the way of your opponents, but it won't turn violent for you unless it already meant to fight on your side.",
-      "The charm lasts 1 hour. It ends early if the target takes any damage, if you attack it, or if it sees you attack or hurt one of its allies.",
+      "The charm lasts 1 hour. Damage to the target ends it early, as does you attacking it or it watching you attack or harm an ally of its own.",
       "A target that saves never learns you tried to charm it."
     ],
     "page": 14,

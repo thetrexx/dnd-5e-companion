@@ -241,7 +241,7 @@
     "cost": "action",
     "description": [
       "Choose a creature within 5 ft that can see or hear you. It makes a Wisdom save against your wizard spell save DC or is charmed until the end of your next turn: speed 0, incapacitated, visibly dazed.",
-      "On later turns, spend your action to extend it to the end of your next turn. It ends if you move more than 5 ft away, the creature can't see or hear you, or it takes damage.",
+      "On later turns, spend your action to extend it to the end of your next turn. Moving farther than 5 ft off ends it, as does the creature losing sight or hearing of you or taking damage.",
       "After it ends, or on a passed first save, you can't target that creature again until a long rest."
     ],
     "page": 117,
@@ -257,7 +257,7 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "A creature you can see within 30 ft attacks you",
+    "trigger": "A visible creature no more than 30 ft away attacks you",
     "uses": "Once per attacker per long rest",
     "description": [
       "Needs another creature within range of that attack. When an enemy you can see no more than 30 ft away targets you with an attack, force a Wisdom save against your wizard spell save DC. If it fails, it must instead strike whoever stands nearest to it (not you, not itself); on ties the attacker decides.",
@@ -485,7 +485,7 @@
     "cost": "bonus",
     "uses": "Proficiency bonus per long rest",
     "description": [
-      "Bonus action, while you wear no medium or heavy armor and carry no shield: start the Bladesong for 1 minute. It ends early if you are incapacitated, don medium armor, heavy armor or a shield, or attack with a weapon held in two hands. You can also end it at any time (no action).",
+      "Bonus action, while you wear no medium or heavy armor and carry no shield: start the Bladesong, which lasts 1 minute. Being incapacitated ends it early. So does putting on a shield or any medium or heavy armor, or attacking while holding a weapon in two hands. You can also end it at any time (no action).",
       "While it lasts:",
       "• Your AC rises by your Intelligence modifier (minimum +1).",
       "• Your walking speed is 10 ft higher.",

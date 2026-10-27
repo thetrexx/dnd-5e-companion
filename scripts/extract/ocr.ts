@@ -24,7 +24,15 @@ export function joinHyphenation(s: string): string {
   return s.replace(/(\w)[-­‐]\s*\r?\n\s*(\w)/g, '$1$2');
 }
 
-const normWords = (s: string): string[] => joinHyphenation(s).split(/\s+/).map(normalizeOcr).filter(Boolean);
+/** "ft", "foot" and "feet" (as `normalizeOcr` folds them) count as one word. */
+const UNIT = new Set(['ft', 'foot', 'feet'].map(normalizeOcr));
+
+/**
+ * Words for run matching: line-break hyphenation rejoined, then compound hyphens and "×" split, so
+ * "30-ft-radius" and "30-foot radius" both give 30 / ft / radius; unit words fold to one.
+ */
+const normWords = (s: string): string[] =>
+  joinHyphenation(s).replace(/[-­‐–×]/g, ' ').split(/\s+/).map(normalizeOcr).filter(Boolean).map(w => (UNIT.has(w) ? 'leet' : w));
 
 /**
  * Two normalized words match when equal, or when both have 4+ letters and differ by one edit
@@ -45,17 +53,24 @@ export function wordsMatch(a: string, b: string): boolean {
   return edits + (a.length - i) + (b.length - j) <= 1;
 }
 
-/** Longest run of consecutive normalized words that `text` shares with `ocr`, tolerating one misread letter per word. */
+/**
+ * Longest run of consecutive normalized words that `text` shares with `ocr`, tolerating one misread letter
+ * per word. A text-layer word that is two of ours run together ("ifyou") counts as both.
+ */
 export function longestSharedRun(text: string, ocr: string): number {
   const a = normWords(text);
   const b = normWords(ocr);
   let best = 0;
+  let prev2 = new Array<number>(b.length + 1).fill(0);
   let prev = new Array<number>(b.length + 1).fill(0);
   for (let i = 1; i <= a.length; i++) {
     const cur = new Array<number>(b.length + 1).fill(0);
     for (let j = 1; j <= b.length; j++) {
-      if (wordsMatch(a[i - 1], b[j - 1])) { cur[j] = prev[j - 1] + 1; if (cur[j] > best) best = cur[j]; }
+      if (wordsMatch(a[i - 1], b[j - 1])) cur[j] = prev[j - 1] + 1;
+      if (i >= 2 && b[j - 1] === a[i - 2] + a[i - 1]) cur[j] = Math.max(cur[j], prev2[j - 1] + 2);
+      if (cur[j] > best) best = cur[j];
     }
+    prev2 = prev;
     prev = cur;
   }
   return best;

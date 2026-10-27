@@ -314,7 +314,7 @@
     "level": 17,
     "cost": "action",
     "description": [
-      "Activate an aura of sunlight lasting 1 minute, or until you end it with another action. It sheds bright light in a 60-ft radius and dim light for 30 ft more.",
+      "Activate an aura of sunlight lasting 1 minute, or until you end it with another action. Its light is bright to 60 ft and dim for 30 ft past that.",
       "Enemies standing in the bright light have disadvantage on saves against your fire or radiant spells."
     ],
     "page": 61,
@@ -462,7 +462,7 @@
     "cost": "free",
     "trigger": "You deal lightning damage",
     "description": [
-      "Lightning damage you deal to a creature of size Large or smaller can also push it up to 10 ft away from you."
+      "Your lightning damage can also knock a creature no bigger than Large back as far as 10 ft."
     ],
     "page": 62,
     "textSource": "summary",
@@ -541,8 +541,8 @@
     "resource": "1 Channel Divinity",
     "description": [
       "Make an illusory copy of yourself in an open space you can see within 30 ft. It lasts 1 minute and ends if you lose concentration.",
-      "As a bonus action, move it up to 30 ft to a space you can see, keeping it within 120 ft of you. You can cast spells as if standing in its space, using your own senses.",
-      "When you and the copy are both within 5 ft of a creature that can see the copy, you have advantage on attacks against that creature."
+      "As a bonus action, shift it as far as 30 ft to a spot in sight, no farther than 120 ft from you. You can cast spells as if standing in its space, using your own senses.",
+      "If a creature can see the copy and both you and it stand no more than 5 ft from that creature, your attacks against it have advantage."
     ],
     "page": 63,
     "textSource": "summary",

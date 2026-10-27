@@ -760,7 +760,7 @@
     "cost": "bonus",
     "trigger": "Your attack with a magic arrow misses",
     "description": [
-      "Bonus action: reroll the missed attack against a different target within 60 ft of the original one."
+      "Bonus action: reroll the missed attack at another target no more than 60 ft from the first."
     ],
     "page": 28,
     "book": "xge",
@@ -885,7 +885,7 @@
       }
     ],
     "description": [
-      "Enchantment. The target takes an extra 2d6 psychic damage. Pick an ally within 30 ft of the target: the target makes a Wisdom save or is charmed by that ally until your next turn starts. The charm breaks early if that ally attacks it, damages it or forces it to save.",
+      "Enchantment. The target takes an extra 2d6 psychic damage. Pick one of your allies no more than 30 ft from the target: the target makes a Wisdom save or is charmed by that ally until your next turn starts. The charm breaks early if that ally attacks it, damages it or forces it to save.",
       "Level 18: 4d6 psychic."
     ],
     "page": 29,
@@ -932,7 +932,7 @@
       }
     ],
     "description": [
-      "Evocation. Right after your attack, force energy bursts out: the target and every other creature within 10 ft of it take 2d6 force damage each.",
+      "Evocation. Right after your attack, force energy bursts out: the target and all others no more than 10 ft from it each take 2d6 force damage.",
       "Level 18: 4d6 force."
     ],
     "page": 29,
@@ -1026,7 +1026,7 @@
       }
     ],
     "description": [
-      "Conjuration. Poisonous brambles wrap the target: it takes an extra 2d6 poison damage and its speed drops by 10 ft. The first time on each turn that it moves 1 ft or more without teleporting, it takes 2d6 slashing damage.",
+      "Conjuration. Poisonous brambles wrap the target: it takes an extra 2d6 poison damage and its speed drops by 10 ft. Each turn, the first time it moves at least 1 ft other than by teleporting, it takes 2d6 slashing damage.",
       "The brambles stay for 1 minute, or until you fire another Grasping Arrow. Anyone able to reach the target (the target included) can spend an action to pull them off by beating your Arcane Shot save DC with a Strength (Athletics) check.",
       "Level 18: the poison and slashing damage both become 4d6."
     ],

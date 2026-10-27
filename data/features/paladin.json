@@ -323,8 +323,8 @@
     "cost": "action",
     "uses": "Once per long rest",
     "description": [
-      "Transform into an angel of vengeance for 1 hour. Wings give you a flying speed of 60 ft.",
-      "You also project a 30 ft aura of menace. The first time an enemy enters it, or starts a turn inside it during a fight, that enemy makes a Wisdom save against your spell save DC. A fail frightens it of you for 1 minute or until damaged, and attacks against it have advantage.",
+      "Transform into an angel of vengeance for 1 hour. Wings let you fly at 60 ft.",
+      "A 30 ft aura of menace also surrounds you. The first time an enemy enters it, or starts a turn inside it during a fight, that enemy makes a Wisdom save against your spell save DC. A fail frightens it of you for 1 minute or until damaged, and attacks against it have advantage.",
       "Recharges on a long rest."
     ],
     "page": 88,
@@ -399,7 +399,7 @@
     "cost": "action",
     "resource": "1 Channel Divinity",
     "description": [
-      "Each creature you choose that you can see within 30 ft makes a Wisdom save. On a fail, it can't willingly move more than 30 ft away from you.",
+      "Each creature you choose that you can see within 30 ft makes a Wisdom save. On a fail, it won't willingly go farther than 30 ft from you.",
       "The hold on a creature breaks once you die or become incapacitated, or once it is moved over 30 ft from you.",
       "The book names no action type for this option; it is usually played as an action, like other Channel Divinity options."
     ],
@@ -435,7 +435,7 @@
     },
     "level": 7,
     "cost": "reaction",
-    "trigger": "A creature within 5 ft of you takes damage",
+    "trigger": "A creature no more than 5 ft away is damaged",
     "description": [
       "Use your reaction to take the damage in its place, so it takes none. Nothing can reduce or prevent the damage you take this way."
     ],

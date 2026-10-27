@@ -11,7 +11,7 @@
     "trigger": "You took the Dash action",
     "description": [
       "Once you have used your action to Dash, spend your bonus action on one melee weapon attack or one shove.",
-      "If you moved at least 10 ft in a straight line right before, a hit adds +5 damage, and a successful shove pushes the target up to 10 ft away."
+      "If you covered 10 ft or more in a straight line just before, a hit deals +5 damage, and a successful shove sends the target as far as 10 ft away."
     ],
     "page": 165,
     "textSource": "summary",
@@ -161,7 +161,7 @@
     },
     "level": 1,
     "cost": "reaction",
-    "trigger": "A creature within 5 ft of you casts a spell",
+    "trigger": "A creature no more than 5 ft away casts a spell",
     "description": [
       "Make one melee weapon attack against that spellcaster. It uses your reaction, so you get it once per round."
     ],
@@ -283,7 +283,7 @@
     "cost": "bonus",
     "trigger": "You took the Attack action on your turn",
     "description": [
-      "While wielding a shield, shove a creature within 5 ft of you using the shield."
+      "With a shield in hand, use it to shove a creature no more than 5 ft away."
     ],
     "page": 170,
     "textSource": "summary",

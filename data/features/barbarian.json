@@ -419,7 +419,7 @@
       "Each time you start a rage, roll a d8 on the Wild Magic table for the effect you get. Where an effect calls for a save, its DC is 8 + your proficiency bonus + your Constitution modifier.",
       "1: Every creature you choose that you can see within 30 ft makes a Constitution save or takes 1d12 necrotic damage. You gain 1d12 temporary hit points.",
       "2: Teleport into an unoccupied space you can see, up to 30 ft away. Until the rage ends, you can repeat this with a bonus action on each of your turns.",
-      "3: An intangible spirit (in the shape of a flumph or pixie, your pick) appears within 5 ft of a creature you can see within 30 ft. As the turn ends it bursts, and each creature within 5 ft of it makes a Dexterity save or takes 1d6 force damage. Until the rage ends, a bonus action on each of your turns calls up a new one.",
+      "3: An intangible spirit (in the shape of a flumph or pixie, your pick) appears within 5 ft of a creature you can see within 30 ft. As the turn ends it bursts, and creatures no more than 5 ft from it make Dexterity saves or take 1d6 force damage. Until the rage ends, a bonus action on each of your turns calls up a new one.",
       "4: A weapon you hold deals force damage until the rage ends and gains the light and thrown properties (normal range 20 ft, long range 60 ft). If it leaves your hand, it is back in it as the turn ends.",
       "5: Until the rage ends, any creature that hits you with an attack roll takes 1d6 force damage.",
       "6: Until the rage ends, glowing lights give you +1 AC, and allies within 10 ft of you get the same bonus.",

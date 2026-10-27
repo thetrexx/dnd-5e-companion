@@ -2679,7 +2679,7 @@
   "cast": {
    "cost": "reaction",
    "text": "1 reaction",
-   "trigger": "when you see a creature within 60 ft casting a spell"
+   "trigger": "on seeing a creature cast a spell no more than 60 ft away"
   },
   "range": "60 feet",
   "duration": "Instantaneous",
@@ -4670,7 +4670,7 @@
   "cast": {
    "cost": "reaction",
    "text": "1 reaction",
-   "trigger": "when you or a creature within 60 ft falls"
+   "trigger": "as you or someone no more than 60 ft away falls"
   },
   "range": "60 feet",
   "duration": "1 minute",

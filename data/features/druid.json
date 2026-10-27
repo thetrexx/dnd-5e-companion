@@ -88,7 +88,7 @@
       }
     ],
     "description": [
-      "Action: turn into a beast you have seen, within the Max CR and limits for your level. You can stay in the form for hours equal to half your druid level (rounded down), then revert unless you spend another use. A bonus action ends it early; dropping to 0 HP also ends it and spare damage carries over to your normal form.",
+      "Action: turn into a beast you have seen, within the Max CR and limits for your level. Each form lasts 1 hour per 2 full druid levels; then you revert unless you spend another use. A bonus action ends it early; dropping to 0 HP also ends it and spare damage carries over to your normal form.",
       "You use the beast's stats and HP but keep your mental scores, alignment and proficiencies (take the better bonus). You can't cast spells, though a spell already running stays on. Gear falls off, merges or is worn, your choice.",
       "Level 18: you can cast druid spells in beast form with verbal and somatic components only. Level 20: unlimited uses."
     ],
@@ -370,7 +370,7 @@
     },
     "level": 2,
     "cost": "reaction",
-    "trigger": "A creature you can see moves within 10 ft of you or starts its turn there",
+    "trigger": "A visible creature comes within 10 ft of you or begins its turn that close",
     "scaling": [
       {
         "label": "Necrotic damage",
@@ -539,7 +539,7 @@
       "Bonus action: spend a Wild Shape use to take a starry form instead of a beast shape. You keep your statistics and shed bright light in 10 ft and dim light 10 ft beyond. It lasts 10 minutes, ending early if you dismiss it (no action), are incapacitated, die, or use this feature again.",
       "Each time you take the form, choose which constellation shines on you:",
       "Archer: as you take the form, and with a bonus action on later turns while it lasts, make a ranged spell attack at one creature within 60 ft. On a hit it takes 1d8 + your Wisdom modifier radiant damage.",
-      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature within 30 ft of you also regains 1d8 + your Wisdom modifier hit points.",
+      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature no more than 30 ft away also regains hit points equal to 1d8 + your Wisdom modifier.",
       "Dragon: on Intelligence or Wisdom checks, and on Constitution saves to keep concentration, a d20 roll of 9 or lower counts as a 10.",
       "Level 10 (Twinkling Constellations): the Archer and Chalice dice become 2d8, the Dragon also gives you a 20-ft flying speed and hover, and as each of your turns begins in the form you may switch constellation.",
       "Level 14 (Full of Stars): in the form you resist bludgeoning, piercing and slashing damage."
@@ -558,7 +558,7 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "A creature you can see within 30 ft is about to make an attack roll, save or ability check",
+    "trigger": "A visible creature no more than 30 ft away is about to roll an attack, save or ability check",
     "uses": "Proficiency bonus per long rest",
     "description": [
       "After each long rest, consult your Star Map and roll any die. Until your next long rest, its result sets which reaction you have:",

@@ -93,7 +93,7 @@
     },
     "level": 3,
     "cost": "reaction",
-    "trigger": "A Large or larger creature within 5 ft attacks you",
+    "trigger": "A creature of Large size or bigger, no more than 5 ft away, attacks you",
     "description": [
       "When a Large or bigger creature within 5 ft attacks you, hit or miss, you may answer with an attack against it right after, if you can see it."
     ],
@@ -788,7 +788,7 @@
     "description": [
       "A swarm of intangible nature spirits shares your space until you die. Once on each of your turns, immediately when one of your attacks hits a creature, the swarm can help in one way:",
       "• The target takes 1d6 piercing damage.",
-      "• The target makes a Strength save against your spell save DC or the swarm shoves it up to 15 ft horizontally, in a direction you choose.",
+      "• The target makes a Strength save against your spell save DC or the swarm shoves it as far as 15 ft sideways along the ground, in a direction you pick.",
       "• The swarm carries you 5 ft horizontally, in a direction you choose.",
       "Level 11 (Mighty Swarm): the damage becomes 1d8, a creature that fails the Strength save can also be knocked prone, and being carried by the swarm gives you half cover until your next turn starts."
     ],

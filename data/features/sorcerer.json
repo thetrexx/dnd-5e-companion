@@ -378,7 +378,7 @@
     "cost": "bonus",
     "resource": "3 sorcery points",
     "description": [
-      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts one creature you can see within 120 ft. It appears in an unoccupied space of your choice within 30 ft of that target and rolls its own initiative.",
+      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts a target in your sight no more than 120 ft away. It appears in an unoccupied space of your choice within 30 ft of that target and rolls its own initiative.",
       "Uses the dire wolf stats (Monster Manual), with changes: it is Medium and a monstrosity, and starts with half your sorcerer level in temporary hit points. It passes through creatures and objects as difficult terrain; ending its turn inside an object costs it 5 force damage. At the start of its turn it knows where its target is, so the target can't stay hidden from it.",
       "It heads straight for its target by the shortest route, uses its action only to attack that target, and makes opportunity attacks only against it. While the hound stays within 5 ft of its target, that creature makes saves against your spells at disadvantage.",
       "It disappears after 5 minutes, or sooner if either it or its target hits 0 hit points."
@@ -489,7 +489,7 @@
     "cost": "bonus",
     "uses": "Each round",
     "description": [
-      "If it is windy, use a bonus action each round to pick the wind's direction in a 100-ft-radius sphere centered on you. It blows that way until the end of your next turn.",
+      "If it is windy, use a bonus action each round to set the wind's direction everywhere within 100 ft of you. It blows that way until the end of your next turn.",
       "The wind's speed doesn't change."
     ],
     "page": 52,
@@ -526,7 +526,7 @@
     "uses": "Once per short or long rest",
     "description": [
       "You are immune to lightning and thunder damage and have a magical flying speed of 60 ft.",
-      "Action: lower your flying speed to 30 ft for 1 hour, and choose up to 3 + your Charisma modifier creatures within 30 ft. They gain a magical flying speed of 30 ft for 1 hour."
+      "Action: pick a number of creatures no more than 30 ft away, up to 3 + your Charisma modifier. For 1 hour they can fly at 30 ft by magic, while your own flying speed falls to 30 ft."
     ],
     "page": 52,
     "book": "xge",
