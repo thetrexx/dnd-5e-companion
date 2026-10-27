@@ -1,10 +1,10 @@
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
-import { CACHE } from './config.ts';
+import { BOOKS, type BookId } from './config.ts';
 import { judgeRecord } from './ocr.ts';
 import { extractPage } from './pages.ts';
 
 type Rec = {
-  id: string; name: string; page?: number; description?: string[];
+  id: string; name: string; book?: BookId; page?: number; description?: string[];
   trigger?: string; prereq?: { text?: string }; resource?: string; uses?: string;
 };
 type Spell = Rec & {
@@ -46,22 +46,23 @@ function recProse(r: Rec): string[] {
   return [(r.description ?? []).join('\n'), r.trigger ?? '', r.prereq?.text ?? '', r.resource ?? '', r.uses ?? ''].filter(Boolean);
 }
 
-function ocrPages(page: number): string {
+function ocrPages(page: number, book: BookId): string {
+  const cache = BOOKS[book].cache;
   let out = '';
   for (const p of [page, page + 1, page + 2]) {
     // page + 2 only when page + 1 is a full-page illustration (no text), so the entry continues there
-    if (p === page + 2 && readFileSync(`${CACHE}/p${page + 1}.txt`, 'utf8').trim()) break;
-    extractPage(p);
-    out += readFileSync(`${CACHE}/p${p}.txt`, 'utf8') + '\n';
+    if (p === page + 2 && readFileSync(`${cache}/p${page + 1}.txt`, 'utf8').trim()) break;
+    extractPage(p, book);
+    out += readFileSync(`${cache}/p${p}.txt`, 'utf8') + '\n';
   }
   return out;
 }
 
-interface Item { key: string; text: string; page: number; prose: string[] }
+interface Item { key: string; text: string; page: number; book: BookId; prose: string[] }
 
 function items(kind: Kind): Item[] | 'skip' {
   if (kind === 'spells') {
-    return readJson<Spell[]>('data/spells.json').map(s => ({ key: `spells:${s.id}`, text: spellText(s), page: s.page!, prose: proseOf(s) }));
+    return readJson<Spell[]>('data/spells.json').map(s => ({ key: `spells:${s.id}`, text: spellText(s), page: s.page!, book: s.book ?? 'phb', prose: proseOf(s) }));
   }
   let recs: Rec[];
   if (kind === 'features') {
@@ -71,7 +72,7 @@ function items(kind: Kind): Item[] | 'skip' {
   } else {
     return 'skip'; // subclasses, races, options carry no description: nothing to compare
   }
-  return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...recProse(r)].join('\n'), page: r.page!, prose: recProse(r) }));
+  return recs.map(r => ({ key: `${kind}:${r.id}`, text: [r.name, ...recProse(r)].join('\n'), page: r.page!, book: r.book ?? 'phb', prose: recProse(r) }));
 }
 
 interface Result { key: string; why: string[]; accepted?: string }
@@ -91,7 +92,8 @@ for (const kind of kinds) {
   for (const it of list) {
     checked++;
     if (!Number.isInteger(it.page)) { failures.push({ key: it.key, why: ['no page'], accepted: accept[it.key] }); continue; }
-    const r = judgeRecord(it.text, ocrPages(it.page), it.prose);
+    if (!BOOKS[it.book].textLayer) { failures.push({ key: it.key, why: ['no text layer'], accepted: accept[it.key] }); continue; }
+    const r = judgeRecord(it.text, ocrPages(it.page, it.book), it.prose);
     if (!r.pass) failures.push({ key: it.key, why: r.reasons, accepted: accept[it.key] });
   }
 }

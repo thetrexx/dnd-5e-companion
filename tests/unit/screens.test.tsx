@@ -57,7 +57,7 @@ test('SubclassPicker lists subclasses and No subclass', () => {
   const r = render(<SubclassPicker cls="fighter" level={3} />);
   expect(r.container.querySelector('.page-title')!.textContent).toBe('Fighter');
   expect(r.container.querySelector('.hint')!.textContent).toBe('Pick a Martial Archetype');
-  expect([...r.container.querySelectorAll('button')].map(b => b.textContent)).toEqual(['Champion', 'Battle Master', 'Eldritch Knight', 'No subclass']);
+  expect([...r.container.querySelectorAll('button')].map(b => b.textContent)).toEqual(['Champion', 'Battle Master', 'Eldritch Knight', 'Arcane Archer', 'No subclass']);
 });
 
 test('Menu row icons and slot icon survive a failed load', () => {
@@ -83,6 +83,8 @@ test('every card ends with the PHB page line', () => {
   expect(wb.container.textContent).toContain('Full rules: PHB p. 75');
   const fb = render(<Card kind="spell" id="fire-bolt" cls="wizard" level={3} />);
   expect(fb.container.textContent).toContain('Full rules: PHB p. 242');
+  const fi = render(<Card kind="spell" id="fireball" cls="wizard" level={5} />);
+  expect(fi.container.textContent).toContain('Full rules: PHB p. 241');
   for (const r of [wb, fb]) {
     const art = r.container.querySelector('article.card')!;
     expect(art.lastElementChild!.className).toBe('card-ref');

@@ -1,6 +1,8 @@
 # Spellbook & Steel — a D&D 5e companion
 
-> **Work in progress.** All 12 classes, 40 subclasses, 361 spells, class options, races and feats are in. Every card is a short summary in our own words with the PHB page for the full rules.
+> **Work in progress.** All 12 classes, 40 PHB subclasses plus 18 more, 361 spells, class options, races and feats are in. Every card is a short summary in our own words with the book page for the full rules.
+
+Books covered: Player's Handbook, Xanathar's Guide to Everything, Tasha's Cauldron of Everything, Sword Coast Adventurer's Guide, Dungeon Master's Guide, and Bigby Presents: Glory of the Giants.
 
 A phone-first cheat sheet for D&D 5e (2014 Player's Handbook rules). Players pick their class and level and get quick access to their actions, reactions, cantrips and spells, each with a BG3-style card showing the description, cost, components and dice. The paper character sheet stays the source of truth; this is only a lookup.
 

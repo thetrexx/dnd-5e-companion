@@ -56,6 +56,11 @@ test('a feature with textSource srd is rejected', () => {
   expect(validateDataset(bad).join('\n')).toContain('textSource');
 });
 
+test('a feature with an unknown book is rejected', () => {
+  const bad = structuredClone(DATA); (bad.features[0] as any).book = 'xgte';
+  expect(validateDataset(bad)).toContain(`feature "${bad.features[0].id}": book "xgte" is not valid`);
+});
+
 test('caster class needs spellAbility', () => {
   const bad = structuredClone(DATA);
   const c = bad.classes.find(x => x.caster === 'full')!;

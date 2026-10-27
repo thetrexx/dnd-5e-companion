@@ -32,6 +32,11 @@ test('domain spells are always prepared and tagged', () => {
   expect(l1.items.map(i => i.id)).toEqual(['bless', 'cure-wounds']);
   expect(l1.tags).toEqual({ bless: 'Domain', 'cure-wounds': 'Domain' });
 });
+test('a grant with uses carries the cost note as its tag', () => {
+  const c = ch([{ cls: 'barbarian', level: 3, sub: 'path-of-the-totem-warrior' }]);
+  const sec = charSpellSections(c, 'mine').find(s => s.items.some(i => i.id === 'speak-with-animals'))!;
+  expect(sec.tags!['speak-with-animals']).toBe('Ritual only');
+});
 test('non-caster: race and feature spells get their own sections', () => {
   const c = ch([{ cls: 'monk', level: 3, sub: 'way-of-shadow' }], { race: 'tiefling' });
   const ids = charSpellSections(c, 'mine').map(x => x.id);
@@ -83,4 +88,8 @@ test('a spell source not reached yet has a dimmed row', () => {
   expect(rows.find(r => r.label === 'Spirit Walker Spells')!.dimmed).toBe(true);
   const tief = charMenuRows(ch([{ cls: 'barbarian', level: 3 }], { race: 'tiefling' }));
   expect(tief.find(r => r.label === 'Tiefling Spells')!.dimmed).toBe(false);
+});
+test('a granted cantrip lights the Cantrips row of a class with none', () => {
+  expect(charMenuRows(ch([{ cls: 'ranger', level: 3, sub: 'swarmkeeper' }])).find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
+  expect(charMenuRows(ch([{ cls: 'ranger', level: 3, sub: 'hunter' }])).find(r => r.kind === 'cantrips')!.dimmed).toBe(true);
 });

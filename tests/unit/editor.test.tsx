@@ -169,3 +169,20 @@ test('spells step: always prepared spells are not offered again', () => {
   fireEvent.click(r2.getAllByText('Bless')[1]);
   expect(loadCharacter()!.spells).toEqual([]);
 });
+
+test('a shared fighting style is chosen once and disabled in the other slot', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense'] });
+  const r = render(<Editor step="options" />);
+  expect(r.getByText('1 of 1 chosen')).toBeTruthy();
+  expect(r.getByText('0 of 1 chosen')).toBeTruthy();
+  expect(r.getByText('Chosen for Fighter')).toBeTruthy();
+  const defense = r.getAllByText('Defense').map((e) => e.closest('button')!);
+  expect(defense.map((b) => b.disabled)).toEqual([false, true]);
+});
+test('a legal build never reads as an over-pick', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense', 'fighting-style-two-weapon-fighting'] });
+  const r = render(<Editor step="options" />);
+  expect(r.getAllByText('1 of 1 chosen')).toHaveLength(2);
+  expect(r.queryByText(/more than usual/)).toBeNull();
+  expect(r.getByText('Chosen for Paladin')).toBeTruthy();
+});

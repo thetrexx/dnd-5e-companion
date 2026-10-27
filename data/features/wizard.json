@@ -473,5 +473,48 @@
     ],
     "page": 119,
     "textSource": "summary"
+  },
+  {
+    "id": "bladesong",
+    "name": "Bladesong",
+    "source": {
+      "kind": "subclass",
+      "id": "bladesinging"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "uses": "Proficiency bonus per long rest",
+    "description": [
+      "Bonus action, while you wear no medium or heavy armor and carry no shield: start the Bladesong for 1 minute. It ends early if you are incapacitated, don medium armor, heavy armor or a shield, or attack with a weapon held in two hands. You can also end it at any time (no action).",
+      "While it lasts:",
+      "• Your AC rises by your Intelligence modifier (minimum +1).",
+      "• Your walking speed is 10 ft higher.",
+      "• You have advantage on Dexterity (Acrobatics) checks.",
+      "• Constitution saves to keep concentration on a spell add your Intelligence modifier (minimum +1).",
+      "Level 14 (Song of Victory): while it lasts, your melee weapon attacks also add your Intelligence modifier (minimum +1) to their damage."
+    ],
+    "page": 76,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/80/Bladesong_Icon.webp"
+  },
+  {
+    "id": "song-of-defense",
+    "name": "Song of Defense",
+    "source": {
+      "kind": "subclass",
+      "id": "bladesinging"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "You take damage while your Bladesong is active",
+    "resource": "1 spell slot",
+    "description": [
+      "Use your reaction and spend a spell slot to cut the damage by 5 times the slot's level."
+    ],
+    "page": 77,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f9/Song_of_Defence_Icon.webp"
   }
 ]

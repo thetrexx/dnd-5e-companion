@@ -229,5 +229,96 @@
     ],
     "page": 98,
     "textSource": "summary"
+  },
+  {
+    "id": "fancy-footwork",
+    "name": "Fancy Footwork",
+    "source": {
+      "kind": "subclass",
+      "id": "swashbuckler"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a melee attack on your turn",
+    "description": [
+      "On your turn, any creature you make a melee attack against, hit or miss, can't make opportunity attacks against you until your turn ends."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5b/Fancy_Footwork_Icon.webp"
+  },
+  {
+    "id": "rakish-audacity",
+    "name": "Rakish Audacity",
+    "source": {
+      "kind": "subclass",
+      "id": "swashbuckler"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You attack a lone foe next to you",
+    "uses": "Once per turn (Sneak Attack)",
+    "description": [
+      "Add your Charisma modifier to your initiative rolls.",
+      "You can also Sneak Attack without advantage, provided the target is within 5 ft of you, nobody else is within 5 ft of you, and the attack roll isn't at disadvantage. All the usual Sneak Attack rules still apply."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/ba/Rakish_Audacity_Icon.webp"
+  },
+  {
+    "id": "panache",
+    "name": "Panache",
+    "source": {
+      "kind": "subclass",
+      "id": "swashbuckler"
+    },
+    "level": 9,
+    "cost": "action",
+    "description": [
+      "Action: make a Charisma (Persuasion) check contested by a creature's Wisdom (Insight) check. It only works on a creature that can hear you and that shares a language with you.",
+      "Hostile creature, you win: for 1 minute it has disadvantage on attack rolls against anyone but you, and can't make opportunity attacks against anyone but you. It ends early if one of your companions attacks it or affects it with a spell, or if you and it end up more than 60 ft apart.",
+      "Non-hostile creature, you win: for 1 minute you have it charmed, and it sees you as a friendly acquaintance. Harming it in any way, by you or your companions, ends the charm at once."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/a4/Panache_Icon.webp"
+  },
+  {
+    "id": "elegant-maneuver",
+    "name": "Elegant Maneuver",
+    "source": {
+      "kind": "subclass",
+      "id": "swashbuckler"
+    },
+    "level": 13,
+    "cost": "bonus",
+    "description": [
+      "Bonus action: your next Strength (Athletics) or Dexterity (Acrobatics) check this turn is made with advantage."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "master-duelist",
+    "name": "Master Duelist",
+    "source": {
+      "kind": "subclass",
+      "id": "swashbuckler"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You miss with an attack roll",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Roll the missed attack again, with advantage."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

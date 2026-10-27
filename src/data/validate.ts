@@ -8,12 +8,17 @@ const RESOLUTIONS = ['attack', 'save', 'auto', 'none'];
 const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 const SOURCES = ['generic', 'class', 'subclass', 'option', 'race', 'feat'];
 const OWNERS = ['class', 'subclass', 'race'];
-const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron'];
+const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron', 'subclass'];
 const TEXT_SOURCES = ['summary'];
+const BOOK_IDS: string[] = ['phb', 'xge', 'tce', 'scag', 'dmg', 'bgg'];
 const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 const isInt = (n: unknown, min: number, max: number) => Number.isInteger(n) && (n as number) >= min && (n as number) <= max;
 const blank = (s: unknown) => typeof s !== 'string' || s.trim() === '';
+
+function checkBook(at: string, book: unknown, errs: string[]) {
+  if (book !== undefined && !BOOK_IDS.includes(book as string)) errs.push(`${at}: book "${book}" is not valid`);
+}
 
 function checkIds(kind: string, items: { id: string }[], errs: string[]) {
   const seen = new Set<string>();
@@ -106,6 +111,7 @@ export function validateDataset(d: Dataset): string[] {
     if (!Array.isArray(s.classes)) errs.push(`${at}: classes must be an array`);
     else for (const c of s.classes) if (!CLASS_IDS.includes(c)) errs.push(`${at}: classes has unknown class "${c}"`);
     if (!isInt(s.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
+    checkBook(at, s.book, errs);
     if (s.summary) {
       if (!RESOLUTIONS.includes(s.summary.resolution)) errs.push(`${at}: summary.resolution is not valid`);
       if (s.summary.save !== undefined && !ABILITIES.includes(s.summary.save)) errs.push(`${at}: summary.save is not valid`);
@@ -134,6 +140,7 @@ export function validateDataset(d: Dataset): string[] {
     if (!FEATURE_COSTS.includes(f.cost)) errs.push(`${at}: cost is not valid`);
     if (!Array.isArray(f.description) || f.description.length === 0 || f.description.some(blank)) errs.push(`${at}: description must be non-empty paragraphs`);
     if (!isInt(f.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
+    checkBook(at, f.book, errs);
     for (const sc of f.scaling ?? [])
       if (!Array.isArray(sc.values) || sc.values.length !== 20 || !sc.values.every(v => typeof v === 'string')) errs.push(`${at}: scaling "${sc.label}" must have 20 string values`);
     if (f.prereq?.option !== undefined && !featureIds.has(f.prereq.option)) errs.push(`${at}: prereq has unknown option "${f.prereq.option}"`);
@@ -147,6 +154,7 @@ export function validateDataset(d: Dataset): string[] {
     if (!CLASS_IDS.includes(sc.cls)) errs.push(`${at}: unknown class "${sc.cls}"`);
     if (blank(sc.name)) errs.push(`${at}: name is empty`);
     if (!isInt(sc.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
+    checkBook(at, sc.book, errs);
     if (sc.bonusSpells) {
       if (!BONUS_KINDS.includes(sc.bonusSpells.kind)) errs.push(`${at}: bonusSpells.kind is not valid`);
       grants(at, sc.bonusSpells.grants);
@@ -175,6 +183,7 @@ export function validateDataset(d: Dataset): string[] {
     table(at, 'picks', g.picks, 0, 99, errs);
     if (Array.isArray(g.picks) && g.picks.some((n, i) => i > 0 && n < g.picks[i - 1])) errs.push(`${at}: picks must not decrease`);
     if (g.from !== undefined && !groupIds.has(g.from)) errs.push(`${at}: unknown from group "${g.from}"`);
+    if (g.reuse !== undefined && g.reuse !== true) errs.push(`${at}: reuse must be true when present`);
     if (g.only !== undefined) {
       if (g.from === undefined) errs.push(`${at}: only requires from`);
       else {
@@ -195,6 +204,7 @@ export function validateDataset(d: Dataset): string[] {
     if (blank(r.name)) errs.push(`${at}: name is empty`);
     if (r.parent !== undefined && !raceIds.has(r.parent)) errs.push(`${at}: unknown parent race "${r.parent}"`);
     if (!isInt(r.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
+    checkBook(at, r.book, errs);
     grants(at, r.spells);
     for (const g of r.options ?? []) {
       if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
@@ -209,6 +219,7 @@ export function validateDataset(d: Dataset): string[] {
     if (!TEXT_SOURCES.includes(f.textSource as string)) errs.push(`${at}: textSource must be summary`);
     if (!Array.isArray(f.description) || f.description.length === 0 || f.description.some(blank)) errs.push(`${at}: description must be non-empty paragraphs`);
     if (!isInt(f.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
+    checkBook(at, f.book, errs);
     grants(at, f.spells);
   }
 

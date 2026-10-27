@@ -57,7 +57,7 @@ export function grantSources(ch: Character): GrantSource[] {
   for (const c of ch.classes) {
     const sub = ownedSub(c);
     const b = sub?.bonusSpells;
-    if (sub && b && b.kind !== 'patron') add({ key: `sub:${sub.id}`, title: BONUS_TITLE[b.kind], cls: c.cls, level: c.level, step: 'spells' }, b.grants);
+    if (sub && b && b.kind !== 'patron') add({ key: `sub:${sub.id}`, title: b.kind === 'subclass' ? sub.name : BONUS_TITLE[b.kind], cls: c.cls, level: c.level, step: 'spells' }, b.grants);
   }
   return out;
 }

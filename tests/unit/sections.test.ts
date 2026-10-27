@@ -1,7 +1,23 @@
 import type { Feature, Spell } from '../../src/data/types';
 import { DATA } from '../../src/data';
 import { listSpells } from '../../src/logic/rules';
-import { spellSections, actionSections } from '../../src/logic/sections';
+import { spellSections, actionSections, joinTag } from '../../src/logic/sections';
+
+test('joinTag', () => {
+  expect(joinTag('Domain', undefined)).toBe('Domain');
+  expect(joinTag(undefined, 'Ritual only')).toBe('Ritual only');
+  expect(joinTag('Domain', '')).toBe('Domain');
+  expect(joinTag('Star Map', 'Free cast')).toBe('Star Map · Free cast');
+  expect(joinTag()).toBeUndefined();
+});
+test('browse view lists the effective subclass feature spells, tagged with the feature name', () => {
+  const cantrips = spellSections('rogue', 3, 'arcane-trickster').find(s => s.id === 'cantrips')!;
+  expect(cantrips.tags!['mage-hand']).toBe('Mage Hand Legerdemain');
+});
+test('non-casters get no spell sections from feature spells', () => {
+  expect(spellSections('barbarian', 3, 'path-of-the-totem-warrior')).toEqual([]);
+  expect(spellSections('monk', 3, 'way-of-shadow')).toEqual([]);
+});
 
 test('wizard spell sections', () => {
   const sp = spellSections('wizard', 3);
@@ -86,3 +102,10 @@ test('listSpells: subclass caster list matches its spell sections', () => {
   expect(listSpells(cls('fighter'), ek).filter(s => s.level <= 4).map(s => s.id).sort()).toEqual([...new Set(fromSections)].sort());
   expect(listSpells(cls('wizard')).map(s => s.id)).toContain('fireball');
 });
+
+test('swarmkeeper spells tagged with the subclass name', () => {
+  const s = spellSections('ranger', 3, 'swarmkeeper').find(x => x.id === 'lvl-1')!;
+  expect(s.tags!['faerie-fire']).toBe('Swarmkeeper');
+});
+test('star map guiding bolt shows its limit', () =>
+  expect(spellSections('druid', 2, 'circle-of-stars').find(x => x.id === 'lvl-1')!.tags!['guiding-bolt']).toMatch(/^Star Map · /));

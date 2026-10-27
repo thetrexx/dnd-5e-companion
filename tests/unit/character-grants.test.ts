@@ -56,3 +56,54 @@ test('unlock copy: class-owned by class level, the rest by character level', () 
   expect(unlockText(src('race:tiefling'), 5)).toBe('Unlocks at character level 5');
   expect(unlockText(src('feature:pact-boon-pact-of-the-tome'), 3)).toBe('Unlocks at Warlock 3');
 });
+
+describe('shared option pools count once', () => {
+  const mk = (o: Partial<Character>): Character => ({ ...emptyCharacter(), ...o });
+  const fp = mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense'] });
+  test('one style counts once', () => {
+    const [f, p] = optionSlots(fp);
+    expect(f.chosen).toEqual(['fighting-style-defense']);
+    expect(p.chosen).toEqual([]);
+    expect(p.taken).toEqual(['fighting-style-defense']);
+  });
+  test('two styles fill one slot each', () => {
+    const s = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling'] });
+    expect(s.map(x => x.chosen)).toEqual([['fighting-style-defense'], ['fighting-style-dueling']]);
+  });
+  test('one ancestry may fill race and sorcerer slots', () => {
+    const s = optionSlots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-red'] }));
+    expect(s.map(x => x.chosen)).toEqual([['draconic-ancestry-red'], ['draconic-ancestry-red']]);
+  });
+  const within = (s: ReturnType<typeof optionSlots>) => s.map(x => [x.chosen.length, x.count]);
+  test('a style only one slot offers moves the other pick out of its way', () => {
+    const [f, p] = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-two-weapon-fighting'] });
+    expect(f.chosen).toEqual(['fighting-style-two-weapon-fighting']);
+    expect(p.chosen).toEqual(['fighting-style-defense']);
+    expect(f.taken).toEqual(['fighting-style-defense']);
+    expect(p.taken).toEqual([]);
+  });
+  test('fighter listed first and a swords bard share styles without an over-pick', () => {
+    const s = optionSlots(mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'bard', level: 3, sub: 'college-of-swords' }], options: ['fighting-style-dueling', 'fighting-style-archery'] }));
+    const f = s.find(x => x.cls === 'fighter')!, b = s.find(x => x.cls === 'bard')!;
+    expect(f.chosen).toEqual(['fighting-style-archery']);
+    expect(b.chosen).toEqual(['fighting-style-dueling']);
+    expect(b.taken).toEqual([]);
+  });
+  test('two ancestries fill race and sorcerer one each', () => {
+    const s = optionSlots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-blue', 'draconic-ancestry-red'] }));
+    expect(within(s)).toEqual([[1, 1], [1, 1]]);
+    expect(s.flatMap(x => x.chosen).sort()).toEqual(['draconic-ancestry-blue', 'draconic-ancestry-red']);
+  });
+  test('three slots: a chain of moves places every style', () => {
+    const s = optionSlots(mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }, { cls: 'ranger', level: 2 }],
+      options: ['fighting-style-protection', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting'] }))
+      .filter(x => (x.group.from ?? x.group.id) === 'fighting-style');
+    expect(within(s)).toEqual([[1, 1], [1, 1], [1, 1]]);
+    expect(s.map(x => x.chosen)).toEqual([['fighting-style-great-weapon-fighting'], ['fighting-style-protection'], ['fighting-style-dueling']]);
+  });
+  test('a real over-pick still shows as more than the count', () => {
+    const s = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting'] });
+    expect(s.map(x => x.chosen)).toEqual([['fighting-style-defense', 'fighting-style-great-weapon-fighting'], ['fighting-style-dueling']]);
+    expect(optionSlots(mk({ classes: [{ cls: 'fighter', level: 1 }], options: ['fighting-style-defense', 'fighting-style-dueling'] }))[0].chosen).toHaveLength(2);
+  });
+});

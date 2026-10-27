@@ -2,7 +2,7 @@ import { DATA } from '../data';
 import type { ClassId, Feature, Route, Spell } from '../data/types';
 import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
-import { genericSections } from '../logic/sections';
+import { genericSections, joinTag } from '../logic/sections';
 import type { Section } from '../logic/sections';
 import { listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
@@ -89,11 +89,11 @@ function spellLayout(ch: Character, view: SpellView): { places: Place[]; section
     const spell = DATA.spells.find(s => s.id === p.id);
     if (!source || !grant || !spell) continue;
     const { place, tag } = route(source);
-    place.entries.push({ spell, tag, mine: true, locked: grant.atLevel > source.level, atLevel: grant.atLevel });
+    place.entries.push({ spell, tag: joinTag(tag, grant.uses), mine: true, locked: grant.atLevel > source.level, atLevel: grant.atLevel });
   }
   for (const a of autoSpells(ch)) {
     const { place, tag } = route(a.source);
-    place.entries.push({ spell: a.spell, tag, mine: a.unlocked, locked: !a.unlocked, atLevel: a.atLevel });
+    place.entries.push({ spell: a.spell, tag: joinTag(tag, a.uses), mine: a.unlocked, locked: !a.unlocked, atLevel: a.atLevel });
   }
   const places = [...classes.values(), ...sources.flatMap(s => own.get(s.key) ?? [])];
   const out: { place: Place; sec: Section }[] = [];
@@ -198,13 +198,14 @@ export function charMenuRows(ch: Character): MenuRow[] {
   for (let n = 0; n <= 9; n++) {
     for (const { cc, info } of casters) {
       const id = `${n === 0 ? 'cantrips' : `lvl-${n}`}-${cc.cls}`;
-      // past the ceiling only for a spell of the character's own there (e.g. Mystic Arcanum)
+      // past the ceiling only for a spell of the character's own there (e.g. Mystic Arcanum);
+      // an unlocked granted cantrip (Swarmkeeper Mage Hand) lights a Cantrips row the class has none for
       const own = sections.some(x => x.sec.id === id && x.sec.mine?.length);
       if (n > info.ceiling && !own) continue;
       const name = casters.length === 1 ? '' : `${className(cc.cls)} `;
       rows.push(n === 0
         ? { kind: 'cantrips', label: `${name}Cantrips`, icon: { type: 'img', src: DATA.classes.find(x => x.id === info.list)?.plainIcon },
-            target: spells(id), dimmed: info.cantrips === 0, motif: info.list }
+            target: spells(id), dimmed: info.cantrips === 0 && !own, motif: info.list }
         : { kind: 'spells', label: `Level ${n} ${name}Spells`, icon: info.pact ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },
             target: spells(id), dimmed: n > info.maxLevel && !own, motif: info.list });
     }

@@ -18,3 +18,7 @@ test('theme defines the motion tokens for every strength', () => {
   for (const s of ['off', 'faint', 'medium', 'strong']) expect(css).toMatch(new RegExp(`data-strength="${s}"\][^}]*--motion-i`));
   for (const t of ['--mist-o', '--blood-o', '--cells-o', '--sorcerer-cell-core', '--row-motif-mask', '--bg-motif-mask', '--none-bg-o']) expect(css).toContain(t);
 });
+test('a disabled pick row looks disabled, with theme tokens only', () => {
+  const css = readFileSync('src/styles/screens.css', 'utf8');
+  expect(css).toContain('.pick-row:disabled{opacity:var(--disabled-opacity);cursor:default}');
+});

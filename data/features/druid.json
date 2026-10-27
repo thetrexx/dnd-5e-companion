@@ -360,5 +360,214 @@
     "page": 68,
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/a/af/Underdark_Icon.webp"
+  },
+  {
+    "id": "halo-of-spores",
+    "name": "Halo of Spores",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-spores"
+    },
+    "level": 2,
+    "cost": "reaction",
+    "trigger": "A creature you can see moves within 10 ft of you or starts its turn there",
+    "scaling": [
+      {
+        "label": "Necrotic damage",
+        "values": [
+          "",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10",
+          "1d10"
+        ]
+      }
+    ],
+    "description": [
+      "Use your reaction to unleash your invisible spores on it: it takes 1d4 necrotic damage unless it passes a Constitution save against your spell save DC.",
+      "The die grows to 1d6 at druid level 6, 1d8 at level 10 and 1d10 at level 14."
+    ],
+    "page": 36,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/17/Halo_of_Spores_Icon.webp"
+  },
+  {
+    "id": "symbiotic-entity",
+    "name": "Symbiotic Entity",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-spores"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Wild Shape use",
+    "description": [
+      "Action: spend a Wild Shape use to wake your spores instead of taking a beast shape. You gain 4 temporary hit points per druid level, and while it lasts:",
+      "• Your Halo of Spores rolls its damage die twice and adds both.",
+      "• Each hit with a melee weapon attack adds 1d6 necrotic damage.",
+      "It lasts 10 minutes, or until those temporary hit points are gone or you use Wild Shape again."
+    ],
+    "page": 37,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/16/Symbiotic_Entity_Icon.webp"
+  },
+  {
+    "id": "fungal-infestation",
+    "name": "Fungal Infestation",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-spores"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A Small or Medium beast or humanoid dies within 10 ft of you",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "description": [
+      "Use your reaction to make the corpse rise at once with 1 hit point. Uses the zombie stats (Monster Manual). After 1 hour it collapses and dies.",
+      "In combat it acts right after you, obeys your mental commands, and its only possible action is Attack, with one melee attack."
+    ],
+    "page": 37,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/89/Fungal_Infestation_Icon.webp"
+  },
+  {
+    "id": "spreading-spores",
+    "name": "Spreading Spores",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-spores"
+    },
+    "level": 10,
+    "cost": "bonus",
+    "trigger": "Your Symbiotic Entity is active",
+    "description": [
+      "Bonus action: hurl spores to a point up to 30 ft away, where they fill a 10-ft cube for 1 minute. They vanish early if you use this again, dismiss them with a bonus action, or Symbiotic Entity ends.",
+      "A creature that enters the cube or starts its turn in it takes your Halo of Spores damage unless it passes a Constitution save against your spell save DC; no creature takes it more than once a turn.",
+      "Your Halo of Spores reaction is unavailable while the cube exists."
+    ],
+    "page": 37,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bb/Spreading_Spores_Icon.webp"
+  },
+  {
+    "id": "star-map",
+    "name": "Star Map",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-stars"
+    },
+    "level": 2,
+    "cost": "action",
+    "uses": "Proficiency bonus free casts per long rest",
+    "spells": [
+      {
+        "spell": "guidance",
+        "atLevel": 2
+      },
+      {
+        "spell": "guiding-bolt",
+        "atLevel": 2,
+        "uses": "Free casts: proficiency bonus per long rest"
+      }
+    ],
+    "description": [
+      "You own a Tiny star chart (pick its look or roll on the Star Map table) that can be your spellcasting focus for druid spells.",
+      "While you hold it, you know guidance, and guiding bolt is always prepared without counting against your prepared spells. You can also cast that guiding bolt with no spell slot, as many times as your proficiency bonus, regaining them after a long rest.",
+      "If the map is lost, a 1-hour ceremony, which you can do during a short or long rest, makes a new one and destroys the old."
+    ],
+    "page": 38,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "starry-form",
+    "name": "Starry Form",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-stars"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "resource": "1 Wild Shape use",
+    "scaling": [
+      {
+        "label": "Archer / Chalice die",
+        "values": [
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action: spend a Wild Shape use to take a starry form instead of a beast shape. You keep your statistics and shed bright light in 10 ft and dim light 10 ft beyond. It lasts 10 minutes, ending early if you dismiss it (no action), are incapacitated, die, or use this feature again.",
+      "Each time you take the form, choose which constellation shines on you:",
+      "Archer: as you take the form, and with a bonus action on later turns while it lasts, make a ranged spell attack at one creature within 60 ft. On a hit it takes 1d8 + your Wisdom modifier radiant damage.",
+      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature within 30 ft of you also regains 1d8 + your Wisdom modifier hit points.",
+      "Dragon: on Intelligence or Wisdom checks, and on Constitution saves to keep concentration, a d20 roll of 9 or lower counts as a 10.",
+      "Level 10 (Twinkling Constellations): the Archer and Chalice dice become 2d8, the Dragon also gives you a 20-ft flying speed and hover, and as each of your turns begins in the form you may switch constellation.",
+      "Level 14 (Full of Stars): in the form you resist bludgeoning, piercing and slashing damage."
+    ],
+    "page": 38,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/cc/Starry_Form_Icon.webp"
+  },
+  {
+    "id": "cosmic-omen",
+    "name": "Cosmic Omen",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-stars"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature you can see within 30 ft is about to make an attack roll, save or ability check",
+    "uses": "Proficiency bonus per long rest",
+    "description": [
+      "After each long rest, consult your Star Map and roll any die. Until your next long rest, its result sets which reaction you have:",
+      "Weal (even): roll a d6 and add it to that creature's roll.",
+      "Woe (odd): roll a d6 and take it off that creature's roll."
+    ],
+    "page": 39,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/33/Cosmic_Omen_Icon.webp"
   }
 ]

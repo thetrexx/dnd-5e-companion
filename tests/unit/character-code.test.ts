@@ -1,4 +1,5 @@
 // @vitest-environment node
+import { readFileSync } from 'node:fs';
 import { decodeCharacter, encodeCharacter, ERR_DAMAGED, ERR_NOT_CODE } from '../../src/character/code';
 import type { Character } from '../../src/character/types';
 
@@ -44,4 +45,10 @@ test('falls back to uncompressed when deflate-raw is missing', async () => {
   vi.unstubAllGlobals();
   expect(code.startsWith('SS0-')).toBe(true);
   expect(await decodeCharacter(code)).toEqual({ ok: true, ch: lyra, dropped: [] });
+});
+
+test('a code from before the new books still restores the same character', async () => {
+  const r = await decodeCharacter(readFileSync('tests/unit/fixtures/code-before-books.txt', 'utf8').trim());
+  expect(r.ok && r.ch).toEqual(JSON.parse(readFileSync('tests/unit/fixtures/code-before-books.json', 'utf8')));
+  expect(r.ok && r.dropped).toEqual([]);
 });

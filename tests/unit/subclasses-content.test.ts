@@ -1,9 +1,11 @@
 import { DATA } from '../../src/data';
+import { autoSpells } from '../../src/character/grants';
+import { emptyCharacter } from '../../src/character/types';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
 const A = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk'];
 
-test('19 subclasses A', () => expect(DATA.subclasses.filter(s => A.includes(s.cls))).toHaveLength(19));
+test('19 PHB subclasses A', () => expect(DATA.subclasses.filter(s => A.includes(s.cls) && !s.book)).toHaveLength(19));
 test('domain spells', () => {
   const life = sub('life-domain').bonusSpells!;
   expect(life.kind).toBe('domain');
@@ -33,7 +35,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('40 subclasses', () => expect(DATA.subclasses).toHaveLength(40));
+test('58 subclasses', () => expect(DATA.subclasses).toHaveLength(58));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -58,3 +60,56 @@ test('parked subclass spell grants', () => {
   expect(sub('nature-domain').bonusSpells!.grants).toContainEqual({ choose: { lists: ['druid'], level: 0, count: 1 }, atLevel: 1 });
   expect(sub('circle-of-the-land').bonusSpells!.grants).toContainEqual({ choose: { lists: ['druid'], level: 0, count: 1 }, atLevel: 2 });
 });
+
+const XGE = ['college-of-glamour', 'college-of-swords', 'arcane-archer', 'way-of-the-drunken-master', 'gloom-stalker', 'swashbuckler', 'shadow-magic', 'storm-sorcery', 'the-hexblade'];
+test('xanathar subclasses', () => { for (const id of XGE) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
+test('every xanathar feature names its book', () => {
+  const ids = new Set(XGE);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.filter(f => f.source.kind === 'option').length).toBe(10); // 8 arcane shots + 2 lore cantrips
+  for (const f of fs) expect(f.book, f.id).toBe('xge');
+});
+test('arcane archer lore cantrip is gated by its option', () => {
+  const aa = sub('arcane-archer');
+  expect(aa.options).toContain('arcane-archer-lore');
+  expect(DATA.optionGroups.find(g => g.id === 'arcane-archer-lore')!.owner).toEqual({ kind: 'subclass', id: 'arcane-archer' });
+  expect(aa.bonusSpells!.kind).toBe('subclass');
+  for (const c of ['prestidigitation', 'druidcraft']) {
+    expect(aa.bonusSpells!.grants).toContainEqual({ spell: c, atLevel: 3, option: `arcane-archer-lore-${c}` });
+    expect(feature(`arcane-archer-lore-${c}`)).toMatchObject({ cost: 'passive', book: 'xge', page: 28, level: 3 });
+  }
+});
+test('storm guide rain is an action, wind a bonus action', () => {
+  expect(feature('storm-guide-rain').cost).toBe('action');
+  expect(feature('storm-guide-wind').cost).toBe('bonus');
+  expect(DATA.features.find(f => f.id === 'storm-guide')).toBeUndefined();
+});
+test('shadow magic darkness costs sorcery points', () =>
+  expect(DATA.features.flatMap(f => f.source.id === 'shadow-magic' ? f.spells ?? [] : []).find(g => g.spell === 'darkness')!.uses).toMatch(/2 sorcery points/i));
+test('hexblade patron spells', () => expect(sub('the-hexblade').bonusSpells).toMatchObject({ kind: 'patron' }));
+test('gloom stalker magic', () => expect(sub('gloom-stalker').bonusSpells).toMatchObject({ kind: 'subclass' }));
+test('swords styles share the fighting style pool', () => expect(DATA.optionGroups.find(g => g.id === 'fighting-style-swords')).toMatchObject({ from: 'fighting-style', owner: { kind: 'subclass', id: 'college-of-swords' } }));
+test('must-have features', () => {
+  for (const id of ['hexblades-curse', 'hound-of-ill-omen', 'tempestuous-magic', 'blade-flourish', 'tipsy-sway', 'dread-ambusher', 'arcane-shot', 'mantle-of-inspiration'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+
+const OTHER: [string, string][] = [['path-of-wild-magic', 'tce'], ['circle-of-spores', 'tce'], ['circle-of-stars', 'tce'], ['swarmkeeper', 'tce'], ['bladesinging', 'tce'], ['death-domain', 'dmg'], ['oathbreaker', 'dmg'], ['oath-of-the-crown', 'scag'], ['path-of-giants', 'bgg']];
+test('other BG3 subclasses', () => { for (const [id, book] of OTHER) expect(sub(id), id).toMatchObject({ book }); });
+test('death domain reaper: a necromancy cantrip pick plus its targeting card', () => {
+  expect(sub('death-domain').bonusSpells!.grants.find(g => g.choose)).toMatchObject({ choose: { level: 0, count: 1, schools: ['Necromancy'] }, atLevel: 1 });
+  expect(feature('reaper')).toMatchObject({ source: { kind: 'subclass', id: 'death-domain' }, level: 1, book: 'dmg', page: 96 });
+});
+test('giants power cantrip follows the chosen option', () => {
+  const c = { ...emptyCharacter(), classes: [{ cls: 'barbarian' as const, level: 3, sub: 'path-of-giants' }], options: ['giants-power-druidcraft'] };
+  const ids = autoSpells(c).map(a => a.spell.id);
+  expect(ids).toContain('druidcraft');
+  expect(ids).not.toContain('thaumaturgy');
+});
+test('level 3 free riders: giants havoc and fancy footwork', () => {
+  expect(feature('giants-havoc')).toMatchObject({ source: { kind: 'subclass', id: 'path-of-giants' }, level: 3, cost: 'free', book: 'bgg', page: 11 });
+  expect(feature('fancy-footwork')).toMatchObject({ source: { kind: 'subclass', id: 'swashbuckler' }, level: 3, cost: 'free', book: 'xge', page: 47 });
+});
+test('swarmkeeper mage hand only if not already known', () =>
+  expect(sub('swarmkeeper').bonusSpells!.grants.find(g => g.spell === 'mage-hand')!.uses).toMatch(/already know/i));

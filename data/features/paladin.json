@@ -329,5 +329,140 @@
     ],
     "page": 88,
     "textSource": "summary"
+  },
+  {
+    "id": "control-undead",
+    "name": "Control Undead",
+    "source": {
+      "kind": "subclass",
+      "id": "oathbreaker"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Target one undead you can see within 30 ft. It makes a Wisdom save; on a fail it obeys your commands for 24 hours, or until you use this option again.",
+      "Undead with a challenge rating at least your paladin level are immune."
+    ],
+    "page": 97,
+    "book": "dmg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4e/Control_Undead_Icon.webp"
+  },
+  {
+    "id": "dreadful-aspect",
+    "name": "Dreadful Aspect",
+    "source": {
+      "kind": "subclass",
+      "id": "oathbreaker"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Each creature you choose within 30 ft that can see you makes a Wisdom save or is frightened of you for 1 minute.",
+      "A frightened creature that ends its turn over 30 ft from you can save again to end the effect."
+    ],
+    "page": 97,
+    "book": "dmg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6b/Dreadful_Aspect_Icon.webp"
+  },
+  {
+    "id": "dread-lord",
+    "name": "Dread Lord",
+    "source": {
+      "kind": "subclass",
+      "id": "oathbreaker"
+    },
+    "level": 20,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Action: wrap yourself in an aura of gloom, 30-ft radius, for 1 minute. Bright light inside it drops to dim light.",
+      "An enemy frightened of you that starts its turn in the aura takes 4d10 psychic damage. You and any creatures you choose in the aura are cloaked in shadow, so attackers that depend on sight roll at disadvantage against them.",
+      "While it lasts, a bonus action on your turn makes the shadows strike one creature: a melee spell attack that deals 3d10 + your Charisma modifier necrotic damage on a hit.",
+      "Once used, it needs a long rest."
+    ],
+    "page": 97,
+    "book": "dmg",
+    "textSource": "summary"
+  },
+  {
+    "id": "champion-challenge",
+    "name": "Champion Challenge",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-crown"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Each creature you choose that you can see within 30 ft makes a Wisdom save. On a fail, it can't willingly move more than 30 ft away from you.",
+      "It ends for a creature if you are incapacitated or die, or if that creature is moved more than 30 ft away from you.",
+      "The book names no action type for this option; it is usually played as an action, like other Channel Divinity options."
+    ],
+    "page": 133,
+    "book": "scag",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/36/Champion_Challenge_Icon.webp"
+  },
+  {
+    "id": "turn-the-tide",
+    "name": "Turn the Tide",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-crown"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Bonus action: every creature you choose within 30 ft that can hear you, and has no more than half its hit points, regains 1d6 + your Charisma modifier (minimum 1) hit points."
+    ],
+    "page": 133,
+    "book": "scag",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/17/Turn_the_Tide_Icon.webp"
+  },
+  {
+    "id": "divine-allegiance",
+    "name": "Divine Allegiance",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-crown"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "A creature within 5 ft of you takes damage",
+    "description": [
+      "Use your reaction to take the damage in its place, so it takes none. Nothing can reduce or prevent the damage you take this way."
+    ],
+    "page": 133,
+    "book": "scag",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/73/Divine_Allegiance_Icon.webp"
+  },
+  {
+    "id": "exalted-champion",
+    "name": "Exalted Champion",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-crown"
+    },
+    "level": 20,
+    "cost": "action",
+    "uses": "Once per long rest",
+    "description": [
+      "Action: for 1 hour you gain these benefits, ending early if you are incapacitated or die:",
+      "• You have resistance to nonmagical weapon damage of the bludgeoning, piercing and slashing kinds.",
+      "• Your allies within 30 ft of you have advantage on death saving throws.",
+      "• You, and your allies within 30 ft of you, have advantage on Wisdom saving throws.",
+      "Once used, it needs a long rest."
+    ],
+    "page": 133,
+    "book": "scag",
+    "textSource": "summary"
   }
 ]

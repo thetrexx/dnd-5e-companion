@@ -1,0 +1,43 @@
+{
+  "v": 1,
+  "name": "Vyr",
+  "classes": [
+    {
+      "cls": "sorcerer",
+      "level": 5,
+      "sub": "draconic-bloodline"
+    },
+    {
+      "cls": "fighter",
+      "level": 2
+    }
+  ],
+  "options": [
+    "metamagic-quickened-spell",
+    "metamagic-twinned-spell",
+    "draconic-ancestry-red",
+    "fighting-style-defense"
+  ],
+  "feats": [
+    "war-caster"
+  ],
+  "spells": [
+    {
+      "id": "fire-bolt",
+      "cls": "sorcerer"
+    },
+    {
+      "id": "shield",
+      "cls": "sorcerer"
+    },
+    {
+      "id": "misty-step",
+      "cls": "sorcerer"
+    },
+    {
+      "id": "acid-splash",
+      "grant": "race:high-elf:0"
+    }
+  ],
+  "race": "high-elf"
+}

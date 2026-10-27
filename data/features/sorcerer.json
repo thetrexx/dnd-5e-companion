@@ -320,5 +320,216 @@
     ],
     "page": 102,
     "textSource": "summary"
+  },
+  {
+    "id": "eyes-of-the-dark",
+    "name": "Eyes of the Dark",
+    "source": {
+      "kind": "subclass",
+      "id": "shadow-magic"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "2 sorcery points or a spell slot",
+    "spells": [
+      {
+        "spell": "darkness",
+        "atLevel": 3,
+        "uses": "2 sorcery points or a slot"
+      }
+    ],
+    "description": [
+      "From level 1 you have darkvision out to 120 ft.",
+      "From level 3 you know darkness, and it doesn't count against your sorcerer spells known. Cast it with a spell slot or by spending 2 sorcery points; when sorcery points pay for it, you can see through its darkness."
+    ],
+    "page": 51,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/4f/Eyes_of_the_Dark_Icon.webp"
+  },
+  {
+    "id": "strength-of-the-grave",
+    "name": "Strength of the Grave",
+    "source": {
+      "kind": "subclass",
+      "id": "shadow-magic"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "Damage drops you to 0 hit points",
+    "uses": "Once per long rest, after a success",
+    "description": [
+      "Make a Charisma save with DC 5 + the damage you just took. If it succeeds, you are left at 1 hit point. It doesn't help against radiant damage or a critical hit.",
+      "After a successful save, you can't use it again until you finish a long rest."
+    ],
+    "page": 51,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/9e/Strength_of_the_Grave_Icon.webp"
+  },
+  {
+    "id": "hound-of-ill-omen",
+    "name": "Hound of Ill Omen",
+    "source": {
+      "kind": "subclass",
+      "id": "shadow-magic"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "resource": "3 sorcery points",
+    "description": [
+      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts one creature you can see within 120 ft. It appears in an unoccupied space of your choice within 30 ft of that target and rolls its own initiative.",
+      "Uses the dire wolf stats (Monster Manual), with changes: it is Medium and a monstrosity, and starts with half your sorcerer level in temporary hit points. It passes through creatures and objects as difficult terrain; ending its turn inside an object costs it 5 force damage. At the start of its turn it knows where its target is, so the target can't stay hidden from it.",
+      "It heads straight for its target by the shortest route, uses its action only to attack that target, and makes opportunity attacks only against it. While the hound stays within 5 ft of its target, that creature makes saves against your spells at disadvantage.",
+      "It disappears after 5 minutes, or sooner if either it or its target hits 0 hit points."
+    ],
+    "page": 51,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/1/14/Hound_of_Ill_Omen_Icon.webp"
+  },
+  {
+    "id": "shadow-walk",
+    "name": "Shadow Walk",
+    "source": {
+      "kind": "subclass",
+      "id": "shadow-magic"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "uses": "At will",
+    "description": [
+      "Bonus action, while standing in dim light or darkness: teleport up to 120 ft. The destination must be an unoccupied space you can see, and it too must be dim or dark."
+    ],
+    "page": 51,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7e/Shadow_Walk_Icon.webp"
+  },
+  {
+    "id": "umbral-form",
+    "name": "Umbral Form",
+    "source": {
+      "kind": "subclass",
+      "id": "shadow-magic"
+    },
+    "level": 18,
+    "cost": "bonus",
+    "resource": "6 sorcery points",
+    "description": [
+      "Bonus action: spend 6 sorcery points to become a shadowy form for 1 minute. You resist all damage except force and radiant, and you can pass through creatures and objects as difficult terrain; ending your turn inside an object deals 5 force damage to you.",
+      "It ends early if you are incapacitated or die, or when you dismiss it as a bonus action."
+    ],
+    "page": 51,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "tempestuous-magic",
+    "name": "Tempestuous Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "trigger": "Just before or after you cast a 1st-level or higher spell",
+    "description": [
+      "Bonus action on your turn, just before or just after casting a 1st-level or higher spell: you fly up to 10 ft on gusts of air, without provoking opportunity attacks."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/59/Tempestuous_Magic_Icon.webp"
+  },
+  {
+    "id": "heart-of-the-storm",
+    "name": "Heart of the Storm",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You cast a lightning or thunder spell of 1st level or higher",
+    "description": [
+      "You have resistance to lightning and thunder damage.",
+      "When you start casting such a spell, storm magic bursts from you: creatures you choose that you can see within 10 ft take lightning or thunder damage (your pick each time) equal to half your sorcerer level."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/02/Heart_of_the_Storm_Icon.webp"
+  },
+  {
+    "id": "storm-guide-rain",
+    "name": "Storm Guide: Rain",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 6,
+    "cost": "action",
+    "description": [
+      "While rain is falling, spend an action to halt it within a 20-ft-radius sphere around you.",
+      "You can end this as a bonus action."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "storm-guide-wind",
+    "name": "Storm Guide: Wind",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "uses": "Each round",
+    "description": [
+      "If it is windy, use a bonus action each round to pick the wind's direction in a 100-ft-radius sphere centered on you. It blows that way until the end of your next turn.",
+      "The wind's speed doesn't change."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "storms-fury",
+    "name": "Storm's Fury",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "A melee attack hits you",
+    "description": [
+      "The attacker takes lightning damage equal to your sorcerer level, and makes a Strength save against your spell save DC. On a fail, it is pushed up to 20 ft straight away from you."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/db/Storm's_Fury_Icon.png"
+  },
+  {
+    "id": "wind-soul",
+    "name": "Wind Soul",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 18,
+    "cost": "action",
+    "uses": "Once per short or long rest",
+    "description": [
+      "You are immune to lightning and thunder damage and have a magical flying speed of 60 ft.",
+      "Action: lower your flying speed to 30 ft for 1 hour, and choose up to 3 + your Charisma modifier creatures within 30 ft. They gain a magical flying speed of 30 ft for 1 hour."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

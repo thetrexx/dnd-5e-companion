@@ -5,7 +5,7 @@ import { raceChain, totalLevel } from './derive';
 import { grantSlots } from './grants';
 import type { Character } from './types';
 
-export interface OptionSlot { group: OptionGroup; cls?: ClassId; level: number; count: number; choices: Feature[]; chosen: string[] }
+export interface OptionSlot { group: OptionGroup; cls?: ClassId; level: number; count: number; choices: Feature[]; chosen: string[]; taken: string[] }
 
 const groupsOf = (ids: string[]) => DATA.optionGroups.filter(g => ids.includes(g.id));
 
@@ -16,7 +16,7 @@ export function optionSlots(ch: Character): OptionSlot[] {
     if (!count) return;
     const choices = DATA.features.filter(f => f.source.kind === 'option' && f.source.id === (group.from ?? group.id)
       && (!group.only || group.only.includes(f.id)) && (f.prereq?.level ?? 0) <= level && (!f.prereq?.option || ch.options.includes(f.prereq.option)));
-    out.push({ group, cls, level, count, choices, chosen: ch.options.filter(o => choices.some(f => f.id === o)) });
+    out.push({ group, cls, level, count, choices, chosen: [], taken: [] });
   };
   for (const c of ch.classes) {
     const def = DATA.classes.find(x => x.id === c.cls);
@@ -26,7 +26,53 @@ export function optionSlots(ch: Character): OptionSlot[] {
   }
   const total = totalLevel(ch);
   for (const r of raceChain(ch.race)) for (const g of groupsOf(r.options)) add(g, total);
+  assign(out, ch.options);
   return out;
+}
+
+/**
+ * Slots of one pool (`from ?? id`) share one pick list. Each pick fills one slot by maximum matching
+ * (augmenting paths), so a legal build never shows an over-pick: a pick only one slot offers may move
+ * another pick to a different slot. Picks go in list order; owners (non-reuse slots) fill before reuse
+ * slots. A pick no matching can place is an over-pick in its first offering slot. A reuse slot may also
+ * repeat picks held elsewhere in the pool.
+ */
+function assign(slots: OptionSlot[], options: string[]) {
+  const pools = new Map<string, OptionSlot[]>();
+  for (const s of slots) { const k = s.group.from ?? s.group.id; pools.set(k, [...(pools.get(k) ?? []), s]); }
+  for (const pool of pools.values()) {
+    const offers = (s: OptionSlot, id: string) => s.choices.some(f => f.id === id);
+    const ids = [...new Set(options)].filter(id => pool.some(s => offers(s, id)));
+    const ordered = [...pool.filter(s => !s.group.reuse), ...pool.filter(s => s.group.reuse)];
+    const held = new Map<OptionSlot, string[]>(pool.map(s => [s, []]));
+    /** Places `id` in a slot with room, else frees one by moving its holder along an augmenting path. */
+    const place = (id: string, seen: Set<OptionSlot>): boolean => {
+      const open = ordered.filter(s => offers(s, id) && !seen.has(s));
+      const free = open.find(s => held.get(s)!.length < s.count);
+      if (free) { held.get(free)!.push(id); return true; }
+      for (const s of open) {
+        seen.add(s);
+        const list = held.get(s)!;
+        for (let i = 0; i < list.length; i++) {
+          if (place(list[i], seen)) { list[i] = id; return true; }
+        }
+      }
+      return false;
+    };
+    const over: string[] = [];
+    for (const id of ids) if (!place(id, new Set())) over.push(id);
+    const placed = new Map<string, OptionSlot>();
+    for (const id of ids) {
+      const home = over.includes(id) ? pool.find(s => offers(s, id))! : pool.find(s => held.get(s)!.includes(id))!;
+      home.chosen.push(id);
+      placed.set(id, home);
+    }
+    for (const s of pool) {
+      if (!s.group.reuse) continue;
+      for (const [id, home] of placed) if (s.chosen.length < s.count && home !== s && offers(s, id)) s.chosen.push(id);
+    }
+    for (const s of pool) s.taken = [...placed].filter(([id, home]) => home !== s && offers(s, id) && !s.chosen.includes(id)).map(([id]) => id);
+  }
 }
 
 /** Drops picks the character can no longer own. Ownership only, never level. Same object when unchanged. */

@@ -386,5 +386,223 @@
     ],
     "page": 50,
     "textSource": "summary"
+  },
+  {
+    "id": "magic-awareness",
+    "name": "Magic Awareness",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-wild-magic"
+    },
+    "level": 3,
+    "cost": "action",
+    "uses": "Proficiency bonus per long rest",
+    "description": [
+      "Action: until your next turn ends, you sense where every spell and magic item within 60 ft of you is, unless it has total cover. For each spell sensed you also learn its school."
+    ],
+    "page": 25,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c6/Magic_Awareness_Icon.webp"
+  },
+  {
+    "id": "wild-surge",
+    "name": "Wild Surge",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-wild-magic"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You enter your rage",
+    "description": [
+      "Each time you start a rage, roll a d8 on the Wild Magic table for the effect you get. Where an effect calls for a save, its DC is 8 + your proficiency bonus + your Constitution modifier.",
+      "1: Every creature you choose that you can see within 30 ft makes a Constitution save or takes 1d12 necrotic damage. You gain 1d12 temporary hit points.",
+      "2: Teleport into an unoccupied space you can see, up to 30 ft away. Until the rage ends, you can repeat this with a bonus action on each of your turns.",
+      "3: An intangible spirit (in the shape of a flumph or pixie, your pick) appears within 5 ft of a creature you can see within 30 ft. As the turn ends it bursts, and each creature within 5 ft of it makes a Dexterity save or takes 1d6 force damage. Until the rage ends, a bonus action on each of your turns calls up a new one.",
+      "4: A weapon you hold deals force damage until the rage ends and gains the light and thrown properties (normal range 20 ft, long range 60 ft). If it leaves your hand, it is back in it as the turn ends.",
+      "5: Until the rage ends, any creature that hits you with an attack roll takes 1d6 force damage.",
+      "6: Until the rage ends, glowing lights give you +1 AC, and allies within 10 ft of you get the same bonus.",
+      "7: Until the rage ends, your enemies treat the ground within 15 ft of you as difficult terrain.",
+      "8: Light blasts from you at a creature you choose that you can see within 30 ft: it makes a Constitution save or takes 1d6 radiant damage and is blinded until your next turn starts. Until the rage ends, you can repeat this with a bonus action on each of your turns."
+    ],
+    "page": 25,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/8a/Rage_Wild_Magic_Icon.webp"
+  },
+  {
+    "id": "bolstering-magic",
+    "name": "Bolstering Magic",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-wild-magic"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Proficiency bonus per long rest",
+    "description": [
+      "Action: touch a creature (it can be you) and give it one of these benefits:",
+      "• For 10 minutes, it adds a d3 to every attack roll and ability check it makes.",
+      "• It rolls a d3 and recovers one spent spell slot of that level or lower (its pick). A creature that gets this benefit can't get it again until it finishes a long rest."
+    ],
+    "page": 26,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/4/48/Bolstering_Magic_Boon_Icon.webp"
+  },
+  {
+    "id": "unstable-backlash",
+    "name": "Unstable Backlash",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-wild-magic"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "You are raging and take damage or fail a save",
+    "description": [
+      "Right after it happens, you can spend your reaction on a fresh Wild Magic roll. Its effect happens at once and replaces the one you had."
+    ],
+    "page": 26,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/2/21/Unstable_Backlash_Icon.webp"
+  },
+  {
+    "id": "controlled-surge",
+    "name": "Controlled Surge",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-wild-magic"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You roll on the Wild Magic table",
+    "description": [
+      "Roll the die twice and pick which of the two effects happens. If both dice show the same number, ignore it and choose any effect on the table."
+    ],
+    "page": 26,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "giants-havoc",
+    "name": "Giant's Havoc",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-giants"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You enter your rage",
+    "description": [
+      "For as long as a rage lasts, you get both benefits below.",
+      "Crushing Throw: when a ranged attack you make with a thrown weapon hits and uses Strength, add your Rage Damage bonus to its damage.",
+      "Giant Stature: you gain 5 ft of extra reach. If you're smaller than Large, you and the gear you wear grow to Large, unless there isn't space for it, in which case your size stays the same.",
+      "Level 14 (Demiurgic Colossus): the extra reach becomes 10 ft, and you can grow to Large or Huge (your pick)."
+    ],
+    "page": 11,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "elemental-cleaver",
+    "name": "Elemental Cleaver",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-giants"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You enter your rage",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6"
+        ]
+      }
+    ],
+    "description": [
+      "As a rage starts, infuse one weapon you hold with acid, cold, fire, thunder or lightning (your pick). While you wield it during the rage, its damage becomes that type, each hit adds 1d6 damage of that type, and it becomes a thrown weapon (normal range 20 ft, long range 60 ft). Thrown, it returns to your hand right after it hits or misses. Its benefits stop working while anyone else wields it.",
+      "While raging and holding it, you can switch it to another of those damage types with a bonus action.",
+      "Level 14 (Demiurgic Colossus): the extra damage becomes 2d6."
+    ],
+    "page": 11,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "mighty-impel",
+    "name": "Mighty Impel",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-giants"
+    },
+    "level": 10,
+    "cost": "bonus",
+    "trigger": "While raging",
+    "description": [
+      "Bonus action: grab a creature no bigger than Medium that is within your reach and hurl it into an unoccupied space you can see, up to 30 ft from you. If it is unwilling, it makes a Strength save (DC 8 + your Strength modifier + your proficiency bonus) and stays put on a success.",
+      "If it lands with no surface or liquid beneath it that can hold it, it drops, takes falling damage as usual and ends up prone.",
+      "Level 14 (Demiurgic Colossus): it works on Large or smaller creatures. Your rages also add 10 ft to your reach and can make you Large or Huge (your pick)."
+    ],
+    "page": 12,
+    "book": "bgg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/0/09/Mighty_Impel_Icon.webp"
+  },
+  {
+    "id": "giants-power-druidcraft",
+    "name": "Druidcraft",
+    "source": {
+      "kind": "option",
+      "id": "giants-power"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "Take druidcraft as your Giant's Power cantrip, with Wisdom as its spellcasting ability. The same feature also teaches you Giant (or another language, if you already know Giant)."
+    ],
+    "page": 11,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "giants-power-thaumaturgy",
+    "name": "Thaumaturgy",
+    "source": {
+      "kind": "option",
+      "id": "giants-power"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "Take thaumaturgy as your Giant's Power cantrip, with Wisdom as its spellcasting ability. The same feature also teaches you Giant (or another language, if you already know Giant)."
+    ],
+    "page": 11,
+    "book": "bgg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3f/Thaumaturgy_Icon.webp"
   }
 ]

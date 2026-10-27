@@ -691,5 +691,146 @@
     "page": 91,
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/a/af/Underdark_Icon.webp"
+  },
+  {
+    "id": "dread-ambusher",
+    "name": "Dread Ambusher",
+    "source": {
+      "kind": "subclass",
+      "id": "gloom-stalker"
+    },
+    "level": 3,
+    "cost": "free",
+    "uses": "First turn of each combat",
+    "description": [
+      "Add your Wisdom modifier to your initiative rolls.",
+      "In each combat, during your very first turn, you get +10 ft of walking speed until the turn ends. Take the Attack action that turn and it includes one extra weapon attack; if that attack hits, add 1d8 damage of the weapon's type."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d4/Dread_Ambusher_Icon.png"
+  },
+  {
+    "id": "stalkers-flurry",
+    "name": "Stalker's Flurry",
+    "source": {
+      "kind": "subclass",
+      "id": "gloom-stalker"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "A weapon attack of yours misses",
+    "uses": "Once per turn",
+    "description": [
+      "Once on each of your turns, when a weapon attack misses, you get a follow-up weapon attack within that same action."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e0/Stalker's_Flurry_Icon.webp"
+  },
+  {
+    "id": "shadowy-dodge",
+    "name": "Shadowy Dodge",
+    "source": {
+      "kind": "subclass",
+      "id": "gloom-stalker"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An attacker without advantage rolls to hit you",
+    "description": [
+      "Use your reaction to give that attack roll disadvantage. Decide before you know whether it hits."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "gathered-swarm",
+    "name": "Gathered Swarm",
+    "source": {
+      "kind": "subclass",
+      "id": "swarmkeeper"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with an attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Swarm damage",
+        "values": [
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8"
+        ]
+      }
+    ],
+    "description": [
+      "A swarm of intangible nature spirits shares your space until you die. Once on each of your turns, immediately when one of your attacks hits a creature, the swarm can help in one way:",
+      "• The target takes 1d6 piercing damage.",
+      "• The target makes a Strength save against your spell save DC or the swarm shoves it up to 15 ft horizontally, in a direction you choose.",
+      "• The swarm carries you 5 ft horizontally, in a direction you choose.",
+      "Level 11 (Mighty Swarm): the damage becomes 1d8, a creature that fails the Strength save can also be knocked prone, and being carried by the swarm gives you half cover until your next turn starts."
+    ],
+    "page": 60,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/86/Legion_of_Bees_Icon.webp"
+  },
+  {
+    "id": "writhing-tide",
+    "name": "Writhing Tide",
+    "source": {
+      "kind": "subclass",
+      "id": "swarmkeeper"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "uses": "Proficiency bonus per long rest",
+    "description": [
+      "Bonus action: part of your swarm lifts you. For 1 minute you have a 10-ft flying speed and can hover; it ends early if you are incapacitated."
+    ],
+    "page": 60,
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6f/Writhing_Tide_Icon.webp"
+  },
+  {
+    "id": "swarming-dispersal",
+    "name": "Swarming Dispersal",
+    "source": {
+      "kind": "subclass",
+      "id": "swarmkeeper"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "You take damage",
+    "uses": "Proficiency bonus per long rest",
+    "description": [
+      "Use your reaction to resist that damage. You dissolve into your swarm and teleport to an unoccupied space you can see within 30 ft, where you and the swarm reappear."
+    ],
+    "page": 60,
+    "book": "tce",
+    "textSource": "summary"
   }
 ]
