@@ -1158,6 +1158,7 @@
     ],
     "description": [
       "A new attack you can make as part of the Attack action: a ranged spell attack with a 30 ft range. You are proficient with it, you use Dexterity for its attack and damage rolls, and it deals radiant damage. Its damage die starts as a d4 and rises as your Martial Arts die does (monk table).",
+      "Once you have Extra Attack, every attack in your Attack action can be a bolt.",
       "When a bolt is part of your Attack action on your turn, you can pay 1 ki point for two more bolts as a bonus action."
     ],
     "page": 35,

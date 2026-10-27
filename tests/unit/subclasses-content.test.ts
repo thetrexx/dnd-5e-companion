@@ -164,7 +164,7 @@ test('task 6 must-have features', () => {
     expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
 });
 test('task 6 usable reactions are reaction cards', () => {
-  for (const id of ['warding-maneuver', 'vigilant-defender', 'strength-before-death', 'sun-shield', 'rebuke-the-violent',
+  for (const id of ['warding-maneuver', 'hold-the-line', 'vigilant-defender', 'strength-before-death', 'sun-shield', 'rebuke-the-violent',
     'aura-of-the-guardian', 'spectral-defense', 'magic-users-nemesis', 'slayers-counter'])
     expect(feature(id).cost, id).toBe('reaction');
 });

@@ -1253,11 +1253,11 @@
       "id": "cavalier"
     },
     "level": 10,
-    "cost": "free",
+    "cost": "reaction",
     "trigger": "A creature moves 5 ft or more while inside your reach",
     "description": [
-      "Creatures provoke an opportunity attack from you whenever they move 5 ft or more within your reach, even if they never leave it.",
-      "When your opportunity attack hits, its speed becomes 0 for the rest of that turn."
+      "Spend your reaction on an opportunity attack against it. Moving 5 ft or more within your reach provokes you, even if the creature never leaves it.",
+      "Whenever your opportunity attack hits, the target's speed becomes 0 for the rest of that turn."
     ],
     "page": 30,
     "book": "xge",
