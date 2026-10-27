@@ -4,8 +4,8 @@ import { buildSpells, factsFromSrd, merge, type SpellFacts, type SrdSpell } from
 const facts: SpellFacts[] = JSON.parse(readFileSync('scripts/extract/spell-facts.json', 'utf8'));
 const f = (id: string) => facts.find(x => x.id === id)!;
 
-test('383 spell facts (361 PHB + 22 XGE levels 0-1), PHB names, every one on a list with a page', () => {
-  expect(facts).toHaveLength(383);
+test('417 spell facts (361 PHB + 22 XGE levels 0-1 + 34 XGE levels 2-4), PHB names, every one on a list with a page', () => {
+  expect(facts).toHaveLength(417);
   expect(facts.filter(x => !x.book)).toHaveLength(361);
   expect(f('tashas-hideous-laughter').name).toBe("Tasha's Hideous Laughter");
   expect(facts.find(x => x.id === 'hideous-laughter')).toBeUndefined();
