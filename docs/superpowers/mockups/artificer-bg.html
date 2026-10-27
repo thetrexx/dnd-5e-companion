@@ -1,0 +1,245 @@
+<style>
+  @font-face{font-family:'Inknut';src:url(/files/inknut-medium.woff2) format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Inknut';src:url(/files/noto-digits-medium.woff2) format('woff2');font-weight:500;unicode-range:U+0030-0039;font-display:swap}
+  @font-face{font-family:'fell-english';src:url(/files/fell-english.woff2) format('woff2');font-display:swap}
+  @font-face{font-family:'Orn';src:url(/files/orn-ebgaramond.woff2) format('woff2');unicode-range:U+2619,U+2766-2767,U+E001-E002;font-display:block}
+  .flow{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-start}
+  .phone{position:relative;width:290px;height:600px;border:2px solid #555;border-radius:22px;background:#1b1712;color:#e9dfc9;box-sizing:border-box;overflow:hidden;cursor:pointer;isolation:isolate}
+  .phone.selected{border-color:#d9b45f;box-shadow:0 0 0 2px #d9b45f55}
+  .screen{position:relative;padding:16px 12px}
+  .cap{font:600 13px system-ui;color:#ccc;margin:0 0 6px 4px}
+  .capn{font:12px system-ui;color:#999;margin:0 0 10px 4px;max-width:290px;line-height:1.4}
+  .name{font:22px 'fell-english',Georgia,serif;color:#e9dfc9;text-align:center;margin:2px 0}
+  .who{font:500 11px 'Inknut',Georgia,serif;color:#a89c84;text-align:center;margin-bottom:12px}
+  .sep{display:flex;align-items:center;gap:8px;margin:12px 0 8px;color:#d9b45f;font:15px 'fell-english',Georgia,serif;letter-spacing:2px}
+  .sep:before,.sep:after{content:"";flex:1;height:1px;background:linear-gradient(90deg,transparent,#d9b45f,transparent)}
+  .sep i{font:normal 15px 'Orn',Georgia,serif}
+  .row{--k:#d9b45f;position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;
+       border:1px solid #3a3226;border-radius:6px;padding:8px 10px;margin-bottom:6px;font:500 12px/1.25 'Inknut',Georgia,serif;background:#231e17e6;
+       text-shadow:0 1px 2px rgb(0 0 0/.85),0 0 8px rgb(0 0 0/.55)}
+  .row.gold{background:linear-gradient(90deg,color-mix(in srgb,#d9b45f 10%,#231e17e6),#231e17e6 80%)}
+  .row span{position:relative}
+  .rl{display:flex;align-items:center;gap:8px}
+  .ri{width:22px;height:22px;flex:none;position:relative}
+  .slot img{width:22px;height:22px}
+  .slot b{position:absolute;inset:0;display:grid;place-items:center;font:600 11px system-ui;color:#fff;text-shadow:0 0 3px #000,0 0 2px #000}
+  .proc::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,color-mix(in srgb,var(--k) 7%,transparent),transparent 70%)}
+  svg.fxs,svg.bgs{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;color:var(--c)}
+  svg.fxs{z-index:-1;opacity:var(--o,.5);-webkit-mask:linear-gradient(90deg,#000 40%,transparent 92%);mask:linear-gradient(90deg,#000 40%,transparent 92%)}
+  svg.bgs{z-index:0;opacity:var(--bo,.24);-webkit-mask:radial-gradient(ellipse 70% 60% at 50% 50%,#0006 30%,#000 100%);mask:radial-gradient(ellipse 70% 60% at 50% 50%,#0006 30%,#000 100%)}
+  .screen{z-index:1}
+  svg path{fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+  svg.bgs path{stroke-width:1.3}
+  svg .thin{stroke-width:.7}
+  svg .faint{opacity:.45}
+  svg .acc{stroke:var(--acc,currentColor)}
+  svg .accf{fill:var(--acc,currentColor);stroke:none}
+  svg .pop{transform-box:fill-box;transform-origin:center}
+  svg .spark{fill:#ffd27a;stroke:none;filter:drop-shadow(0 0 2px #ffb347)}
+  svg .spark{opacity:0}
+  svg.sps{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.85}
+  .art{--k:#a7acb2;--c:#d8dde2;--o:.5;--bo:.26;--acc:#d9a441}
+</style>
+
+<h2>Artificer background</h2>
+<p class="subtitle">Tinker's line, big and slow around the screen edges. Sparks fly when each gear, hammer or goggles finishes. Click the one you prefer.</p>
+
+<div class="flow">
+  <div>
+    <div class="cap">A · Sparks from the screen edges</div>
+    <div class="capn">A shower shoots in from a random side of the screen as each shape completes.</div>
+    <div class="phone art" data-choice="sparks-edges" data-sparks="edge" onclick="pick(this)"></div>
+  </div>
+  <div>
+    <div class="cap">B · Sparks from the shape</div>
+    <div class="capn">The finished shape itself throws off a burst of sparks.</div>
+    <div class="phone art" data-choice="sparks-shape" data-sparks="shape" onclick="pick(this)"></div>
+  </div>
+</div>
+
+<template id="menu">
+  <div class="screen">
+    <div class="name">Fizzwick</div>
+    <div class="who">Artificer 5</div>
+    <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/f/f2/Action_Icon.png">Actions</span></div>
+    <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/c/c9/Bonus_Action_Icon.png">Bonus Actions</span></div>
+    <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/c/c1/Reaction_Icon.png">Reactions</span></div>
+    <div class="row gold"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Artificer Actions</span></div>
+    <div class="row gold"><span class="rl"><img class="ri" src="https://bg3.wiki/w/images/4/4a/Feat_Icon.png" onerror="this.style.visibility='hidden'">Gnome Actions</span></div>
+    <div class="sep"><i>&#x2619;</i>MAGIC<i>&#x2767;</i></div>
+    <div class="row proc" data-gen="train"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Cantrips</span></div>
+    <div class="row proc" data-gen="train"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Spells</span></div>
+    <div class="row proc" data-gen="train"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Spells</span></div>
+    <div class="row" style="opacity:.4"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>3</b></span>Level 3 Spells</span></div>
+  </div>
+</template>
+
+<script>
+(() => {
+const NS = 'http://www.w3.org/2000/svg';
+const R = (a, b) => a + Math.random() * (b - a);
+const f1 = n => n.toFixed(1);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const ROW = { G: 3600, HOLD: 1600, WITHER: 3000, POP: 600 };
+const BGT = { G: 7000, HOLD: 4000, WITHER: 6000, POP: 1400 };
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; }
+const toD = pts => 'M' + pts.map(p => f1(p[0]) + ' ' + f1(p[1])).join('L');
+const circ = (cx, cy, r) => `M${f1(cx + r)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(cx - r)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(cx + r)} ${f1(cy)}`;
+function line(parent, d, at, dur, cls) { const e = el('path', { d: typeof d === 'string' ? d : toD(d) }, parent); if (cls) e.setAttribute('class', cls); return { kind: 'line', e, at, dur }; }
+function pop(parent, x, y, at, build) { const g = el('g', { transform: `translate(${f1(x)} ${f1(y)})` }, parent); const inner = el('g', { class: 'pop' }, g); build(inner); return { kind: 'pop', e: inner, at }; }
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+function gearPts(cx, cy, r, teeth, tooth) {
+  const Ro = r + tooth, s = Math.PI * 2 / teeth, pts = [];
+  for (let i = 0; i < teeth; i++) {
+    const a = Math.PI + i * s;
+    for (const [f, rad] of [[0, r], [.38, r], [.5, Ro], [.82, Ro], [.94, r]]) pts.push([cx + Math.cos(a + f * s) * rad, cy + Math.sin(a + f * s) * rad]);
+  }
+  pts.push([cx - r, cy]);
+  return pts;
+}
+// gear in a group so it can turn; returns the time (fraction) its outline finishes
+function gear(svg, P, cx, cy, r, at, spin, o = {}) {
+  const { tooth = 1.6, dur = 1100, T = ROW } = o, teeth = Math.max(8, Math.round(r * (o.dense || 1.3) / 2) * 2);
+  const g = el('g', {}, svg);
+  P.push(line(g, gearPts(cx, cy, r, teeth, tooth), at, dur));
+  P.push(line(g, circ(cx, cy, r * .4), at + .1, dur * .45, 'acc'));
+  P.push(pop(g, cx, cy, at + .14, i => el('circle', { r: Math.max(.9, r * .1), class: 'accf' }, i)));
+  if (spin) P.push({ kind: 'spin', e: g, cx, cy, deg: spin * 700 / r });
+  return at * T.G + dur;
+}
+function hammerLocal(s) { return [[-s * .5, 0], [s * .25, 0], [s * .25, -s * .38], [s * .5, -s * .38], [s * .5, s * .3], [s * .42, s * .38], [s * .25, s * .38], [s * .25, 0]]; }
+function gogglesD(cx, cy, r, strap) {
+  const L = cx - 2 * r - r * .3, Lr = cx - r * .3, Rl = cx + r * .3, Rr = cx + 2 * r + r * .3;
+  return `M${f1(L - strap)} ${f1(cy)}L${f1(L)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(Lr)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(L)} ${f1(cy)}` +
+    `M${f1(Lr)} ${f1(cy)}Q${f1(cx)} ${f1(cy - r * .6)} ${f1(Rl)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(Rr)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(Rl)} ${f1(cy)}` +
+    `M${f1(Rr)} ${f1(cy)}L${f1(Rr + strap)} ${f1(cy)}`;
+}
+
+// ---- row: gear train (chosen) ----
+function rowTrain(svg, W, H) {
+  const P = [], end = W * .72; P.push(line(svg, [[-2, H / 2], [end, H / 2]], 0, ROW.G * .7, 'thin faint'));
+  let x = R(8, 14), y = H / 2, r = R(6, 8), dir = 1; const extras = shuffle(['hammer', 'goggles']);
+  while (x < W * .64) {
+    gear(svg, P, x, y, r, x / end * .7, dir);
+    if (extras.length && x > W * .12 && Math.random() < .4) {
+      const k = extras.pop(), gx = x + r + R(13, 17), at = gx / end * .7;
+      if (k === 'hammer') { const s = R(14, 17), a = -Math.PI / 2 + R(-.5, .5), c = Math.cos(a), si = Math.sin(a); P.push(line(svg, hammerLocal(s).map(([u, v]) => [gx + u * c - v * si, H / 2 + u * si + v * c]), at, 1000)); }
+      else { const rr = R(3.6, 4.2); P.push(line(svg, gogglesD(gx, H / 2, rr, 5), at, 1300)); }
+      x = gx + R(13, 17); y = H / 2; r = R(5.5, 8); dir = 1; continue;
+    }
+    const r2 = R(4.5, 8), d = r + r2 + 1.9; let a = R(-.7, .7); let ny = y + Math.sin(a) * d;
+    if (ny < r2 * .5 || ny > H - r2 * .5) { a = -a; ny = y + Math.sin(a) * d; }
+    x += Math.cos(a) * d; y = ny; r = r2; dir = -dir;
+  }
+  return P;
+}
+
+// ---- background: tinker's line around the edges, sparks when a shape completes ----
+function sparks(svg, P, mode, W, H, cx, cy, delay) {
+  let origin, base;
+  if (mode === 'edge') {
+    const side = Math.floor(R(0, 4)), u = R(.15, .85);
+    origin = [[u * W, -4], [W + 4, u * H], [u * W, H + 4], [-4, u * H]][side];
+    base = [Math.PI / 2, Math.PI, -Math.PI / 2, 0][side];
+  }
+  const n = Math.round(R(9, 14));
+  for (let k = 0; k < n; k++) {
+    const [ox, oy] = origin || [cx + R(-4, 4), cy + R(-4, 4)];
+    const a = origin ? base + R(-.75, .75) : R(0, Math.PI * 2), sp = origin ? R(160, 300) : R(70, 160), g = 260, dur = R(700, 1300), t = dur / 1000;
+    const frames = [];
+    for (let s = 0; s <= 6; s++) { const tt = t * s / 6; frames.push({ transform: `translate(${f1(Math.cos(a) * sp * tt)}px,${f1(Math.sin(a) * sp * tt + .5 * g * tt * tt)}px)`, opacity: s === 0 ? 0 : 1 - s / 6 }); }
+    const c = el('circle', { cx: ox, cy: oy, r: R(.9, 1.7), class: 'spark' }, svg._sp || svg);
+    P.push({ kind: 'spark', e: c, delay: delay + R(0, 180), dur, frames });
+  }
+}
+function bgTinker(svg, W, H, mode) {
+  const P = [], i = Math.min(W, H) * .1, corners = [[i, i], [W - i, i], [W - i, H - i], [i, H - i]];
+  const lens = corners.map((c, k) => Math.hypot(corners[(k + 1) % 4][0] - c[0], corners[(k + 1) % 4][1] - c[1])), per = lens.reduce((a, b) => a + b);
+  const at = t => { t = ((t % 1) + 1) % 1; let d = t * per; for (let k = 0; k < 4; k++) { if (d <= lens[k]) { const a = corners[k], b = corners[(k + 1) % 4], u = d / lens[k]; return [a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u]; } d -= lens[k]; } return corners[0]; };
+  const t0 = R(0, 1), dir = Math.random() < .5 ? 1 : -1, span = .78, order = shuffle(['gear', 'hammer', 'goggles']);
+  const slots = [.12, .45, .78].map(f => t0 + dir * span * f);
+  const heading = t => { const a = at(t - dir * .01), b = at(t + dir * .01); return Math.atan2(b[1] - a[1], b[0] - a[0]); };
+  const xf = (c, h, [u, v]) => [c[0] + u * Math.cos(h) - v * Math.sin(h), c[1] + u * Math.sin(h) + v * Math.cos(h)];
+  let prevT = t0 - dir * .06, prevExit = at(prevT), clock = 0; const speed = .11; // px per ms of wire
+  const wire = (from, to, tA, tB, keep) => {
+    const pts = [from], n = 40;
+    for (let k = 1; k < n; k++) { const p = at(tA + (tB - tA) * k / n); if (keep(p)) pts.push([p[0] + R(-2, 2), p[1] + R(-2, 2)]); }
+    pts.push(to); return pts;
+  };
+  order.forEach((kind, k) => {
+    const t = slots[k], c = at(t), h = heading(t);
+    let ext, entry, exit, outline = [];
+    if (kind === 'gear') { const r = R(30, 40); ext = r + 8; entry = xf(c, h, [-r, 0]); exit = xf(c, h, [r, 0]); }
+    if (kind === 'hammer') { const s = R(70, 90); ext = s * .55; outline = hammerLocal(s).map(p => xf(c, h, p)); entry = outline[0]; exit = xf(c, h, [s * .5, 0]); kind = { s }; kind.k = 'hammer'; }
+    if (kind === 'goggles') { const r = R(15, 19); ext = 2.6 * r + 14; entry = xf(c, h, [-2.6 * r - 14, 0]); exit = xf(c, h, [2.6 * r + 14, 0]); kind = { r }; kind.k = 'goggles'; }
+    const prevC = k ? at(slots[k - 1]) : null, prevExt = k ? P.ext : 0;
+    const keep = p => Math.hypot(p[0] - c[0], p[1] - c[1]) > ext && (!prevC || Math.hypot(p[0] - prevC[0], p[1] - prevC[1]) > prevExt);
+    const w = wire(prevExit, entry, prevT, t, keep);
+    const wl = w.reduce((s, p, j) => j ? s + Math.hypot(p[0] - w[j - 1][0], p[1] - w[j - 1][1]) : 0, 0), wd = wl / speed;
+    P.push(line(svg, w, clock / BGT.G, wd)); clock += wd * .92;
+    let doneAt;
+    if (kind === 'gear') { const r = Math.hypot(entry[0] - c[0], entry[1] - c[1]); const g = el('g', { transform: `rotate(${f1(h * 57.3)} ${f1(c[0])} ${f1(c[1])})` }, svg); doneAt = gear(g, P, c[0], c[1], r, clock / BGT.G, 1, { tooth: 5, dur: 2600, T: BGT, dense: .55 }); clock += 2000; }
+    else if (kind.k === 'hammer') { P.push(line(svg, outline, clock / BGT.G, 2200)); doneAt = clock + 2200; clock += 1800; }
+    else { const g = el('g', { transform: `translate(${f1(c[0])} ${f1(c[1])}) rotate(${f1(h * 57.3)})` }, svg); P.push(line(g, gogglesD(0, 0, kind.r, 14), clock / BGT.G, 2600)); for (const lx of [-1.3 * kind.r, 1.3 * kind.r]) P.push(pop(g, lx, 0, (clock + 2300) / BGT.G, n => el('path', { d: `M${f1(-kind.r * .45)} ${f1(-kind.r * .1)}A${f1(kind.r * .5)} ${f1(kind.r * .5)} 0 0 1 ${f1(kind.r * .1)} ${f1(-kind.r * .5)}`, class: 'acc' }, n))); doneAt = clock + 2600; clock += 2100; }
+    sparks(svg, P, mode, W, H, c[0], c[1], doneAt);
+    P.ext = ext; prevExit = exit; prevT = t;
+  });
+  const endT = t0 + dir * (span + .1), tail = wire(prevExit, at(endT), prevT, endT, p => Math.hypot(p[0] - at(prevT)[0], p[1] - at(prevT)[1]) > P.ext);
+  P.push(line(svg, tail, clock / BGT.G, 1600));
+  return P;
+}
+
+function arm(parts) { for (const p of parts) if (p.kind === 'line') { const L = p.e.getTotalLength(); p.L = L; p.e.style.strokeDasharray = L + ' ' + (L + 1); p.e.style.strokeDashoffset = reduce ? 0 : L; } else if (p.kind === 'pop' && !reduce) p.e.style.opacity = 0; }
+async function loop(host, svg, gen, T) {
+  for (;;) {
+    const { width: W, height: H } = host.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.replaceChildren();
+    const parts = gen(svg, W, H); arm(parts);
+    if (reduce) return;
+    let end = 0;
+    const grow = parts.filter(p => p.kind === 'line' || p.kind === 'pop');
+    let anims = grow.map(p => {
+      const delay = p.at * T.G;
+      if (p.kind === 'line') { end = Math.max(end, delay + p.dur); return p.e.animate([{ strokeDashoffset: p.L }, { strokeDashoffset: 0 }], { duration: p.dur, delay, easing: p.dur >= T.G * .7 ? 'linear' : 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' }); }
+      end = Math.max(end, delay + T.POP); return p.e.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }], { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' });
+    });
+    for (const s of parts.filter(p => p.kind === 'spark')) s.e.animate(s.frames, { duration: s.dur, delay: s.delay, easing: 'linear', fill: 'forwards' });
+    const total = end + T.HOLD + T.WITHER + 1500;
+    for (const s of parts.filter(p => p.kind === 'spin')) { s.e.style.transformBox = 'view-box'; s.e.style.transformOrigin = `${s.cx}px ${s.cy}px`; s.e.animate([{ rotate: '0deg' }, { rotate: `${s.deg}deg` }], { duration: total, fill: 'forwards' }); }
+    anims.push(svg.animate([], { duration: end + T.HOLD }));
+    await Promise.all(anims.map(a => a.finished));
+    const t0 = Math.min(...grow.map(p => p.at));
+    anims = grow.map(p => {
+      const delay = (p.at - t0) * T.WITHER;
+      if (p.kind === 'line') return p.e.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -p.L }], { duration: p.dur * .8, delay, easing: 'ease-in', fill: 'forwards' });
+      return p.e.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.6)' }], { duration: T.POP * .8, delay, fill: 'forwards' });
+    });
+    anims.push(svg.animate([], { duration: R(400, 1200) }));
+    await Promise.all(anims.map(a => a.finished));
+  }
+}
+
+const tpl = document.getElementById('menu');
+document.querySelectorAll('.phone').forEach(phone => {
+  const bg = el('svg', { class: 'bgs' }, phone), sp = el('svg', { class: 'sps' }, phone);
+  bg._sp = sp;
+  phone.appendChild(tpl.content.cloneNode(true));
+  const mode = phone.dataset.sparks;
+  loop(phone, bg, (s, W, H) => { sp.setAttribute('viewBox', `0 0 ${W} ${H}`); sp.replaceChildren(); return bgTinker(s, W, H, mode); }, BGT);
+});
+document.querySelectorAll('.row[data-gen]').forEach(async row => {
+  const svg = el('svg', { class: 'fxs' }, row);
+  await new Promise(r => setTimeout(r, R(0, 3500)));
+  loop(row, svg, rowTrain, ROW);
+});
+document.querySelectorAll('.gearic').forEach(s => {
+  el('path', { d: toD(gearPts(0, 0, 7, 10, 1.6)) + 'Z', fill: 'none', stroke: '#c9ced4', 'stroke-width': 1.6 }, s);
+  el('circle', { r: 2.6, fill: 'none', stroke: '#d9a441', 'stroke-width': 1.4 }, s);
+});
+window.pick = node => {
+  document.querySelectorAll('.phone').forEach(p => p.classList.toggle('selected', p === node));
+  if (window.toggleSelect) try { window.toggleSelect(node); } catch (e) {}
+};
+})();
+</script>

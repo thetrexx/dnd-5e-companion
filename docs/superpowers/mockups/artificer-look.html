@@ -1,0 +1,239 @@
+<style>
+  @font-face{font-family:'Inknut';src:url(/files/inknut-medium.woff2) format('woff2');font-weight:500;font-display:swap}
+  @font-face{font-family:'Inknut';src:url(/files/noto-digits-medium.woff2) format('woff2');font-weight:500;unicode-range:U+0030-0039;font-display:swap}
+  @font-face{font-family:'fell-english';src:url(/files/fell-english.woff2) format('woff2');font-display:swap}
+  .flow{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
+  .phone{width:280px;border:2px solid #555;border-radius:22px;padding:14px 12px;background:#1b1712;color:#e9dfc9;box-sizing:border-box;cursor:pointer;transition:border-color .2s}
+  .phone.selected{border-color:#d9b45f;box-shadow:0 0 0 2px #d9b45f55}
+  .phone h4{margin:0 0 4px;font:18px 'fell-english',Georgia,serif;color:#d9b45f;text-align:center}
+  .phone .who{font:11px system-ui;color:#9b8f78;text-align:center;margin-bottom:10px}
+  .chip{display:inline-block;width:12px;height:12px;border-radius:3px;vertical-align:-1px;margin-right:6px;border:1px solid #0006}
+  .sec{font:600 13px system-ui;color:#bbb;margin:22px 0 10px}
+  .row{--k:#d9b45f;position:relative;overflow:hidden;isolation:isolate;display:flex;align-items:center;
+       border:1px solid #3a3226;border-radius:6px;padding:8px 10px;margin-bottom:6px;font:500 12px/1.25 'Inknut',Georgia,serif;background:#231e17;
+       text-shadow:0 1px 2px rgb(0 0 0/.85),0 0 8px rgb(0 0 0/.55)}
+  .row span{position:relative}
+  .rl{display:flex;align-items:center;gap:8px}
+  .ri{width:22px;height:22px;flex:none;position:relative}
+  .slot img{width:22px;height:22px}
+  .slot b{position:absolute;inset:0;display:grid;place-items:center;font:600 11px system-ui;color:#fff;text-shadow:0 0 3px #000,0 0 2px #000}
+  .proc::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:linear-gradient(90deg,color-mix(in srgb,var(--k) 7%,transparent),transparent 70%)}
+  svg.fxs{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;color:var(--c);opacity:var(--o,.5);
+    -webkit-mask:linear-gradient(90deg,#000 40%,transparent 92%);mask:linear-gradient(90deg,#000 40%,transparent 92%)}
+  svg.fxs path{fill:none;stroke:currentColor;stroke-width:1;stroke-linecap:round;stroke-linejoin:round}
+  svg.fxs .thick{stroke-width:1.6}
+  svg.fxs .thin{stroke-width:.7}
+  svg.fxs .faint{opacity:.45}
+  svg.fxs .fill{fill:currentColor;stroke:none}
+  svg.fxs .acc{stroke:var(--acc,currentColor)}
+  svg.fxs .accf{fill:var(--acc,currentColor);stroke:none}
+  svg.fxs .pop{transform-box:fill-box;transform-origin:center}
+  .p-cle{--k:#8f9aa8;--c:#dfe6ef;--o:.4}
+  .p-a1{--k:#b4bcc6;--c:#eef2f6;--o:.45}
+  .p-a2{--k:#a7acb2;--c:#d8dde2;--o:.5;--acc:#d9a441}
+  .p-a3{--k:#6f7c88;--c:#c3ccd5;--o:.55}
+  .note{font:12px system-ui;color:#999;max-width:880px;line-height:1.5}
+</style>
+
+<h2>Artificer: colour and spell-row pattern</h2>
+<p class="subtitle">Rows animate the way the live app does, at Medium strength. Click a phone to pick it.</p>
+
+<div class="sec">1. Colour. Each phone shows a Cleric row on top, because the Cleric is already a grey-silver.</div>
+<div class="flow" data-group="colour">
+  <div class="phone" data-choice="colour-cool-silver" onclick="pick(this)">
+    <h4><span class="chip" style="background:#b4bcc6"></span>A · Polished silver</h4>
+    <div class="who">brighter and whiter than the Cleric</div>
+    <div class="row proc p-cle" data-gen="cleric"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Cleric Spells</span></div>
+    <div class="row proc p-a1" data-gen="tinker"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Artificer Cantrips</span></div>
+    <div class="row proc p-a1" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Artificer Spells</span></div>
+    <div class="row proc p-a1" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Artificer Spells</span></div>
+  </div>
+  <div class="phone" data-choice="colour-silver-brass" onclick="pick(this)">
+    <h4><span class="chip" style="background:#a7acb2"></span><span class="chip" style="background:#d9a441"></span>B · Silver and brass</h4>
+    <div class="who">silver lines, brass hubs and lenses</div>
+    <div class="row proc p-cle" data-gen="cleric"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Cleric Spells</span></div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Artificer Cantrips</span></div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Artificer Spells</span></div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Artificer Spells</span></div>
+  </div>
+  <div class="phone" data-choice="colour-gunmetal" onclick="pick(this)">
+    <h4><span class="chip" style="background:#6f7c88"></span>C · Gunmetal</h4>
+    <div class="who">darker steel, lines stay light</div>
+    <div class="row proc p-cle" data-gen="cleric"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Cleric Spells</span></div>
+    <div class="row proc p-a3" data-gen="tinker"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Artificer Cantrips</span></div>
+    <div class="row proc p-a3" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Artificer Spells</span></div>
+    <div class="row proc p-a3" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Artificer Spells</span></div>
+  </div>
+</div>
+
+<div class="sec">2. Pattern. Both are shown in Silver and brass (B) so the accents are visible.</div>
+<div class="flow" data-group="pattern">
+  <div class="phone" data-choice="pattern-tinker-line" onclick="pick(this)">
+    <h4>A · Tinker's line</h4>
+    <div class="who">one line runs across and draws a gear, a hammer and goggles in a random order</div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Artificer Cantrips</span></div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Artificer Spells</span></div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Artificer Spells</span></div>
+    <div class="row proc p-a2" data-gen="tinker"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>3</b></span>Level 3 Artificer Spells</span></div>
+  </div>
+  <div class="phone" data-choice="pattern-gear-train" onclick="pick(this)">
+    <h4>B · Gear train</h4>
+    <div class="who">a chain of meshing gears draws in and turns; a hammer or goggles sit in the gaps</div>
+    <div class="row proc p-a2" data-gen="train"><span class="rl"><svg class="ri gearic" viewBox="-12 -12 24 24"></svg>Artificer Cantrips</span></div>
+    <div class="row proc p-a2" data-gen="train"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>1</b></span>Level 1 Artificer Spells</span></div>
+    <div class="row proc p-a2" data-gen="train"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>2</b></span>Level 2 Artificer Spells</span></div>
+    <div class="row proc p-a2" data-gen="train"><span class="rl"><span class="ri slot"><img src="https://bg3.wiki/w/images/e/ef/Spell_Slot_Icon.png"><b>3</b></span>Level 3 Artificer Spells</span></div>
+  </div>
+</div>
+<p class="note" style="margin-top:18px">The gear icon on the Cantrips rows is a placeholder. BG3 has no Artificer, so the class icon question comes later.</p>
+
+<script>
+(() => {
+const NS = 'http://www.w3.org/2000/svg';
+const R = (a, b) => a + Math.random() * (b - a);
+const f1 = n => n.toFixed(1);
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const G = 3600, ROW = { G, HOLD: 1600, WITHER: 3000, POP: 600 };
+function el(tag, attrs, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; }
+const toD = pts => 'M' + pts.map(p => f1(p[0]) + ' ' + f1(p[1])).join('L');
+const circ = (cx, cy, r) => `M${f1(cx + r)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(cx - r)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(cx + r)} ${f1(cy)}`;
+function line(parent, d, at, dur, cls) { const e = el('path', { d: typeof d === 'string' ? d : toD(d) }, parent); if (cls) e.setAttribute('class', cls); return { kind: 'line', e, at, dur }; }
+function pop(parent, x, y, rot, at, build) { const g = el('g', { transform: `translate(${f1(x)} ${f1(y)}) rotate(${f1(rot)})` }, parent); const inner = el('g', { class: 'pop' }, g); build(inner); return { kind: 'pop', e: inner, at }; }
+
+// a gear outline, starting and ending at its leftmost valley so a line can run into it
+function gearPts(cx, cy, r, teeth) {
+  const Ro = r + 1.6, s = Math.PI * 2 / teeth, pts = [];
+  for (let i = 0; i < teeth; i++) {
+    const a = Math.PI + i * s;
+    for (const [f, rad] of [[0, r], [.38, r], [.5, Ro], [.82, Ro], [.94, r]]) pts.push([cx + Math.cos(a + f * s) * rad, cy + Math.sin(a + f * s) * rad]);
+  }
+  pts.push([cx - r, cy]);
+  return pts;
+}
+function gear(svg, P, cx, cy, r, at, spin) {
+  const teeth = Math.max(8, Math.round(r * 1.3 / 2) * 2);
+  const g = el('g', {}, svg);
+  P.push(line(g, gearPts(cx, cy, r, teeth), at, 1100));
+  P.push(line(g, circ(cx, cy, r * .4), at + .1, 500, 'acc'));
+  P.push(pop(g, cx, cy, 0, at + .14, i => el('circle', { r: .9, class: 'accf' }, i)));
+  if (spin) P.push({ kind: 'spin', e: g, cx, cy, deg: spin * 700 / r });
+}
+// hammer drawn from the bottom of its handle
+function hammerD(x, y, s, a) {
+  const loc = [[0, s * .5], [0, -s * .28], [-s * .4, -s * .28], [-s * .4, -s * .55], [s * .28, -s * .55], [s * .38, -s * .47], [s * .38, -s * .28], [0, -s * .28]];
+  const c = Math.cos(a), si = Math.sin(a);
+  return loc.map(([u, v]) => [x + u * c - v * si, y + u * si + v * c]);
+}
+// goggles: strap, left lens, bridge, right lens, strap
+function gogglesD(cx, cy, r, strap) {
+  const L = cx - 2 * r - 1.4, Lr = cx - 1.4, Rl = cx + 1.4, Rr = cx + 2 * r + 1.4;
+  return `M${f1(L - strap)} ${f1(cy)}L${f1(L)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(Lr)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(L)} ${f1(cy)}` +
+    `M${f1(Lr)} ${f1(cy)}Q${f1(cx)} ${f1(cy - 2.6)} ${f1(Rl)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(Rr)} ${f1(cy)}A${r} ${r} 0 1 1 ${f1(Rl)} ${f1(cy)}` +
+    `M${f1(Rr)} ${f1(cy)}L${f1(Rr + strap)} ${f1(cy)}`;
+}
+function goggles(svg, P, cx, cy, r, at) {
+  P.push(line(svg, gogglesD(cx, cy, r, 5), at, 1300));
+  for (const lx of [cx - r - 1.4, cx + r + 1.4]) P.push(pop(svg, lx, cy, 0, at + .2, i => el('path', { d: `M${f1(-r * .45)} ${f1(-r * .1)}A${f1(r * .5)} ${f1(r * .5)} 0 0 1 ${f1(r * .1)} ${f1(-r * .5)}`, class: 'acc' }, i)));
+}
+// a slightly sagging wire between two points
+function wire(a, b) {
+  const pts = [], n = Math.max(4, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / 3)), sag = R(-3.5, 3.5), ph = R(0, 6);
+  for (let k = 0; k <= n; k++) { const u = k / n; pts.push([a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u + Math.sin(Math.PI * u) * sag + Math.sin(u * 9 + ph) * .5]); }
+  return pts;
+}
+const shuffle = a => { for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; };
+
+const GEN = {
+  // A: one line wanders across and draws a gear, a hammer and goggles along the way
+  tinker(svg, W, H) {
+    const P = [], order = shuffle(['gear', 'hammer', 'goggles']), xs = [R(.11, .17), R(.34, .41), R(.57, .64)].map(f => f * W);
+    let cur = [-2, H * R(.4, .6)];
+    order.forEach((k, i) => {
+      const cx = xs[i], cy = H * R(.42, .58), at = i * .27;
+      let entry, exit;
+      if (k === 'gear') { const r = R(5.5, 7.5); entry = [cx - r, cy]; exit = [cx + r, cy]; P.push(line(svg, wire(cur, entry), at, G * .14)); gear(svg, P, cx, cy, r, at + .1, 0);
+        if (Math.random() < .5) { const r2 = R(3.2, 4.5), a = R(.55, .95) * (Math.random() < .5 ? -1 : 1), d = r + r2 + 2.2; gear(svg, P, cx + Math.cos(a) * d, cy + Math.sin(a) * d, r2, at + .2, 0); } }
+      if (k === 'hammer') { const s = R(15, 18), a = R(-.6, .6), pts = hammerD(cx, cy, s, a); entry = exit = pts[0]; P.push(line(svg, wire(cur, entry), at, G * .14)); P.push(line(svg, pts, at + .1, 1100)); }
+      if (k === 'goggles') { const r = R(3.8, 4.6); entry = [cx - 2 * r - 6.4, cy]; exit = [cx + 2 * r + 6.4, cy]; P.push(line(svg, wire(cur, entry), at, G * .14)); goggles(svg, P, cx, cy, r, at + .1); }
+      cur = exit;
+    });
+    P.push(line(svg, wire(cur, [W * .85, H * R(.35, .65)]), .82, G * .16));
+    return P;
+  },
+  // B: a chain of meshing gears that turn, with a hammer or goggles in the gaps
+  train(svg, W, H) {
+    const P = [], end = W * .72; P.push(line(svg, [[-2, H / 2], [end, H / 2]], 0, G * .7, 'thin faint'));
+    let x = R(8, 14), y = H / 2, r = R(6, 8), dir = 1; const extras = shuffle(['hammer', 'goggles']);
+    while (x < W * .64) {
+      gear(svg, P, x, y, r, x / end * .7, dir);
+      if (extras.length && x > W * .12 && Math.random() < .4) {
+        const k = extras.pop(), gx = x + r + R(13, 17);
+        if (k === 'hammer') P.push(line(svg, hammerD(gx, H / 2, R(14, 17), R(-.5, .5)), gx / end * .7, 1000));
+        else goggles(svg, P, gx, H / 2, R(3.6, 4.2), gx / end * .7);
+        x = gx + R(13, 17); y = H / 2; r = R(5.5, 8); dir = 1; continue;
+      }
+      const r2 = R(4.5, 8), d = r + r2 + 1.9; let a = R(-.7, .7); let ny = y + Math.sin(a) * d;
+      if (ny < r2 * .5 || ny > H - r2 * .5) { a = -a; ny = y + Math.sin(a) * d; }
+      x += Math.cos(a) * d; y = ny; r = r2; dir = -dir;
+    }
+    return P;
+  },
+  // the live app's Cleric row, for contrast
+  cleric(svg, W, H) {
+    const P = [], cx = -4, cy = H * R(.4, .6);
+    for (let j = 0; j < 3; j++) P.push(line(svg, circ(cx, cy, 14 + j * 11), .2 + j * .1, 1200, 'thin'));
+    for (let k = 0; k < 10; k++) {
+      const a = -.7 + k * .155 + R(-.05, .05), len = R(40, W * .6), at = k * .04, c = Math.cos(a), s = Math.sin(a);
+      P.push(line(svg, [[cx + c * 6, cy + s * 6], [cx + c * len, cy + s * len]], at, 1200, 'thin'));
+      const tx = cx + c * len, ty = cy + s * len;
+      if (ty > 3 && ty < H - 3 && Math.random() < .6) P.push(pop(svg, tx, ty, 0, at + .32, i => el('path', { d: 'M0 -3L.7 -.7L3 0L.7 .7L0 3L-.7 .7L-3 0L-.7 -.7Z', class: 'fill' }, i)));
+    }
+    return P;
+  },
+};
+
+function arm(parts) { for (const p of parts) if (p.kind === 'line') { const L = p.e.getTotalLength(); p.L = L; p.e.style.strokeDasharray = L + ' ' + (L + 1); p.e.style.strokeDashoffset = reduce ? 0 : L; } else if (p.kind === 'pop' && !reduce) p.e.style.opacity = 0; }
+async function loop(host, svg, gen, T) {
+  for (;;) {
+    const { width: W, height: H } = host.getBoundingClientRect();
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.replaceChildren();
+    const parts = gen(svg, W, H); arm(parts);
+    if (reduce) return;
+    let end = 0;
+    const spins = parts.filter(p => p.kind === 'spin');
+    let anims = parts.filter(p => p.kind !== 'spin').map(p => {
+      const delay = p.at * T.G;
+      if (p.kind === 'line') { end = Math.max(end, delay + p.dur); return p.e.animate([{ strokeDashoffset: p.L }, { strokeDashoffset: 0 }], { duration: p.dur, delay, easing: p.dur >= T.G * .7 ? 'linear' : 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' }); }
+      end = Math.max(end, delay + T.POP); return p.e.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }], { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' });
+    });
+    const total = end + T.HOLD + T.WITHER + 1500;
+    for (const s of spins) { s.e.style.transformBox = 'view-box'; s.e.style.transformOrigin = `${s.cx}px ${s.cy}px`; s.e.animate([{ transform: 'rotate(0deg)' }, { transform: `rotate(${s.deg}deg)` }], { duration: total, fill: 'forwards' }); }
+    anims.push(svg.animate([], { duration: end + T.HOLD }));
+    await Promise.all(anims.map(a => a.finished));
+    anims = parts.filter(p => p.kind !== 'spin').map(p => {
+      const delay = p.at * T.WITHER;
+      if (p.kind === 'line') return p.e.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -p.L }], { duration: p.dur * .8, delay, easing: 'ease-in', fill: 'forwards' });
+      return p.e.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.6)' }], { duration: T.POP * .8, delay, fill: 'forwards' });
+    });
+    anims.push(svg.animate([], { duration: R(400, 1200) }));
+    await Promise.all(anims.map(a => a.finished));
+  }
+}
+document.querySelectorAll('.row[data-gen]').forEach(async row => {
+  const svg = el('svg', { class: 'fxs' }, row);
+  await new Promise(r => setTimeout(r, R(0, 3500)));
+  loop(row, svg, GEN[row.dataset.gen], ROW);
+});
+
+// placeholder cantrip icon: a small silver gear
+document.querySelectorAll('.gearic').forEach(s => {
+  el('path', { d: toD(gearPts(0, 0, 7, 10)) + 'Z', fill: 'none', stroke: '#c9ced4', 'stroke-width': 1.6, 'stroke-linejoin': 'round' }, s);
+  el('circle', { r: 2.6, fill: 'none', stroke: '#d9a441', 'stroke-width': 1.4 }, s);
+});
+
+window.pick = node => {
+  node.parentElement.querySelectorAll('.phone').forEach(p => p.classList.toggle('selected', p === node));
+  if (window.toggleSelect) try { window.toggleSelect(node); } catch (e) {}
+};
+})();
+</script>
