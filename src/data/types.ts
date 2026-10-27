@@ -50,6 +50,7 @@ export interface OptionGroup {
   id: string; name: string; owner: { kind: 'class'|'subclass'|'race'; id: string };
   picks: number[];
   from?: string; only?: string[];
+  reuse?: true; // a pick counted in another slot of the same pool may also fill this one
   bonus?: { subclass: string; atLevel: number; count: number }[];
 }
 export interface RaceDef { id: string; name: string; parent?: string; page: number; book?: BookId; icon?: string; spells: SpellGrant[]; options: string[] }

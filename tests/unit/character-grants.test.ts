@@ -56,3 +56,22 @@ test('unlock copy: class-owned by class level, the rest by character level', () 
   expect(unlockText(src('race:tiefling'), 5)).toBe('Unlocks at character level 5');
   expect(unlockText(src('feature:pact-boon-pact-of-the-tome'), 3)).toBe('Unlocks at Warlock 3');
 });
+
+describe('shared option pools count once', () => {
+  const mk = (o: Partial<Character>): Character => ({ ...emptyCharacter(), ...o });
+  const fp = mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense'] });
+  test('one style counts once', () => {
+    const [f, p] = optionSlots(fp);
+    expect(f.chosen).toEqual(['fighting-style-defense']);
+    expect(p.chosen).toEqual([]);
+    expect(p.taken).toEqual(['fighting-style-defense']);
+  });
+  test('two styles fill one slot each', () => {
+    const s = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling'] });
+    expect(s.map(x => x.chosen)).toEqual([['fighting-style-defense'], ['fighting-style-dueling']]);
+  });
+  test('one ancestry may fill race and sorcerer slots', () => {
+    const s = optionSlots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-red'] }));
+    expect(s.map(x => x.chosen)).toEqual([['draconic-ancestry-red'], ['draconic-ancestry-red']]);
+  });
+});

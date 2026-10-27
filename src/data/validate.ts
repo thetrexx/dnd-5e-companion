@@ -183,6 +183,7 @@ export function validateDataset(d: Dataset): string[] {
     table(at, 'picks', g.picks, 0, 99, errs);
     if (Array.isArray(g.picks) && g.picks.some((n, i) => i > 0 && n < g.picks[i - 1])) errs.push(`${at}: picks must not decrease`);
     if (g.from !== undefined && !groupIds.has(g.from)) errs.push(`${at}: unknown from group "${g.from}"`);
+    if (g.reuse !== undefined && g.reuse !== true) errs.push(`${at}: reuse must be true when present`);
     if (g.only !== undefined) {
       if (g.from === undefined) errs.push(`${at}: only requires from`);
       else {
