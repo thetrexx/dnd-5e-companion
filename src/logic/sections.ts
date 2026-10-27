@@ -1,4 +1,4 @@
-import { DATA } from '../data';
+import { DATA, poolOptions } from '../data';
 import type { ClassId, Feature, Spell } from '../data/types';
 import { bonusLabel } from './bonus';
 import { ceilingOf, extraListTag, listSpells, maxSpellLevel } from './rules';
@@ -99,9 +99,8 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
 function optionItems(groupId: string, level: number): Feature[] {
   const g = DATA.optionGroups.find(x => x.id === groupId)!;
   const src = g.from ?? g.id;
-  return DATA.features.filter(f =>
-    f.source.kind === 'option' && f.source.id === src && f.cost !== 'passive'
-    && (f.prereq?.level ?? 1) <= level && (!g.only || g.only.includes(f.id)));
+  return poolOptions(src).filter(f =>
+    f.cost !== 'passive' && (f.prereq?.level ?? 1) <= level && (!g.only || g.only.includes(f.id)));
 }
 
 /** Actions, Bonus Actions and Reactions anyone can take. */

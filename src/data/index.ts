@@ -12,5 +12,11 @@ const features = Object.keys(files).sort().flatMap(k => files[k]);
 
 export const DATA = { classes, subclasses, optionGroups, races, feats, spells, features } as unknown as Dataset;
 
+/** The options of one option pool (a group's `from ?? id`), A-Z by name, whatever order the data files hold them in. */
+export function poolOptions(pool: string): Feature[] {
+  return DATA.features.filter(f => f.source.kind === 'option' && f.source.id === pool)
+    .sort((a, b) => a.name.localeCompare(b.name, 'en'));
+}
+
 const errors = validateDataset(DATA);
 if (errors.length > 0) throw new Error(`Invalid content data:\n${errors.join('\n')}`);

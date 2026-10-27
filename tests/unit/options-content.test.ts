@@ -56,6 +56,17 @@ test('class and subclass hooks', () => {
   expect(s('way-of-the-four-elements')).toEqual(['elemental-disciplines']);
   expect(s('path-of-the-totem-warrior')).toEqual(['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement']);
 });
+test('option choices are sorted by name in the editor and the browse view', () => {
+  const sorted = (names: string[]) => [...names].sort((a, b) => a.localeCompare(b, 'en'));
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 20 }], options: ['pact-boon-pact-of-the-blade'] } as Character;
+  const editor = optionSlots(ch).find(s => s.group.id === 'eldritch-invocations')!.choices.map(f => f.name);
+  expect(editor).toEqual(sorted(editor));
+  const smite = editor.indexOf('Eldritch Smite');
+  expect(editor.slice(smite - 1, smite + 2)).toEqual(['Eldritch Sight', 'Eldritch Smite', 'Eldritch Spear']);
+  const browse = actionSections('warlock', 20).find(s => s.id === 'opt-eldritch-invocations')!.items.map(i => i.name);
+  expect(browse).toEqual(sorted(browse));
+  expect(browse.indexOf('Eldritch Smite')).toBe(browse.indexOf('Eldritch Sight') + 1);
+});
 test('xanathar invocations need their pact', () => {
   const inv = DATA.features.filter(f => f.source.id === 'eldritch-invocations' && f.book === 'xge');
   expect(inv).toHaveLength(14);

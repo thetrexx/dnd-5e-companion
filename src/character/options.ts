@@ -1,4 +1,4 @@
-import { DATA } from '../data';
+import { DATA, poolOptions } from '../data';
 import type { ClassId, Feature, OptionGroup } from '../data/types';
 import { effectiveSub } from '../logic/subclass';
 import { raceChain, totalLevel } from './derive';
@@ -14,8 +14,8 @@ export function optionSlots(ch: Character): OptionSlot[] {
   const add = (group: OptionGroup, level: number, cls?: ClassId, sub?: string) => {
     const count = (group.picks[level - 1] ?? 0) + (group.bonus ?? []).filter(b => sub !== undefined && b.subclass === sub && b.atLevel <= level).reduce((n, b) => n + b.count, 0);
     if (!count) return;
-    const choices = DATA.features.filter(f => f.source.kind === 'option' && f.source.id === (group.from ?? group.id)
-      && (!group.only || group.only.includes(f.id)) && (f.prereq?.level ?? 0) <= level && (!f.prereq?.option || ch.options.includes(f.prereq.option)));
+    const choices = poolOptions(group.from ?? group.id).filter(f =>
+      (!group.only || group.only.includes(f.id)) && (f.prereq?.level ?? 0) <= level && (!f.prereq?.option || ch.options.includes(f.prereq.option)));
     out.push({ group, cls, level, count, choices, chosen: [], taken: [] });
   };
   for (const c of ch.classes) {

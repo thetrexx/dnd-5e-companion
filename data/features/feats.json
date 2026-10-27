@@ -420,7 +420,8 @@
     "cost": "free",
     "trigger": "A spell you cast deals fire damage",
     "description": [
-      "Flames cloak you until your next turn ends, harming neither you nor your gear. They light the area: bright for 30 ft, then dim for another 30 ft. Any creature within 5 ft whose melee attack hits you takes 1d4 fire damage."
+      "Flames cloak you until your next turn ends, harming neither you nor your gear. They light the area: bright for 30 ft, then dim for another 30 ft. Any creature within 5 ft whose melee attack hits you takes 1d4 fire damage.",
+      "Any 1s on the spell's fire damage dice can be rerolled; you keep the rerolled result, even if it is 1 again."
     ],
     "page": 74,
     "book": "xge",
@@ -473,7 +474,7 @@
     "trigger": "An attack roll from a creature you can see hits you",
     "uses": "Once, then again after you roll initiative or finish a short or long rest",
     "description": [
-      "The attacker has to reroll the attack. The use comes back when combat starts and initiative is rolled, or after a short or long rest."
+      "The attacker has to reroll the attack."
     ],
     "page": 75,
     "book": "xge",
