@@ -1,6 +1,8 @@
 import { DATA } from '../../src/data';
 import { autoSpells } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
+import type { Character } from '../../src/character/types';
+import { optionSlots } from '../../src/character/options';
 import { actionSections, spellSections } from '../../src/logic/sections';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
@@ -36,7 +38,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('87 subclasses', () => expect(DATA.subclasses).toHaveLength(87));
+test('94 subclasses', () => expect(DATA.subclasses).toHaveLength(94));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -373,4 +375,116 @@ test('tasha task 7 riders are free cards with a trigger', () => {
     expect(feature(id).cost, id).toBe('free');
     expect(feature(id).trigger, id).toBeTruthy();
   }
+});
+
+// Plan 7 (batch 3), Task 8: Tasha's subclasses, fighter to ranger
+const TCE8 = ['psi-warrior', 'rune-knight', 'way-of-mercy', 'way-of-the-astral-self', 'oath-of-glory', 'oath-of-the-watchers', 'fey-wanderer'];
+test('tasha subclasses (task 8)', () => { for (const id of TCE8) expect(sub(id), id).toMatchObject({ book: 'tce' }); });
+test('every tasha task 8 feature and option names its book', () => {
+  const ids = new Set(TCE8);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  expect([...groups]).toEqual(['runes']);
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('tce');
+  for (const id of TCE8) expect(sub(id).options, id).toEqual(id === 'rune-knight' ? ['runes'] : []);
+});
+test('tasha task 8 oath and fey wanderer spell tables', () => {
+  const at = (id: string, lvl: number) => sub(id).bonusSpells!.grants.filter(g => g.atLevel === lvl).map(g => g.spell).sort();
+  const levels = (id: string) => sub(id).bonusSpells!.grants.map(g => g.atLevel).sort((a, b) => a - b);
+  expect(sub('oath-of-glory').bonusSpells!.kind).toBe('oath');
+  expect(sub('oath-of-the-watchers').bonusSpells!.kind).toBe('oath');
+  expect(sub('fey-wanderer').bonusSpells!.kind).toBe('subclass');
+  expect(at('oath-of-glory', 3)).toEqual(['guiding-bolt', 'heroism']);
+  expect(at('oath-of-glory', 5)).toEqual(['enhance-ability', 'magic-weapon']);
+  expect(at('oath-of-glory', 9)).toEqual(['haste', 'protection-from-energy']);
+  expect(at('oath-of-glory', 13)).toEqual(['compulsion', 'freedom-of-movement']);
+  expect(at('oath-of-glory', 17)).toEqual(['commune', 'flame-strike']);
+  expect(at('oath-of-the-watchers', 3)).toEqual(['alarm', 'detect-magic']);
+  expect(at('oath-of-the-watchers', 5)).toEqual(['moonbeam', 'see-invisibility']);
+  expect(at('oath-of-the-watchers', 9)).toEqual(['counterspell', 'nondetection']);
+  expect(at('oath-of-the-watchers', 13)).toEqual(['aura-of-purity', 'banishment']);
+  expect(at('oath-of-the-watchers', 17)).toEqual(['hold-monster', 'scrying']);
+  expect(levels('oath-of-glory')).toEqual([3, 3, 5, 5, 9, 9, 13, 13, 17, 17]);
+  expect(levels('oath-of-the-watchers')).toEqual([3, 3, 5, 5, 9, 9, 13, 13, 17, 17]);
+  expect(sub('fey-wanderer').bonusSpells!.grants.map(g => [g.atLevel, g.spell]))
+    .toEqual([[3, 'charm-person'], [5, 'misty-step'], [9, 'dispel-magic'], [13, 'dimension-door'], [17, 'mislead']]);
+});
+test('tasha task 8 must-have features', () => {
+  for (const id of ['psi-warrior-psionic-power', 'psi-warrior-psionic-regain', 'protective-field', 'psionic-strike', 'telekinetic-movement',
+    'psi-powered-leap', 'guarded-mind', 'bulwark-of-force', 'telekinetic-master', 'telekinetic-master-attack',
+    'rune-carver', 'giants-might', 'runic-shield',
+    'hand-of-healing', 'hand-of-harm', 'hand-of-ultimate-mercy',
+    'arms-of-the-astral-self', 'visage-of-the-astral-self', 'body-of-the-astral-self', 'body-of-the-astral-self-deflect-energy', 'awakened-astral-self',
+    'peerless-athlete', 'inspiring-smite', 'glorious-defense', 'living-legend',
+    'watchers-will', 'abjure-the-extraplanar', 'vigilant-rebuke', 'mortal-bulwark',
+    'dreadful-strikes', 'beguiling-twist', 'fey-reinforcements', 'misty-wanderer'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('psionic energy dice: a pool card with count and die size, and every power names the resource', () => {
+  const pool = feature('psi-warrior-psionic-power');
+  expect(pool).toMatchObject({ level: 3, page: 43, source: { kind: 'subclass', id: 'psi-warrior' } });
+  const die = pool.scaling!.find(s => s.label === 'Die size')!.values;
+  expect([die[2], die[3], die[4], die[9], die[10], die[15], die[16], die[19]]).toEqual(['d6', 'd6', 'd8', 'd8', 'd10', 'd10', 'd12', 'd12']);
+  const count = pool.scaling!.find(s => s.label === 'Psionic Energy dice')!.values;
+  expect([count[2], count[4], count[8], count[12], count[16]]).toEqual(['4', '6', '8', '10', '12']);
+  for (const id of ['protective-field', 'psionic-strike', 'telekinetic-movement', 'psi-powered-leap', 'guarded-mind', 'bulwark-of-force', 'telekinetic-master'])
+    expect(feature(id).resource, id).toMatch(/^1 Psionic Energy die/);
+  expect(feature('psi-warrior-psionic-regain')).toMatchObject({ cost: 'bonus', uses: 'Once per short or long rest' });
+  expect(feature('protective-field')).toMatchObject({ cost: 'reaction', level: 3 });
+  expect(feature('telekinetic-master').spells).toEqual([expect.objectContaining({ spell: 'telekinesis', atLevel: 18 })]);
+});
+test('runes slot: 2 picks at fighter 3, hill rune only from 7', () => {
+  const runes = DATA.optionGroups.find(g => g.id === 'runes')!;
+  expect(runes.owner).toEqual({ kind: 'subclass', id: 'rune-knight' });
+  expect(runes.picks).toEqual([0, 0, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5]);
+  const rk = (level: number) => ({ ...emptyCharacter(), classes: [{ cls: 'fighter', level, sub: 'rune-knight' }] }) as Character;
+  const at3 = optionSlots(rk(3)).find(s => s.group.id === 'runes')!;
+  expect(at3.count).toBe(2);
+  expect(at3.choices.map(f => f.id).sort()).toEqual(['runes-cloud-rune', 'runes-fire-rune', 'runes-frost-rune', 'runes-stone-rune']);
+  const at7 = optionSlots(rk(7)).find(s => s.group.id === 'runes')!;
+  expect(at7.count).toBe(3);
+  expect(at7.choices.map(f => f.id)).toEqual(expect.arrayContaining(['runes-hill-rune', 'runes-storm-rune']));
+  for (const id of ['runes-hill-rune', 'runes-storm-rune']) expect(feature(id).prereq, id).toEqual({ level: 7 });
+});
+test('rune invoke costs', () => {
+  const cost = (id: string) => feature(`runes-${id}-rune`).cost;
+  expect([cost('cloud'), cost('fire'), cost('frost'), cost('stone'), cost('hill'), cost('storm')])
+    .toEqual(['reaction', 'free', 'bonus', 'reaction', 'bonus', 'bonus']);
+  for (const id of ['cloud', 'fire', 'frost', 'stone', 'hill', 'storm'])
+    expect(feature(`runes-${id}-rune`).uses, id).toMatch(/short or long rest/);
+});
+test('tasha task 8 reactions are reaction cards with a trigger', () => {
+  for (const id of ['protective-field', 'runic-shield', 'runes-cloud-rune', 'runes-stone-rune', 'body-of-the-astral-self-deflect-energy',
+    'glorious-defense', 'vigilant-rebuke', 'beguiling-twist']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('vigilant rebuke prints no use limit', () => {
+  expect(feature('vigilant-rebuke')).toMatchObject({ cost: 'reaction', level: 15, page: 55 });
+  expect(feature('vigilant-rebuke').uses).toBeUndefined();
+});
+test('tasha task 8 channel divinity options cost a Channel Divinity', () => {
+  for (const [id, cost] of [['peerless-athlete', 'bonus'], ['inspiring-smite', 'bonus'], ['watchers-will', 'action'], ['abjure-the-extraplanar', 'action']])
+    expect(feature(id), id).toMatchObject({ cost, resource: '1 Channel Divinity', level: 3 });
+});
+test('fey wanderer feature spells are fixed grants with uses', () => {
+  expect(feature('fey-reinforcements')).toMatchObject({ level: 11, page: 59 });
+  expect(feature('fey-reinforcements').spells).toEqual([expect.objectContaining({ spell: 'summon-fey', atLevel: 11, uses: expect.any(String) })]);
+  expect(feature('misty-wanderer')).toMatchObject({ level: 15, page: 59 });
+  expect(feature('misty-wanderer').spells).toEqual([expect.objectContaining({ spell: 'misty-step', atLevel: 15, uses: expect.any(String) })]);
+});
+test('tasha task 8 riders are free cards with a trigger', () => {
+  for (const id of ['psionic-strike', 'guarded-mind', 'runes-fire-rune', 'hand-of-harm', 'body-of-the-astral-self', 'dreadful-strikes']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('scaling dice: giants might and dreadful strikes', () => {
+  const v = (id: string, label: string) => feature(id).scaling!.find(s => s.label === label)!.values;
+  const gm = v('giants-might', 'Extra damage');
+  expect([gm[2], gm[8], gm[9], gm[16], gm[17]]).toEqual(['1d6', '1d6', '1d8', '1d8', '1d10']);
+  const ds = v('dreadful-strikes', 'Psychic damage');
+  expect([ds[1], ds[2], ds[9], ds[10]]).toEqual(['', '1d4', '1d4', '1d6']);
 });

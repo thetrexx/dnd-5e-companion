@@ -1318,5 +1318,161 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "hand-of-healing",
+    "name": "Hand of Healing",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-mercy"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 ki point",
+    "page": 49,
+    "description": [
+      "Touch a creature: it regains hit points. Roll your Martial Arts die and add your Wisdom modifier.",
+      "Flurry of Blows: you can swap one of its unarmed strikes for a Hand of Healing, and that healing costs no ki.",
+      "Level 6 (Physician's Touch): the touch also ends one disease or one condition: blinded, deafened, paralyzed, poisoned or stunned.",
+      "Level 11 (Flurry of Healing and Harm): you can swap every Flurry strike for a free Hand of Healing."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "hand-of-harm",
+    "name": "Hand of Harm",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-mercy"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your unarmed strike hits a creature",
+    "resource": "1 ki point",
+    "uses": "Once per turn",
+    "page": 50,
+    "description": [
+      "Extra necrotic damage: roll your Martial Arts die and add your Wisdom modifier.",
+      "Level 6 (Physician's Touch): the creature can also be poisoned through the end of your next turn.",
+      "Level 11 (Flurry of Healing and Harm): on a Flurry of Blows strike it costs no ki. Still once per turn."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "hand-of-ultimate-mercy",
+    "name": "Hand of Ultimate Mercy",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-mercy"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "5 ki points",
+    "uses": "Once per long rest",
+    "page": 50,
+    "description": [
+      "Bring back a creature dead for no more than 24 hours by touching its corpse. It returns with 4d10 + your Wisdom modifier hit points.",
+      "Any of these conditions it had when it died are gone: blinded, deafened, paralyzed, poisoned, stunned."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "arms-of-the-astral-self",
+    "name": "Arms of the Astral Self",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-astral-self"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 ki point",
+    "page": 50,
+    "description": [
+      "Summon spectral arms for 10 minutes (they vanish if you are incapacitated or die). Creatures of your choice you can see within 10 ft make a Dexterity save (ki save DC) or take force damage: roll your Martial Arts die twice.",
+      "While the arms are out:",
+      "• Use Wisdom instead of Strength for Strength checks and saves.",
+      "• The arms can make your unarmed strikes, with 5 ft extra reach when you strike on your turn.",
+      "• Arm strikes can use Wisdom instead of Strength or Dexterity for attack and damage, and deal force damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "visage-of-the-astral-self",
+    "name": "Visage of the Astral Self",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-astral-self"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "resource": "1 ki point",
+    "page": 50,
+    "description": [
+      "Summon a spectral visage over your face for 10 minutes (it vanishes if you are incapacitated or die). You can fold it into the bonus action that summons your arms.",
+      "• Astral Sight: see normally in darkness, magical or not, out to 120 ft.",
+      "• Wisdom of the Spirit: Wisdom (Insight) and Charisma (Intimidation) checks have advantage.",
+      "• Word of the Spirit: when you speak, either just one creature you can see within 60 ft hears you, or everyone within 600 ft does."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "body-of-the-astral-self",
+    "name": "Body of the Astral Self",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-astral-self"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "You hit a target with your astral arms",
+    "uses": "Once per turn",
+    "page": 51,
+    "description": [
+      "Empowered Arms: deal extra damage, one roll of your Martial Arts die.",
+      "Your spectral body appears for free whenever your arms and visage are both summoned. It also unlocks the Deflect Energy reaction."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "body-of-the-astral-self-deflect-energy",
+    "name": "Body of the Astral Self (Deflect Energy)",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-astral-self"
+    },
+    "level": 11,
+    "cost": "reaction",
+    "trigger": "Your astral body is out and you take damage of one of these types: acid, cold, fire, force, lightning, thunder",
+    "page": 51,
+    "description": [
+      "Reduce that damage by 1d10 + your Wisdom modifier (at least 1)."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "awakened-astral-self",
+    "name": "Awakened Astral Self",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-astral-self"
+    },
+    "level": 17,
+    "cost": "bonus",
+    "resource": "5 ki points",
+    "page": 51,
+    "description": [
+      "Summon arms, visage and body together and awaken them for 10 minutes (it ends early on your incapacitation or death). While awakened:",
+      "• Armor of the Spirit: +2 AC.",
+      "• Astral Barrage: when Extra Attack gives you two attacks, you can make three instead, as long as every one uses the astral arms."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

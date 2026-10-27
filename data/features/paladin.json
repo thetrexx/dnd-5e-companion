@@ -847,5 +847,152 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "peerless-athlete",
+    "name": "Peerless Athlete",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-glory"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "page": 54,
+    "description": [
+      "For 10 minutes: Strength (Athletics) and Dexterity (Acrobatics) checks have advantage, your carrying, pushing, dragging and lifting capacity doubles, and your long and high jumps go 10 ft further (that extra distance still costs movement)."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "inspiring-smite",
+    "name": "Inspiring Smite",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-glory"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "Right after your Divine Smite damages a creature",
+    "resource": "1 Channel Divinity",
+    "page": 54,
+    "description": [
+      "Share out 2d8 + your paladin level temporary hit points among chosen creatures within 30 ft, yourself included if you like, split however you want."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "glorious-defense",
+    "name": "Glorious Defense",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-glory"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An attack roll hits you or a visible creature within 10 ft",
+    "uses": "Charisma modifier (minimum 1) per long rest",
+    "page": 54,
+    "description": [
+      "Raise the target's AC against that attack by your Charisma modifier (minimum +1), possibly turning the hit into a miss.",
+      "If it misses and the attacker is within your weapon's range, this same reaction lets you make one weapon attack at it."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "living-legend",
+    "name": "Living Legend",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-glory"
+    },
+    "level": 20,
+    "cost": "bonus",
+    "uses": "Once per long rest, or spend a 5th-level spell slot",
+    "page": 54,
+    "description": [
+      "For 1 minute:",
+      "• Charisma checks have advantage.",
+      "• Once on each of your turns, a missed weapon attack can hit instead.",
+      "• A failed saving throw can be rerolled with your reaction; keep the new result."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "watchers-will",
+    "name": "Watcher's Will",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-watchers"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "page": 55,
+    "description": [
+      "You and the creatures you pick gain advantage on Intelligence, Wisdom and Charisma saves for 1 minute. Pick up to your Charisma modifier (minimum 1) visible creatures within 30 ft."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "abjure-the-extraplanar",
+    "name": "Abjure the Extraplanar",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-watchers"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "page": 55,
+    "description": [
+      "Present your holy symbol: every creature within 30 ft that can hear you and is an aberration, celestial, elemental, fey or fiend makes a Wisdom save. On a failure it is turned for 1 minute; taking damage ends that early.",
+      "A turned creature uses its turns to get as far from you as possible and won't willingly stop within 30 ft of you. It can only Dash or try to escape an effect that holds it in place; with nowhere to go, it can Dodge."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "vigilant-rebuke",
+    "name": "Vigilant Rebuke",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-watchers"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An Intelligence, Wisdom or Charisma save succeeds for you or for a creature in sight within 30 ft",
+    "page": 55,
+    "description": [
+      "The creature that forced the save takes 2d8 + your Charisma modifier force damage.",
+      "No use limit: it costs only your reaction."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "mortal-bulwark",
+    "name": "Mortal Bulwark",
+    "source": {
+      "kind": "subclass",
+      "id": "oath-of-the-watchers"
+    },
+    "level": 20,
+    "cost": "bonus",
+    "uses": "Once per long rest, or spend a 5th-level spell slot",
+    "page": 55,
+    "description": [
+      "For 1 minute:",
+      "• Truesight out to 120 ft.",
+      "• Advantage on attack rolls against aberrations, celestials, elementals, fey and fiends.",
+      "• Whenever an attack roll of yours hits and damages a creature, you can also call for a Charisma save against your spell save DC. Failure: it is banished to its home plane, if it isn't already there. Success: this feature can't banish it for 24 hours."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

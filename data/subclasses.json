@@ -143,6 +143,24 @@
     "options": []
   },
   {
+    "id": "psi-warrior",
+    "cls": "fighter",
+    "name": "Psi Warrior",
+    "page": 42,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "rune-knight",
+    "cls": "fighter",
+    "name": "Rune Knight",
+    "page": 44,
+    "book": "tce",
+    "options": [
+      "runes"
+    ]
+  },
+  {
     "id": "circle-of-the-land",
     "cls": "druid",
     "name": "Circle of the Land",
@@ -1544,6 +1562,22 @@
     "options": []
   },
   {
+    "id": "way-of-mercy",
+    "cls": "monk",
+    "name": "Way of Mercy",
+    "page": 49,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "way-of-the-astral-self",
+    "cls": "monk",
+    "name": "Way of the Astral Self",
+    "page": 50,
+    "book": "tce",
+    "options": []
+  },
+  {
     "id": "oath-of-devotion",
     "cls": "paladin",
     "name": "Oath of Devotion",
@@ -1917,6 +1951,112 @@
     "options": []
   },
   {
+    "id": "oath-of-glory",
+    "cls": "paladin",
+    "name": "Oath of Glory",
+    "page": 53,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "guiding-bolt",
+          "atLevel": 3
+        },
+        {
+          "spell": "heroism",
+          "atLevel": 3
+        },
+        {
+          "spell": "enhance-ability",
+          "atLevel": 5
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "haste",
+          "atLevel": 9
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 9
+        },
+        {
+          "spell": "compulsion",
+          "atLevel": 13
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 13
+        },
+        {
+          "spell": "commune",
+          "atLevel": 17
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "oath-of-the-watchers",
+    "cls": "paladin",
+    "name": "Oath of the Watchers",
+    "page": 54,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "alarm",
+          "atLevel": 3
+        },
+        {
+          "spell": "detect-magic",
+          "atLevel": 3
+        },
+        {
+          "spell": "moonbeam",
+          "atLevel": 5
+        },
+        {
+          "spell": "see-invisibility",
+          "atLevel": 5
+        },
+        {
+          "spell": "counterspell",
+          "atLevel": 9
+        },
+        {
+          "spell": "nondetection",
+          "atLevel": 9
+        },
+        {
+          "spell": "aura-of-purity",
+          "atLevel": 13
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "hunter",
     "cls": "ranger",
     "name": "Hunter",
@@ -2011,6 +2151,39 @@
     },
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/3/3f/Class_Ranger_Swarmkeeper_Hotbar_Icon.png"
+  },
+  {
+    "id": "fey-wanderer",
+    "cls": "ranger",
+    "name": "Fey Wanderer",
+    "page": 58,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "charm-person",
+          "atLevel": 3
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 9
+        },
+        {
+          "spell": "dimension-door",
+          "atLevel": 13
+        },
+        {
+          "spell": "mislead",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "horizon-walker",

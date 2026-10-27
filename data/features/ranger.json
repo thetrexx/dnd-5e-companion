@@ -1294,5 +1294,119 @@
     "textSource": "summary",
     "book": "tce",
     "optional": true
+  },
+  {
+    "id": "dreadful-strikes",
+    "name": "Dreadful Strikes",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon hits a creature",
+    "uses": "Once per turn per target",
+    "scaling": [
+      {
+        "label": "Psychic damage",
+        "values": [
+          "",
+          "",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6"
+        ]
+      }
+    ],
+    "page": 58,
+    "description": [
+      "Add 1d4 psychic damage. A given creature takes this bonus no more than once per turn.",
+      "Level 11: the extra damage becomes 1d6."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "beguiling-twist",
+    "name": "Beguiling Twist",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "A save against being charmed or frightened succeeds for you or for a creature in sight within 120 ft",
+    "page": 59,
+    "description": [
+      "Choose another creature in sight, no more than 120 ft away: it makes a Wisdom save against your spell save DC. On a failure you make it charmed or frightened (your pick) for 1 minute. It saves again as each of its turns ends; one success frees it.",
+      "Always on: advantage on saves against being charmed or frightened."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "fey-reinforcements",
+    "name": "Fey Reinforcements",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 11,
+    "cost": "action",
+    "uses": "Once per long rest without a spell slot",
+    "spells": [
+      {
+        "spell": "summon-fey",
+        "atLevel": 11,
+        "uses": "Once per long rest without a spell slot"
+      }
+    ],
+    "page": 59,
+    "description": [
+      "Cast summon fey with no material component; once per long rest you can cast it without a spell slot. You always know it, and it doesn't count against your ranger spells known.",
+      "When you begin casting it, you may drop the need for concentration; that casting then lasts 1 minute."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "misty-wanderer",
+    "name": "Misty Wanderer",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 15,
+    "cost": "bonus",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "spells": [
+      {
+        "spell": "misty-step",
+        "atLevel": 15,
+        "uses": "Wisdom modifier (minimum 1) per long rest, no slot"
+      }
+    ],
+    "page": 59,
+    "description": [
+      "Cast misty step without a spell slot.",
+      "Each time you cast misty step, you can take a willing creature within 5 ft that you can see along. It lands in an empty space you pick, no more than 5 ft from where you arrive."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]
