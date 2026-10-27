@@ -1,4 +1,5 @@
-export type BookId = 'phb' | 'xge' | 'tce' | 'scag' | 'dmg' | 'bgg';   // Task 2 moves this to src/data/types.ts
+import type { BookId } from '../../src/data/types.ts';
+export type { BookId };
 
 export const BOOK_DIR = process.env.BOOK_DIR ?? 'C:/Users/trexx/Desktop/T-ReXx/d&d';
 

@@ -1,5 +1,5 @@
 import { DATA } from '../../src/data';
-import { levelLine, damageLine, tags, costBar, componentInfo, diceRange } from '../../src/logic/card';
+import { levelLine, damageLine, tags, costBar, componentInfo, diceRange, bookRef } from '../../src/logic/card';
 import type { Spell } from '../../src/data/types';
 
 const get = (id: string) => DATA.spells.find(s => s.id === id)!;
@@ -64,4 +64,10 @@ test('material cost and consumed copy', () => {
 test('plusMod healing', () => {
   const s = { ...get('fire-bolt'), summary: { resolution: 'none', damage: { dice: '1d8', type: 'Healing', healing: true, plusMod: true } } } as Spell;
   expect(damageLine(s)).toEqual({ headline: '1~8 + Mod Healing', detail: '1d8 + Mod Healing' });
+});
+
+test("book line", () => {
+  expect(bookRef({ page: 241 })).toBe("Full rules: PHB p. 241");
+  expect(bookRef({ book: "xge", page: 50 })).toBe("Full rules: Xanathar's p. 50");
+  expect(bookRef({ book: "bgg", page: 23 })).toBe("Full rules: Giants p. 23");
 });

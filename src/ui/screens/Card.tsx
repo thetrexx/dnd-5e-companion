@@ -1,6 +1,6 @@
 import { DATA } from '../../data';
 import type { ClassId, Cost, Feature, FeatureCost } from '../../data/types';
-import { costBar, damageLine, levelLine, tags } from '../../logic/card';
+import { bookRef, costBar, damageLine, levelLine, tags } from '../../logic/card';
 import { effectiveSub } from '../../logic/subclass';
 import { toHash } from '../../router';
 import { ComponentIcons } from '../ComponentIcons';
@@ -100,7 +100,7 @@ export function Card(p: { kind: 'spell' | 'feature'; id: string; cls: ClassId; l
             {bar?.slot && <span><span style={{ color: 'var(--cost-slot)' }}>■</span> {bar.slot}</span>}
             {feature && <CostItem cost={feature.cost} label={featureLabel} />}
           </div>
-          {(spell ?? feature)!.textSource === 'summary' && <div class="card-ref">Full rules: PHB p. {(spell ?? feature)!.page}</div>}
+          {(spell ?? feature)!.textSource === 'summary' && <div class="card-ref">{bookRef((spell ?? feature)!)}</div>}
         </article>
       </div>
     </div>

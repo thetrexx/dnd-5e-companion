@@ -1,4 +1,4 @@
-import type { Cost, Spell } from '../data/types';
+import type { BookId, Cost, Spell } from '../data/types';
 
 export interface Explainer { title: string; body: string }
 
@@ -64,4 +64,11 @@ export function componentInfo(s: Spell): { v: Explainer | null; s: Explainer | n
     s: c.s ? { title: 'Somatic', body: 'You must make gestures with at least one free hand. Holding a sword and a shield? Stow one first.' } : null,
     m,
   };
+}
+
+export const BOOK_LABEL: Record<BookId, string> = { phb: "PHB", xge: "Xanathar's", tce: "Tasha's", scag: "SCAG", dmg: "DMG", bgg: "Giants" };
+
+/** The closing line of a card; a record with no book is from the PHB. */
+export function bookRef(r: { book?: BookId; page: number }): string {
+  return `Full rules: ${BOOK_LABEL[r.book ?? "phb"]} p. ${r.page}`;
 }

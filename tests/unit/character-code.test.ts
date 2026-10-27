@@ -1,4 +1,5 @@
 // @vitest-environment node
+import { readFileSync } from 'node:fs';
 import { decodeCharacter, encodeCharacter, ERR_DAMAGED, ERR_NOT_CODE } from '../../src/character/code';
 import type { Character } from '../../src/character/types';
 
