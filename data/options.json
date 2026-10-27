@@ -716,5 +716,35 @@
       1,
       1
     ]
+  },
+  {
+    "id": "giants-power",
+    "name": "Giant's Power",
+    "owner": {
+      "kind": "subclass",
+      "id": "path-of-giants"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   }
 ]

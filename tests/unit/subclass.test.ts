@@ -15,3 +15,9 @@ test('subclassesAt lists the class subclasses once the level is reached', () => 
   expect(subclassesAt('wizard', 1)).toEqual([]);
   expect(subclassesAt('warlock', 1).map(s => s.id)).toEqual(['the-archfey', 'the-fiend', 'the-great-old-one', 'the-hexblade']);
 });
+
+test('colliding wild magic ids', () => {
+  expect(effectiveSub('barbarian', 3, 'wild-magic')).toBeUndefined();
+  expect(effectiveSub('sorcerer', 1, 'wild-magic')?.id).toBe('wild-magic');
+  expect(effectiveSub('barbarian', 3, 'path-of-wild-magic')?.id).toBe('path-of-wild-magic');
+});

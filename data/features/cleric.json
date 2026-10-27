@@ -723,5 +723,70 @@
     ],
     "page": 63,
     "textSource": "summary"
+  },
+  {
+    "id": "touch-of-death",
+    "name": "Touch of Death",
+    "source": {
+      "kind": "subclass",
+      "id": "death-domain"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You hit a creature with a melee attack",
+    "resource": "1 Channel Divinity",
+    "description": [
+      "Spend a Channel Divinity use to add necrotic damage to the hit, equal to 5 + twice your cleric level."
+    ],
+    "page": 97,
+    "book": "dmg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/53/Channel_Divinity_Touch_of_Death_Icon.webp"
+  },
+  {
+    "id": "death-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "death-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 necrotic damage to it. The extra damage becomes 2d8 at cleric level 14."
+    ],
+    "page": 97,
+    "book": "dmg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/65/Divine_Strike_Melee_Icon.webp"
   }
 ]

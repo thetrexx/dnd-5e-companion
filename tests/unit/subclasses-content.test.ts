@@ -33,7 +33,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('49 subclasses', () => expect(DATA.subclasses).toHaveLength(49));
+test('58 subclasses', () => expect(DATA.subclasses).toHaveLength(58));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -92,3 +92,6 @@ test('must-have features', () => {
   for (const id of ['hexblades-curse', 'hound-of-ill-omen', 'tempestuous-magic', 'blade-flourish', 'tipsy-sway', 'dread-ambusher', 'arcane-shot', 'mantle-of-inspiration'])
     expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
 });
+
+const OTHER: [string, string][] = [['path-of-wild-magic', 'tce'], ['circle-of-spores', 'tce'], ['circle-of-stars', 'tce'], ['swarmkeeper', 'tce'], ['bladesinging', 'tce'], ['death-domain', 'dmg'], ['oathbreaker', 'dmg'], ['oath-of-the-crown', 'scag'], ['path-of-giants', 'bgg']];
+test('other BG3 subclasses', () => { for (const [id, book] of OTHER) expect(sub(id), id).toMatchObject({ book }); });

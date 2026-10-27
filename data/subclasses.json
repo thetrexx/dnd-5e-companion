@@ -492,6 +492,43 @@
     "hotbarIcon": "https://bg3.wiki/w/images/2/2f/Class_Barbarian_Wildheart_Hotbar_Icon.png"
   },
   {
+    "id": "path-of-wild-magic",
+    "cls": "barbarian",
+    "name": "Path of Wild Magic",
+    "page": 25,
+    "book": "tce",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/6/6b/Class_Barbarian_Wild_Magic_Hotbar_Icon.png"
+  },
+  {
+    "id": "path-of-giants",
+    "cls": "barbarian",
+    "name": "Path of the Giant",
+    "page": 11,
+    "book": "bgg",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "druidcraft",
+          "atLevel": 3,
+          "ability": "wis",
+          "option": "giants-power-druidcraft"
+        },
+        {
+          "spell": "thaumaturgy",
+          "atLevel": 3,
+          "ability": "wis",
+          "option": "giants-power-thaumaturgy"
+        }
+      ]
+    },
+    "options": [
+      "giants-power"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/89/Class_Barbarian_Giant_Hotbar_Icon.png"
+  },
+  {
     "id": "college-of-lore",
     "cls": "bard",
     "name": "College of Lore",
@@ -909,12 +946,143 @@
     "hotbarIcon": "https://bg3.wiki/w/images/a/a8/Class_Cleric_War_Hotbar_Icon.png"
   },
   {
+    "id": "death-domain",
+    "cls": "cleric",
+    "name": "Death Domain",
+    "page": 96,
+    "book": "dmg",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "false-life",
+          "atLevel": 1
+        },
+        {
+          "spell": "ray-of-sickness",
+          "atLevel": 1
+        },
+        {
+          "spell": "blindness-deafness",
+          "atLevel": 3
+        },
+        {
+          "spell": "ray-of-enfeeblement",
+          "atLevel": 3
+        },
+        {
+          "spell": "animate-dead",
+          "atLevel": 5
+        },
+        {
+          "spell": "vampiric-touch",
+          "atLevel": 5
+        },
+        {
+          "spell": "blight",
+          "atLevel": 7
+        },
+        {
+          "spell": "death-ward",
+          "atLevel": 7
+        },
+        {
+          "spell": "antilife-shell",
+          "atLevel": 9
+        },
+        {
+          "spell": "cloudkill",
+          "atLevel": 9
+        },
+        {
+          "choose": {
+            "lists": [
+              "bard",
+              "cleric",
+              "druid",
+              "sorcerer",
+              "warlock",
+              "wizard"
+            ],
+            "level": 0,
+            "count": 1,
+            "schools": [
+              "Necromancy"
+            ]
+          },
+          "atLevel": 1
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/2/25/Class_Cleric_Death_Hotbar_Icon.png"
+  },
+  {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
     "page": 69,
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/f/fb/Class_Druid_Moon_Hotbar_Icon.png"
+  },
+  {
+    "id": "circle-of-spores",
+    "cls": "druid",
+    "name": "Circle of Spores",
+    "page": 36,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "circle",
+      "grants": [
+        {
+          "spell": "chill-touch",
+          "atLevel": 2
+        },
+        {
+          "spell": "blindness-deafness",
+          "atLevel": 3
+        },
+        {
+          "spell": "gentle-repose",
+          "atLevel": 3
+        },
+        {
+          "spell": "animate-dead",
+          "atLevel": 5
+        },
+        {
+          "spell": "gaseous-form",
+          "atLevel": 5
+        },
+        {
+          "spell": "blight",
+          "atLevel": 7
+        },
+        {
+          "spell": "confusion",
+          "atLevel": 7
+        },
+        {
+          "spell": "cloudkill",
+          "atLevel": 9
+        },
+        {
+          "spell": "contagion",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/80/Class_Druid_Spores_Hotbar_Icon.png"
+  },
+  {
+    "id": "circle-of-stars",
+    "cls": "druid",
+    "name": "Circle of Stars",
+    "page": 38,
+    "book": "tce",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/39/Class_Druid_Stars_Hotbar_Icon.png"
   },
   {
     "id": "way-of-the-open-hand",
@@ -1111,6 +1279,114 @@
     "hotbarIcon": "https://bg3.wiki/w/images/8/81/Class_Paladin_Vengeance_Hotbar_Icon.png"
   },
   {
+    "id": "oathbreaker",
+    "cls": "paladin",
+    "name": "Oathbreaker",
+    "page": 97,
+    "book": "dmg",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "hellish-rebuke",
+          "atLevel": 3
+        },
+        {
+          "spell": "inflict-wounds",
+          "atLevel": 3
+        },
+        {
+          "spell": "crown-of-madness",
+          "atLevel": 5
+        },
+        {
+          "spell": "darkness",
+          "atLevel": 5
+        },
+        {
+          "spell": "animate-dead",
+          "atLevel": 9
+        },
+        {
+          "spell": "bestow-curse",
+          "atLevel": 9
+        },
+        {
+          "spell": "blight",
+          "atLevel": 13
+        },
+        {
+          "spell": "confusion",
+          "atLevel": 13
+        },
+        {
+          "spell": "contagion",
+          "atLevel": 17
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/e/eb/Class_Paladin_Oathbreaker_Hotbar_Icon.png"
+  },
+  {
+    "id": "oath-of-the-crown",
+    "cls": "paladin",
+    "name": "Oath of the Crown",
+    "page": 132,
+    "book": "scag",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "command",
+          "atLevel": 3
+        },
+        {
+          "spell": "compelled-duel",
+          "atLevel": 3
+        },
+        {
+          "spell": "warding-bond",
+          "atLevel": 5
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-vitality",
+          "atLevel": 9
+        },
+        {
+          "spell": "spirit-guardians",
+          "atLevel": 9
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "guardian-of-faith",
+          "atLevel": 13
+        },
+        {
+          "spell": "circle-of-power",
+          "atLevel": 17
+        },
+        {
+          "spell": "geas",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/3a/Class_Paladin_Crown_Hotbar_Icon.png"
+  },
+  {
     "id": "hunter",
     "cls": "ranger",
     "name": "Hunter",
@@ -1164,6 +1440,44 @@
     },
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/d/df/Class_Ranger_Gloom_Stalker_Hotbar_Icon.png"
+  },
+  {
+    "id": "swarmkeeper",
+    "cls": "ranger",
+    "name": "Swarmkeeper",
+    "page": 59,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "mage-hand",
+          "atLevel": 3
+        },
+        {
+          "spell": "faerie-fire",
+          "atLevel": 3
+        },
+        {
+          "spell": "web",
+          "atLevel": 5
+        },
+        {
+          "spell": "gaseous-form",
+          "atLevel": 9
+        },
+        {
+          "spell": "arcane-eye",
+          "atLevel": 13
+        },
+        {
+          "spell": "insect-plague",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/3f/Class_Ranger_Swarmkeeper_Hotbar_Icon.png"
   },
   {
     "id": "thief",
@@ -1584,5 +1898,14 @@
     "page": 119,
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/2/25/Class_Wizard_Transmutation_Hotbar_Icon.png"
+  },
+  {
+    "id": "bladesinging",
+    "cls": "wizard",
+    "name": "Bladesinging",
+    "page": 76,
+    "book": "tce",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/9/91/Class_Wizard_Bladesinging_Hotbar_Icon.png"
   }
 ]

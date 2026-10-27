@@ -102,3 +102,10 @@ test('listSpells: subclass caster list matches its spell sections', () => {
   expect(listSpells(cls('fighter'), ek).filter(s => s.level <= 4).map(s => s.id).sort()).toEqual([...new Set(fromSections)].sort());
   expect(listSpells(cls('wizard')).map(s => s.id)).toContain('fireball');
 });
+
+test('swarmkeeper spells tagged with the subclass name', () => {
+  const s = spellSections('ranger', 3, 'swarmkeeper').find(x => x.id === 'lvl-1')!;
+  expect(s.tags!['faerie-fire']).toBe('Swarmkeeper');
+});
+test('star map guiding bolt shows its limit', () =>
+  expect(spellSections('druid', 2, 'circle-of-stars').find(x => x.id === 'lvl-1')!.tags!['guiding-bolt']).toMatch(/^Star Map · /));
