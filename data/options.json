@@ -899,5 +899,222 @@
       1,
       1
     ]
+  },
+  {
+    "id": "optional-bard",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-cleric",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "cleric"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-druid",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "druid"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-paladin",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-sorcerer",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-warlock",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "warlock"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-wizard",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
   }
 ]

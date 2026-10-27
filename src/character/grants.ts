@@ -2,6 +2,7 @@ import { DATA } from '../data';
 import type { ClassId, EditStep, Feature, Spell, SpellGrant } from '../data/types';
 import { bonusLabel } from '../logic/bonus';
 import { featureLevel, raceChain, totalLevel } from './derive';
+import { replaced } from './options';
 import type { CharClass, Character } from './types';
 
 export interface GrantSource {
@@ -45,9 +46,12 @@ export function grantSources(ch: Character): GrantSource[] {
   }
   const feature = (f: Feature, step: EditStep) =>
     f.spells && add({ key: `feature:${f.id}`, title: f.name, cls: owningClass(ch, f), level: featureLevel(ch, f), step }, f.spells);
+  // a pick in a slot hidden by a replacement (Favored Foe hides Favored Enemy) grants nothing while hidden
+  const gone = replaced(ch);
+  const hidden = (pool: string) => DATA.optionGroups.some(g => gone.has(g.id) && (g.from ?? g.id) === pool);
   for (const id of ch.options) {
     const f = DATA.features.find(x => x.id === id);
-    if (f?.source.kind === 'option') feature(f, 'options');
+    if (f?.source.kind === 'option' && !gone.has(f.id) && !hidden(f.source.id)) feature(f, 'options');
   }
   const subs = ch.classes.flatMap(c => ownedSub(c) ?? []);
   for (const f of DATA.features) {

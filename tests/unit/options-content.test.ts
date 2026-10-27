@@ -49,9 +49,9 @@ test('costs and grants', () => {
 test('class and subclass hooks', () => {
   const c = (id: string) => DATA.classes.find(x => x.id === id)!.options;
   const s = (id: string) => DATA.subclasses.find(x => x.id === id)!.options;
-  expect(c('warlock')).toEqual(['eldritch-invocations', 'pact-boon']);
-  expect(c('sorcerer')).toEqual(['metamagic']);
-  expect(c('paladin')).toEqual(['fighting-style-paladin']);
+  expect(c('warlock')).toEqual(['eldritch-invocations', 'pact-boon', 'optional-warlock']);
+  expect(c('sorcerer')).toEqual(['metamagic', 'optional-sorcerer']);
+  expect(c('paladin')).toEqual(['fighting-style-paladin', 'optional-paladin']);
   expect(c('ranger')).toEqual(expect.arrayContaining(['fighting-style-ranger', 'favored-enemy', 'natural-explorer']));
   expect(s('battle-master')).toEqual(['maneuvers']);
   expect(s('way-of-the-four-elements')).toEqual(['elemental-disciplines']);
@@ -107,7 +107,7 @@ test('ranger optional features', () => {
   const f = (id: string) => DATA.features.find(x => x.id === id)!;
   expect(g('optional-ranger')).toMatchObject({ owner: { kind: 'class', id: 'ranger' }, optional: true });
   expect(g('optional-beast-master')).toMatchObject({ owner: { kind: 'subclass', id: 'beast-master' }, optional: true });
-  expect(opts('optional-ranger').map(x => x.id).sort()).toEqual(['optional-ranger-deft-explorer', 'optional-ranger-favored-foe', 'optional-ranger-natures-veil', 'optional-ranger-primal-awareness']);
+  expect(opts('optional-ranger').map(x => x.id).sort()).toEqual(['optional-ranger-additional-spells', 'optional-ranger-deft-explorer', 'optional-ranger-favored-foe', 'optional-ranger-natures-veil', 'optional-ranger-primal-awareness']);
   expect(f('optional-ranger-favored-foe')).toMatchObject({ level: 1, cost: 'free', replaces: ['favored-enemy'], book: 'tce', page: 56, optional: true });
   expect(f('optional-ranger-favored-foe').scaling![0].values.filter((v, i) => [0, 5, 13].includes(i))).toEqual(['1d4', '1d6', '1d8']);
   expect(f('optional-ranger-deft-explorer')).toMatchObject({ level: 1, cost: 'passive', replaces: ['natural-explorer'] });

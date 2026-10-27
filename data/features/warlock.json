@@ -1476,5 +1476,27 @@
     "page": 55,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-warlock-additional-spells",
+    "name": "Additional Warlock Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-warlock"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "cost": "passive",
+    "expandsList": "warlock",
+    "description": [
+      "Adds Tasha's extra spells to the Warlock list, so you can learn them as warlock spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 70,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

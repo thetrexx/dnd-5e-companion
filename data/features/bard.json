@@ -449,5 +449,27 @@
     ],
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-bard-additional-spells",
+    "name": "Additional Bard Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-bard"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "cost": "passive",
+    "expandsList": "bard",
+    "description": [
+      "Adds Tasha's extra spells to the Bard list, so you can learn them as bard spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 27,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

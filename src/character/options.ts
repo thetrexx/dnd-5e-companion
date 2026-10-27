@@ -37,6 +37,15 @@ export function optionSlots(ch: Character): OptionSlot[] {
   return out.filter(s => !gone.has(s.group.id));
 }
 
+/**
+ * True when an option expanding this class's list (Additional Cleric Spells) is ticked in a slot the
+ * character has: the class reaches its level and nothing replaced the slot.
+ */
+export function hasExpandedList(ch: Character, cls: ClassId): boolean {
+  return optionSlots(ch).some(s => s.cls === cls
+    && s.chosen.some(id => s.choices.find(f => f.id === id)?.expandsList === cls));
+}
+
 /** Feature and option group ids hidden by the chosen options (Favored Foe hides Favored Enemy). */
 export function replaced(ch: Character): Set<string> {
   return new Set(ch.options.flatMap(id => DATA.features.find(f => f.id === id)?.replaces ?? []));

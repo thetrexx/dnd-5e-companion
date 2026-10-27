@@ -1,6 +1,6 @@
 import { DATA } from '../data';
 import type { Ability, ClassId, Feature, RaceDef, Spell } from '../data/types';
-import { ceilingOf, extraListTag, listSpells, maxSpellLevel } from '../logic/rules';
+import { ceilingOf, listSpells, listTag, maxSpellLevel } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { CharClass, Character } from './types';
 
@@ -61,13 +61,14 @@ export function pickCounts(ch: Character, cls: ClassId): { cantrips: number; spe
 
 export interface Pickable { spell: Spell; tag?: string }
 
-export function pickableSpells(cc: CharClass): Pickable[] {
+/** `expanded`: the class's Tasha's expanded list is ticked (`hasExpandedList`); its spells are tagged Optional. */
+export function pickableSpells(cc: CharClass, expanded = false): Pickable[] {
   const c = DATA.classes.find(x => x.id === cc.cls);
   const info = castingInfo(cc);
   if (!c || !info) return [];
   const sub = effectiveSub(cc.cls, cc.level, cc.sub);
   const out = new Map<string, Pickable>();
-  for (const spell of listSpells(c, sub)) out.set(spell.id, { spell, tag: extraListTag(c, sub, spell) });
+  for (const spell of listSpells(c, sub, expanded)) out.set(spell.id, { spell, tag: listTag(c, sub, spell) });
   if (c.caster === 'none') for (const spell of DATA.spells) if (spell.classes.includes(info.list) && !out.has(spell.id)) out.set(spell.id, { spell, tag: 'Any school' });
   if (sub?.bonusSpells?.kind === 'patron') {
     for (const g of sub.bonusSpells.grants) {

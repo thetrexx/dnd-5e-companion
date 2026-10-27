@@ -4,13 +4,13 @@ import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
 import { genericSections, joinTag, tagOptional } from '../logic/sections';
 import type { Section } from '../logic/sections';
-import { extraListTag, listSpells } from '../logic/rules';
+import { extraListTag, listSpells, listTag } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
 import { castingInfo, raceChain } from './derive';
 import { autoSpells, grantSources, unlockText } from './grants';
 import type { GrantSource } from './grants';
-import { optionSlots, replaced } from './options';
+import { hasExpandedList, optionSlots, replaced } from './options';
 import type { OptionSlot } from './options';
 import type { CharClass, Character } from './types';
 
@@ -32,7 +32,7 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
   if (!c || !info) return undefined;
   const sub = effectiveSub(cc.cls, cc.level, cc.sub);
   const table = c.caster === 'none' ? sub?.casting?.maxSpellLevel : c.maxSpellLevel;
-  const list = listSpells(c, sub);
+  const list = listSpells(c, sub, hasExpandedList(ch, cc.cls));
   const patron = sub?.bonusSpells?.kind === 'patron'
     ? sub.bonusSpells.grants.flatMap(g => DATA.spells.find(s => s.id === g.spell) ?? []) : [];
   const entries: Entry[] = [];
@@ -40,16 +40,19 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
     if (!spell) continue;
     const extra = extraListTag(c, sub, spell);
+    // a pick from the expanded list keeps its Optional tag, ticked or not
+    const optional = !extra && listTag(c, sub, spell);
     const arcanum = cc.cls === 'warlock' && spell.level >= 6;
-    const tag = arcanum ? 'Mystic Arcanum'
+    const tag = arcanum ? joinTag('Mystic Arcanum', optional || undefined)
       : extra ? extra
       : p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
+      : optional ? optional
       : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school' : undefined;
-    entries.push({ spell, tag, listTag: !arcanum && !!extra, mine: true, locked: false, atLevel: 1 });
+    entries.push({ spell, tag, listTag: !arcanum && !p.extra && !!(extra || optional), mine: true, locked: false, atLevel: 1 });
   }
   if (view === 'all') {
     // the whole list up to the ceiling, so levels not reached yet show dimmed
-    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, tag: extraListTag(c, sub, spell), listTag: true, mine: false, locked: false, atLevel: 1 });
+    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, tag: listTag(c, sub, spell), listTag: true, mine: false, locked: false, atLevel: 1 });
     for (const spell of patron) if (spell.level <= info.ceiling) entries.push({ spell, tag: 'Patron', mine: false, locked: false, atLevel: 1 });
   }
   return {

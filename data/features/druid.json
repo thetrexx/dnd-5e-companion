@@ -754,5 +754,27 @@
     ],
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-druid-additional-spells",
+    "name": "Additional Druid Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-druid"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "cost": "passive",
+    "expandsList": "druid",
+    "description": [
+      "Adds Tasha's extra spells to the Druid list, so you can prepare them as druid spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 35,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

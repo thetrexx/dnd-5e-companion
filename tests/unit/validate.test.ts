@@ -107,3 +107,13 @@ test('optional features', () => {
   ok.features.find(f => f.id === 'optional-ranger-deft-explorer')!.expandsList = 'druid';
   expect(validateDataset(ok).join('\n')).toContain('expandsList');
 });
+test('optionalLists: known classes, none already on the base list', () => {
+  const bad = structuredClone(DATA);
+  bad.spells.find(s => s.id === 'aura-of-vitality')!.optionalLists = ['paladin'];
+  bad.spells.find(s => s.id === 'sunbeam')!.optionalLists = ['necromancer' as any];
+  bad.spells.find(s => s.id === 'sunburst')!.optionalLists = [];
+  const errs = validateDataset(bad).join('\n');
+  expect(errs).toContain('"aura-of-vitality": optionalLists repeats base class "paladin"');
+  expect(errs).toContain('necromancer');
+  expect(errs).toContain('"sunburst": optionalLists must be a non-empty array');
+});

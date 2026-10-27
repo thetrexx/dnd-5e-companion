@@ -183,6 +183,10 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "bard",
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -536,6 +540,9 @@
       "resolution": "save",
       "save": "wis"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -788,6 +795,10 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "druid",
+      "wizard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -827,6 +838,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "cleric"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -857,6 +871,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "cleric"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -891,6 +908,10 @@
         "healing": true
       }
     },
+    "optionalLists": [
+      "cleric",
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -1246,6 +1267,9 @@
       },
       "upcast": "+2d8 per slot level above 5"
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -2454,6 +2478,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -2492,6 +2519,9 @@
       "resolution": "save",
       "save": "wis"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -2697,6 +2727,9 @@
       },
       "upcast": "+1d8 per slot level above 5"
     },
+    "optionalLists": [
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -2883,6 +2916,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -4115,6 +4151,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": false,
       "s": true
@@ -4549,6 +4588,10 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "druid",
+      "wizard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -4654,6 +4697,9 @@
       "resolution": "save",
       "save": "wis"
     },
+    "optionalLists": [
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -5231,6 +5277,10 @@
       },
       "upcast": "slots 5-6: +2 bonus and 2d4; slots 7+: +3 bonus and 3d4"
     },
+    "optionalLists": [
+      "druid",
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -5341,6 +5391,10 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "ranger",
+      "wizard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -5382,6 +5436,10 @@
       "resolution": "save",
       "save": "con"
     },
+    "optionalLists": [
+      "bard",
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -5457,6 +5515,9 @@
       "resolution": "save",
       "save": "str"
     },
+    "optionalLists": [
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -6245,6 +6306,10 @@
         "type": "Fire or Cold"
       }
     },
+    "optionalLists": [
+      "druid",
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -6405,6 +6470,9 @@
         "type": "Fire"
       }
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -6489,6 +6557,9 @@
       "upcast": "+1d6 per slot level above 2",
       "save": "dex"
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -6527,6 +6598,10 @@
       "resolution": "save",
       "save": "con"
     },
+    "optionalLists": [
+      "druid",
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -6905,6 +6980,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "warlock"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -6981,6 +7059,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "paladin"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -7224,6 +7305,9 @@
       "resolution": "save",
       "save": "dex"
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -7293,6 +7377,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -7582,6 +7669,9 @@
       "resolution": "save",
       "save": "str"
     },
+    "optionalLists": [
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -7995,6 +8085,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -8646,6 +8739,9 @@
         "type": "Fire"
       }
     },
+    "optionalLists": [
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -10046,6 +10142,10 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "ranger",
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -10192,6 +10292,9 @@
       },
       "upcast": "+1d4 per slot level above 3"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -10375,6 +10478,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -10855,6 +10961,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -10888,6 +10997,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "warlock"
+    ],
     "components": {
       "v": false,
       "s": true
@@ -11375,6 +11487,9 @@
       },
       "upcast": "+1d6 per slot level above 6"
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -11600,6 +11715,9 @@
       },
       "upcast": "+1d10 per slot level above 4"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -11699,6 +11817,9 @@
       "resolution": "save",
       "save": "cha"
     },
+    "optionalLists": [
+      "warlock"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -11890,6 +12011,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "cleric"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -12026,6 +12150,9 @@
       },
       "upcast": "+1d8 per slot level above 2"
     },
+    "optionalLists": [
+      "paladin"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -12169,6 +12296,9 @@
         "type": "(type by ray)"
       }
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -12207,6 +12337,9 @@
       "resolution": "save",
       "save": "dex"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -12391,6 +12524,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -12603,6 +12739,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -12965,6 +13104,10 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "druid",
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -13226,6 +13369,9 @@
       },
       "upcast": "+1d6 per slot level above 1"
     },
+    "optionalLists": [
+      "ranger"
+    ],
     "components": {
       "v": true,
       "s": false
@@ -14024,6 +14170,9 @@
       "resolution": "save",
       "save": "wis"
     },
+    "optionalLists": [
+      "bard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -14249,6 +14398,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "wizard"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -15260,6 +15412,9 @@
         "type": "Radiant"
       }
     },
+    "optionalLists": [
+      "cleric"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -15303,6 +15458,9 @@
         "type": "Radiant"
       }
     },
+    "optionalLists": [
+      "cleric"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -15412,6 +15570,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "druid"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -15760,6 +15921,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "warlock"
+    ],
     "components": {
       "v": true,
       "s": false,
@@ -16653,6 +16817,9 @@
       },
       "upcast": "+1d6 per slot level above 3"
     },
+    "optionalLists": [
+      "sorcerer"
+    ],
     "components": {
       "v": true,
       "s": true
@@ -17087,6 +17254,9 @@
     "summary": {
       "resolution": "none"
     },
+    "optionalLists": [
+      "paladin"
+    ],
     "components": {
       "v": true,
       "s": true,
@@ -17318,6 +17488,9 @@
         "type": "Psychic"
       }
     },
+    "optionalLists": [
+      "warlock"
+    ],
     "components": {
       "v": true,
       "s": true

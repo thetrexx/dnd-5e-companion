@@ -1118,6 +1118,28 @@
     "optional": true
   },
   {
+    "id": "optional-ranger-additional-spells",
+    "name": "Additional Ranger Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-ranger"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "passive",
+    "expandsList": "ranger",
+    "description": [
+      "Adds Tasha's extra spells to the Ranger list, so you can learn them as ranger spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 57,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
     "id": "optional-ranger-primal-awareness",
     "source": {
       "kind": "option",

@@ -1,4 +1,6 @@
 import { charActionSections, charMenuRows, charSpellSections } from '../../src/character/view';
+import { pickableSpells } from '../../src/character/derive';
+import { hasExpandedList } from '../../src/character/options';
 import { emptyCharacter } from '../../src/character/types';
 import type { CharClass, Character } from '../../src/character/types';
 
@@ -148,4 +150,26 @@ test('primal awareness spells come with the tick', () => {
   const names = (c: Character) => charSpellSections(c, 'mine').flatMap(s => s.items.map(i => i.id));
   expect(names(ranger(5))).not.toContain('beast-sense');
   expect(names(ranger(5, ['optional-ranger-primal-awareness']))).toEqual(expect.arrayContaining(['speak-with-animals', 'beast-sense']));
+});
+test('character needs the tick', () => {
+  const cc = { cls: 'cleric', level: 5 } as CharClass;
+  expect(pickableSpells(cc).map(p => p.spell.id)).not.toContain('aura-of-vitality');
+  expect(pickableSpells(cc, true).find(p => p.spell.id === 'aura-of-vitality')!.tag).toBe('Optional');
+});
+test('hasExpandedList follows the tick and its level', () => {
+  expect(hasExpandedList(ch([{ cls: 'cleric', level: 5 }]), 'cleric')).toBe(false);
+  expect(hasExpandedList(ch([{ cls: 'cleric', level: 5 }], { options: ['optional-cleric-additional-spells'] }), 'cleric')).toBe(true);
+  expect(hasExpandedList(ch([{ cls: 'paladin', level: 1 }], { options: ['optional-paladin-additional-spells'] }), 'paladin')).toBe(false);
+});
+test('picked expanded spell keeps its tag after unticking', () => {
+  const c = { ...emptyCharacter(), classes: [{ cls: 'cleric', level: 5 }], spells: [{ id: 'aura-of-vitality', cls: 'cleric' }] } as Character;
+  const l3 = charSpellSections(c, 'mine').find(s => s.id === 'lvl-3-cleric')!;
+  expect(l3.tags!['aura-of-vitality']).toBe('Optional');
+});
+test('all view adds the expanded list only with the tick', () => {
+  const ids = (c: Character) => charSpellSections(c, 'all').flatMap(s => s.items.map(i => i.id));
+  expect(ids(ch([{ cls: 'cleric', level: 5 }]))).not.toContain('aura-of-vitality');
+  const ticked = ch([{ cls: 'cleric', level: 5 }], { options: ['optional-cleric-additional-spells'] });
+  expect(ids(ticked)).toContain('aura-of-vitality');
+  expect(charSpellSections(ticked, 'all').find(s => s.id === 'lvl-3-cleric')!.tags!['aura-of-vitality']).toBe('Optional');
 });

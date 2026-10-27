@@ -228,3 +228,15 @@ test('options step: a maneuver taken by a battle master slot reads Chosen for it
   const r = render(<Editor step="options" />);
   expect(r.getAllByText('Chosen for Fighter').length).toBeGreaterThan(0);
 });
+test('spells step: a cleric 5 is offered Aura of Vitality only after ticking Additional Cleric Spells', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 5 }] });
+  const before = render(<Editor step="spells" />);
+  expect(before.queryByText('Aura of Vitality')).toBeNull();
+  cleanup();
+  const opts = render(<Editor step="options" />);
+  fireEvent.click(opts.getByText('Additional Cleric Spells'));
+  expect(loadCharacter()!.options).toEqual(['optional-cleric-additional-spells']);
+  cleanup();
+  const after = render(<Editor step="spells" />);
+  expect(after.getByText('Aura of Vitality')).toBeTruthy();
+});

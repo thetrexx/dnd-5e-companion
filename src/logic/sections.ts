@@ -1,7 +1,7 @@
 import { DATA, poolOptions } from '../data';
 import type { ClassId, Feature, Spell } from '../data/types';
 import { bonusLabel } from './bonus';
-import { ceilingOf, extraListTag, listSpells, maxSpellLevel } from './rules';
+import { ceilingOf, listSpells, listTag, maxSpellLevel } from './rules';
 import { effectiveSub } from './subclass';
 
 export interface Section {
@@ -23,7 +23,8 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   const c = DATA.classes.find(x => x.id === cls)!;
   const s = effectiveSub(cls, level, sub);
   const cast = c.caster === 'none' ? s?.casting : undefined;
-  const mine = listSpells(c, s);
+  // no character: the expanded list is shown, its spells tagged Optional
+  const mine = listSpells(c, s, true);
   const maxTable = cast ? cast.maxSpellLevel : c.maxSpellLevel;
   const subtitle = cast ? s!.name : c.name;
   const motif: ClassId = cast ? cast.list : cls;
@@ -36,7 +37,7 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   };
   mine.forEach(put);
   for (const sp of mine) {
-    const t = extraListTag(c, s, sp);
+    const t = listTag(c, s, sp);
     if (!t) continue;
     const tags = tagsByLevel.get(sp.level) ?? {};
     tags[sp.id] = t;
@@ -62,12 +63,16 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   if (c.caster !== 'none' || cast) {
     // fixed spells of the class's and subclass's features, like bonus spells, whatever the level
     const owned = DATA.features.filter(f => f.spells && ((f.source.kind === 'class' && f.source.id === cls) || (f.source.kind === 'subclass' && f.source.id === s?.id)));
-    for (const f of owned) {
+    // and of the options in the class's and subclass's optional groups (Primal Awareness), tagged Optional
+    const optionalGroups = DATA.optionGroups.filter(og => og.optional
+      && ((og.owner.kind === 'class' && og.owner.id === cls) || (og.owner.kind === 'subclass' && og.owner.id === s?.id)));
+    const optional = new Set(optionalGroups.flatMap(og => poolOptions(og.from ?? og.id)).filter(f => f.spells));
+    for (const f of [...owned, ...optional]) {
       for (const g of f.spells!) {
         const sp = g.spell && !g.option ? DATA.spells.find(x => x.id === g.spell) : undefined;
         if (!sp) continue;
         const tags = tagsByLevel.get(sp.level) ?? {};
-        tags[sp.id] ??= joinTag(f.name, g.uses)!;
+        tags[sp.id] ??= joinTag(optional.has(f) ? 'Optional' : undefined, f.name, g.uses)!;
         tagsByLevel.set(sp.level, tags);
         put(sp);
       }

@@ -110,6 +110,13 @@ export function validateDataset(d: Dataset): string[] {
     if (!Array.isArray(s.description) || s.description.length === 0 || s.description.some(blank)) errs.push(`${at}: description must be non-empty paragraphs`);
     if (!Array.isArray(s.classes)) errs.push(`${at}: classes must be an array`);
     else for (const c of s.classes) if (!CLASS_IDS.includes(c)) errs.push(`${at}: classes has unknown class "${c}"`);
+    if (s.optionalLists !== undefined) {
+      if (!Array.isArray(s.optionalLists) || s.optionalLists.length === 0) errs.push(`${at}: optionalLists must be a non-empty array when present`);
+      else for (const c of s.optionalLists) {
+        if (!CLASS_IDS.includes(c)) errs.push(`${at}: optionalLists has unknown class "${c}"`);
+        else if (s.classes?.includes(c)) errs.push(`${at}: optionalLists repeats base class "${c}"`);
+      }
+    }
     if (!isInt(s.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     checkBook(at, s.book, errs);
     if (s.summary) {

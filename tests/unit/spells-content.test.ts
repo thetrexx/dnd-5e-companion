@@ -96,3 +96,11 @@ test('tasha lists', () => {
   expect(DATA.spells.find(s => s.id === 'summon-beast')!.classes.sort()).toEqual(['druid', 'ranger']);
   expect(DATA.spells.find(s => s.id === 'spirit-shroud')!.classes.sort()).toEqual(['cleric', 'paladin', 'warlock', 'wizard']);
 });
+test('expanded list is optional data', () => {
+  const s = DATA.spells.find(x => x.id === 'aura-of-vitality')!;
+  expect(s.optionalLists).toEqual(expect.arrayContaining(['cleric', 'druid']));
+  expect(s.classes).not.toContain('cleric');
+  // a class already on the base list is never repeated in optionalLists
+  expect(DATA.spells.every(sp => !(sp.optionalLists ?? []).some(c => sp.classes.includes(c)))).toBe(true);
+  expect(DATA.spells.find(x => x.id === 'spirit-shroud')!.optionalLists).toBeUndefined();
+});

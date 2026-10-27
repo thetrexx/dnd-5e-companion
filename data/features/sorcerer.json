@@ -687,5 +687,27 @@
     "page": 50,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-sorcerer-additional-spells",
+    "name": "Additional Sorcerer Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-sorcerer"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "cost": "passive",
+    "expandsList": "sorcerer",
+    "description": [
+      "Adds Tasha's extra spells to the Sorcerer list, so you can learn them as sorcerer spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 65,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

@@ -10,6 +10,8 @@ export interface Spell {
   range: string; duration: string; concentration: boolean; ritual: boolean;
   components: { v: boolean; s: boolean; m?: { text: string; costGp?: number; consumed: boolean } };
   description: string[]; higherLevels?: string; classes: ClassId[]; page: number; book?: BookId;
+  /** Tasha's expanded lists ("Additional <Class> Spells") of classes not already in `classes` */
+  optionalLists?: ClassId[];
   icon?: string; textSource: TextSource;
   summary?: { damage?: { dice: string; count?: number; unit?: string; type: string; healing?: boolean; plusMod?: boolean }; resolution: 'attack'|'save'|'auto'|'none'; save?: Ability; upcast?: string };
 }

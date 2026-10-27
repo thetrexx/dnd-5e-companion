@@ -750,5 +750,27 @@
     "page": 39,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-paladin-additional-spells",
+    "name": "Additional Paladin Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-paladin"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "passive",
+    "expandsList": "paladin",
+    "description": [
+      "Adds Tasha's extra spells to the Paladin list, so you can prepare them as paladin spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 52,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
   }
 ]

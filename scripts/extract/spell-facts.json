@@ -164,7 +164,11 @@
   "page": 211,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "bard",
+   "ranger"
+  ]
  },
  {
   "id": "alarm",
@@ -445,7 +449,10 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "arcane-eye",
@@ -649,7 +656,11 @@
   "page": 215,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "druid",
+   "wizard"
+  ]
  },
  {
   "id": "aura-of-life",
@@ -674,7 +685,10 @@
   "page": 216,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "cleric"
+  ]
  },
  {
   "id": "aura-of-purity",
@@ -699,7 +713,10 @@
   "page": 216,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "cleric"
+  ]
  },
  {
   "id": "aura-of-vitality",
@@ -729,7 +746,11 @@
     "type": "Healing",
     "healing": true
    }
-  }
+  },
+  "optionalLists": [
+   "cleric",
+   "druid"
+  ]
  },
  {
   "id": "awaken",
@@ -1022,7 +1043,10 @@
     "type": "Force"
    },
    "upcast": "+2d8 per slot level above 5"
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "blade-barrier",
@@ -2011,7 +2035,10 @@
   "page": 222,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "command",
@@ -2038,7 +2065,10 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "commune",
@@ -2210,7 +2240,10 @@
     "type": "Cold"
    },
    "upcast": "+1d8 per slot level above 5"
-  }
+  },
+  "optionalLists": [
+   "druid"
+  ]
  },
  {
   "id": "confusion",
@@ -2355,7 +2388,10 @@
   "page": 227,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "druid"
+  ]
  },
  {
   "id": "control-flames",
@@ -3345,7 +3381,10 @@
   "page": 231,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "destructive-wave",
@@ -3704,7 +3743,11 @@
   "page": 234,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "druid",
+   "wizard"
+  ]
  },
  {
   "id": "divine-favor",
@@ -3786,7 +3829,10 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
-  }
+  },
+  "optionalLists": [
+   "ranger"
+  ]
  },
  {
   "id": "dominate-monster",
@@ -4256,7 +4302,11 @@
     "type": "Varies"
    },
    "upcast": "slots 5-6: +2 bonus and 2d4; slots 7+: +3 bonus and 3d4"
-  }
+  },
+  "optionalLists": [
+   "druid",
+   "ranger"
+  ]
  },
  {
   "id": "enemies-abound",
@@ -4351,7 +4401,11 @@
   "page": 237,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "ranger",
+   "wizard"
+  ]
  },
  {
   "id": "enlarge-reduce",
@@ -4381,7 +4435,11 @@
   "summary": {
    "resolution": "save",
    "save": "con"
-  }
+  },
+  "optionalLists": [
+   "bard",
+   "druid"
+  ]
  },
  {
   "id": "ensnaring-strike",
@@ -4438,7 +4496,10 @@
   "summary": {
    "resolution": "save",
    "save": "str"
-  }
+  },
+  "optionalLists": [
+   "ranger"
+  ]
  },
  {
   "id": "enthrall",
@@ -5093,7 +5154,11 @@
     "dice": "2d8",
     "type": "Fire or Cold"
    }
-  }
+  },
+  "optionalLists": [
+   "druid",
+   "sorcerer"
+  ]
  },
  {
   "id": "fire-storm",
@@ -5227,7 +5292,10 @@
     "dice": "3d6",
     "type": "Fire"
    }
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "flame-strike",
@@ -5296,7 +5364,10 @@
    },
    "upcast": "+1d6 per slot level above 2",
    "save": "dex"
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "flesh-to-stone",
@@ -5326,7 +5397,11 @@
   "summary": {
    "resolution": "save",
    "save": "con"
-  }
+  },
+  "optionalLists": [
+   "druid",
+   "sorcerer"
+  ]
  },
  {
   "id": "fly",
@@ -5638,7 +5713,10 @@
   "page": 244,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "warlock"
+  ]
  },
  {
   "id": "geas",
@@ -5701,7 +5779,10 @@
   "page": 245,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "paladin"
+  ]
  },
  {
   "id": "giant-insect",
@@ -5897,7 +5978,10 @@
   "summary": {
    "resolution": "save",
    "save": "dex"
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "greater-invisibility",
@@ -5955,7 +6039,10 @@
   "page": 246,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "ranger"
+  ]
  },
  {
   "id": "green-flame-blade",
@@ -6188,7 +6275,10 @@
   "summary": {
    "resolution": "save",
    "save": "str"
-  }
+  },
+  "optionalLists": [
+   "ranger"
+  ]
  },
  {
   "id": "hail-of-thorns",
@@ -6529,7 +6619,10 @@
   "page": 250,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "heroism",
@@ -7055,7 +7148,10 @@
     "dice": "10d8",
     "type": "Fire"
    }
-  }
+  },
+  "optionalLists": [
+   "druid"
+  ]
  },
  {
   "id": "infernal-calling",
@@ -8221,7 +8317,11 @@
   "page": 257,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "ranger",
+   "sorcerer"
+  ]
  },
  {
   "id": "major-image",
@@ -8343,7 +8443,10 @@
     "plusMod": true
    },
    "upcast": "+1d4 per slot level above 3"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "mass-polymorph",
@@ -8493,7 +8596,10 @@
   "page": 259,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "ranger"
+  ]
  },
  {
   "id": "melfs-acid-arrow",
@@ -8893,7 +8999,10 @@
   "page": 260,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "mislead",
@@ -8919,7 +9028,10 @@
   "page": 260,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "warlock"
+  ]
  },
  {
   "id": "misty-step",
@@ -9318,7 +9430,10 @@
     "type": "Cold"
    },
    "upcast": "+1d6 per slot level above 6"
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "otilukes-resilient-sphere",
@@ -9496,7 +9611,10 @@
     "type": "Psychic"
    },
    "upcast": "+1d10 per slot level above 4"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "phantom-steed",
@@ -9579,7 +9697,10 @@
   "summary": {
    "resolution": "save",
    "save": "cha"
-  }
+  },
+  "optionalLists": [
+   "warlock"
+  ]
  },
  {
   "id": "plane-shift",
@@ -9731,7 +9852,10 @@
   "page": 266,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "cleric"
+  ]
  },
  {
   "id": "power-word-kill",
@@ -9849,7 +9973,10 @@
     "plusMod": true
    },
    "upcast": "+1d8 per slot level above 2"
-  }
+  },
+  "optionalLists": [
+   "paladin"
+  ]
  },
  {
   "id": "prestidigitation",
@@ -9965,7 +10092,10 @@
     "dice": "10d6",
     "type": "(type by ray)"
    }
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "prismatic-wall",
@@ -9991,7 +10121,10 @@
   "summary": {
    "resolution": "save",
    "save": "dex"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "produce-flame",
@@ -10142,7 +10275,10 @@
   "page": 270,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "druid"
+  ]
  },
  {
   "id": "protection-from-poison",
@@ -10319,7 +10455,10 @@
   "page": 270,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "ray-of-enfeeblement",
@@ -10622,7 +10761,11 @@
   "page": 272,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "druid",
+   "ranger"
+  ]
  },
  {
   "id": "rope-trick",
@@ -10836,7 +10979,10 @@
     "type": "Fire"
    },
    "upcast": "+1d6 per slot level above 1"
-  }
+  },
+  "optionalLists": [
+   "ranger"
+  ]
  },
  {
   "id": "see-invisibility",
@@ -11498,7 +11644,10 @@
   "summary": {
    "resolution": "save",
    "save": "wis"
-  }
+  },
+  "optionalLists": [
+   "bard"
+  ]
  },
  {
   "id": "snare",
@@ -11684,7 +11833,10 @@
   "page": 277,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "wizard"
+  ]
  },
  {
   "id": "speak-with-plants",
@@ -12503,7 +12655,10 @@
     "dice": "6d8",
     "type": "Radiant"
    }
-  }
+  },
+  "optionalLists": [
+   "cleric"
+  ]
  },
  {
   "id": "sunburst",
@@ -12538,7 +12693,10 @@
     "dice": "12d6",
     "type": "Radiant"
    }
-  }
+  },
+  "optionalLists": [
+   "cleric"
+  ]
  },
  {
   "id": "swift-quiver",
@@ -12631,7 +12789,10 @@
   "page": 280,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "druid"
+  ]
  },
  {
   "id": "synaptic-static",
@@ -12908,7 +13069,10 @@
   "page": 282,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "warlock"
+  ]
  },
  {
   "id": "temple-of-the-gods",
@@ -13643,7 +13807,10 @@
     "type": "Necrotic"
    },
    "upcast": "+1d6 per slot level above 3"
-  }
+  },
+  "optionalLists": [
+   "sorcerer"
+  ]
  },
  {
   "id": "vicious-mockery",
@@ -13999,7 +14166,10 @@
   "page": 287,
   "summary": {
    "resolution": "none"
-  }
+  },
+  "optionalLists": [
+   "paladin"
+  ]
  },
  {
   "id": "warding-wind",
@@ -14182,7 +14352,10 @@
     "dice": "4d10",
     "type": "Psychic"
    }
-  }
+  },
+  "optionalLists": [
+   "warlock"
+  ]
  },
  {
   "id": "whirlwind",
