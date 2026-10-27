@@ -4,7 +4,7 @@ import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
 import { genericSections, joinTag } from '../logic/sections';
 import type { Section } from '../logic/sections';
-import { listSpells } from '../logic/rules';
+import { extraListTag, listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
 import { castingInfo, raceChain } from './derive';
@@ -39,13 +39,14 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
     if (!spell) continue;
     const tag = cc.cls === 'warlock' && spell.level >= 6 ? 'Mystic Arcanum'
+      : extraListTag(c, sub, spell) ? extraListTag(c, sub, spell)
       : p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
       : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school' : undefined;
     entries.push({ spell, tag, mine: true, locked: false, atLevel: 1 });
   }
   if (view === 'all') {
     // the whole list up to the ceiling, so levels not reached yet show dimmed
-    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, mine: false, locked: false, atLevel: 1 });
+    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, tag: extraListTag(c, sub, spell), mine: false, locked: false, atLevel: 1 });
     for (const spell of patron) if (spell.level <= info.ceiling) entries.push({ spell, tag: 'Patron', mine: false, locked: false, atLevel: 1 });
   }
   return {

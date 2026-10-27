@@ -159,6 +159,10 @@ export function validateDataset(d: Dataset): string[] {
       if (!BONUS_KINDS.includes(sc.bonusSpells.kind)) errs.push(`${at}: bonusSpells.kind is not valid`);
       grants(at, sc.bonusSpells.grants);
     }
+    for (const l of sc.extraLists ?? []) {
+      if (!CLASS_IDS.includes(l)) errs.push(`${at}: extraLists has unknown class "${l}"`);
+      else if (l === sc.cls) errs.push(`${at}: extraLists can't include its own class`);
+    }
     if (sc.casting) {
       const c = sc.casting;
       if (!CLASS_IDS.includes(c.list)) errs.push(`${at}: casting has unknown class "${c.list}"`);

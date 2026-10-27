@@ -77,6 +77,13 @@ test('prereq option must be an option feature', () => {
   bad.features.find(f => f.prereq?.option)!.prereq!.option = 'second-wind';
   expect(validateDataset(bad).join('\n')).toContain('prereq option "second-wind" is not an option');
 });
+test('extraLists must be other classes', () => {
+  for (const [lists, msg] of [[['sorcerer'], "extraLists can't include its own class"], [['nope'], 'extraLists has unknown class "nope"']] as const) {
+    const bad = structuredClone(DATA);
+    bad.subclasses.find(s => s.id === 'wild-magic')!.extraLists = [...lists] as any;
+    expect(validateDataset(bad)).toContain(`subclass "wild-magic": ${msg}`);
+  }
+});
 test('option group must be owned by the listing class', () => {
   const bad = structuredClone(DATA);
   bad.classes.find(c => c.id === 'fighter')!.options.push('metamagic');

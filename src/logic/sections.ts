@@ -1,6 +1,7 @@
 import { DATA } from '../data';
 import type { ClassId, Feature, Spell } from '../data/types';
-import { ceilingOf, listSpells, maxSpellLevel } from './rules';
+import { bonusLabel } from './bonus';
+import { ceilingOf, extraListTag, listSpells, maxSpellLevel } from './rules';
 import { effectiveSub } from './subclass';
 
 export interface Section {
@@ -11,8 +12,6 @@ export interface Section {
   mine?: string[];
   items: (Spell | Feature)[];
 }
-
-const BONUS_TAG = { domain: 'Domain', oath: 'Oath', circle: 'Circle', patron: 'Patron' } as const;
 
 /** The non-empty parts joined with ' · ', or undefined when there are none. */
 export function joinTag(...parts: (string | undefined)[]): string | undefined {
@@ -36,8 +35,15 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
     byLevel.set(sp.level, a);
   };
   mine.forEach(put);
+  for (const sp of mine) {
+    const t = extraListTag(c, s, sp);
+    if (!t) continue;
+    const tags = tagsByLevel.get(sp.level) ?? {};
+    tags[sp.id] = t;
+    tagsByLevel.set(sp.level, tags);
+  }
   if (s?.bonusSpells) {
-    const base = s.bonusSpells.kind === 'subclass' ? s.name : BONUS_TAG[s.bonusSpells.kind];
+    const base = bonusLabel(s.bonusSpells.kind, s);
     const opts = new Map<string, string[]>();
     // every grant is listed, so locked levels show the future bonus spells
     for (const g of s.bonusSpells.grants) {

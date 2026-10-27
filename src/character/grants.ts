@@ -1,5 +1,6 @@
 import { DATA } from '../data';
 import type { ClassId, EditStep, Feature, Spell, SpellGrant } from '../data/types';
+import { bonusLabel } from '../logic/bonus';
 import { featureLevel, raceChain, totalLevel } from './derive';
 import type { CharClass, Character } from './types';
 
@@ -14,8 +15,6 @@ export interface GrantSource {
 
 /** Ownership only: level gating lives in `unlocked`, so lowering a level never drops picks. */
 const ownedSub = (c: CharClass) => { const s = DATA.subclasses.find(x => x.id === c.sub); return s && s.cls === c.cls ? s : undefined; };
-
-const BONUS_TITLE = { domain: 'Domain', oath: 'Oath', circle: 'Circle', patron: 'Patron' };
 
 function owningClass(ch: Character, f: Feature): ClassId | undefined {
   const subCls = (id: string) => DATA.subclasses.find(s => s.id === id)?.cls;
@@ -57,7 +56,7 @@ export function grantSources(ch: Character): GrantSource[] {
   for (const c of ch.classes) {
     const sub = ownedSub(c);
     const b = sub?.bonusSpells;
-    if (sub && b && b.kind !== 'patron') add({ key: `sub:${sub.id}`, title: b.kind === 'subclass' ? sub.name : BONUS_TITLE[b.kind], cls: c.cls, level: c.level, step: 'spells' }, b.grants);
+    if (sub && b && b.kind !== 'patron') add({ key: `sub:${sub.id}`, title: bonusLabel(b.kind, sub), cls: c.cls, level: c.level, step: 'spells' }, b.grants);
   }
   return out;
 }
