@@ -66,9 +66,9 @@ export function componentInfo(s: Spell): { v: Explainer | null; s: Explainer | n
   };
 }
 
-export const BOOK_LABEL: Record<BookId, string> = { phb: "PHB", xge: "Xanathar's", tce: "Tasha's", scag: "SCAG", dmg: "DMG", bgg: "Giants" };
+export const BOOK_LABEL: Record<BookId, string> = { phb: 'PHB', xge: 'Xanathar\'s', tce: 'Tasha\'s', scag: 'SCAG', dmg: 'DMG', bgg: 'Giants' };
 
 /** The closing line of a card; a record with no book is from the PHB. */
 export function bookRef(r: { book?: BookId; page: number }): string {
-  return `Full rules: ${BOOK_LABEL[r.book ?? "phb"]} p. ${r.page}`;
+  return `Full rules: ${BOOK_LABEL[r.book ?? 'phb']} p. ${r.page}`;
 }

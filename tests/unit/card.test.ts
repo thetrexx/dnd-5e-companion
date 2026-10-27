@@ -66,8 +66,8 @@ test('plusMod healing', () => {
   expect(damageLine(s)).toEqual({ headline: '1~8 + Mod Healing', detail: '1d8 + Mod Healing' });
 });
 
-test("book line", () => {
-  expect(bookRef({ page: 241 })).toBe("Full rules: PHB p. 241");
-  expect(bookRef({ book: "xge", page: 50 })).toBe("Full rules: Xanathar's p. 50");
-  expect(bookRef({ book: "bgg", page: 23 })).toBe("Full rules: Giants p. 23");
+test('book line', () => {
+  expect(bookRef({ page: 241 })).toBe('Full rules: PHB p. 241');
+  expect(bookRef({ book: 'xge', page: 50 })).toBe('Full rules: Xanathar\'s p. 50');
+  expect(bookRef({ book: 'bgg', page: 23 })).toBe('Full rules: Giants p. 23');
 });

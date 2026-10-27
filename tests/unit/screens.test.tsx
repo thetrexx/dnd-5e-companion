@@ -83,6 +83,8 @@ test('every card ends with the PHB page line', () => {
   expect(wb.container.textContent).toContain('Full rules: PHB p. 75');
   const fb = render(<Card kind="spell" id="fire-bolt" cls="wizard" level={3} />);
   expect(fb.container.textContent).toContain('Full rules: PHB p. 242');
+  const fi = render(<Card kind="spell" id="fireball" cls="wizard" level={5} />);
+  expect(fi.container.textContent).toContain('Full rules: PHB p. 241');
   for (const r of [wb, fb]) {
     const art = r.container.querySelector('article.card')!;
     expect(art.lastElementChild!.className).toBe('card-ref');

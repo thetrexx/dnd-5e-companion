@@ -33,7 +33,11 @@
     {
       "id": "misty-step",
       "cls": "sorcerer"
+    },
+    {
+      "id": "acid-splash",
+      "grant": "race:high-elf:0"
     }
   ],
-  "race": "dragonborn"
+  "race": "high-elf"
 }

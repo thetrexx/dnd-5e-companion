@@ -11,7 +11,7 @@ const OWNERS = ['class', 'subclass', 'race'];
 const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron'];
 const TEXT_SOURCES = ['summary'];
 const BOOK_IDS: string[] = ['phb', 'xge', 'tce', 'scag', 'dmg', 'bgg'];
-const KEBAB =/^[a-z0-9]+(-[a-z0-9]+)*$/;
+const KEBAB = /^[a-z0-9]+(-[a-z0-9]+)*$/;
 
 const isInt = (n: unknown, min: number, max: number) => Number.isInteger(n) && (n as number) >= min && (n as number) <= max;
 const blank = (s: unknown) => typeof s !== 'string' || s.trim() === '';
