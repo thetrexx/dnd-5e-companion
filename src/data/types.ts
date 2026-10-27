@@ -41,7 +41,7 @@ export interface ClassDef {
 }
 export interface SubclassDef {
   id: string; cls: ClassId; name: string; page: number; book?: BookId; hotbarIcon?: string;
-  bonusSpells?: { kind: 'domain'|'oath'|'circle'|'patron'; grants: SpellGrant[] };
+  bonusSpells?: { kind: 'domain'|'oath'|'circle'|'patron'|'subclass'; grants: SpellGrant[] };
   casting?: { list: ClassId; schools: string[]; ability: Ability;
               cantripsKnown: number[]; spellsKnown: number[]; maxSpellLevel: number[] };
   options: string[];

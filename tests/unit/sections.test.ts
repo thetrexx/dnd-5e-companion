@@ -1,7 +1,23 @@
 import type { Feature, Spell } from '../../src/data/types';
 import { DATA } from '../../src/data';
 import { listSpells } from '../../src/logic/rules';
-import { spellSections, actionSections } from '../../src/logic/sections';
+import { spellSections, actionSections, joinTag } from '../../src/logic/sections';
+
+test('joinTag', () => {
+  expect(joinTag('Domain', undefined)).toBe('Domain');
+  expect(joinTag(undefined, 'Ritual only')).toBe('Ritual only');
+  expect(joinTag('Domain', '')).toBe('Domain');
+  expect(joinTag('Star Map', 'Free cast')).toBe('Star Map · Free cast');
+  expect(joinTag()).toBeUndefined();
+});
+test('browse view lists the effective subclass feature spells, tagged with the feature name', () => {
+  const cantrips = spellSections('rogue', 3, 'arcane-trickster').find(s => s.id === 'cantrips')!;
+  expect(cantrips.tags!['mage-hand']).toBe('Mage Hand Legerdemain');
+});
+test('non-casters get no spell sections from feature spells', () => {
+  expect(spellSections('barbarian', 3, 'path-of-the-totem-warrior')).toEqual([]);
+  expect(spellSections('monk', 3, 'way-of-shadow')).toEqual([]);
+});
 
 test('wizard spell sections', () => {
   const sp = spellSections('wizard', 3);

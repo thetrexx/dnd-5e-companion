@@ -14,6 +14,12 @@ export interface Section {
 
 const BONUS_TAG = { domain: 'Domain', oath: 'Oath', circle: 'Circle', patron: 'Patron' } as const;
 
+/** The non-empty parts joined with ' · ', or undefined when there are none. */
+export function joinTag(...parts: (string | undefined)[]): string | undefined {
+  const kept = parts.filter(Boolean);
+  return kept.length ? kept.join(' · ') : undefined;
+}
+
 export function spellSections(cls: ClassId, level: number, sub?: string): Section[] {
   const c = DATA.classes.find(x => x.id === cls)!;
   const s = effectiveSub(cls, level, sub);
@@ -31,7 +37,7 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
   };
   mine.forEach(put);
   if (s?.bonusSpells) {
-    const base = BONUS_TAG[s.bonusSpells.kind];
+    const base = s.bonusSpells.kind === 'subclass' ? s.name : BONUS_TAG[s.bonusSpells.kind];
     const opts = new Map<string, string[]>();
     // every grant is listed, so locked levels show the future bonus spells
     for (const g of s.bonusSpells.grants) {
@@ -42,9 +48,23 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
       if (opt && !names.includes(opt)) names.push(opt);
       opts.set(sp.id, names);
       const tags = tagsByLevel.get(sp.level) ?? {};
-      tags[sp.id] = names.length ? `${base} · ${names.join(', ')}` : base;
+      tags[sp.id] = joinTag(base, names.join(', '), g.uses)!;
       tagsByLevel.set(sp.level, tags);
       put(sp);
+    }
+  }
+  if (c.caster !== 'none' || cast) {
+    // fixed spells of the class's and subclass's features, like bonus spells, whatever the level
+    const owned = DATA.features.filter(f => f.spells && ((f.source.kind === 'class' && f.source.id === cls) || (f.source.kind === 'subclass' && f.source.id === s?.id)));
+    for (const f of owned) {
+      for (const g of f.spells!) {
+        const sp = g.spell && !g.option ? DATA.spells.find(x => x.id === g.spell) : undefined;
+        if (!sp) continue;
+        const tags = tagsByLevel.get(sp.level) ?? {};
+        tags[sp.id] ??= joinTag(f.name, g.uses)!;
+        tagsByLevel.set(sp.level, tags);
+        put(sp);
+      }
     }
   }
   const max = cast ? (cast.maxSpellLevel[level - 1] ?? 0) : maxSpellLevel(c, level);

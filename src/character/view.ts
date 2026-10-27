@@ -2,7 +2,7 @@ import { DATA } from '../data';
 import type { ClassId, Feature, Route, Spell } from '../data/types';
 import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
-import { genericSections } from '../logic/sections';
+import { genericSections, joinTag } from '../logic/sections';
 import type { Section } from '../logic/sections';
 import { listSpells } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
@@ -89,11 +89,11 @@ function spellLayout(ch: Character, view: SpellView): { places: Place[]; section
     const spell = DATA.spells.find(s => s.id === p.id);
     if (!source || !grant || !spell) continue;
     const { place, tag } = route(source);
-    place.entries.push({ spell, tag, mine: true, locked: grant.atLevel > source.level, atLevel: grant.atLevel });
+    place.entries.push({ spell, tag: joinTag(tag, grant.uses), mine: true, locked: grant.atLevel > source.level, atLevel: grant.atLevel });
   }
   for (const a of autoSpells(ch)) {
     const { place, tag } = route(a.source);
-    place.entries.push({ spell: a.spell, tag, mine: a.unlocked, locked: !a.unlocked, atLevel: a.atLevel });
+    place.entries.push({ spell: a.spell, tag: joinTag(tag, a.uses), mine: a.unlocked, locked: !a.unlocked, atLevel: a.atLevel });
   }
   const places = [...classes.values(), ...sources.flatMap(s => own.get(s.key) ?? [])];
   const out: { place: Place; sec: Section }[] = [];
