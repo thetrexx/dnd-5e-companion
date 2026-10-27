@@ -212,7 +212,7 @@ test('task 7 must-have features', () => {
     'master-of-tactics', 'insightful-manipulator', 'misdirection',
     'skirmisher', 'ambush-master', 'sudden-strike',
     'favored-by-the-gods', 'empowered-healing', 'otherworldly-wings', 'unearthly-recovery',
-    'bonus-cantrips', 'healing-light', 'radiant-soul', 'searing-vengeance',
+    'the-celestial-bonus-cantrips', 'healing-light', 'radiant-soul', 'celestial-resilience', 'searing-vengeance',
     'arcane-deflection', 'power-surge', 'deflecting-shroud'])
     expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
 });
@@ -223,7 +223,7 @@ test('task 7 usable reactions are reaction cards', () => {
   }
 });
 test('task 7 riders are free cards with a trigger', () => {
-  for (const id of ['eye-for-weakness', 'ambush-master', 'favored-by-the-gods', 'empowered-healing', 'radiant-soul', 'searing-vengeance', 'power-surge', 'deflecting-shroud']) {
+  for (const id of ['eye-for-weakness', 'ambush-master', 'favored-by-the-gods', 'empowered-healing', 'radiant-soul', 'celestial-resilience', 'searing-vengeance', 'power-surge', 'deflecting-shroud']) {
     expect(feature(id).cost, id).toBe('free');
     expect(feature(id).trigger, id).toBeTruthy();
   }
@@ -253,14 +253,24 @@ test('divine soul widens to the cleric list', () => {
   expect(spellSections('sorcerer', 1).find(s => s.id === 'lvl-1')!.items.map(s => s.id)).not.toContain('cure-wounds');
   expect(spellSections('sorcerer', 1).find(s => s.id === 'lvl-1')!.items.map(s => s.id)).not.toContain('guiding-bolt');
 });
+test('ambush master: initiative advantage every time, the exposed target in the first round', () => {
+  expect(feature('ambush-master').uses).toBeUndefined();
+  expect(feature('ambush-master').trigger).toMatch(/initiative/i);
+  expect(feature('ambush-master').trigger).toMatch(/first round/i);
+});
+test('celestial resilience is a rest card', () => {
+  expect(feature('celestial-resilience')).toMatchObject({ source: { kind: 'subclass', id: 'the-celestial' }, level: 10, cost: 'free', page: 55, book: 'xge' });
+  expect(feature('celestial-resilience').trigger).toMatch(/rest/i);
+  expect(DATA.features.find(f => f.id === 'bonus-cantrips')).toBeUndefined();
+});
 test('celestial patron spells and bonus cantrips', () => {
   const b = sub('the-celestial').bonusSpells!;
   expect(b.kind).toBe('patron');
   expect(b.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['cure-wounds', 'guiding-bolt']);
   expect(b.grants.filter(g => g.atLevel === 9).map(g => g.spell).sort()).toEqual(['flame-strike', 'greater-restoration']);
   expect(b.grants.map(g => g.atLevel).sort((x, y) => x - y)).toEqual([1, 1, 3, 3, 5, 5, 7, 7, 9, 9]);
-  expect(feature('bonus-cantrips')).toMatchObject({ source: { kind: 'subclass', id: 'the-celestial' }, level: 1, page: 54 });
-  expect(feature('bonus-cantrips').spells).toEqual([{ spell: 'light', atLevel: 1 }, { spell: 'sacred-flame', atLevel: 1 }]);
+  expect(feature('the-celestial-bonus-cantrips')).toMatchObject({ source: { kind: 'subclass', id: 'the-celestial' }, level: 1, page: 54 });
+  expect(feature('the-celestial-bonus-cantrips').spells).toEqual([{ spell: 'light', atLevel: 1 }, { spell: 'sacred-flame', atLevel: 1 }]);
   const c = { ...emptyCharacter(), classes: [{ cls: 'warlock' as const, level: 1, sub: 'the-celestial' }] };
   const ids = autoSpells(c).map(a => a.spell.id);
   expect(ids).toEqual(expect.arrayContaining(['light', 'sacred-flame']));

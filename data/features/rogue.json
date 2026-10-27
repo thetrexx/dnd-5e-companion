@@ -467,10 +467,9 @@
     },
     "level": 13,
     "cost": "free",
-    "trigger": "You hit your first creature in the first round of a combat",
-    "uses": "First round of each combat",
+    "trigger": "You roll initiative, or you hit your first creature in the first round of a combat",
     "description": [
-      "You roll initiative with advantage.",
+      "Every time you roll initiative, you roll it with advantage.",
       "The first creature you hit during a combat's opening round is left exposed: every attack roll against it, from anyone, has advantage until your next turn starts."
     ],
     "page": 47,

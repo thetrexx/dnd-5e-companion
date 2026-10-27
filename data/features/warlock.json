@@ -1042,7 +1042,7 @@
     "textSource": "summary"
   },
   {
-    "id": "bonus-cantrips",
+    "id": "the-celestial-bonus-cantrips",
     "name": "Bonus Cantrips",
     "source": {
       "kind": "subclass",
@@ -1125,6 +1125,24 @@
     "description": [
       "You resist radiant damage.",
       "When a spell you cast deals radiant or fire damage, choose one of its targets: one radiant or fire damage roll against it gains a bonus equal to your Charisma modifier."
+    ],
+    "page": 55,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "celestial-resilience",
+    "name": "Celestial Resilience",
+    "source": {
+      "kind": "subclass",
+      "id": "the-celestial"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "A short or long rest of yours ends",
+    "description": [
+      "You gain warlock level + Charisma modifier in temporary hit points.",
+      "As the rest ends, choose up to five creatures in sight: each gains half your warlock level + your Charisma modifier as temporary hit points."
     ],
     "page": 55,
     "book": "xge",
