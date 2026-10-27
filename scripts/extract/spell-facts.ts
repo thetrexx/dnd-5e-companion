@@ -2,9 +2,11 @@ import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import type { Ability, Cost, Spell } from '../../src/data/types.ts';
-import { CACHE } from './config.ts';
+import { BOOKS } from './config.ts';
 import { normalizeOcr } from './ocr.ts';
 import { extractPage } from './pages.ts';
+
+const CACHE = BOOKS.phb.cache;
 
 /** The structured fields of an SRD spell. The prose fields (desc, higher_level) are not part of this type and are never read. */
 export interface SrdSpell {
