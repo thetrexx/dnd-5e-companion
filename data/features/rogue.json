@@ -231,6 +231,24 @@
     "textSource": "summary"
   },
   {
+    "id": "fancy-footwork",
+    "name": "Fancy Footwork",
+    "source": {
+      "kind": "subclass",
+      "id": "swashbuckler"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a melee attack on your turn",
+    "description": [
+      "On your turn, any creature you make a melee attack against, hit or miss, can't make opportunity attacks against you until your turn ends."
+    ],
+    "page": 47,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/5/5b/Fancy_Footwork_Icon.webp"
+  },
+  {
     "id": "rakish-audacity",
     "name": "Rakish Audacity",
     "source": {

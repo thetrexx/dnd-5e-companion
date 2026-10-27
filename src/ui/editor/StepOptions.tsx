@@ -5,7 +5,7 @@ import { GrantPicker } from './GrantPicker';
 import { PickList } from './PickList';
 import type { StepProps } from './Editor';
 
-const ownerName = (s: OptionSlot) => s.cls ? DATA.classes.find((c) => c.id === s.cls)?.name : DATA.races.find((r) => r.id === s.group.owner.id)?.name ?? DATA.races.find((r) => r.parent === undefined && s.group.owner.kind === 'race')?.name;
+const ownerName = (s: OptionSlot) => s.cls ? DATA.classes.find((c) => c.id === s.cls)?.name : DATA.races.find((r) => r.id === s.group.owner.id)?.name;
 const takenBy = (slots: OptionSlot[], me: OptionSlot, id: string) => {
   const pool = me.group.from ?? me.group.id;
   const home = slots.find((o) => o !== me && (o.group.from ?? o.group.id) === pool && o.chosen.includes(id));

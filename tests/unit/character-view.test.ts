@@ -89,3 +89,7 @@ test('a spell source not reached yet has a dimmed row', () => {
   const tief = charMenuRows(ch([{ cls: 'barbarian', level: 3 }], { race: 'tiefling' }));
   expect(tief.find(r => r.label === 'Tiefling Spells')!.dimmed).toBe(false);
 });
+test('a granted cantrip lights the Cantrips row of a class with none', () => {
+  expect(charMenuRows(ch([{ cls: 'ranger', level: 3, sub: 'swarmkeeper' }])).find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
+  expect(charMenuRows(ch([{ cls: 'ranger', level: 3, sub: 'hunter' }])).find(r => r.kind === 'cantrips')!.dimmed).toBe(true);
+});

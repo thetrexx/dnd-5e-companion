@@ -198,13 +198,14 @@ export function charMenuRows(ch: Character): MenuRow[] {
   for (let n = 0; n <= 9; n++) {
     for (const { cc, info } of casters) {
       const id = `${n === 0 ? 'cantrips' : `lvl-${n}`}-${cc.cls}`;
-      // past the ceiling only for a spell of the character's own there (e.g. Mystic Arcanum)
+      // past the ceiling only for a spell of the character's own there (e.g. Mystic Arcanum);
+      // an unlocked granted cantrip (Swarmkeeper Mage Hand) lights a Cantrips row the class has none for
       const own = sections.some(x => x.sec.id === id && x.sec.mine?.length);
       if (n > info.ceiling && !own) continue;
       const name = casters.length === 1 ? '' : `${className(cc.cls)} `;
       rows.push(n === 0
         ? { kind: 'cantrips', label: `${name}Cantrips`, icon: { type: 'img', src: DATA.classes.find(x => x.id === info.list)?.plainIcon },
-            target: spells(id), dimmed: info.cantrips === 0, motif: info.list }
+            target: spells(id), dimmed: info.cantrips === 0 && !own, motif: info.list }
         : { kind: 'spells', label: `Level ${n} ${name}Spells`, icon: info.pact ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },
             target: spells(id), dimmed: n > info.maxLevel && !own, motif: info.list });
     }

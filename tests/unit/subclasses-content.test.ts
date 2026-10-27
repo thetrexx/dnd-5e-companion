@@ -107,5 +107,9 @@ test('giants power cantrip follows the chosen option', () => {
   expect(ids).toContain('druidcraft');
   expect(ids).not.toContain('thaumaturgy');
 });
+test('level 3 free riders: giants havoc and fancy footwork', () => {
+  expect(feature('giants-havoc')).toMatchObject({ source: { kind: 'subclass', id: 'path-of-giants' }, level: 3, cost: 'free', book: 'bgg', page: 11 });
+  expect(feature('fancy-footwork')).toMatchObject({ source: { kind: 'subclass', id: 'swashbuckler' }, level: 3, cost: 'free', book: 'xge', page: 47 });
+});
 test('swarmkeeper mage hand only if not already known', () =>
   expect(sub('swarmkeeper').bonusSpells!.grants.find(g => g.spell === 'mage-hand')!.uses).toMatch(/already know/i));

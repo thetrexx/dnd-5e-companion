@@ -487,6 +487,26 @@
     "textSource": "summary"
   },
   {
+    "id": "giants-havoc",
+    "name": "Giant's Havoc",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-giants"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You enter your rage",
+    "description": [
+      "For as long as a rage lasts, you get both benefits below.",
+      "Crushing Throw: when a ranged attack you make with a thrown weapon hits and uses Strength, add your Rage Damage bonus to its damage.",
+      "Giant Stature: you gain 5 ft of extra reach. If you're smaller than Large, you and the gear you wear grow to Large, unless there isn't space for it, in which case your size stays the same.",
+      "Level 14 (Demiurgic Colossus): the extra reach becomes 10 ft, and you can grow to Large or Huge (your pick)."
+    ],
+    "page": 11,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
     "id": "elemental-cleaver",
     "name": "Elemental Cleaver",
     "source": {

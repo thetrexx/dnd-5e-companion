@@ -1,6 +1,6 @@
 # Extraction scripts
 
-These scripts run on the owner's machine only. They need Node 24 (it runs the `.ts` files directly), poppler (`pdfimages`, `pdftotext`) on the PATH, and the book PDFs in `BOOK_DIR` (default `C:/Users/trexx/Desktop/T-ReXx/d&d`; `PHB_PDF` still overrides the PHB file). Their caches live in `.cache/<book id>/`, which git ignores.
+These scripts run on the owner's machine only. They need Node 24 (it runs the `.ts` files directly), poppler (`pdfimages`, `pdftotext`, `pdftoppm`) on the PATH, and the book PDFs in `BOOK_DIR` (default `C:/Users/trexx/Desktop/T-ReXx/d&d`; `PHB_PDF` still overrides the PHB file). Their caches live in `.cache/<book id>/`, which git ignores.
 
 ## Books
 

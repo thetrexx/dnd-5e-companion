@@ -30,18 +30,40 @@ export function optionSlots(ch: Character): OptionSlot[] {
   return out;
 }
 
-/** Slots of one pool (`from ?? id`) share one pick list: each pick fills one slot, first with room. A reuse slot may also repeat picks held elsewhere in the pool. */
+/**
+ * Slots of one pool (`from ?? id`) share one pick list. Each pick fills one slot by maximum matching
+ * (augmenting paths), so a legal build never shows an over-pick: a pick only one slot offers may move
+ * another pick to a different slot. Picks go in list order; owners (non-reuse slots) fill before reuse
+ * slots. A pick no matching can place is an over-pick in its first offering slot. A reuse slot may also
+ * repeat picks held elsewhere in the pool.
+ */
 function assign(slots: OptionSlot[], options: string[]) {
   const pools = new Map<string, OptionSlot[]>();
   for (const s of slots) { const k = s.group.from ?? s.group.id; pools.set(k, [...(pools.get(k) ?? []), s]); }
   for (const pool of pools.values()) {
     const offers = (s: OptionSlot, id: string) => s.choices.some(f => f.id === id);
+    const ids = [...new Set(options)].filter(id => pool.some(s => offers(s, id)));
+    const ordered = [...pool.filter(s => !s.group.reuse), ...pool.filter(s => s.group.reuse)];
+    const held = new Map<OptionSlot, string[]>(pool.map(s => [s, []]));
+    /** Places `id` in a slot with room, else frees one by moving its holder along an augmenting path. */
+    const place = (id: string, seen: Set<OptionSlot>): boolean => {
+      const open = ordered.filter(s => offers(s, id) && !seen.has(s));
+      const free = open.find(s => held.get(s)!.length < s.count);
+      if (free) { held.get(free)!.push(id); return true; }
+      for (const s of open) {
+        seen.add(s);
+        const list = held.get(s)!;
+        for (let i = 0; i < list.length; i++) {
+          if (place(list[i], seen)) { list[i] = id; return true; }
+        }
+      }
+      return false;
+    };
+    const over: string[] = [];
+    for (const id of ids) if (!place(id, new Set())) over.push(id);
     const placed = new Map<string, OptionSlot>();
-    for (const id of options) {
-      const open = pool.filter(s => offers(s, id));
-      const room = (s: OptionSlot) => s.chosen.length < s.count;
-      const home = open.find(s => room(s) && !s.group.reuse) ?? open.find(room) ?? open[0];
-      if (!home || placed.has(id)) continue;
+    for (const id of ids) {
+      const home = over.includes(id) ? pool.find(s => offers(s, id))! : pool.find(s => held.get(s)!.includes(id))!;
       home.chosen.push(id);
       placed.set(id, home);
     }

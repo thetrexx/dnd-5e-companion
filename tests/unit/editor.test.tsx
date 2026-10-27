@@ -179,3 +179,10 @@ test('a shared fighting style is chosen once and disabled in the other slot', ()
   const defense = r.getAllByText('Defense').map((e) => e.closest('button')!);
   expect(defense.map((b) => b.disabled)).toEqual([false, true]);
 });
+test('a legal build never reads as an over-pick', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense', 'fighting-style-two-weapon-fighting'] });
+  const r = render(<Editor step="options" />);
+  expect(r.getAllByText('1 of 1 chosen')).toHaveLength(2);
+  expect(r.queryByText(/more than usual/)).toBeNull();
+  expect(r.getByText('Chosen for Paladin')).toBeTruthy();
+});

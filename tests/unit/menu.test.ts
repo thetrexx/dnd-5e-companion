@@ -50,3 +50,8 @@ test('subclass casters stop at their highest spell level', () => {
   expect(menuRows('rogue', 20, 'arcane-trickster').filter(r => r.kind === 'spells')).toHaveLength(4);
   expect(menuRows('wizard', 1).filter(r => r.kind === 'spells')).toHaveLength(9);
 });
+
+test('a granted cantrip lights the Cantrips row of a class with none', () => {
+  expect(menuRows('ranger', 3, 'swarmkeeper').find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
+  expect(menuRows('ranger', 3, 'hunter').find(r => r.kind === 'cantrips')!.dimmed).toBe(true);
+});
