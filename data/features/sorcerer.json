@@ -770,5 +770,160 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "telepathic-speech",
+    "name": "Telepathic Speech",
+    "source": {
+      "kind": "subclass",
+      "id": "aberrant-mind"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "page": 67,
+    "description": [
+      "Open a telepathic link with one visible creature up to 30 ft away. The two of you can talk mind to mind while no more miles apart than your Charisma modifier (minimum 1 mile).",
+      "Each of you must use a language the other understands, spoken mentally.",
+      "It lasts 1 minute per sorcerer level. Being incapacitated or dying ends it early, as does linking to another creature."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psionic-sorcery",
+    "name": "Psionic Sorcery",
+    "source": {
+      "kind": "subclass",
+      "id": "aberrant-mind"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You cast one of your Psionic Spells of level 1 or higher",
+    "resource": "1 sorcery point per spell level",
+    "page": 68,
+    "description": [
+      "Pay for the spell with sorcery points equal to its level instead of a spell slot.",
+      "Cast this way, it needs no verbal or somatic components, and no material ones unless the spell consumes them."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "revelation-in-flesh",
+    "name": "Revelation in Flesh",
+    "source": {
+      "kind": "subclass",
+      "id": "aberrant-mind"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "resource": "1 sorcery point per benefit",
+    "page": 68,
+    "description": [
+      "Transform for 10 minutes. Spend 1 or more sorcery points and pick one of these benefits per point:",
+      "• See invisible creatures within 60 ft that aren't behind total cover.",
+      "• Fly at your walking speed, with hover.",
+      "• Swim at twice your walking speed, and breathe underwater.",
+      "• Fit through a space as narrow as 1 inch with no squeezing, gear included; 5 ft of movement frees you from nonmagical restraints or a grapple."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "warping-implosion",
+    "name": "Warping Implosion",
+    "source": {
+      "kind": "subclass",
+      "id": "aberrant-mind"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "5 sorcery points (after the free use)",
+    "uses": "Once per long rest",
+    "page": 68,
+    "description": [
+      "Teleport up to 120 ft, to an empty spot in view. Each creature within 30 ft of where you were makes a Strength save. On a failure: 3d10 force damage, and it is dragged straight toward that spot, ending in the nearest empty space. On a success: half damage and no pull.",
+      "The first use is free; using it again before a long rest costs 5 sorcery points."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "restore-balance",
+    "name": "Restore Balance",
+    "source": {
+      "kind": "subclass",
+      "id": "clockwork-soul"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "Within 60 ft, a visible creature is about to make a d20 roll that has advantage or disadvantage",
+    "uses": "Proficiency bonus per long rest",
+    "page": 69,
+    "description": [
+      "Cancel the advantage or disadvantage: the d20 is rolled with neither."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "bastion-of-law",
+    "name": "Bastion of Law",
+    "source": {
+      "kind": "subclass",
+      "id": "clockwork-soul"
+    },
+    "level": 6,
+    "cost": "action",
+    "resource": "1 to 5 sorcery points",
+    "page": 69,
+    "description": [
+      "Ward yourself or a visible creature up to 30 ft away with one d8 per sorcery point spent.",
+      "Whenever damage hits the warded creature, it may roll as many of those dice as it likes, using them up, and takes that much less damage.",
+      "The ward holds until your next long rest ends, or until you create a new one."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "trance-of-order",
+    "name": "Trance of Order",
+    "source": {
+      "kind": "subclass",
+      "id": "clockwork-soul"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "resource": "5 sorcery points (after the free use)",
+    "uses": "Once per long rest",
+    "page": 69,
+    "description": [
+      "For 1 minute, attack rolls against you can't gain advantage, and any d20 of 9 or lower on your attack rolls, ability checks and saves counts as a 10.",
+      "The first use is free; using it again before a long rest costs 5 sorcery points."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "clockwork-cavalcade",
+    "name": "Clockwork Cavalcade",
+    "source": {
+      "kind": "subclass",
+      "id": "clockwork-soul"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "7 sorcery points (after the free use)",
+    "uses": "Once per long rest",
+    "page": 69,
+    "description": [
+      "Spirits of order (modron-like, intangible, invulnerable) fill a 30-ft cube starting from you, then vanish. Inside the cube:",
+      "• Up to 100 hit points of healing, split as you like among any creatures of your choice.",
+      "• Damaged objects wholly inside are mended at once.",
+      "• Spells of 6th level or below end on any creatures and objects in it that you pick.",
+      "The first use is free; using it again before a long rest costs 7 sorcery points."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

@@ -245,3 +245,12 @@ test('spells step: a cleric 5 is offered Aura of Vitality only after ticking Add
   const after = render(<Editor step="spells" />);
   expect(after.getByText('Aura of Vitality')).toBeTruthy();
 });
+test('spells step: a dao genie warlock is offered dao and genie spells, never efreeti ones', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'warlock', level: 5, sub: 'the-genie' }], options: ['genie-kind-dao'] });
+  const r = render(<Editor step="spells" />);
+  expect(r.getByText('Spike Growth')).toBeTruthy();
+  expect(r.getByText('Phantasmal Force')).toBeTruthy();
+  expect(r.queryByText('Scorching Ray')).toBeNull();
+  expect(r.queryByText('Burning Hands')).toBeNull();
+  expect(r.queryByText('Fireball')).toBeNull();
+});

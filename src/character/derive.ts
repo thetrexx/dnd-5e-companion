@@ -61,8 +61,9 @@ export function pickCounts(ch: Character, cls: ClassId): { cantrips: number; spe
 
 export interface Pickable { spell: Spell; tag?: string }
 
-/** `expanded`: the class's Tasha's expanded list is ticked (`hasExpandedList`); its spells are tagged Optional. */
-export function pickableSpells(cc: CharClass, expanded = false): Pickable[] {
+/** `expanded`: the class's Tasha's expanded list is ticked (`hasExpandedList`); its spells are tagged Optional.
+ *  `options`: the character's chosen options; a patron grant tied to an option (Genie kind) needs it chosen. */
+export function pickableSpells(cc: CharClass, expanded = false, options: string[] = []): Pickable[] {
   const c = DATA.classes.find(x => x.id === cc.cls);
   const info = castingInfo(cc);
   if (!c || !info) return [];
@@ -72,6 +73,7 @@ export function pickableSpells(cc: CharClass, expanded = false): Pickable[] {
   if (c.caster === 'none') for (const spell of DATA.spells) if (spell.classes.includes(info.list) && !out.has(spell.id)) out.set(spell.id, { spell, tag: 'Any school' });
   if (sub?.bonusSpells?.kind === 'patron') {
     for (const g of sub.bonusSpells.grants) {
+      if (g.option && !options.includes(g.option)) continue;
       const spell = g.spell && DATA.spells.find(s => s.id === g.spell);
       if (spell && !out.has(spell.id)) out.set(spell.id, { spell, tag: 'Patron' });
     }

@@ -513,5 +513,364 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "whispers-of-the-dead",
+    "name": "Whispers of the Dead",
+    "source": {
+      "kind": "subclass",
+      "id": "phantom"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You finish a short or long rest",
+    "page": 62,
+    "description": [
+      "Pick one skill or tool proficiency you don't have and gain it. It stays until a later rest where you trade it for a different one."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "wails-from-the-grave",
+    "name": "Wails from the Grave",
+    "source": {
+      "kind": "subclass",
+      "id": "phantom"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your Sneak Attack has just damaged a creature, on your turn",
+    "uses": "Proficiency bonus per long rest",
+    "scaling": [
+      {
+        "label": "Necrotic damage",
+        "values": [
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "3d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "5d6",
+          "5d6",
+          "5d6",
+          "5d6"
+        ]
+      }
+    ],
+    "page": 62,
+    "description": [
+      "Pick a second visible creature no more than 30 ft from the first. Roll half your Sneak Attack dice (round up); it takes that much necrotic damage.",
+      "Level 9 (Tokens of the Departed): destroy a soul trinket you carry to use this without spending a use.",
+      "Level 17 (Death's Friend): the first creature takes the necrotic damage too."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "tokens-of-the-departed",
+    "name": "Tokens of the Departed",
+    "source": {
+      "kind": "subclass",
+      "id": "phantom"
+    },
+    "level": 9,
+    "cost": "reaction",
+    "trigger": "A visible creature dies no more than 30 ft away",
+    "page": 63,
+    "description": [
+      "Hold out a free hand: a soul trinket, a Tiny object made from the departing life, forms there. The DM decides its look, or you roll on the Trinkets table (PHB).",
+      "You can own at most your proficiency bonus in soul trinkets; at that cap, no new one forms.",
+      "Always on: while you carry a trinket, you have advantage on death saves and Constitution saves.",
+      "Spending one: when your Sneak Attack deals damage on your turn, destroy a trinket you carry for a free Wails from the Grave; or destroy one as an action to question its spirit (Tokens of the Departed (Question)).",
+      "Level 17 (Death's Friend): if you have no trinket when a long rest ends, one appears in your hand."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "tokens-of-the-departed-question",
+    "name": "Tokens of the Departed (Question)",
+    "source": {
+      "kind": "subclass",
+      "id": "phantom"
+    },
+    "level": 9,
+    "cost": "action",
+    "page": 63,
+    "description": [
+      "Destroy one of your soul trinkets, wherever it is, and ask its spirit a single question.",
+      "The spirit shows up and replies in a language it spoke while alive. It knows only what it knew then (the DM decides), and it needn't be truthful, but it answers briefly, keen to be released."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "ghost-walk",
+    "name": "Ghost Walk",
+    "source": {
+      "kind": "subclass",
+      "id": "phantom"
+    },
+    "level": 13,
+    "cost": "bonus",
+    "uses": "Once per long rest, or destroy a soul trinket",
+    "page": 63,
+    "description": [
+      "Take a spectral form for 10 minutes: a 10 ft flying speed with hover, and attack rolls against you have disadvantage.",
+      "Creatures and objects no longer block you, though moving through them counts as difficult terrain; ending your turn inside one deals you 1d10 force damage.",
+      "End it early as a bonus action. To use it again before a long rest, destroy a soul trinket when you take the bonus action to start it."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "soulknife-psionic-power",
+    "name": "Psionic Power",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Psionic Energy dice (pool)",
+    "uses": "Refill on long rest",
+    "scaling": [
+      {
+        "label": "Psionic Energy dice",
+        "values": [
+          "",
+          "",
+          "4",
+          "4",
+          "6",
+          "6",
+          "6",
+          "6",
+          "8",
+          "8",
+          "8",
+          "8",
+          "10",
+          "10",
+          "10",
+          "10",
+          "12",
+          "12",
+          "12",
+          "12"
+        ]
+      },
+      {
+        "label": "Die size",
+        "values": [
+          "",
+          "",
+          "d6",
+          "d6",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      }
+    ],
+    "page": 64,
+    "description": [
+      "Your psionic powers run on a pool of Psionic Energy dice: twice your proficiency bonus of them. A power that needs a die is unusable while the pool is empty.",
+      "The whole pool comes back when you finish a long rest. Once per short or long rest you can also win back a single die as a bonus action (Psionic Power (Regain)).",
+      "Die size grows with rogue level: d6, then d8 at 5, d10 at 11 and d12 at 17.",
+      "Powers: Psi-Bolstered Knack and Psychic Whispers; Soul Blades (level 9) adds Homing Strikes and Psychic Teleportation. Psychic Veil and Rend Mind can also spend dice."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "soulknife-psionic-regain",
+    "name": "Psionic Power (Regain)",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "page": 64,
+    "description": [
+      "Get back one spent Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psi-bolstered-knack",
+    "name": "Psi-Bolstered Knack",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You fail an ability check with a skill or tool you are proficient in",
+    "resource": "1 Psionic Energy die (spent only if the check then succeeds)",
+    "page": 64,
+    "description": [
+      "Roll a Psionic Energy die and add it to the check, which may turn it into a success. The die is used up only when the check succeeds."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psychic-whispers",
+    "name": "Psychic Whispers",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Psionic Energy die (not spent on the first use after each long rest)",
+    "page": 64,
+    "description": [
+      "Link minds with creatures you can see, up to your proficiency bonus in number. Roll a Psionic Energy die: for that many hours, you and they can talk telepathically.",
+      "Sending or hearing a message takes no action but needs both ends within 1 mile. No shared language is needed, though a creature that knows no language can't use the link. Any of them can drop out at any time, with no action.",
+      "The first use after each long rest leaves the die unspent; every later use spends it."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "soulknife-psychic-blades",
+    "name": "Psychic Blades",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You take the Attack action",
+    "page": 64,
+    "description": [
+      "Make an attack with a psychic blade formed in your free hand: a magic simple melee weapon with finesse and thrown (60 ft range, no long range). On a hit: 1d6 psychic + the modifier you attacked with.",
+      "The blade vanishes right after the attack, hit or miss, and leaves no mark on a target it damages.",
+      "After this attack you can make a second blade attack as a bonus action (Psychic Blades (Bonus Attack))."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "soulknife-psychic-blades-bonus",
+    "name": "Psychic Blades (Bonus Attack)",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "page": 64,
+    "description": [
+      "Swing or throw a second psychic blade: one weapon attack, with a damage die of 1d4 instead of 1d6.",
+      "Needs your other hand free, and a psychic blade attack earlier this turn."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "homing-strikes",
+    "name": "Homing Strikes",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "Your Psychic Blades attack misses",
+    "resource": "1 Psionic Energy die (spent only if the attack then hits)",
+    "page": 65,
+    "description": [
+      "Roll a Psionic Energy die and add it to the attack roll. The die is used up only if the attack now hits."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psychic-teleportation",
+    "name": "Psychic Teleportation",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 9,
+    "cost": "bonus",
+    "resource": "1 Psionic Energy die",
+    "page": 65,
+    "description": [
+      "Spend and roll a Psionic Energy die, then hurl a psychic blade at an empty space you can see, up to 10 times the roll in feet away. You teleport there and the blade disappears."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psychic-veil",
+    "name": "Psychic Veil",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 13,
+    "cost": "action",
+    "resource": "1 Psionic Energy die (after the free use)",
+    "uses": "Once per long rest",
+    "page": 65,
+    "description": [
+      "Turn invisible, along with everything you wear or carry, for 1 hour or until you drop it (no action needed).",
+      "It ends at once when you damage a creature or force one to make a saving throw.",
+      "The first use is free; using it again before a long rest costs a Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "rend-mind",
+    "name": "Rend Mind",
+    "source": {
+      "kind": "subclass",
+      "id": "soulknife"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "Sneak Attack damage lands through your Psychic Blades",
+    "resource": "3 Psionic Energy dice (after the free use)",
+    "uses": "Once per long rest",
+    "page": 65,
+    "description": [
+      "The target makes a Wisdom save (DC 8 + your proficiency bonus + your Dexterity modifier) or is stunned for 1 minute. It may save again as each of its turns ends; a success ends the stun.",
+      "The first use is free; using it again before a long rest costs three Psionic Energy dice."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

@@ -21,7 +21,7 @@ function ClassSpells({ ch, update, cc, i }: StepProps & { cc: CharClass; i: numb
   const mine = ch.spells.filter((s) => s.cls === cc.cls);
   const picked = mine.filter((s) => !s.extra).map((s) => s.id);
   const extras = mine.filter((s) => s.extra).map((s) => s.id);
-  const pickable = pickableSpells(cc, hasExpandedList(ch, cc.cls));
+  const pickable = pickableSpells(cc, hasExpandedList(ch, cc.cls), ch.options);
   const onList = new Set(pickable.map((p) => p.spell.id));
   const always = autoSpells(ch).filter((a) => a.source.cls === cc.cls && a.unlocked).map((a) => a.spell);
   // always-prepared spells aren't offered again, unless picked before (so the pick can be undone)

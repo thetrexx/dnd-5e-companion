@@ -647,5 +647,154 @@
     "book": "tce",
     "textSource": "summary",
     "optional": true
+  },
+  {
+    "id": "wizardly-quill",
+    "name": "Wizardly Quill",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "page": 77,
+    "description": [
+      "Conjure a Tiny magic quill in your free hand. It needs no ink and writes in any color you like.",
+      "Copying a spell into your spellbook with it takes 2 minutes per spell level.",
+      "As a bonus action, wave its feather over text it wrote, within 5 ft of you, to erase it.",
+      "It vanishes if you make another quill or die.",
+      "Level 10 (Master Scrivener): crafting spell scrolls (DMG) with it costs half the gold and half the time."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "awakened-spellbook",
+    "name": "Awakened Spellbook",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You cast a wizard spell using a spell slot",
+    "page": 77,
+    "description": [
+      "While holding your spellbook, swap the spell's damage type for a type found in another spell in your spellbook, one whose level matches the slot spent. The change lasts for this casting only.",
+      "The book also works as your spellcasting focus for wizard spells. If you lose it, over a short rest you can write sigils with your Wizardly Quill into a blank book or an attuned magic spellbook; when the rest ends it becomes your spellbook, spells and all."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "awakened-spellbook-ritual",
+    "name": "Awakened Spellbook (Quick Ritual)",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "You ritual-cast a wizard spell",
+    "uses": "Once per long rest",
+    "page": 77,
+    "description": [
+      "While holding your spellbook, skip the extra 10 minutes: the ritual takes the spell's normal casting time."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "manifest-mind",
+    "name": "Manifest Mind",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "uses": "Once per long rest, or spend a spell slot of any level",
+    "page": 78,
+    "description": [
+      "With your Awakened Spellbook on you, conjure its mind as a Tiny spectral object in an empty space you choose within 60 ft. It is intangible, takes up no space, and gives off dim light 10 ft around it.",
+      "It hears and sees, has 60 ft darkvision, and can pass on what it senses to you telepathically (no action).",
+      "It ends when it strays over 300 ft from you, when dispel magic targets it, when the spellbook is destroyed or you die, or when you dismiss it as a bonus action.",
+      "While it is out, you can cast through it (Manifest Mind (Cast Through)) and move it (Manifest Mind (Move))."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "manifest-mind-move",
+    "name": "Manifest Mind (Move)",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "page": 78,
+    "description": [
+      "Float the spectral mind up to 30 ft, to an empty spot visible to you or to it. It passes through creatures but not objects."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "manifest-mind-cast",
+    "name": "Manifest Mind (Cast Through)",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "On your turn, you cast a wizard spell while the spectral mind is out",
+    "uses": "Proficiency bonus per long rest",
+    "page": 78,
+    "description": [
+      "Cast the spell as if you stood in the mind's space, using its senses instead of yours."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "master-scrivener",
+    "name": "Master Scrivener",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 10,
+    "cost": "action",
+    "uses": "One scroll per long rest",
+    "page": 78,
+    "description": [
+      "Read your Master Scrivener scroll to cast its spell, which counts as one level higher than normal.",
+      "Making it: when you finish a long rest, touch your Wizardly Quill to blank paper or parchment and copy one spell from your Awakened Spellbook onto it; the book must be within 5 ft. The spell must be 1st or 2nd level with a casting time of 1 action.",
+      "Only you can read the scroll. The spell fades from it once cast, or when your next long rest ends."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "one-with-the-word",
+    "name": "One with the Word",
+    "source": {
+      "kind": "subclass",
+      "id": "order-of-scribes"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "You take damage while your spellbook's spectral mind is manifested",
+    "uses": "Once per long rest",
+    "page": 78,
+    "description": [
+      "Dismiss the spectral mind and take none of that damage. Then roll 3d6 and pick spells to strip from your spellbook for now, their levels totaling at least the roll. Too few spells in the book to cover it: you drop to 0 hit points.",
+      "The lost spells can't be cast, even from a scroll or another spellbook, until you finish 1d6 long rests; then they return to the book.",
+      "Always on: advantage on Intelligence (Arcana) checks while the spellbook is on you."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

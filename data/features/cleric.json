@@ -1239,7 +1239,7 @@
     "resource": "1 Channel Divinity",
     "page": 33,
     "description": [
-      "Action: walk up to your speed; this move draws no opportunity attacks. Each other creature you come within 5 ft of during this move can regain 2d6 + your Wisdom modifier hit points (minimum 1). A creature heals this way at most once per use."
+      "Action: travel up to your speed; this move draws no opportunity attacks. Each other creature you come within 5 ft of during this move can regain 2d6 + your Wisdom modifier hit points (minimum 1). A creature heals this way at most once per use."
     ],
     "book": "tce",
     "textSource": "summary"

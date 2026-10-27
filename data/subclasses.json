@@ -2681,6 +2681,14 @@
     "hotbarIcon": "https://bg3.wiki/w/images/9/91/Class_Wizard_Bladesinging_Hotbar_Icon.png"
   },
   {
+    "id": "order-of-scribes",
+    "cls": "wizard",
+    "name": "Order of Scribes",
+    "page": 77,
+    "book": "tce",
+    "options": []
+  },
+  {
     "id": "inquisitive",
     "cls": "rogue",
     "name": "Inquisitive",
@@ -2702,6 +2710,22 @@
     "name": "Scout",
     "page": 47,
     "book": "xge",
+    "options": []
+  },
+  {
+    "id": "phantom",
+    "cls": "rogue",
+    "name": "Phantom",
+    "page": 62,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "soulknife",
+    "cls": "rogue",
+    "name": "Soulknife",
+    "page": 63,
+    "book": "tce",
     "options": []
   },
   {
@@ -2746,6 +2770,116 @@
     "options": [
       "divine-magic-affinity"
     ]
+  },
+  {
+    "id": "aberrant-mind",
+    "cls": "sorcerer",
+    "name": "Aberrant Mind",
+    "page": 66,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "arms-of-hadar",
+          "atLevel": 1
+        },
+        {
+          "spell": "dissonant-whispers",
+          "atLevel": 1
+        },
+        {
+          "spell": "mind-sliver",
+          "atLevel": 1
+        },
+        {
+          "spell": "calm-emotions",
+          "atLevel": 3
+        },
+        {
+          "spell": "detect-thoughts",
+          "atLevel": 3
+        },
+        {
+          "spell": "hunger-of-hadar",
+          "atLevel": 5
+        },
+        {
+          "spell": "sending",
+          "atLevel": 5
+        },
+        {
+          "spell": "evards-black-tentacles",
+          "atLevel": 7
+        },
+        {
+          "spell": "summon-aberration",
+          "atLevel": 7
+        },
+        {
+          "spell": "rarys-telepathic-bond",
+          "atLevel": 9
+        },
+        {
+          "spell": "telekinesis",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "clockwork-soul",
+    "cls": "sorcerer",
+    "name": "Clockwork Soul",
+    "page": 68,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "alarm",
+          "atLevel": 1
+        },
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 1
+        },
+        {
+          "spell": "aid",
+          "atLevel": 3
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 3
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 5
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 5
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7
+        },
+        {
+          "spell": "summon-construct",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-restoration",
+          "atLevel": 9
+        },
+        {
+          "spell": "wall-of-force",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "the-celestial",
@@ -2799,6 +2933,200 @@
       ]
     },
     "options": []
+  },
+  {
+    "id": "the-fathomless",
+    "cls": "warlock",
+    "name": "The Fathomless",
+    "page": 72,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "create-or-destroy-water",
+          "atLevel": 1
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 1
+        },
+        {
+          "spell": "gust-of-wind",
+          "atLevel": 3
+        },
+        {
+          "spell": "silence",
+          "atLevel": 3
+        },
+        {
+          "spell": "lightning-bolt",
+          "atLevel": 5
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7
+        },
+        {
+          "spell": "summon-elemental",
+          "atLevel": 7,
+          "uses": "Water elemental only"
+        },
+        {
+          "spell": "bigbys-hand",
+          "atLevel": 9,
+          "uses": "Appears as a tentacle"
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "the-genie",
+    "cls": "warlock",
+    "name": "The Genie",
+    "page": 73,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "detect-evil-and-good",
+          "atLevel": 1
+        },
+        {
+          "spell": "phantasmal-force",
+          "atLevel": 3
+        },
+        {
+          "spell": "create-food-and-water",
+          "atLevel": 5
+        },
+        {
+          "spell": "phantasmal-killer",
+          "atLevel": 7
+        },
+        {
+          "spell": "creation",
+          "atLevel": 9
+        },
+        {
+          "spell": "wish",
+          "atLevel": 17
+        },
+        {
+          "spell": "sanctuary",
+          "atLevel": 1,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "meld-into-stone",
+          "atLevel": 5,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "stone-shape",
+          "atLevel": 7,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "wall-of-stone",
+          "atLevel": 9,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 1,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "gust-of-wind",
+          "atLevel": 3,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "wind-wall",
+          "atLevel": 5,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "seeming",
+          "atLevel": 9,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "burning-hands",
+          "atLevel": 1,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 5,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 7,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "fog-cloud",
+          "atLevel": 1,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "blur",
+          "atLevel": 3,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9,
+          "option": "genie-kind-marid"
+        }
+      ]
+    },
+    "options": [
+      "genie-kind"
+    ]
   },
   {
     "id": "war-magic",

@@ -33,8 +33,9 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
   const sub = effectiveSub(cc.cls, cc.level, cc.sub);
   const table = c.caster === 'none' ? sub?.casting?.maxSpellLevel : c.maxSpellLevel;
   const list = listSpells(c, sub, hasExpandedList(ch, cc.cls));
+  // a patron grant tied to an option (Genie kind) counts only with that option chosen
   const patron = sub?.bonusSpells?.kind === 'patron'
-    ? sub.bonusSpells.grants.flatMap(g => DATA.spells.find(s => s.id === g.spell) ?? []) : [];
+    ? sub.bonusSpells.grants.filter(g => !g.option || ch.options.includes(g.option)).flatMap(g => DATA.spells.find(s => s.id === g.spell) ?? []) : [];
   const entries: Entry[] = [];
   for (const p of ch.spells) {
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
