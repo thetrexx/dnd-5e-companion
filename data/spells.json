@@ -35,7 +35,7 @@
       }
     },
     "description": [
-      "You pull the water out of every creature in a 30-ft cube centered on a point within 150 ft. Each makes a Constitution save, taking 12d8 necrotic damage on a failure or half on a success. Constructs and undead are untouched; plants and water elementals roll with disadvantage.",
+      "Moisture is drawn out of all creatures inside a 30-ft cube around a point you choose within 150 ft. Each makes a Constitution save, taking 12d8 necrotic damage on a failure or half on a success. Constructs and undead are untouched; plants and water elementals roll with disadvantage.",
       "Ordinary plants in the cube that aren't creatures, like trees and bushes, shrivel and die at once."
     ],
     "textSource": "summary"
@@ -3632,7 +3632,7 @@
     },
     "description": [
       "Seven star-like motes circle your head for up to 1 hour. As a bonus action, fling one at a creature or object within 120 ft with a ranged spell attack; a hit deals 4d12 radiant damage. The mote is spent either way, and the spell ends when the last one goes.",
-      "With 4 or more motes left, they give bright light in a 30-ft radius and dim light 30 ft beyond; with 1 to 3, only dim light in a 30-ft radius."
+      "Light from the motes: 4 or more left means bright to 30 ft and dim for 30 ft more; 1 to 3 left means dim to 30 ft only."
     ],
     "higherLevels": "Each slot level above 7 adds 2 more motes.",
     "textSource": "summary"
@@ -8074,7 +8074,7 @@
       "s": true
     },
     "description": [
-      "A weapon you touch glows with holy power for up to 1 hour: bright light in a 30-ft radius, dim light 30 ft farther. Each weapon attack with it that hits adds 2d8 radiant damage, and a nonmagical weapon counts as magic until the spell ends.",
+      "A weapon you touch glows with holy power for up to 1 hour, shedding light: bright to 30 ft, dim for 30 ft more. Each weapon attack with it that hits adds 2d8 radiant damage, and a nonmagical weapon counts as magic until the spell ends.",
       "Bonus action: end the spell in a burst of radiance. Creatures of your choice in sight within 30 ft each make a Constitution save, taking 4d8 radiant damage and being blinded for 1 minute on a failure, or half damage and no blindness on a success. A blinded creature tries the save again after each of its turns, recovering on a success."
     ],
     "textSource": "summary"
@@ -8415,7 +8415,7 @@
     },
     "description": [
       "Fire engulfs a creature you can see within 90 ft. It makes a Dexterity save, taking 8d6 fire damage on a failure or half on a success.",
-      "A creature that failed keeps burning for up to 1 minute, giving off bright light in a 30-ft radius and dim light 30 ft beyond. After each of its turns it rolls the save again: failing deals 4d6 fire damage, succeeding ends the spell. Nonmagical means can't put the flames out, and a creature this spell kills turns to ash."
+      "A creature that failed keeps burning for up to 1 minute and sheds light: bright to 30 ft, dim for 30 ft more. After each of its turns it rolls the save again: failing deals 4d6 fire damage, succeeding ends the spell. Nonmagical means can't put the flames out, and a creature this spell kills turns to ash."
     ],
     "textSource": "summary"
   },
@@ -8696,7 +8696,7 @@
       "s": true
     },
     "description": [
-      "Harmless flames cover you for up to 10 minutes, shedding bright light in a 30-ft radius and dim light 30 ft beyond. Fire damage can't hurt you, and you resist cold damage.",
+      "Harmless flames cover you for up to 10 minutes. You shed light: bright to 30 ft, dim for 30 ft more. Fire damage can't hurt you, and you resist cold damage.",
       "Moving to within 5 ft of you costs a creature 1d10 fire damage (once per turn), and so does finishing its turn that close.",
       "Action: shoot fire from you along a 5-ft-wide, 15-ft-long line, aimed where you like. Creatures in the line make Dexterity saves, taking 4d8 fire damage on a failure or half on a success."
     ],
@@ -8737,7 +8737,7 @@
     },
     "description": [
       "Ice rimes your body for up to 10 minutes. Cold damage can't hurt you, you resist fire damage, and you pay no extra movement for difficult terrain made of ice or snow.",
-      "The ground in a 10-ft radius around you turns icy and moves with you; it is difficult terrain for everyone but you.",
+      "Icy ground surrounds you to 10 ft and travels with you; it is difficult terrain for every creature except you.",
       "Action: a 15-ft cone of freezing wind sweeps out from your hand. Each creature in it makes a Constitution save, taking 4d6 cold damage and having its speed halved until your next turn starts on a failure, or half damage on a success."
     ],
     "textSource": "summary"
@@ -14756,7 +14756,7 @@
       "s": true
     },
     "description": [
-      "Psychic energy bursts at a point within 120 ft. Each creature in a 20-ft-radius sphere there makes an Intelligence save, taking 8d6 psychic damage on a failure or half on a success; creatures with Intelligence 2 or lower are unaffected.",
+      "Psychic energy bursts at a point within 120 ft. Creatures within 20 ft of that point each make an Intelligence save, taking 8d6 psychic damage on a failure or half on a success; creatures with Intelligence 2 or lower are unaffected.",
       "A creature that fails is muddled for 1 minute: it rolls a d6 and subtracts it from its attack rolls, ability checks and Constitution saves to keep concentration. It retries the Intelligence save after each of its turns, shaking off the effect on a success."
     ],
     "textSource": "summary"
