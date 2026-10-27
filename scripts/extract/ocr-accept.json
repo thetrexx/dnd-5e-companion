@@ -7,5 +7,9 @@
   "spells:dawn": "Xanathar text layer on p. 154 drops the dice: 4d10 radiant checked against the page image; no copied run (longest 6)",
   "spells:investiture-of-wind": "Xanathar text layer on p. 160 drops the dice: 2d10 bludgeoning checked against the page image; no copied run",
   "spells:mighty-fortress": "Xanathar text layer on p. 161 drops the level line: 8th-level conjuration checked against the page image; no copied run",
-  "features:optional-beast-master-primal-companion": "cites PHB p. 93 for Bestial Fury and Share Spells, which aren't on Tasha's p. 61: level 11 two attacks and level 15 Share Spells (30 ft) checked against PHB p. 93 page image; longest shared run 6 words vs both pages"
+  "features:optional-beast-master-primal-companion": "cites PHB p. 93 for Bestial Fury and Share Spells, which aren't on Tasha's p. 61: level 11 two attacks and level 15 Share Spells (30 ft) checked against PHB p. 93 page image; longest shared run 6 words vs both pages",
+  "spells:summon-aberration": "the only missing number is the stat block page 109: the Tasha's p. 109 footer is misread in the text layer ('ro9'); Aberrant Spirit on p. 109 checked against the page image; longest shared run 6 words",
+  "spells:summon-beast": "the only missing number is the stat block page 109: the Tasha's p. 109 footer is misread in the text layer ('ro9'); Bestial Spirit on p. 109 checked against the page image; longest shared run 6 words",
+  "spells:summon-shadowspawn": "the only missing number is the stat block page 114: the Tasha's p. 114 text layer has no page footer; Shadow Spirit on p. 114 checked against the page image; longest shared run 6 words",
+  "spells:summon-undead": "the only missing number is the stat block page 114: the Tasha's p. 114 text layer has no page footer; Undead Spirit on p. 114 checked against the page image; longest shared run 6 words"
 }

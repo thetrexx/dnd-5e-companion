@@ -1301,6 +1301,43 @@
     "icon": "https://bg3.wiki/w/images/b/bb/Blade_Barrier_Icon.webp"
   },
   {
+    "id": "blade-of-disaster",
+    "name": "Blade of Disaster",
+    "level": 9,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "60 feet",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 106,
+    "book": "tce",
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "4d12",
+        "type": "Force"
+      }
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "You tear a blade-shaped planar rift, roughly 3 ft long, into an empty space you can see within 60 ft. On casting, and each time you use a bonus action to glide it up to 30 ft, it attacks up to 2 times (melee spell attacks) against creatures, loose objects or structures no more than 5 ft from it.",
+      "A hit deals 4d12 force damage and crits on a d20 roll of 18+, adding 8d12 force (12d12 in all). It passes harmlessly through barriers, even wall of force."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "blade-ward",
     "name": "Blade Ward",
     "level": 0,
@@ -1582,6 +1619,50 @@
     ],
     "higherLevels": "Each slot level above 6 adds 2 more pillars.",
     "textSource": "summary"
+  },
+  {
+    "id": "booming-blade",
+    "name": "Booming Blade",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (5-foot radius)",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 106,
+    "book": "tce",
+    "summary": {
+      "resolution": "attack",
+      "damage": {
+        "dice": "1d8",
+        "type": "Thunder (if it moves)"
+      },
+      "upcast": "level 5: +1d8 on hit, 2d8 if it moves; level 11: +2d8 and 3d8; level 17: +3d8 and 4d8"
+    },
+    "components": {
+      "v": false,
+      "s": true,
+      "m": {
+        "text": "a melee weapon of 1 sp or more in value",
+        "costGp": 0.1,
+        "consumed": false
+      }
+    },
+    "description": [
+      "You swing the weapon from the casting at one creature within 5 ft as a melee attack. On a hit, it suffers the attack's usual effects and crackles with thunder until your next turn starts. If it moves 5 ft or more of its own will before then, it takes 1d8 thunder damage, ending the spell.",
+      "From level 5 a hit also deals 1d8 thunder, and the moving damage becomes 2d8. Both rise by 1d8 at level 11 (2d8 on hit, 3d8 for moving) and level 17 (3d8, 4d8)."
+    ],
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/fd/Booming_Blade_Icon.webp"
   },
   {
     "id": "branding-smite",
@@ -4780,6 +4861,45 @@
     "textSource": "summary"
   },
   {
+    "id": "dream-of-the-blue-veil",
+    "name": "Dream of the Blue Veil",
+    "level": 7,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "other",
+      "text": "10 minutes"
+    },
+    "range": "20 feet",
+    "duration": "6 hours",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 106,
+    "book": "tce",
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a magic item from the destination world, or a willing creature born there",
+        "consumed": false
+      }
+    },
+    "description": [
+      "You and as many as 8 willing creatures within 20 ft fall unconscious, dreaming of another Material Plane world. After the full 6 hours, you all wake there, somewhere safe no more than 1 mile from where the magic item was made, or from a sleeper's birthplace.",
+      "You must know the world exists (not its name) and hold a magic item from it, or include a creature born there.",
+      "A sleeper who takes damage drops out, left behind; if you take damage, it ends for all and no one travels."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "druid-grove",
     "name": "Druid Grove",
     "level": 6,
@@ -7193,6 +7313,45 @@
     "icon": "https://bg3.wiki/w/images/e/ee/Greater_Restoration_Icon.webp"
   },
   {
+    "id": "green-flame-blade",
+    "name": "Green-Flame Blade",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (5-foot radius)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 107,
+    "book": "tce",
+    "summary": {
+      "resolution": "attack",
+      "upcast": "level 5: +1d8 fire on hit, 1d8 + mod to the second creature; level 11: 2d8 each; level 17: 3d8 each"
+    },
+    "components": {
+      "v": false,
+      "s": true,
+      "m": {
+        "text": "a melee weapon of 1 sp or more in value",
+        "costGp": 0.1,
+        "consumed": false
+      }
+    },
+    "description": [
+      "You swing the weapon from the casting at one creature within 5 ft as a melee attack. On a hit, it suffers the attack's usual effects, and you can send green fire jumping to a second creature within 5 ft of the target that you can see; it takes fire damage equal to your spellcasting modifier.",
+      "From level 5 a hit also deals 1d8 fire and the jump deals 1d8 + your modifier. Each part gains another 1d8 at level 11 and again at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "guardian-of-faith",
     "name": "Guardian of Faith",
     "level": 4,
@@ -8663,6 +8822,41 @@
     "icon": "https://bg3.wiki/w/images/a/a2/Insect_Plague_Icon.webp"
   },
   {
+    "id": "intellect-fortress",
+    "name": "Intellect Fortress",
+    "level": 3,
+    "school": "Abjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "30 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "bard",
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 107,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "+1 creature per slot level above 3"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You wrap a mind in psychic armor. For up to 1 hour, you, or a willing creature in sight within 30 ft, gains resistance to psychic damage plus advantage on Intelligence, Wisdom and Charisma saves."
+    ],
+    "higherLevels": "Each slot level above 3 adds one more target; the targets must all stand within 30 ft of one another when you pick them.",
+    "textSource": "summary"
+  },
+  {
     "id": "investiture-of-flame",
     "name": "Investiture of Flame",
     "level": 6,
@@ -9295,6 +9489,45 @@
     "higherLevels": "Each slot level above 3 adds 1d6 damage.",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/c/cb/Lightning_Bolt_Icon.webp"
+  },
+  {
+    "id": "lightning-lure",
+    "name": "Lightning Lure",
+    "level": 0,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (15-foot radius)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 107,
+    "book": "tce",
+    "summary": {
+      "resolution": "save",
+      "save": "str",
+      "damage": {
+        "dice": "1d8",
+        "type": "Lightning"
+      },
+      "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A whip of lightning snaps at one creature you can see within 15 ft. It makes a Strength save or is dragged as much as 10 ft straight at you; if that leaves it within 5 ft of you, it also takes 1d8 lightning damage.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ],
+    "textSource": "summary"
   },
   {
     "id": "locate-animals-or-plants",
@@ -10447,6 +10680,45 @@
     },
     "description": [
       "For 24 hours, the willing creature you touch can't take psychic damage and is immune to the charmed condition, to divination spells, and to anything that would sense its emotions or read its thoughts. Even wish and magic of that power can't touch its mind or gather information about it."
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "mind-sliver",
+    "name": "Mind Sliver",
+    "level": 0,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "60 feet",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 108,
+    "book": "tce",
+    "summary": {
+      "resolution": "save",
+      "save": "int",
+      "damage": {
+        "dice": "1d6",
+        "type": "Psychic"
+      },
+      "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You jab a shard of psychic force into the mind of a creature you can see within 60 ft. It makes an Intelligence save or takes 1d6 psychic damage, and it subtracts 1d4 from the next save it rolls before the end of your next turn.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
     ],
     "textSource": "summary"
   },
@@ -14142,6 +14414,46 @@
     "icon": "https://bg3.wiki/w/images/d/d6/Spirit_Guardians_Icon.webp"
   },
   {
+    "id": "spirit-shroud",
+    "name": "Spirit Shroud",
+    "level": 3,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin",
+      "warlock",
+      "wizard"
+    ],
+    "page": 108,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "damage": {
+        "dice": "1d8",
+        "type": "Radiant, necrotic or cold (your choice)"
+      },
+      "upcast": "slots 5-6: 2d8; slots 7-8: 3d8; slot 9: 4d8"
+    },
+    "components": {
+      "v": true,
+      "s": true
+    },
+    "description": [
+      "Spirits of the dead, intangible and invulnerable, swirl around you for up to 1 minute. Pick radiant, necrotic or cold as you cast. Whenever one of your attacks hits a creature within 10 ft of you, it deals an extra 1d8 damage of that type, and that creature can't regain hit points until your next turn begins.",
+      "Pick any creatures you can see; each that begins its turn within 10 ft of you loses 10 ft of speed until your next turn begins."
+    ],
+    "higherLevels": "The extra damage gains 1d8 for each 2 full slot levels above 3.",
+    "textSource": "summary"
+  },
+  {
     "id": "spiritual-weapon",
     "name": "Spiritual Weapon",
     "level": 2,
@@ -14478,6 +14790,288 @@
     "textSource": "summary"
   },
   {
+    "id": "summon-aberration",
+    "name": "Summon Aberration",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 109,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a pickled tentacle plus an eyeball, kept in a platinum-inlaid vial worth 400+ gp",
+        "costGp": 400,
+        "consumed": false
+      }
+    },
+    "description": [
+      "An aberrant spirit appears in an empty space you can see within 90 ft. Choose Beholderkin, Slaad or Star Spawn when you cast; the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 109."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-beast",
+    "name": "Summon Beast",
+    "level": 2,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger"
+    ],
+    "page": 109,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a feather, a tuft of fur and a fish tail in a gilded acorn, worth 200+ gp",
+        "costGp": 200,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A bestial spirit appears in an empty space you can see within 90 ft. Choose Air, Land or Water when you cast; it looks like an animal of your choice from that environment, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 109."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-celestial",
+    "name": "Summon Celestial",
+    "level": 5,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "cleric",
+      "paladin"
+    ],
+    "page": 110,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a golden reliquary worth 500+ gp",
+        "costGp": 500,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A celestial spirit appears in angelic form in an empty space you can see within 90 ft. Choose Avenger or Defender when you cast; the choice sets the attack it uses.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 110."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-construct",
+    "name": "Summon Construct",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "wizard"
+    ],
+    "page": 111,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "an ornate lockbox of stone and metal worth 400+ gp",
+        "costGp": 400,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A construct spirit appears in an empty space you can see within 90 ft. Choose Clay, Metal or Stone when you cast; it looks like a golem or modron of that material, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 111."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-elemental",
+    "name": "Summon Elemental",
+    "level": 4,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger",
+      "wizard"
+    ],
+    "page": 111,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "air, a pebble, ash and water in a vial inlaid with gold, worth 400+ gp",
+        "costGp": 400,
+        "consumed": false
+      }
+    },
+    "description": [
+      "An elemental spirit appears in an empty space you can see within 90 ft. Choose Air, Earth, Fire or Water when you cast; it looks like a two-legged figure wrapped in that element, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 111."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-fey",
+    "name": "Summon Fey",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "druid",
+      "ranger",
+      "warlock",
+      "wizard"
+    ],
+    "page": 112,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a gilded flower worth 300+ gp",
+        "costGp": 300,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A fey spirit appears in an empty space you can see within 90 ft. Choose a mood when you cast: Fuming, Mirthful or Tricksy. It looks like a fey creature of your choice showing that mood, which sets one of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 112."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-fiend",
+    "name": "Summon Fiend",
+    "level": 6,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 112,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "humanoid blood in a ruby vial worth 600+ gp",
+        "costGp": 600,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A fiendish spirit appears in an empty space you can see within 90 ft. Choose Demon, Devil or Yugoloth when you cast; it looks like a fiend of that kind, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 112."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
     "id": "summon-greater-demon",
     "name": "Summon Greater Demon",
     "level": 4,
@@ -14557,6 +15151,86 @@
       "If you draw a circle of the blood around your space while casting, they can't cross it, harm it or target anyone inside; the blood is consumed when the spell ends."
     ],
     "higherLevels": "A level 6 or 7 slot summons twice as many demons; a level 8 or 9 slot, three times as many.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-shadowspawn",
+    "name": "Summon Shadowspawn",
+    "level": 3,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 113,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "tears inside a gem worth 300+ gp",
+        "costGp": 300,
+        "consumed": false
+      }
+    },
+    "description": [
+      "A shadowy spirit appears in an empty space you can see within 90 ft. Choose an emotion when you cast: Fury, Despair or Fear. It looks like a twisted biped marked by that emotion, which sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 114."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "textSource": "summary"
+  },
+  {
+    "id": "summon-undead",
+    "name": "Summon Undead",
+    "level": 3,
+    "school": "Necromancy",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "Concentration, up to 1 hour",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "warlock",
+      "wizard"
+    ],
+    "page": 114,
+    "book": "tce",
+    "summary": {
+      "resolution": "none",
+      "upcast": "stat block uses the slot level"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a gilded skull worth 300+ gp",
+        "costGp": 300,
+        "consumed": false
+      }
+    },
+    "description": [
+      "An undead spirit appears in an empty space you can see within 90 ft. Choose Ghostly, Putrid or Skeletal when you cast; it looks like an undead creature of that form, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 114."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
     "textSource": "summary"
   },
   {
@@ -14678,6 +15352,45 @@
     "textSource": "summary"
   },
   {
+    "id": "sword-burst",
+    "name": "Sword Burst",
+    "level": 0,
+    "school": "Conjuration",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (5-foot radius)",
+    "duration": "Instantaneous",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 115,
+    "book": "tce",
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "1d6",
+        "type": "Force"
+      },
+      "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "A brief ring of ghostly blades whirls around you. Every other creature within 5 ft of you makes a Dexterity save or takes 1d6 force damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "symbol",
     "name": "Symbol",
     "level": 7,
@@ -14762,6 +15475,49 @@
     "textSource": "summary"
   },
   {
+    "id": "tashas-caustic-brew",
+    "name": "Tasha's Caustic Brew",
+    "level": 1,
+    "school": "Evocation",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "Self (30-foot line)",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 115,
+    "book": "tce",
+    "summary": {
+      "resolution": "save",
+      "save": "dex",
+      "damage": {
+        "dice": "2d4",
+        "type": "Acid"
+      },
+      "upcast": "+2d4 per slot level above 1"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "a scrap of rotten food",
+        "consumed": false
+      }
+    },
+    "description": [
+      "Acid sprays from you in a 30 ft long, 5 ft wide line in a direction you pick. Each creature in it makes a Dexterity save or is coated in acid for up to 1 minute.",
+      "A coated creature takes 2d4 acid damage at the start of each of its turns. The coating lasts until the spell ends or any creature spends its action cleaning the acid off itself or another."
+    ],
+    "higherLevels": "Each slot level above 1 adds 2d4 to the acid damage.",
+    "textSource": "summary"
+  },
+  {
     "id": "tashas-hideous-laughter",
     "name": "Tasha's Hideous Laughter",
     "level": 1,
@@ -14797,6 +15553,86 @@
     ],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/2/27/Tasha's_Hideous_Laughter_Icon.webp"
+  },
+  {
+    "id": "tashas-mind-whip",
+    "name": "Tasha's Mind Whip",
+    "level": 2,
+    "school": "Enchantment",
+    "cast": {
+      "cost": "action",
+      "text": "1 action"
+    },
+    "range": "90 feet",
+    "duration": "1 round",
+    "concentration": false,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "wizard"
+    ],
+    "page": 115,
+    "book": "tce",
+    "summary": {
+      "resolution": "save",
+      "save": "int",
+      "damage": {
+        "dice": "3d6",
+        "type": "Psychic"
+      },
+      "upcast": "+1 creature per slot level above 2"
+    },
+    "components": {
+      "v": true,
+      "s": false
+    },
+    "description": [
+      "You lash the mind of one creature you can see within 90 ft. It makes an Intelligence save.",
+      "On a failure it takes 3d6 psychic damage and can't take reactions until its next turn ends. On that turn it gets only one of the three: its move, its action or its bonus action.",
+      "On a success it takes half damage and nothing else."
+    ],
+    "higherLevels": "Each slot level above 2 adds one more target; the targets must all stand within 30 ft of one another when you pick them.",
+    "textSource": "summary"
+  },
+  {
+    "id": "tashas-otherworldly-guise",
+    "name": "Tasha's Otherworldly Guise",
+    "level": 6,
+    "school": "Transmutation",
+    "cast": {
+      "cost": "bonus",
+      "text": "1 bonus action"
+    },
+    "range": "Self",
+    "duration": "Concentration, up to 1 minute",
+    "concentration": true,
+    "ritual": false,
+    "classes": [
+      "sorcerer",
+      "warlock",
+      "wizard"
+    ],
+    "page": 116,
+    "book": "tce",
+    "summary": {
+      "resolution": "none"
+    },
+    "components": {
+      "v": true,
+      "s": true,
+      "m": {
+        "text": "an object engraved with an Outer Planes symbol, worth 500+ gp",
+        "costGp": 500,
+        "consumed": false
+      }
+    },
+    "description": [
+      "You draw on the Lower or Upper Planes (your pick) and transform for up to 1 minute.",
+      "Lower: immune to fire and poison damage and the poisoned condition. Upper: immune to radiant and necrotic damage and the charmed condition.",
+      "Spectral wings give you a 40 ft flying speed, and you gain +2 AC.",
+      "Your weapon attacks are magical and can use your spellcasting modifier in place of Strength or Dexterity for attack and damage. The Attack action gives you 2 attacks, unless a feature like Extra Attack already grants more."
+    ],
+    "textSource": "summary"
   },
   {
     "id": "telekinesis",

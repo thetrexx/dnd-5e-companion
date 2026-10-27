@@ -3869,5 +3869,618 @@
     "type": "Psychic"
    }
   }
+ },
+ {
+  "id": "blade-of-disaster",
+  "name": "Blade of Disaster",
+  "level": 9,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "60 feet",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 106,
+  "book": "tce",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "4d12",
+    "type": "Force"
+   }
+  }
+ },
+ {
+  "id": "booming-blade",
+  "name": "Booming Blade",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (5-foot radius)",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "costGp": 0.1,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 106,
+  "book": "tce",
+  "summary": {
+   "resolution": "attack",
+   "damage": {
+    "dice": "1d8",
+    "type": "Thunder (if it moves)"
+   },
+   "upcast": "level 5: +1d8 on hit, 2d8 if it moves; level 11: +2d8 and 3d8; level 17: +3d8 and 4d8"
+  }
+ },
+ {
+  "id": "dream-of-the-blue-veil",
+  "name": "Dream of the Blue Veil",
+  "level": 7,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "other",
+   "text": "10 minutes"
+  },
+  "range": "20 feet",
+  "duration": "6 hours",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 106,
+  "book": "tce",
+  "summary": {
+   "resolution": "none"
+  }
+ },
+ {
+  "id": "green-flame-blade",
+  "name": "Green-Flame Blade",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (5-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": false,
+   "s": true,
+   "m": {
+    "costGp": 0.1,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 107,
+  "book": "tce",
+  "summary": {
+   "resolution": "attack",
+   "upcast": "level 5: +1d8 fire on hit, 1d8 + mod to the second creature; level 11: 2d8 each; level 17: 3d8 each"
+  }
+ },
+ {
+  "id": "intellect-fortress",
+  "name": "Intellect Fortress",
+  "level": 3,
+  "school": "Abjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "30 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 107,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "+1 creature per slot level above 3"
+  }
+ },
+ {
+  "id": "lightning-lure",
+  "name": "Lightning Lure",
+  "level": 0,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (15-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 107,
+  "book": "tce",
+  "summary": {
+   "resolution": "save",
+   "save": "str",
+   "damage": {
+    "dice": "1d8",
+    "type": "Lightning"
+   },
+   "upcast": "2d8 at level 5, 3d8 at level 11, 4d8 at level 17"
+  }
+ },
+ {
+  "id": "mind-sliver",
+  "name": "Mind Sliver",
+  "level": 0,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "60 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 108,
+  "book": "tce",
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "1d6",
+    "type": "Psychic"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "spirit-shroud",
+  "name": "Spirit Shroud",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true
+  },
+  "classes": [],
+  "page": 108,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "damage": {
+    "dice": "1d8",
+    "type": "Radiant, necrotic or cold (your choice)"
+   },
+   "upcast": "slots 5-6: 2d8; slots 7-8: 3d8; slot 9: 4d8"
+  }
+ },
+ {
+  "id": "summon-aberration",
+  "name": "Summon Aberration",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 400,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 109,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-beast",
+  "name": "Summon Beast",
+  "level": 2,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 200,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 109,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-celestial",
+  "name": "Summon Celestial",
+  "level": 5,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 110,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-construct",
+  "name": "Summon Construct",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 400,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 111,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-elemental",
+  "name": "Summon Elemental",
+  "level": 4,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 400,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 111,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-fey",
+  "name": "Summon Fey",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 300,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 112,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-fiend",
+  "name": "Summon Fiend",
+  "level": 6,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 600,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 112,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-shadowspawn",
+  "name": "Summon Shadowspawn",
+  "level": 3,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 300,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 113,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "summon-undead",
+  "name": "Summon Undead",
+  "level": 3,
+  "school": "Necromancy",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "Concentration, up to 1 hour",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 300,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 114,
+  "book": "tce",
+  "summary": {
+   "resolution": "none",
+   "upcast": "stat block uses the slot level"
+  }
+ },
+ {
+  "id": "sword-burst",
+  "name": "Sword Burst",
+  "level": 0,
+  "school": "Conjuration",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (5-foot radius)",
+  "duration": "Instantaneous",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 115,
+  "book": "tce",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "1d6",
+    "type": "Force"
+   },
+   "upcast": "2d6 at level 5, 3d6 at level 11, 4d6 at level 17"
+  }
+ },
+ {
+  "id": "tashas-caustic-brew",
+  "name": "Tasha's Caustic Brew",
+  "level": 1,
+  "school": "Evocation",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "Self (30-foot line)",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 115,
+  "book": "tce",
+  "summary": {
+   "resolution": "save",
+   "save": "dex",
+   "damage": {
+    "dice": "2d4",
+    "type": "Acid"
+   },
+   "upcast": "+2d4 per slot level above 1"
+  }
+ },
+ {
+  "id": "tashas-mind-whip",
+  "name": "Tasha's Mind Whip",
+  "level": 2,
+  "school": "Enchantment",
+  "cast": {
+   "cost": "action",
+   "text": "1 action"
+  },
+  "range": "90 feet",
+  "duration": "1 round",
+  "concentration": false,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": false
+  },
+  "classes": [],
+  "page": 115,
+  "book": "tce",
+  "summary": {
+   "resolution": "save",
+   "save": "int",
+   "damage": {
+    "dice": "3d6",
+    "type": "Psychic"
+   },
+   "upcast": "+1 creature per slot level above 2"
+  }
+ },
+ {
+  "id": "tashas-otherworldly-guise",
+  "name": "Tasha's Otherworldly Guise",
+  "level": 6,
+  "school": "Transmutation",
+  "cast": {
+   "cost": "bonus",
+   "text": "1 bonus action"
+  },
+  "range": "Self",
+  "duration": "Concentration, up to 1 minute",
+  "concentration": true,
+  "ritual": false,
+  "components": {
+   "v": true,
+   "s": true,
+   "m": {
+    "costGp": 500,
+    "consumed": false
+   }
+  },
+  "classes": [],
+  "page": 116,
+  "book": "tce",
+  "summary": {
+   "resolution": "none"
+  }
  }
 ]
