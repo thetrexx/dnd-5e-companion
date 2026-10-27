@@ -211,6 +211,11 @@ test('options step: optional features are ticked, and a replacement hides the ol
   fireEvent.click(r.getByText('Favored Foe'));
   expect(r.getByText('Favored Enemy')).toBeTruthy();
 });
+test('options step: Blessed Strikes notes Divine Strike once', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 8 }] });
+  const r = render(<Editor step="options" />);
+  expect(r.getByText('Replaces Divine Strike')).toBeTruthy();
+});
 test('options step: a subclass optional slot names the subclass', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'ranger', level: 3, sub: 'beast-master' }] });
   const r = render(<Editor step="options" />);

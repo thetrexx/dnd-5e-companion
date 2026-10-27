@@ -1528,14 +1528,14 @@
     },
     "level": 12,
     "cost": "action",
-    "uses": "Proficiency bonus times per long rest",
+    "uses": "Proficiency bonus times per long rest, one pool shared by you and the wearer",
     "prereq": {
       "level": 12,
       "option": "pact-boon-pact-of-the-talisman"
     },
     "description": [
       "While another creature wears your talisman and shares your plane, teleport to the free space nearest to it.",
-      "The wearer can also spend its action to teleport to you in the same way."
+      "The wearer can also spend its action to teleport to you in the same way. Your teleports and theirs draw on the same uses."
     ],
     "page": 70,
     "book": "tce",
@@ -1667,7 +1667,7 @@
     },
     "level": 2,
     "cost": "reaction",
-    "trigger": "Whoever wears your talisman is hit by an attacker within 30 ft that you can see",
+    "trigger": "An attacker you can see, no more than 30 ft from you, hits whoever wears your talisman",
     "prereq": {
       "option": "pact-boon-pact-of-the-talisman"
     },

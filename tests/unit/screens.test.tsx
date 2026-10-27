@@ -131,6 +131,10 @@ test('Card marks optional features and what they replace', () => {
   const t = render(<Card kind="feature" id="deft-explorer-tireless" cls="ranger" level={10} />);
   expect(t.container.querySelector('.card-sub')!.textContent).toBe('Ranger Feature · Level 10 · Optional');
 });
+test('Blessed Strikes names Divine Strike once', () => {
+  const r = render(<Card kind="feature" id="optional-cleric-blessed-strikes" cls="cleric" level={8} />);
+  expect(r.container.querySelector('.card-sub')!.textContent).toMatch(/Optional, replaces Divine Strike$/);
+});
 test('Primal Companion card keeps Bestial Fury and Share Spells', () => {
   const r = render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={11} sub="beast-master" />);
   expect(r.container.querySelector('.card-scaling')!.textContent).toContain('Beast attacks: 2');

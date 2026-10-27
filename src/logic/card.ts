@@ -76,5 +76,6 @@ export function bookRef(r: { book?: BookId; page: number }): string {
 
 /** What an optional feature replaces, by feature name, else option group name: 'Favored Enemy'. */
 export function replacedNames(ids: string[]): string {
-  return ids.map(id => DATA.features.find(f => f.id === id)?.name ?? DATA.optionGroups.find(g => g.id === id)?.name ?? id).join(', ');
+  // several subclasses' features can share a name (every domain's Divine Strike): name each once, first-seen order
+  return [...new Set(ids.map(id => DATA.features.find(f => f.id === id)?.name ?? DATA.optionGroups.find(g => g.id === id)?.name ?? id))].join(', ');
 }
