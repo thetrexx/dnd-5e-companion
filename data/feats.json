@@ -310,7 +310,7 @@
     "prereq": "Intelligence or Wisdom 13 or higher",
     "page": 169,
     "description": [
-      "You start with a ritual book holding 2 first-level spells. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability. You can cast them only as rituals, with the book in your hand.",
+      "You gain a ritual book; it starts with 2 spells, both 1st level. Pick wizard, warlock, sorcerer, druid, cleric or bard; both spells come from that list and need the ritual tag. That class sets your casting ability. You can cast them only as rituals, with the book in your hand.",
       "Found ritual spells can be copied in when they are on that class list and their level is at most half yours (round up). Each costs 2 hours and 50 gp per spell level."
     ],
     "spells": [

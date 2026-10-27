@@ -154,7 +154,7 @@
     "description": [
       "A 1-hour ritual (a short rest works) ties you to one weapon. Keep it within reach throughout, and touch it at the end to seal the bond.",
       "A bonded weapon cannot be disarmed from you unless you are incapacitated. While it is on your plane, you can call it to your hand as a bonus action on your turn; it teleports there instantly.",
-      "You can have up to 2 bonded weapons, but summon only one per bonus action. Bonding a third needs you to break one existing bond first."
+      "At most 2 weapons can be bonded to you at once, and each bonus action summons only one of them. Bonding a third needs you to break one existing bond first."
     ],
     "page": 75,
     "textSource": "summary",

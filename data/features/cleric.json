@@ -637,7 +637,7 @@
     "trigger": "You use the Attack action",
     "uses": "Wisdom modifier (minimum 1) per long rest",
     "description": [
-      "When you take the Attack action, make 1 weapon attack as a bonus action."
+      "After you take the Attack action, your bonus action can make 1 extra weapon attack."
     ],
     "page": 63,
     "textSource": "summary",

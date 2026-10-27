@@ -1,6 +1,6 @@
 import { DATA } from '../data';
 import type { Ability, ClassId, Feature, RaceDef, Spell } from '../data/types';
-import { ceilingOf, listSpells, maxSpellLevel } from '../logic/rules';
+import { ceilingOf, extraListTag, listSpells, maxSpellLevel } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { CharClass, Character } from './types';
 
@@ -67,7 +67,7 @@ export function pickableSpells(cc: CharClass): Pickable[] {
   if (!c || !info) return [];
   const sub = effectiveSub(cc.cls, cc.level, cc.sub);
   const out = new Map<string, Pickable>();
-  for (const spell of listSpells(c, sub)) out.set(spell.id, { spell });
+  for (const spell of listSpells(c, sub)) out.set(spell.id, { spell, tag: extraListTag(c, sub, spell) });
   if (c.caster === 'none') for (const spell of DATA.spells) if (spell.classes.includes(info.list) && !out.has(spell.id)) out.set(spell.id, { spell, tag: 'Any school' });
   if (sub?.bonusSpells?.kind === 'patron') {
     for (const g of sub.bonusSpells.grants) {

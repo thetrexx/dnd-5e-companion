@@ -760,8 +760,7 @@
       "While you rage, a stormy aura reaches 10 ft from you in all directions (total cover blocks it). Its effect fires as the rage starts, and on each later turn of that rage you can fire it again with a bonus action. Its save DC is 8 + your Constitution modifier + your proficiency bonus. Each time you gain a barbarian level you may switch to another environment.",
       "Desert: each time the effect fires, every other creature inside the aura takes 2 fire damage. This rises to 3 at barbarian level 5, 4 at level 10, 5 at level 15 and 6 at level 20.",
       "Level 6 (Storm Soul): you resist fire damage and shrug off extreme heat. You can also use your action to set fire to a flammable object you touch, provided nobody else is wearing or carrying it.",
-      "Level 10 (Shielding Storm): creatures you choose also resist fire damage while they are in your aura.",
-      "Level 14 (Raging Storm): when a creature inside your aura lands an attack on you, you can respond at once with your reaction: it makes a Dexterity save and, on a failure, it takes half your barbarian level in fire damage."
+      "Level 10 (Shielding Storm): creatures you choose also resist fire damage while they are in your aura."
     ],
     "book": "xge",
     "textSource": "summary",
@@ -809,8 +808,7 @@
       "While you rage, a stormy aura reaches 10 ft from you in all directions (total cover blocks it). Its effect fires as the rage starts, and on each later turn of that rage you can fire it again with a bonus action. Its save DC is 8 + your Constitution modifier + your proficiency bonus. Each time you gain a barbarian level you may switch to another environment.",
       "Sea: each time the effect fires, pick one other creature in the aura that you can see. It makes a Dexterity save, taking 1d6 lightning damage if it fails or half that if it succeeds. The damage becomes 2d6 at barbarian level 10, 3d6 at level 15 and 4d6 at level 20.",
       "Level 6 (Storm Soul): you resist lightning damage, can breathe underwater and swim at a speed of 30 ft.",
-      "Level 10 (Shielding Storm): creatures you choose also resist lightning damage while they are in your aura.",
-      "Level 14 (Raging Storm): after your attack hits a creature inside your aura, you can use your reaction to make it attempt a Strength save; on a failure it is knocked prone, like a wave hit it."
+      "Level 10 (Shielding Storm): creatures you choose also resist lightning damage while they are in your aura."
     ],
     "book": "xge",
     "textSource": "summary"
@@ -859,6 +857,46 @@
       "Level 6 (Storm Soul): you resist cold damage and shrug off extreme cold. You can also use your action to turn a 5-ft cube of water you touch into ice. The ice thaws after 1 minute. You can't do it while a creature is inside that cube.",
       "Level 10 (Shielding Storm): creatures you choose also resist cold damage while they are in your aura.",
       "Level 14 (Raging Storm): whenever the effect fires, you can pick one creature in the aura that you can see. Unless it passes a Strength save, magical frost drops its speed to 0 until your next turn starts."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "raging-storm-desert",
+    "name": "Raging Storm (Desert)",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-storm-herald"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "A creature in your desert Storm Aura hits you with an attack",
+    "prereq": {
+      "option": "storm-aura-desert"
+    },
+    "page": 11,
+    "description": [
+      "Lash back the moment the hit lands: the attacker rolls a Dexterity save. On a failure, half your barbarian level is dealt to it as fire damage."
+    ],
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "raging-storm-sea",
+    "name": "Raging Storm (Sea)",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-storm-herald"
+    },
+    "level": 14,
+    "cost": "reaction",
+    "trigger": "You hit a creature in your sea Storm Aura with an attack",
+    "prereq": {
+      "option": "storm-aura-sea"
+    },
+    "page": 11,
+    "description": [
+      "The creature you hit rolls a Strength save. If it fails, the surge of the storm knocks it prone."
     ],
     "book": "xge",
     "textSource": "summary"

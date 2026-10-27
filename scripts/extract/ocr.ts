@@ -30,12 +30,30 @@ export function joinHyphenation(s: string): string {
 /** "ft", "foot" and "feet" (as `normalizeOcr` folds them) count as one word. */
 const UNIT = new Set(['ft', 'foot', 'feet'].map(normalizeOcr));
 
+const CARDINALS = ['one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve',
+  'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen', 'nineteen', 'twenty'];
+const TENS: [string, number][] = [['thirty', 30], ['forty', 40], ['fifty', 50], ['sixty', 60], ['seventy', 70], ['eighty', 80], ['ninety', 90]];
+const ORDINALS = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth', 'tenth'];
+const suffix = (n: number) => (n === 1 ? 'st' : n === 2 ? 'nd' : n === 3 ? 'rd' : 'th');
+
+/**
+ * Number words fold to the digits a card uses ("three" to 3, "third" to 3rd), so a copy that only swaps
+ * the one for the other is still caught. Keys and values are both normalized, so the fold only joins a
+ * number word to its digits: any word it also catches was already equal to that number word.
+ */
+const NUMBER = new Map<string, string>([
+  ...CARDINALS.map((w, i): [string, string] => [w, String(i + 1)]),
+  ...TENS.map(([w, n]): [string, string] => [w, String(n)]),
+  ...ORDINALS.map((w, i): [string, string] => [w, `${i + 1}${suffix(i + 1)}`]),
+].map(([w, d]) => [normalizeOcr(w), normalizeOcr(d)]));
+
 /**
  * Words for run matching: line-break hyphenation rejoined, then compound hyphens and "×" split, so
- * "30-ft-radius" and "30-foot radius" both give 30 / ft / radius; unit words fold to one.
+ * "30-ft-radius" and "30-foot radius" both give 30 / ft / radius; unit words fold to one, number words to digits.
  */
 const normWords = (s: string): string[] =>
-  joinHyphenation(s).replace(/[-­‐–×]/g, ' ').split(/\s+/).map(normalizeOcr).filter(Boolean).map(w => (UNIT.has(w) ? 'leet' : w));
+  joinHyphenation(s).replace(/[-­‐–×]/g, ' ').split(/\s+/).map(normalizeOcr).filter(Boolean)
+    .map(w => (UNIT.has(w) ? 'leet' : NUMBER.get(w) ?? w));
 
 /**
  * Two normalized words match when equal, or when both have 4+ letters and differ by one edit

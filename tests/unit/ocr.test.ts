@@ -73,6 +73,21 @@ test('two words the text layer merged still count toward a copied run', () => {
   expect(longestSharedRun(card, merged)).toBeGreaterThanOrEqual(8);
   expect(judgeRecord(card, merged).pass).toBe(false);
 });
+test('a number word swapped for digits still counts toward a copied run', () => {
+  const words = 'The lantern hums for one minute, then three sparks leap toward the nearest foe and burst.';
+  const card = 'The lantern hums for 1 minute, then 3 sparks leap toward the nearest';
+  expect(longestSharedRun(card, words)).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord(card, words).reasons.join()).toContain('copied');
+  // and the other way round: the card spells out what the page prints as digits
+  expect(longestSharedRun('The lantern hums for ten minutes, then twelve sparks leap toward the', 'The lantern hums for 10 minutes, then 12 sparks leap toward the nearest foe.')).toBeGreaterThanOrEqual(8);
+});
+test('an ordinal swapped for its digit form still counts toward a copied run', () => {
+  const words = 'Sparks gather on the third round and ignite the dry grass near you.';
+  const card = 'Sparks gather on the 3rd round and ignite the dry grass';
+  expect(longestSharedRun(card, words)).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord(card, words).reasons.join()).toContain('copied');
+  expect(longestSharedRun('Sparks gather on the 1st round and ignite the dry grass', words.replace('third', 'first'))).toBeGreaterThanOrEqual(8);
+});
 test('the new normalisations do not make own words match', () => {
   expect(longestSharedRun('Motes of light orbit you; the glow reaches 30 ft, then fades.', page)).toBeLessThan(8);
 });

@@ -768,7 +768,7 @@
     "description": [
       "You throw a nonmagical weapon or shoot a piece of nonmagical ammunition, and copies of it spray out in a 60 ft cone. Each creature in the cone makes a Dexterity save, taking 3d8 damage of the weapon's or ammunition's type on a failure, or half on a success."
     ],
-    "material": "1 piece of ammunition or a thrown weapon"
+    "material": "A thrown weapon or 1 piece of ammunition"
   },
   "continual-flame": {
     "description": [
@@ -1486,7 +1486,7 @@
   },
   "commune-with-nature": {
     "description": [
-      "You learn up to 3 facts of your choice about the land within 3 miles of you outdoors, or 300 ft in caves and natural underground. It fails where building has replaced nature, such as towns and dungeons.",
+      "You gain up to 3 facts you pick about the surrounding land, out to 3 miles when outdoors or 300 ft in caves and natural underground. It fails where building has replaced nature, such as towns and dungeons.",
       "Topics: land and bodies of water; dominant flora, fauna, minerals or peoples; mighty celestials, elementals, fey, fiends or undead; the pull of other planes; buildings."
     ]
   },
@@ -1603,7 +1603,7 @@
       "Bonus action: command any of them within 120 ft (one order for all); unordered, they just defend themselves. An order holds until the task is done.",
       "Control lasts 24 hours. Recast before it ends to keep up to 3 of them for another 24 hours instead of making new ones."
     ],
-    "higherLevels": "7th-level slot: 4 ghouls. 8th: 5 ghouls or 2 ghasts or wights. 9th: 6 ghouls, 3 ghasts or wights, or 2 mummies.",
+    "higherLevels": "7th-level slot: 4 ghouls. 8th: 2 ghasts or wights, or 5 ghouls. 9th: 2 mummies, 3 ghasts or wights, or 6 ghouls.",
     "material": "Per corpse: a clay pot of grave dirt, a clay pot of brackish water, and a black onyx stone worth 150 gp"
   },
   "creation": {
@@ -2181,7 +2181,7 @@
   },
   "wind-walk": {
     "description": [
-      "You and up to 10 willing creatures you can see within 30 ft turn into wisps of cloud for 8 hours: flying speed 300 ft and resistance to damage from nonmagical weapons. In this form the only actions are Dash or changing back.",
+      "You, plus up to 10 willing creatures in sight within 30 ft, become wisps of cloud for 8 hours: flying speed 300 ft and resistance to damage from nonmagical weapons. In this form the only actions are Dash or changing back.",
       "Switching form either way takes 1 minute, during which the creature is incapacitated and can't move.",
       "If the spell ends while one is flying as a cloud, it sinks 60 ft per round for 1 minute and lands safely; if it hasn't landed by then, it falls the rest of the way."
     ],
@@ -2189,7 +2189,7 @@
   },
   "word-of-recall": {
     "description": [
-      "You and up to 5 willing creatures within 5 ft teleport to your prepared sanctuary, arriving in the nearest free spaces to the spot you chose.",
+      "You teleport to your prepared sanctuary, taking up to 5 willing creatures that are within 5 ft of you, arriving in the nearest free spaces to the spot you chose.",
       "Prepare a sanctuary by casting this spell in a place dedicated to or tied to your deity, such as a temple. Cast anywhere else, or without a sanctuary, it does nothing."
     ]
   },
@@ -2217,7 +2217,7 @@
   },
   "astral-projection": {
     "description": [
-      "You and up to 8 willing creatures within 10 ft project into the Astral Plane (fails if you're already there). Bodies left behind lie unconscious in suspended animation, needing no food or air and not ageing.",
+      "Up to 8 willing creatures within 10 ft, plus you, project into the Astral Plane (fails if you're already there). Bodies left behind lie unconscious in suspended animation, needing no food or air and not ageing.",
       "Each astral form copies its owner's stats and gear and trails a silver cord; if an effect cuts the cord, that creature dies. Harm to the astral form doesn't reach the body. Entering another plane, or your starting one, through a portal pulls your body there to rejoin.",
       "Your action ends it for all. It ends for one creature whose body or astral form hits 0 HP or is dispelled; the cord pulls it home. If you're returned early, the others stay."
     ],

@@ -1,7 +1,7 @@
 import { DATA } from '../../src/data';
 import { autoSpells } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
-import { spellSections } from '../../src/logic/sections';
+import { actionSections, spellSections } from '../../src/logic/sections';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
 const A = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk'];
@@ -137,6 +137,25 @@ test('storm herald picks one storm aura environment', () => {
   expect(g.owner).toEqual({ kind: 'subclass', id: 'path-of-the-storm-herald' });
   expect([g.picks[1], g.picks[2], g.picks[19]]).toEqual([0, 1, 1]);
   for (const e of ['desert', 'sea', 'tundra']) expect(feature(`storm-aura-${e}`), e).toMatchObject({ level: 3, book: 'xge', page: 10 });
+});
+test('storm herald raging storm: desert and sea are level 14 reactions gated by the chosen environment', () => {
+  for (const e of ['desert', 'sea']) {
+    expect(feature(`raging-storm-${e}`), e).toMatchObject({
+      source: { kind: 'subclass', id: 'path-of-the-storm-herald' }, level: 14, cost: 'reaction', book: 'xge', page: 11,
+      prereq: { option: `storm-aura-${e}` },
+    });
+    expect(feature(`raging-storm-${e}`).trigger, e).toBeTruthy();
+    // the bonus-action aura card no longer carries the reaction
+    expect(feature(`storm-aura-${e}`).description.join(' '), e).not.toMatch(/Raging Storm|reaction/);
+  }
+  // tundra's raging storm rides on the aura itself, not a reaction
+  expect(DATA.features.find(f => f.id === 'raging-storm-tundra')).toBeUndefined();
+  expect(feature('storm-aura-tundra').description.join(' ')).toMatch(/Raging Storm/);
+});
+test('class browse: a level 14 storm herald lists both raging storm reactions (no environment chosen)', () => {
+  const ids = (level: number) => actionSections('barbarian', level, 'path-of-the-storm-herald').find(s => s.id === 'subclass')?.items.map(i => i.id) ?? [];
+  expect(ids(14)).toEqual(expect.arrayContaining(['raging-storm-desert', 'raging-storm-sea']));
+  expect(ids(13)).not.toContain('raging-storm-desert');
 });
 test('forge and grave domain spells', () => {
   expect(sub('forge-domain').bonusSpells!.grants.filter(g => g.atLevel === 1).map(g => g.spell).sort()).toEqual(['identify', 'searing-smite']);
