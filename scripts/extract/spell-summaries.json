@@ -2604,5 +2604,170 @@
       "Other wishes: tell the DM; bigger ones risk failure or twisted results.",
       "Any use besides copying a spell strains you: until a long rest, each spell you cast deals you 1d10 necrotic per spell level (unpreventable); your Strength drops to 3 for 2d4 days (2 days fewer per day of rest); 33 percent chance you lose wish forever."
     ]
+  },
+  "control-flames": {
+    "description": [
+      "Pick a nonmagical flame you can see within range that fits in a 5-ft cube, then choose one effect:",
+      "• Spread it 5 ft in one direction, if wood or other fuel is there.",
+      "• Snuff out the flames in the cube.",
+      "• For 1 hour, double or halve its bright and dim light, change its color, or both.",
+      "• For 1 hour, simple moving shapes (a creature, an object, a place) dance in it.",
+      "Up to 3 of the lasting effects at once; dismiss one as an action."
+    ]
+  },
+  "create-bonfire": {
+    "description": [
+      "A magic bonfire fills a 5-ft cube of visible ground within range for the duration. A creature there when it appears makes a Dexterity save or takes 1d8 fire damage. A creature also saves on first entering the space during a turn, and when it ends its turn there.",
+      "It sets alight flammable objects in the area that nobody is wearing or carrying.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ]
+  },
+  "frostbite": {
+    "description": [
+      "Numbing frost forms on a creature you can see within range. It makes a Constitution save; on a failure it takes 1d6 cold damage and has disadvantage on its next weapon attack roll before its next turn ends.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ]
+  },
+  "gust": {
+    "description": [
+      "Bend the air at a visible point within range to make one effect:",
+      "• Push: a Medium or smaller creature you choose makes a Strength save or is shoved up to 5 ft away from you.",
+      "• Shove: an object of up to 5 pounds that nobody holds or carries slides up to 10 ft away from you, too gently to deal damage.",
+      "• Breeze: a harmless effect, such as rustling leaves, slamming shutters or rippling clothes."
+    ]
+  },
+  "infestation": {
+    "description": [
+      "Mites and fleas swarm over a creature you can see within range. It makes a Constitution save or takes 1d6 poison damage and is driven 5 ft in a random direction, but only if it is able to move and its speed is 5 ft or more. Roll a d4: 1 north, 2 south, 3 east, 4 west. The move provokes no opportunity attacks, and if that way is blocked it stays put.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "material": "a living flea"
+  },
+  "magic-stone": {
+    "description": [
+      "Touch 1 to 3 pebbles to charge them. You or anyone else can make a ranged spell attack by throwing one (range 60 ft) or slinging it. Another attacker adds your spellcasting modifier to the attack roll, not their own.",
+      "A hit deals 1d6 + your spellcasting modifier bludgeoning damage. Hit or miss, that pebble loses its magic. Casting the spell again ends it on any pebbles left from before."
+    ]
+  },
+  "mold-earth": {
+    "description": [
+      "Pick dirt or stone you can see within range that fits in a 5-ft cube, then choose one effect:",
+      "• Dig: instantly scoop out loose earth and drop it up to 5 ft away, too gently to deal damage.",
+      "• Mark: shapes, colors or both appear on it, forming words, pictures or patterns, for 1 hour.",
+      "• Terrain: ground there turns into difficult terrain, or difficult terrain turns normal, for 1 hour.",
+      "Up to 2 of the lasting effects at once; dismiss one as an action."
+    ]
+  },
+  "primal-savagery": {
+    "description": [
+      "Your teeth or nails grow sharp and corrosive. Make a melee spell attack against a creature within 5 ft of you; a hit deals 1d10 acid damage. Afterwards your teeth or nails go back to normal.",
+      "Damage rises to 2d10 at level 5, 3d10 at level 11 and 4d10 at level 17."
+    ]
+  },
+  "shape-water": {
+    "description": [
+      "Pick water you can see within range that fits in a 5-ft cube, then choose one effect:",
+      "• Flow: instantly move it or redirect its flow up to 5 ft in any direction, too gently to deal damage.",
+      "• Shapes: it forms simple shapes that move as you direct, for 1 hour.",
+      "• Tint: change its color or opacity evenly, for 1 hour.",
+      "• Freeze: it turns to ice if no creature is in it, and thaws after 1 hour.",
+      "Up to 2 of the lasting effects at once; dismiss one as an action."
+    ]
+  },
+  "thunderclap": {
+    "description": [
+      "A booming crack, audible 100 ft away, bursts from you. Every other creature within 5 ft makes a Constitution save or takes 1d6 thunder damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ]
+  },
+  "toll-the-dead": {
+    "description": [
+      "A mournful bell tolls around a creature you can see within range. It makes a Wisdom save or takes 1d8 necrotic damage, or 1d12 if it is already missing any hit points.",
+      "Damage rises to 2d8 (2d12) at level 5, 3d8 (3d12) at level 11 and 4d8 (4d12) at level 17."
+    ]
+  },
+  "word-of-radiance": {
+    "description": [
+      "You speak a holy word and searing light bursts from you. Each creature you choose that you can see within 5 ft makes a Constitution save or takes 1d6 radiant damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ],
+    "material": "a holy symbol"
+  },
+  "absorb-elements": {
+    "description": [
+      "Reaction when acid, cold, fire, lightning or thunder damage hits you. You resist that damage type, the triggering hit included, until your next turn starts.",
+      "On your next turn, your first melee hit adds 1d6 damage of that type to the target, and then the spell ends."
+    ],
+    "higherLevels": "The extra damage rises by 1d6 for each slot level above 1."
+  },
+  "beast-bond": {
+    "description": [
+      "Touch a beast that is charmed by you or friendly toward you to link minds with it; the spell fails if its Intelligence is 4 or higher. While you can see each other, it understands your telepathic messages and can send back simple feelings and ideas.",
+      "While the link holds, the beast has advantage on attack rolls against creatures you can see within 5 ft of you."
+    ],
+    "material": "fur wrapped in cloth"
+  },
+  "catapult": {
+    "description": [
+      "Pick an object of 1 to 5 pounds in range that nobody is wearing or carrying. It flies up to 90 ft in a straight line in a direction you choose, stopping early if it meets a solid surface.",
+      "A creature in its path makes a Dexterity save. On a failure, the object strikes it and stops, and both take 3d8 bludgeoning damage."
+    ],
+    "higherLevels": "Each slot level above 1 adds 5 pounds to the weight limit and 1d8 to the damage."
+  },
+  "cause-fear": {
+    "description": [
+      "A creature you can see within range makes a Wisdom save or is frightened of you until the spell ends. Constructs and undead are immune. It saves again after each of its turns, ending the fear on a success."
+    ],
+    "higherLevels": "Each slot level above 1 adds one more target; all targets must be within 30 ft of each other."
+  },
+  "ceremony": {
+    "description": [
+      "Pick one rite; its target stays within 10 ft of you throughout the casting.",
+      "Atonement: a willing creature whose alignment changed regains its old one if you pass a DC 20 Wisdom (Insight) check.",
+      "Bless Water: a vial of water becomes holy water.",
+      "Coming of Age: a young adult humanoid adds a d4 to its ability checks for 24 hours.",
+      "Dedication: a humanoid who wishes to serve your god adds a d4 to its saving throws for 24 hours.",
+      "Funeral Rite: a corpse can't become undead for 7 days, short of a wish spell.",
+      "Wedding: willing adult humanoids you marry get +2 AC for 7 days while within 30 ft of each other.",
+      "Coming of Age and Dedication work once per creature; Wedding works again only if widowed."
+    ],
+    "material": "powdered silver worth 25 gp, consumed"
+  },
+  "chaos-bolt": {
+    "description": [
+      "Make a ranged spell attack against a creature within range. A hit deals 2d8 + 1d6 damage. Pick one of the d8s; its number sets the type:",
+      "1: acid. 2: cold. 3: fire. 4: force. 5: lightning. 6: poison. 7: psychic. 8: thunder.",
+      "If both d8s match, the bolt jumps to another creature you choose within 30 ft of the target: roll a new attack and new damage, which can jump again. Each creature can be hit only once per casting."
+    ],
+    "higherLevels": "Each target takes an extra 1d6 damage of the rolled type for each slot level above 1."
+  },
+  "earth-tremor": {
+    "description": [
+      "The ground within range shakes. Every other creature there makes a Dexterity save; on a failure it takes 1d6 bludgeoning damage and falls prone.",
+      "If that ground is loose earth or stone, it turns into difficult terrain until cleared; each 5-ft-diameter patch needs 1 minute or more of clearing by hand."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1d6 to the damage."
+  },
+  "ice-knife": {
+    "description": [
+      "Fling a shard of ice at a creature within range with a ranged spell attack; a hit deals 1d10 piercing damage.",
+      "Either way, the shard then bursts. The target and every creature within 5 ft of it make a Dexterity save or take 2d6 cold damage."
+    ],
+    "higherLevels": "Each slot level above 1 adds 1d6 to the cold damage.",
+    "material": "a water drop or an ice chip"
+  },
+  "snare": {
+    "description": [
+      "Lay the rope in a 5-ft-radius circle on the ground or floor; it vanishes and the circle turns into a magic trap. Spotting it needs an Intelligence (Investigation) check versus your spell save DC.",
+      "The first Small, Medium or Large creature to step onto the ground inside makes a Dexterity save or is hoisted to hang upside down 3 ft up, restrained until the spell ends.",
+      "It retries the save after each of its turns, or it (or anyone in reach) can use an action on an Intelligence (Arcana) check against your DC to free it. Once sprung, the spell ends when nothing is held."
+    ],
+    "material": "25 ft of rope, consumed"
+  },
+  "zephyr-strike": {
+    "description": [
+      "Until the spell ends, your movement provokes no opportunity attacks.",
+      "Once before it ends, on your turn, you can give yourself advantage on one weapon attack roll. On a hit it deals an extra 1d8 force damage. Hit or miss, your walking speed rises by 30 ft until that turn ends."
+    ]
   }
 }
