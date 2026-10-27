@@ -686,5 +686,35 @@
       6,
       6
     ]
+  },
+  {
+    "id": "arcane-archer-lore",
+    "name": "Arcane Archer Lore",
+    "owner": {
+      "kind": "subclass",
+      "id": "arcane-archer"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
   }
 ]

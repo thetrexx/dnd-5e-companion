@@ -105,8 +105,24 @@
     "name": "Arcane Archer",
     "page": 28,
     "book": "xge",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "prestidigitation",
+          "atLevel": 3,
+          "option": "arcane-archer-lore-prestidigitation"
+        },
+        {
+          "spell": "druidcraft",
+          "atLevel": 3,
+          "option": "arcane-archer-lore-druidcraft"
+        }
+      ]
+    },
     "options": [
-      "arcane-shot"
+      "arcane-shot",
+      "arcane-archer-lore"
     ],
     "hotbarIcon": "https://bg3.wiki/w/images/d/dc/Class_Fighter_Arcane_Archer_Hotbar_Icon.png"
   },

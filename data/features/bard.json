@@ -275,7 +275,7 @@
       {
         "spell": "command",
         "atLevel": 6,
-        "uses": "No spell slot"
+        "uses": "Only while the mantle lasts, no slot"
       }
     ],
     "description": [
@@ -315,18 +315,34 @@
     "level": 3,
     "cost": "free",
     "trigger": "A weapon attack hits during your Attack action",
-    "resource": "1 Bardic Inspiration (a d6 from level 14)",
+    "resource": "1 Bardic Inspiration (or a free d6 from level 14)",
     "uses": "One flourish per turn",
     "description": [
       "Taking the Attack action on your turn gives you +10 ft of walking speed until the turn ends. If one of that action's weapon attacks hits, you may use one flourish below (only one per turn): spend a Bardic Inspiration use and roll the die.",
       "Defensive Flourish: the roll is extra damage to the target, and you add it to your AC until your next turn starts.",
       "Slashing Flourish: the roll is extra damage to the target and to any other creature you choose within 5 ft of you that you can see.",
-      "Mobile Flourish: the roll is extra damage to the target, and you can push it away from you up to 5 ft plus that many feet. Afterward your reaction can carry you, up to your walking speed, into an unoccupied space next to the target (within 5 ft).",
-      "Master's Flourish (level 14): instead of spending a Bardic Inspiration use, you can roll a d6 and use that."
+      "Mobile Flourish: the roll is extra damage to the target, and you can push it away from you up to 5 ft plus that many feet. Afterward your reaction can carry you, up to your walking speed, into an unoccupied space next to the target (within 5 ft)."
     ],
     "page": 15,
     "book": "xge",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/3/37/Slashing_Flourish_Melee_Icon.webp"
+  },
+  {
+    "id": "masters-flourish",
+    "name": "Master's Flourish",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-swords"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You use a Blade Flourish option",
+    "description": [
+      "Roll a d6 and use it as the flourish die, so you keep your Bardic Inspiration use."
+    ],
+    "page": 16,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

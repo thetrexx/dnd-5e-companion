@@ -768,6 +768,38 @@
     "icon": "https://bg3.wiki/w/images/b/bf/Curving_Shot_Icon.webp"
   },
   {
+    "id": "arcane-archer-lore-prestidigitation",
+    "name": "Prestidigitation",
+    "source": {
+      "kind": "option",
+      "id": "arcane-archer-lore"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "Take prestidigitation as your Arcane Archer Lore cantrip. The same feature also makes you proficient in your pick of Arcana or Nature."
+    ],
+    "page": 28,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-archer-lore-druidcraft",
+    "name": "Druidcraft",
+    "source": {
+      "kind": "option",
+      "id": "arcane-archer-lore"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "Take druidcraft as your Arcane Archer Lore cantrip. The same feature also makes you proficient in your pick of Arcana or Nature."
+    ],
+    "page": 28,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
     "id": "arcane-shot-banishing-arrow",
     "name": "Banishing Arrow",
     "source": {

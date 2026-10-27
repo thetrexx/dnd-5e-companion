@@ -63,7 +63,25 @@ const XGE = ['college-of-glamour', 'college-of-swords', 'arcane-archer', 'way-of
 test('xanathar subclasses', () => { for (const id of XGE) expect(sub(id), id).toMatchObject({ book: 'xge' }); });
 test('every xanathar feature names its book', () => {
   const ids = new Set(XGE);
-  for (const f of DATA.features.filter(x => x.source.kind === 'subclass' && ids.has(x.source.id))) expect(f.book, f.id).toBe('xge');
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.filter(f => f.source.kind === 'option').length).toBe(10); // 8 arcane shots + 2 lore cantrips
+  for (const f of fs) expect(f.book, f.id).toBe('xge');
+});
+test('arcane archer lore cantrip is gated by its option', () => {
+  const aa = sub('arcane-archer');
+  expect(aa.options).toContain('arcane-archer-lore');
+  expect(DATA.optionGroups.find(g => g.id === 'arcane-archer-lore')!.owner).toEqual({ kind: 'subclass', id: 'arcane-archer' });
+  expect(aa.bonusSpells!.kind).toBe('subclass');
+  for (const c of ['prestidigitation', 'druidcraft']) {
+    expect(aa.bonusSpells!.grants).toContainEqual({ spell: c, atLevel: 3, option: `arcane-archer-lore-${c}` });
+    expect(feature(`arcane-archer-lore-${c}`)).toMatchObject({ cost: 'passive', book: 'xge', page: 28, level: 3 });
+  }
+});
+test('storm guide rain is an action, wind a bonus action', () => {
+  expect(feature('storm-guide-rain').cost).toBe('action');
+  expect(feature('storm-guide-wind').cost).toBe('bonus');
+  expect(DATA.features.find(f => f.id === 'storm-guide')).toBeUndefined();
 });
 test('shadow magic darkness costs sorcery points', () =>
   expect(DATA.features.flatMap(f => f.source.id === 'shadow-magic' ? f.spells ?? [] : []).find(g => g.spell === 'darkness')!.uses).toMatch(/2 sorcery points/i));

@@ -462,8 +462,8 @@
     "icon": "https://bg3.wiki/w/images/0/02/Heart_of_the_Storm_Icon.webp"
   },
   {
-    "id": "storm-guide",
-    "name": "Storm Guide",
+    "id": "storm-guide-rain",
+    "name": "Storm Guide: Rain",
     "source": {
       "kind": "subclass",
       "id": "storm-sorcery"
@@ -471,8 +471,26 @@
     "level": 6,
     "cost": "action",
     "description": [
-      "Rain: if it is raining, use an action to stop rain from falling in a 20-ft-radius sphere centered on you. End this as a bonus action.",
-      "Wind: if it is windy, use a bonus action each round to pick the wind's direction in a 100-ft-radius sphere centered on you, lasting until the end of your next turn. The wind's speed doesn't change."
+      "While rain is falling, spend an action to halt it within a 20-ft-radius sphere around you.",
+      "You can end this as a bonus action."
+    ],
+    "page": 52,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "storm-guide-wind",
+    "name": "Storm Guide: Wind",
+    "source": {
+      "kind": "subclass",
+      "id": "storm-sorcery"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "uses": "Each round",
+    "description": [
+      "If it is windy, use a bonus action each round to pick the wind's direction in a 100-ft-radius sphere centered on you. It blows that way until the end of your next turn.",
+      "The wind's speed doesn't change."
     ],
     "page": 52,
     "book": "xge",
