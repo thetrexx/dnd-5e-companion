@@ -524,7 +524,7 @@
       }
     ],
     "description": [
-      "As a rage starts, infuse one weapon you hold with acid, cold, fire, thunder or lightning (your pick). While you wield it during the rage, its damage becomes that type, each hit adds 1d6 damage of that type, and it gains the thrown property (normal range 20 ft, long range 60 ft). Thrown, it returns to your hand right after it hits or misses. Its benefits stop working while anyone else wields it.",
+      "As a rage starts, infuse one weapon you hold with acid, cold, fire, thunder or lightning (your pick). While you wield it during the rage, its damage becomes that type, each hit adds 1d6 damage of that type, and it becomes a thrown weapon (normal range 20 ft, long range 60 ft). Thrown, it returns to your hand right after it hits or misses. Its benefits stop working while anyone else wields it.",
       "While raging and holding it, you can switch it to another of those damage types with a bonus action.",
       "Level 14 (Demiurgic Colossus): the extra damage becomes 2d6."
     ],
@@ -543,8 +543,8 @@
     "cost": "bonus",
     "trigger": "While raging",
     "description": [
-      "Bonus action: pick one Medium or smaller creature within your reach and move it to an unoccupied space you can see within 30 ft of you. An unwilling creature resists with a Strength save (DC 8 + your proficiency bonus + your Strength modifier).",
-      "If it ends that move over something that can't hold it up, such as open air, it falls, takes the usual damage and lands prone.",
+      "Bonus action: grab a creature no bigger than Medium that is within your reach and hurl it into an unoccupied space you can see, up to 30 ft from you. If it is unwilling, it makes a Strength save (DC 8 + your Strength modifier + your proficiency bonus) and stays put on a success.",
+      "If it lands with no surface or liquid beneath it that can hold it, it drops, takes falling damage as usual and ends up prone.",
       "Level 14 (Demiurgic Colossus): it works on Large or smaller creatures. Your rages also add 10 ft to your reach and can make you Large or Huge (your pick)."
     ],
     "page": 12,

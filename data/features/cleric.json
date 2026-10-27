@@ -725,6 +725,26 @@
     "textSource": "summary"
   },
   {
+    "id": "reaper",
+    "name": "Reaper",
+    "source": {
+      "kind": "subclass",
+      "id": "death-domain"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You cast a necromancy cantrip that targets only one creature",
+    "description": [
+      "You learn one necromancy cantrip of your choice from any class's spell list.",
+      "When a necromancy cantrip of yours would target a single creature, it can target two instead, as long as both are in range and no more than 5 ft apart.",
+      "Level 17 (Improved Reaper): the same works for single-target necromancy spells of 1st to 5th level. A spell that uses up its material components needs them supplied once per target."
+    ],
+    "page": 96,
+    "book": "dmg",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/9/98/Reaper_Icon.webp"
+  },
+  {
     "id": "touch-of-death",
     "name": "Touch of Death",
     "source": {

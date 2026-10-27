@@ -1452,7 +1452,8 @@
       "grants": [
         {
           "spell": "mage-hand",
-          "atLevel": 3
+          "atLevel": 3,
+          "uses": "Unless you already know it"
         },
         {
           "spell": "faerie-fire",

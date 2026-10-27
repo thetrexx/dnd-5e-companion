@@ -1,4 +1,6 @@
 import { DATA } from '../../src/data';
+import { autoSpells } from '../../src/character/grants';
+import { emptyCharacter } from '../../src/character/types';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
 const A = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk'];
@@ -95,3 +97,15 @@ test('must-have features', () => {
 
 const OTHER: [string, string][] = [['path-of-wild-magic', 'tce'], ['circle-of-spores', 'tce'], ['circle-of-stars', 'tce'], ['swarmkeeper', 'tce'], ['bladesinging', 'tce'], ['death-domain', 'dmg'], ['oathbreaker', 'dmg'], ['oath-of-the-crown', 'scag'], ['path-of-giants', 'bgg']];
 test('other BG3 subclasses', () => { for (const [id, book] of OTHER) expect(sub(id), id).toMatchObject({ book }); });
+test('death domain reaper: a necromancy cantrip pick plus its targeting card', () => {
+  expect(sub('death-domain').bonusSpells!.grants.find(g => g.choose)).toMatchObject({ choose: { level: 0, count: 1, schools: ['Necromancy'] }, atLevel: 1 });
+  expect(feature('reaper')).toMatchObject({ source: { kind: 'subclass', id: 'death-domain' }, level: 1, book: 'dmg', page: 96 });
+});
+test('giants power cantrip follows the chosen option', () => {
+  const c = { ...emptyCharacter(), classes: [{ cls: 'barbarian' as const, level: 3, sub: 'path-of-giants' }], options: ['giants-power-druidcraft'] };
+  const ids = autoSpells(c).map(a => a.spell.id);
+  expect(ids).toContain('druidcraft');
+  expect(ids).not.toContain('thaumaturgy');
+});
+test('swarmkeeper mage hand only if not already known', () =>
+  expect(sub('swarmkeeper').bonusSpells!.grants.find(g => g.spell === 'mage-hand')!.uses).toMatch(/already know/i));
