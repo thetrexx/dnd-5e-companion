@@ -28,13 +28,18 @@ export function extractPage(page: number, book: BookId = 'phb'): void {
   const pdfPageArg = String(pdfPage);
   mkdirSync(cache, { recursive: true });
   if (!existsSync(png)) {
-    const prefix = `${cache}/tmp${page}`;
-    run('pdfimages', ['-png', '-f', pdfPageArg, '-l', pdfPageArg, pdf, prefix]);
-    const made = readdirSync(cache).filter(f => f.startsWith(`tmp${page}-`)).map(f => `${cache}/${f}`);
-    if (!made.length) { console.error(`${book} page ${page}: pdfimages found no image`); process.exit(1); }
-    made.sort((a, b) => statSync(b).size - statSync(a).size);
-    renameSync(made[0], png);
-    for (const extra of made.slice(1)) unlinkSync(extra);
+    if (BOOKS[book].raster === 'pdftoppm') {
+      run('pdftoppm', ['-png', '-r', '150', '-singlefile', '-f', pdfPageArg, '-l', pdfPageArg, pdf, `${cache}/p${page}`]);
+      if (!existsSync(png)) { console.error(`${book} page ${page}: pdftoppm wrote no image`); process.exit(1); }
+    } else {
+      const prefix = `${cache}/tmp${page}`;
+      run('pdfimages', ['-png', '-f', pdfPageArg, '-l', pdfPageArg, pdf, prefix]);
+      const made = readdirSync(cache).filter(f => f.startsWith(`tmp${page}-`)).map(f => `${cache}/${f}`);
+      if (!made.length) { console.error(`${book} page ${page}: pdfimages found no image`); process.exit(1); }
+      made.sort((a, b) => statSync(b).size - statSync(a).size);
+      renameSync(made[0], png);
+      for (const extra of made.slice(1)) unlinkSync(extra);
+    }
   }
   if (!existsSync(txt)) {
     writeFileSync(txt, BOOKS[book].textLayer ? run('pdftotext', ['-raw', '-f', pdfPageArg, '-l', pdfPageArg, pdf, '-']) : '');

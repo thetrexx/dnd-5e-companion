@@ -6,14 +6,16 @@ These scripts run on the owner's machine only. They need Node 24 (it runs the `.
 
 Pages are always book page numbers. PDF page = book page + offset. A record with no `book` is PHB.
 
-| id | file in `BOOK_DIR` | offset | cache | text layer |
-| --- | --- | --- | --- | --- |
-| `phb` | `PDF 5E Player's Handbook.pdf` | 1 | `.cache/phb` | yes (poor OCR) |
-| `xge` | `PDF 5E Xanathar's Guide to Everything.pdf` | 1 | `.cache/xge` | yes |
-| `tce` | `PDF 5E Tashas_Cauldron_of_Everything.pdf` | 1 | `.cache/tce` | yes |
-| `scag` | `PDF 5E Sword Coast Adventurer's Guide.pdf` | 1 | `.cache/scag` | yes |
-| `dmg` | `PDF 5E Dungeon Master's Guide.pdf` | 4 | `.cache/dmg` | yes |
-| `bgg` | `PDF 5E Glory of the Giants.pdf` | 0 | `.cache/bgg` | **no** |
+| id | file in `BOOK_DIR` | offset | cache | text layer | page image |
+| --- | --- | --- | --- | --- | --- |
+| `phb` | `PDF 5E Player's Handbook.pdf` | 1 | `.cache/phb` | yes (poor OCR) | `pdfimages` |
+| `xge` | `PDF 5E Xanathar's Guide to Everything.pdf` | 1 | `.cache/xge` | yes | `pdftoppm` |
+| `tce` | `PDF 5E Tashas_Cauldron_of_Everything.pdf` | 1 | `.cache/tce` | yes | `pdftoppm` |
+| `scag` | `PDF 5E Sword Coast Adventurer's Guide.pdf` | 1 | `.cache/scag` | yes | `pdftoppm` |
+| `dmg` | `PDF 5E Dungeon Master's Guide.pdf` | 4 | `.cache/dmg` | yes | `pdftoppm` |
+| `bgg` | `PDF 5E Glory of the Giants.pdf` | 0 | `.cache/bgg` | **no** | `pdftoppm` |
+
+Page images: `phb` uses `pdfimages` (the largest embedded image, proven on the PHB scan). The other books are layered scans (a low-res background plus a text mask), where that image is unreadable, so they are rendered with `pdftoppm -png -r 150`. The choice is `BOOKS[id].raster` in `config.ts`.
 
 Giants (`bgg`) is a scan with no text layer: its `.txt` files are empty, so read facts from the page images. `check:ocr` fails any `bgg` record with `no text layer`; accept it in `ocr-accept.json` only with a reason saying its facts were checked against the page image.
 

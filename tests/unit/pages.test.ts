@@ -5,3 +5,7 @@ test('phb page ref keeps the old cache and offset', () =>
 test('dmg offset', () => expect(pageRef(97, 'dmg')).toMatchObject({ pdfPage: 101, png: '.cache/dmg/p97.png' }));
 test('xge page ref', () => expect(pageRef(50, 'xge').pdf).toMatch(/Xanathar's Guide to Everything\.pdf$/));
 test('giants has no text layer', () => expect(BOOKS.bgg.textLayer).toBe(false));
+test('raster choice per book', () => {
+  expect(BOOKS.phb.raster).toBe('pdfimages');
+  for (const b of ['xge', 'tce', 'scag', 'dmg', 'bgg'] as const) expect(BOOKS[b].raster).toBe('pdftoppm');
+});
