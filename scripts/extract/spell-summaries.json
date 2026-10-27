@@ -3039,5 +3039,292 @@
       "When the spell ends it splashes down, dousing normal flames within 30 ft, and captives fall prone."
     ],
     "material": "a droplet of water"
+  },
+  "control-winds": {
+    "description": [
+      "You command the air in a 100-ft cube you can see within 300 ft, choosing one effect below. It holds for the whole spell; on a later turn you can spend an action to change to another effect, or to pause it or restart it.",
+      "Gusts: wind blows steadily one horizontal way you pick, at calm, moderate or strong force. At moderate or strong, ranged weapon attacks entering, leaving or crossing the cube have disadvantage. At strong, moving against the wind costs 1 extra foot per foot.",
+      "Downdraft: strong wind pushes down from the cube's top. Ranged weapon attacks through the cube or at targets inside it have disadvantage. A flyer makes a Strength save or falls prone when it first enters the cube on a turn, or if it begins its turn airborne inside.",
+      "Updraft: wind rises from the cube's floor. Falls that end inside deal half damage, and vertical jumps there go up to 10 ft higher."
+    ]
+  },
+  "danse-macabre": {
+    "description": [
+      "Choose as many as five corpses, each Small or Medium, in sight within 60 ft; they rise as undead you control for up to 1 hour (concentration). Each becomes your choice of zombie or skeleton, using that creature's stats (Monster Manual), and adds your spellcasting ability modifier to its attack and damage rolls.",
+      "Bonus action: give one mental command to all of them within 60 ft, naming their action and movement next turn, or set a general task like guarding a hall. Without orders they only defend themselves; an order holds until the task is done. When the spell ends they fall lifeless again."
+    ],
+    "higherLevels": "Each slot level above 5 animates 2 more corpses."
+  },
+  "dawn": {
+    "description": [
+      "A 30-ft-radius, 40-ft-tall cylinder of sunlight (bright light) shines down on a spot within 60 ft for up to 1 minute. Each creature inside when it appears makes a Constitution save, taking 4d10 radiant damage on a failure or half on a success, and a creature repeats the save each time it ends its turn inside.",
+      "Bonus action, while within 60 ft of the cylinder: move it up to 60 ft."
+    ],
+    "material": "a sunburst pendant worth 100 gp or more"
+  },
+  "enervation": {
+    "description": [
+      "A dark tendril reaches a creature you can see within 60 ft, which makes a Dexterity save. A successful save limits it to 2d8 necrotic damage and ends the spell. A failed save costs it 4d8 necrotic damage, and on each of your later turns your action can drain another 4d8 necrotic from it automatically.",
+      "The spell ends if you use your action for anything else, or if the target leaves range or gains total cover from you. You heal half of all necrotic damage the spell deals."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8 to the damage."
+  },
+  "far-step": {
+    "description": [
+      "Vanish and reappear in an unoccupied space you can see up to 60 ft away. For up to 1 minute (concentration), you can make the same jump again as a bonus action on each of your turns."
+    ]
+  },
+  "holy-weapon": {
+    "description": [
+      "A weapon you touch glows with holy power for up to 1 hour: bright light in a 30-ft radius, dim light 30 ft farther. Each weapon attack with it that hits adds 2d8 radiant damage, and a nonmagical weapon counts as magic until the spell ends.",
+      "Bonus action: end the spell in a burst of radiance. Each creature you choose that you can see within 30 ft makes a Constitution save, taking 4d8 radiant damage and being blinded for 1 minute on a failure, or half damage and no blindness on a success. A blinded creature tries the save again after each of its turns, recovering on a success."
+    ]
+  },
+  "immolation": {
+    "description": [
+      "Fire engulfs a creature you can see within 90 ft. It makes a Dexterity save, taking 8d6 fire damage on a failure or half on a success.",
+      "A creature that failed keeps burning for up to 1 minute, giving off bright light in a 30-ft radius and dim light 30 ft beyond. After each of its turns it rolls the save again: failing deals 4d6 fire damage, succeeding ends the spell. Nonmagical means can't put the flames out, and a creature this spell kills turns to ash."
+    ]
+  },
+  "infernal-calling": {
+    "description": [
+      "A devil you pick of challenge rating 6 or lower (a barbed or bearded devil, say) appears in an unoccupied space you can see within 90 ft for up to 1 hour (concentration), vanishing at 0 hit points. Unfriendly to you and your allies, it has its own initiative and is run by the DM with its Monster Manual stats; it may attack you, or trade brief service for an evil act.",
+      "Each turn you may give it a spoken order (no action). It obeys if it likes the result, especially one leading you toward evil; otherwise win a Charisma check (Deception, Intimidation or Persuasion) against its Wisdom (Insight), with advantage if you use its true name. Fail and it ignores your orders for the rest of the spell, though it may still follow them; succeed and it does the task, then reports back.",
+      "If your concentration breaks early while it ignores you, it stays 3d6 minutes doing as it likes. With a devil's talisman you can call that devil at 1 challenge rating above the limit, and it obeys every order without checks."
+    ],
+    "higherLevels": "Each slot level above 5 raises the challenge rating by 1.",
+    "material": "a ruby worth 999 gp or more"
+  },
+  "maelstrom": {
+    "description": [
+      "A swirling pool of water 5 ft deep fills a 30-ft radius around a point you can see within 120 ft (the point has to be ground or open water) for up to 1 minute. The area is difficult terrain.",
+      "A creature that starts its turn there makes a Strength save; on a failure it takes 6d6 bludgeoning damage and is dragged 10 ft toward the center."
+    ],
+    "material": "a funnel shaped from paper or a leaf"
+  },
+  "negative-energy-flood": {
+    "description": [
+      "Ribbons of negative energy strike a creature you can see within 60 ft. A target that is not undead makes a Constitution save, taking 5d12 necrotic damage on a failure or half on a success. If this kills it, it rises as a zombie (Monster Manual) when your next turn starts and chases the nearest creature it can see.",
+      "An undead target makes no save: roll 5d12 and it gets temporary hit points equal to half the roll."
+    ],
+    "material": "a broken bone plus a black silk square"
+  },
+  "skill-empowerment": {
+    "description": [
+      "For up to 1 hour (concentration), a willing creature you touch gains expertise in one skill you pick: it doubles its proficiency bonus on ability checks using that skill.",
+      "The skill must be one it is proficient in and that isn't already doubled by another effect, such as the Expertise feature."
+    ]
+  },
+  "steel-wind-strike": {
+    "description": [
+      "You flourish the weapon and vanish, striking like the wind. Make a melee spell attack against each of as many as five creatures in sight within 30 ft; a hit deals 6d10 force damage.",
+      "Afterwards you may reappear in an empty space you can see next to (within 5 ft of) any target, hit or missed."
+    ],
+    "material": "a melee weapon worth 1 sp or more"
+  },
+  "synaptic-static": {
+    "description": [
+      "Psychic energy bursts at a point within 120 ft. Each creature in a 20-ft-radius sphere there makes an Intelligence save, taking 8d6 psychic damage on a failure or half on a success; creatures with Intelligence 2 or lower are unaffected.",
+      "A creature that fails is muddled for 1 minute: it rolls a d6 and subtracts it from its attack rolls, ability checks and Constitution saves to keep concentration. It retries the Intelligence save after each of its turns, shaking off the effect on a success."
+    ]
+  },
+  "transmute-rock": {
+    "description": [
+      "Choose stone or mud you can see within 120 ft that fits in a 40-ft cube, then pick one effect.",
+      "Rock to Mud: nonmagical rock there turns into the same volume of thick, flowing mud for the spell's duration. Each foot of movement through it costs 4 ft. Creatures on the ground when you cast it, and any that move in (once per turn) or finish a turn inside, make a Strength save or sink in and are restrained; a restrained creature can spend an action to pull free. Cast on a ceiling, the mud drops: creatures beneath make a Dexterity save, taking 4d8 bludgeoning damage on a failure or half on a success.",
+      "Mud to Rock: mud or quicksand (nonmagical, no deeper than 10 ft) hardens into soft stone. Each creature in it makes a Dexterity save; a success pops it safely out to an unoccupied space on top, a failure traps it, restrained, in the rock. Freeing it takes an action, by the trapped creature or someone within reach: either a DC 20 Strength check or damaging the rock (AC 15, 25 hit points, immune to poison and psychic damage)."
+    ],
+    "material": "clay and water"
+  },
+  "wall-of-light": {
+    "description": [
+      "A shimmering wall of bright light, up to 60 ft long, 10 ft high and 5 ft thick, appears at a point within 120 ft in any orientation, floating or resting on a surface, for up to 10 minutes. Nothing sees through it, though creatures and objects pass through freely, and it sheds bright light 120 ft out and dim light 120 ft beyond that.",
+      "When it appears, each creature in it makes a Constitution save: on a failure 4d8 radiant damage and blinded for 1 minute, on a success half damage and not blinded. A blinded creature saves again after each of its turns, recovering on a success. Finishing a turn inside the wall deals 4d8 radiant damage to that creature.",
+      "Action: fire a beam from the wall at a creature you can see within 60 ft of it with a ranged spell attack, dealing 4d8 radiant damage on a hit. Hit or miss, the wall loses 10 ft of length; at 0 ft the spell ends."
+    ],
+    "higherLevels": "Each slot level above 5 adds 1d8 to the damage.",
+    "material": "a hand mirror"
+  },
+  "wrath-of-nature": {
+    "description": [
+      "Nature spirits animate the trees, rocks and grass in a 60-ft cube centered on a point you can see within 120 ft, for up to 1 minute.",
+      "Grasses and Undergrowth: your enemies treat grassy or overgrown ground in the cube as difficult terrain.",
+      "Trees: whenever your turn begins, each enemy near a tree in the cube (within 10 ft) makes a Dexterity save or takes 4d6 slashing damage from thrashing limbs.",
+      "Roots and Vines: as each of your turns ends, pick one creature standing in the cube; it makes a Strength save or is restrained until the spell ends. To break loose it can use an action and beat your spell save DC with a Strength (Athletics) check.",
+      "Rocks: bonus action, launch a loose rock in the cube at a visible creature there with a ranged spell attack; a hit deals 3d8 nonmagical bludgeoning damage and the target must pass a Strength save or fall prone."
+    ]
+  },
+  "bones-of-the-earth": {
+    "description": [
+      "Up to six stone pillars, each 5 ft across and up to 30 ft tall, burst from ground you can see within 120 ft. The ground must be wide enough for a pillar. You can raise one under a creature of Medium size or smaller: it makes a Dexterity save (it may choose to fail) or rides the pillar up.",
+      "A pillar stopped short by a ceiling or other obstacle deals 6d6 bludgeoning damage to a creature on top and restrains it, squeezed in between. As an action, that creature makes a Strength or Dexterity check (its pick) against your spell save DC; on a success it is free and must step off the pillar or fall.",
+      "Pillars are AC 5 with 30 hit points apiece. One that is destroyed collapses into rubble: difficult terrain in a 10-ft radius until cleared, each 5-ft-diameter patch needing at least 1 minute of work by hand."
+    ],
+    "higherLevels": "Each slot level above 6 adds 2 more pillars."
+  },
+  "create-homunculus": {
+    "description": [
+      "During a long incantation you cut yourself with a jeweled dagger, taking 2d4 piercing damage that nothing can reduce, then drip your blood on the clay, ash and mandrake root and touch them. They become a homunculus, a construct that uses the homunculus stats (Monster Manual).",
+      "It is your loyal companion and dies if you die. After each long rest, if it shares your plane, you may put as many as half your Hit Dice into it: roll them and add your Constitution modifier to each. Your hit point maximum drops by the total and its maximum and current hit points rise by it, until your next long rest. This never takes you below 1 hit point, and only its death restores your maximum early.",
+      "You can have one homunculus at a time; casting while it lives fails."
+    ],
+    "material": "clay, ash and mandrake root (all consumed), plus a jeweled dagger worth 1,000 gp or more (kept)"
+  },
+  "druid-grove": {
+    "description": [
+      "Nature spirits guard an outdoor or underground area, a cube 30 to 90 ft on a side with buildings left out, for 24 hours; cast there daily for a year, it lasts until dispelled. You can name friends who are immune, and a password that makes whoever speaks it immune. A successful dispel magic on the area removes only one effect (its caster chooses); the spell ends when all are gone.",
+      "Solid Fog: any 5-ft squares of ground fill with fog 10 ft high, heavily obscured; each foot of movement in it costs 2 extra feet.",
+      "Grasping Undergrowth: any unfogged 5-ft squares sprout weeds and vines that work like entangle.",
+      "Grove Guardians: up to four trees uproot and act as awakened trees (Monster Manual) that can't speak. They fight any intruder who isn't immune until it flees or dies, obey your spoken orders (no action) while you are in the area, and never leave it. When the spell ends they root again if they can.",
+      "Extra Effect: add one of: gust of wind blowing nonstop in two spots, spike growth in one spot, or wind wall in two spots.",
+      "Immune creatures find the fog a light mist, the vines soft seats, the wind a gentle breeze and the spikes harmless."
+    ],
+    "material": "mistletoe cut with a golden sickle under a full moon, consumed"
+  },
+  "investiture-of-flame": {
+    "description": [
+      "Harmless flames cover you for up to 10 minutes, shedding bright light in a 30-ft radius and dim light 30 ft beyond. Fire damage can't hurt you, and you resist cold damage.",
+      "Moving to within 5 ft of you costs a creature 1d10 fire damage (once per turn), and so does finishing its turn that close.",
+      "Action: shoot fire from you in a line 15 ft long and 5 ft wide, aimed where you like. Creatures in the line make Dexterity saves, taking 4d8 fire damage on a failure or half on a success."
+    ]
+  },
+  "investiture-of-ice": {
+    "description": [
+      "Ice rimes your body for up to 10 minutes. Cold damage can't hurt you, you resist fire damage, and you pay no extra movement for difficult terrain made of ice or snow.",
+      "The ground in a 10-ft radius around you turns icy and moves with you; it is difficult terrain for everyone but you.",
+      "Action: a 15-ft cone of freezing wind sweeps out from your hand. Each creature in it makes a Constitution save, taking 4d6 cold damage and having its speed halved until your next turn starts on a failure, or half damage on a success."
+    ]
+  },
+  "investiture-of-stone": {
+    "description": [
+      "Rock spreads over your body for up to 10 minutes, and you resist bludgeoning, piercing and slashing damage dealt by nonmagical attacks.",
+      "Action: shake the ground in a 15-ft radius around you; other creatures standing on it make a Dexterity save or fall prone.",
+      "Difficult terrain of earth or stone costs you no extra movement, and you can travel through solid earth or rock as though through air, leaving it stable. Stop your move inside it and you get shoved out into the nearest unoccupied space, lose the spell, and are stunned through your next turn."
+    ]
+  },
+  "investiture-of-wind": {
+    "description": [
+      "Wind swirls around you for up to 10 minutes. Ranged weapon attacks against you have disadvantage, and you gain a 60-ft flying speed; if you are still flying as it ends, you drop unless you can stop yourself.",
+      "Action: whip up a 15-ft cube of swirling wind around a point in sight within 60 ft. Creatures inside make Constitution saves, taking 2d10 bludgeoning damage on a failure or half on a success; a Large or smaller one that fails is also shoved up to 10 ft away from the cube's center."
+    ]
+  },
+  "mental-prison": {
+    "description": [
+      "One creature you can see within 60 ft makes an Intelligence save; it succeeds automatically if it can't be charmed. Either way it takes 5d10 psychic damage, and on a success the spell ends there.",
+      "On a failure, an illusory cell only it perceives surrounds it for up to 1 minute, its edges looking deadly (flames, floating blades, toothy maws or the like). It is restrained and can't see or hear past the illusion. If it is moved out of the cell, makes a melee attack through it, or pokes any body part past it, it suffers 10d10 psychic damage, ending the spell."
+    ]
+  },
+  "primordial-ward": {
+    "description": [
+      "For up to 1 minute (concentration) you resist acid, cold, fire, lightning and thunder damage.",
+      "If one of those types damages you, you can use your reaction to swap the resistances for immunity to that type, covering the triggering damage too. The immunity lasts until your next turn ends, and then the spell is over."
+    ]
+  },
+  "scatter": {
+    "description": [
+      "The air shimmers around up to five creatures you choose and can see within 30 ft; an unwilling one can resist with a Wisdom save. Each one affected lands in a free space of your choice, on the ground or a floor, that you can see within 120 ft of you."
+    ]
+  },
+  "soul-cage": {
+    "description": [
+      "You trap the dying humanoid's soul in your tiny silver cage. It stays there for 8 hours or until the cage is destroyed, either of which ends the spell, and meanwhile its body can't be revived. You can use the soul up to six times in the ways below; after the sixth use it goes free and the spell ends.",
+      "Steal Life: bonus action, regain 2d8 hit points.",
+      "Query Soul: ask it one question (no action) and get a short, truthful telepathic reply you understand in any language, limited to what it knew alive; it may be cryptic.",
+      "Borrow Experience: bonus action, gain advantage on the next attack roll, ability check or save you make; it is lost if unused by the start of your next turn.",
+      "Eyes of the Dead: action, name somewhere the humanoid saw while alive to place an invisible sensor there, if it is on your plane. You see and hear through it while you concentrate, up to 10 minutes. Anyone who can perceive the sensor sees a faint image of the tormented soul."
+    ],
+    "material": "a 100 gp miniature silver cage"
+  },
+  "tensers-transformation": {
+    "description": [
+      "Magic grants you a warrior's endurance and skill for up to 10 minutes, but you can't cast spells while it lasts. You gain:",
+      "50 temporary hit points, lost if any remain when the spell ends.",
+      "Advantage on attack rolls with simple and martial weapons, and an extra 2d12 force damage when you hit with a weapon attack.",
+      "Proficiency with all armor, shields, simple and martial weapons, and in Strength and Constitution saves.",
+      "Two attacks, not one, whenever you use the Attack action on your turn (no effect if Extra Attack or a similar feature already gives you more).",
+      "When the spell ends, make a DC 15 Constitution save or gain one level of exhaustion."
+    ],
+    "material": "a few bull hairs"
+  },
+  "crown-of-stars": {
+    "description": [
+      "Seven star-like motes circle your head for up to 1 hour. As a bonus action, fling one at a creature or object within 120 ft with a ranged spell attack; a hit deals 4d12 radiant damage. The mote is spent either way, and the spell ends when the last one goes.",
+      "With 4 or more motes left, they give bright light in a 30-ft radius and dim light 30 ft beyond; with 1 to 3, only dim light in a 30-ft radius."
+    ],
+    "higherLevels": "Each slot level above 7 adds 2 more motes."
+  },
+  "power-word-pain": {
+    "description": [
+      "You speak a word that floods one creature you can see within 60 ft with pain. Targets above 100 hit points, or immune to being charmed, are unaffected.",
+      "An affected target's speeds can't exceed 10 ft, and it makes attack rolls, ability checks and all saves other than Constitution with disadvantage. Each spell it tries to cast needs a Constitution save first, or the spell is lost. After each of its turns it may try a Constitution save, and a success ends the pain."
+    ]
+  },
+  "temple-of-the-gods": {
+    "description": [
+      "A temple shimmers into being on ground you can see within 120 ft, filling an unoccupied cube up to 120 ft on a side, for 24 hours. It is devoted to the god, pantheon or philosophy your holy symbol stands for. You design it: floor, walls, roof, one door, any windows, an idol or altar inside, and bright, dim or no light. Only you and creatures you name at casting can open or close the door.",
+      "Pick one or more of celestials, elementals, fey, fiends and undead. A creature of a chosen type trying to enter makes a Charisma save or is kept out for 24 hours; even inside, it subtracts a d4 from every attack roll, ability check and save it makes there.",
+      "Divination sensors cannot appear inside, and no one within can be targeted by divination spells. A creature inside healed by any spell of 1st level or above gets bonus hit points: add your Wisdom modifier, at least 1.",
+      "Its walls are opaque force reaching into the Ethereal Plane, so nothing gets in physically or ethereally. Dispel magic can't end it and antimagic field has no hold on it, but disintegrate destroys it at once. Cast it on the same spot daily for a year to make it permanent."
+    ],
+    "material": "a holy symbol worth 5 gp or more"
+  },
+  "whirlwind": {
+    "description": [
+      "A howling whirlwind, a cylinder 10 ft in radius and 30 ft high, touches down on ground you can see within 300 ft. Each turn, your action can move it up to 30 ft along the ground. It pulls in unsecured Medium or smaller objects that no one is wearing or carrying.",
+      "A creature makes a Dexterity save the first time on a turn it enters the whirlwind or the whirlwind moves onto it, including when it appears: 10d6 bludgeoning damage on a failure, half on a success. A Large or smaller creature that fails then makes a Strength save or is restrained inside until the spell ends.",
+      "A restrained creature is lifted 5 ft each time its turn starts (unless already at the top), is carried along wherever the whirlwind goes, and drops when the spell ends if it has no way to stay up. Using its action, it can try a Strength or Dexterity check versus your spell save DC; if it succeeds, it breaks loose and is thrown 3d6 × 10 ft in a random direction."
+    ],
+    "material": "a single straw"
+  },
+  "abi-dalzims-horrid-wilting": {
+    "description": [
+      "You pull the water out of every creature in a 30-ft cube centered on a point within 150 ft. Each makes a Constitution save, taking 12d8 necrotic damage on a failure or half on a success. Constructs and undead are untouched; plants and water elementals roll with disadvantage.",
+      "Ordinary plants in the cube that aren't creatures, like trees and bushes, shrivel and die at once."
+    ],
+    "material": "a scrap of sponge"
+  },
+  "illusory-dragon": {
+    "description": [
+      "Shadow stuff from the Shadowfell forms a Huge dragon in an unoccupied space you can see within 120 ft. It fills its space like a creature for up to 1 minute. Enemies who can see it when it appears make a Wisdom save or are frightened for 1 minute; one that ends its turn without line of sight to the dragon repeats the save.",
+      "Bonus action: move it up to 60 ft, and at any point of that move have it breathe a 60-ft cone of the damage type you chose at casting (acid, cold, fire, lightning, necrotic or poison). Creatures in the cone make an Intelligence save: 7d6 damage on a failure, half on a success.",
+      "Attacks against it always miss; it passes every save and ignores all damage and conditions. A creature that spends its action studying it and beats your spell save DC with an Intelligence (Investigation) check knows it is fake: it sees through it and has advantage on saves against the breath."
+    ]
+  },
+  "maddening-darkness": {
+    "description": [
+      "Magical darkness fills a 60-ft-radius sphere centered on a point within 150 ft for up to 10 minutes, flowing around corners. Darkvision can't see through it, and neither nonmagical light nor light from spells of 8th level or lower can brighten it.",
+      "Shrieks, gibbering and mad laughter echo inside. A creature that starts its turn in the sphere makes a Wisdom save, taking 8d8 psychic damage on a failure or half on a success."
+    ],
+    "material": "pitch and mercury, a drop of each, mixed"
+  },
+  "mighty-fortress": {
+    "description": [
+      "A stone fortress rises from a 120-ft square of ground you can see within 1 mile; the square must be free of buildings, and creatures on it are lifted unharmed. It has a 30-ft-tall turret with a 20-ft square base at each corner, 80-ft walls 1 ft thick between them, and as many as four stone doors you may set into the outer wall.",
+      "Inside, a keep with a 50-ft square base has three floors with 10-ft ceilings and stone stairs. You lay out rooms, doors, furniture and decor; each day it provides a nine-course feast for up to 100 guests. Anything the spell made turns to dust if taken out.",
+      "One hundred invisible servants, each like an unseen servant, obey any orders from creatures you name when casting.",
+      "Every 10-ft-by-10-ft piece of stone is AC 15, with 30 hit points for each inch it is thick, and poison and psychic damage don't affect it. At 0 hit points a section is destroyed, and the DM may have neighboring sections buckle or fall.",
+      "After 7 days, or if you cast it elsewhere, the fortress sinks harmlessly into the ground, setting anyone inside safely down. A year of recasting it on that spot at least every 7 days makes it permanent."
+    ],
+    "material": "a diamond worth 500 gp or more, consumed"
+  },
+  "invulnerability": {
+    "description": [
+      "For up to 10 minutes (concentration), no damage of any kind can hurt you: you are immune to all of it. The spell uses up a piece of adamantine each time you cast it."
+    ],
+    "material": "a small piece of adamantine worth 500 gp or more, consumed"
+  },
+  "mass-polymorph": {
+    "description": [
+      "Up to ten creatures you choose and can see within 120 ft turn into beasts for up to 1 hour. An unwilling target makes a Wisdom save to resist; an unwilling shapechanger resists automatically.",
+      "Pick a beast form for each, the same or different. It must be one you have seen, with a challenge rating no higher than the target's (or half its level if it has no rating). The target takes the beast's statistics, mental scores included, but keeps its own hit points, alignment and personality.",
+      "Each target also gains temporary hit points equal to the new form's hit points, which no other temporary hit points can replace. It returns to normal when these run out or it dies, or loses them and returns when the spell ends. It can only do what the beast's body allows: no speech, no spells, nothing needing hands or words. Its gear merges into the form and can't be used."
+    ],
+    "material": "a caterpillar cocoon"
+  },
+  "psychic-scream": {
+    "description": [
+      "Your mind strikes out at up to ten creatures you choose and can see within 90 ft; any with Intelligence 2 or lower are unaffected. Each makes an Intelligence save. A failed save means 14d6 psychic damage and the stunned condition; a success means half damage and no stun. A creature killed by the damage has its head explode, if it has one.",
+      "A stunned target gets a new Intelligence save after each of its turns; succeeding ends the stun."
+    ]
   }
 }

@@ -2,6 +2,8 @@ import { readFileSync } from 'node:fs';
 import { DATA } from '../../src/data';
 import { phbId, type SpellFacts } from '../../scripts/extract/spell-facts';
 import { diceRange } from '../../src/logic/card';
+import { grantSlots } from '../../src/character/grants';
+import { emptyCharacter, type Character } from '../../src/character/types';
 
 const built = (lo: number, hi: number) => DATA.spells.filter(s => s.level >= lo && s.level <= hi && s.description.length > 0).length;
 const facts = (lo: number, hi: number) =>
@@ -11,7 +13,7 @@ test('batch 5a complete', () => expect(built(0, 1)).toBe(facts(0, 1)));
 test('batch 5b complete', () => expect(built(2, 3)).toBe(facts(2, 3)));
 test('batch 5c complete', () => expect(built(4, 6)).toBe(facts(4, 6)));
 test('batch 5d complete', () => expect(built(7, 9)).toBe(facts(7, 9)));
-test('every spell is built (361 PHB + 22 XGE levels 0-1 + 34 XGE levels 2-4)', () => expect(DATA.spells).toHaveLength(417));
+test('every spell is built (361 PHB + 22 XGE levels 0-1 + 34 XGE levels 2-4 + 39 XGE levels 5-9)', () => expect(DATA.spells).toHaveLength(456));
 test('confusion keeps its table', () => {
   const d = DATA.spells.find(s => s.id === 'confusion')!.description.join('\n');
   for (const row of ['1: ', '2-6: ', '7-8: ', '9-10: ']) expect(d).toContain(row);
@@ -19,7 +21,6 @@ test('confusion keeps its table', () => {
 
 const xge = DATA.spells.filter(s => s.book === 'xge');
 test('xanathar band built', () => {
-  // Task 4 ids: 'synaptic-static', 'steel-wind-strike', 'mass-polymorph', 'psychic-scream'
   for (const id of ['toll-the-dead', 'ice-knife', 'catapult', 'chaos-bolt', 'absorb-elements', 'word-of-radiance'])
     expect(DATA.spells.find(s => s.id === id), id).toMatchObject({ book: 'xge', textSource: 'summary' });
 });
@@ -36,6 +37,32 @@ test('xanathar levels 2-4 facts', () => {
   expect(sp('summon-greater-demon')!.classes.slice().sort()).toEqual(['warlock', 'wizard']);
   expect(sp('healing-spirit')!.summary?.damage).toMatchObject({ dice: '1d6', healing: true });
   expect(sp('shadow-of-moil')!.components.m).toMatchObject({ costGp: 150, consumed: false });
+});
+test('xanathar band levels 5-9 built', () => {
+  for (const id of ['synaptic-static', 'steel-wind-strike', 'mass-polymorph', 'psychic-scream', 'abi-dalzims-horrid-wilting', 'tensers-transformation', 'temple-of-the-gods', 'investiture-of-flame', 'create-homunculus'])
+    expect(DATA.spells.find(s => s.id === id), id).toMatchObject({ book: 'xge', textSource: 'summary' });
+  expect(xge.filter(s => s.level >= 5)).toHaveLength(39);
+  expect(xge).toHaveLength(95);
+});
+test('xanathar levels 5-9 facts', () => {
+  const sp = (id: string) => DATA.spells.find(s => s.id === id);
+  expect(sp('synaptic-static')).toMatchObject({ level: 5, school: 'Enchantment', page: 167, summary: { resolution: 'save', save: 'int', damage: { dice: '8d6', type: 'Psychic' } } });
+  expect(sp('synaptic-static')!.classes.slice().sort()).toEqual(['bard', 'sorcerer', 'warlock', 'wizard']);
+  expect(sp('steel-wind-strike')).toMatchObject({ level: 5, page: 166, summary: { resolution: 'attack', damage: { dice: '6d10', type: 'Force' } } });
+  expect(sp('steel-wind-strike')!.classes.slice().sort()).toEqual(['ranger', 'wizard']);
+  expect(sp('holy-weapon')!.classes.slice().sort()).toEqual(['cleric', 'paladin']);
+  expect(sp('temple-of-the-gods')).toMatchObject({ level: 7, classes: ['cleric'] });
+  expect(sp('mass-polymorph')).toMatchObject({ level: 9, school: 'Transmutation', page: 160 });
+  expect(sp('psychic-scream')).toMatchObject({ level: 9, school: 'Enchantment', page: 163, summary: { resolution: 'save', save: 'int', damage: { dice: '14d6', type: 'Psychic' } } });
+  expect(sp('psychic-scream')!.classes.slice().sort()).toEqual(['bard', 'sorcerer', 'warlock', 'wizard']);
+});
+test('new spells reach choice grants', () => {
+  const death = { ...emptyCharacter(), classes: [{ cls: 'cleric', level: 1, sub: 'death-domain' }] } as Character;
+  expect(grantSlots(death).find(s => s.key.startsWith('sub:death-domain'))!.candidates.map(s => s.id)).toContain('toll-the-dead');
+  const ritual = { ...emptyCharacter(), classes: [{ cls: 'wizard', level: 1 }], feats: ['ritual-caster'] } as Character;
+  expect(grantSlots(ritual).find(s => s.key === 'feat:ritual-caster:0')!.candidates.map(s => s.id)).toContain('ceremony');
+  const tome = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 3 }], options: ['pact-boon-pact-of-the-tome', 'eldritch-invocations-book-of-ancient-secrets'] } as Character;
+  expect(grantSlots(tome).find(s => s.key.startsWith('feature:eldritch-invocations-book-of-ancient-secrets'))!.candidates.map(s => s.id)).toContain('ceremony');
 });
 test('chaos bolt keeps its table, one row per paragraph', () => {
   const d = DATA.spells.find(s => s.id === 'chaos-bolt')!.description;
