@@ -508,7 +508,7 @@
     "description": [
       "A Tiny, intangible, invulnerable mote circles within 5 ft of the creature until the die is used or lost. When the die is spent, the mote adds an effect that depends on the roll:",
       "Ability check: the creature rolls the Bardic Inspiration die a second time and keeps the result it prefers.",
-      "Attack roll: right after the die is rolled, the target and any creatures you choose within 5 ft of it make a Constitution save against your spell save DC; on a failure each takes thunder damage equal to the die result.",
+      "Attack roll: right after the die is rolled, the target and any creatures you choose within 5 ft of it (only ones you can see) make a Constitution save against your spell save DC; on a failure each takes thunder damage equal to the die result.",
       "Saving throw: right after the die is rolled, the creature gains temporary hit points equal to the die result + your Charisma modifier (minimum 1)."
     ],
     "book": "tce",
@@ -578,8 +578,8 @@
       }
     ],
     "description": [
-      "Action: a nonmagical item of your choice appears in an unoccupied space within 10 ft, resting on a surface or a liquid that can hold it. It is worth at most 20 gp × your bard level and is Medium or smaller. It glimmers, and anyone touching it hears faint music. It vanishes once hours equal to your proficiency bonus have passed.",
-      "You keep only one such item: making a new one makes the old one vanish at once. The size limit rises to Large at bard level 6 and Huge at 14. For ideas, see the equipment chapter of the Player's Handbook.",
+      "Action: create one nonmagical item, Medium or smaller and worth up to 20 gp × your bard level. It lasts hours equal to your proficiency bonus, then vanishes. It forms in an unoccupied space within 10 ft, on a surface or liquid able to hold it.",
+      "You keep only one such item: making a new one makes the old one vanish at once. The size limit rises to Large at bard level 6 and Huge at 14.",
       "Level 14 (Creative Crescendo): make several items in one use, up to your Charisma modifier (minimum 2). Going past that number, you pick which older items vanish. Only one item may be the largest size you can make; the rest are Small or Tiny. The gp limit no longer applies."
     ],
     "book": "tce",
