@@ -621,5 +621,70 @@
     ],
     "from": "draconic-ancestry",
     "reuse": true
+  },
+  {
+    "id": "fighting-style-swords",
+    "name": "Fighting Style",
+    "owner": {
+      "kind": "subclass",
+      "id": "college-of-swords"
+    },
+    "picks": [
+      0,
+      0,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "fighting-style",
+    "only": [
+      "fighting-style-dueling",
+      "fighting-style-two-weapon-fighting"
+    ]
+  },
+  {
+    "id": "arcane-shot",
+    "name": "Arcane Shot",
+    "owner": {
+      "kind": "subclass",
+      "id": "arcane-archer"
+    },
+    "picks": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      6,
+      6,
+      6
+    ]
   }
 ]

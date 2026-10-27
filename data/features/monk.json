@@ -900,5 +900,79 @@
     ],
     "page": 81,
     "textSource": "summary"
+  },
+  {
+    "id": "drunken-technique",
+    "name": "Drunken Technique",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-drunken-master"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You use Flurry of Blows",
+    "description": [
+      "Each time you use Flurry of Blows, you also Disengage for free, and you gain +10 ft of walking speed for the rest of the turn."
+    ],
+    "page": 34,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ed/Drunken_Technique_Icon.webp"
+  },
+  {
+    "id": "tipsy-sway",
+    "name": "Tipsy Sway",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-drunken-master"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A melee attack roll against you misses",
+    "resource": "1 ki point",
+    "description": [
+      "Redirect Attack: spend 1 ki point and your reaction to make the missed attack hit another creature of your choice that you can see within 5 ft of you (not the attacker).",
+      "Leap to Your Feet: standing up from prone costs you only 5 ft of movement, not half your speed."
+    ],
+    "page": 34,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/c/c7/Redirect_Attack_Icon.webp"
+  },
+  {
+    "id": "drunkards-luck",
+    "name": "Drunkard's Luck",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-drunken-master"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "You roll an ability check, attack or save with disadvantage",
+    "resource": "2 ki points",
+    "description": [
+      "Pay 2 ki points and that roll no longer has disadvantage."
+    ],
+    "page": 34,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d3/Drunkard's_Luck_Icon.webp"
+  },
+  {
+    "id": "intoxicated-frenzy",
+    "name": "Intoxicated Frenzy",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-drunken-master"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "You use Flurry of Blows",
+    "description": [
+      "Your Flurry of Blows can include up to 3 extra attacks (5 Flurry attacks in total), as long as each Flurry attack this turn targets a different creature."
+    ],
+    "page": 34,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

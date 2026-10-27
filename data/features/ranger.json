@@ -691,5 +691,60 @@
     "page": 91,
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/a/af/Underdark_Icon.webp"
+  },
+  {
+    "id": "dread-ambusher",
+    "name": "Dread Ambusher",
+    "source": {
+      "kind": "subclass",
+      "id": "gloom-stalker"
+    },
+    "level": 3,
+    "cost": "free",
+    "uses": "First turn of each combat",
+    "description": [
+      "Add your Wisdom modifier to your initiative rolls.",
+      "In each combat, during your very first turn, you get +10 ft of walking speed until the turn ends. Take the Attack action that turn and it includes one extra weapon attack; if that attack hits, add 1d8 damage of the weapon's type."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/d4/Dread_Ambusher_Icon.png"
+  },
+  {
+    "id": "stalkers-flurry",
+    "name": "Stalker's Flurry",
+    "source": {
+      "kind": "subclass",
+      "id": "gloom-stalker"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "A weapon attack of yours misses",
+    "uses": "Once per turn",
+    "description": [
+      "Once on each of your turns, when a weapon attack misses, you get a follow-up weapon attack within that same action."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e0/Stalker's_Flurry_Icon.webp"
+  },
+  {
+    "id": "shadowy-dodge",
+    "name": "Shadowy Dodge",
+    "source": {
+      "kind": "subclass",
+      "id": "gloom-stalker"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "An attacker without advantage rolls to hit you",
+    "description": [
+      "Use your reaction to give that attack roll disadvantage. Decide before you know whether it hits."
+    ],
+    "page": 42,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

@@ -100,6 +100,17 @@
     "hotbarIcon": "https://bg3.wiki/w/images/7/7e/Class_Fighter_Eldritch_Knight_Hotbar_Icon.png"
   },
   {
+    "id": "arcane-archer",
+    "cls": "fighter",
+    "name": "Arcane Archer",
+    "page": 28,
+    "book": "xge",
+    "options": [
+      "arcane-shot"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/d/dc/Class_Fighter_Arcane_Archer_Hotbar_Icon.png"
+  },
+  {
     "id": "circle-of-the-land",
     "cls": "druid",
     "name": "Circle of the Land",
@@ -479,6 +490,26 @@
     "page": 55,
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/9/9b/Class_Bard_Valour_Hotbar_Icon.png"
+  },
+  {
+    "id": "college-of-glamour",
+    "cls": "bard",
+    "name": "College of Glamour",
+    "page": 14,
+    "book": "xge",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/8f/Class_Bard_Glamour_Hotbar_Icon.png"
+  },
+  {
+    "id": "college-of-swords",
+    "cls": "bard",
+    "name": "College of Swords",
+    "page": 15,
+    "book": "xge",
+    "options": [
+      "fighting-style-swords"
+    ],
+    "hotbarIcon": "https://bg3.wiki/w/images/3/35/Class_Bard_Swords_Hotbar_Icon.png"
   },
   {
     "id": "knowledge-domain",
@@ -896,6 +927,15 @@
     "hotbarIcon": "https://bg3.wiki/w/images/b/bc/Class_Monk_Four_Elements_Hotbar_Icon.png"
   },
   {
+    "id": "way-of-the-drunken-master",
+    "cls": "monk",
+    "name": "Way of the Drunken Master",
+    "page": 33,
+    "book": "xge",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/4/49/Class_Monk_Drunken_Master_Hotbar_Icon.png"
+  },
+  {
     "id": "oath-of-devotion",
     "cls": "paladin",
     "name": "Oath of Devotion",
@@ -1076,6 +1116,40 @@
     "hotbarIcon": "https://bg3.wiki/w/images/b/bd/Class_Ranger_Beast_Master_Hotbar_Icon.png"
   },
   {
+    "id": "gloom-stalker",
+    "cls": "ranger",
+    "name": "Gloom Stalker",
+    "page": 41,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "disguise-self",
+          "atLevel": 3
+        },
+        {
+          "spell": "rope-trick",
+          "atLevel": 5
+        },
+        {
+          "spell": "fear",
+          "atLevel": 9
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 13
+        },
+        {
+          "spell": "seeming",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/d/df/Class_Ranger_Gloom_Stalker_Hotbar_Icon.png"
+  },
+  {
     "id": "thief",
     "cls": "rogue",
     "name": "Thief",
@@ -1174,6 +1248,15 @@
     "hotbarIcon": "https://bg3.wiki/w/images/1/12/Class_Rogue_Arcane_Trickster_Hotbar_Icon.png"
   },
   {
+    "id": "swashbuckler",
+    "cls": "rogue",
+    "name": "Swashbuckler",
+    "page": 47,
+    "book": "xge",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/c/c0/Class_Rogue_Swashbuckler_Hotbar_Icon.png"
+  },
+  {
     "id": "draconic-bloodline",
     "cls": "sorcerer",
     "name": "Draconic Bloodline",
@@ -1190,6 +1273,24 @@
     "page": 103,
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/e/e9/Class_Sorcerer_Wild_Magic_Hotbar_Icon.png"
+  },
+  {
+    "id": "shadow-magic",
+    "cls": "sorcerer",
+    "name": "Shadow Magic",
+    "page": 50,
+    "book": "xge",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/a/ae/Class_Sorcerer_Shadow_Magic_Hotbar_Icon.png"
+  },
+  {
+    "id": "storm-sorcery",
+    "cls": "sorcerer",
+    "name": "Storm Sorcery",
+    "page": 51,
+    "book": "xge",
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/8/81/Class_Sorcerer_Storm_Sorcery_Hotbar_Icon.png"
   },
   {
     "id": "the-archfey",
@@ -1349,6 +1450,60 @@
     },
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/4/4f/Class_Warlock_Great_Old_One_Hotbar_Icon.png"
+  },
+  {
+    "id": "the-hexblade",
+    "cls": "warlock",
+    "name": "The Hexblade",
+    "page": 55,
+    "book": "xge",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "shield",
+          "atLevel": 1
+        },
+        {
+          "spell": "wrathful-smite",
+          "atLevel": 1
+        },
+        {
+          "spell": "blur",
+          "atLevel": 3
+        },
+        {
+          "spell": "branding-smite",
+          "atLevel": 3
+        },
+        {
+          "spell": "blink",
+          "atLevel": 5
+        },
+        {
+          "spell": "elemental-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "phantasmal-killer",
+          "atLevel": 7
+        },
+        {
+          "spell": "staggering-smite",
+          "atLevel": 7
+        },
+        {
+          "spell": "banishing-smite",
+          "atLevel": 9
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": [],
+    "hotbarIcon": "https://bg3.wiki/w/images/0/0b/Class_Warlock_Hexblade_Hotbar_Icon.png"
   },
   {
     "id": "school-of-abjuration",

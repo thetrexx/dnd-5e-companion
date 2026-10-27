@@ -700,5 +700,451 @@
     ],
     "page": 74,
     "textSource": "summary"
+  },
+  {
+    "id": "arcane-shot",
+    "name": "Arcane Shot",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-archer"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits (or you fire it, for an option with no attack roll)",
+    "resource": "1 Arcane Shot use",
+    "uses": "2 per short or long rest",
+    "scaling": [
+      {
+        "label": "Options known",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "6",
+          "6",
+          "6"
+        ]
+      }
+    ],
+    "description": [
+      "Once per turn, during the Attack action, you may load one of your Arcane Shot options into a magic arrow shot from a longbow or shortbow. You choose after the arrow hits, unless the option makes no attack roll.",
+      "You have 2 uses and regain all of them on a short or long rest. From level 15 (Ever-Ready Shot), if you roll initiative with no uses left, you regain 1.",
+      "You know 2 options at level 3 and learn 1 more at levels 7, 10, 15 and 18; at 18 every option improves. Save DC: 8 + your proficiency bonus + your Intelligence modifier."
+    ],
+    "page": 28,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "curving-shot",
+    "name": "Curving Shot",
+    "source": {
+      "kind": "subclass",
+      "id": "arcane-archer"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "trigger": "Your attack with a magic arrow misses",
+    "description": [
+      "Bonus action: reroll the missed attack against a different target within 60 ft of the original one."
+    ],
+    "page": 28,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bf/Curving_Shot_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-banishing-arrow",
+    "name": "Banishing Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Force damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6"
+        ]
+      }
+    ],
+    "description": [
+      "Abjuration. The creature hit makes a Charisma save. On a fail it is banished to a harmless spot in the Feywild, with speed 0 and incapacitated. It comes back when its next turn ends, reappearing where it was (or in the nearest unoccupied space).",
+      "Level 18: the hit also deals 2d6 force damage."
+    ],
+    "page": 29,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6d/Arcane_Shot_Banishing_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-beguiling-arrow",
+    "name": "Beguiling Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Psychic damage",
+        "values": [
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Enchantment. The target takes an extra 2d6 psychic damage. Pick an ally within 30 ft of the target: the target makes a Wisdom save or is charmed by that ally until your next turn starts. The charm breaks early if that ally attacks it, damages it or forces it to save.",
+      "Level 18: 4d6 psychic."
+    ],
+    "page": 29,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/6e/Arcane_Shot_Beguiling_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-bursting-arrow",
+    "name": "Bursting Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Force damage",
+        "values": [
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Evocation. Right after your attack, force energy bursts out: the target and every other creature within 10 ft of it take 2d6 force damage each.",
+      "Level 18: 4d6 force."
+    ],
+    "page": 29,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e3/Arcane_Shot_Bursting_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-enfeebling-arrow",
+    "name": "Enfeebling Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Necrotic damage",
+        "values": [
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Necromancy. The target takes an extra 2d6 necrotic damage and makes a Constitution save. On a fail, its weapon attacks deal only half damage until your next turn starts.",
+      "Level 18: 4d6 necrotic."
+    ],
+    "page": 29,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/e9/Arcane_Shot_Enfeebling_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-grasping-arrow",
+    "name": "Grasping Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Poison and slashing",
+        "values": [
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Conjuration. Poisonous brambles wrap the target: it takes an extra 2d6 poison damage and its speed drops by 10 ft. The first time on each turn that it moves 1 ft or more without teleporting, it takes 2d6 slashing damage.",
+      "The brambles stay for 1 minute, or until you fire another Grasping Arrow. Anyone able to reach the target (the target included) can spend an action to pull them off by beating your Arcane Shot save DC with a Strength (Athletics) check.",
+      "Level 18: the poison and slashing damage both become 4d6."
+    ],
+    "page": 29,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/f/f1/Arcane_Shot_Grasping_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-piercing-arrow",
+    "name": "Piercing Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You fire the arrow (no attack roll)",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Extra piercing",
+        "values": [
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "2d6"
+        ]
+      }
+    ],
+    "description": [
+      "Transmutation. No attack roll: the arrow flies in a line 1 ft wide and 30 ft long, passing through objects and ignoring cover, then vanishes.",
+      "Each creature in the line makes a Dexterity save. On a fail it takes the arrow's normal hit damage plus an extra 1d6 piercing; on a success, half as much.",
+      "Level 18: the extra piercing becomes 2d6."
+    ],
+    "page": 29,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/d/da/Arcane_Shot_Piercing_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-seeking-arrow",
+    "name": "Seeking Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You fire the arrow (no attack roll)",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Extra force",
+        "values": [
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "2d6",
+          "2d6",
+          "2d6"
+        ]
+      }
+    ],
+    "description": [
+      "Divination. No attack roll: name a creature you saw within the past minute, and the arrow hunts it down, rounding corners and ignoring half and three-quarters cover.",
+      "The target must be in the weapon's range with a route big enough for the arrow to reach it; then it makes a Dexterity save. Otherwise the arrow flies as far as it can and disappears.",
+      "On a fail the target takes the arrow's normal hit damage plus an extra 1d6 force, and you learn where it is right now. On a success it takes half the damage and you learn nothing of its whereabouts.",
+      "Level 18: the extra force becomes 2d6."
+    ],
+    "page": 30,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/e/ec/Arcane_Shot_Seeking_Arrow_Icon.webp"
+  },
+  {
+    "id": "arcane-shot-shadow-arrow",
+    "name": "Shadow Arrow",
+    "source": {
+      "kind": "option",
+      "id": "arcane-shot"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your magic arrow hits",
+    "resource": "1 Arcane Shot use",
+    "scaling": [
+      {
+        "label": "Psychic damage",
+        "values": [
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Illusion. The target takes an extra 2d6 psychic damage and makes a Wisdom save. On a fail it can't see anything more than 5 ft away until your next turn starts.",
+      "Level 18: 4d6 psychic."
+    ],
+    "page": 30,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/8/86/Arcane_Shot_Shadow_Arrow_Icon.webp"
   }
 ]

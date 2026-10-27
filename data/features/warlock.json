@@ -965,5 +965,80 @@
     "page": 108,
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/3/3e/Pact_of_the_Tome_Icon.webp"
+  },
+  {
+    "id": "hexblades-curse",
+    "name": "Hexblade's Curse",
+    "source": {
+      "kind": "subclass",
+      "id": "the-hexblade"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Bonus action: curse one creature you can see within 30 ft for 1 minute. It ends early if the target dies, or if you die or are incapacitated.",
+      "While it lasts, your damage rolls against the target gain a bonus equal to your proficiency bonus, and your attack rolls against it score a critical hit on a 19 or 20. If it dies, you heal by your warlock level + your Charisma modifier (at least 1 hit point)."
+    ],
+    "page": 55,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/3f/Hexblade's_Curse_Icon.webp"
+  },
+  {
+    "id": "accursed-specter",
+    "name": "Accursed Specter",
+    "source": {
+      "kind": "subclass",
+      "id": "the-hexblade"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You slay a humanoid",
+    "uses": "Once per long rest",
+    "description": [
+      "You can make the slain humanoid's spirit rise from its corpse as a specter bound to you. Uses the specter stats (Monster Manual).",
+      "It arrives with half your warlock level in temporary hit points, rolls its own initiative and takes its own turns. It follows your spoken commands, and adds your Charisma modifier (minimum +0) to its attack rolls.",
+      "It stays with you until your next long rest is over, then departs for the afterlife."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/a/aa/Accursed_Spectre_Icon.webp"
+  },
+  {
+    "id": "armor-of-hexes",
+    "name": "Armor of Hexes",
+    "source": {
+      "kind": "subclass",
+      "id": "the-hexblade"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "An attack roll from your Hexblade's Curse target hits you",
+    "description": [
+      "Roll a d6. On a 4 or higher, the attack misses you instead, whatever its roll."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7a/Armour_of_Hexes_Icon.webp"
+  },
+  {
+    "id": "master-of-hexes",
+    "name": "Master of Hexes",
+    "source": {
+      "kind": "subclass",
+      "id": "the-hexblade"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "Your Hexblade's Curse target dies",
+    "description": [
+      "Shift the curse onto another creature within 30 ft that you can see, as long as you aren't incapacitated. Doing so means no healing from the first target's death."
+    ],
+    "page": 56,
+    "book": "xge",
+    "textSource": "summary"
   }
 ]

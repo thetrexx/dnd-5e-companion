@@ -193,5 +193,140 @@
     ],
     "page": 55,
     "textSource": "summary"
+  },
+  {
+    "id": "mantle-of-inspiration",
+    "name": "Mantle of Inspiration",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-glamour"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 Bardic Inspiration",
+    "scaling": [
+      {
+        "label": "Temp HP",
+        "values": [
+          "",
+          "",
+          "5",
+          "5",
+          "8",
+          "8",
+          "8",
+          "8",
+          "8",
+          "11",
+          "11",
+          "11",
+          "11",
+          "11",
+          "14",
+          "14",
+          "14",
+          "14",
+          "14",
+          "14"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action: spend one Bardic Inspiration use. Pick up to your Charisma modifier (minimum 1) creatures within 60 ft; you and each of them must be able to see each other. Each gains temporary hit points (see Temp HP).",
+      "Each creature that gains them can at once spend its reaction moving up to its speed; that movement provokes no opportunity attacks.",
+      "Temp HP: 5, rising to 8 at level 5, 11 at level 10 and 14 at level 15."
+    ],
+    "page": 14,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/7/7b/Mantle_of_Inspiration_Icon.webp"
+  },
+  {
+    "id": "enthralling-performance",
+    "name": "Enthralling Performance",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-glamour"
+    },
+    "level": 3,
+    "cost": "other",
+    "uses": "Once per short or long rest",
+    "description": [
+      "After you perform for at least 1 minute (song, poem or dance), pick humanoids within 60 ft who saw and heard the whole performance (as many as your Charisma modifier, minimum 1). Each makes a Wisdom save against your spell save DC or is charmed by you.",
+      "A charmed target adores you: it praises you to anyone who talks with it and gets in the way of your opponents, but it won't turn violent for you unless it already meant to fight on your side.",
+      "The charm lasts 1 hour. It ends early if the target takes any damage, if you attack it, or if it sees you attack or hurt one of its allies.",
+      "A target that saves never learns you tried to charm it."
+    ],
+    "page": 14,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "mantle-of-majesty",
+    "name": "Mantle of Majesty",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-glamour"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "uses": "Once per long rest",
+    "spells": [
+      {
+        "spell": "command",
+        "atLevel": 6,
+        "uses": "No spell slot"
+      }
+    ],
+    "description": [
+      "Bonus action: you take on an unearthly, beautiful fey look for 1 minute, concentrating on it as if on a spell. You cast command at once without using a spell slot.",
+      "Until it ends, every turn you can spend a bonus action to cast command again, still with no slot. A creature charmed by you fails its save against these commands automatically."
+    ],
+    "page": 14,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/b/bf/Mantle_of_Majesty_Icon.webp"
+  },
+  {
+    "id": "unbreakable-majesty",
+    "name": "Unbreakable Majesty",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-glamour"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "description": [
+      "Bonus action: take on a majestic presence. It lasts 1 minute and ends early if you are incapacitated.",
+      "The first time on a turn that a creature tries to attack you, it makes a Charisma save against your spell save DC. On a fail it can't attack you this turn: it picks a new target, or the attack is lost. On a success it may attack you, but it has disadvantage on saves against your spells on your next turn."
+    ],
+    "page": 14,
+    "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "blade-flourish",
+    "name": "Blade Flourish",
+    "source": {
+      "kind": "subclass",
+      "id": "college-of-swords"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "A weapon attack hits during your Attack action",
+    "resource": "1 Bardic Inspiration (a d6 from level 14)",
+    "uses": "One flourish per turn",
+    "description": [
+      "Taking the Attack action on your turn gives you +10 ft of walking speed until the turn ends. If one of that action's weapon attacks hits, you may use one flourish below (only one per turn): spend a Bardic Inspiration use and roll the die.",
+      "Defensive Flourish: the roll is extra damage to the target, and you add it to your AC until your next turn starts.",
+      "Slashing Flourish: the roll is extra damage to the target and to any other creature you choose within 5 ft of you that you can see.",
+      "Mobile Flourish: the roll is extra damage to the target, and you can push it away from you up to 5 ft plus that many feet. Afterward your reaction can carry you, up to your walking speed, into an unoccupied space next to the target (within 5 ft).",
+      "Master's Flourish (level 14): instead of spending a Bardic Inspiration use, you can roll a d6 and use that."
+    ],
+    "page": 15,
+    "book": "xge",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/3/37/Slashing_Flourish_Melee_Icon.webp"
   }
 ]
