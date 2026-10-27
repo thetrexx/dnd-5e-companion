@@ -2582,7 +2582,7 @@
   },
   "tsunami": {
     "description": [
-      "A wall of water, 300 ft in length and height and 50 ft thick at most, rises at a point you can see. Each creature in it makes a Strength save: 6d10 bludgeoning, half on a success.",
+      "A wall of water, at most 300×300×50 ft (length × height × thickness), rises at a point you can see. Each creature in it makes a Strength save: 6d10 bludgeoning, half on a success.",
       "As each of your turns begins, it rolls 50 ft away from you with everyone inside. Each Huge or smaller creature inside or in its path makes a Strength save or takes 5d10 bludgeoning (once per round). Then it loses 50 ft of height and later damage drops 1d10; at 0 ft it ends.",
       "Swimming in it needs a Strength (Athletics) check vs your spell save DC. Leaving it, a creature falls."
     ]

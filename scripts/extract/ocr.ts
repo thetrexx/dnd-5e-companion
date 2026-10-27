@@ -19,9 +19,12 @@ export function missingNumbers(text: string, ocr: string): string[] {
 
 const MAX_RUN = 8;
 
-/** Rejoins words the page split with a hyphen at a line break ("crea-\nture" becomes "creature"). */
+/**
+ * Rejoins words the page split with a hyphen at a line break ("crea-\nture" becomes "creature"). A hyphen
+ * after a digit is a compound size ("30-\nfoot"), so it becomes a space and the unit stays its own word.
+ */
 export function joinHyphenation(s: string): string {
-  return s.replace(/(\w)[-­‐]\s*\r?\n\s*(\w)/g, '$1$2');
+  return s.replace(/(\d)[-­‐]\s*\r?\n\s*(\w)/g, '$1 $2').replace(/(\w)[-­‐]\s*\r?\n\s*(\w)/g, '$1$2');
 }
 
 /** "ft", "foot" and "feet" (as `normalizeOcr` folds them) count as one word. */

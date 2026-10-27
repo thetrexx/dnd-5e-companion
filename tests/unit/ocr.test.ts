@@ -60,6 +60,13 @@ test('ft, foot and feet are one word', () => {
   expect(longestSharedRun(card, page.replace('30-foot radius', '30 feet radius'))).toBeGreaterThanOrEqual(8);
   expect(judgeRecord(card, page).pass).toBe(false);
 });
+test('a size the page breaks after its digit-hyphen at a line end still folds its unit', () => {
+  const card = 'Motes drift and fill a 30 ft radius with soft light until the lantern';
+  for (const broken of [page.replace('30-foot', '30-\nfoot'), page.replace('30-foot', '30-\r\nfoot')]) {
+    expect(longestSharedRun(card, broken)).toBeGreaterThanOrEqual(8);
+    expect(judgeRecord(card, broken).pass).toBe(false);
+  }
+});
 test('two words the text layer merged still count toward a copied run', () => {
   const merged = 'The moth circles twice and settles ifyou stay still, then it glows until the next dawn breaks.';
   const card = 'The moth circles twice and settles if you stay still, then it glows until the';
