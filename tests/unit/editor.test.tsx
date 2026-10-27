@@ -211,3 +211,9 @@ test('options step: optional features are ticked, and a replacement hides the ol
   fireEvent.click(r.getByText('Favored Foe'));
   expect(r.getByText('Favored Enemy')).toBeTruthy();
 });
+test('options step: a subclass optional slot names the subclass', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'ranger', level: 3, sub: 'beast-master' }] });
+  const r = render(<Editor step="options" />);
+  expect(r.getByText('Optional Features')).toBeTruthy();
+  expect(r.getByText('Optional Features · Beast Master')).toBeTruthy();
+});

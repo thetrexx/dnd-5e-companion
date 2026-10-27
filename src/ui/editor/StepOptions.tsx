@@ -15,6 +15,12 @@ const takenBy = (slots: OptionSlot[], me: OptionSlot, id: string) => {
   return (home && ownerName(home)) ?? 'another slot';
 };
 
+/** A subclass's optional slot names the subclass, so it reads apart from the class's own. */
+const optionalLabel = (s: OptionSlot, cls: string) => {
+  const sub = s.group.owner.kind === 'subclass' ? DATA.subclasses.find((x) => x.id === s.group.owner.id)?.name : undefined;
+  return `Optional Features${sub ? ` · ${sub}` : cls}`;
+};
+
 export function StepOptions(p: StepProps) {
   const { ch, update } = p;
   const slots = optionSlots(ch);
@@ -30,7 +36,7 @@ export function StepOptions(p: StepProps) {
           : joinTag(f.optional && 'Optional', f.prereq?.text);
         return (
           <div key={`${s.group.id}:${s.cls ?? ''}`}>
-            <Separator ornament="☙" label={`${opt ? 'Optional Features' : s.group.name}${cls}`} full />
+            <Separator ornament="☙" label={opt ? optionalLabel(s, cls) : `${s.group.name}${cls}`} full />
             {opt
               ? <p class="note">Tick the ones your DM allows.</p>
               : <p class={n > s.count ? 'warn' : 'note'}>{n} of {s.count} chosen{n > s.count ? ' (more than usual)' : ''}</p>}

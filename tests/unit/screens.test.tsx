@@ -131,3 +131,11 @@ test('Card marks optional features and what they replace', () => {
   const t = render(<Card kind="feature" id="deft-explorer-tireless" cls="ranger" level={10} />);
   expect(t.container.querySelector('.card-sub')!.textContent).toBe('Ranger Feature · Level 10 · Optional');
 });
+test('Primal Companion card keeps Bestial Fury and Share Spells', () => {
+  const r = render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={11} sub="beast-master" />);
+  expect(r.container.querySelector('.card-scaling')!.textContent).toContain('Beast attacks: 2');
+  expect(r.container.querySelector('.card-desc')!.textContent).toMatch(/Bestial Fury.*two attacks/);
+  expect(r.container.querySelector('.card-desc')!.textContent).toContain('Share Spells');
+  expect(render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={10} sub="beast-master" />)
+    .container.querySelector('.card-scaling')!.textContent).toContain('Beast attacks: 1');
+});

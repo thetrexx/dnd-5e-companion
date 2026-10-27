@@ -1161,7 +1161,7 @@
       }
     ],
     "description": [
-      "You learn speak with animals at ranger level 3, beast sense at 5, speak with plants at 9, locate creature at 13 and commune with nature at 17. They don't count against your ranger spells known.",
+      "You learn speak with animals at ranger level 3, beast sense at 5, speak with plants at 9, locate creature at 13 and commune with nature at 17, each only if you don't know it already. They don't count against your ranger spells known.",
       "Each of them can be cast once without spending a spell slot; that free cast comes back when you finish a long rest."
     ],
     "page": 57,
@@ -1196,6 +1196,7 @@
   },
   {
     "id": "optional-beast-master-primal-companion",
+    "name": "Primal Companion",
     "source": {
       "kind": "option",
       "id": "optional-beast-master"
@@ -1204,22 +1205,50 @@
     "prereq": {
       "level": 3
     },
-    "name": "Primal Companion",
     "cost": "bonus",
     "replaces": [
       "rangers-companion",
       "companion-commands"
+    ],
+    "scaling": [
+      {
+        "label": "Beast attacks",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
     ],
     "description": [
       "You summon a primal beast that is friendly to you and your allies and follows your orders. Pick its stat block (Land, Sea or Sky beast; it uses your proficiency bonus) and what animal it looks like.",
       "It acts on your turn. It moves and reacts on its own but only takes the Dodge action, unless you spend a bonus action to give it another action. Using the Attack action, you can trade one of your own attacks for an order that makes it Attack. While you are incapacitated it acts as it likes.",
       "If it died less than 1 hour ago, touch it as an action and spend a spell slot of level 1 or higher: it comes back after 1 minute at full hit points.",
       "Finishing a long rest lets you swap in a new beast, which appears within 5 ft of you; the old one vanishes. It also vanishes if you die.",
+      "Bestial Fury still applies (Player's Handbook p. 93): from ranger level 11, the beast makes two attacks whenever it takes the Attack action.",
+      "Share Spells still applies (Player's Handbook p. 93): from ranger level 15, a spell you cast on yourself can also affect the beast if it is within 30 ft of you.",
       "Stat block: Tasha's p. 61."
     ],
     "page": 61,
-    "textSource": "summary",
     "book": "tce",
+    "textSource": "summary",
     "optional": true
   },
   {
