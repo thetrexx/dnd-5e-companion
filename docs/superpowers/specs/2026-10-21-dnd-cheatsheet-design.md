@@ -25,6 +25,7 @@ The look matters to the owner. It should feel like Baldur's Gate 3 in Faerûn: d
 - No accounts, no cloud sync, no backend.
 - No 2024 rules. Content is 2014 Player's Handbook only.
 - No content from books other than the 2014 Player's Handbook.
+  Superseded for books by `2026-10-27-more-books-design.md`.
 
 **Anti-goals** (would make it a failure even if it works)
 - Slow or janky on a mid-range phone during a session.
