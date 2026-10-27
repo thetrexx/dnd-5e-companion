@@ -88,6 +88,26 @@ test('an ordinal swapped for its digit form still counts toward a copied run', (
   expect(judgeRecord(card, words).reasons.join()).toContain('copied');
   expect(longestSharedRun('Sparks gather on the 1st round and ignite the dry grass', words.replace('third', 'first'))).toBeGreaterThanOrEqual(8);
 });
+// Invented: the text layer splits a word at a line end with no hyphen ("la / zy", "intel / ligence").
+const split = 'the quick brown fox jumps over the la\nzy dog and then the cat sleeps by the fire';
+test('a word split across a line break with no hyphen still counts toward a copied run', () => {
+  const card = 'the quick brown fox jumps over the lazy dog';
+  expect(longestSharedRun(card, split)).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord(card, split).pass).toBe(false);
+  expect(judgeRecord('quick brown fox jumps over the lazy dog', split.replace('\n', '\r\n')).pass).toBe(false);
+  const intel = 'roll an intel\nligence check to read the old runes before the door closes';
+  expect(judgeRecord('roll an intelligence check to read the old runes', intel).pass).toBe(false);
+  // a split word with a stray hyphen and spaces round the break is glued the same way
+  expect(judgeRecord('roll an intelligence check to read the old runes', intel.replace('intel\n', 'intel- \n ')).pass).toBe(false);
+});
+test('gluing line breaks keeps the plain match too, and 7 shared words still pass', () => {
+  // the line break falls between two whole words, one misread: gluing fuses them into a word that matches
+  // nothing ("ovarthe"), so only the unglued pass sees the run
+  const page2 = 'the quick brown fox jumps ovar\nthe lazy dog and then the cat sleeps';
+  expect(longestSharedRun('the quick brown fox jumps over the lazy dog', page2)).toBeGreaterThanOrEqual(8);
+  expect(judgeRecord('quick brown fox jumps over the lazy and a dog', split).pass).toBe(true); // 7 shared
+  expect(judgeRecord('roll an intelligence check to read the scroll', 'roll an intel\nligence check to read the old runes').pass).toBe(true);
+});
 test('the new normalisations do not make own words match', () => {
   expect(longestSharedRun('Motes of light orbit you; the glow reaches 30 ft, then fades.', page)).toBeLessThan(8);
 });

@@ -539,7 +539,7 @@
       "Bonus action: spend a Wild Shape use to take a starry form instead of a beast shape. You keep your statistics and shed bright light in 10 ft and dim light 10 ft beyond. It lasts 10 minutes, ending early if you dismiss it (no action), are incapacitated, die, or use this feature again.",
       "Each time you take the form, choose which constellation shines on you:",
       "Archer: as you take the form, and with a bonus action on later turns while it lasts, make a ranged spell attack at one creature within 60 ft. On a hit it takes 1d8 + your Wisdom modifier radiant damage.",
-      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature no more than 30 ft away also regains hit points equal to 1d8 + your Wisdom modifier.",
+      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature no more than 30 ft away also heals 1d8 + your Wisdom modifier.",
       "Dragon: on Intelligence or Wisdom checks, and on Constitution saves to keep concentration, a d20 roll of 9 or lower counts as a 10.",
       "Level 10 (Twinkling Constellations): the Archer and Chalice dice become 2d8, the Dragon also gives you a 20-ft flying speed and hover, and as each of your turns begins in the form you may switch constellation.",
       "Level 14 (Full of Stars): in the form you resist bludgeoning, piercing and slashing damage."

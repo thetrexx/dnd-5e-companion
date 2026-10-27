@@ -115,7 +115,7 @@
     },
     "level": 6,
     "cost": "free",
-    "trigger": "You make an ability check or saving throw",
+    "trigger": "You roll for an ability check or a save",
     "uses": "Once per short or long rest",
     "description": [
       "After seeing the roll of an ability check or saving throw you make, but before its effect lands, add a d10 to it.",

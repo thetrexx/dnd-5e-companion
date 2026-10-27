@@ -1093,7 +1093,7 @@
     "uses": "Proficiency bonus per long rest",
     "page": 25,
     "description": [
-      "Choose willing creatures you can see within 30 ft, as many as your Constitution modifier (minimum 1). For each one that accepts, you gain 5 temporary hit points.",
+      "Pick other willing creatures in sight and within 30 ft, up to your Constitution modifier (minimum 1). For each one that accepts, you gain 5 temporary hit points.",
       "Until the rage ends, each chosen creature, once on each of its turns, can roll a d6 and add it to the damage when its attack roll hits and damages a target."
     ],
     "book": "tce",

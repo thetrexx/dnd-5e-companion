@@ -378,7 +378,7 @@
     "cost": "bonus",
     "resource": "3 sorcery points",
     "description": [
-      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts a target in your sight no more than 120 ft away. It appears in an unoccupied space of your choice within 30 ft of that target and rolls its own initiative.",
+      "Bonus action: spend 3 sorcery points to summon a hound of ill omen that hunts a target in your sight no more than 120 ft away. You place it in an empty spot no more than 30 ft from that target, and it rolls its own initiative.",
       "Uses the dire wolf stats (Monster Manual), with changes: it is Medium and a monstrosity, and starts with half your sorcerer level in temporary hit points. It passes through creatures and objects as difficult terrain; ending its turn inside an object costs it 5 force damage. At the start of its turn it knows where its target is, so the target can't stay hidden from it.",
       "It heads straight for its target by the shortest route, uses its action only to attack that target, and makes opportunity attacks only against it. While the hound stays within 5 ft of its target, that creature makes saves against your spells at disadvantage.",
       "It disappears after 5 minutes, or sooner if either it or its target hits 0 hit points."
