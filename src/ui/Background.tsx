@@ -47,14 +47,15 @@ function blood(cv: HTMLCanvasElement, cellSvg: SVGSVGElement, host: Element, o: 
 // the current class's line art behind the whole screen, plus its noise layer; off: nothing rendered, no effect work
 export function Background(p: { kind: BgKey; theme: string }) {
   const mode = motionMode(), wrap = useRef<HTMLDivElement>(null), svg = useRef<SVGSVGElement>(null);
-  const canvas = useRef<HTMLCanvasElement>(null), cells = useRef<SVGSVGElement>(null);
+  const canvas = useRef<HTMLCanvasElement>(null), cells = useRef<SVGSVGElement>(null), sparks = useRef<SVGSVGElement>(null);
   // a resize or rotation restarts the layers at the new size
   const size = useResized(mode !== 'off');
   useEffect(() => {
     const host = wrap.current, bg = svg.current, cv = canvas.current;
     if (mode === 'off' || !host || !bg) return;
     const ctrl = new AbortController(), o: Layer = { animate: mode === 'animated', alive: () => !ctrl.signal.aborted };
-    void runLoop(host, bg, BG_MOTIFS[p.kind], BG_TIMING, { ...o, signal: ctrl.signal });
+    // artificer sparks fly on their own unmasked layer, so the centre fade never dims them
+    void runLoop(host, bg, BG_MOTIFS[p.kind], BG_TIMING, { ...o, signal: ctrl.signal, over: sparks.current ?? undefined });
     const stop = !cv ? none : p.kind === 'warlock' ? mist(cv, host, o) : cells.current ? blood(cv, cells.current, host, o) : none;
     return () => { ctrl.abort(); stop(); };
   }, [p.kind, p.theme, mode, size]);
@@ -65,6 +66,7 @@ export function Background(p: { kind: BgKey; theme: string }) {
       {p.kind === 'sorcerer' && <svg ref={cells} class="fx-cells" />}
       {p.kind === 'warlock' && <canvas ref={canvas} class="fx-mist" />}
       <svg ref={svg} class="fx-bg" style={`--fx-c: var(--${p.kind}-line); --fx-o: var(--${p.kind}-bg-o)`} />
+      {p.kind === 'artificer' && <svg ref={sparks} class="fx-sparks" />}
     </div>
   );
 }

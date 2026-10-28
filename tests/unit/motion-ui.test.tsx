@@ -141,6 +141,31 @@ describe('backgrounds', () => {
     await vi.advanceTimersByTimeAsync(200); // deferred effect cleanups run
     expect(vi.getTimerCount()).toBe(0);
   });
+  test('artificer page: an unmasked spark layer beside the background, sparks drawn into it', async () => {
+    eproto.scrollTo = () => {}; // jsdom has no scrolling
+    location.hash = '#/menu/artificer/5';
+    const c = render(<App />).container, sparks = c.querySelector('svg.fx-sparks')!;
+    expect(sparks).toBeTruthy();
+    expect(sparks.closest('.fx-bg')).toBeNull();
+    expect(sparks.parentElement!.classList.contains('fx-bg-wrap')).toBe(true);
+    await waitFor(() => expect(sparks.querySelector('circle.spark')).toBeTruthy());
+    expect(c.querySelector('svg.fx-bg circle.spark')).toBeNull();
+    expect(render(<Background kind="cleric" theme="faerun" />).container.querySelector('svg.fx-sparks')).toBeNull();
+  });
+  test('artificer, reduced motion: a still frame with no sparks', async () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    const c = render(<Background kind="artificer" theme="faerun" />).container;
+    await waitFor(() => expect(c.querySelector('svg.fx-bg path')).toBeTruthy());
+    expect(c.querySelector('svg.fx-sparks')).toBeTruthy();
+    expect(c.querySelector('circle.spark')).toBeNull();
+    expect(Element.prototype.animate).not.toHaveBeenCalled();
+  });
+  test('artificer, Animation Off: no background svg at all', () => {
+    saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
+    const c = render(<Background kind="artificer" theme="faerun" />).container;
+    expect(c.querySelector('svg, canvas')).toBeNull();
+    expect(Element.prototype.animate).not.toHaveBeenCalled();
+  });
   test('Animation: Off renders no background layers', () => {
     saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
     const c = render(<Background kind="sorcerer" theme="faerun" />).container;
