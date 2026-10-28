@@ -211,6 +211,13 @@ test('options step: optional features are ticked, and a replacement hides the ol
   fireEvent.click(r.getByText('Favored Foe'));
   expect(r.getByText('Favored Enemy')).toBeTruthy();
 });
+test('options step: a Tasha\'s option in a normal slot carries the Optional note', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }] });
+  const r = render(<Editor step="options" />);
+  const row = (name: string) => r.getByText(name).closest('button')!;
+  expect(row('Blind Fighting').querySelector('.pick-note')!.textContent).toBe('Optional');
+  expect(row('Defense').querySelector('.pick-note')).toBeNull();
+});
 test('options step: Blessed Strikes notes Divine Strike once', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 8 }] });
   const r = render(<Editor step="options" />);
@@ -253,4 +260,40 @@ test('spells step: a dao genie warlock is offered dao and genie spells, never ef
   expect(r.queryByText('Scorching Ray')).toBeNull();
   expect(r.queryByText('Burning Hands')).toBeNull();
   expect(r.queryByText('Fireball')).toBeNull();
+});
+test('spells step: an expanded-list pick stays, tagged Optional, after unticking the list, and can be unpicked', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 5 }], options: ['optional-cleric-additional-spells'] });
+  const picks = render(<Editor step="spells" />);
+  fireEvent.click(picks.getByText('Aura of Vitality'));
+  expect(loadCharacter()!.spells).toEqual([{ id: 'aura-of-vitality', cls: 'cleric' }]);
+  cleanup();
+  const opts = render(<Editor step="options" />);
+  fireEvent.click(opts.getByText('Additional Cleric Spells'));
+  expect(loadCharacter()!.options).toEqual([]);
+  cleanup();
+  const r = render(<Editor step="spells" />);
+  const btn = r.getByText('Aura of Vitality').closest('button')!;
+  expect(btn.className).toContain('mine');
+  expect(btn.querySelector('.ic-tag')!.textContent).toBe('Optional');
+  // the search doesn't offer it again as a spell from another list
+  fireEvent.input(r.getByLabelText('Add a spell from another list'), { target: { value: 'Aura of Vitality' } });
+  expect(r.getAllByText('Aura of Vitality')).toHaveLength(1);
+  fireEvent.click(btn);
+  expect(loadCharacter()!.spells).toEqual([]);
+});
+test('spells step: a genie pick of another kind stays, tagged Off list, and can be unpicked', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'warlock', level: 5, sub: 'the-genie' }], options: ['genie-kind-efreeti'] });
+  const picks = render(<Editor step="spells" />);
+  fireEvent.click(picks.getByText('Fireball'));
+  expect(loadCharacter()!.spells).toEqual([{ id: 'fireball', cls: 'warlock' }]);
+  cleanup();
+  saveCharacter({ ...loadCharacter()!, options: ['genie-kind-dao'] });
+  const r = render(<Editor step="spells" />);
+  const btn = r.getByText('Fireball').closest('button')!;
+  expect(btn.className).toContain('mine');
+  expect(btn.querySelector('.ic-tag')!.textContent).toBe('Off list');
+  fireEvent.input(r.getByLabelText('Add a spell from another list'), { target: { value: 'Fireball' } });
+  expect(r.getAllByText('Fireball')).toHaveLength(1);
+  fireEvent.click(btn);
+  expect(loadCharacter()!.spells).toEqual([]);
 });

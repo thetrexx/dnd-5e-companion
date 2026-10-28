@@ -166,6 +166,14 @@ test('picked expanded spell keeps its tag after unticking', () => {
   const l3 = charSpellSections(c, 'mine').find(s => s.id === 'lvl-3-cleric')!;
   expect(l3.tags!['aura-of-vitality']).toBe('Optional');
 });
+test('a pick no longer on any of the character\'s lists is tagged Off list', () => {
+  // picked as an efreeti genie, then the genie kind changed to dao
+  const c = ch([{ cls: 'warlock', level: 5, sub: 'the-genie' }], { options: ['genie-kind-dao'],
+    spells: [{ id: 'fireball', cls: 'warlock' }, { id: 'spike-growth', cls: 'warlock' }] });
+  const tags = (id: string) => charSpellSections(c, 'mine').find(s => s.id === id)!.tags!;
+  expect(tags('lvl-3-warlock')['fireball']).toBe('Off list');
+  expect(tags('lvl-2-warlock')['spike-growth']).toBe('Patron');
+});
 test('all view adds the expanded list only with the tick', () => {
   const ids = (c: Character) => charSpellSections(c, 'all').flatMap(s => s.items.map(i => i.id));
   expect(ids(ch([{ cls: 'cleric', level: 5 }]))).not.toContain('aura-of-vitality');

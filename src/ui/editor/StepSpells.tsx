@@ -1,9 +1,12 @@
 import { useState } from 'preact/hooks';
 import { DATA } from '../../data';
 import { castingInfo, pickCounts, pickableSpells } from '../../character/derive';
+import type { Pickable } from '../../character/derive';
 import { autoSpells } from '../../character/grants';
 import { hasExpandedList } from '../../character/options';
 import type { CharClass } from '../../character/types';
+import { listTag } from '../../logic/rules';
+import { effectiveSub } from '../../logic/subclass';
 import { IconGrid } from '../IconGrid';
 import { Separator } from '../Separator';
 import { GrantPicker } from './GrantPicker';
@@ -23,11 +26,17 @@ function ClassSpells({ ch, update, cc, i }: StepProps & { cc: CharClass; i: numb
   const extras = mine.filter((s) => s.extra).map((s) => s.id);
   const pickable = pickableSpells(cc, hasExpandedList(ch, cc.cls), ch.options);
   const onList = new Set(pickable.map((p) => p.spell.id));
+  // a pick no longer offered (an expanded list unticked, another genie kind) stays in the grid, so it can be undone
+  const sub = effectiveSub(cc.cls, cc.level, cc.sub);
+  const left: Pickable[] = picked.flatMap((id) => {
+    const spell = !onList.has(id) && DATA.spells.find((s) => s.id === id);
+    return spell ? [{ spell, tag: listTag(def, sub, spell) ?? 'Off list' }] : [];
+  });
   const always = autoSpells(ch).filter((a) => a.source.cls === cc.cls && a.unlocked).map((a) => a.spell);
   // always-prepared spells aren't offered again, unless picked before (so the pick can be undone)
-  const grid = pickable.filter((p) => !always.includes(p.spell) || picked.includes(p.spell.id));
+  const grid = [...pickable, ...left].filter((p) => !always.includes(p.spell) || picked.includes(p.spell.id));
   const tags: Record<string, string> = {};
-  for (const p of pickable) if (p.tag) tags[p.spell.id] = p.tag;
+  for (const p of [...pickable, ...left]) if (p.tag) tags[p.spell.id] = p.tag;
   const isPrepared = info.prepared !== undefined;
   const limit = isPrepared ? info.prepared! : info.known;
   const start = (def.maxSpellLevel ?? []).findIndex((m) => m >= 1) + 1;
@@ -43,7 +52,7 @@ function ClassSpells({ ch, update, cc, i }: StepProps & { cc: CharClass; i: numb
   const addExtra = (id: string) => { setQ(''); update({ ...ch, spells: [...ch.spells, { id, cls: cc.cls, extra: true }] }); };
   const dropExtra = (id: string) => update({ ...ch, spells: ch.spells.filter((s) => !(s.id === id && s.cls === cc.cls && s.extra)) });
   const text = q.trim().toLowerCase();
-  const found = text ? DATA.spells.filter((s) => s.name.toLowerCase().includes(text) && !onList.has(s.id) && !extras.includes(s.id)).slice(0, 20) : [];
+  const found = text ? DATA.spells.filter((s) => s.name.toLowerCase().includes(text) && !onList.has(s.id) && !picked.includes(s.id) && !extras.includes(s.id)).slice(0, 20) : [];
   const levels = Array.from({ length: info.maxLevel + 1 }, (_, n) => n);
   const setMod = (v: string) => {
     const n = v === '' ? NaN : Math.min(10, Math.max(-5, Math.round(Number(v))));

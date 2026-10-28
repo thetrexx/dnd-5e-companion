@@ -109,3 +109,17 @@ describe('shared option pools count once', () => {
     expect(slots(mk({ classes: [{ cls: 'fighter', level: 1 }], options: ['fighting-style-defense', 'fighting-style-dueling'] }))[0].chosen).toHaveLength(2);
   });
 });
+test('a pick in a slot hidden by a replacement grants nothing while hidden', () => {
+  // no pick in a replaced pool (Favored Enemy, Natural Explorer) grants a spell in the data,
+  // so a real Favored Enemy pick is given one for this test only
+  const pick = DATA.features.find(f => f.id === 'favored-enemy-beasts')!;
+  expect(pick.spells).toBeUndefined();
+  pick.spells = [{ spell: 'speak-with-animals', atLevel: 1 }];
+  try {
+    const keys = (options: string[]) => grantSources(ch([{ cls: 'ranger', level: 2 }], { options })).map(s => s.key);
+    expect(keys(['favored-enemy-beasts'])).toContain('feature:favored-enemy-beasts');
+    expect(keys(['favored-enemy-beasts', 'optional-ranger-favored-foe'])).not.toContain('feature:favored-enemy-beasts');
+  } finally {
+    delete pick.spells;
+  }
+});

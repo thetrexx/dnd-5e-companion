@@ -1,5 +1,5 @@
 import { DATA } from '../data';
-import type { Ability, ClassId, Feature, RaceDef, Spell } from '../data/types';
+import type { Ability, ClassId, Feature, RaceDef, Spell, SubclassDef } from '../data/types';
 import { ceilingOf, listSpells, listTag, maxSpellLevel } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { CharClass, Character } from './types';
@@ -61,6 +61,12 @@ export function pickCounts(ch: Character, cls: ClassId): { cantrips: number; spe
 
 export interface Pickable { spell: Spell; tag?: string }
 
+/** A patron's bonus spells; a grant tied to an option (Genie kind) counts only with that option chosen. */
+export function patronSpells(sub: SubclassDef | undefined, options: string[]): Spell[] {
+  if (sub?.bonusSpells?.kind !== 'patron') return [];
+  return sub.bonusSpells.grants.filter(g => !g.option || options.includes(g.option)).flatMap(g => DATA.spells.find(s => s.id === g.spell) ?? []);
+}
+
 /** `expanded`: the class's Tasha's expanded list is ticked (`hasExpandedList`); its spells are tagged Optional.
  *  `options`: the character's chosen options; a patron grant tied to an option (Genie kind) needs it chosen. */
 export function pickableSpells(cc: CharClass, expanded = false, options: string[] = []): Pickable[] {
@@ -71,13 +77,7 @@ export function pickableSpells(cc: CharClass, expanded = false, options: string[
   const out = new Map<string, Pickable>();
   for (const spell of listSpells(c, sub, expanded)) out.set(spell.id, { spell, tag: listTag(c, sub, spell) });
   if (c.caster === 'none') for (const spell of DATA.spells) if (spell.classes.includes(info.list) && !out.has(spell.id)) out.set(spell.id, { spell, tag: 'Any school' });
-  if (sub?.bonusSpells?.kind === 'patron') {
-    for (const g of sub.bonusSpells.grants) {
-      if (g.option && !options.includes(g.option)) continue;
-      const spell = g.spell && DATA.spells.find(s => s.id === g.spell);
-      if (spell && !out.has(spell.id)) out.set(spell.id, { spell, tag: 'Patron' });
-    }
-  }
+  for (const spell of patronSpells(sub, options)) if (!out.has(spell.id)) out.set(spell.id, { spell, tag: 'Patron' });
   return [...out.values()].filter(p => p.spell.level <= info.maxLevel)
     .sort((a, b) => a.spell.level - b.spell.level || a.spell.name.localeCompare(b.spell.name));
 }

@@ -7,7 +7,7 @@ import type { Section } from '../logic/sections';
 import { extraListTag, listSpells, listTag } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
-import { castingInfo, raceChain } from './derive';
+import { castingInfo, patronSpells, raceChain } from './derive';
 import { autoSpells, grantSources, unlockText } from './grants';
 import type { GrantSource } from './grants';
 import { hasExpandedList, optionSlots, replaced } from './options';
@@ -34,8 +34,7 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
   const table = c.caster === 'none' ? sub?.casting?.maxSpellLevel : c.maxSpellLevel;
   const list = listSpells(c, sub, hasExpandedList(ch, cc.cls));
   // a patron grant tied to an option (Genie kind) counts only with that option chosen
-  const patron = sub?.bonusSpells?.kind === 'patron'
-    ? sub.bonusSpells.grants.filter(g => !g.option || ch.options.includes(g.option)).flatMap(g => DATA.spells.find(s => s.id === g.spell) ?? []) : [];
+  const patron = patronSpells(sub, ch.options);
   const entries: Entry[] = [];
   for (const p of ch.spells) {
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
@@ -48,8 +47,11 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
       : extra ? extra
       : p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
       : optional ? optional
-      : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school' : undefined;
-    entries.push({ spell, tag, listTag: !arcanum && !p.extra && !!(extra || optional), mine: true, locked: false, atLevel: 1 });
+      : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school'
+      // a pick on none of the character's lists (another genie kind chosen since), worded as in the editor
+      : 'Off list';
+    const offList = tag === 'Off list';
+    entries.push({ spell, tag, listTag: offList || (!arcanum && !p.extra && !!(extra || optional)), mine: true, locked: false, atLevel: 1 });
   }
   if (view === 'all') {
     // the whole list up to the ceiling, so levels not reached yet show dimmed
