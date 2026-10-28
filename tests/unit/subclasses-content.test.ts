@@ -40,7 +40,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('103 subclasses', () => expect(DATA.subclasses).toHaveLength(103));
+test('105 subclasses', () => expect(DATA.subclasses).toHaveLength(105));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -700,4 +700,51 @@ test('armorer features gated by the model', () => {
   expect(feature('thunder-gauntlets').description.join(' ')).toContain('1d8 thunder');
   expect(feature('lightning-launcher').description.join(' ')).toContain('90/300 ft');
   expect(feature('lightning-launcher').description.join(' ')).toContain('1d6 lightning');
+});
+
+// Plan 8 (batch 4), Task 4: Artillerist and Battle Smith (Tasha's pp. 17-20)
+test('tasha artificer subclasses', () => {
+  for (const id of ['alchemist', 'armorer', 'artillerist', 'battle-smith'])
+    expect(sub(id), id).toMatchObject({ cls: 'artificer', book: 'tce', bonusSpells: { kind: 'subclass' } });
+  expect(DATA.subclasses).toHaveLength(105);
+  expect(sub('artillerist')).toMatchObject({ name: 'Artillerist', page: 17, options: [] });
+  expect(sub('battle-smith')).toMatchObject({ name: 'Battle Smith', page: 18, options: [] });
+});
+test('battle smith 3 grants heroism and shield', () => {
+  expect(sub('battle-smith').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['heroism', 'shield']);
+});
+test('artillerist and battle smith spell tables', () => {
+  const pairs = (id: string) => sub(id).bonusSpells!.grants.map(g => [g.atLevel, g.spell]);
+  expect(pairs('artillerist')).toEqual([[3, 'shield'], [3, 'thunderwave'], [5, 'scorching-ray'], [5, 'shatter'],
+    [9, 'fireball'], [9, 'wind-wall'], [13, 'ice-storm'], [13, 'wall-of-fire'], [17, 'cone-of-cold'], [17, 'wall-of-force']]);
+  expect(pairs('battle-smith')).toEqual([[3, 'heroism'], [3, 'shield'], [5, 'branding-smite'], [5, 'warding-bond'],
+    [9, 'aura-of-vitality'], [9, 'conjure-barrage'], [13, 'aura-of-purity'], [13, 'fire-shield'], [17, 'banishing-smite'], [17, 'mass-cure-wounds']]);
+});
+test('artillerist features', () => {
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject({ source: { kind: 'subclass', id: 'artillerist' }, book: 'tce', textSource: 'summary', ...x });
+  m('eldritch-cannon', { level: 3, cost: 'action', page: 17 });
+  m('eldritch-cannon-activate', { level: 3, cost: 'bonus', page: 18 });
+  m('arcane-firearm', { level: 5, cost: 'free', page: 18 });
+  m('explosive-cannon', { level: 9, cost: 'action', page: 18 });
+  expect(feature('arcane-firearm').trigger).toBeTruthy();
+  const make = feature('eldritch-cannon').description.join(' ');
+  for (const s of ['AC 18', 'Flamethrower', 'Force Ballista', 'Protector', '60 ft', '1 hour']) expect(make, s).toContain(s);
+  const act = feature('eldritch-cannon-activate');
+  const dice = act.scaling!.find(s => /damage/i.test(s.label))!.values;
+  expect([dice[2], dice[7], dice[8], dice[19]]).toEqual(['2d8', '2d8', '3d8', '3d8']);
+  const text = act.description.join(' ');
+  for (const s of ['Flamethrower', 'Force Ballista', 'Protector', '120 ft', '15-ft cone', '1d8', 'both']) expect(text, s).toContain(s);
+  expect(feature('explosive-cannon').description.join(' ')).toContain('3d8 force');
+});
+test('battle smith features', () => {
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject({ source: { kind: 'subclass', id: 'battle-smith' }, book: 'tce', textSource: 'summary', ...x });
+  m('steel-defender', { level: 3, cost: 'bonus', page: 19 });
+  m('arcane-jolt', { level: 9, cost: 'free', page: 20, uses: 'Intelligence modifier (minimum 1) per long rest' });
+  const sd = feature('steel-defender').description;
+  expect(sd).toContain("Stat block: Tasha's p. 19.");
+  expect(sd.join(' ')).toContain('+2 AC');
+  expect(sd.join(' ')).toContain('1d4 + your Intelligence modifier');
+  expect(feature('arcane-jolt').trigger).toBeTruthy();
+  const jolt = feature('arcane-jolt').scaling!.find(s => /2d6|jolt|damage|healing/i.test(s.label))!.values;
+  expect([jolt[7], jolt[8], jolt[13], jolt[14], jolt[19]]).toEqual(['', '2d6', '2d6', '4d6', '4d6']);
 });

@@ -3243,5 +3243,111 @@
     "options": [
       "armor-model"
     ]
+  },
+  {
+    "id": "artillerist",
+    "cls": "artificer",
+    "name": "Artillerist",
+    "page": 17,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "shield",
+          "atLevel": 3
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 5
+        },
+        {
+          "spell": "shatter",
+          "atLevel": 5
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 9
+        },
+        {
+          "spell": "wind-wall",
+          "atLevel": 9
+        },
+        {
+          "spell": "ice-storm",
+          "atLevel": 13
+        },
+        {
+          "spell": "wall-of-fire",
+          "atLevel": 13
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 17
+        },
+        {
+          "spell": "wall-of-force",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "battle-smith",
+    "cls": "artificer",
+    "name": "Battle Smith",
+    "page": 18,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "heroism",
+          "atLevel": 3
+        },
+        {
+          "spell": "shield",
+          "atLevel": 3
+        },
+        {
+          "spell": "branding-smite",
+          "atLevel": 5
+        },
+        {
+          "spell": "warding-bond",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-vitality",
+          "atLevel": 9
+        },
+        {
+          "spell": "conjure-barrage",
+          "atLevel": 9
+        },
+        {
+          "spell": "aura-of-purity",
+          "atLevel": 13
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 13
+        },
+        {
+          "spell": "banishing-smite",
+          "atLevel": 17
+        },
+        {
+          "spell": "mass-cure-wounds",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
   }
 ]

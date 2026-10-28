@@ -1,4 +1,5 @@
 import { menuRows } from '../../src/logic/menu';
+import type { ClassId } from '../../src/data/types';
 
 test('wizard 3 rows', () => {
   const rows = menuRows('wizard', 3);
@@ -67,6 +68,17 @@ test('alchemist 15 has heal on level 6', () => {
   expect(menuRows('artificer', 14, 'alchemist').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(true);
   // the rows above stay dimmed
   expect(menuRows('artificer', 15, 'alchemist').find(r => r.label === 'Level 7 Spells')!.dimmed).toBe(true);
+});
+test('an auto-granted spell lights its level row', () => {
+  const row = (cls: ClassId, lvl: number, sub: string, label: string) => menuRows(cls, lvl, sub).find(r => r.label === label)!.dimmed;
+  // Ethereal Step's etherealness (7th level) for a Horizon Walker 7
+  expect(row('ranger', 7, 'horizon-walker', 'Level 7 Spells')).toBe(false);
+  // Chemical Mastery's greater restoration (5th level) for an Alchemist 15, above its slots
+  expect(row('artificer', 15, 'alchemist', 'Level 5 Spells')).toBe(false);
+  // at 17 level 5 is within the artificer's slots anyway
+  expect(row('artificer', 17, 'alchemist', 'Level 5 Spells')).toBe(false);
+  // no such grant for an Armorer 15
+  expect(row('artificer', 15, 'armorer', 'Level 5 Spells')).toBe(true);
 });
 test('patron spells are pickable, not granted: they light no row', () => {
   // a warlock's patron rows never reach above its slots; the rule is per level and excludes patron grants

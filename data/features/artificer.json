@@ -795,5 +795,178 @@
     "page": 16,
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "eldritch-cannon",
+    "name": "Eldritch Cannon",
+    "source": {
+      "kind": "subclass",
+      "id": "artillerist"
+    },
+    "level": 3,
+    "cost": "action",
+    "uses": "Once per long rest, or spend a spell slot of any level",
+    "description": [
+      "Action: with woodcarver's or smith's tools, conjure a Small or Tiny cannon in an empty spot on flat ground no more than 5 ft away. A Small one fills its space; a Tiny one fits in one hand. Pick its looks, whether it has legs, and its type.",
+      "You can't build another while it is still around. Activate it with a bonus action while you are within 60 ft (see Eldritch Cannon: Activate).",
+      "The cannon is a magical object: AC 18, hit points 5 × your artificer level, immune to poison and psychic damage, and it rolls checks and saves as if every ability score were 10 (+0). Mending heals it 2d6.",
+      "It lasts 1 hour, until it drops to 0 hit points, or until you take an action to dismiss it.",
+      "Flamethrower: a cone of fire that forces a Dexterity save.",
+      "Force Ballista: a ranged spell attack that deals force damage and shoves.",
+      "Protector: temporary hit points for itself and creatures you pick near it."
+    ],
+    "page": 17,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "eldritch-cannon-activate",
+    "name": "Eldritch Cannon: Activate",
+    "source": {
+      "kind": "subclass",
+      "id": "artillerist"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "scaling": [
+      {
+        "label": "Flamethrower / Force Ballista damage",
+        "values": [
+          "",
+          "",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8",
+          "3d8"
+        ]
+      }
+    ],
+    "description": [
+      "Bonus action, while you are within 60 ft of your cannon: it does what its type does. As part of the same bonus action, a cannon with legs can walk or climb up to 15 ft into an empty space.",
+      "Flamethrower: fire fills a 15-ft cone next to the cannon, pointed where you choose. Each creature inside makes a Dexterity save against your spell save DC, taking the fire damage below on a failure or half on a success. Flammable objects nobody is wearing or carrying catch fire.",
+      "Force Ballista: the cannon makes a ranged spell attack against one creature or object up to 120 ft away. A hit deals the force damage below, and a creature it hits is shoved up to 5 ft away from the cannon.",
+      "Protector: the cannon and any creatures you pick within 10 ft of it gain 1d8 + your Intelligence modifier temporary hit points (at least 1).",
+      "15th level (Fortified Position): you can keep two cannons at once, made with one action but not with one spell slot, and one bonus action activates both."
+    ],
+    "page": 18,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-firearm",
+    "name": "Arcane Firearm",
+    "source": {
+      "kind": "subclass",
+      "id": "artillerist"
+    },
+    "level": 5,
+    "cost": "free",
+    "trigger": "You cast an artificer spell through your arcane firearm",
+    "description": [
+      "Roll a d8 and add it to one damage roll of that spell.",
+      "Setup: as a long rest ends, use woodcarver's tools to carve sigils into a wand, staff or rod; it becomes your arcane firearm and a focus for your artificer spells. The sigils last until you carve them into some other item."
+    ],
+    "page": 18,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "explosive-cannon",
+    "name": "Explosive Cannon",
+    "source": {
+      "kind": "subclass",
+      "id": "artillerist"
+    },
+    "level": 9,
+    "cost": "action",
+    "description": [
+      "Action, while you are within 60 ft of your cannon: blow it up. The cannon is destroyed, and each creature within 20 ft of it makes a Dexterity save against your spell save DC: 3d8 force damage if it fails, half as much if it succeeds.",
+      "Always on: each damage roll your cannons make gains an extra 1d8 (already counted on Eldritch Cannon: Activate)."
+    ],
+    "page": 18,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "steel-defender",
+    "name": "Steel Defender",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-smith"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "description": [
+      "You have a steel defender, a Medium construct that is friendly to you and your companions, obeys you, and uses your proficiency bonus in its stats. Pick its looks and whether it walks on two legs or four (no effect on its stats).",
+      "It shares your initiative and acts right after you. It moves and reacts by itself, but its only action is Dodge unless you spend a bonus action to command it (Force-Empowered Rend, Repair or any other action). While you are incapacitated it acts as it likes.",
+      "Force-Empowered Rend: a melee attack with your spell attack modifier, reach 5 ft, 1d8 + your proficiency bonus force damage. Repair (3 per day): 2d8 + your proficiency bonus hit points to itself or a construct or object within 5 ft. Reaction (Deflect Attack): an attack roll by a creature it can see within 5 ft, made against anyone else, has disadvantage.",
+      "Casting mending on it restores 2d6 hit points. Action (revive): if it died no more than 1 hour ago, use smith's tools within 5 ft of it and spend any spell slot (1st level or above); a minute later it is back, at full hit points.",
+      "As a long rest ends you can build a new one, if you have smith's tools; any earlier one perishes at once. It also perishes if you die.",
+      "15th level (Improved Defender): it gets +2 AC, and each Deflect Attack also deals 1d4 + your Intelligence modifier force damage to the attacker.",
+      "Stat block: Tasha's p. 19."
+    ],
+    "page": 19,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-jolt",
+    "name": "Arcane Jolt",
+    "source": {
+      "kind": "subclass",
+      "id": "battle-smith"
+    },
+    "level": 9,
+    "cost": "free",
+    "trigger": "An attack you make with a magic weapon hits, or so does an attack by your steel defender",
+    "uses": "Intelligence modifier (minimum 1) per long rest",
+    "scaling": [
+      {
+        "label": "Force damage or healing",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "2d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6",
+          "4d6"
+        ]
+      }
+    ],
+    "description": [
+      "Pick one: the target takes the extra force damage below, or you heal that many hit points to a creature or object in your sight, no more than 30 ft from the target.",
+      "No more than once per turn."
+    ],
+    "page": 20,
+    "book": "tce",
+    "textSource": "summary"
   }
 ]
