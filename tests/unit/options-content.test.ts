@@ -264,3 +264,37 @@ test('new metamagic, pact boon and invocations', () => {
   expect(f('eldritch-invocations-far-scribe').spells).toEqual([{ spell: 'sending', atLevel: 5, uses: expect.any(String) }]);
   expect(f('eldritch-invocations-undying-servitude').spells).toEqual([{ spell: 'animate-dead', atLevel: 5, uses: expect.any(String) }]);
 });
+
+// Task 10: Tasha's feats that own option groups
+test('fighting initiate shares the fighter pool', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], feats: ['fighting-initiate'], options: ['fighting-style-defense'] } as Character;
+  const slots = optionSlots(ch).filter(s => (s.group.from ?? s.group.id) === 'fighting-style');
+  expect(slots).toHaveLength(2);
+  expect(slots.flatMap(s => s.chosen)).toEqual(['fighting-style-defense']);   // counted once
+  expect(slots.find(s => s.group.id === 'fighting-initiate')!.choices.map(f => f.id)).not.toContain('fighting-style-blessed-warrior');
+});
+test('eldritch adept offers only invocations with no prerequisite', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'wizard', level: 4 }], feats: ['eldritch-adept'] } as Character;
+  const choices = optionSlots(ch).find(s => s.group.id === 'eldritch-adept')!.choices;
+  expect(choices).toHaveLength(12);
+  for (const f of choices) expect(f.prereq, f.id).toBeUndefined();
+});
+test('eldritch adept draws from the warlock invocation pool', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 2 }], feats: ['eldritch-adept'],
+    options: ['eldritch-invocations-devils-sight', 'eldritch-invocations-eldritch-mind', 'eldritch-invocations-beast-speech'] } as Character;
+  const slots = optionSlots(ch).filter(s => (s.group.from ?? s.group.id) === 'eldritch-invocations');
+  expect(slots.map(s => s.count).sort()).toEqual([1, 2]);
+  expect(slots.flatMap(s => s.chosen).sort()).toEqual([...ch.options].sort());   // each counted once
+});
+test('tasha feat group shapes', () => {
+  expect(g('fighting-initiate')).toMatchObject({ owner: { kind: 'feat', id: 'fighting-initiate' }, from: 'fighting-style', only: g('fighting-style').only });
+  expect(g('eldritch-adept')).toMatchObject({ owner: { kind: 'feat', id: 'eldritch-adept' }, from: 'eldritch-invocations' });
+  expect(g('eldritch-adept').only!.slice().sort()).toEqual(opts('eldritch-invocations').filter(x => !x.prereq).map(x => x.id).sort());
+  expect(g('metamagic-adept')).toMatchObject({ owner: { kind: 'feat', id: 'metamagic-adept' }, from: 'metamagic' });
+  expect(g('fighting-initiate').picks).toEqual(Array(20).fill(1));
+  expect(g('eldritch-adept').picks).toEqual(Array(20).fill(1));
+  expect(g('metamagic-adept').picks).toEqual(Array(20).fill(2));
+  for (const id of ['fighting-initiate', 'eldritch-adept', 'metamagic-adept']) expect(DATA.feats.find(f => f.id === id)!.options, id).toEqual([id]);
+  const sorc = { ...emptyCharacter(), classes: [{ cls: 'sorcerer', level: 3 }], feats: ['metamagic-adept'] } as Character;
+  expect(optionSlots(sorc).filter(s => (s.group.from ?? s.group.id) === 'metamagic').map(s => s.count)).toEqual([2, 2]);
+});

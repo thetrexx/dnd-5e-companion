@@ -197,5 +197,13 @@
       }
     ],
     "options": []
+  },
+  {
+    "id": "custom-lineage",
+    "name": "Custom Lineage",
+    "page": 8,
+    "book": "tce",
+    "spells": [],
+    "options": []
   }
 ]

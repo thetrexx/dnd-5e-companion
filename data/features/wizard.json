@@ -697,7 +697,7 @@
     "cost": "free",
     "trigger": "You ritual-cast a wizard spell",
     "uses": "Once per long rest",
-    "page": 77,
+    "page": 78,
     "description": [
       "While holding your spellbook, skip the extra 10 minutes: the ritual takes the spell's normal casting time."
     ],

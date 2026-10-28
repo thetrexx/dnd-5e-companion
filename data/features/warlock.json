@@ -1779,7 +1779,7 @@
     },
     "level": 6,
     "cost": "reaction",
-    "trigger": "Damage is dealt to you or a visible creature within 10 ft of your tentacle",
+    "trigger": "Damage lands on you or on a creature you can see, and that target is within 10 ft of your tentacle",
     "scaling": [
       {
         "label": "Damage reduced",
@@ -1809,7 +1809,7 @@
     ],
     "page": 73,
     "description": [
-      "Have the tentacle shield that creature: cut the damage it takes by 1d8 (2d8 from level 10)."
+      "Have the tentacle shield that target: cut the damage it takes by 1d8 (2d8 from level 10)."
     ],
     "book": "tce",
     "textSource": "summary"
