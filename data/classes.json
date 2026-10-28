@@ -666,6 +666,8 @@
     "plainIcon": "icons/class-artificer.svg",
     "subclassLevel": 3,
     "subclassLabel": "Artificer Specialist",
-    "options": []
+    "options": [
+      "infusions"
+    ]
   }
 ]

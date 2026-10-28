@@ -52,7 +52,7 @@ export function Settings() {
         <p>Unofficial Fan Content permitted under the Fan Content Policy. Not approved/endorsed by Wizards. Portions of the materials used are property of Wizards of the Coast. ©Wizards of the Coast LLC.</p>
         <p>Includes material from the System Reference Document 5.1 by Wizards of the Coast LLC, licensed under CC BY 4.0.</p>
         <p>Spell, class and action icons from Baldur's Gate 3 © Larian Studios, via bg3.wiki.</p>
-        <p>Fallback and component icons by Lorc, game-icons.net, CC BY 3.0.</p>
+        <p>Fallback, component and Artificer class icons by Lorc, game-icons.net, CC BY 3.0.</p>
         <p>Fonts: Inknut Antiqua, Noto Serif, Noto Sans Symbols 2, IM Fell English, EB Garamond — SIL Open Font License.</p>
       </div>
     </div>

@@ -1,0 +1,492 @@
+[
+  {
+    "id": "magical-tinkering",
+    "name": "Magical Tinkering",
+    "source": {
+      "kind": "class",
+      "id": "artificer"
+    },
+    "level": 1,
+    "cost": "action",
+    "description": [
+      "With thieves' tools or artisan's tools in hand, touch a Tiny object that isn't magical and give it one property you pick:",
+      "Light: bright light 5 ft out and dim light 5 ft beyond that. Message: a recording of up to 6 seconds, spoken as you set it, that plays for anyone within 10 ft when a creature taps the object. Smell or sound: a steady odor or wordless noise (wind, waves, chirps) noticeable 10 ft away. Image: a still picture, text of up to 25 words, lines and shapes, or any mix of them, on one of its surfaces.",
+      "It lasts with no time limit; touch the object as an action to end it sooner.",
+      "Each object holds one property. You keep at most your Intelligence modifier (minimum 1) of them going; a new one past that cap ends the oldest first."
+    ],
+    "page": 11,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "flash-of-genius",
+    "name": "Flash of Genius",
+    "source": {
+      "kind": "class",
+      "id": "artificer"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "You, or a creature in sight within 30 ft, rolls an ability check or saving throw",
+    "uses": "Intelligence modifier (minimum 1) per long rest",
+    "description": [
+      "Add your Intelligence modifier to that roll."
+    ],
+    "page": 13,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-storing-item",
+    "name": "Spell-Storing Item",
+    "source": {
+      "kind": "class",
+      "id": "artificer"
+    },
+    "level": 11,
+    "cost": "action",
+    "uses": "Twice your Intelligence modifier (minimum 2) per stored spell; store one on each long rest",
+    "description": [
+      "As a long rest ends, touch a simple or martial weapon, or an item you could use as a spellcasting focus, and store an artificer spell in it. The spell is 1st or 2nd level with a casting time of 1 action, and you need not have it prepared.",
+      "Action (by whoever holds it): release the spell's effect from the item, using your spellcasting ability modifier. A spell that needs concentration has the holder concentrate.",
+      "The spell stays until used twice your Intelligence modifier times (at least twice), or until you store a spell again."
+    ],
+    "page": 13,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "soul-of-artifice",
+    "name": "Soul of Artifice",
+    "source": {
+      "kind": "class",
+      "id": "artificer"
+    },
+    "level": 20,
+    "cost": "reaction",
+    "trigger": "You drop to 0 hit points and aren't killed outright",
+    "description": [
+      "End one of your artificer infusions; you fall to 1 hit point rather than 0.",
+      "Always on: +1 to every saving throw for each magic item you are attuned to."
+    ],
+    "page": 14,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-arcane-propulsion-armor",
+    "name": "Arcane Propulsion Armor",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 14,
+    "cost": "action",
+    "prereq": {
+      "level": 14,
+      "text": "Suit of armor (attunement)"
+    },
+    "description": [
+      "The wearer gains 5 ft of walking speed.",
+      "Each gauntlet of the armor is a magic melee weapon, usable only while that hand is empty, and the wearer is proficient with it. A hit deals 1d8 force damage. It can be thrown (range 20/60 ft): it flies off at the target, then comes straight back and reattaches.",
+      "The armor can't be taken off the wearer against its will, and it stands in for any missing limbs, working just like them."
+    ],
+    "page": 20,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-armor-of-magical-strength",
+    "name": "Armor of Magical Strength",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "free",
+    "trigger": "The wearer rolls a Strength check, or a save using Strength",
+    "uses": "6 charges, 1d6 regained at dawn",
+    "prereq": {
+      "text": "Suit of armor (attunement)"
+    },
+    "description": [
+      "Spend 1 charge to add the wearer's Intelligence modifier to that roll.",
+      "Reaction, when the wearer would be knocked prone: spend 1 charge to stay on its feet."
+    ],
+    "page": 20,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-boots-of-the-winding-path",
+    "name": "Boots of the Winding Path",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "prereq": {
+      "level": 6,
+      "text": "Pair of boots (attunement)"
+    },
+    "description": [
+      "The wearer teleports as far as 15 ft into an empty space it can see. It must have been in that space at some point this turn."
+    ],
+    "page": 21,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-enhanced-arcane-focus",
+    "name": "Enhanced Arcane Focus",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "text": "Rod, staff or wand (attunement)"
+    },
+    "scaling": [
+      {
+        "label": "Spell attack bonus",
+        "values": [
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2"
+        ]
+      }
+    ],
+    "description": [
+      "Whoever holds it adds +1 to spell attack rolls (+2 once you are an artificer of level 10), and the holder's spell attacks ignore half cover."
+    ],
+    "page": 21,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-enhanced-defense",
+    "name": "Enhanced Defense",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "text": "Suit of armor or a shield"
+    },
+    "scaling": [
+      {
+        "label": "AC bonus",
+        "values": [
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2"
+        ]
+      }
+    ],
+    "description": [
+      "Wearing the armor, or wielding the shield, gives +1 AC (+2 once you are an artificer of level 10)."
+    ],
+    "page": 21,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-enhanced-weapon",
+    "name": "Enhanced Weapon",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "text": "Simple or martial weapon"
+    },
+    "scaling": [
+      {
+        "label": "Attack and damage bonus",
+        "values": [
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+1",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2",
+          "+2"
+        ]
+      }
+    ],
+    "description": [
+      "It becomes a magic weapon with +1 to attack and damage rolls (+2 once you are an artificer of level 10)."
+    ],
+    "page": 21,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-helm-of-awareness",
+    "name": "Helm of Awareness",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 10,
+    "cost": "passive",
+    "prereq": {
+      "level": 10,
+      "text": "Helmet (attunement)"
+    },
+    "description": [
+      "The wearer rolls initiative with advantage, and can't be surprised unless it is incapacitated."
+    ],
+    "page": 21,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-homunculus-servant",
+    "name": "Homunculus Servant",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "bonus",
+    "prereq": {
+      "text": "Gem or crystal worth 100 gp or more"
+    },
+    "description": [
+      "The infused gem becomes the heart of a Tiny construct that forms around it at once, looking however you like. It is friendly to you and your companions, obeys you, and its stats use your proficiency bonus.",
+      "It shares your initiative and acts right after you. It moves and reacts by itself, but its only action is Dodge unless you spend a bonus action to command it (Force Strike or any other action). While you are incapacitated it acts as it likes.",
+      "Force Strike: a ranged attack with your spell attack modifier, 30 ft, 1d4 + your proficiency bonus force damage. Reaction (Channel Magic): it delivers a touch-range spell you cast, if it is no more than 120 ft from you.",
+      "Casting mending on it restores 2d6 hit points. If it or you die, it vanishes and leaves the heart behind.",
+      "Stat block: Tasha's p. 22."
+    ],
+    "page": 21,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-mind-sharpener",
+    "name": "Mind Sharpener",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "reaction",
+    "trigger": "The wearer fails a Constitution save to keep concentrating on a spell",
+    "uses": "4 charges, 1d4 regained at dawn",
+    "prereq": {
+      "text": "Suit of armor or robes"
+    },
+    "description": [
+      "Spend 1 charge: a jolt from the item refocuses the wearer, and the failed save becomes a success."
+    ],
+    "page": 22,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-radiant-weapon",
+    "name": "Radiant Weapon",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "An attack hits the wielder",
+    "uses": "4 charges, 1d4 regained at dawn",
+    "prereq": {
+      "level": 6,
+      "text": "Simple or martial weapon (attunement)"
+    },
+    "description": [
+      "Spend 1 charge: the attacker is blinded until its next turn ends, unless it passes a Constitution save against your spell save DC.",
+      "Always on: it is a magic weapon with +1 to attack and damage rolls. Bonus action: make it shine (bright light 30 ft, dim light 30 ft more), or put the light out."
+    ],
+    "page": 22,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-repeating-shot",
+    "name": "Repeating Shot",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "text": "Ranged weapon with ammunition, simple or martial (attunement)"
+    },
+    "description": [
+      "It becomes a magic weapon with +1 to attack and damage rolls on ranged attacks, and loading doesn't apply to it.",
+      "With no ammunition loaded, it makes a magic piece of its own for each ranged attack; the piece vanishes right after it hits or misses."
+    ],
+    "page": 22,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-replicate-magic-item",
+    "name": "Replicate Magic Item",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "other",
+    "prereq": {
+      "text": "Whatever object the chosen item needs"
+    },
+    "description": [
+      "Pick one magic item this infusion lets you make. You can learn it more than once, choosing another item each time. Items come from the lists below, up to your artificer level, or you can take any common magic item other than a potion or scroll.",
+      "The Dungeon Master's Guide entry says what object each item needs and whether it requires attunement.",
+      "Level 2: Alchemy jug, Bag of holding, Cap of water breathing, Goggles of night, Rope of climbing, Sending stones, Wand of magic detection, Wand of secrets.",
+      "Level 6: Boots of elvenkind, Cloak of elvenkind, Cloak of the manta ray, Eyes of charming, Gloves of thievery, Lantern of revealing, Pipes of haunting, Ring of water walking.",
+      "Level 10: Boots of striding and springing, Boots of the winterlands, Bracers of archery, Brooch of shielding, Cloak of protection, Eyes of the eagle, Gauntlets of ogre power, Gloves of missile snaring, Gloves of swimming and climbing, Hat of disguise, Headband of intellect, Helm of telepathy, Medallion of thoughts, Necklace of adaptation, Periapt of wound closure, Pipes of the sewers, Quiver of Ehlonna, Ring of jumping, Ring of mind shielding, Slippers of spider climbing, Winged boots.",
+      "Level 14: Amulet of health, Belt of hill giant strength, Boots of levitation, Boots of speed, Bracers of defense, Cloak of the bat, Dimensional shackles, Gem of seeing, Horn of blasting, Ring of free action, Ring of protection, Ring of the ram."
+    ],
+    "page": 22,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-repulsion-shield",
+    "name": "Repulsion Shield",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A melee attack hits the wielder",
+    "uses": "4 charges, 1d4 regained at dawn",
+    "prereq": {
+      "level": 6,
+      "text": "Shield (attunement)"
+    },
+    "description": [
+      "Spend 1 charge to shove the attacker as far as 15 ft away.",
+      "Always on: +1 AC while the shield is wielded."
+    ],
+    "page": 23,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-resistant-armor",
+    "name": "Resistant Armor",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 6,
+    "cost": "passive",
+    "prereq": {
+      "level": 6,
+      "text": "Suit of armor (attunement)"
+    },
+    "description": [
+      "The wearer resists one damage type, picked when you infuse the armor: acid, cold, fire, lightning, thunder, force, necrotic, poison, psychic or radiant."
+    ],
+    "page": 23,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-returning-weapon",
+    "name": "Returning Weapon",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 2,
+    "cost": "passive",
+    "prereq": {
+      "text": "Thrown weapon, simple or martial"
+    },
+    "description": [
+      "It becomes a magic weapon with +1 to attack and damage rolls, and it flies back to the wielder's hand right after each ranged attack made with it."
+    ],
+    "page": 23,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "infusions-spell-refueling-ring",
+    "name": "Spell-Refueling Ring",
+    "source": {
+      "kind": "option",
+      "id": "infusions"
+    },
+    "level": 6,
+    "cost": "action",
+    "uses": "Once per dawn",
+    "prereq": {
+      "level": 6,
+      "text": "Ring (attunement)"
+    },
+    "description": [
+      "The wearer gets back one spent spell slot of 3rd level or lower."
+    ],
+    "page": 23,
+    "book": "tce",
+    "textSource": "summary"
+  }
+]

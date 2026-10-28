@@ -331,7 +331,8 @@
             "ranger",
             "sorcerer",
             "warlock",
-            "wizard"
+            "wizard",
+            "artificer"
           ],
           "level": 1,
           "count": 2,
@@ -1260,7 +1261,8 @@
             "druid",
             "sorcerer",
             "warlock",
-            "wizard"
+            "wizard",
+            "artificer"
           ],
           "level": 0,
           "count": 3
