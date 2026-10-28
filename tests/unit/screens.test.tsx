@@ -3,6 +3,8 @@ import { fireEvent, render } from '@testing-library/preact';
 import { DATA } from '../../src/data';
 import { Card } from '../../src/ui/screens/Card';
 import { Menu } from '../../src/ui/screens/Menu';
+import { SectionPage } from '../../src/ui/screens/SectionPage';
+import { spellSections } from '../../src/logic/sections';
 import { SubclassPicker } from '../../src/ui/screens/SubclassPicker';
 import { Start } from '../../src/ui/screens/Start';
 import { Separator } from '../../src/ui/Separator';
@@ -155,4 +157,15 @@ test('Primal Companion card keeps Bestial Fury and Share Spells', () => {
   expect(r.container.querySelector('.card-desc')!.textContent).toContain('Share Spells');
   expect(render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={10} sub="beast-master" />)
     .container.querySelector('.card-scaling')!.textContent).toContain('Beast attacks: 1');
+});
+test('locked spell page dims its cards except the ones already granted', () => {
+  const eproto = Element.prototype as unknown as Record<string, unknown>;
+  eproto.scrollTo = () => {}; // jsdom has no scrolling
+  const r = render(<SectionPage title="Spells" back={{ href: '#/', label: 'Back' }} onPick={() => {}}
+    sections={spellSections('artificer', 15, 'alchemist').filter(s => s.id === 'lvl-5')} />);
+  delete eproto.scrollTo;
+  const dim = (name: string) => [...r.container.querySelectorAll('.ic')].find(b => b.textContent!.startsWith(name))!.classList.contains('dim');
+  expect(r.container.querySelector('.locked-note')!.textContent).toBe('Unlocks at Artificer 17');
+  expect(dim('Greater Restoration')).toBe(false);
+  expect(dim('Animate Objects')).toBe(true);
 });

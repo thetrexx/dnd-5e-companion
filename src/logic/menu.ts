@@ -1,6 +1,6 @@
 import { DATA } from '../data';
 import type { ClassId, Route } from '../data/types';
-import { ceilingOf, maxSpellLevel } from './rules';
+import { ceilingOf, grantedSpells, maxSpellLevel } from './rules';
 import { actionSections } from './sections';
 import { effectiveSub } from './subclass';
 
@@ -48,11 +48,7 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
   const max = cast ? (cast.maxSpellLevel[level - 1] ?? 0) : maxSpellLevel(c, level);
   // a spell the subclass or a class or subclass feature grants outright by this level lights its row too:
   // Swarmkeeper Mage Hand the Cantrips row, Chemical Mastery's Heal the Level 6 row. Patron spells are only pickable.
-  const features = DATA.features.filter(f => f.level <= level && ((f.source.kind === 'class' && f.source.id === cls) || (f.source.kind === 'subclass' && f.source.id === s?.id)));
-  const bonus = s?.bonusSpells && s.bonusSpells.kind !== 'patron' ? s.bonusSpells.grants : [];
-  const granted = new Set([...bonus, ...features.flatMap(f => f.spells ?? [])]
-    .filter(g => !g.option && g.atLevel <= level)
-    .flatMap(g => DATA.spells.find(x => x.id === g.spell)?.level ?? []));
+  const granted = new Set(grantedSpells(c, s).filter(g => g.atLevel <= level).map(g => g.spell.level));
   rows.push({ kind: 'separator', label: 'MAGIC' });
   rows.push({
     kind: 'cantrips', label: 'Cantrips', icon: { type: 'img', src: listClass.plainIcon },
