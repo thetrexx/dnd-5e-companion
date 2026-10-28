@@ -57,9 +57,12 @@ export interface SubclassDef {
   options: string[];
 }
 export interface OptionGroup {
-  id: string; name: string; owner: { kind: 'class'|'subclass'|'race'|'feat'; id: string };
+  /** an 'option' owner is a chosen option (Superior Technique's maneuver): the slot opens while it is picked */
+  id: string; name: string; owner: { kind: 'class'|'subclass'|'race'|'feat'|'option'; id: string };
   picks: number[];
   from?: string; only?: string[];
+  /** an option with a prerequisite is offered only to a character with levels in this class, its level judged by that class (Eldritch Adept) */
+  prereqClass?: ClassId;
   reuse?: true; // a pick counted in another slot of the same pool may also fill this one
   bonus?: { subclass: string; atLevel: number; count: number }[];
   /** tick-any: no count limit, the player ticks what their DM allows */

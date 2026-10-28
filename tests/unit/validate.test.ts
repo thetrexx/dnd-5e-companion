@@ -90,6 +90,22 @@ test('option group must be owned by the listing class', () => {
   expect(validateDataset(bad)).toContain('class "fighter": option group "metamagic" is owned by class "sorcerer"');
 });
 
+test('an option-owned group needs a real option from another pool', () => {
+  const bad = structuredClone(DATA);
+  const grp = bad.optionGroups.find(x => x.id === 'superior-technique')!;
+  grp.owner.id = 'no-such-option';
+  expect(validateDataset(bad)).toContain('option group "superior-technique": owner has unknown option "no-such-option"');
+  grp.owner.id = 'action-surge';
+  expect(validateDataset(bad)).toContain('option group "superior-technique": owner "action-surge" is not an option');
+  grp.owner.id = 'maneuvers-parry';
+  expect(validateDataset(bad)).toContain('option group "superior-technique": owner "maneuvers-parry" is an option of its own pool');
+});
+test('prereqClass must be a class', () => {
+  const bad = structuredClone(DATA);
+  bad.optionGroups.find(x => x.id === 'eldritch-adept')!.prereqClass = 'necromancer' as any;
+  expect(validateDataset(bad)).toContain('option group "eldritch-adept": prereqClass has unknown class "necromancer"');
+});
+
 test('optional features', () => {
   const bad = structuredClone(DATA);
   delete (bad.features.find(f => f.id === 'optional-ranger-favored-foe') as any).optional;

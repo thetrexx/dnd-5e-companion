@@ -8,7 +8,7 @@ const CASTERS = ['full', 'half', 'third', 'pact', 'none'];
 const RESOLUTIONS = ['attack', 'save', 'auto', 'none'];
 const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 const SOURCES = ['generic', 'class', 'subclass', 'option', 'race', 'feat'];
-const OWNERS = ['class', 'subclass', 'race', 'feat'];
+const OWNERS = ['class', 'subclass', 'race', 'feat', 'option'];
 const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron', 'subclass'];
 const TEXT_SOURCES = ['summary'];
 const BOOK_IDS: string[] = ['phb', 'xge', 'tce', 'scag', 'dmg', 'bgg'];
@@ -199,7 +199,14 @@ export function validateDataset(d: Dataset): string[] {
     if (blank(g.name)) errs.push(`${at}: name is empty`);
     const o = g.owner;
     if (!o || !OWNERS.includes(o.kind)) errs.push(`${at}: owner.kind is not valid`);
-    else if ((o.kind === 'class' && !CLASS_IDS.includes(o.id)) || (o.kind === 'subclass' && !subIds.has(o.id)) || (o.kind === 'race' && !raceIds.has(o.id)) || (o.kind === 'feat' && !featIds.has(o.id))) errs.push(`${at}: owner has unknown ${o.kind} "${o.id}"`);
+    else if ((o.kind === 'class' && !CLASS_IDS.includes(o.id)) || (o.kind === 'subclass' && !subIds.has(o.id)) || (o.kind === 'race' && !raceIds.has(o.id)) || (o.kind === 'feat' && !featIds.has(o.id)) || (o.kind === 'option' && !featureIds.has(o.id))) errs.push(`${at}: owner has unknown ${o.kind} "${o.id}"`);
+    else if (o.kind === 'option') {
+      // the owner is picked in a slot of its own pool; this group must draw from another pool
+      const src = d.features.find(f => f.id === o.id)!.source;
+      if (src.kind !== 'option') errs.push(`${at}: owner "${o.id}" is not an option`);
+      else if (src.id === (g.from ?? g.id)) errs.push(`${at}: owner "${o.id}" is an option of its own pool`);
+    }
+    if (g.prereqClass !== undefined && !CLASS_IDS.includes(g.prereqClass)) errs.push(`${at}: prereqClass has unknown class "${g.prereqClass}"`);
     table(at, 'picks', g.picks, 0, 99, errs);
     if (Array.isArray(g.picks) && g.picks.some((n, i) => i > 0 && n < g.picks[i - 1])) errs.push(`${at}: picks must not decrease`);
     if (g.from !== undefined && !groupIds.has(g.from)) errs.push(`${at}: unknown from group "${g.from}"`);

@@ -8,7 +8,9 @@ import { GrantPicker } from './GrantPicker';
 import { PickList } from './PickList';
 import type { StepProps } from './Editor';
 
-const ownerName = (s: OptionSlot) => s.cls ? DATA.classes.find((c) => c.id === s.cls)?.name
+// an option-owned slot (Superior Technique) is named by its option, ahead of the class it sits with
+const ownerName = (s: OptionSlot) => s.group.owner.kind === 'option' ? DATA.features.find((f) => f.id === s.group.owner.id)?.name
+  : s.cls ? DATA.classes.find((c) => c.id === s.cls)?.name
   : s.group.owner.kind === 'feat' ? DATA.feats.find((f) => f.id === s.group.owner.id)?.name
   : DATA.races.find((r) => r.id === s.group.owner.id)?.name;
 const takenBy = (slots: OptionSlot[], me: OptionSlot, id: string) => {

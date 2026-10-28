@@ -431,6 +431,37 @@
     "from": "maneuvers"
   },
   {
+    "id": "superior-technique",
+    "name": "Superior Technique",
+    "owner": {
+      "kind": "option",
+      "id": "fighting-style-superior-technique"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "maneuvers"
+  },
+  {
     "id": "fighting-initiate",
     "name": "Fighting Style",
     "owner": {
@@ -504,20 +535,7 @@
       1
     ],
     "from": "eldritch-invocations",
-    "only": [
-      "eldritch-invocations-armor-of-shadows",
-      "eldritch-invocations-beast-speech",
-      "eldritch-invocations-beguiling-influence",
-      "eldritch-invocations-devils-sight",
-      "eldritch-invocations-eldritch-sight",
-      "eldritch-invocations-eyes-of-the-rune-keeper",
-      "eldritch-invocations-fiendish-vigor",
-      "eldritch-invocations-gaze-of-two-minds",
-      "eldritch-invocations-mask-of-many-faces",
-      "eldritch-invocations-misty-visions",
-      "eldritch-invocations-thief-of-five-fates",
-      "eldritch-invocations-eldritch-mind"
-    ]
+    "prereqClass": "warlock"
   },
   {
     "id": "metamagic-adept",

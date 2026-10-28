@@ -249,6 +249,13 @@ test('options step: a maneuver taken by a battle master slot reads Chosen for it
   const r = render(<Editor step="options" />);
   expect(r.getAllByText('Chosen for Fighter').length).toBeGreaterThan(0);
 });
+test('options step: superior technique opens its maneuver slot, and its pick reads Chosen for Superior Technique', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }],
+    options: ['fighting-style-superior-technique', 'maneuvers-parry', 'maneuvers-riposte', 'maneuvers-rally', 'maneuvers-trip-attack'] });
+  const r = render(<Editor step="options" />);
+  expect(r.getAllByText('1 of 1 chosen')).toHaveLength(2);   // the fighting style, and its maneuver
+  expect(r.getByText('Chosen for Superior Technique')).toBeTruthy();
+});
 test('spells step: a cleric 5 is offered Aura of Vitality only after ticking Additional Cleric Spells', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 5 }] });
   const before = render(<Editor step="spells" />);
