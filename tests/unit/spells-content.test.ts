@@ -96,6 +96,17 @@ test('tasha lists', () => {
   expect(DATA.spells.find(s => s.id === 'summon-beast')!.classes.sort()).toEqual(['druid', 'ranger']);
   expect(DATA.spells.find(s => s.id === 'spirit-shroud')!.classes.sort()).toEqual(['cleric', 'paladin', 'warlock', 'wizard']);
 });
+test('artificer list', () => {
+  const f = (id: string) => DATA.spells.find(s => s.id === id)!;
+  const art = DATA.spells.filter(s => s.classes.includes('artificer'));
+  expect(art).toHaveLength(95);
+  expect([0, 1, 2, 3, 4, 5].map(l => art.filter(s => s.level === l).length)).toEqual([23, 18, 21, 15, 11, 7]);
+  expect(f('cure-wounds').classes).toContain('artificer');
+  expect(f('tashas-caustic-brew').classes).toContain('artificer');
+  expect(f('enlarge-reduce').classes).toContain('artificer');
+  expect(f('fireball').classes).not.toContain('artificer');
+  expect(DATA.spells).toHaveLength(477);
+});
 test('expanded list is optional data', () => {
   const s = DATA.spells.find(x => x.id === 'aura-of-vitality')!;
   expect(s.optionalLists).toEqual(expect.arrayContaining(['cleric', 'druid']));

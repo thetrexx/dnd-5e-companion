@@ -4,7 +4,18 @@ import { menuRows } from '../../src/logic/menu';
 
 const c = (id: string) => DATA.classes.find(x => x.id === id)!;
 const f = (id: string) => DATA.features.find(x => x.id === id);
-test('12 classes', () => expect(DATA.classes.map(x => x.id).sort()).toEqual([...CLASS_IDS].sort()));
+test('13 classes, artificer last', () => {
+  expect(DATA.classes.map(x => x.id)).toEqual(CLASS_IDS);
+  expect(CLASS_IDS.at(-1)).toBe('artificer');
+  expect(DATA.classes.find(x => x.id === 'artificer')).toMatchObject({ caster: 'half', spellAbility: 'int', subclassLevel: 3 });
+});
+test('artificer table (Tasha\'s p. 10)', () => {
+  expect(c('artificer')).toMatchObject({ prepared: { half: true }, subclassLabel: 'Artificer Specialist',
+    hotbarIcon: 'icons/class-artificer.svg', plainIcon: 'icons/class-artificer.svg' });
+  expect(c('artificer').cantripsKnown).toEqual([2,2,2,2,2,2,2,2,2,3,3,3,3,4,4,4,4,4,4,4]);
+  expect(c('artificer').maxSpellLevel).toEqual([1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5]);
+  expect(c('artificer').spellsKnown).toBeUndefined();
+});
 test('tables', () => {
   expect(c('warlock').maxSpellLevel).toEqual([1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,9,9]);
   expect(c('paladin').maxSpellLevel![0]).toBe(0); expect(c('paladin').maxSpellLevel![1]).toBe(1);

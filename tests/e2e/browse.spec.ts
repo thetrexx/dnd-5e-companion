@@ -52,6 +52,6 @@ test('bg3 icon failure shows fallback', async ({ page }) => {
   await expect(page.locator('.ic', { hasText: 'Fireball' }).first().locator('img')).toHaveAttribute('src', /school-evocation.svg$/);
 });
 test('unknown class falls back to start', async ({ page }) => {
-  await page.goto('./#/menu/artificer/3');
+  await page.goto('./#/menu/mystic/3');
   await expect(page.getByText('My Character Sheet')).toBeVisible();
 });

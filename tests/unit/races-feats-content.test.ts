@@ -1,4 +1,6 @@
 import { DATA } from '../../src/data';
+import { grantSlots } from '../../src/character/grants';
+import { emptyCharacter, type Character } from '../../src/character/types';
 
 const r = (id: string) => DATA.races.find(x => x.id === id)!;
 test('races', () => {
@@ -71,8 +73,31 @@ test('xanathar feat spells and cards', () => {
 test('tasha feats', () => {
   for (const id of ['chef', 'crusher', 'eldritch-adept', 'fey-touched', 'fighting-initiate', 'metamagic-adept', 'piercer', 'poisoner', 'shadow-touched', 'slasher', 'telekinetic', 'telepathic'])
     expect(DATA.feats.find(f => f.id === id), id).toMatchObject({ book: 'tce' });
-  for (const id of ['gunner', 'skill-expert', 'artificer-initiate']) expect(DATA.feats.find(f => f.id === id), id).toBeUndefined();
-  expect(DATA.feats).toHaveLength(42);
+  for (const id of ['gunner', 'skill-expert']) expect(DATA.feats.find(f => f.id === id), id).toBeUndefined();
+});
+// Plan 8 Task 1: Artificer Initiate (Tasha's p. 79)
+test('artificer initiate', () => {
+  const ai = DATA.feats.find(f => f.id === 'artificer-initiate')!;
+  expect(ai).toMatchObject({ book: 'tce', page: 79 });
+  expect(ai.prereq).toBeUndefined();
+  expect(ai.spells).toEqual([
+    { choose: { lists: ['artificer'], level: 0, count: 1 }, atLevel: 1, ability: 'int' },
+    { choose: { lists: ['artificer'], level: 1, count: 1 }, atLevel: 1, ability: 'int', uses:DATA.feats.find(f => f.id === 'fey-touched')!.spells[1].uses },
+  ]);
+  expect(DATA.features.find(x => x.id === 'artificer-initiate')).toMatchObject({ source: { kind: 'feat', id: 'artificer-initiate' }, book: 'tce', page: 79 });
+  expect(DATA.feats).toHaveLength(43);
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], feats: ['artificer-initiate'] } as Character;
+  const ids = (k: string) => grantSlots(ch).find(s => s.key === k)!.candidates.map(s => s.id);
+  expect(ids('feat:artificer-initiate:0')).toEqual(expect.arrayContaining(['guidance', 'thorn-whip', 'booming-blade']));
+  expect(ids('feat:artificer-initiate:0')).not.toContain('eldritch-blast');
+  expect(ids('feat:artificer-initiate:1')).toEqual(expect.arrayContaining(['cure-wounds', 'tashas-caustic-brew']));
+  expect(ids('feat:artificer-initiate:1')).not.toContain('magic-missile');
+});
+test('any-class feat choices include the artificer list; class-named ones do not', () => {
+  const lists = (id: string) => DATA.feats.find(f => f.id === id)!.spells.filter(g => g.choose).map(g => g.choose!.lists);
+  for (const id of ['fey-touched', 'shadow-touched']) expect(lists(id)[0], id).toContain('artificer');
+  for (const id of ['magic-initiate', 'ritual-caster', 'spell-sniper', 'wood-elf-magic'])
+    for (const l of lists(id)) expect(l, id).not.toContain('artificer');
 });
 test('fey touched grants misty step and a choice', () => {
   const ft = DATA.feats.find(f => f.id === 'fey-touched')!;
@@ -87,7 +112,7 @@ test('tasha feat spells carry their uses', () => {
   expect(spells('telekinetic')).toEqual([['mage-hand', true]]);
   const lists = DATA.feats.find(f => f.id === 'shadow-touched')!.spells[1].choose!.lists;
   expect(lists).toEqual(DATA.feats.find(f => f.id === 'fey-touched')!.spells[1].choose!.lists);
-  expect(lists).toHaveLength(8);
+  expect(lists).toHaveLength(9);
 });
 test('tasha feat cards', () => {
   const f = (id: string) => DATA.features.find(x => x.id === id)!;

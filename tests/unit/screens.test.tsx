@@ -1,3 +1,4 @@
+import { readFileSync } from 'node:fs';
 import { fireEvent, render } from '@testing-library/preact';
 import { DATA } from '../../src/data';
 import { Card } from '../../src/ui/screens/Card';
@@ -78,6 +79,18 @@ test('Start tile icon falls back on error', () => {
   expect(r.container.querySelector('.tile img')!.getAttribute('src')).toContain('/icons/fallback/');
 });
 
+test('Start shows 13 class tiles, PHB order kept, Artificer last with its own icon', () => {
+  const r = render(<Start />);
+  const tiles = [...r.container.querySelectorAll('.tiles > .tile:not(.wide)')];
+  expect(tiles).toHaveLength(13);
+  expect(tiles[0].textContent).toBe('Barbarian');
+  expect(tiles[11].textContent).toBe('Wizard');
+  expect(tiles[12].textContent).toBe('Artificer');
+  expect((tiles[12] as HTMLButtonElement).disabled).toBe(false);
+  expect(tiles[12].querySelector('img')!.getAttribute('src')).toBe('icons/class-artificer.svg');
+  // jsdom has no layout: pin the rule that centres the odd 13th tile at one column's width (checked in a browser by e2e)
+  expect(readFileSync('src/styles/screens.css', 'utf8')).toContain('.tiles>.tile:not(.wide):last-child:nth-child(even){grid-column:1/-1;justify-self:center;');
+});
 test('every card ends with the PHB page line', () => {
   const wb = render(<Card kind="feature" id="weapon-bond" cls="fighter" level={3} sub="eldritch-knight" />);
   expect(wb.container.textContent).toContain('Full rules: PHB p. 75');

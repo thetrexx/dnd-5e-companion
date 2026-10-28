@@ -48,7 +48,7 @@ test('a spell with textSource srd is rejected', () => {
 test('class lists', () => {
   const s = (id: string) => DATA.spells.find(x => x.id === id)!;
   expect(s('shield').classes.sort()).toEqual(['sorcerer', 'wizard']);
-  expect(s('cure-wounds').classes.sort()).toEqual(['bard', 'cleric', 'druid', 'paladin', 'ranger']);
+  expect(s('cure-wounds').classes.sort()).toEqual(['artificer', 'bard', 'cleric', 'druid', 'paladin', 'ranger']);
   expect(s('fireball').page).toBe(241);
 });
 test('a feature with textSource srd is rejected', () => {

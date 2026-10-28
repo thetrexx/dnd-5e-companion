@@ -1,6 +1,7 @@
 import type { Dataset, SpellGrant } from './types';
 
-export const CLASS_IDS: string[] = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard'];
+/** The 12 PHB classes in alphabetical order, then the Artificer (Tasha's) last so the PHB tiles keep their places. */
+export const CLASS_IDS: string[] = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard', 'artificer'];
 const COSTS = ['action', 'bonus', 'reaction', 'other'];
 const FEATURE_COSTS = [...COSTS, 'free', 'passive'];
 const CASTERS = ['full', 'half', 'third', 'pact', 'none'];

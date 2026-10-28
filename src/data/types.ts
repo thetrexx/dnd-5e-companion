@@ -1,5 +1,5 @@
 export type BookId = 'phb' | 'xge' | 'tce' | 'scag' | 'dmg' | 'bgg';
-export type ClassId = 'barbarian'|'bard'|'cleric'|'druid'|'fighter'|'monk'|'paladin'|'ranger'|'rogue'|'sorcerer'|'warlock'|'wizard';
+export type ClassId = 'barbarian'|'bard'|'cleric'|'druid'|'fighter'|'monk'|'paladin'|'ranger'|'rogue'|'sorcerer'|'warlock'|'wizard'|'artificer';
 /** Every card is our own words; the book holds the full rules. */
 export type TextSource = 'summary';
 export type Cost = 'action'|'bonus'|'reaction'|'other';

@@ -51,6 +51,15 @@ test('subclass casters stop at their highest spell level', () => {
   expect(menuRows('wizard', 1).filter(r => r.kind === 'spells')).toHaveLength(9);
 });
 
+test('artificer 1 casts: cantrips and level 1 lit, level 2 dimmed', () => {
+  const rows = menuRows('artificer', 1);
+  expect(rows.find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
+  expect(rows.find(r => r.label === 'Level 1 Spells')!.dimmed).toBe(false);
+  expect(rows.find(r => r.label === 'Level 2 Spells')!.dimmed).toBe(true);
+  // like paladin, a class caster keeps all nine rows; above its table they stay dimmed
+  expect(menuRows('artificer', 20).filter(r => r.kind === 'spells').map(r => r.dimmed)).toEqual([false, false, false, false, false, true, true, true, true]);
+});
+
 test('a granted cantrip lights the Cantrips row of a class with none', () => {
   expect(menuRows('ranger', 3, 'swarmkeeper').find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
   expect(menuRows('ranger', 3, 'hunter').find(r => r.kind === 'cantrips')!.dimmed).toBe(true);

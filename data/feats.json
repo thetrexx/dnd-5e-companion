@@ -1,5 +1,42 @@
 [
   {
+    "id": "artificer-initiate",
+    "name": "Artificer Initiate",
+    "page": 79,
+    "book": "tce",
+    "description": [
+      "Pick one cantrip and one 1st-level spell from the artificer list. Both use Intelligence as their spellcasting ability.",
+      "Once per long rest you can cast that 1st-level spell with no spell slot. Your own slots can cast it as well.",
+      "Gain proficiency with one kind of artisan's tools you choose. Those tools can serve as a focus for any spell you cast with Intelligence."
+    ],
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "artificer"
+          ],
+          "level": 0,
+          "count": 1
+        },
+        "atLevel": 1,
+        "ability": "int"
+      },
+      {
+        "choose": {
+          "lists": [
+            "artificer"
+          ],
+          "level": 1,
+          "count": 1
+        },
+        "atLevel": 1,
+        "ability": "int",
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "bountiful-luck",
     "name": "Bountiful Luck",
     "prereq": "Halfling",
@@ -206,7 +243,8 @@
             "ranger",
             "sorcerer",
             "warlock",
-            "wizard"
+            "wizard",
+            "artificer"
           ],
           "level": 1,
           "count": 1,
@@ -537,7 +575,8 @@
             "ranger",
             "sorcerer",
             "warlock",
-            "wizard"
+            "wizard",
+            "artificer"
           ],
           "level": 1,
           "count": 1,

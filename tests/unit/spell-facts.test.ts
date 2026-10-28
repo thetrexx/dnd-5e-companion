@@ -15,7 +15,7 @@ test('facts', () => {
   expect(f('fireball')).toMatchObject({ level: 3, school: 'Evocation', page: 241, range: '150 feet',
     summary: { damage: { dice: '8d6', type: 'Fire' }, resolution: 'save', save: 'dex' } });
   expect(f('shield').classes.sort()).toEqual(['sorcerer', 'wizard']);
-  expect(f('cure-wounds').classes.sort()).toEqual(['bard', 'cleric', 'druid', 'paladin', 'ranger']);
+  expect(f('cure-wounds').classes.sort()).toEqual(['artificer', 'bard', 'cleric', 'druid', 'paladin', 'ranger']);
   expect(f('cure-wounds').summary?.damage).toMatchObject({ dice: '1d8', healing: true, plusMod: true });
   expect(f('hex').cast.cost).toBe('bonus');
   expect(f('hellish-rebuke').cast.cost).toBe('reaction');

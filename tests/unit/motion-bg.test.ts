@@ -2,7 +2,7 @@ import { describe, expect, test } from 'vitest';
 import { BG_MOTIFS, type BgKey } from '../../src/motion/bgMotifs';
 import { seeded } from '../../src/motion/rand';
 
-const KEYS: BgKey[] = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard', 'none'];
+const KEYS: BgKey[] = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard', 'artificer', 'none'];
 describe('background motifs', () => {
   test('a background for every class and for no class', () => expect(Object.keys(BG_MOTIFS).sort()).toEqual([...KEYS].sort()));
   test.each(KEYS)('%s: valid parts on a 390x844 screen', k => {

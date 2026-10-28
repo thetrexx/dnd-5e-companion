@@ -220,6 +220,11 @@ export const BG_MOTIFS: Record<BgKey, Gen> = {
     return P;
   },
 
+  // Artificer: placeholder until its own motif lands (plan 8 Task 6); draws the no-class contour lines
+  artificer(W, H, rnd) {
+    return BG_MOTIFS.none(W, H, rnd);
+  },
+
   // No spellcasting class: faint gold contour lines, like an old map of the Sword Coast
   none(W, H, rnd) {
     const R = (a: number, b: number) => range(rnd, a, b), P: Part[] = [];
