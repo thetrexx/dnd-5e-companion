@@ -114,7 +114,7 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
   if (o.startDelay) await sleep(o.startDelay, sig);
   if (sig?.aborted) return;
   let live: Animation[] = [], off = false, held: Animation[] = [];
-  const stop = () => { for (const a of live) a.cancel(); live = held = []; };
+  const stop = () => { for (const a of live) a.cancel(); live = []; held = []; };
   // off screen: pause what is running (paused animations never finish, so the loop waits);
   // back on: play only those, since playing a finished animation would replay it
   const freeze = () => { for (const a of live) if (a.playState === 'running') { a.pause(); held.push(a); } };
