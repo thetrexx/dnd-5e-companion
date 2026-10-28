@@ -60,7 +60,8 @@ test('Animation: Off renders no motif layers at all', () => {
 test('unmount stops the loop before its start delay ends', async () => {
   vi.useFakeTimers();
   const r = render(<Menu cls="wizard" level={3} />);
-  r.unmount();
+  // inside act, so the deferred effect cleanups run (abort the loop) before any start delay can end
+  act(() => { r.unmount(); });
   await vi.advanceTimersByTimeAsync(5000);
   expect(Element.prototype.animate).not.toHaveBeenCalled();
   expect(vi.getTimerCount()).toBe(0);
@@ -90,8 +91,7 @@ test('rows off screen hold their next cycle until they scroll into view', async 
   ios.forEach(io => io.cb([{ isIntersecting: true }]));
   await vi.advanceTimersByTimeAsync(0);
   expect(Element.prototype.animate).toHaveBeenCalled();
-  r.unmount();
-  await vi.advanceTimersByTimeAsync(200); // deferred effect cleanups run
+  act(() => { r.unmount(); }); // inside act, so the deferred effect cleanups run
   expect(ios.every(io => io.disconnect.mock.calls.length > 0)).toBe(true);
 });
 
@@ -137,8 +137,7 @@ describe('backgrounds', () => {
     await pass(100);
     expect(first.isConnected).toBe(false);
     expect(c.querySelector('svg.fx-bg path')).toBeTruthy();
-    r.unmount();
-    await vi.advanceTimersByTimeAsync(200); // deferred effect cleanups run
+    act(() => { r.unmount(); }); // inside act, so the deferred effect cleanups run
     expect(vi.getTimerCount()).toBe(0);
   });
   test('artificer page: an unmasked spark layer beside the background, sparks drawn into it', async () => {
