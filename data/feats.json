@@ -56,7 +56,7 @@
     "book": "tce",
     "description": [
       "+1 to Strength or Constitution (max 20).",
-      "Once per turn, a hit that deals bludgeoning damage lets you shove the creature 5 ft into an unoccupied space, as long as it is at most one size larger than you.",
+      "Once per turn, a hit that deals bludgeoning damage lets you move the creature 5 ft into an unoccupied space (no check), as long as it is at most one size larger than you.",
       "Score a critical hit with bludgeoning damage, and every attack roll against that creature has advantage until your next turn begins."
     ],
     "spells": [],

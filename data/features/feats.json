@@ -528,7 +528,7 @@
     "trigger": "An attack of yours hits a creature and deals bludgeoning damage",
     "uses": "Once per turn",
     "description": [
-      "Shove the creature 5 ft into an unoccupied space. It can be at most one size larger than you.",
+      "Move the creature 5 ft into an unoccupied space (no check). It can be at most one size larger than you.",
       "On a critical hit, attack rolls against it also have advantage until your next turn begins. That part is not limited to once per turn."
     ],
     "page": 79,
