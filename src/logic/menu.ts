@@ -1,6 +1,6 @@
 import { DATA } from '../data';
 import type { ClassId, Route } from '../data/types';
-import { ceilingOf, maxSpellLevel } from './rules';
+import { ceilingOf, grantedSpells, maxSpellLevel } from './rules';
 import { actionSections } from './sections';
 import { effectiveSub } from './subclass';
 
@@ -46,14 +46,13 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
   const motif = cast ? cast.list : cls;
   const cantrips = cast ? cast.cantripsKnown[level - 1] : c.cantripsKnown?.[level - 1];
   const max = cast ? (cast.maxSpellLevel[level - 1] ?? 0) : maxSpellLevel(c, level);
-  // a cantrip the subclass or a class feature grants outright by this level (Swarmkeeper Mage Hand) lights the row too
-  const features = DATA.features.filter(f => f.level <= level && ((f.source.kind === 'class' && f.source.id === cls) || (f.source.kind === 'subclass' && f.source.id === s?.id)));
-  const granted = [...(s?.bonusSpells?.grants ?? []), ...features.flatMap(f => f.spells ?? [])]
-    .some(g => !g.option && g.atLevel <= level && DATA.spells.find(x => x.id === g.spell)?.level === 0);
+  // a spell the subclass or a class or subclass feature grants outright by this level lights its row too:
+  // Swarmkeeper Mage Hand the Cantrips row, Chemical Mastery's Heal the Level 6 row. Patron spells are only pickable.
+  const granted = new Set(grantedSpells(c, s).filter(g => g.atLevel <= level).map(g => g.spell.level));
   rows.push({ kind: 'separator', label: 'MAGIC' });
   rows.push({
     kind: 'cantrips', label: 'Cantrips', icon: { type: 'img', src: listClass.plainIcon },
-    target: to('spells', 'cantrips'), dimmed: !cantrips && !granted, motif,
+    target: to('spells', 'cantrips'), dimmed: !cantrips && !granted.has(0), motif,
   });
   // a subclass caster never reaches the top spell levels: leave those rows out
   const ceiling = cast ? ceilingOf(cast.maxSpellLevel) : 9;
@@ -61,7 +60,7 @@ export function menuRows(cls: ClassId, level: number, sub?: string): MenuRow[] {
     rows.push({
       kind: 'spells', label: `Level ${n} Spells`,
       icon: c.caster === 'pact' ? { type: 'slot', level: n, warlock: true } : { type: 'slot', level: n },
-      target: to('spells', `lvl-${n}`), dimmed: n > max, motif,
+      target: to('spells', `lvl-${n}`), dimmed: n > max && !granted.has(n), motif,
     });
   }
   return rows;

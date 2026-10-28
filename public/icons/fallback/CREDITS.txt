@@ -12,3 +12,6 @@ school-evocation: Fireball
 school-illusion: Domino Mask
 school-necromancy: Dread Skull
 school-transmutation: Cycle
+
+Class icon (not a fallback; it lives at public/icons/class-artificer.svg):
+class-artificer: Gear Hammer by Lorc, https://game-icons.net/1x1/lorc/gear-hammer.html (CC BY 3.0). Modified: black background removed; gear filled #d8dde2, inner ring and hammer filled brass #d9a441 (colours baked in because currentColor cannot apply inside an <img>).

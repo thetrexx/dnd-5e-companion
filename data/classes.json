@@ -609,5 +609,65 @@
     "options": [
       "optional-wizard"
     ]
+  },
+  {
+    "id": "artificer",
+    "name": "Artificer",
+    "caster": "half",
+    "cantripsKnown": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4,
+      4
+    ],
+    "maxSpellLevel": [
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5
+    ],
+    "spellAbility": "int",
+    "prepared": {
+      "half": true
+    },
+    "hotbarIcon": "icons/class-artificer.svg",
+    "plainIcon": "icons/class-artificer.svg",
+    "subclassLevel": 3,
+    "subclassLabel": "Artificer Specialist",
+    "options": [
+      "infusions"
+    ]
   }
 ]

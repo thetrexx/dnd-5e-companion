@@ -4,7 +4,27 @@ import { menuRows } from '../../src/logic/menu';
 
 const c = (id: string) => DATA.classes.find(x => x.id === id)!;
 const f = (id: string) => DATA.features.find(x => x.id === id);
-test('12 classes', () => expect(DATA.classes.map(x => x.id).sort()).toEqual([...CLASS_IDS].sort()));
+test('13 classes, artificer last', () => {
+  expect(DATA.classes.map(x => x.id)).toEqual(CLASS_IDS);
+  expect(CLASS_IDS.at(-1)).toBe('artificer');
+  expect(DATA.classes.find(x => x.id === 'artificer')).toMatchObject({ caster: 'half', spellAbility: 'int', subclassLevel: 3 });
+});
+test('artificer table (Tasha\'s p. 10)', () => {
+  expect(c('artificer')).toMatchObject({ prepared: { half: true }, subclassLabel: 'Artificer Specialist',
+    hotbarIcon: 'icons/class-artificer.svg', plainIcon: 'icons/class-artificer.svg' });
+  expect(c('artificer').cantripsKnown).toEqual([2,2,2,2,2,2,2,2,2,3,3,3,3,4,4,4,4,4,4,4]);
+  expect(c('artificer').maxSpellLevel).toEqual([1,1,1,1,2,2,2,2,3,3,3,3,4,4,4,4,5,5,5,5]);
+  expect(c('artificer').spellsKnown).toBeUndefined();
+  expect(c('artificer').options).toEqual(['infusions']);
+});
+test('artificer class features', () => {
+  for (const [id, level, cost] of [['magical-tinkering', 1, 'action'], ['flash-of-genius', 7, 'reaction'], ['spell-storing-item', 11, 'action'], ['soul-of-artifice', 20, 'reaction']] as const)
+    expect(f(id), id).toMatchObject({ level, cost, book: 'tce', source: { kind: 'class', id: 'artificer' } });
+  expect(f('flash-of-genius')!.uses).toMatch(/Intelligence modifier \(minimum 1\) per long rest/);
+  expect(f('spell-storing-item')!.uses).toMatch(/twice/i);
+  expect(DATA.features.filter(x => x.source.kind === 'class' && x.source.id === 'artificer').map(x => x.id).sort())
+    .toEqual(['flash-of-genius', 'magical-tinkering', 'soul-of-artifice', 'spell-storing-item']);
+});
 test('tables', () => {
   expect(c('warlock').maxSpellLevel).toEqual([1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,9,9]);
   expect(c('paladin').maxSpellLevel![0]).toBe(0); expect(c('paladin').maxSpellLevel![1]).toBe(1);

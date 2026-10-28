@@ -47,7 +47,9 @@ test('costs and grants', () => {
   const book = f('eldritch-invocations-book-of-ancient-secrets');
   expect(book.prereq?.option).toBe('pact-boon-pact-of-the-tome');
   expect(book.spells![0].choose).toMatchObject({ level: 1, count: 2, ritual: true });
-  expect(book.spells![0].choose!.lists).toHaveLength(8);
+  expect(book.spells![0].choose!.lists).toHaveLength(9);   // any class's list (PHB p. 110), artificer included
+  expect(book.spells![0].choose!.lists).toContain('artificer');
+  expect(f('pact-boon-pact-of-the-tome').spells![0].choose!.lists).toContain('artificer');   // any class's list (PHB p. 108)
   expect(f('eldritch-invocations-armor-of-shadows').spells![0].spell).toBe('mage-armor');
   for (const x of DATA.features.filter(y => y.source.kind === 'option')) expect(x.textSource, x.id).toBe('summary');
 });
@@ -297,4 +299,38 @@ test('tasha feat group shapes', () => {
   for (const id of ['fighting-initiate', 'eldritch-adept', 'metamagic-adept']) expect(DATA.feats.find(f => f.id === id)!.options, id).toEqual([id]);
   const sorc = { ...emptyCharacter(), classes: [{ cls: 'sorcerer', level: 3 }], feats: ['metamagic-adept'] } as Character;
   expect(optionSlots(sorc).filter(s => (s.group.from ?? s.group.id) === 'metamagic').map(s => s.count)).toEqual([2, 2]);
+});
+
+// Plan 8 Task 2: artificer infusions (Tasha's pp. 20-23)
+test('infusions', () => {
+  const grp = DATA.optionGroups.find(o => o.id === 'infusions')!;
+  expect(grp).toMatchObject({ name: 'Artificer Infusions', owner: { kind: 'class', id: 'artificer' } });
+  expect(grp.picks).toEqual([0,4,4,4,4,6,6,6,6,8,8,8,8,10,10,10,10,12,12,12]);
+  expect(poolOptions('infusions')).toHaveLength(16);
+  expect(DATA.features.find(f => f.id === 'infusions-boots-of-the-winding-path')).toMatchObject({ level: 6, cost: 'bonus', book: 'tce' });
+});
+test('infusion levels, items and costs', () => {
+  const higher = Object.fromEntries(poolOptions('infusions').filter(x => x.level > 2).map(x => [x.id, x.level]));
+  expect(higher).toEqual({ 'infusions-arcane-propulsion-armor': 14, 'infusions-boots-of-the-winding-path': 6, 'infusions-helm-of-awareness': 10,
+    'infusions-radiant-weapon': 6, 'infusions-repulsion-shield': 6, 'infusions-resistant-armor': 6, 'infusions-spell-refueling-ring': 6 });
+  for (const x of poolOptions('infusions')) {
+    expect(x, x.id).toMatchObject({ book: 'tce', textSource: 'summary', prereq: { text: expect.any(String) } });
+    expect(x.level === 2 ? undefined : x.level, x.id).toBe(x.prereq!.level);
+  }
+  expect(f('infusions-mind-sharpener')).toMatchObject({ cost: 'reaction', uses: expect.stringMatching(/4 charges/) });
+  expect(f('infusions-repulsion-shield')).toMatchObject({ cost: 'reaction', uses: expect.stringMatching(/4 charges/) });
+  expect(f('infusions-spell-refueling-ring').cost).toBe('action');
+  expect(f('infusions-homunculus-servant').cost).toBe('bonus');
+  expect(f('infusions-homunculus-servant').description.join(' ')).toContain("Stat block: Tasha's p. 22");
+  for (const id of ['enhanced-defense', 'enhanced-weapon', 'enhanced-arcane-focus'])
+    expect(f(`infusions-${id}`).scaling![0].values.filter((v, i) => [1, 9].includes(i)), id).toEqual(['+1', '+2']);
+  const rep = f('infusions-replicate-magic-item').description.join(' ');
+  for (const item of ['Alchemy jug', 'Boots of elvenkind', 'Winged boots', 'Ring of the ram']) expect(rep).toContain(item);
+});
+test('artificer 2 offers level-2 infusions only', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'artificer', level: 2 }] } as Character;
+  const slot = optionSlots(ch).find(s => s.group.id === 'infusions')!;
+  expect(slot.count).toBe(4);
+  for (const x of slot.choices) expect(x.level, x.id).toBe(2);
+  expect(slot.choices).toHaveLength(9);
 });

@@ -481,6 +481,24 @@
     "textSource": "summary"
   },
   {
+    "id": "artificer-initiate",
+    "name": "Artificer Initiate",
+    "source": {
+      "kind": "feat",
+      "id": "artificer-initiate"
+    },
+    "level": 1,
+    "cost": "other",
+    "uses": "Once per long rest",
+    "description": [
+      "Cast the 1st-level spell you took with this feat without spending a spell slot. Your slots can still cast it at other times.",
+      "Intelligence is the casting ability for this spell and the feat's cantrip. Your chosen artisan's tools can be the focus for any of your Intelligence spells."
+    ],
+    "page": 79,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
     "id": "chef",
     "name": "Chef",
     "source": {

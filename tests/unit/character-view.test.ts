@@ -126,6 +126,33 @@ test('all view: domain spells keep the Domain tag', () => {
   expect(l1.tags!['guiding-bolt']).toBeUndefined();
 });
 
+test('armor model gates its features', () => {
+  const armorer = (options: string[], level = 3) => ch([{ cls: 'artificer', level, sub: 'armorer' }], { options });
+  const ids = (c: Character) => charActionSections(c).flatMap(s => s.items.map(i => i.id));
+  const g = ids(armorer(['armor-model-guardian']));
+  expect(g).toEqual(expect.arrayContaining(['thunder-gauntlets', 'defensive-field', 'arcane-armor']));
+  expect(g).not.toContain('lightning-launcher');
+  // switching the model swaps them
+  const i = ids(armorer(['armor-model-infiltrator']));
+  expect(i).toContain('lightning-launcher');
+  expect(i).not.toContain('thunder-gauntlets');
+  expect(i).not.toContain('defensive-field');
+  // no model chosen: neither model's cards
+  expect(ids(armorer([])).filter(x => ['thunder-gauntlets', 'defensive-field', 'lightning-launcher'].includes(x))).toEqual([]);
+  // perfected armor follows the model, from 15
+  expect(ids(armorer(['armor-model-guardian'], 15))).toContain('perfected-armor-guardian');
+  expect(ids(armorer(['armor-model-guardian'], 15))).not.toContain('perfected-armor-infiltrator');
+  expect(ids(armorer(['armor-model-guardian'], 14))).not.toContain('perfected-armor-guardian');
+});
+test('alchemist 15: heal on its level 6 spells page, tagged with its uses, and the row lit', () => {
+  const c = ch([{ cls: 'artificer', level: 15, sub: 'alchemist', mod: 3 }]);
+  const l6 = charSpellSections(c, 'mine').find(s => s.id === 'lvl-6-artificer')!;
+  expect(l6.items.map(i => i.id)).toEqual(['heal']);
+  expect(l6.tags!['heal']).toBe('Chemical Mastery · Once per long rest, no slot');
+  expect(charMenuRows(c).find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(false);
+  expect(charMenuRows(ch([{ cls: 'artificer', level: 15, sub: 'armorer', mod: 3 }])).find(r => r.label === 'Level 6 Spells')).toBeUndefined();
+});
+
 const ranger = (lvl: number, options: string[] = [], sub?: string) =>
   ch([{ cls: 'ranger', level: lvl, ...(sub && { sub }) }], { options });
 test('chosen optional features join the class section, tagged', () => {

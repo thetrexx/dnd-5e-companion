@@ -11,5 +11,6 @@
   "spells:summon-aberration": "the only missing number is the stat block page 109: the Tasha's p. 109 footer is misread in the text layer ('ro9'); Aberrant Spirit on p. 109 checked against the page image; longest shared run 6 words",
   "spells:summon-beast": "the only missing number is the stat block page 109: the Tasha's p. 109 footer is misread in the text layer ('ro9'); Bestial Spirit on p. 109 checked against the page image; longest shared run 6 words",
   "spells:summon-shadowspawn": "the only missing number is the stat block page 114: the Tasha's p. 114 text layer has no page footer; Shadow Spirit on p. 114 checked against the page image; longest shared run 6 words",
-  "spells:summon-undead": "the only missing number is the stat block page 114: the Tasha's p. 114 text layer has no page footer; Undead Spirit on p. 114 checked against the page image; longest shared run 6 words"
+  "spells:summon-undead": "the only missing number is the stat block page 114: the Tasha's p. 114 text layer has no page footer; Undead Spirit on p. 114 checked against the page image; longest shared run 6 words",
+  "features:infusions-replicate-magic-item": "the run is the Replicable Items tables of Tasha's p. 23, magic item names only (no attunement column, no rules text), A-Z as the book lists them; the card's own sentences were checked with the 8-word window and share at most 7 words with pp. 22-23"
 }

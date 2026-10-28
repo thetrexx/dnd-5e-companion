@@ -14,11 +14,15 @@
 .fx-row .fill,.fx-bg .fill{fill:currentColor;stroke:none}
 .fx-row .leaf,.fx-bg .leaf{fill:var(--druid-leaf);stroke:none}
 .fx-row .bloom,.fx-bg .bloom{fill:var(--druid-bloom);stroke:none}
+.fx-row .acc,.fx-bg .acc{stroke:var(--artificer-accent)}
+.fx-row .accf,.fx-bg .accf{fill:var(--artificer-accent);stroke:none}
 .fx-row .pop,.fx-bg .pop{transform-box:fill-box;transform-origin:center}
 .fx-mist,.fx-blood{position:fixed;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);z-index:-1;pointer-events:none}
 .fx-mist{opacity:calc(var(--motion-i, 1) * var(--mist-o));filter:blur(var(--mist-blur))}
 .fx-blood{opacity:calc(var(--motion-i, 1) * var(--blood-o));filter:blur(var(--blood-blur))}
 .fx-cells{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--cells-o))}
 .fx-bg-wrap{position:fixed;inset:0;pointer-events:none}
+.fx-sparks{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--sparks-o))}
+.fx-sparks .spark{fill:var(--artificer-spark);stroke:none;filter:drop-shadow(0 0 2px var(--artificer-spark-glow));opacity:0}
 .fx-cells .cell{fill:var(--sorcerer-cell)}
 .fx-cells .cell-core{fill:var(--sorcerer-cell-core)}

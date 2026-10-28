@@ -1,4 +1,5 @@
 import { menuRows } from '../../src/logic/menu';
+import type { ClassId } from '../../src/data/types';
 
 test('wizard 3 rows', () => {
   const rows = menuRows('wizard', 3);
@@ -49,6 +50,39 @@ test('subclass casters stop at their highest spell level', () => {
   expect(ek.map(r => r.label).at(-1)).toBe('Level 4 Spells');
   expect(menuRows('rogue', 20, 'arcane-trickster').filter(r => r.kind === 'spells')).toHaveLength(4);
   expect(menuRows('wizard', 1).filter(r => r.kind === 'spells')).toHaveLength(9);
+});
+
+test('artificer 1 casts: cantrips and level 1 lit, level 2 dimmed', () => {
+  const rows = menuRows('artificer', 1);
+  expect(rows.find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
+  expect(rows.find(r => r.label === 'Level 1 Spells')!.dimmed).toBe(false);
+  expect(rows.find(r => r.label === 'Level 2 Spells')!.dimmed).toBe(true);
+  // like paladin, a class caster keeps all nine rows; above its table they stay dimmed
+  expect(menuRows('artificer', 20).filter(r => r.kind === 'spells').map(r => r.dimmed)).toEqual([false, false, false, false, false, true, true, true, true]);
+});
+
+test('alchemist 15 has heal on level 6', () => {
+  expect(menuRows('artificer', 15, 'alchemist').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(false);
+  expect(menuRows('artificer', 15, 'armorer').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(true);
+  // not before Chemical Mastery
+  expect(menuRows('artificer', 14, 'alchemist').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(true);
+  // the rows above stay dimmed
+  expect(menuRows('artificer', 15, 'alchemist').find(r => r.label === 'Level 7 Spells')!.dimmed).toBe(true);
+});
+test('an auto-granted spell lights its level row', () => {
+  const row = (cls: ClassId, lvl: number, sub: string, label: string) => menuRows(cls, lvl, sub).find(r => r.label === label)!.dimmed;
+  // Ethereal Step's etherealness (7th level) for a Horizon Walker 7
+  expect(row('ranger', 7, 'horizon-walker', 'Level 7 Spells')).toBe(false);
+  // Chemical Mastery's greater restoration (5th level) for an Alchemist 15, above its slots
+  expect(row('artificer', 15, 'alchemist', 'Level 5 Spells')).toBe(false);
+  // at 17 level 5 is within the artificer's slots anyway
+  expect(row('artificer', 17, 'alchemist', 'Level 5 Spells')).toBe(false);
+  // no such grant for an Armorer 15
+  expect(row('artificer', 15, 'armorer', 'Level 5 Spells')).toBe(true);
+});
+test('patron spells are pickable, not granted: they light no row', () => {
+  // a warlock's patron rows never reach above its slots; the rule is per level and excludes patron grants
+  expect(menuRows('warlock', 1, 'the-fiend').filter(r => r.kind === 'spells').map(r => r.dimmed)).toEqual([false, true, true, true, true, true, true, true, true]);
 });
 
 test('a granted cantrip lights the Cantrips row of a class with none', () => {

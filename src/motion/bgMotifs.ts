@@ -2,7 +2,7 @@ import type { ClassId } from '../data/types';
 import { BG_TIMING, type Gen, type Part, type Shape } from './types';
 import { range } from './rand';
 import { DIE, FIST, UP, circ, curl, heading, sword, toD, walk, xf, type Pt } from './geom';
-import { f1, line, mover, pop, shape, sign } from './parts';
+import { f1, gear, gogglesD, hammerLocal, line, mover, pop, r1, shape, sign, spark } from './parts';
 
 export type BgKey = ClassId | 'none';
 const B = BG_TIMING.G;
@@ -217,6 +217,80 @@ export const BG_MOTIFS: Record<BgKey, Gen> = {
       const at = x / W * .6;
       for (const b of [-1, 0, 1]) P.push(line(`M${f1(x + b * 3)} ${H + 1}Q${f1(x + b * 4)} ${f1(H - 8)} ${f1(x + b * 8 + R(-2, 2))} ${f1(H - R(12, 22))}`, at, 1400, 'thin'));
     }
+    return P;
+  },
+
+  // Artificer: a tinker's line runs round the screen edges and draws a turning gear, a hammer and goggles on its way;
+  // as each shape completes, a burst of sparks flies in from a random screen edge (they land on the unmasked spark layer)
+  artificer(W, H, rnd) {
+    const R = (a: number, b: number) => range(rnd, a, b), P: Part[] = [], i = Math.min(W, H) * .1, at = (ms: number) => ms / B;
+    const corners: Pt[] = [[i, i], [W - i, i], [W - i, H - i], [i, H - i]];
+    const lens = corners.map((c, k) => Math.hypot(corners[(k + 1) % 4][0] - c[0], corners[(k + 1) % 4][1] - c[1])), per = lens.reduce((a, b) => a + b);
+    // the point a fraction t of the way round the loop
+    const on = (t: number): Pt => {
+      let d = (((t % 1) + 1) % 1) * per;
+      for (let k = 0; k < 4; k++) {
+        if (d <= lens[k]) { const [ax, ay] = corners[k], [bx, by] = corners[(k + 1) % 4], u = lens[k] ? d / lens[k] : 0; return [ax + (bx - ax) * u, ay + (by - ay) * u]; }
+        d -= lens[k];
+      }
+      return corners[0];
+    };
+    const t0 = R(0, 1), dir = sign(rnd), span = .78, order = ['gear', 'hammer', 'goggles'];
+    for (let k = 2; k > 0; k--) { const j = Math.floor(rnd() * (k + 1)); [order[k], order[j]] = [order[j], order[k]]; }
+    const slots = [.12, .45, .78].map(f => t0 + dir * span * f);
+    const dirAt = (t: number) => { const [ax, ay] = on(t - dir * .01), [bx, by] = on(t + dir * .01); return Math.atan2(by - ay, bx - ax); };
+    // the wire draws a whole loop in WIRE ms whatever the screen size; the timings below keep every start inside the grow phase
+    const WIRE = 4400, wire = (from: Pt, to: Pt, tA: number, tB: number, keep: (p: Pt) => boolean): Pt[] => {
+      const pts: Pt[] = [from];
+      for (let k = 1; k < 40; k++) { const p = on(tA + (tB - tA) * k / 40); if (keep(p)) pts.push([p[0] + R(-2, 2), p[1] + R(-2, 2)]); }
+      pts.push(to);
+      return pts;
+    };
+    // sparks shoot in from one screen edge, arc under gravity and fade in about a second
+    const burst = (ms: number) => {
+      const side = Math.floor(R(0, 4)), u = R(.15, .85), [ox, oy] = ([[u * W, -4], [W + 4, u * H], [u * W, H + 4], [-4, u * H]] as Pt[])[side];
+      const base = [Math.PI / 2, Math.PI, -Math.PI / 2, 0][side];
+      for (let k = 0, n = Math.round(R(9, 14)); k < n; k++) {
+        const a = base + R(-.75, .75), sp = R(160, 300), dur = R(700, 1300), t = dur / 1000, frames: Keyframe[] = [];
+        for (let s = 0; s <= 6; s++) {
+          const tt = t * s / 6;
+          frames.push({ transform: `translate(${f1(Math.cos(a) * sp * tt)}px,${f1(Math.sin(a) * sp * tt + 130 * tt * tt)}px)`, opacity: s ? r1(1 - s / 6) : 0 });
+        }
+        P.push(spark(ox, oy, r1(R(.9, 1.7)), at(ms + R(0, 180)), Math.round(dur), frames));
+      }
+    };
+    let prevT = t0 - dir * .06, prevExit = on(prevT), prevC: Pt | null = null, prevExt = 0, clock = 0;
+    order.forEach((kind, k) => {
+      const t = slots[k], c = on(t), h = dirAt(t), loc = (u: number, v = 0) => xf([[u, v]], c[0], c[1], h, 1)[0];
+      let ext: number, entry: Pt, exit: Pt, draw: (start: number) => number;
+      if (kind === 'gear') {
+        const r = R(30, 40); ext = r + 8; entry = loc(-r); exit = loc(r);
+        // built already turned to the wire's heading, so the outline starts where the wire meets it
+        draw = (start) => { P.push(gear(c[0], c[1], r, at(start), 1, { tooth: 5, dur: 1800, dense: .55, a0: h })); return 1800; };
+      } else if (kind === 'hammer') {
+        const s = R(70, 90), outline = xf(hammerLocal(s), c[0], c[1], h, 1); ext = s * .55; entry = outline[0]; exit = loc(s * .5);
+        draw = (start) => { P.push(line(outline, at(start), 1500)); return 1500; };
+      } else {
+        const r = R(15, 19); ext = 2.6 * r + 14; entry = loc(-2.3 * r - 14); exit = loc(2.3 * r + 14);
+        draw = (start) => {
+          P.push(line(gogglesD(c[0], c[1], r, 14, h), at(start), 1750));
+          // a glint on each lens
+          for (const lx of [-1.3 * r, 1.3 * r]) {
+            const [x, y] = loc(lx);
+            P.push(pop(x, y, h * 57.3, at(start + 1550), [shape('path', { d: `M${f1(-r * .45)} ${f1(-r * .1)}A${f1(r * .5)} ${f1(r * .5)} 0 0 1 ${f1(r * .1)} ${f1(-r * .5)}` }, 'acc')]));
+          }
+          return 1750;
+        };
+      }
+      const pc = prevC, pe = prevExt, wd = WIRE * Math.abs(t - prevT);
+      const keep = (p: Pt) => Math.hypot(p[0] - c[0], p[1] - c[1]) > ext && (!pc || Math.hypot(p[0] - pc[0], p[1] - pc[1]) > pe);
+      P.push(line(wire(prevExit, entry, prevT, t, keep), at(clock), wd)); clock += wd * .92;
+      burst(clock + draw(clock));
+      clock += kind === 'gear' ? 1350 : kind === 'hammer' ? 1200 : 1400;
+      prevC = c; prevExt = ext; prevExit = exit; prevT = t;
+    });
+    const endT = t0 + dir * (span + .1), last = on(prevT);
+    P.push(line(wire(prevExit, on(endT), prevT, endT, p => Math.hypot(p[0] - last[0], p[1] - last[1]) > prevExt), at(clock), WIRE * Math.abs(endT - prevT)));
     return P;
   },
 

@@ -9,6 +9,8 @@
 .tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
 .tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:84px;padding:10px;font:inherit;font-size:13px;color:var(--text);text-shadow:var(--text-shadow);background:var(--surface);border:1px solid var(--tile,var(--border));border-radius:6px;cursor:pointer;overflow-wrap:anywhere}
 .tile.wide{grid-column:1/-1}
+/* the wide tile is child 1, so class tiles pair up from child 2; an odd one out (the 13th, Artificer) sits centred on its own row at one column's width */
+.tiles>.tile:not(.wide):last-child:nth-child(even){grid-column:1/-1;justify-self:center;width:calc((100% - 10px)/2)}
 .tile small{color:var(--text-dim);font-size:10px}
 .tile:disabled{opacity:var(--disabled-opacity);cursor:default}
 .tile img{border-radius:6px}
@@ -30,7 +32,7 @@
 .fixed-head .page-title{margin:0 0 4px}
 .head-row{display:flex;justify-content:space-between;align-items:center;gap:8px}
 .scroller{flex:1;overflow-y:auto;overflow-x:hidden;margin:0 -16px;padding:0 16px 24px}
-.sec.locked .sec-grid{opacity:var(--dimmed-opacity)}
+.sec.locked .ic.dim{opacity:var(--dimmed-opacity)}
 .locked-note{margin:0 0 8px;font-size:10.5px;color:var(--text-dim);text-align:center}
 
 .card{position:relative;background:var(--card-bg);color:var(--card-text);border:1px solid var(--card-border);border-radius:6px;padding:16px 14px 0;margin-top:10px;overflow:hidden}

@@ -1,11 +1,13 @@
 import { DATA, poolOptions } from '../data';
 import type { ClassId, Feature, Spell } from '../data/types';
 import { bonusLabel } from './bonus';
-import { ceilingOf, listSpells, listTag, maxSpellLevel } from './rules';
+import { ceilingOf, grantedSpells, listSpells, listTag, maxSpellLevel } from './rules';
 import { effectiveSub } from './subclass';
 
 export interface Section {
   id: string; title: string; subtitle?: string; motif?: ClassId; locked?: string;
+  /** a locked section's items that are already granted: shown undimmed */
+  open?: string[];
   /** item id -> small source tag, e.g. 'Domain' */
   tags?: Record<string, string>;
   /** character All view: ids of the items that are the character's own */
@@ -79,6 +81,9 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
     }
   }
   const max = cast ? (cast.maxSpellLevel[level - 1] ?? 0) : maxSpellLevel(c, level);
+  // spell id -> the earliest class level a grant gives it outright
+  const grantAt = new Map<string, number>();
+  for (const g of grantedSpells(c, s)) grantAt.set(g.spell.id, Math.min(g.atLevel, grantAt.get(g.spell.id) ?? Infinity));
   // a subclass caster (Eldritch Knight, Arcane Trickster) never reaches levels 5-9: leave them out
   const ceiling = cast ? ceilingOf(cast.maxSpellLevel) : 9;
   const out: Section[] = [];
@@ -93,8 +98,15 @@ export function spellSections(cls: ClassId, level: number, sub?: string): Sectio
     const tags = tagsByLevel.get(n);
     if (tags) sec.tags = tags;
     if (n > max) {
-      const unlock = (maxTable ?? []).findIndex(m => m >= n) + 1;
-      if (unlock > 0) sec.locked = `Unlocks at ${c.name} ${unlock}`;
+      // a spell granted outright by this level stays open (Chemical Mastery's Greater Restoration at Alchemist 15);
+      // where the class table never reaches this level, the lock lifts with the grant (Heal at Alchemist 15)
+      const open = items.filter(i => (grantAt.get(i.id) ?? Infinity) <= level).map(i => i.id);
+      const later = items.flatMap(i => grantAt.get(i.id) ?? []).filter(at => at > level);
+      const unlock = (maxTable ?? []).findIndex(m => m >= n) + 1 || (later.length ? Math.min(...later) : 0);
+      if (unlock > 0 && open.length < items.length) {
+        sec.locked = `Unlocks at ${c.name} ${unlock}`;
+        if (open.length) sec.open = open;
+      }
     }
     out.push(sec);
   }

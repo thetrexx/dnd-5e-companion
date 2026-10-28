@@ -22,6 +22,20 @@ export function listSpells(c: ClassDef, s?: SubclassDef, expanded = false): Spel
       || (c.caster !== 'none' && !!s?.extraLists?.some(l => sp.classes.includes(l))));
 }
 
+/** Spells the subclass or a class or subclass feature grants outright, each with the class level it arrives at:
+ *  no pick, no option (Land terrain), and never a patron's expanded spells, which are only pickable. */
+export function grantedSpells(c: ClassDef, s?: SubclassDef): { spell: Spell; atLevel: number }[] {
+  const bonus = s?.bonusSpells && s.bonusSpells.kind !== 'patron' ? s.bonusSpells.grants.map(g => ({ g, at: g.atLevel })) : [];
+  const features = DATA.features
+    .filter(f => (f.source.kind === 'class' && f.source.id === c.id) || (f.source.kind === 'subclass' && f.source.id === s?.id))
+    // a feature's grant arrives with the feature
+    .flatMap(f => (f.spells ?? []).map(g => ({ g, at: Math.max(f.level, g.atLevel) })));
+  return [...bonus, ...features].flatMap(({ g, at }) => {
+    const spell = g.spell && !g.option ? DATA.spells.find(x => x.id === g.spell) : undefined;
+    return spell ? [{ spell, atLevel: at }] : [];
+  });
+}
+
 /** 'Cleric list' for a spell on one of the subclass's extra lists but not on the class's own. */
 export function extraListTag(c: ClassDef, s: SubclassDef | undefined, sp: Spell): string | undefined {
   if (sp.classes.includes(c.id)) return undefined;

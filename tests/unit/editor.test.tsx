@@ -147,6 +147,15 @@ test('spells step: no cantrips and no spells yet', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'paladin', level: 2 }] });
   expect(render(<Editor step="spells" />).getByText(/^Spells 0 of 1 prepared · up to level 1$/)).toBeTruthy();
 });
+test('spells step: an artificer prepares Int + half its level, rounded down, from level 1', () => {
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'artificer', level: 1 }] });
+  const r = render(<Editor step="spells" />);
+  fireEvent.input(r.getByLabelText('INT modifier'), { target: { value: '3' } });
+  expect(r.getByText('Cantrips 0 of 2 · Spells 0 of 3 prepared · up to level 1')).toBeTruthy();
+  cleanup();
+  saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'artificer', level: 5, mod: 3 }] });
+  expect(render(<Editor step="spells" />).getByText('Cantrips 0 of 2 · Spells 0 of 5 prepared · up to level 2')).toBeTruthy();
+});
 test('spells step: modifier is a whole number from -5 to 10', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'cleric', level: 1 }] });
   const r = render(<Editor step="spells" />);

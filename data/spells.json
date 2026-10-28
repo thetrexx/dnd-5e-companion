@@ -58,7 +58,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 150,
     "book": "xge",
@@ -97,7 +98,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 211,
     "summary": {
@@ -177,7 +179,8 @@
     "ritual": false,
     "classes": [
       "cleric",
-      "paladin"
+      "paladin",
+      "artificer"
     ],
     "page": 211,
     "summary": {
@@ -217,7 +220,8 @@
     "ritual": true,
     "classes": [
       "ranger",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 211,
     "summary": {
@@ -252,7 +256,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 211,
     "summary": {
@@ -430,7 +435,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 213,
     "summary": {
@@ -573,7 +579,8 @@
     "concentration": true,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 214,
     "summary": {
@@ -641,7 +648,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 215,
     "summary": {
@@ -1256,7 +1264,8 @@
     "concentration": true,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 218,
     "summary": {
@@ -1556,7 +1565,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 219,
     "summary": {
@@ -1589,7 +1599,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 219,
     "summary": {
@@ -1660,7 +1671,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 106,
     "book": "tce",
@@ -1850,7 +1862,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 150,
     "book": "xge",
@@ -1890,7 +1903,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 151,
     "book": "xge",
@@ -2910,7 +2924,8 @@
     "ritual": false,
     "classes": [
       "cleric",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 227,
     "summary": {
@@ -3473,7 +3488,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 152,
     "book": "xge",
@@ -3512,7 +3528,8 @@
     "ritual": false,
     "classes": [
       "cleric",
-      "paladin"
+      "paladin",
+      "artificer"
     ],
     "page": 229,
     "summary": {
@@ -3657,7 +3674,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 229,
     "summary": {
@@ -3806,7 +3824,8 @@
       "cleric",
       "druid",
       "paladin",
-      "ranger"
+      "ranger",
+      "artificer"
     ],
     "page": 230,
     "summary": {
@@ -3846,7 +3865,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 230,
     "summary": {
@@ -3957,7 +3977,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 230,
     "summary": {
@@ -4252,7 +4273,8 @@
       "paladin",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 231,
     "summary": {
@@ -4394,7 +4416,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 233,
     "summary": {
@@ -4513,7 +4536,8 @@
       "paladin",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 234,
     "summary": {
@@ -5228,7 +5252,8 @@
     "classes": [
       "druid",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 155,
     "book": "xge",
@@ -5266,7 +5291,8 @@
     "concentration": true,
     "ritual": false,
     "classes": [
-      "paladin"
+      "paladin",
+      "artificer"
     ],
     "page": 237,
     "summary": {
@@ -5385,7 +5411,8 @@
       "bard",
       "cleric",
       "druid",
-      "sorcerer"
+      "sorcerer",
+      "artificer"
     ],
     "page": 237,
     "summary": {
@@ -5429,7 +5456,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 237,
     "summary": {
@@ -5699,7 +5727,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 238,
     "summary": {
@@ -5766,7 +5795,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 239,
     "summary": {
@@ -5797,7 +5827,8 @@
     "ritual": false,
     "classes": [
       "bard",
-      "druid"
+      "druid",
+      "artificer"
     ],
     "page": 239,
     "summary": {
@@ -5830,7 +5861,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 239,
     "summary": {
@@ -5939,7 +5971,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 239,
     "summary": {
@@ -6260,7 +6293,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 242,
     "summary": {
@@ -6423,7 +6457,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 156,
     "book": "xge",
@@ -6634,7 +6669,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 243,
     "summary": {
@@ -6821,7 +6857,8 @@
       "bard",
       "cleric",
       "druid",
-      "ranger"
+      "ranger",
+      "artificer"
     ],
     "page": 244,
     "summary": {
@@ -6897,7 +6934,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 156,
     "book": "xge",
@@ -7190,7 +7228,8 @@
     "classes": [
       "bard",
       "cleric",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 245,
     "summary": {
@@ -7298,7 +7337,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 246,
     "summary": {
@@ -7371,7 +7411,8 @@
     "classes": [
       "bard",
       "cleric",
-      "druid"
+      "druid",
+      "artificer"
     ],
     "page": 246,
     "summary": {
@@ -7415,7 +7456,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 107,
     "book": "tce",
@@ -7558,7 +7600,8 @@
     "ritual": false,
     "classes": [
       "cleric",
-      "druid"
+      "druid",
+      "artificer"
     ],
     "page": 248,
     "summary": {
@@ -7850,7 +7893,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 250,
     "summary": {
@@ -7998,7 +8042,8 @@
     "ritual": false,
     "classes": [
       "bard",
-      "druid"
+      "druid",
+      "artificer"
     ],
     "page": 250,
     "summary": {
@@ -8537,7 +8582,8 @@
     "ritual": true,
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 252,
     "summary": {
@@ -8934,7 +8980,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 107,
     "book": "tce",
@@ -9124,7 +9171,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 254,
     "summary": {
@@ -9197,7 +9245,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 254,
     "summary": {
@@ -9302,7 +9351,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 254,
     "summary": {
@@ -9378,7 +9428,8 @@
       "cleric",
       "druid",
       "paladin",
-      "ranger"
+      "ranger",
+      "artificer"
     ],
     "page": 255,
     "summary": {
@@ -9409,7 +9460,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 255,
     "summary": {
@@ -9485,7 +9537,8 @@
       "bard",
       "cleric",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 255,
     "summary": {
@@ -9602,7 +9655,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 107,
     "book": "tce",
@@ -9755,7 +9809,8 @@
       "bard",
       "druid",
       "ranger",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 256,
     "summary": {
@@ -9909,7 +9964,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 256,
     "summary": {
@@ -10063,7 +10119,8 @@
     "ritual": true,
     "classes": [
       "bard",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 257,
     "summary": {
@@ -10099,7 +10156,8 @@
     "ritual": false,
     "classes": [
       "druid",
-      "warlock"
+      "warlock",
+      "artificer"
     ],
     "page": 160,
     "book": "xge",
@@ -10136,7 +10194,8 @@
     "ritual": false,
     "classes": [
       "paladin",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 257,
     "summary": {
@@ -10593,7 +10652,8 @@
       "cleric",
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 259,
     "summary": {
@@ -10668,7 +10728,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 259,
     "summary": {
@@ -11170,7 +11231,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 261,
     "summary": {
@@ -11245,7 +11307,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 262,
     "summary": {
@@ -11521,7 +11584,8 @@
     "concentration": true,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 264,
     "summary": {
@@ -11928,7 +11992,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 266,
     "summary": {
@@ -12181,7 +12246,8 @@
       "bard",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 267,
     "summary": {
@@ -12486,7 +12552,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 270,
     "summary": {
@@ -12559,7 +12626,8 @@
       "cleric",
       "druid",
       "paladin",
-      "ranger"
+      "ranger",
+      "artificer"
     ],
     "page": 270,
     "summary": {
@@ -12631,7 +12699,8 @@
     "classes": [
       "cleric",
       "druid",
-      "paladin"
+      "paladin",
+      "artificer"
     ],
     "page": 270,
     "summary": {
@@ -12662,7 +12731,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 163,
     "book": "xge",
@@ -12804,7 +12874,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 271,
     "summary": {
@@ -12988,7 +13059,8 @@
     "ritual": false,
     "classes": [
       "cleric",
-      "druid"
+      "druid",
+      "artificer"
     ],
     "page": 272,
     "summary": {
@@ -13098,7 +13170,8 @@
     "ritual": false,
     "classes": [
       "cleric",
-      "paladin"
+      "paladin",
+      "artificer"
     ],
     "page": 272,
     "summary": {
@@ -13137,7 +13210,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 272,
     "summary": {
@@ -13209,7 +13283,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "cleric"
+      "cleric",
+      "artificer"
     ],
     "page": 272,
     "summary": {
@@ -13400,7 +13475,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 274,
     "summary": {
@@ -13842,7 +13918,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 275,
     "summary": {
@@ -14023,7 +14100,8 @@
     "classes": [
       "bard",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 165,
     "book": "xge",
@@ -14056,7 +14134,8 @@
     "classes": [
       "bard",
       "druid",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 165,
     "book": "xge",
@@ -14205,7 +14284,8 @@
     "classes": [
       "druid",
       "ranger",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 165,
     "book": "xge",
@@ -14330,7 +14410,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "cleric"
+      "cleric",
+      "artificer"
     ],
     "page": 277,
     "summary": {
@@ -14464,7 +14545,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 277,
     "summary": {
@@ -14773,7 +14855,8 @@
     "classes": [
       "cleric",
       "druid",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 278,
     "summary": {
@@ -14810,7 +14893,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 278,
     "summary": {
@@ -15075,7 +15159,8 @@
     "concentration": true,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 111,
     "book": "tce",
@@ -15525,7 +15610,8 @@
     "classes": [
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 115,
     "book": "tce",
@@ -15650,7 +15736,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 115,
     "book": "tce",
@@ -16106,7 +16193,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "druid"
+      "druid",
+      "artificer"
     ],
     "page": 282,
     "summary": {
@@ -16190,7 +16278,8 @@
       "druid",
       "sorcerer",
       "warlock",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 168,
     "book": "xge",
@@ -16376,7 +16465,8 @@
     "concentration": false,
     "ritual": false,
     "classes": [
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 168,
     "book": "xge",
@@ -16488,7 +16578,8 @@
     "ritual": false,
     "classes": [
       "druid",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 169,
     "book": "xge",
@@ -17130,7 +17221,8 @@
     "classes": [
       "druid",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 287,
     "summary": {
@@ -17328,7 +17420,8 @@
       "druid",
       "ranger",
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 287,
     "summary": {
@@ -17364,7 +17457,8 @@
       "cleric",
       "druid",
       "ranger",
-      "sorcerer"
+      "sorcerer",
+      "artificer"
     ],
     "page": 287,
     "summary": {
@@ -17440,7 +17534,8 @@
     "ritual": false,
     "classes": [
       "sorcerer",
-      "wizard"
+      "wizard",
+      "artificer"
     ],
     "page": 287,
     "summary": {

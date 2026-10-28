@@ -126,6 +126,43 @@ test('browse shows optional features in the class section, tagged', () => {
   expect(actionSections('ranger', 10).map(s => s.id)).not.toContain('opt-optional-ranger');
   expect(actionSections('ranger', 5).find(s => s.id === 'class')!.items.map(f => f.id)).not.toContain('optional-ranger-natures-veil');
 });
+test('browse shows both armor models', () => {
+  const sub = (level: number) => actionSections('artificer', level, 'armorer').find(s => s.id === 'subclass')!.items.map(i => i.id);
+  expect(sub(3)).toEqual(expect.arrayContaining(['arcane-armor', 'thunder-gauntlets', 'defensive-field', 'lightning-launcher']));
+  expect(sub(15)).toEqual(expect.arrayContaining(['perfected-armor-guardian', 'perfected-armor-infiltrator']));
+  // the model picks themselves are passive
+  expect(actionSections('artificer', 3, 'armorer').flatMap(s => s.items.map(i => i.id))).not.toContain('armor-model-guardian');
+});
+test('alchemist browse: heal on level 6, tagged with chemical mastery', () => {
+  const l6 = spellSections('artificer', 15, 'alchemist').find(s => s.id === 'lvl-6')!;
+  expect(l6.items.map(s => s.id)).toEqual(['heal']);
+  expect(l6.tags!['heal']).toBe('Chemical Mastery · Once per long rest, no slot');
+  expect(l6.locked).toBeUndefined();
+});
+// a card is locked when its section is, unless it is one of the section's open (already granted) items
+const cardLocked = (sec: { locked?: string; open?: string[] }, id: string) => !!sec.locked && !sec.open?.includes(id);
+test('alchemist 15, level 5: chemical mastery greater restoration open, list spells still locked', () => {
+  const l5 = spellSections('artificer', 15, 'alchemist').find(s => s.id === 'lvl-5')!;
+  expect(l5.items.map(s => s.id)).toEqual(expect.arrayContaining(['greater-restoration', 'animate-objects']));
+  expect(cardLocked(l5, 'greater-restoration')).toBe(false);
+  expect(cardLocked(l5, 'animate-objects')).toBe(true);
+  expect(l5.locked).toBe('Unlocks at Artificer 17');
+});
+test('alchemist 3, level 6: heal locked until the grant, not the class table', () => {
+  const l6 = spellSections('artificer', 3, 'alchemist').find(s => s.id === 'lvl-6')!;
+  expect(cardLocked(l6, 'heal')).toBe(true);
+  expect(l6.locked).toBe('Unlocks at Artificer 15');
+});
+test('alchemist 15, level 6: heal open', () => {
+  const l6 = spellSections('artificer', 15, 'alchemist').find(s => s.id === 'lvl-6')!;
+  expect(cardLocked(l6, 'heal')).toBe(false);
+});
+test('horizon walker level 7: etherealness locked until ethereal step, then open', () => {
+  const l7 = (level: number) => spellSections('ranger', level, 'horizon-walker').find(s => s.id === 'lvl-7')!;
+  expect(cardLocked(l7(7), 'etherealness')).toBe(false);
+  expect(cardLocked(l7(3), 'etherealness')).toBe(true);
+  expect(l7(3).locked).toBe('Unlocks at Ranger 7');
+});
 test('primal companion is a beast master option', () => {
   const sec = actionSections('ranger', 3, 'beast-master').find(s => s.id === 'subclass')!;
   expect(sec.tags!['optional-beast-master-primal-companion']).toBe('Optional');

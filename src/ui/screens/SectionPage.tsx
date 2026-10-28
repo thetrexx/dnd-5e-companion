@@ -30,7 +30,8 @@ export function SectionPage(p: {
               color={s.motif ? `var(--${s.motif}-line)` : undefined} />
             {s.locked && <p class="locked-note">{s.locked}</p>}
             <div class="sec-grid">
-              <IconGrid items={s.items} tags={s.tags} ringed={s.mine} onPick={(id) => p.onPick(id, s.id)} />
+              <IconGrid items={s.items} tags={s.tags} ringed={s.mine} onPick={(id) => p.onPick(id, s.id)}
+                dimmed={s.locked ? s.items.map((i) => i.id).filter((id) => !s.open?.includes(id)) : undefined} />
             </div>
           </section>
         ))}
