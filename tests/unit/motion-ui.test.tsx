@@ -94,6 +94,54 @@ test('rows off screen hold their next cycle until they scroll into view', async 
   act(() => { r.unmount(); }); // inside act, so the deferred effect cleanups run
   expect(ios.every(io => io.disconnect.mock.calls.length > 0)).toBe(true);
 });
+// a stand-in Animation on fake time: ends after delay + duration of playing time, holds while paused
+class TimedAnim {
+  playState: AnimationPlayState = 'running';
+  finished: Promise<void>; left: number; since = 0; t?: ReturnType<typeof setTimeout>; res = () => {};
+  pause = vi.fn(() => { clearTimeout(this.t); this.left -= Date.now() - this.since; this.playState = 'paused'; });
+  play = vi.fn(() => { this.playState = 'running'; this.arm(); });
+  cancel = vi.fn(() => { clearTimeout(this.t); this.playState = 'idle'; });
+  constructor(o?: KeyframeAnimationOptions) {
+    // jsdom rows measure 0 wide, which leaves some motif timings NaN: give those a second
+    const t = Number(o?.delay ?? 0) + Number(o?.duration ?? 0);
+    this.left = Number.isFinite(t) ? t : 1000;
+    this.finished = new Promise(r => { this.res = r; });
+    this.arm();
+  }
+  arm() { this.since = Date.now(); this.t = setTimeout(() => { this.playState = 'finished'; this.res(); }, this.left); }
+}
+test('a row scrolled off screen pauses its running cycle and resumes it on return', async () => {
+  vi.useFakeTimers();
+  const ios: { cb(es: { isIntersecting: boolean }[]): void; disconnect: ReturnType<typeof vi.fn> }[] = [];
+  vi.stubGlobal('IntersectionObserver', class { observe = vi.fn(); disconnect = vi.fn(); constructor(public cb: () => void) { ios.push(this); } });
+  const anims: TimedAnim[] = [];
+  eproto.animate = vi.fn((_k: unknown, o?: KeyframeAnimationOptions) => { const a = new TimedAnim(o); anims.push(a); return a; });
+  const r = render(<Menu cls="wizard" level={3} />);
+  await vi.advanceTimersByTimeAsync(4000);
+  ios.forEach(io => io.cb([{ isIntersecting: true }]));
+  await vi.advanceTimersByTimeAsync(0);
+  const started = anims.length;
+  expect(started).toBeGreaterThan(0);
+  ios.forEach(io => io.cb([{ isIntersecting: false }]));
+  expect(anims.every(a => a.pause.mock.calls.length === 1)).toBe(true);
+  // off screen: nothing ends, so no wither and no next cycle
+  await vi.advanceTimersByTimeAsync(60000);
+  expect(anims).toHaveLength(started);
+  ios.forEach(io => io.cb([{ isIntersecting: true }]));
+  expect(anims.every(a => a.play.mock.calls.length === 1)).toBe(true);
+  await vi.advanceTimersByTimeAsync(60000);
+  expect(anims.length).toBeGreaterThan(started);
+  act(() => { r.unmount(); }); // inside act, so the deferred effect cleanups run
+  expect(ios.every(io => io.disconnect.mock.calls.length > 0)).toBe(true);
+});
+test('reduced motion: no screen watching for a still row', async () => {
+  const io = vi.fn();
+  vi.stubGlobal('IntersectionObserver', class { observe = vi.fn(); disconnect = vi.fn(); constructor() { io(); } });
+  vi.stubGlobal('matchMedia', () => ({ matches: true }));
+  const r = render(<Menu cls="wizard" level={3} />);
+  await waitFor(() => expect(r.container.querySelector('svg.fx-row path')).toBeTruthy());
+  expect(io).not.toHaveBeenCalled();
+});
 
 describe('backgrounds', () => {
   // never finishes: a background loop (no start delay) holds on its first frame instead of spinning through microtasks

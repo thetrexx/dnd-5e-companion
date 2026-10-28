@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'preact/hooks';
 import type { ClassId } from '../data/types';
-import { onScreen, runLoop } from '../motion/engine';
+import { onScreen, runLoop, watchScreen } from '../motion/engine';
 import { motionMode } from '../motion/mode';
 import { ROW_MOTIFS } from '../motion/rowMotifs';
 import { ROW_TIMING } from '../motion/types';
@@ -17,7 +17,9 @@ export function RowMotif(p: { cls: ClassId }) {
     if (!on || !row) return;
     const ctrl = new AbortController();
     void runLoop(row, svg, gen, ROW_TIMING, {
-      animate: mode === 'animated', alive: () => !ctrl.signal.aborted, signal: ctrl.signal, startDelay: Math.random() * 3500, gate: onScreen(row),
+      animate: mode === 'animated', alive: () => !ctrl.signal.aborted, signal: ctrl.signal, startDelay: Math.random() * 3500,
+      // a new cycle waits for the row to be on screen; a running one pauses while it is off
+      gate: onScreen(row), seen: watchScreen(row),
     });
     return () => ctrl.abort();
   }, [p.cls, on, mode, size]);
