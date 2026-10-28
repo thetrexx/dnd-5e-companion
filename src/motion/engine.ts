@@ -5,7 +5,11 @@ import { range } from './rand';
 const NS = 'http://www.w3.org/2000/svg';
 export interface Rendered { part: Part; el: SVGElement; len?: number }
 // over: an unmasked layer for sparks; without it sparks are dropped
-export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal; gate?(sig?: AbortSignal): Promise<void>; over?: SVGSVGElement }
+// seen: reports the host going off and on screen (returns an unsubscribe); the running cycle pauses while off
+export interface LoopOptions {
+  animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal;
+  gate?(sig?: AbortSignal): Promise<void>; over?: SVGSVGElement; seen?(on: (shown: boolean) => void): () => void;
+}
 
 function el(tag: string, attrs: Record<string, string | number>, parent: Element, cls?: string): SVGElement {
   const e = document.createElementNS(NS, tag) as SVGElement;
@@ -77,6 +81,13 @@ export const onScreen = (el: Element) => (sig?: AbortSignal) => wait(sig, done =
   io.observe(el);
   return () => io.disconnect();
 });
+// reports el going on and off screen until unsubscribed; without IntersectionObserver it reports nothing
+export const watchScreen = (el: Element) => (on: (shown: boolean) => void) => {
+  if (typeof IntersectionObserver !== 'function') return () => {};
+  const io = new IntersectionObserver(es => { const e = es[es.length - 1]; if (e) on(e.isIntersecting); });
+  io.observe(el);
+  return () => io.disconnect();
+};
 const settle = (as: Animation[], sig?: AbortSignal) => wait(sig, done => {
   void Promise.all(as.map(a => a.finished.catch(() => {}))).then(done);
   return () => {};
@@ -101,8 +112,20 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
   };
   if (still) { draw(); return; }
   if (o.startDelay) await sleep(o.startDelay, sig);
-  let live: Animation[] = [];
-  const stop = () => { for (const a of live) a.cancel(); live = []; };
+  if (sig?.aborted) return;
+  let live: Animation[] = [], off = false, held: Animation[] = [];
+  const stop = () => { for (const a of live) a.cancel(); live = []; held = []; };
+  // off screen: pause what is running (paused animations never finish, so the loop waits);
+  // back on: play only those, since playing a finished animation would replay it
+  const freeze = () => { for (const a of live) if (a.playState === 'running') { a.pause(); held.push(a); } };
+  const thaw = () => { for (const a of held) if (a.playState === 'paused') a.play(); held = []; };
+  const unwatch = o.seen?.(shown => {
+    if (shown === !off) return;
+    off = !shown;
+    if (off) freeze(); else thaw();
+  }) ?? (() => {});
+  // the signal unsubscribes at once, not only once the loop unwinds
+  sig?.addEventListener('abort', unwatch);
   try {
     while (alive()) {
       // o.gate holds each new cycle (a row off screen waits to scroll into view)
@@ -137,6 +160,7 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
       });
       const hold = svg.animate([], { duration: end + T.HOLD });
       live = [...grow, ...side, hold];
+      if (off) freeze();
       await settle([...grow, hold], sig);
       if (!alive()) return;
       // wither: a second wave erases everything in the order it grew (movers have already played out)
@@ -148,7 +172,9 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
       });
       const pause = svg.animate([], { duration: range(rnd, 400, 1200) });
       live = [...grow, ...side, ...wither, pause];
+      // the row may have left between the grow ending and the wither starting
+      if (off) freeze();
       await settle([...wither, pause], sig);
     }
-  } finally { stop(); }
+  } finally { stop(); unwatch(); sig?.removeEventListener('abort', unwatch); }
 }

@@ -288,10 +288,97 @@ test('eldritch adept draws from the warlock invocation pool', () => {
   expect(slots.map(s => s.count).sort()).toEqual([1, 2]);
   expect(slots.flatMap(s => s.chosen).sort()).toEqual([...ch.options].sort());   // each counted once
 });
+test('eldritch adept lets a warlock take an invocation whose prerequisites they meet', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 5 }], feats: ['eldritch-adept'], options: ['pact-boon-pact-of-the-blade'] } as Character;
+  const offered = optionSlots(ch).find(s => s.group.id === 'eldritch-adept')!.choices.map(x => x.id);
+  expect(offered).toEqual(expect.arrayContaining(['eldritch-invocations-thirsting-blade', 'eldritch-invocations-mire-the-mind',
+    'eldritch-invocations-improved-pact-weapon', 'eldritch-invocations-agonizing-blast', 'eldritch-invocations-devils-sight']));
+  expect(offered).not.toContain('eldritch-invocations-bewitching-whispers');   // level 7
+  expect(offered).not.toContain('eldritch-invocations-far-scribe');            // level 5, but the tome
+  expect(offered).not.toContain('eldritch-invocations-book-of-ancient-secrets');
+  expect(offered).not.toContain('eldritch-invocations-lifedrinker');           // level 12
+});
+test('eldritch adept judges level prerequisites by warlock level', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 2 }, { cls: 'fighter', level: 10 }], feats: ['eldritch-adept'] } as Character;
+  const offered = optionSlots(ch).find(s => s.group.id === 'eldritch-adept')!.choices.map(x => x.id);
+  expect(offered).not.toContain('eldritch-invocations-mire-the-mind');         // level 5
+  expect(offered).not.toContain('eldritch-invocations-ascendant-step');        // level 9
+  expect(offered).toContain('eldritch-invocations-agonizing-blast');
+  expect(offered).toContain('eldritch-invocations-armor-of-shadows');
+});
+
+// Superior Technique (Tasha's p. 41): the style's own maneuver slot
+const st = 'fighting-style-superior-technique';
+const stSlot = (ch: Character) => optionSlots(ch).find(s => s.group.id === 'superior-technique');
+test('superior technique group shape', () => {
+  expect(g('superior-technique')).toMatchObject({ owner: { kind: 'option', id: st }, from: 'maneuvers' });
+  expect(g('superior-technique').picks).toEqual(Array(20).fill(1));
+});
+test('superior technique opens a one-maneuver slot', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], options: [st] } as Character;
+  expect(stSlot(ch)).toMatchObject({ count: 1, cls: 'fighter' });
+  expect(stSlot(ch)!.choices.map(x => x.id)).toEqual(poolOptions('maneuvers').map(x => x.id));
+  expect(stSlot({ ...ch, options: ['fighting-style-defense'] })).toBeUndefined();
+});
+test('superior technique slot sits right after the fighting style slot holding it', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }], options: [st] } as Character;
+  const slots = optionSlots(ch);
+  const home = slots.findIndex(s => s.chosen.includes(st));
+  expect(slots[home].group.id).toBe('fighting-style');
+  expect(slots.findIndex(s => s.group.id === 'superior-technique')).toBe(home + 1);
+});
+test('superior technique follows the fighter slot in a fighter/paladin multiclass', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }],
+    options: ['fighting-style-defense', st] } as Character;
+  const slots = optionSlots(ch);
+  const fs = slots.filter(s => (s.group.from ?? s.group.id) === 'fighting-style');
+  expect(fs.find(s => s.cls === 'fighter')!.chosen).toEqual([st]);
+  expect(fs.find(s => s.cls === 'paladin')!.chosen).toEqual(['fighting-style-defense']);
+  const i = slots.findIndex(s => s.group.id === 'superior-technique');
+  expect(slots[i].cls).toBe('fighter');
+  expect(slots[i - 1]).toBe(fs.find(s => s.cls === 'fighter'));
+});
+test('superior technique through fighting initiate', () => {
+  const ch = { ...emptyCharacter(), race: 'human', classes: [{ cls: 'wizard', level: 4 }], feats: ['fighting-initiate'], options: [st, 'maneuvers-parry'] } as Character;
+  expect(stSlot(ch)).toMatchObject({ count: 1, chosen: ['maneuvers-parry'] });
+  const secs = charActionSections(ch);
+  expect(secs.find(s => s.id === 'feats')!.items.map(f => f.id)).toContain('maneuvers-parry');
+  expect(secs.find(s => s.id === 'race')?.items.map(f => f.id) ?? []).not.toContain('maneuvers-parry');
+});
+test('superior technique shares the maneuver pool with the battle master', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }],
+    options: [st, 'maneuvers-parry', 'maneuvers-riposte', 'maneuvers-rally', 'maneuvers-trip-attack'] } as Character;
+  const slots = optionSlots(ch).filter(s => (s.group.from ?? s.group.id) === 'maneuvers');
+  expect(slots.map(s => s.count).sort()).toEqual([1, 3]);
+  expect(slots.flatMap(s => s.chosen).sort()).toEqual(['maneuvers-parry', 'maneuvers-rally', 'maneuvers-riposte', 'maneuvers-trip-attack']);   // each once
+  const one = { ...ch, options: [st, 'maneuvers-parry'] };
+  const s1 = optionSlots(one).filter(s => (s.group.from ?? s.group.id) === 'maneuvers');
+  expect(s1.flatMap(s => s.chosen)).toEqual(['maneuvers-parry']);   // one pick fills one slot
+  expect(s1.find(s => !s.chosen.length)!.taken).toEqual(['maneuvers-parry']);
+});
+test('unticking superior technique closes its slot and prune drops the maneuver', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], options: [st, 'maneuvers-parry'] } as Character;
+  expect(prune(ch)).toBe(ch);
+  const off = { ...ch, options: ['fighting-style-defense', 'maneuvers-parry'] };
+  expect(stSlot(off)).toBeUndefined();
+  expect(prune(off).options).toEqual(['fighting-style-defense']);
+  // dropping the class drops the style and, with it, the maneuver
+  expect(prune({ ...ch, classes: [{ cls: 'wizard', level: 1 }] }).options).toEqual([]);
+  // a battle master still owns the pool, so the pick stays, as with Martial Adept
+  const bm = { ...off, classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }] } as Character;
+  expect(prune(bm).options).toEqual(['fighting-style-defense', 'maneuvers-parry']);
+});
+test('the superior technique maneuver shows as a card on the sheet', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], options: [st, 'maneuvers-riposte'] } as Character;
+  const sec = charActionSections(ch).find(s => s.id === 'opt-superior-technique')!;
+  expect(sec.title).toBe('Superior Technique');
+  expect(sec.items.map(f => f.id)).toEqual(['maneuvers-riposte']);
+});
+
 test('tasha feat group shapes', () => {
   expect(g('fighting-initiate')).toMatchObject({ owner: { kind: 'feat', id: 'fighting-initiate' }, from: 'fighting-style', only: g('fighting-style').only });
-  expect(g('eldritch-adept')).toMatchObject({ owner: { kind: 'feat', id: 'eldritch-adept' }, from: 'eldritch-invocations' });
-  expect(g('eldritch-adept').only!.slice().sort()).toEqual(opts('eldritch-invocations').filter(x => !x.prereq).map(x => x.id).sort());
+  expect(g('eldritch-adept')).toMatchObject({ owner: { kind: 'feat', id: 'eldritch-adept' }, from: 'eldritch-invocations', prereqClass: 'warlock' });
+  expect(g('eldritch-adept').only).toBeUndefined();   // the prerequisite rule picks the list, per character
   expect(g('metamagic-adept')).toMatchObject({ owner: { kind: 'feat', id: 'metamagic-adept' }, from: 'metamagic' });
   expect(g('fighting-initiate').picks).toEqual(Array(20).fill(1));
   expect(g('eldritch-adept').picks).toEqual(Array(20).fill(1));

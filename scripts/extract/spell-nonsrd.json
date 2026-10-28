@@ -3984,7 +3984,7 @@
   "book": "tce",
   "summary": {
    "resolution": "attack",
-   "upcast": "level 5: +1d8 fire on hit, 1d8 + mod to the second creature; level 11: 2d8 each; level 17: 3d8 each"
+   "upcast": "level 5: +1d8 fire on hit, 1d8 + mod to the second creature; level 11: 2d8 on hit, 2d8 + mod to the second; level 17: 3d8 on hit, 3d8 + mod to the second"
   }
  },
  {

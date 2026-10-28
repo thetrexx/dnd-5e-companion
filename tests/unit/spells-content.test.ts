@@ -89,6 +89,12 @@ test('scag cantrips cite tasha', () => {
   for (const id of ['booming-blade', 'green-flame-blade', 'lightning-lure', 'sword-burst'])
     expect(DATA.spells.find(s => s.id === id), id).toMatchObject({ book: 'tce', level: 0 });
 });
+test('green-flame blade: the leap keeps the casting modifier at every tier', () => {
+  const s = DATA.spells.find(x => x.id === 'green-flame-blade')!;
+  expect(s.summary!.upcast).toMatch(/2d8 \+ mod/);
+  expect(s.summary!.upcast).toMatch(/3d8 \+ mod/);
+  expect(s.description.join(' ')).toMatch(/jump still adds your modifier/);
+});
 test('summons name their stat block', () => {
   for (const s of tce.filter(x => x.id.startsWith('summon-'))) expect(s.description.join(' '), s.id).toMatch(/Stat block: Tasha's p\. \d+/);
 });

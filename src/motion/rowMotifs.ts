@@ -2,7 +2,7 @@ import type { ClassId } from '../data/types';
 import { ROW_TIMING, type Gen, type Part, type Shape } from './types';
 import { range } from './rand';
 import { circ, curl, heading, UP, wander, xf, type Pt } from './geom';
-import { f1, gear, gogglesD, hammerLocal, line, pop, r1, shape, sign } from './parts';
+import { f1, gear, GEAR_TOOTH, gogglesD, hammerLocal, line, pop, r1, shape, sign } from './parts';
 
 const G = ROW_TIMING.G;
 
@@ -138,9 +138,12 @@ export const ROW_MOTIFS: Partial<Record<ClassId, Gen>> = {
         x = gx + range(rnd, 13, 17); y = mid; r = range(rnd, 5.5, 8); dir = 1; continue;
       }
       // the next gear meshes at a random angle, flipped if it would leave the row
-      const r2 = range(rnd, 4.5, 8), d = r + r2 + 1.9; let a = range(rnd, -.7, .7), ny = y + Math.sin(a) * d;
-      if (ny < r2 * .5 || ny > H - r2 * .5) { a = -a; ny = y + Math.sin(a) * d; }
-      x += Math.cos(a) * d; y = ny; r = r2; dir = -dir;
+      // (the whole gear, teeth included, plus 1px stays inside; a clamped centre keeps the mesh distance)
+      const r2 = range(rnd, 4.5, 8), d = r + r2 + 1.9, m = r2 + GEAR_TOOTH + 1; let a = range(rnd, -.7, .7), ny = y + Math.sin(a) * d;
+      if (ny < m || ny > H - m) { a = -a; ny = y + Math.sin(a) * d; }
+      if (ny < m || ny > H - m) { ny = Math.min(Math.max(ny, m), Math.max(m, H - m)); x += Math.sqrt(Math.max(d * d - (ny - y) ** 2, d * d * .5)); }
+      else x += Math.cos(a) * d;
+      y = ny; r = r2; dir = -dir;
     }
     return P;
   },

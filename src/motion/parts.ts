@@ -30,8 +30,9 @@ export function gearPts(cx: number, cy: number, r: number, teeth: number, tooth:
   return pts;
 }
 // a turning gear: outline, then a brass hub ring and hub dot; dir is +1 or -1, small gears turn faster
+export const GEAR_TOOTH = 1.6;
 export function gear(cx: number, cy: number, r: number, at: number, dir: number, o: { tooth?: number; dur?: number; dense?: number; a0?: number } = {}): Part {
-  const { tooth = 1.6, dur = 1100, dense = 1.3, a0 = 0 } = o, teeth = Math.max(8, Math.round(r * dense / 2) * 2);
+  const { tooth = GEAR_TOOTH, dur = 1100, dense = 1.3, a0 = 0 } = o, teeth = Math.max(8, Math.round(r * dense / 2) * 2);
   return spin(cx, cy, dir * 700 / r, [
     line(gearPts(cx, cy, r, teeth, tooth, a0), at, dur),
     line(circ(cx, cy, r1(r * .4)), at + .1, dur * .45, 'acc'),

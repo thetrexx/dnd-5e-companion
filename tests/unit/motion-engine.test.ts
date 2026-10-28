@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { onScreen, renderParts, runLoop } from '../../src/motion/engine';
+import { onScreen, renderParts, runLoop, watchScreen } from '../../src/motion/engine';
 import { ROW_MOTIFS } from '../../src/motion/rowMotifs';
 import { seeded } from '../../src/motion/rand';
 import { ROW_TIMING, type Part } from '../../src/motion/types';
@@ -262,4 +262,85 @@ test('gate: abort while off screen disconnects the observer and never draws', as
 test('onScreen without IntersectionObserver lets the cycle run at once', async () => {
   vi.stubGlobal('IntersectionObserver', undefined);
   await onScreen(host)();
+});
+
+// a stand-in Animation: ends when told, records pause and play
+const mkAnim = () => {
+  let res = () => {};
+  const a = {
+    playState: 'running' as AnimationPlayState,
+    finished: new Promise<void>(r => { res = r; }),
+    end: () => { a.playState = 'finished'; res(); },
+    cancel: vi.fn(() => { a.playState = 'idle'; }),
+    pause: vi.fn(() => { a.playState = 'paused'; }),
+    play: vi.fn(() => { a.playState = 'running'; }),
+  };
+  return a;
+};
+test('seen: off screen pauses what runs (and what starts while off), on screen plays only those', async () => {
+  const anims: ReturnType<typeof mkAnim>[] = [];
+  eproto.animate = vi.fn(() => { const a = mkAnim(); anims.push(a); return a; });
+  let set = (_: boolean) => {};
+  const unwatch = vi.fn(), ac = new AbortController();
+  const p = runLoop(host, svg, () => [{ kind: 'line', d: 'M0 0L5 5', at: 0, dur: 1000 }], ROW_TIMING,
+    { animate: true, alive: () => true, rnd: seeded(3), signal: ac.signal, seen: cb => { set = cb; return unwatch; } });
+  await new Promise(r => setTimeout(r, 5));
+  expect(anims).toHaveLength(2);
+  const [grow, hold] = anims as [ReturnType<typeof mkAnim>, ReturnType<typeof mkAnim>];
+  // off mid-hold: the hold pauses, the finished grow is left alone
+  grow.end();
+  set(false);
+  expect(hold.pause).toHaveBeenCalledTimes(1);
+  expect(grow.pause).not.toHaveBeenCalled();
+  set(true);
+  expect(hold.play).toHaveBeenCalledTimes(1);
+  expect(grow.play).not.toHaveBeenCalled(); // playing a finished animation would replay it
+  // the hold ends just as the row leaves: the wither it starts begins paused
+  hold.end();
+  set(false);
+  await new Promise(r => setTimeout(r, 5));
+  const later = anims.slice(2);
+  expect(later.length).toBeGreaterThan(0);
+  expect(later.every(a => a.playState === 'paused')).toBe(true);
+  set(true);
+  expect(later.every(a => a.play.mock.calls.length === 1)).toBe(true);
+  expect(hold.play).toHaveBeenCalledTimes(1);
+  ac.abort();
+  expect(unwatch).toHaveBeenCalled(); // at once, not after the loop unwinds
+  await p;
+});
+test('seen: a cycle that starts while already off screen starts fully paused, then plays on screen', async () => {
+  const anims: ReturnType<typeof mkAnim>[] = [];
+  eproto.animate = vi.fn(() => { const a = mkAnim(); anims.push(a); return a; });
+  let set = (_: boolean) => {}, open = () => {};
+  const gate = () => new Promise<void>(r => { open = r; });
+  const ac = new AbortController();
+  const p = runLoop(host, svg, () => [{ kind: 'line', d: 'M0 0L5 5', at: 0, dur: 1000 }, SPIN, SPARK], ROW_TIMING,
+    { animate: true, alive: () => true, rnd: seeded(3), signal: ac.signal, gate, over: mkSvg(), seen: cb => { set = cb; return () => {}; } });
+  await new Promise(r => setTimeout(r, 5));
+  set(false); // off before the first cycle is allowed to start
+  expect(anims).toHaveLength(0);
+  open();
+  await new Promise(r => setTimeout(r, 5));
+  // grow (line, spin's pop), side (spin, spark) and the hold timer: all created, all paused
+  expect(anims.length).toBeGreaterThanOrEqual(5);
+  expect(anims.every(a => a.pause.mock.calls.length === 1 && a.playState === 'paused')).toBe(true);
+  expect(anims.every(a => a.play.mock.calls.length === 0)).toBe(true);
+  set(true);
+  expect(anims.every(a => a.play.mock.calls.length === 1 && a.playState === 'running')).toBe(true);
+  ac.abort();
+  await p;
+});
+test('watchScreen reports on and off screen, and disconnects', () => {
+  FakeIO.all = []; vi.stubGlobal('IntersectionObserver', FakeIO);
+  const seen: boolean[] = [];
+  const unwatch = watchScreen(host)(on => seen.push(on));
+  const [io] = FakeIO.all;
+  expect(io!.observe).toHaveBeenCalledWith(host);
+  io!.cb([{ isIntersecting: true }]); io!.cb([{ isIntersecting: false }]);
+  expect(seen).toEqual([true, false]);
+  unwatch();
+  expect(io!.disconnect).toHaveBeenCalled();
+  vi.stubGlobal('IntersectionObserver', undefined);
+  expect(() => watchScreen(host)(() => {})()).not.toThrow();
 });

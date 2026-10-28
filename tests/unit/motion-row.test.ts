@@ -29,6 +29,20 @@ describe('row motifs', () => {
     const cls = ROW_MOTIFS.druid!(320, 38, seeded(5)).flatMap(p => p.kind === 'pop' ? p.shapes.map(s => s.cls) : []);
     expect(cls).toContain('leaf');
   });
+  test.each([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16])('artificer: every gear, teeth included, stays inside the row (seed %i)', seed => {
+    const W = 358, H = 44, tooth = 1.6;
+    const gears = ROW_MOTIFS.artificer!(W, H, seeded(seed)).flatMap(p => p.kind === 'spin' ? [p] : []);
+    expect(gears.length).toBeGreaterThan(2);
+    for (const s of gears) {
+      const r = 700 / Math.abs(s.deg);   // spin speed is dir * 700 / r
+      expect(s.cy).toBeGreaterThanOrEqual(r + tooth - 1e-6);
+      expect(s.cy).toBeLessThanOrEqual(H - r - tooth + 1e-6);
+      const outline = s.parts.find(p => p.kind === 'line');
+      const ys = [...(outline as { d: string }).d.matchAll(/(-?\d+(?:\.\d+)?) (-?\d+(?:\.\d+)?)/g)].map(m => +m[2]!);
+      expect(Math.min(...ys)).toBeGreaterThanOrEqual(0);
+      expect(Math.max(...ys)).toBeLessThanOrEqual(H);
+    }
+  });
   test.each([1, 2, 3, 4, 5, 6, 7, 8])('artificer: a train of turning gears with brass hubs (seed %i)', seed => {
     const parts = ROW_MOTIFS.artificer!(320, 38, seeded(seed));
     const spins = parts.flatMap(p => p.kind === 'spin' ? [p] : []);

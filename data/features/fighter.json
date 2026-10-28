@@ -1446,7 +1446,7 @@
     "resource": "Superiority dice (pool)",
     "uses": "1 die (d6), refills on short or long rest",
     "description": [
-      "Pick one maneuver from the Maneuvers list (the Battle Master options) and note it. If it calls for a save, the DC is 8 + proficiency bonus + Str or Dex modifier (your choice).",
+      "Pick one maneuver from the Maneuvers list (the Battle Master options) in the Superior Technique slot of the Options step. If it calls for a save, the DC is 8 + proficiency bonus + Str or Dex modifier (your choice).",
       "You also gain one superiority die, a d6, which pays for your maneuvers and adds to any superiority dice you already have. Spent dice return on a short or long rest."
     ],
     "page": 41,

@@ -3351,7 +3351,7 @@
   "green-flame-blade": {
     "description": [
       "You swing the weapon from the casting at one creature within 5 ft as a melee attack. On a hit, it suffers the attack's usual effects, and you can send green fire jumping to a second creature within 5 ft of the target that you can see; it takes fire damage equal to your spellcasting modifier.",
-      "From level 5 a hit also deals 1d8 fire and the jump deals 1d8 + your modifier. Each part gains another 1d8 at level 11 and again at level 17."
+      "From level 5 a hit also deals 1d8 fire and the jump deals 1d8 + your modifier. Both dice gain another 1d8 at level 11 and again at level 17, and the jump still adds your modifier."
     ],
     "material": "a melee weapon of 1 sp or more in value"
   },

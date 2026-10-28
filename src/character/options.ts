@@ -14,8 +14,11 @@ export function optionSlots(ch: Character): OptionSlot[] {
   const add = (group: OptionGroup, level: number, cls?: ClassId, sub?: string) => {
     const picks = (group.picks[level - 1] ?? 0) + (group.bonus ?? []).filter(b => sub !== undefined && b.subclass === sub && b.atLevel <= level).reduce((n, b) => n + b.count, 0);
     if (!picks) return;
+    // with prereqClass (Eldritch Adept), an option with any prerequisite needs levels in that class, judged by that class's level
+    const pre = group.prereqClass ? ch.classes.find(c => c.cls === group.prereqClass)?.level ?? 0 : level;
     const choices = poolOptions(group.from ?? group.id).filter(f =>
-      (!group.only || group.only.includes(f.id)) && (f.prereq?.level ?? 0) <= level && (!f.prereq?.option || ch.options.includes(f.prereq.option)));
+      (!group.only || group.only.includes(f.id)) && (!f.prereq || pre > 0)
+      && (f.prereq?.level ?? 0) <= pre && (!f.prereq?.option || ch.options.includes(f.prereq.option)));
     // an optional group is tick-any: every option reached may be ticked
     const count = group.optional ? choices.length : picks;
     if (!count) return;
@@ -34,7 +37,23 @@ export function optionSlots(ch: Character): OptionSlot[] {
   assign(out, ch.options);
   // a replaced group's picks stay in ch.options, so unticking the replacement brings them back
   const gone = replaced(ch);
-  return out.filter(s => !gone.has(s.group.id));
+  // a chosen option's own group (Superior Technique's maneuver) opens beside the slot holding it, at its level and class
+  const base = out.length;
+  const homeOf = new Map<OptionSlot, OptionSlot>();
+  for (const g of DATA.optionGroups.filter(x => x.owner.kind === 'option')) {
+    const home = out.slice(0, base).find(s => !gone.has(s.group.id) && s.chosen.includes(g.owner.id));
+    if (!home) continue;
+    const n = out.length;
+    add(g, home.level, home.cls);
+    if (out.length > n) homeOf.set(out[n], home);
+  }
+  if (out.length > base) {
+    for (const s of out) { s.chosen = []; s.taken = []; }
+    assign(out, ch.options);
+  }
+  // matched in data order above; now each option-owned slot moves to sit right under its home slot
+  const placed = out.slice(0, base).flatMap(s => [s, ...out.slice(base).filter(x => homeOf.get(x) === s)]);
+  return placed.filter(s => !gone.has(s.group.id));
 }
 
 /**
@@ -107,7 +126,12 @@ export function prune(ch: Character): Character {
   }
   for (const r of raceChain(ch.race)) own(r.options);
   for (const id of new Set(ch.feats)) own(DATA.feats.find(f => f.id === id)?.options ?? []);
-  const options = ch.options.filter(o => { const f = DATA.features.find(x => x.id === o); return f?.source.kind === 'option' && owned.has(f.source.id); });
+  const keep = (o: string) => { const f = DATA.features.find(x => x.id === o); return f?.source.kind === 'option' && owned.has(f.source.id); };
+  let options = ch.options.filter(keep);
+  // a kept option owns its own group's pool too (Superior Technique, the maneuvers), like a feat
+  const before = owned.size;
+  for (const g of DATA.optionGroups) if (g.owner.kind === 'option' && options.includes(g.owner.id)) owned.add(g.from ?? g.id);
+  if (owned.size > before) options = ch.options.filter(keep);
   const step1 = classes.some((c, i) => c !== ch.classes[i]) ? { ...ch, classes } : ch;
   const step2 = options.length === ch.options.length ? step1 : { ...step1, options };
   const keys = new Set(grantSlots(step2).map(s => s.key));
