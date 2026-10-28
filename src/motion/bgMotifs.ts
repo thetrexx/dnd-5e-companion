@@ -238,7 +238,7 @@ export const BG_MOTIFS: Record<BgKey, Gen> = {
     const t0 = R(0, 1), dir = sign(rnd), span = .78, order = ['gear', 'hammer', 'goggles'];
     for (let k = 2; k > 0; k--) { const j = Math.floor(rnd() * (k + 1)); [order[k], order[j]] = [order[j], order[k]]; }
     const slots = [.12, .45, .78].map(f => t0 + dir * span * f);
-    const heading = (t: number) => { const [ax, ay] = on(t - dir * .01), [bx, by] = on(t + dir * .01); return Math.atan2(by - ay, bx - ax); };
+    const dirAt = (t: number) => { const [ax, ay] = on(t - dir * .01), [bx, by] = on(t + dir * .01); return Math.atan2(by - ay, bx - ax); };
     // the wire draws a whole loop in WIRE ms whatever the screen size; the timings below keep every start inside the grow phase
     const WIRE = 4400, wire = (from: Pt, to: Pt, tA: number, tB: number, keep: (p: Pt) => boolean): Pt[] => {
       const pts: Pt[] = [from];
@@ -261,23 +261,23 @@ export const BG_MOTIFS: Record<BgKey, Gen> = {
     };
     let prevT = t0 - dir * .06, prevExit = on(prevT), prevC: Pt | null = null, prevExt = 0, clock = 0;
     order.forEach((kind, k) => {
-      const t = slots[k], c = on(t), h = heading(t), loc = (u: number, v = 0) => xf([[u, v]], c[0], c[1], h, 1)[0];
-      let ext: number, entry: Pt, exit: Pt, draw: () => number;
+      const t = slots[k], c = on(t), h = dirAt(t), loc = (u: number, v = 0) => xf([[u, v]], c[0], c[1], h, 1)[0];
+      let ext: number, entry: Pt, exit: Pt, draw: (start: number) => number;
       if (kind === 'gear') {
         const r = R(30, 40); ext = r + 8; entry = loc(-r); exit = loc(r);
         // built already turned to the wire's heading, so the outline starts where the wire meets it
-        draw = () => { P.push(gear(c[0], c[1], r, at(clock), 1, { tooth: 5, dur: 1800, dense: .55, a0: h })); return 1800; };
+        draw = (start) => { P.push(gear(c[0], c[1], r, at(start), 1, { tooth: 5, dur: 1800, dense: .55, a0: h })); return 1800; };
       } else if (kind === 'hammer') {
         const s = R(70, 90), outline = xf(hammerLocal(s), c[0], c[1], h, 1); ext = s * .55; entry = outline[0]; exit = loc(s * .5);
-        draw = () => { P.push(line(outline, at(clock), 1500)); return 1500; };
+        draw = (start) => { P.push(line(outline, at(start), 1500)); return 1500; };
       } else {
         const r = R(15, 19); ext = 2.6 * r + 14; entry = loc(-2.3 * r - 14); exit = loc(2.3 * r + 14);
-        draw = () => {
-          P.push(line(gogglesD(c[0], c[1], r, 14, h), at(clock), 1750));
+        draw = (start) => {
+          P.push(line(gogglesD(c[0], c[1], r, 14, h), at(start), 1750));
           // a glint on each lens
           for (const lx of [-1.3 * r, 1.3 * r]) {
             const [x, y] = loc(lx);
-            P.push(pop(x, y, h * 57.3, at(clock + 1550), [shape('path', { d: `M${f1(-r * .45)} ${f1(-r * .1)}A${f1(r * .5)} ${f1(r * .5)} 0 0 1 ${f1(r * .1)} ${f1(-r * .5)}` }, 'acc')]));
+            P.push(pop(x, y, h * 57.3, at(start + 1550), [shape('path', { d: `M${f1(-r * .45)} ${f1(-r * .1)}A${f1(r * .5)} ${f1(r * .5)} 0 0 1 ${f1(r * .1)} ${f1(-r * .5)}` }, 'acc')]));
           }
           return 1750;
         };
@@ -285,7 +285,7 @@ export const BG_MOTIFS: Record<BgKey, Gen> = {
       const pc = prevC, pe = prevExt, wd = WIRE * Math.abs(t - prevT);
       const keep = (p: Pt) => Math.hypot(p[0] - c[0], p[1] - c[1]) > ext && (!pc || Math.hypot(p[0] - pc[0], p[1] - pc[1]) > pe);
       P.push(line(wire(prevExit, entry, prevT, t, keep), at(clock), wd)); clock += wd * .92;
-      burst(clock + draw());
+      burst(clock + draw(clock));
       clock += kind === 'gear' ? 1350 : kind === 'hammer' ? 1200 : 1400;
       prevC = c; prevExt = ext; prevExit = exit; prevT = t;
     });

@@ -39,12 +39,13 @@ test('Off removes every pattern; Medium brings them back', async ({ page }) => {
   await page.goto('./#/settings');
   await page.getByText('Off', { exact: true }).click();
   await expect(page.getByRole('radio', { name: 'Off' })).toBeChecked();
-  for (const hash of ['./#/menu/druid/5', './#/menu/warlock/5', './#/menu/sorcerer/5', './']) {
+  for (const hash of ['./#/menu/druid/5', './#/menu/warlock/5', './#/menu/sorcerer/5', './#/menu/artificer/5', './']) {
     await page.goto(hash);
     await expect(page.locator('a.row, a.cls, button').first()).toBeVisible();
     await page.waitForTimeout(1000);
     await expect(page.locator('svg.fx-row'), hash).toHaveCount(0);
     await expect(page.locator('svg.fx-bg'), hash).toHaveCount(0);
+    await expect(page.locator('svg.fx-sparks'), hash).toHaveCount(0);
     await expect(page.locator('canvas'), hash).toHaveCount(0);
     expect(await anims(page), hash).toBe(0);
   }
@@ -78,5 +79,13 @@ test('320px: menu fits with motion layers', async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 640 });
   await page.goto('./#/menu/bard/20');
   await expect(page.locator('a.row').first()).toBeVisible();
+  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+});
+
+test('320px: Artificer menu fits with motion layers, sparks drawn', async ({ page }) => {
+  await page.setViewportSize({ width: 320, height: 640 });
+  await page.goto('./#/menu/artificer/20');
+  await expect(page.locator('a.row').first()).toBeVisible();
+  await expect(page.locator('svg.fx-sparks')).toHaveCount(1);
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
 });

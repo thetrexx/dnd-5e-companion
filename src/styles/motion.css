@@ -22,7 +22,7 @@
 .fx-blood{opacity:calc(var(--motion-i, 1) * var(--blood-o));filter:blur(var(--blood-blur))}
 .fx-cells{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--cells-o))}
 .fx-bg-wrap{position:fixed;inset:0;pointer-events:none}
-.fx-sparks{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * .85)}
+.fx-sparks{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--sparks-o))}
 .fx-sparks .spark{fill:var(--artificer-spark);stroke:none;filter:drop-shadow(0 0 2px var(--artificer-spark-glow));opacity:0}
 .fx-cells .cell{fill:var(--sorcerer-cell)}
 .fx-cells .cell-core{fill:var(--sorcerer-cell-core)}
