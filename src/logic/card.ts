@@ -1,3 +1,4 @@
+import { DATA } from '../data';
 import type { BookId, Cost, Spell } from '../data/types';
 
 export interface Explainer { title: string; body: string }
@@ -71,4 +72,10 @@ export const BOOK_LABEL: Record<BookId, string> = { phb: 'PHB', xge: 'Xanathar\'
 /** The closing line of a card; a record with no book is from the PHB. */
 export function bookRef(r: { book?: BookId; page: number }): string {
   return `Full rules: ${BOOK_LABEL[r.book ?? 'phb']} p. ${r.page}`;
+}
+
+/** What an optional feature replaces, by feature name, else option group name: 'Favored Enemy'. */
+export function replacedNames(ids: string[]): string {
+  // several subclasses' features can share a name (every domain's Divine Strike): name each once, first-seen order
+  return [...new Set(ids.map(id => DATA.features.find(f => f.id === id)?.name ?? DATA.optionGroups.find(g => g.id === id)?.name ?? id))].join(', ');
 }

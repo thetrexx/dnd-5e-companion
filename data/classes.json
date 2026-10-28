@@ -7,7 +7,9 @@
     "plainIcon": "https://bg3.wiki/w/images/e/e9/Class_Barbarian_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Primal Path",
-    "options": []
+    "options": [
+      "optional-barbarian"
+    ]
   },
   {
     "id": "bard",
@@ -84,7 +86,9 @@
     "plainIcon": "https://bg3.wiki/w/images/e/ea/Class_Bard_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Bard College",
-    "options": []
+    "options": [
+      "optional-bard"
+    ]
   },
   {
     "id": "cleric",
@@ -142,7 +146,9 @@
     "plainIcon": "https://bg3.wiki/w/images/b/b0/Class_Cleric_Plain_Icon.png",
     "subclassLevel": 1,
     "subclassLabel": "Divine Domain",
-    "options": []
+    "options": [
+      "optional-cleric"
+    ]
   },
   {
     "id": "druid",
@@ -200,7 +206,9 @@
     "plainIcon": "https://bg3.wiki/w/images/8/88/Class_Druid_Plain_Icon.png",
     "subclassLevel": 2,
     "subclassLabel": "Druid Circle",
-    "options": []
+    "options": [
+      "optional-druid"
+    ]
   },
   {
     "id": "fighter",
@@ -222,7 +230,9 @@
     "plainIcon": "https://bg3.wiki/w/images/0/02/Class_Monk_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Monastic Tradition",
-    "options": []
+    "options": [
+      "optional-monk"
+    ]
   },
   {
     "id": "paladin",
@@ -281,7 +291,8 @@
     "subclassLevel": 3,
     "subclassLabel": "Sacred Oath",
     "options": [
-      "fighting-style-paladin"
+      "fighting-style-paladin",
+      "optional-paladin"
     ]
   },
   {
@@ -362,7 +373,8 @@
     "options": [
       "fighting-style-ranger",
       "favored-enemy",
-      "natural-explorer"
+      "natural-explorer",
+      "optional-ranger"
     ]
   },
   {
@@ -373,7 +385,9 @@
     "plainIcon": "https://bg3.wiki/w/images/f/f0/Class_Rogue_Plain_Icon.png",
     "subclassLevel": 3,
     "subclassLabel": "Roguish Archetype",
-    "options": []
+    "options": [
+      "optional-rogue"
+    ]
   },
   {
     "id": "sorcerer",
@@ -451,7 +465,8 @@
     "subclassLevel": 1,
     "subclassLabel": "Sorcerous Origin",
     "options": [
-      "metamagic"
+      "metamagic",
+      "optional-sorcerer"
     ]
   },
   {
@@ -531,7 +546,8 @@
     "subclassLabel": "Otherworldly Patron",
     "options": [
       "eldritch-invocations",
-      "pact-boon"
+      "pact-boon",
+      "optional-warlock"
     ]
   },
   {
@@ -590,6 +606,8 @@
     "plainIcon": "https://bg3.wiki/w/images/5/55/Class_Wizard_Plain_Icon.png",
     "subclassLevel": 2,
     "subclassLabel": "Arcane Tradition",
-    "options": []
+    "options": [
+      "optional-wizard"
+    ]
   }
 ]

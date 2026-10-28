@@ -143,6 +143,24 @@
     "options": []
   },
   {
+    "id": "psi-warrior",
+    "cls": "fighter",
+    "name": "Psi Warrior",
+    "page": 42,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "rune-knight",
+    "cls": "fighter",
+    "name": "Rune Knight",
+    "page": 44,
+    "book": "tce",
+    "options": [
+      "runes"
+    ]
+  },
+  {
     "id": "circle-of-the-land",
     "cls": "druid",
     "name": "Circle of the Land",
@@ -517,6 +535,14 @@
     "hotbarIcon": "https://bg3.wiki/w/images/6/6b/Class_Barbarian_Wild_Magic_Hotbar_Icon.png"
   },
   {
+    "id": "path-of-the-beast",
+    "cls": "barbarian",
+    "name": "Path of the Beast",
+    "page": 24,
+    "book": "tce",
+    "options": []
+  },
+  {
     "id": "path-of-giants",
     "cls": "barbarian",
     "name": "Path of the Giant",
@@ -612,6 +638,22 @@
     "name": "College of Whispers",
     "page": 16,
     "book": "xge",
+    "options": []
+  },
+  {
+    "id": "college-of-creation",
+    "cls": "bard",
+    "name": "College of Creation",
+    "page": 28,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "college-of-eloquence",
+    "cls": "bard",
+    "name": "College of Eloquence",
+    "page": 29,
+    "book": "tce",
     "options": []
   },
   {
@@ -1174,6 +1216,165 @@
     "options": []
   },
   {
+    "id": "order-domain",
+    "cls": "cleric",
+    "name": "Order Domain",
+    "page": 31,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "command",
+          "atLevel": 1
+        },
+        {
+          "spell": "heroism",
+          "atLevel": 1
+        },
+        {
+          "spell": "hold-person",
+          "atLevel": 3
+        },
+        {
+          "spell": "zone-of-truth",
+          "atLevel": 3
+        },
+        {
+          "spell": "mass-healing-word",
+          "atLevel": 5
+        },
+        {
+          "spell": "slow",
+          "atLevel": 5
+        },
+        {
+          "spell": "compulsion",
+          "atLevel": 7
+        },
+        {
+          "spell": "locate-creature",
+          "atLevel": 7
+        },
+        {
+          "spell": "commune",
+          "atLevel": 9
+        },
+        {
+          "spell": "dominate-person",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "peace-domain",
+    "cls": "cleric",
+    "name": "Peace Domain",
+    "page": 32,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "heroism",
+          "atLevel": 1
+        },
+        {
+          "spell": "sanctuary",
+          "atLevel": 1
+        },
+        {
+          "spell": "aid",
+          "atLevel": 3
+        },
+        {
+          "spell": "warding-bond",
+          "atLevel": 3
+        },
+        {
+          "spell": "beacon-of-hope",
+          "atLevel": 5
+        },
+        {
+          "spell": "sending",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-purity",
+          "atLevel": 7
+        },
+        {
+          "spell": "otilukes-resilient-sphere",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-restoration",
+          "atLevel": 9
+        },
+        {
+          "spell": "rarys-telepathic-bond",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "twilight-domain",
+    "cls": "cleric",
+    "name": "Twilight Domain",
+    "page": 34,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "faerie-fire",
+          "atLevel": 1
+        },
+        {
+          "spell": "sleep",
+          "atLevel": 1
+        },
+        {
+          "spell": "moonbeam",
+          "atLevel": 3
+        },
+        {
+          "spell": "see-invisibility",
+          "atLevel": 3
+        },
+        {
+          "spell": "aura-of-vitality",
+          "atLevel": 5
+        },
+        {
+          "spell": "leomunds-tiny-hut",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-life",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7
+        },
+        {
+          "spell": "circle-of-power",
+          "atLevel": 9
+        },
+        {
+          "spell": "mislead",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
@@ -1241,6 +1442,59 @@
     "hotbarIcon": "https://bg3.wiki/w/images/3/39/Class_Druid_Stars_Hotbar_Icon.png"
   },
   {
+    "id": "circle-of-wildfire",
+    "cls": "druid",
+    "name": "Circle of Wildfire",
+    "page": 39,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "circle",
+      "grants": [
+        {
+          "spell": "burning-hands",
+          "atLevel": 2
+        },
+        {
+          "spell": "cure-wounds",
+          "atLevel": 2
+        },
+        {
+          "spell": "flaming-sphere",
+          "atLevel": 3
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3
+        },
+        {
+          "spell": "plant-growth",
+          "atLevel": 5
+        },
+        {
+          "spell": "revivify",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-life",
+          "atLevel": 7
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 7
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9
+        },
+        {
+          "spell": "mass-cure-wounds",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "circle-of-dreams",
     "cls": "druid",
     "name": "Circle of Dreams",
@@ -1305,6 +1559,22 @@
     "name": "Way of the Sun Soul",
     "page": 35,
     "book": "xge",
+    "options": []
+  },
+  {
+    "id": "way-of-mercy",
+    "cls": "monk",
+    "name": "Way of Mercy",
+    "page": 49,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "way-of-the-astral-self",
+    "cls": "monk",
+    "name": "Way of the Astral Self",
+    "page": 50,
+    "book": "tce",
     "options": []
   },
   {
@@ -1681,6 +1951,112 @@
     "options": []
   },
   {
+    "id": "oath-of-glory",
+    "cls": "paladin",
+    "name": "Oath of Glory",
+    "page": 53,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "guiding-bolt",
+          "atLevel": 3
+        },
+        {
+          "spell": "heroism",
+          "atLevel": 3
+        },
+        {
+          "spell": "enhance-ability",
+          "atLevel": 5
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 5
+        },
+        {
+          "spell": "haste",
+          "atLevel": 9
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 9
+        },
+        {
+          "spell": "compulsion",
+          "atLevel": 13
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 13
+        },
+        {
+          "spell": "commune",
+          "atLevel": 17
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "oath-of-the-watchers",
+    "cls": "paladin",
+    "name": "Oath of the Watchers",
+    "page": 54,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "oath",
+      "grants": [
+        {
+          "spell": "alarm",
+          "atLevel": 3
+        },
+        {
+          "spell": "detect-magic",
+          "atLevel": 3
+        },
+        {
+          "spell": "moonbeam",
+          "atLevel": 5
+        },
+        {
+          "spell": "see-invisibility",
+          "atLevel": 5
+        },
+        {
+          "spell": "counterspell",
+          "atLevel": 9
+        },
+        {
+          "spell": "nondetection",
+          "atLevel": 9
+        },
+        {
+          "spell": "aura-of-purity",
+          "atLevel": 13
+        },
+        {
+          "spell": "banishment",
+          "atLevel": 13
+        },
+        {
+          "spell": "hold-monster",
+          "atLevel": 17
+        },
+        {
+          "spell": "scrying",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "hunter",
     "cls": "ranger",
     "name": "Hunter",
@@ -1698,7 +2074,9 @@
     "cls": "ranger",
     "name": "Beast Master",
     "page": 93,
-    "options": [],
+    "options": [
+      "optional-beast-master"
+    ],
     "hotbarIcon": "https://bg3.wiki/w/images/b/bd/Class_Ranger_Beast_Master_Hotbar_Icon.png"
   },
   {
@@ -1773,6 +2151,39 @@
     },
     "options": [],
     "hotbarIcon": "https://bg3.wiki/w/images/3/3f/Class_Ranger_Swarmkeeper_Hotbar_Icon.png"
+  },
+  {
+    "id": "fey-wanderer",
+    "cls": "ranger",
+    "name": "Fey Wanderer",
+    "page": 58,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "charm-person",
+          "atLevel": 3
+        },
+        {
+          "spell": "misty-step",
+          "atLevel": 5
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 9
+        },
+        {
+          "spell": "dimension-door",
+          "atLevel": 13
+        },
+        {
+          "spell": "mislead",
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "horizon-walker",
@@ -2270,6 +2681,14 @@
     "hotbarIcon": "https://bg3.wiki/w/images/9/91/Class_Wizard_Bladesinging_Hotbar_Icon.png"
   },
   {
+    "id": "order-of-scribes",
+    "cls": "wizard",
+    "name": "Order of Scribes",
+    "page": 77,
+    "book": "tce",
+    "options": []
+  },
+  {
     "id": "inquisitive",
     "cls": "rogue",
     "name": "Inquisitive",
@@ -2291,6 +2710,22 @@
     "name": "Scout",
     "page": 47,
     "book": "xge",
+    "options": []
+  },
+  {
+    "id": "phantom",
+    "cls": "rogue",
+    "name": "Phantom",
+    "page": 62,
+    "book": "tce",
+    "options": []
+  },
+  {
+    "id": "soulknife",
+    "cls": "rogue",
+    "name": "Soulknife",
+    "page": 63,
+    "book": "tce",
     "options": []
   },
   {
@@ -2335,6 +2770,116 @@
     "options": [
       "divine-magic-affinity"
     ]
+  },
+  {
+    "id": "aberrant-mind",
+    "cls": "sorcerer",
+    "name": "Aberrant Mind",
+    "page": 66,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "arms-of-hadar",
+          "atLevel": 1
+        },
+        {
+          "spell": "dissonant-whispers",
+          "atLevel": 1
+        },
+        {
+          "spell": "mind-sliver",
+          "atLevel": 1
+        },
+        {
+          "spell": "calm-emotions",
+          "atLevel": 3
+        },
+        {
+          "spell": "detect-thoughts",
+          "atLevel": 3
+        },
+        {
+          "spell": "hunger-of-hadar",
+          "atLevel": 5
+        },
+        {
+          "spell": "sending",
+          "atLevel": 5
+        },
+        {
+          "spell": "evards-black-tentacles",
+          "atLevel": 7
+        },
+        {
+          "spell": "summon-aberration",
+          "atLevel": 7
+        },
+        {
+          "spell": "rarys-telepathic-bond",
+          "atLevel": 9
+        },
+        {
+          "spell": "telekinesis",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "clockwork-soul",
+    "cls": "sorcerer",
+    "name": "Clockwork Soul",
+    "page": 68,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "subclass",
+      "grants": [
+        {
+          "spell": "alarm",
+          "atLevel": 1
+        },
+        {
+          "spell": "protection-from-evil-and-good",
+          "atLevel": 1
+        },
+        {
+          "spell": "aid",
+          "atLevel": 3
+        },
+        {
+          "spell": "lesser-restoration",
+          "atLevel": 3
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 5
+        },
+        {
+          "spell": "protection-from-energy",
+          "atLevel": 5
+        },
+        {
+          "spell": "freedom-of-movement",
+          "atLevel": 7
+        },
+        {
+          "spell": "summon-construct",
+          "atLevel": 7
+        },
+        {
+          "spell": "greater-restoration",
+          "atLevel": 9
+        },
+        {
+          "spell": "wall-of-force",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "the-celestial",
@@ -2388,6 +2933,200 @@
       ]
     },
     "options": []
+  },
+  {
+    "id": "the-fathomless",
+    "cls": "warlock",
+    "name": "The Fathomless",
+    "page": 72,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "create-or-destroy-water",
+          "atLevel": 1
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 1
+        },
+        {
+          "spell": "gust-of-wind",
+          "atLevel": 3
+        },
+        {
+          "spell": "silence",
+          "atLevel": 3
+        },
+        {
+          "spell": "lightning-bolt",
+          "atLevel": 5
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7
+        },
+        {
+          "spell": "summon-elemental",
+          "atLevel": 7,
+          "uses": "Water elemental only"
+        },
+        {
+          "spell": "bigbys-hand",
+          "atLevel": 9,
+          "uses": "Appears as a tentacle"
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
+  },
+  {
+    "id": "the-genie",
+    "cls": "warlock",
+    "name": "The Genie",
+    "page": 73,
+    "book": "tce",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "detect-evil-and-good",
+          "atLevel": 1
+        },
+        {
+          "spell": "phantasmal-force",
+          "atLevel": 3
+        },
+        {
+          "spell": "create-food-and-water",
+          "atLevel": 5
+        },
+        {
+          "spell": "phantasmal-killer",
+          "atLevel": 7
+        },
+        {
+          "spell": "creation",
+          "atLevel": 9
+        },
+        {
+          "spell": "wish",
+          "atLevel": 17
+        },
+        {
+          "spell": "sanctuary",
+          "atLevel": 1,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "spike-growth",
+          "atLevel": 3,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "meld-into-stone",
+          "atLevel": 5,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "stone-shape",
+          "atLevel": 7,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "wall-of-stone",
+          "atLevel": 9,
+          "option": "genie-kind-dao"
+        },
+        {
+          "spell": "thunderwave",
+          "atLevel": 1,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "gust-of-wind",
+          "atLevel": 3,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "wind-wall",
+          "atLevel": 5,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "greater-invisibility",
+          "atLevel": 7,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "seeming",
+          "atLevel": 9,
+          "option": "genie-kind-djinni"
+        },
+        {
+          "spell": "burning-hands",
+          "atLevel": 1,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "scorching-ray",
+          "atLevel": 3,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "fireball",
+          "atLevel": 5,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "fire-shield",
+          "atLevel": 7,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "flame-strike",
+          "atLevel": 9,
+          "option": "genie-kind-efreeti"
+        },
+        {
+          "spell": "fog-cloud",
+          "atLevel": 1,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "blur",
+          "atLevel": 3,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "sleet-storm",
+          "atLevel": 5,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "control-water",
+          "atLevel": 7,
+          "option": "genie-kind-marid"
+        },
+        {
+          "spell": "cone-of-cold",
+          "atLevel": 9,
+          "option": "genie-kind-marid"
+        }
+      ]
+    },
+    "options": [
+      "genie-kind"
+    ]
   },
   {
     "id": "war-magic",

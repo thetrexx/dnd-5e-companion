@@ -25,7 +25,11 @@ test('wizard spell sections', () => {
   expect(sp.find(s => s.id === 'lvl-3')!.locked).toBe('Unlocks at Wizard 5');
   expect(sp.find(s => s.id === 'lvl-2')!.locked).toBeUndefined();
   expect(sp.find(s => s.id === 'lvl-2')!.subtitle).toBe('Wizard');
-  expect(sp.flatMap(s => s.items).every(i => (i as Spell).classes.includes('wizard'))).toBe(true);
+  // the rest come from the expanded list, tagged Optional
+  for (const s of sp) for (const i of s.items as Spell[]) if (!i.classes.includes('wizard')) {
+    expect(i.optionalLists).toContain('wizard');
+    expect(s.tags![i.id]).toBe('Optional');
+  }
 });
 
 test('fighter has no spell sections', () => {
@@ -50,12 +54,14 @@ test('subclass spell sections', () => {
   expect(land.items.some(i => i.id === 'hold-person')).toBe(true);
   expect(land.items.filter(i => i.id === 'hold-person')).toHaveLength(1);
   expect(land.tags?.['hold-person']).toBe('Circle · Arctic');
-  expect(spellSections('druid', 3).find(s => s.id === 'lvl-2')!.tags).toBeUndefined();
+  // only the expanded list's spells carry a tag
+  expect(Object.values(spellSections('druid', 3).find(s => s.id === 'lvl-2')!.tags!).every(t => t === 'Optional')).toBe(true);
 });
 
 test('option and subclass action sections', () => {
   const fa = actionSections('fighter', 1);
-  expect(fa.find(s => s.id === 'opt-fighting-style')!.items.map(i => i.id)).toEqual(['fighting-style-protection']);
+  expect(fa.find(s => s.id === 'opt-fighting-style')!.items.map(i => i.id)).toEqual(['fighting-style-interception', 'fighting-style-protection', 'fighting-style-superior-technique']);
+  expect(fa.find(s => s.id === 'opt-fighting-style')!.tags).toEqual({ 'fighting-style-interception': 'Optional', 'fighting-style-superior-technique': 'Optional' });
   expect(fa.find(s => s.id === 'opt-fighting-style')!.title).toBe('Fighting Style');
   expect(actionSections('fighter', 3, 'eldritch-knight').find(s => s.id === 'subclass')!.items.map(i => i.id)).toContain('weapon-bond');
   expect(actionSections('fighter', 3).some(s => s.id === 'subclass')).toBe(false);
@@ -109,3 +115,31 @@ test('swarmkeeper spells tagged with the subclass name', () => {
 });
 test('star map guiding bolt shows its limit', () =>
   expect(spellSections('druid', 2, 'circle-of-stars').find(x => x.id === 'lvl-1')!.tags!['guiding-bolt']).toMatch(/^Star Map · /));
+
+test('browse shows optional features in the class section, tagged', () => {
+  const sec = actionSections('ranger', 10).find(s => s.id === 'class')!;
+  expect(sec.items.map(f => f.id)).toEqual(expect.arrayContaining(['optional-ranger-favored-foe', 'hide-in-plain-sight', 'optional-ranger-natures-veil', 'deft-explorer-tireless']));
+  expect(sec.items.map(f => f.id)).not.toContain('optional-ranger-deft-explorer');   // passive
+  expect(sec.tags!['optional-ranger-favored-foe']).toBe('Optional');
+  expect(sec.tags!['deft-explorer-tireless']).toBe('Optional');
+  expect(sec.tags!['hide-in-plain-sight']).toBeUndefined();
+  expect(actionSections('ranger', 10).map(s => s.id)).not.toContain('opt-optional-ranger');
+  expect(actionSections('ranger', 5).find(s => s.id === 'class')!.items.map(f => f.id)).not.toContain('optional-ranger-natures-veil');
+});
+test('primal companion is a beast master option', () => {
+  const sec = actionSections('ranger', 3, 'beast-master').find(s => s.id === 'subclass')!;
+  expect(sec.tags!['optional-beast-master-primal-companion']).toBe('Optional');
+  expect(sec.items.map(f => f.id)).toContain('rangers-companion');
+});
+test('browse shows expanded spells tagged Optional', () => {
+  const l3 = spellSections('cleric', 5).find(x => x.id === 'lvl-3')!;
+  expect(l3.items.map(s => s.id)).toContain('aura-of-vitality');
+  expect(l3.tags!['aura-of-vitality']).toBe('Optional');
+  // a base-list spell keeps no tag
+  expect(l3.tags?.['revivify']).toBeUndefined();
+});
+test('browse lists the fixed spells of optional options, tagged Optional', () => {
+  const l1 = spellSections('ranger', 5).find(x => x.id === 'lvl-1')!;
+  expect(l1.items.map(s => s.id)).toContain('speak-with-animals');
+  expect(l1.tags!['speak-with-animals']).toContain('Optional');
+});

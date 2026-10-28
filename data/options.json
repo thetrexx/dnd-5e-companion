@@ -34,6 +34,19 @@
         "atLevel": 10,
         "count": 1
       }
+    ],
+    "only": [
+      "fighting-style-archery",
+      "fighting-style-defense",
+      "fighting-style-dueling",
+      "fighting-style-great-weapon-fighting",
+      "fighting-style-protection",
+      "fighting-style-two-weapon-fighting",
+      "fighting-style-blind-fighting",
+      "fighting-style-interception",
+      "fighting-style-superior-technique",
+      "fighting-style-thrown-weapon-fighting",
+      "fighting-style-unarmed-fighting"
     ]
   },
   {
@@ -310,7 +323,10 @@
       "fighting-style-defense",
       "fighting-style-dueling",
       "fighting-style-great-weapon-fighting",
-      "fighting-style-protection"
+      "fighting-style-protection",
+      "fighting-style-blessed-warrior",
+      "fighting-style-blind-fighting",
+      "fighting-style-interception"
     ]
   },
   {
@@ -347,7 +363,10 @@
       "fighting-style-archery",
       "fighting-style-defense",
       "fighting-style-dueling",
-      "fighting-style-two-weapon-fighting"
+      "fighting-style-two-weapon-fighting",
+      "fighting-style-blind-fighting",
+      "fighting-style-druidic-warrior",
+      "fighting-style-thrown-weapon-fighting"
     ]
   },
   {
@@ -379,6 +398,157 @@
       9,
       9
     ]
+  },
+  {
+    "id": "martial-adept",
+    "name": "Maneuvers",
+    "owner": {
+      "kind": "feat",
+      "id": "martial-adept"
+    },
+    "picks": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "from": "maneuvers"
+  },
+  {
+    "id": "fighting-initiate",
+    "name": "Fighting Style",
+    "owner": {
+      "kind": "feat",
+      "id": "fighting-initiate"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "fighting-style",
+    "only": [
+      "fighting-style-archery",
+      "fighting-style-defense",
+      "fighting-style-dueling",
+      "fighting-style-great-weapon-fighting",
+      "fighting-style-protection",
+      "fighting-style-two-weapon-fighting",
+      "fighting-style-blind-fighting",
+      "fighting-style-interception",
+      "fighting-style-superior-technique",
+      "fighting-style-thrown-weapon-fighting",
+      "fighting-style-unarmed-fighting"
+    ]
+  },
+  {
+    "id": "eldritch-adept",
+    "name": "Eldritch Invocations",
+    "owner": {
+      "kind": "feat",
+      "id": "eldritch-adept"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "from": "eldritch-invocations",
+    "only": [
+      "eldritch-invocations-armor-of-shadows",
+      "eldritch-invocations-beast-speech",
+      "eldritch-invocations-beguiling-influence",
+      "eldritch-invocations-devils-sight",
+      "eldritch-invocations-eldritch-sight",
+      "eldritch-invocations-eyes-of-the-rune-keeper",
+      "eldritch-invocations-fiendish-vigor",
+      "eldritch-invocations-gaze-of-two-minds",
+      "eldritch-invocations-mask-of-many-faces",
+      "eldritch-invocations-misty-visions",
+      "eldritch-invocations-thief-of-five-fates",
+      "eldritch-invocations-eldritch-mind"
+    ]
+  },
+  {
+    "id": "metamagic-adept",
+    "name": "Metamagic",
+    "owner": {
+      "kind": "feat",
+      "id": "metamagic-adept"
+    },
+    "picks": [
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2
+    ],
+    "from": "metamagic"
   },
   {
     "id": "elemental-disciplines",
@@ -559,6 +729,68 @@
       3,
       3
     ]
+  },
+  {
+    "id": "optional-ranger",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-beast-master",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "subclass",
+      "id": "beast-master"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
   },
   {
     "id": "draconic-ancestry",
@@ -783,6 +1015,376 @@
     "owner": {
       "kind": "subclass",
       "id": "divine-soul"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "optional-bard",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "bard"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-cleric",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "cleric"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-druid",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "druid"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-paladin",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "paladin"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-sorcerer",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "sorcerer"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-warlock",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "warlock"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-wizard",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "wizard"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-barbarian",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "barbarian"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-rogue",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "rogue"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "optional-monk",
+    "name": "Optional Features",
+    "owner": {
+      "kind": "class",
+      "id": "monk"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "optional": true
+  },
+  {
+    "id": "runes",
+    "name": "Runes",
+    "owner": {
+      "kind": "subclass",
+      "id": "rune-knight"
+    },
+    "picks": [
+      0,
+      0,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      4,
+      4,
+      4,
+      4,
+      4,
+      5,
+      5,
+      5,
+      5,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "genie-kind",
+    "name": "Genie Kind",
+    "owner": {
+      "kind": "subclass",
+      "id": "the-genie"
     },
     "picks": [
       1,

@@ -13,7 +13,7 @@ test('batch 5a complete', () => expect(built(0, 1)).toBe(facts(0, 1)));
 test('batch 5b complete', () => expect(built(2, 3)).toBe(facts(2, 3)));
 test('batch 5c complete', () => expect(built(4, 6)).toBe(facts(4, 6)));
 test('batch 5d complete', () => expect(built(7, 9)).toBe(facts(7, 9)));
-test('every spell is built (361 PHB + 22 XGE levels 0-1 + 34 XGE levels 2-4 + 39 XGE levels 5-9)', () => expect(DATA.spells).toHaveLength(456));
+test('every spell is built (361 PHB + 95 XGE + 21 TCE)', () => expect(DATA.spells).toHaveLength(477));
 test('confusion keeps its table', () => {
   const d = DATA.spells.find(s => s.id === 'confusion')!.description.join('\n');
   for (const row of ['1: ', '2-6: ', '7-8: ', '9-10: ']) expect(d).toContain(row);
@@ -82,3 +82,25 @@ test('every spell damage line parses', () => {
 });
 test('xanathar spells are on class lists', () => { for (const s of xge) expect(s.classes.length, s.id).toBeGreaterThan(0); });
 test('toll the dead facts', () => expect(DATA.spells.find(s => s.id === 'toll-the-dead')).toMatchObject({ level: 0, school: 'Necromancy', summary: { resolution: 'save', save: 'wis' } }));
+
+const tce = DATA.spells.filter(s => s.book === 'tce');
+test('21 tasha spells', () => { expect(tce).toHaveLength(21); expect(DATA.spells).toHaveLength(477); });
+test('scag cantrips cite tasha', () => {
+  for (const id of ['booming-blade', 'green-flame-blade', 'lightning-lure', 'sword-burst'])
+    expect(DATA.spells.find(s => s.id === id), id).toMatchObject({ book: 'tce', level: 0 });
+});
+test('summons name their stat block', () => {
+  for (const s of tce.filter(x => x.id.startsWith('summon-'))) expect(s.description.join(' '), s.id).toMatch(/Stat block: Tasha's p\. \d+/);
+});
+test('tasha lists', () => {
+  expect(DATA.spells.find(s => s.id === 'summon-beast')!.classes.sort()).toEqual(['druid', 'ranger']);
+  expect(DATA.spells.find(s => s.id === 'spirit-shroud')!.classes.sort()).toEqual(['cleric', 'paladin', 'warlock', 'wizard']);
+});
+test('expanded list is optional data', () => {
+  const s = DATA.spells.find(x => x.id === 'aura-of-vitality')!;
+  expect(s.optionalLists).toEqual(expect.arrayContaining(['cleric', 'druid']));
+  expect(s.classes).not.toContain('cleric');
+  // a class already on the base list is never repeated in optionalLists
+  expect(DATA.spells.every(sp => !(sp.optionalLists ?? []).some(c => sp.classes.includes(c)))).toBe(true);
+  expect(DATA.spells.find(x => x.id === 'spirit-shroud')!.optionalLists).toBeUndefined();
+});

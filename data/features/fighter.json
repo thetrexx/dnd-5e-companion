@@ -1396,5 +1396,775 @@
     "page": 31,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "fighting-style-blind-fighting",
+    "name": "Blind Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "You have blindsight out to 10 ft. Inside that range you see anything not behind total cover, even while blinded or in darkness.",
+      "Invisible creatures in that range are visible to you too, unless one manages to hide from you."
+    ],
+    "page": 41,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-interception",
+    "name": "Interception",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "An attack by a creature you can see hits another target within 5 ft of you",
+    "description": [
+      "Reduce the damage to that target by 1d10 + your proficiency bonus (never below 0).",
+      "Only works while you wield a shield or any simple or martial weapon."
+    ],
+    "page": 41,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-superior-technique",
+    "name": "Superior Technique",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "free",
+    "resource": "Superiority dice (pool)",
+    "uses": "1 die (d6), refills on short or long rest",
+    "description": [
+      "Pick one maneuver from the Maneuvers list (the Battle Master options) and note it. If it calls for a save, the DC is 8 + proficiency bonus + Str or Dex modifier (your choice).",
+      "You also gain one superiority die, a d6, which pays for your maneuvers and adds to any superiority dice you already have. Spent dice return on a short or long rest."
+    ],
+    "page": 41,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-thrown-weapon-fighting",
+    "name": "Thrown Weapon Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Drawing a thrown weapon happens during the attack you make with it.",
+      "A ranged attack with a thrown weapon deals +2 damage when it hits."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-unarmed-fighting",
+    "name": "Unarmed Fighting",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 1,
+    "cost": "passive",
+    "description": [
+      "Your unarmed strikes can deal 1d6 + Strength modifier bludgeoning damage. If you hold no weapon or shield when you roll the attack, use 1d8 instead.",
+      "When each of your turns starts, you may deal 1d4 bludgeoning damage to one creature you are grappling."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-blessed-warrior",
+    "name": "Blessed Warrior",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 2,
+    "cost": "passive",
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "cleric"
+          ],
+          "level": 0,
+          "count": 2
+        },
+        "atLevel": 1,
+        "ability": "cha"
+      }
+    ],
+    "description": [
+      "Pick 2 cleric cantrips. For you they are paladin spells, cast with Charisma.",
+      "Each time you gain a paladin level, you may swap one of them for a different cleric cantrip."
+    ],
+    "page": 52,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "fighting-style-druidic-warrior",
+    "name": "Druidic Warrior",
+    "source": {
+      "kind": "option",
+      "id": "fighting-style"
+    },
+    "level": 2,
+    "cost": "passive",
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "druid"
+          ],
+          "level": 0,
+          "count": 2
+        },
+        "atLevel": 1,
+        "ability": "wis"
+      }
+    ],
+    "description": [
+      "Pick 2 druid cantrips. For you they are ranger spells, cast with Wisdom.",
+      "Each time you gain a ranger level, you may swap one of them for a different druid cantrip."
+    ],
+    "page": 57,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-ambush",
+    "name": "Ambush",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a Dexterity (Stealth) check or roll initiative",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the roll. Not while you're incapacitated."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-bait-and-switch",
+    "name": "Bait and Switch",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "On your turn, a willing creature is within 5 ft of you",
+    "resource": "1 superiority die",
+    "description": [
+      "Trade places with that creature by spending at least 5 ft of movement; it can't be incapacitated. This move draws no opportunity attacks.",
+      "Roll the die: you or that creature (your pick) adds the roll to AC until your next turn starts."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-brace",
+    "name": "Brace",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A creature you can see moves into your melee weapon's reach",
+    "resource": "1 superiority die",
+    "description": [
+      "Make one attack against it with that weapon. On a hit, the die joins the damage roll."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-commanding-presence",
+    "name": "Commanding Presence",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make a Charisma (Intimidation, Performance or Persuasion) check",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the check."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-grappling-strike",
+    "name": "Grappling Strike",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "Your melee attack hits a creature during your turn",
+    "resource": "1 superiority die",
+    "description": [
+      "Straight after that hit, spend a bonus action to attempt a grapple on the creature, adding the die to your Strength (Athletics) check. Grappling rules: Player's Handbook."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-quick-toss",
+    "name": "Quick Toss",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "resource": "1 superiority die",
+    "description": [
+      "Make a ranged attack with a thrown weapon, drawing it as part of the attack. On a hit, the die joins the damage roll."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "maneuvers-tactical-assessment",
+    "name": "Tactical Assessment",
+    "source": {
+      "kind": "option",
+      "id": "maneuvers"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You make an Intelligence (Investigation or History) or Wisdom (Insight) check",
+    "resource": "1 superiority die",
+    "description": [
+      "Add the die to the check."
+    ],
+    "page": 42,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "psi-warrior-psionic-power",
+    "name": "Psionic Power",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 3,
+    "cost": "free",
+    "resource": "Psionic Energy dice (pool)",
+    "uses": "Refill on long rest",
+    "scaling": [
+      {
+        "label": "Psionic Energy dice",
+        "values": [
+          "",
+          "",
+          "4",
+          "4",
+          "6",
+          "6",
+          "6",
+          "6",
+          "8",
+          "8",
+          "8",
+          "8",
+          "10",
+          "10",
+          "10",
+          "10",
+          "12",
+          "12",
+          "12",
+          "12"
+        ]
+      },
+      {
+        "label": "Die size",
+        "values": [
+          "",
+          "",
+          "d6",
+          "d6",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d8",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d10",
+          "d12",
+          "d12",
+          "d12",
+          "d12"
+        ]
+      }
+    ],
+    "page": 43,
+    "description": [
+      "Your psionic powers run on a pool of Psionic Energy dice: twice your proficiency bonus of them. A power that needs a die is unusable while the pool is empty.",
+      "The whole pool comes back when you finish a long rest. Once per short or long rest you can also win back a single die as a bonus action (Psionic Power (Regain)).",
+      "Die size grows with fighter level: d6, then d8 at 5, d10 at 11 and d12 at 17.",
+      "Powers: Protective Field, Psionic Strike and Telekinetic Movement; Telekinetic Adept (level 7) adds Psi-Powered Leap and Telekinetic Thrust."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psi-warrior-psionic-regain",
+    "name": "Psionic Power (Regain)",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "page": 43,
+    "description": [
+      "Get back one spent Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "protective-field",
+    "name": "Protective Field",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "Damage lands on you or on a visible creature within 30 ft",
+    "resource": "1 Psionic Energy die",
+    "page": 43,
+    "description": [
+      "Roll the die and cut the damage by the roll + your Intelligence modifier (at least 1), as a brief shield of telekinetic force springs up."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psionic-strike",
+    "name": "Psionic Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "A weapon attack of yours hits and damages a target within 30 ft",
+    "resource": "1 Psionic Energy die",
+    "uses": "Once on each of your turns",
+    "page": 43,
+    "description": [
+      "Roll the die: the target takes force damage equal to the roll + your Intelligence modifier.",
+      "Level 7 (Telekinetic Thrust): when this damages the target, it makes a Strength save (DC 8 + proficiency bonus + Intelligence modifier); on a failure, you knock it prone or shove it up to 10 ft horizontally, in any direction."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "telekinetic-movement",
+    "name": "Telekinetic Movement",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 3,
+    "cost": "action",
+    "resource": "1 Psionic Energy die (after the free use)",
+    "uses": "Once per short or long rest",
+    "page": 43,
+    "description": [
+      "Move a loose object (Large or smaller) or a willing creature other than you up to 30 ft, into an empty space in your sight. The target must be within 30 ft and visible; the move can be horizontal, vertical or both.",
+      "A Tiny object can instead fly to or from your hand.",
+      "The first use is free; using it again before a short or long rest costs a Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "psi-powered-leap",
+    "name": "Psi-Powered Leap",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "resource": "1 Psionic Energy die (after the free use)",
+    "uses": "Once per short or long rest",
+    "page": 43,
+    "description": [
+      "Fly this turn, at a speed of double your walking speed.",
+      "The first use is free; using it again before a short or long rest costs a Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "guarded-mind",
+    "name": "Guarded Mind",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "Your turn begins while you are charmed or frightened",
+    "resource": "1 Psionic Energy die",
+    "page": 43,
+    "description": [
+      "Spend a die to end every effect on you that is charming or frightening you.",
+      "Always on: resistance to psychic damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "bulwark-of-force",
+    "name": "Bulwark of Force",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 15,
+    "cost": "bonus",
+    "resource": "1 Psionic Energy die (after the free use)",
+    "uses": "Once per long rest",
+    "page": 44,
+    "description": [
+      "Grant half cover to visible creatures within 30 ft, you among them if you like, up to your Intelligence modifier in number (minimum 1). It lasts 1 minute, ending early if you are incapacitated.",
+      "The first use is free; using it again before a long rest costs a Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "telekinetic-master",
+    "name": "Telekinetic Master",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 18,
+    "cost": "action",
+    "resource": "1 Psionic Energy die (after the free use)",
+    "uses": "Once per long rest",
+    "spells": [
+      {
+        "spell": "telekinesis",
+        "atLevel": 18,
+        "ability": "int",
+        "uses": "Once per long rest, or spend a Psionic Energy die"
+      }
+    ],
+    "page": 44,
+    "description": [
+      "Cast telekinesis with no components; Intelligence is its spellcasting ability.",
+      "While you concentrate on it, you also get a weapon attack as a bonus action each turn (Telekinetic Master (Attack)).",
+      "The first casting is free; casting it again before a long rest costs a Psionic Energy die."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "telekinetic-master-attack",
+    "name": "Telekinetic Master (Attack)",
+    "source": {
+      "kind": "subclass",
+      "id": "psi-warrior"
+    },
+    "level": 18,
+    "cost": "bonus",
+    "page": 44,
+    "description": [
+      "Make one weapon attack. Available every turn you are concentrating on the telekinesis from Telekinetic Master, including the turn you cast it."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-carver",
+    "name": "Rune Carver",
+    "source": {
+      "kind": "subclass",
+      "id": "rune-knight"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You finish a long rest",
+    "uses": "Each rune: once per short or long rest (twice from level 15)",
+    "scaling": [
+      {
+        "label": "Runes known",
+        "values": [
+          "",
+          "",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4",
+          "4",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5",
+          "5"
+        ]
+      }
+    ],
+    "page": 44,
+    "description": [
+      "Carve each rune you know onto its own object: a weapon, armor, a shield, jewelry, or any other worn or hand-held item. Each object takes one of your runes, which lasts until your next long rest.",
+      "A rune grants a benefit while you wear or carry its object, and you can invoke it for a stronger effect. Rune save DC: 8 + your proficiency bonus + your Constitution modifier.",
+      "Each time you gain a fighter level you can swap one known rune for another. Hill Rune and Storm Rune need fighter level 7.",
+      "Level 15 (Master of Runes): each rune can be invoked twice per short or long rest."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "giants-might",
+    "name": "Giant's Might",
+    "source": {
+      "kind": "subclass",
+      "id": "rune-knight"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "uses": "Proficiency bonus per long rest",
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d10",
+          "1d10",
+          "1d10"
+        ]
+      }
+    ],
+    "page": 45,
+    "description": [
+      "For 1 minute you take on a giant's might:",
+      "• If you are smaller than Large and have room, you and what you wear grow to Large.",
+      "• Advantage on Strength checks and Strength saves.",
+      "• One hit with a weapon or unarmed strike on each of your turns deals an extra 1d6 damage.",
+      "Level 10 (Great Stature): the extra damage becomes 1d8.",
+      "Level 18 (Runic Juggernaut): it becomes 1d10, and you can grow to Huge instead; while Huge, your reach is 5 ft longer."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runic-shield",
+    "name": "Runic Shield",
+    "source": {
+      "kind": "subclass",
+      "id": "rune-knight"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "An attack roll hits a creature other than you, within 60 ft and in sight",
+    "uses": "Proficiency bonus per long rest",
+    "page": 45,
+    "description": [
+      "The attacker rerolls the d20 and must keep the second roll."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runes-cloud-rune",
+    "name": "Cloud Rune",
+    "source": {
+      "kind": "option",
+      "id": "runes"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "An attack roll hits you or a visible creature within 30 ft",
+    "uses": "Once per short or long rest (twice from level 15)",
+    "page": 44,
+    "description": [
+      "Invoke: pick another creature within 30 ft, not the attacker. The attack hits it instead, with the same roll, whatever the attack's range.",
+      "Carried: Dexterity (Sleight of Hand) and Charisma (Deception) checks have advantage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runes-fire-rune",
+    "name": "Fire Rune",
+    "source": {
+      "kind": "option",
+      "id": "runes"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You hit a creature with a weapon attack",
+    "uses": "Once per short or long rest (twice from level 15)",
+    "page": 44,
+    "description": [
+      "Invoke: fiery shackles. Deal 2d6 extra fire damage; the target then makes a Strength save or is restrained for 1 minute.",
+      "While shackled it takes 2d6 fire damage as each of its turns begins, and it saves again as each of its turns ends, breaking free on a success.",
+      "Carried: double your proficiency bonus on ability checks that use a tool you are proficient with."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runes-frost-rune",
+    "name": "Frost Rune",
+    "source": {
+      "kind": "option",
+      "id": "runes"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "uses": "Once per short or long rest (twice from level 15)",
+    "page": 45,
+    "description": [
+      "Invoke: +2 to every Strength and Constitution check and saving throw for 10 minutes.",
+      "Carried: Wisdom (Animal Handling) and Charisma (Intimidation) checks have advantage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runes-stone-rune",
+    "name": "Stone Rune",
+    "source": {
+      "kind": "option",
+      "id": "runes"
+    },
+    "level": 3,
+    "cost": "reaction",
+    "trigger": "A visible creature within 30 ft finishes its turn",
+    "uses": "Once per short or long rest (twice from level 15)",
+    "page": 45,
+    "description": [
+      "Invoke: it makes a Wisdom save or falls under your charm for 1 minute, sunk in a dreamy stupor: speed 0 and incapacitated. It saves again as each of its turns ends; one success frees it.",
+      "Carried: Wisdom (Insight) checks have advantage, and you have darkvision out to 120 ft."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runes-hill-rune",
+    "name": "Hill Rune",
+    "source": {
+      "kind": "option",
+      "id": "runes"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "uses": "Once per short or long rest (twice from level 15)",
+    "prereq": {
+      "level": 7
+    },
+    "page": 45,
+    "description": [
+      "Invoke: for 1 minute you resist bludgeoning, piercing and slashing damage.",
+      "Carried: advantage on saves against being poisoned, and resistance to poison damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "runes-storm-rune",
+    "name": "Storm Rune",
+    "source": {
+      "kind": "option",
+      "id": "runes"
+    },
+    "level": 7,
+    "cost": "bonus",
+    "uses": "Once per short or long rest (twice from level 15)",
+    "prereq": {
+      "level": 7
+    },
+    "page": 45,
+    "description": [
+      "Invoke: for 1 minute you see glimpses of the future (it ends early if you are incapacitated). Meanwhile, when you or a visible creature within 60 ft makes an attack roll, saving throw or ability check, your reaction can give that roll advantage or disadvantage.",
+      "Carried: Intelligence (Arcana) checks have advantage, and you can't be surprised while you aren't incapacitated."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

@@ -985,5 +985,424 @@
     ],
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-cleric-additional-spells",
+    "name": "Additional Cleric Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-cleric"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "cost": "passive",
+    "expandsList": "cleric",
+    "description": [
+      "Adds Tasha's extra spells to the Cleric list, so you can prepare them as cleric spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 30,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-cleric-harness-divine-power",
+    "name": "Harness Divine Power",
+    "source": {
+      "kind": "option",
+      "id": "optional-cleric"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "bonus",
+    "resource": "1 Channel Divinity",
+    "uses": "1 per long rest at cleric 2, 2 at 6, 3 at 18",
+    "scaling": [
+      {
+        "label": "Uses per long rest",
+        "values": [
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "Spend a Channel Divinity use: hold up your holy symbol, pray, and recover one expended spell slot. The slot's level can't be above half your proficiency bonus, rounded up (1st at +2, 2nd at +3 or +4, 3rd at +5 or +6).",
+      "Uses: once at cleric 2, twice at 6, three times at 18. A long rest restores them all."
+    ],
+    "page": 30,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-cleric-blessed-strikes",
+    "name": "Blessed Strikes",
+    "source": {
+      "kind": "option",
+      "id": "optional-cleric"
+    },
+    "level": 8,
+    "prereq": {
+      "level": 8
+    },
+    "cost": "free",
+    "trigger": "Your cantrip or weapon attack damages a creature",
+    "uses": "Once per round (back at the start of your next turn)",
+    "replaces": [
+      "divine-strike",
+      "nature-domain-divine-strike",
+      "tempest-domain-divine-strike",
+      "trickery-domain-divine-strike",
+      "war-domain-divine-strike",
+      "death-domain-divine-strike",
+      "forge-domain-divine-strike",
+      "order-domain-divine-strike",
+      "twilight-domain-divine-strike"
+    ],
+    "description": [
+      "Add 1d8 radiant damage to that creature.",
+      "Once used, it is spent until your next turn begins. It takes the place of your domain's Divine Strike or Potent Spellcasting."
+    ],
+    "page": 31,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "voice-of-authority",
+    "name": "Voice of Authority",
+    "source": {
+      "kind": "subclass",
+      "id": "order-domain"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You cast a spell using a 1st-level or higher slot and it targets an ally",
+    "page": 32,
+    "description": [
+      "Right after the spell, the ally can spend its reaction on one weapon attack at a creature of your choice in your sight. When several allies are targeted, you pick who attacks."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "orders-demand",
+    "name": "Order's Demand",
+    "source": {
+      "kind": "subclass",
+      "id": "order-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "page": 32,
+    "description": [
+      "Action: hold up your holy symbol. Each creature you choose within 30 ft that can see or hear you makes a Wisdom save. On a failure it is charmed by you until your next turn ends or until it takes damage, and you can also make it drop whatever it holds."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "embodiment-of-the-law",
+    "name": "Embodiment of the Law",
+    "source": {
+      "kind": "subclass",
+      "id": "order-domain"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You cast an enchantment spell that normally takes 1 action, using a 1st-level or higher slot",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "page": 32,
+    "description": [
+      "Cast that spell as a bonus action instead."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "order-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "order-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "page": 32,
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 psychic damage to it. The extra damage becomes 2d8 at cleric level 14."
+    ],
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/65/Divine_Strike_Melee_Icon.webp"
+  },
+  {
+    "id": "orders-wrath",
+    "name": "Order's Wrath",
+    "source": {
+      "kind": "subclass",
+      "id": "order-domain"
+    },
+    "level": 17,
+    "cost": "free",
+    "trigger": "Your Divine Strike damages a creature during your turn",
+    "uses": "Once per turn",
+    "page": 32,
+    "description": [
+      "Curse that creature until your next turn starts. The next time an ally hits it with an attack, it takes an extra 2d8 psychic damage, which ends the curse."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "emboldening-bond",
+    "name": "Emboldening Bond",
+    "source": {
+      "kind": "subclass",
+      "id": "peace-domain"
+    },
+    "level": 1,
+    "cost": "action",
+    "uses": "Proficiency bonus per long rest",
+    "page": 33,
+    "description": [
+      "Action: bond willing creatures within 30 ft (you can be one of them), as many as your proficiency bonus. The bond lasts 10 minutes, or ends early if you use this feature again.",
+      "A bonded creature with another bonded creature no more than 30 ft away can roll a d4 and add it to an attack roll, ability check or saving throw it makes, at most once per turn.",
+      "Level 17 (Expansive Bond): the bonded creatures only need to be within 60 ft of each other."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "balm-of-peace",
+    "name": "Balm of Peace",
+    "source": {
+      "kind": "subclass",
+      "id": "peace-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "page": 33,
+    "description": [
+      "Action: travel up to your speed; this move draws no opportunity attacks. Each other creature you come within 5 ft of during this move can regain 2d6 + your Wisdom modifier hit points (minimum 1). A creature heals this way at most once per use."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "protective-bond",
+    "name": "Protective Bond",
+    "source": {
+      "kind": "subclass",
+      "id": "peace-domain"
+    },
+    "level": 6,
+    "cost": "reaction",
+    "trigger": "A creature under your Emboldening Bond is about to take damage, and another bonded creature is within 30 ft of it",
+    "page": 33,
+    "description": [
+      "The other bonded creature spends its own reaction: it teleports next to the first (an unoccupied space within 5 ft) and takes all of that damage in its place.",
+      "Level 17 (Expansive Bond): the range becomes 60 ft, and the creature that takes the damage has resistance to it."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "eyes-of-night",
+    "name": "Eyes of Night",
+    "source": {
+      "kind": "subclass",
+      "id": "twilight-domain"
+    },
+    "level": 1,
+    "cost": "action",
+    "uses": "Once per long rest, or spend a spell slot of any level",
+    "page": 34,
+    "description": [
+      "You have darkvision to 300 ft. Inside that range, dim light looks bright to you and darkness looks dim.",
+      "Action: for 1 hour, willing creatures within 10 ft that you can see, as many as your Wisdom modifier (minimum 1), share this darkvision."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "vigilant-blessing",
+    "name": "Vigilant Blessing",
+    "source": {
+      "kind": "subclass",
+      "id": "twilight-domain"
+    },
+    "level": 1,
+    "cost": "action",
+    "page": 35,
+    "description": [
+      "Action: touch a creature (you can choose yourself). Its next initiative roll has advantage. The benefit ends after that roll, or when you use this feature again."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "twilight-sanctuary",
+    "name": "Twilight Sanctuary",
+    "source": {
+      "kind": "subclass",
+      "id": "twilight-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "page": 35,
+    "scaling": [
+      {
+        "label": "Temp HP",
+        "values": [
+          "",
+          "1d6+2",
+          "1d6+3",
+          "1d6+4",
+          "1d6+5",
+          "1d6+6",
+          "1d6+7",
+          "1d6+8",
+          "1d6+9",
+          "1d6+10",
+          "1d6+11",
+          "1d6+12",
+          "1d6+13",
+          "1d6+14",
+          "1d6+15",
+          "1d6+16",
+          "1d6+17",
+          "1d6+18",
+          "1d6+19",
+          "1d6+20"
+        ]
+      }
+    ],
+    "description": [
+      "Action: present your holy symbol. A sphere of dim light, 30 ft in radius, spreads from you and moves with you. It ends after 1 minute, or sooner if you are incapacitated or die.",
+      "When any creature (you too) finishes its turn inside the sphere, you may grant it one benefit: temporary hit points equal to 1d6 + your cleric level, or the end of one effect charming or frightening it.",
+      "Level 17 (Twilight Shroud): the sphere gives half cover to you and your allies inside it."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "steps-of-night",
+    "name": "Steps of Night",
+    "source": {
+      "kind": "subclass",
+      "id": "twilight-domain"
+    },
+    "level": 6,
+    "cost": "bonus",
+    "uses": "Proficiency bonus per long rest",
+    "page": 35,
+    "description": [
+      "Bonus action, in dim light or darkness: for 1 minute, you fly at a speed equal to your walking speed."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "twilight-domain-divine-strike",
+    "name": "Divine Strike",
+    "source": {
+      "kind": "subclass",
+      "id": "twilight-domain"
+    },
+    "level": 8,
+    "cost": "free",
+    "trigger": "You hit with a weapon attack",
+    "uses": "Once per turn",
+    "page": 35,
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8",
+          "2d8"
+        ]
+      }
+    ],
+    "description": [
+      "Once on each of your turns, when a weapon attack hits, you can add 1d8 radiant damage to it. The extra damage becomes 2d8 at cleric level 14."
+    ],
+    "book": "tce",
+    "textSource": "summary",
+    "icon": "https://bg3.wiki/w/images/6/65/Divine_Strike_Melee_Icon.webp"
   }
 ]

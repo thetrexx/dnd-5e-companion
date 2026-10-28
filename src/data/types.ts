@@ -10,6 +10,8 @@ export interface Spell {
   range: string; duration: string; concentration: boolean; ritual: boolean;
   components: { v: boolean; s: boolean; m?: { text: string; costGp?: number; consumed: boolean } };
   description: string[]; higherLevels?: string; classes: ClassId[]; page: number; book?: BookId;
+  /** Tasha's expanded lists ("Additional <Class> Spells") of classes not already in `classes` */
+  optionalLists?: ClassId[];
   icon?: string; textSource: TextSource;
   summary?: { damage?: { dice: string; count?: number; unit?: string; type: string; healing?: boolean; plusMod?: boolean }; resolution: 'attack'|'save'|'auto'|'none'; save?: Ability; upcast?: string };
 }
@@ -30,6 +32,12 @@ export interface Feature {
   prereq?: { level?: number; option?: string; text?: string };
   spells?: SpellGrant[];
   description: string[]; page: number; book?: BookId; icon?: string; textSource: TextSource;
+  /** a Tasha's optional class feature, or a Tasha's option in an existing pool: tagged "Optional" */
+  optional?: true;
+  /** feature ids or option group ids hidden while this option is chosen */
+  replaces?: string[];
+  /** ticked, this class's optional list spells join its list */
+  expandsList?: ClassId;
 }
 export interface ClassDef {
   id: ClassId; name: string; caster: 'full'|'half'|'third'|'pact'|'none';
@@ -49,14 +57,16 @@ export interface SubclassDef {
   options: string[];
 }
 export interface OptionGroup {
-  id: string; name: string; owner: { kind: 'class'|'subclass'|'race'; id: string };
+  id: string; name: string; owner: { kind: 'class'|'subclass'|'race'|'feat'; id: string };
   picks: number[];
   from?: string; only?: string[];
   reuse?: true; // a pick counted in another slot of the same pool may also fill this one
   bonus?: { subclass: string; atLevel: number; count: number }[];
+  /** tick-any: no count limit, the player ticks what their DM allows */
+  optional?: true;
 }
 export interface RaceDef { id: string; name: string; parent?: string; page: number; book?: BookId; icon?: string; spells: SpellGrant[]; options: string[] }
-export interface FeatDef { id: string; name: string; prereq?: string; page: number; book?: BookId; icon?: string; description: string[]; spells: SpellGrant[]; textSource: TextSource }
+export interface FeatDef { id: string; name: string; prereq?: string; page: number; book?: BookId; icon?: string; description: string[]; spells: SpellGrant[]; options?: string[]; textSource: TextSource }
 export interface Dataset {
   classes: ClassDef[]; subclasses: SubclassDef[]; optionGroups: OptionGroup[];
   races: RaceDef[]; feats: FeatDef[]; spells: Spell[]; features: Feature[];

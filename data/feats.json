@@ -25,6 +25,19 @@
     "icon": "https://bg3.wiki/w/images/9/93/Charger_Icon.png"
   },
   {
+    "id": "chef",
+    "name": "Chef",
+    "page": 79,
+    "book": "tce",
+    "description": [
+      "+1 to Constitution or Wisdom (max 20). You also become proficient with cook's utensils, if you were not already.",
+      "Short rest meal: with ingredients and cook's utensils at hand, feed as many as 4 + your proficiency bonus creatures. When the rest ends, each diner who spends at least one Hit Die gets an extra 1d8 hit points.",
+      "Treats: 1 hour of work, or the end of a long rest, makes as many treats as your proficiency bonus. They keep for 8 hours. Eating one is a bonus action and grants your proficiency bonus as temporary hit points."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
     "id": "crossbow-expert",
     "name": "Crossbow Expert",
     "page": 165,
@@ -35,6 +48,19 @@
     "spells": [],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/4/46/Crossbow_Expert_Icon.webp"
+  },
+  {
+    "id": "crusher",
+    "name": "Crusher",
+    "page": 79,
+    "book": "tce",
+    "description": [
+      "+1 to Strength or Constitution (max 20).",
+      "Once per turn, a hit that deals bludgeoning damage lets you move the creature 5 ft into an unoccupied space (no check), as long as it is at most one size larger than you.",
+      "Score a critical hit with bludgeoning damage, and every attack roll against that creature has advantage until your next turn begins."
+    ],
+    "spells": [],
+    "textSource": "summary"
   },
   {
     "id": "defensive-duelist",
@@ -106,6 +132,22 @@
     "textSource": "summary"
   },
   {
+    "id": "eldritch-adept",
+    "name": "Eldritch Adept",
+    "prereq": "Spellcasting or Pact Magic feature",
+    "page": 79,
+    "book": "tce",
+    "description": [
+      "Pick one Eldritch Invocation from the warlock list. Invocations with a prerequisite are off limits unless you are a warlock who meets it.",
+      "Whenever you level up, you may trade it for a different warlock invocation."
+    ],
+    "spells": [],
+    "textSource": "summary",
+    "options": [
+      "eldritch-adept"
+    ]
+  },
+  {
     "id": "fade-away",
     "name": "Fade Away",
     "prereq": "Gnome",
@@ -138,6 +180,62 @@
       }
     ],
     "textSource": "summary"
+  },
+  {
+    "id": "fey-touched",
+    "name": "Fey Touched",
+    "page": 79,
+    "book": "tce",
+    "description": [
+      "+1 to Intelligence, Wisdom or Charisma (max 20). The ability you raise is your spellcasting ability for this feat's spells.",
+      "You learn misty step, plus one 1st-level divination or enchantment spell you pick. Each can be cast once per long rest with no spell slot, and you may also spend your own slots on them."
+    ],
+    "spells": [
+      {
+        "spell": "misty-step",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      },
+      {
+        "choose": {
+          "lists": [
+            "bard",
+            "cleric",
+            "druid",
+            "paladin",
+            "ranger",
+            "sorcerer",
+            "warlock",
+            "wizard"
+          ],
+          "level": 1,
+          "count": 1,
+          "schools": [
+            "Divination",
+            "Enchantment"
+          ]
+        },
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "fighting-initiate",
+    "name": "Fighting Initiate",
+    "prereq": "Proficiency with a martial weapon",
+    "page": 80,
+    "book": "tce",
+    "description": [
+      "Pick one Fighting Style from the fighter list; it cannot be a style you already have.",
+      "At each level that gives you the Ability Score Improvement feature, you may swap it for another fighter style you lack."
+    ],
+    "spells": [],
+    "textSource": "summary",
+    "options": [
+      "fighting-initiate"
+    ]
   },
   {
     "id": "flames-of-phlegethos",
@@ -277,7 +375,26 @@
     ],
     "spells": [],
     "textSource": "summary",
-    "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp"
+    "icon": "https://bg3.wiki/w/images/2/2f/Martial_Adept_Icon.webp",
+    "options": [
+      "martial-adept"
+    ]
+  },
+  {
+    "id": "metamagic-adept",
+    "name": "Metamagic Adept",
+    "prereq": "Spellcasting or Pact Magic feature",
+    "page": 80,
+    "book": "tce",
+    "description": [
+      "Pick 2 Metamagic options from the sorcerer list. A spell still takes just one Metamagic option per casting, unless an option says it can combine. At each level that gives you the Ability Score Improvement feature, you may swap one of them for another sorcerer option.",
+      "You also gain 2 sorcery points that can be spent only on Metamagic. They stack with sorcery points from other sources and come back after a long rest."
+    ],
+    "spells": [],
+    "textSource": "summary",
+    "options": [
+      "metamagic-adept"
+    ]
   },
   {
     "id": "orcish-fury",
@@ -289,6 +406,32 @@
       "+1 to Strength or Constitution (max 20).",
       "Once per short or long rest, when a simple or martial weapon attack hits, pick one of the weapon's damage dice, roll it again and add it to the damage (same damage type).",
       "Right after you use Relentless Endurance, your reaction can make one weapon attack."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "piercer",
+    "name": "Piercer",
+    "page": 80,
+    "book": "tce",
+    "description": [
+      "+1 to Strength or Dexterity (max 20).",
+      "Once per turn, after a hit that deals piercing damage, roll one of its damage dice again; the new result stands.",
+      "A critical hit with piercing damage adds one more damage die to the extra piercing damage."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "poisoner",
+    "name": "Poisoner",
+    "page": 80,
+    "book": "tce",
+    "description": [
+      "Poison damage you roll ignores resistance to poison damage. Coating a weapon or a piece of ammunition with poison needs only a bonus action.",
+      "You become proficient with the poisoner's kit, if you were not already. Spending 1 hour with it and 50 gp of materials brews as many doses as your proficiency bonus.",
+      "A dose stays potent for 1 minute or until the weapon or ammunition hits. A creature damaged by it must pass a DC 14 Constitution save or take 2d8 poison damage and be poisoned until your next turn ends."
     ],
     "spells": [],
     "textSource": "summary"
@@ -370,6 +513,46 @@
     "icon": "https://bg3.wiki/w/images/5/56/Sentinel_Icon.png"
   },
   {
+    "id": "shadow-touched",
+    "name": "Shadow Touched",
+    "page": 80,
+    "book": "tce",
+    "description": [
+      "+1 to Intelligence, Wisdom or Charisma (max 20). The ability you raise is your spellcasting ability for this feat's spells.",
+      "You learn invisibility, plus one 1st-level illusion or necromancy spell you pick. Each can be cast once per long rest with no spell slot, and you may also spend your own slots on them."
+    ],
+    "spells": [
+      {
+        "spell": "invisibility",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      },
+      {
+        "choose": {
+          "lists": [
+            "bard",
+            "cleric",
+            "druid",
+            "paladin",
+            "ranger",
+            "sorcerer",
+            "warlock",
+            "wizard"
+          ],
+          "level": 1,
+          "count": 1,
+          "schools": [
+            "Illusion",
+            "Necromancy"
+          ]
+        },
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
     "id": "sharpshooter",
     "name": "Sharpshooter",
     "page": 170,
@@ -392,6 +575,19 @@
     "spells": [],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/2/2d/Shield_Master_Icon.webp"
+  },
+  {
+    "id": "slasher",
+    "name": "Slasher",
+    "page": 81,
+    "book": "tce",
+    "description": [
+      "+1 to Strength or Dexterity (max 20).",
+      "Once per turn, a hit that deals slashing damage drops the creature's speed by 10 ft until your next turn begins.",
+      "Score a critical hit with slashing damage, and the creature makes every attack roll with disadvantage until your next turn begins."
+    ],
+    "spells": [],
+    "textSource": "summary"
   },
   {
     "id": "spell-sniper",
@@ -434,6 +630,44 @@
     "spells": [],
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/3/31/Tavern_Brawler_Icon.webp"
+  },
+  {
+    "id": "telekinetic",
+    "name": "Telekinetic",
+    "page": 81,
+    "book": "tce",
+    "description": [
+      "+1 to Intelligence, Wisdom or Charisma (max 20). The ability you raise is your spellcasting ability for mage hand.",
+      "You learn mage hand and cast it with no verbal or somatic components; the spectral hand may be invisible. Knew it already? Your casting of it then reaches 30 ft farther.",
+      "As a bonus action, pick a creature you can see no more than 30 ft away. Unless it passes a Strength save (DC 8 + proficiency bonus + the modifier of the ability you raised), you move it 5 ft toward or away from you. It may fail on purpose."
+    ],
+    "spells": [
+      {
+        "spell": "mage-hand",
+        "atLevel": 1,
+        "uses": "At will, no verbal or somatic components"
+      }
+    ],
+    "textSource": "summary"
+  },
+  {
+    "id": "telepathic",
+    "name": "Telepathic",
+    "page": 81,
+    "book": "tce",
+    "description": [
+      "+1 to Intelligence, Wisdom or Charisma (max 20). The ability you raise is your spellcasting ability for detect thoughts.",
+      "Speak mind to mind with any creature you can see no more than 60 ft away. You use a language you know, so the creature must know it too to understand, and it cannot answer telepathically.",
+      "You can cast detect thoughts once per long rest with no spell slot and no components. You may also spend a spell slot of 2nd level or above on it."
+    ],
+    "spells": [
+      {
+        "spell": "detect-thoughts",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot or components; slots of 2nd level or higher work too"
+      }
+    ],
+    "textSource": "summary"
   },
   {
     "id": "war-caster",

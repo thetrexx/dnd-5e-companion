@@ -12,10 +12,13 @@ const groupsOf = (ids: string[]) => DATA.optionGroups.filter(g => ids.includes(g
 export function optionSlots(ch: Character): OptionSlot[] {
   const out: OptionSlot[] = [];
   const add = (group: OptionGroup, level: number, cls?: ClassId, sub?: string) => {
-    const count = (group.picks[level - 1] ?? 0) + (group.bonus ?? []).filter(b => sub !== undefined && b.subclass === sub && b.atLevel <= level).reduce((n, b) => n + b.count, 0);
-    if (!count) return;
+    const picks = (group.picks[level - 1] ?? 0) + (group.bonus ?? []).filter(b => sub !== undefined && b.subclass === sub && b.atLevel <= level).reduce((n, b) => n + b.count, 0);
+    if (!picks) return;
     const choices = poolOptions(group.from ?? group.id).filter(f =>
       (!group.only || group.only.includes(f.id)) && (f.prereq?.level ?? 0) <= level && (!f.prereq?.option || ch.options.includes(f.prereq.option)));
+    // an optional group is tick-any: every option reached may be ticked
+    const count = group.optional ? choices.length : picks;
+    if (!count) return;
     out.push({ group, cls, level, count, choices, chosen: [], taken: [] });
   };
   for (const c of ch.classes) {
@@ -26,8 +29,26 @@ export function optionSlots(ch: Character): OptionSlot[] {
   }
   const total = totalLevel(ch);
   for (const r of raceChain(ch.race)) for (const g of groupsOf(r.options)) add(g, total);
+  // a chosen feat's groups sit at total level, with no class
+  for (const id of new Set(ch.feats)) for (const g of groupsOf(DATA.feats.find(f => f.id === id)?.options ?? [])) add(g, total);
   assign(out, ch.options);
-  return out;
+  // a replaced group's picks stay in ch.options, so unticking the replacement brings them back
+  const gone = replaced(ch);
+  return out.filter(s => !gone.has(s.group.id));
+}
+
+/**
+ * True when an option expanding this class's list (Additional Cleric Spells) is ticked in a slot the
+ * character has: the class reaches its level and nothing replaced the slot.
+ */
+export function hasExpandedList(ch: Character, cls: ClassId): boolean {
+  return optionSlots(ch).some(s => s.cls === cls
+    && s.chosen.some(id => s.choices.find(f => f.id === id)?.expandsList === cls));
+}
+
+/** Feature and option group ids hidden by the chosen options (Favored Foe hides Favored Enemy). */
+export function replaced(ch: Character): Set<string> {
+  return new Set(ch.options.flatMap(id => DATA.features.find(f => f.id === id)?.replaces ?? []));
 }
 
 /**
@@ -85,6 +106,7 @@ export function prune(ch: Character): Character {
     if (c.sub) own(DATA.subclasses.find(s => s.id === c.sub)?.options ?? []);
   }
   for (const r of raceChain(ch.race)) own(r.options);
+  for (const id of new Set(ch.feats)) own(DATA.feats.find(f => f.id === id)?.options ?? []);
   const options = ch.options.filter(o => { const f = DATA.features.find(x => x.id === o); return f?.source.kind === 'option' && owned.has(f.source.id); });
   const step1 = classes.some((c, i) => c !== ch.classes[i]) ? { ...ch, classes } : ch;
   const step2 = options.length === ch.options.length ? step1 : { ...step1, options };

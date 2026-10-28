@@ -2,7 +2,7 @@ import { DATA } from '../../src/data';
 
 const r = (id: string) => DATA.races.find(x => x.id === id)!;
 test('races', () => {
-  expect(DATA.races).toHaveLength(19);
+  expect(DATA.races).toHaveLength(20);   // 19 PHB + Custom Lineage
   expect(r('drow').parent).toBe('elf');
   expect(r('tiefling').spells.map(x => [x.spell, x.atLevel])).toEqual([['thaumaturgy', 1], ['hellish-rebuke', 3], ['darkness', 5]]);
   expect(r('drow').spells.map(x => [x.spell, x.atLevel])).toEqual([['dancing-lights', 1], ['faerie-fire', 3], ['darkness', 5]]);
@@ -53,7 +53,7 @@ test('xanathar racial feats', () => {
     expect(DATA.feats.find(f => f.id === id), id).toMatchObject({ book: 'xge' });
   for (const id of ['elven-accuracy', 'prodigy', 'squat-nimbleness', 'infernal-constitution', 'dragon-hide'])
     expect(DATA.feats.find(f => f.id === id), id).toBeUndefined();
-  expect(DATA.feats).toHaveLength(30);
+  expect(DATA.feats.filter(f => f.book === 'xge')).toHaveLength(10);
 });
 test('fey teleportation grants misty step', () =>
   expect(DATA.feats.find(f => f.id === 'fey-teleportation')!.spells.map(g => g.spell)).toContain('misty-step'));
@@ -66,3 +66,36 @@ test('xanathar feat spells and cards', () => {
     .toEqual(Array(4).fill(['feat', 'reaction', 'xge']));
   expect(f('dragon-fear').source.id).toBe('dragon-fear');
 });
+
+// Task 10: Tasha's feats and Custom Lineage
+test('tasha feats', () => {
+  for (const id of ['chef', 'crusher', 'eldritch-adept', 'fey-touched', 'fighting-initiate', 'metamagic-adept', 'piercer', 'poisoner', 'shadow-touched', 'slasher', 'telekinetic', 'telepathic'])
+    expect(DATA.feats.find(f => f.id === id), id).toMatchObject({ book: 'tce' });
+  for (const id of ['gunner', 'skill-expert', 'artificer-initiate']) expect(DATA.feats.find(f => f.id === id), id).toBeUndefined();
+  expect(DATA.feats).toHaveLength(42);
+});
+test('fey touched grants misty step and a choice', () => {
+  const ft = DATA.feats.find(f => f.id === 'fey-touched')!;
+  expect(ft.spells.map(g => g.spell)).toContain('misty-step');
+  expect(ft.spells.find(g => g.choose)!.choose).toMatchObject({ level: 1, schools: expect.arrayContaining(['Divination', 'Enchantment']) });
+});
+test('tasha feat spells carry their uses', () => {
+  const spells = (id: string) => DATA.feats.find(f => f.id === id)!.spells.map(g => [g.spell ?? g.choose?.schools?.join(), g.uses !== undefined]);
+  expect(spells('fey-touched')).toEqual([['misty-step', true], ['Divination,Enchantment', true]]);
+  expect(spells('shadow-touched')).toEqual([['invisibility', true], ['Illusion,Necromancy', true]]);
+  expect(spells('telepathic')).toEqual([['detect-thoughts', true]]);
+  expect(spells('telekinetic')).toEqual([['mage-hand', true]]);
+  const lists = DATA.feats.find(f => f.id === 'shadow-touched')!.spells[1].choose!.lists;
+  expect(lists).toEqual(DATA.feats.find(f => f.id === 'fey-touched')!.spells[1].choose!.lists);
+  expect(lists).toHaveLength(8);
+});
+test('tasha feat cards', () => {
+  const f = (id: string) => DATA.features.find(x => x.id === id)!;
+  for (const id of ['crusher', 'piercer', 'slasher']) expect(f(id), id).toMatchObject({ source: { kind: 'feat', id }, cost: 'free', uses: 'Once per turn', book: 'tce' });
+  expect(f('poisoner')).toMatchObject({ cost: 'bonus', book: 'tce', page: 80 });
+  expect(f('telekinetic')).toMatchObject({ cost: 'bonus', book: 'tce', page: 81 });
+  expect(f('chef')).toMatchObject({ cost: 'other', book: 'tce', page: 79 });
+  expect(f('chef-treat')).toMatchObject({ source: { kind: 'feat', id: 'chef' }, cost: 'bonus', book: 'tce', page: 79 });
+  expect(f('metamagic-adept')).toMatchObject({ cost: 'free', resource: expect.stringMatching(/2 sorcery points/), book: 'tce', page: 80 });
+});
+test('custom lineage', () => expect(DATA.races.find(r => r.id === 'custom-lineage')).toMatchObject({ book: 'tce', page: 8, spells: [], options: [] }));

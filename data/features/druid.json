@@ -539,7 +539,7 @@
       "Bonus action: spend a Wild Shape use to take a starry form instead of a beast shape. You keep your statistics and shed bright light in 10 ft and dim light 10 ft beyond. It lasts 10 minutes, ending early if you dismiss it (no action), are incapacitated, die, or use this feature again.",
       "Each time you take the form, choose which constellation shines on you:",
       "Archer: as you take the form, and with a bonus action on later turns while it lasts, make a ranged spell attack at one creature within 60 ft. On a hit it takes 1d8 + your Wisdom modifier radiant damage.",
-      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature no more than 30 ft away also regains hit points equal to 1d8 + your Wisdom modifier.",
+      "Chalice: whenever you cast a spell with a spell slot that heals someone, you or another creature no more than 30 ft away also heals 1d8 + your Wisdom modifier.",
       "Dragon: on Intelligence or Wisdom checks, and on Constitution saves to keep concentration, a d20 roll of 9 or lower counts as a 10.",
       "Level 10 (Twinkling Constellations): the Archer and Chalice dice become 2d8, the Dragon also gives you a 20-ft flying speed and hover, and as each of your turns begins in the form you may switch constellation.",
       "Level 14 (Full of Stars): in the form you resist bludgeoning, piercing and slashing damage."
@@ -753,6 +753,159 @@
       "Without orders from you, they guard you and attack your foes. It lasts 1 hour and needs no concentration; you can end it early at no action cost."
     ],
     "book": "xge",
+    "textSource": "summary"
+  },
+  {
+    "id": "optional-druid-additional-spells",
+    "name": "Additional Druid Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-druid"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "cost": "passive",
+    "expandsList": "druid",
+    "description": [
+      "Adds Tasha's extra spells to the Druid list, so you can prepare them as druid spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 35,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-druid-wild-companion",
+    "name": "Wild Companion",
+    "source": {
+      "kind": "option",
+      "id": "optional-druid"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "action",
+    "resource": "1 Wild Shape use",
+    "spells": [
+      {
+        "spell": "find-familiar",
+        "atLevel": 2,
+        "uses": "Costs 1 Wild Shape use, no material components"
+      }
+    ],
+    "scaling": [
+      {
+        "label": "Lasts (hours)",
+        "values": [
+          "",
+          "1",
+          "1",
+          "2",
+          "2",
+          "3",
+          "3",
+          "4",
+          "4",
+          "5",
+          "5",
+          "6",
+          "6",
+          "7",
+          "7",
+          "8",
+          "8",
+          "9",
+          "9",
+          "10"
+        ]
+      }
+    ],
+    "description": [
+      "Spend a use of Wild Shape to cast find familiar as an action, with no material components. The spirit takes an animal form, but it is a fey rather than a beast.",
+      "It stays for half your druid level in hours, then vanishes."
+    ],
+    "page": 35,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "summon-wildfire-spirit",
+    "name": "Summon Wildfire Spirit",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Wild Shape use",
+    "page": 40,
+    "description": [
+      "Action: spend a Wild Shape use to call your wildfire spirit instead of taking a beast shape. It appears in an unoccupied space you can see within 30 ft. Every creature within 10 ft of it, except you, makes a Dexterity save against your spell save DC; on a failure it takes 2d6 fire damage.",
+      "It is an ally of you and your companions and follows your orders; it uses your proficiency bonus. It shares your initiative and acts right after you. It moves and reacts by itself, but its only action is Dodge unless you spend a bonus action to command it (Flame Seed, Fiery Teleportation or any other action). While you are incapacitated it acts as it likes.",
+      "It stays for 1 hour, until it drops to 0 hit points, until you summon it again, or until you die.",
+      "Stat block: Tasha's p. 40."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "enhanced-bond",
+    "name": "Enhanced Bond",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "While your wildfire spirit is summoned, you cast a spell that heals or deals fire damage",
+    "page": 40,
+    "description": [
+      "Roll a d8 and add it to one damage or healing roll of that spell.",
+      "Also, while the spirit is summoned, a spell you cast with a range other than self can start from you or from the spirit."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "cauterizing-flames",
+    "name": "Cauterizing Flames",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 10,
+    "cost": "reaction",
+    "trigger": "A creature you can see enters the space of a spectral flame",
+    "uses": "Proficiency bonus per long rest",
+    "page": 40,
+    "description": [
+      "When a Small or larger creature dies no more than 30 ft from you or your wildfire spirit, a spectral flame (harmless) flickers in its space for 1 minute.",
+      "Use your reaction to put that flame out and either heal the creature that entered or burn it: 2d10 + your Wisdom modifier, as hit points regained or fire damage."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "blazing-revival",
+    "name": "Blazing Revival",
+    "source": {
+      "kind": "subclass",
+      "id": "circle-of-wildfire"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "You drop to 0 hit points and fall unconscious while your wildfire spirit is within 120 ft",
+    "uses": "Once per long rest",
+    "page": 40,
+    "description": [
+      "Your spirit drops to 0 hit points instead: you regain half your hit points and get straight back on your feet."
+    ],
+    "book": "tce",
     "textSource": "summary"
   }
 ]

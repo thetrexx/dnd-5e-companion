@@ -12,7 +12,7 @@ test('option slots with counts and prerequisites', () => {
   expect(inv.count).toBe(3);
   expect(inv.choices.every(f => (f.prereq?.level ?? 1) <= 5)).toBe(true);
   expect(optionSlots(ch([{ cls: 'fighter', level: 10, sub: 'champion' }])).find(s => s.group.id === 'fighting-style')!.count).toBe(2);
-  expect(optionSlots(ch([{ cls: 'wizard', level: 3 }], { race: 'dragonborn' })).map(s => s.group.id)).toEqual(['draconic-ancestry']);
+  expect(optionSlots(ch([{ cls: 'wizard', level: 3 }], { race: 'dragonborn' })).map(s => s.group.id)).toEqual(['optional-wizard', 'draconic-ancestry']);
   expect(optionSlots(ch([{ cls: 'sorcerer', level: 2 }])).some(s => s.group.id === 'metamagic')).toBe(false);
 });
 test('grant slots: race, feat, option, subclass', () => {
@@ -58,52 +58,68 @@ test('unlock copy: class-owned by class level, the rest by character level', () 
 });
 
 describe('shared option pools count once', () => {
+  // the Tasha's optional groups (tick-any) are left out: these tests are about shared pools
+  const slots = (c: Character) => optionSlots(c).filter(x => !x.group.optional);
   const mk = (o: Partial<Character>): Character => ({ ...emptyCharacter(), ...o });
   const fp = mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }], options: ['fighting-style-defense'] });
   test('one style counts once', () => {
-    const [f, p] = optionSlots(fp);
+    const [f, p] = slots(fp);
     expect(f.chosen).toEqual(['fighting-style-defense']);
     expect(p.chosen).toEqual([]);
     expect(p.taken).toEqual(['fighting-style-defense']);
   });
   test('two styles fill one slot each', () => {
-    const s = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling'] });
+    const s = slots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling'] });
     expect(s.map(x => x.chosen)).toEqual([['fighting-style-defense'], ['fighting-style-dueling']]);
   });
   test('one ancestry may fill race and sorcerer slots', () => {
-    const s = optionSlots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-red'] }));
+    const s = slots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-red'] }));
     expect(s.map(x => x.chosen)).toEqual([['draconic-ancestry-red'], ['draconic-ancestry-red']]);
   });
   const within = (s: ReturnType<typeof optionSlots>) => s.map(x => [x.chosen.length, x.count]);
   test('a style only one slot offers moves the other pick out of its way', () => {
-    const [f, p] = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-two-weapon-fighting'] });
+    const [f, p] = slots({ ...fp, options: ['fighting-style-defense', 'fighting-style-two-weapon-fighting'] });
     expect(f.chosen).toEqual(['fighting-style-two-weapon-fighting']);
     expect(p.chosen).toEqual(['fighting-style-defense']);
     expect(f.taken).toEqual(['fighting-style-defense']);
     expect(p.taken).toEqual([]);
   });
   test('fighter listed first and a swords bard share styles without an over-pick', () => {
-    const s = optionSlots(mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'bard', level: 3, sub: 'college-of-swords' }], options: ['fighting-style-dueling', 'fighting-style-archery'] }));
+    const s = slots(mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'bard', level: 3, sub: 'college-of-swords' }], options: ['fighting-style-dueling', 'fighting-style-archery'] }));
     const f = s.find(x => x.cls === 'fighter')!, b = s.find(x => x.cls === 'bard')!;
     expect(f.chosen).toEqual(['fighting-style-archery']);
     expect(b.chosen).toEqual(['fighting-style-dueling']);
     expect(b.taken).toEqual([]);
   });
   test('two ancestries fill race and sorcerer one each', () => {
-    const s = optionSlots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-blue', 'draconic-ancestry-red'] }));
+    const s = slots(mk({ race: 'dragonborn', classes: [{ cls: 'sorcerer', level: 1, sub: 'draconic-bloodline' }], options: ['draconic-ancestry-blue', 'draconic-ancestry-red'] }));
     expect(within(s)).toEqual([[1, 1], [1, 1]]);
     expect(s.flatMap(x => x.chosen).sort()).toEqual(['draconic-ancestry-blue', 'draconic-ancestry-red']);
   });
   test('three slots: a chain of moves places every style', () => {
-    const s = optionSlots(mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }, { cls: 'ranger', level: 2 }],
+    const s = slots(mk({ classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }, { cls: 'ranger', level: 2 }],
       options: ['fighting-style-protection', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting'] }))
       .filter(x => (x.group.from ?? x.group.id) === 'fighting-style');
     expect(within(s)).toEqual([[1, 1], [1, 1], [1, 1]]);
     expect(s.map(x => x.chosen)).toEqual([['fighting-style-great-weapon-fighting'], ['fighting-style-protection'], ['fighting-style-dueling']]);
   });
   test('a real over-pick still shows as more than the count', () => {
-    const s = optionSlots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting'] });
+    const s = slots({ ...fp, options: ['fighting-style-defense', 'fighting-style-dueling', 'fighting-style-great-weapon-fighting'] });
     expect(s.map(x => x.chosen)).toEqual([['fighting-style-defense', 'fighting-style-great-weapon-fighting'], ['fighting-style-dueling']]);
-    expect(optionSlots(mk({ classes: [{ cls: 'fighter', level: 1 }], options: ['fighting-style-defense', 'fighting-style-dueling'] }))[0].chosen).toHaveLength(2);
+    expect(slots(mk({ classes: [{ cls: 'fighter', level: 1 }], options: ['fighting-style-defense', 'fighting-style-dueling'] }))[0].chosen).toHaveLength(2);
   });
+});
+test('a pick in a slot hidden by a replacement grants nothing while hidden', () => {
+  // no pick in a replaced pool (Favored Enemy, Natural Explorer) grants a spell in the data,
+  // so a real Favored Enemy pick is given one for this test only
+  const pick = DATA.features.find(f => f.id === 'favored-enemy-beasts')!;
+  expect(pick.spells).toBeUndefined();
+  pick.spells = [{ spell: 'speak-with-animals', atLevel: 1 }];
+  try {
+    const keys = (options: string[]) => grantSources(ch([{ cls: 'ranger', level: 2 }], { options })).map(s => s.key);
+    expect(keys(['favored-enemy-beasts'])).toContain('feature:favored-enemy-beasts');
+    expect(keys(['favored-enemy-beasts', 'optional-ranger-favored-foe'])).not.toContain('feature:favored-enemy-beasts');
+  } finally {
+    delete pick.spells;
+  }
 });

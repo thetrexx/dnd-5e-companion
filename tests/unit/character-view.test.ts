@@ -1,4 +1,6 @@
 import { charActionSections, charMenuRows, charSpellSections } from '../../src/character/view';
+import { pickableSpells } from '../../src/character/derive';
+import { hasExpandedList } from '../../src/character/options';
 import { emptyCharacter } from '../../src/character/types';
 import type { CharClass, Character } from '../../src/character/types';
 
@@ -122,4 +124,60 @@ test('all view: domain spells keep the Domain tag', () => {
   const l1 = charSpellSections(c, 'all').find(x => x.id === 'lvl-1-cleric')!;
   expect(l1.tags!['bless']).toBe('Domain');
   expect(l1.tags!['guiding-bolt']).toBeUndefined();
+});
+
+const ranger = (lvl: number, options: string[] = [], sub?: string) =>
+  ch([{ cls: 'ranger', level: lvl, ...(sub && { sub }) }], { options });
+test('chosen optional features join the class section, tagged', () => {
+  const sec = charActionSections(ranger(5, ['favored-enemy-undead', 'optional-ranger-favored-foe'])).find(s => s.id === 'class-ranger')!;
+  expect(sec.items.map(f => f.id)).toContain('optional-ranger-favored-foe');
+  expect(sec.tags!['optional-ranger-favored-foe']).toBe('Optional');
+  expect(charActionSections(ranger(5)).find(s => s.id === 'class-ranger')!.items.map(f => f.id)).not.toContain('optional-ranger-favored-foe');
+  expect(charActionSections(ranger(5)).map(s => s.id)).not.toContain('opt-optional-ranger');
+});
+test('replaced class feature hides', () => {
+  const ids = (c: Character) => charActionSections(c).flatMap(s => s.items.map(f => f.id));
+  expect(ids(ranger(10))).toContain('hide-in-plain-sight');
+  expect(ids(ranger(10, ['optional-ranger-natures-veil']))).not.toContain('hide-in-plain-sight');
+  expect(ids(ranger(10, ['optional-ranger-natures-veil']))).toContain('optional-ranger-natures-veil');
+  expect(ids(ranger(10))).not.toContain('deft-explorer-tireless');
+  expect(ids(ranger(10, ['optional-ranger-deft-explorer']))).toContain('deft-explorer-tireless');
+  const bm = charActionSections(ranger(3, ['optional-beast-master-primal-companion'], 'beast-master')).find(s => s.id === 'subclass-ranger')!;
+  expect(bm.items.map(f => f.id)).toEqual(['optional-beast-master-primal-companion']);
+  expect(bm.tags).toEqual({ 'optional-beast-master-primal-companion': 'Optional' });
+});
+test('primal awareness spells come with the tick', () => {
+  const names = (c: Character) => charSpellSections(c, 'mine').flatMap(s => s.items.map(i => i.id));
+  expect(names(ranger(5))).not.toContain('beast-sense');
+  expect(names(ranger(5, ['optional-ranger-primal-awareness']))).toEqual(expect.arrayContaining(['speak-with-animals', 'beast-sense']));
+});
+test('character needs the tick', () => {
+  const cc = { cls: 'cleric', level: 5 } as CharClass;
+  expect(pickableSpells(cc).map(p => p.spell.id)).not.toContain('aura-of-vitality');
+  expect(pickableSpells(cc, true).find(p => p.spell.id === 'aura-of-vitality')!.tag).toBe('Optional');
+});
+test('hasExpandedList follows the tick and its level', () => {
+  expect(hasExpandedList(ch([{ cls: 'cleric', level: 5 }]), 'cleric')).toBe(false);
+  expect(hasExpandedList(ch([{ cls: 'cleric', level: 5 }], { options: ['optional-cleric-additional-spells'] }), 'cleric')).toBe(true);
+  expect(hasExpandedList(ch([{ cls: 'paladin', level: 1 }], { options: ['optional-paladin-additional-spells'] }), 'paladin')).toBe(false);
+});
+test('picked expanded spell keeps its tag after unticking', () => {
+  const c = { ...emptyCharacter(), classes: [{ cls: 'cleric', level: 5 }], spells: [{ id: 'aura-of-vitality', cls: 'cleric' }] } as Character;
+  const l3 = charSpellSections(c, 'mine').find(s => s.id === 'lvl-3-cleric')!;
+  expect(l3.tags!['aura-of-vitality']).toBe('Optional');
+});
+test('a pick no longer on any of the character\'s lists is tagged Off list', () => {
+  // picked as an efreeti genie, then the genie kind changed to dao
+  const c = ch([{ cls: 'warlock', level: 5, sub: 'the-genie' }], { options: ['genie-kind-dao'],
+    spells: [{ id: 'fireball', cls: 'warlock' }, { id: 'spike-growth', cls: 'warlock' }] });
+  const tags = (id: string) => charSpellSections(c, 'mine').find(s => s.id === id)!.tags!;
+  expect(tags('lvl-3-warlock')['fireball']).toBe('Off list');
+  expect(tags('lvl-2-warlock')['spike-growth']).toBe('Patron');
+});
+test('all view adds the expanded list only with the tick', () => {
+  const ids = (c: Character) => charSpellSections(c, 'all').flatMap(s => s.items.map(i => i.id));
+  expect(ids(ch([{ cls: 'cleric', level: 5 }]))).not.toContain('aura-of-vitality');
+  const ticked = ch([{ cls: 'cleric', level: 5 }], { options: ['optional-cleric-additional-spells'] });
+  expect(ids(ticked)).toContain('aura-of-vitality');
+  expect(charSpellSections(ticked, 'all').find(s => s.id === 'lvl-3-cleric')!.tags!['aura-of-vitality']).toBe('Optional');
 });

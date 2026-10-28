@@ -1,6 +1,6 @@
 # Spellbook & Steel — a D&D 5e companion
 
-> **Work in progress.** All 12 classes, 40 PHB subclasses plus 40 more, 456 spells, class options, races and 30 feats are in. Every card is a short summary in our own words with the book page for the full rules.
+> **Work in progress.** All 12 classes, 40 PHB subclasses plus 61 more, 477 spells, class options, Tasha's optional features, races and 42 feats are in. Every card is a short summary in our own words with the book page for the full rules.
 
 Books covered: Player's Handbook, Xanathar's Guide to Everything, Tasha's Cauldron of Everything, Sword Coast Adventurer's Guide, Dungeon Master's Guide, and Bigby Presents: Glory of the Giants.
 

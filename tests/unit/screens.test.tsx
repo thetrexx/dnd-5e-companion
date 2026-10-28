@@ -57,7 +57,7 @@ test('SubclassPicker lists subclasses and No subclass', () => {
   const r = render(<SubclassPicker cls="fighter" level={3} />);
   expect(r.container.querySelector('.page-title')!.textContent).toBe('Fighter');
   expect(r.container.querySelector('.hint')!.textContent).toBe('Pick a Martial Archetype');
-  expect([...r.container.querySelectorAll('button')].map(b => b.textContent)).toEqual(['Champion', 'Battle Master', 'Eldritch Knight', 'Arcane Archer', 'Cavalier', 'Samurai', 'No subclass']);
+  expect([...r.container.querySelectorAll('button')].map(b => b.textContent)).toEqual(['Champion', 'Battle Master', 'Eldritch Knight', 'Arcane Archer', 'Cavalier', 'Samurai', 'Psi Warrior', 'Rune Knight', 'No subclass']);
 });
 
 test('Menu row icons and slot icon survive a failed load', () => {
@@ -119,4 +119,27 @@ test('Card uses the data name for race and feat sources', () => {
   expect(race.container.querySelector('.card-sub')!.textContent).toContain('Half-Orc Feature');
   const feat = render(<Card kind="feature" id="great-weapon-master" cls="fighter" level={1} />);
   expect(feat.container.querySelector('.card-sub')!.textContent).toContain('Great Weapon Master Feature');
+});
+
+test('Card marks optional features and what they replace', () => {
+  const foe = render(<Card kind="feature" id="optional-ranger-favored-foe" cls="ranger" level={1} />);
+  expect(foe.container.querySelector('.card-sub')!.textContent).toBe('Ranger Feature · Level 1 · Optional, replaces Favored Enemy');
+  expect(foe.container.querySelector('a.back')!.getAttribute('href')).toBe('#/actions/ranger/1?s=class');
+  const pc = render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={3} sub="beast-master" />);
+  expect(pc.container.querySelector('.card-sub')!.textContent).toBe("Beast Master Feature · Level 3 · Optional, replaces Ranger's Companion, Companion Commands");
+  expect(pc.container.querySelector('a.back')!.getAttribute('href')).toContain('s=subclass');
+  const t = render(<Card kind="feature" id="deft-explorer-tireless" cls="ranger" level={10} />);
+  expect(t.container.querySelector('.card-sub')!.textContent).toBe('Ranger Feature · Level 10 · Optional');
+});
+test('Blessed Strikes names Divine Strike once', () => {
+  const r = render(<Card kind="feature" id="optional-cleric-blessed-strikes" cls="cleric" level={8} />);
+  expect(r.container.querySelector('.card-sub')!.textContent).toMatch(/Optional, replaces Divine Strike$/);
+});
+test('Primal Companion card keeps Bestial Fury and Share Spells', () => {
+  const r = render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={11} sub="beast-master" />);
+  expect(r.container.querySelector('.card-scaling')!.textContent).toContain('Beast attacks: 2');
+  expect(r.container.querySelector('.card-desc')!.textContent).toMatch(/Bestial Fury.*two attacks/);
+  expect(r.container.querySelector('.card-desc')!.textContent).toContain('Share Spells');
+  expect(render(<Card kind="feature" id="optional-beast-master-primal-companion" cls="ranger" level={10} sub="beast-master" />)
+    .container.querySelector('.card-scaling')!.textContent).toContain('Beast attacks: 1');
 });

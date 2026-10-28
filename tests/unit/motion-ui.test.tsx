@@ -14,7 +14,9 @@ const pass = (ms: number) => act(async () => { await vi.advanceTimersByTimeAsync
 const fakeCtx = () => ({ createImageData: (w: number, h: number) => ({ data: new Uint8ClampedArray(w * h * 4) }), putImageData: vi.fn() });
 beforeEach(() => {
   proto.getTotalLength = () => 100;
-  eproto.animate = vi.fn(() => ({ finished: Promise.resolve(), cancel: vi.fn() }));
+  // never finishes: with no IntersectionObserver in jsdom, a loop whose cycles finished at once would spin
+  // through microtasks without yielding (and grow the mock's call log) once its start delay ends
+  eproto.animate = vi.fn(() => ({ finished: new Promise(() => {}), cancel: vi.fn() }));
   // jsdom has no canvas
   vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation(() => null);
 });

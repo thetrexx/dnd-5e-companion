@@ -7,7 +7,7 @@ const CASTERS = ['full', 'half', 'third', 'pact', 'none'];
 const RESOLUTIONS = ['attack', 'save', 'auto', 'none'];
 const ABILITIES = ['str', 'dex', 'con', 'int', 'wis', 'cha'];
 const SOURCES = ['generic', 'class', 'subclass', 'option', 'race', 'feat'];
-const OWNERS = ['class', 'subclass', 'race'];
+const OWNERS = ['class', 'subclass', 'race', 'feat'];
 const BONUS_KINDS = ['domain', 'oath', 'circle', 'patron', 'subclass'];
 const TEXT_SOURCES = ['summary'];
 const BOOK_IDS: string[] = ['phb', 'xge', 'tce', 'scag', 'dmg', 'bgg'];
@@ -52,7 +52,7 @@ export function validateDataset(d: Dataset): string[] {
   const featIds = new Set(d.feats.map(x => x.id));
   const featureIds = new Set(d.features.map(x => x.id));
   const isOption = (id: string) => d.features.some(f => f.id === id && f.source.kind === 'option');
-  const ownedBy = (at: string, kind: 'class' | 'subclass' | 'race', id: string, g: string) => {
+  const ownedBy = (at: string, kind: 'class' | 'subclass' | 'race' | 'feat', id: string, g: string) => {
     const o = d.optionGroups.find(x => x.id === g)?.owner;
     if (o && (o.kind !== kind || o.id !== id)) errs.push(`${at}: option group "${g}" is owned by ${o.kind} "${o.id}"`);
   };
@@ -110,6 +110,13 @@ export function validateDataset(d: Dataset): string[] {
     if (!Array.isArray(s.description) || s.description.length === 0 || s.description.some(blank)) errs.push(`${at}: description must be non-empty paragraphs`);
     if (!Array.isArray(s.classes)) errs.push(`${at}: classes must be an array`);
     else for (const c of s.classes) if (!CLASS_IDS.includes(c)) errs.push(`${at}: classes has unknown class "${c}"`);
+    if (s.optionalLists !== undefined) {
+      if (!Array.isArray(s.optionalLists) || s.optionalLists.length === 0) errs.push(`${at}: optionalLists must be a non-empty array when present`);
+      else for (const c of s.optionalLists) {
+        if (!CLASS_IDS.includes(c)) errs.push(`${at}: optionalLists has unknown class "${c}"`);
+        else if (s.classes?.includes(c)) errs.push(`${at}: optionalLists repeats base class "${c}"`);
+      }
+    }
     if (!isInt(s.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     checkBook(at, s.book, errs);
     if (s.summary) {
@@ -146,6 +153,14 @@ export function validateDataset(d: Dataset): string[] {
     if (f.prereq?.option !== undefined && !featureIds.has(f.prereq.option)) errs.push(`${at}: prereq has unknown option "${f.prereq.option}"`);
     else if (f.prereq?.option !== undefined && !isOption(f.prereq.option)) errs.push(`${at}: prereq option "${f.prereq.option}" is not an option`);
     grants(at, f.spells);
+    const group = f.source?.kind === 'option' ? d.optionGroups.find(g => g.id === f.source.id) : undefined;
+    if (group?.optional) {
+      if (f.optional !== true) errs.push(`${at}: an option of an optional group must be optional`);
+      if (f.prereq?.level !== f.level) errs.push(`${at}: prereq.level must equal level in an optional group`);
+    }
+    for (const r of f.replaces ?? []) if (!featureIds.has(r) && !groupIds.has(r)) errs.push(`${at}: replaces unknown feature or option group "${r}"`);
+    if (f.expandsList !== undefined && !(group?.optional && group.owner.kind === 'class' && group.owner.id === f.expandsList))
+      errs.push(`${at}: expandsList "${f.expandsList}" only fits an option of the optional group of that class`);
   }
 
   checkIds('subclass', d.subclasses, errs);
@@ -183,17 +198,16 @@ export function validateDataset(d: Dataset): string[] {
     if (blank(g.name)) errs.push(`${at}: name is empty`);
     const o = g.owner;
     if (!o || !OWNERS.includes(o.kind)) errs.push(`${at}: owner.kind is not valid`);
-    else if ((o.kind === 'class' && !CLASS_IDS.includes(o.id)) || (o.kind === 'subclass' && !subIds.has(o.id)) || (o.kind === 'race' && !raceIds.has(o.id))) errs.push(`${at}: owner has unknown ${o.kind} "${o.id}"`);
+    else if ((o.kind === 'class' && !CLASS_IDS.includes(o.id)) || (o.kind === 'subclass' && !subIds.has(o.id)) || (o.kind === 'race' && !raceIds.has(o.id)) || (o.kind === 'feat' && !featIds.has(o.id))) errs.push(`${at}: owner has unknown ${o.kind} "${o.id}"`);
     table(at, 'picks', g.picks, 0, 99, errs);
     if (Array.isArray(g.picks) && g.picks.some((n, i) => i > 0 && n < g.picks[i - 1])) errs.push(`${at}: picks must not decrease`);
     if (g.from !== undefined && !groupIds.has(g.from)) errs.push(`${at}: unknown from group "${g.from}"`);
     if (g.reuse !== undefined && g.reuse !== true) errs.push(`${at}: reuse must be true when present`);
     if (g.only !== undefined) {
-      if (g.from === undefined) errs.push(`${at}: only requires from`);
-      else {
-        const have = optionsOf(g.from);
-        for (const x of g.only) if (!have.includes(x)) errs.push(`${at}: only has "${x}" which is not an option of "${g.from}"`);
-      }
+      // a pool's own group may narrow it too (the fighter's styles leave out Blessed Warrior)
+      const pool = g.from ?? g.id;
+      const have = optionsOf(pool);
+      for (const x of g.only) if (!have.includes(x)) errs.push(`${at}: only has "${x}" which is not an option of "${pool}"`);
     }
     for (const b of g.bonus ?? []) {
       if (!subIds.has(b.subclass)) errs.push(`${at}: bonus has unknown subclass "${b.subclass}"`);
@@ -225,6 +239,10 @@ export function validateDataset(d: Dataset): string[] {
     if (!isInt(f.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     checkBook(at, f.book, errs);
     grants(at, f.spells);
+    for (const g of f.options ?? []) {
+      if (!groupIds.has(g)) errs.push(`${at}: unknown option group "${g}"`);
+      else ownedBy(at, 'feat', f.id, g);
+    }
   }
 
   return errs;

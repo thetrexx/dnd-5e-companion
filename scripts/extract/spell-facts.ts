@@ -182,6 +182,7 @@ function main(): void {
     let f = merge(f0, overrides[f0.id] ?? {});
     const old = prev.get(f.id);
     if (old?.classes.length) f = { ...f, classes: old.classes };
+    if (old?.optionalLists) f = { ...f, optionalLists: old.optionalLists };
     if (!f.page) {
       const pg = findSpellPage(f.name, pages, names);
       if (pg) f = { ...f, page: pg }; else missing.push(f.id);

@@ -3326,5 +3326,170 @@
       "Your mind strikes out at up to ten creatures you choose and can see within 90 ft; any with Intelligence 2 or lower are unaffected. Each makes an Intelligence save. A failed save means 14d6 psychic damage and the stunned condition; a success means half damage and no stun. A creature killed by the damage has its head explode, if it has one.",
       "A stunned target gets a new Intelligence save after each of its turns; succeeding ends the stun."
     ]
+  },
+  "blade-of-disaster": {
+    "description": [
+      "You tear a blade-shaped planar rift, roughly 3 ft long, into an empty space you can see within 60 ft. On casting, and each time you use a bonus action to glide it up to 30 ft, it attacks up to 2 times (melee spell attacks) against creatures, loose objects or structures no more than 5 ft from it.",
+      "A hit deals 4d12 force damage and crits on a d20 roll of 18+, adding 8d12 force (12d12 in all). It passes harmlessly through barriers, even wall of force."
+    ]
+  },
+  "booming-blade": {
+    "description": [
+      "You swing the weapon from the casting at one creature within 5 ft as a melee attack. On a hit, it suffers the attack's usual effects and crackles with thunder until your next turn starts. If it moves 5 ft or more of its own will before then, it takes 1d8 thunder damage, ending the spell.",
+      "From level 5 a hit also deals 1d8 thunder, and the moving damage becomes 2d8. Both rise by 1d8 at level 11 (2d8 on hit, 3d8 for moving) and level 17 (3d8, 4d8)."
+    ],
+    "material": "a melee weapon of 1 sp or more in value"
+  },
+  "dream-of-the-blue-veil": {
+    "description": [
+      "You and as many as 8 willing creatures within 20 ft fall unconscious, dreaming of another Material Plane world. After the full 6 hours, you all wake there, somewhere safe no more than 1 mile from where the magic item was made, or from a sleeper's birthplace.",
+      "You must know the world exists (not its name) and hold a magic item from it, or include a creature born there.",
+      "A sleeper who takes damage drops out, left behind; if you take damage, it ends for all and no one travels."
+    ],
+    "material": "a magic item from the destination world, or a willing creature born there"
+  },
+  "green-flame-blade": {
+    "description": [
+      "You swing the weapon from the casting at one creature within 5 ft as a melee attack. On a hit, it suffers the attack's usual effects, and you can send green fire jumping to a second creature within 5 ft of the target that you can see; it takes fire damage equal to your spellcasting modifier.",
+      "From level 5 a hit also deals 1d8 fire and the jump deals 1d8 + your modifier. Each part gains another 1d8 at level 11 and again at level 17."
+    ],
+    "material": "a melee weapon of 1 sp or more in value"
+  },
+  "intellect-fortress": {
+    "description": [
+      "You wrap a mind in psychic armor. For up to 1 hour, you, or a willing creature in sight within 30 ft, gains resistance to psychic damage plus advantage on Intelligence, Wisdom and Charisma saves."
+    ],
+    "higherLevels": "Each slot level above 3 adds one more target; the targets must all stand within 30 ft of one another when you pick them."
+  },
+  "lightning-lure": {
+    "description": [
+      "A whip of lightning snaps at one creature you can see within 15 ft. It makes a Strength save or is dragged as much as 10 ft straight at you; if that leaves it within 5 ft of you, it also takes 1d8 lightning damage.",
+      "Damage rises to 2d8 at level 5, 3d8 at level 11 and 4d8 at level 17."
+    ]
+  },
+  "mind-sliver": {
+    "description": [
+      "You jab a shard of psychic force into the mind of a creature you can see within 60 ft. It makes an Intelligence save or takes 1d6 psychic damage, and it subtracts 1d4 from the next save it rolls before the end of your next turn.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ]
+  },
+  "spirit-shroud": {
+    "description": [
+      "Spirits of the dead, intangible and invulnerable, swirl around you for up to 1 minute. Pick radiant, necrotic or cold as you cast. Whenever one of your attacks hits a creature within 10 ft of you, it deals an extra 1d8 damage of that type, and that creature can't regain hit points until your next turn begins.",
+      "Pick any creatures you can see; each that begins its turn within 10 ft of you loses 10 ft of speed until your next turn begins."
+    ],
+    "higherLevels": "The extra damage gains 1d8 for each 2 full slot levels above 3."
+  },
+  "summon-aberration": {
+    "description": [
+      "An aberrant spirit appears in an empty space you can see within 90 ft. Choose Beholderkin, Slaad or Star Spawn when you cast; the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 109."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "a pickled tentacle plus an eyeball, kept in a platinum-inlaid vial worth 400+ gp"
+  },
+  "summon-beast": {
+    "description": [
+      "A bestial spirit appears in an empty space you can see within 90 ft. Choose Air, Land or Water when you cast; it looks like an animal of your choice from that environment, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 109."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "a feather, a tuft of fur and a fish tail in a gilded acorn, worth 200+ gp"
+  },
+  "summon-celestial": {
+    "description": [
+      "A celestial spirit appears in angelic form in an empty space you can see within 90 ft. Choose Avenger or Defender when you cast; the choice sets the attack it uses.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 110."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "a golden reliquary worth 500+ gp"
+  },
+  "summon-construct": {
+    "description": [
+      "A construct spirit appears in an empty space you can see within 90 ft. Choose Clay, Metal or Stone when you cast; it looks like a golem or modron of that material, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 111."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "an ornate lockbox of stone and metal worth 400+ gp"
+  },
+  "summon-elemental": {
+    "description": [
+      "An elemental spirit appears in an empty space you can see within 90 ft. Choose Air, Earth, Fire or Water when you cast; it looks like a two-legged figure wrapped in that element, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 111."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "air, a pebble, ash and water in a vial inlaid with gold, worth 400+ gp"
+  },
+  "summon-fey": {
+    "description": [
+      "A fey spirit appears in an empty space you can see within 90 ft. Choose a mood when you cast: Fuming, Mirthful or Tricksy. It looks like a fey creature of your choice showing that mood, which sets one of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 112."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "a gilded flower worth 300+ gp"
+  },
+  "summon-fiend": {
+    "description": [
+      "A fiendish spirit appears in an empty space you can see within 90 ft. Choose Demon, Devil or Yugoloth when you cast; it looks like a fiend of that kind, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 112."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "humanoid blood in a ruby vial worth 600+ gp"
+  },
+  "summon-shadowspawn": {
+    "description": [
+      "A shadowy spirit appears in an empty space you can see within 90 ft. Choose an emotion when you cast: Fury, Despair or Fear. It looks like a twisted biped marked by that emotion, which sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 114."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "tears inside a gem worth 300+ gp"
+  },
+  "summon-undead": {
+    "description": [
+      "An undead spirit appears in an empty space you can see within 90 ft. Choose Ghostly, Putrid or Skeletal when you cast; it looks like an undead creature of that form, and the choice sets some of its traits.",
+      "It is an ally to your party, acts right after you on your initiative and obeys your spoken orders (no action needed); with none, it Dodges and avoids danger. It vanishes when the spell ends or it drops to 0 hit points.",
+      "Stat block: Tasha's p. 114."
+    ],
+    "higherLevels": "Cast with a higher slot, the stat block uses that slot level wherever it lists the spell level.",
+    "material": "a gilded skull worth 300+ gp"
+  },
+  "sword-burst": {
+    "description": [
+      "A brief ring of ghostly blades whirls around you. Every other creature within 5 ft of you makes a Dexterity save or takes 1d6 force damage.",
+      "Damage rises to 2d6 at level 5, 3d6 at level 11 and 4d6 at level 17."
+    ]
+  },
+  "tashas-caustic-brew": {
+    "description": [
+      "Acid sprays from you in a 30 ft long, 5 ft wide line in a direction you pick. Each creature in it makes a Dexterity save or is coated in acid for up to 1 minute.",
+      "A coated creature takes 2d4 acid damage at the start of each of its turns. The coating lasts until the spell ends or any creature spends its action cleaning the acid off itself or another."
+    ],
+    "higherLevels": "Each slot level above 1 adds 2d4 to the acid damage.",
+    "material": "a scrap of rotten food"
+  },
+  "tashas-mind-whip": {
+    "description": [
+      "You lash the mind of one creature you can see within 90 ft. It makes an Intelligence save.",
+      "On a failure it takes 3d6 psychic damage and can't take reactions until its next turn ends. On that turn it gets only one of the three: its move, its action or its bonus action.",
+      "On a success it takes half damage and nothing else."
+    ],
+    "higherLevels": "Each slot level above 2 adds one more target; the targets must all stand within 30 ft of one another when you pick them."
+  },
+  "tashas-otherworldly-guise": {
+    "description": [
+      "You draw on the Lower or Upper Planes (your pick) and transform for up to 1 minute.",
+      "Lower: immune to fire and poison damage and the poisoned condition. Upper: immune to radiant and necrotic damage and the charmed condition.",
+      "Spectral wings give you a 40 ft flying speed, and you gain +2 AC.",
+      "Your weapon attacks are magical and can use your spellcasting modifier in place of Strength or Dexterity for attack and damage. The Attack action gives you 2 attacks, unless a feature like Extra Attack already grants more."
+    ],
+    "material": "an object engraved with an Outer Planes symbol, worth 500+ gp"
   }
 }

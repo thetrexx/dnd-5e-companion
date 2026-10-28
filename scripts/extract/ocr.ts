@@ -75,12 +75,24 @@ export function wordsMatch(a: string, b: string): boolean {
 }
 
 /**
+ * The text layer with every line break removed and its two halves glued (no space), so a word the page
+ * split at a line end without a hyphen ("intel / ligence") is whole again. A hyphen the first pass left
+ * at the break goes too.
+ */
+const glueLines = (s: string): string => joinHyphenation(s).replace(/[-­‐]?[^\S\r\n]*\r?\n\s*/g, '');
+
+/**
  * Longest run of consecutive normalized words that `text` shares with `ocr`, tolerating one misread letter
- * per word. A text-layer word that is two of ours run together ("ifyou") counts as both.
+ * per word. A text-layer word that is two of ours run together ("ifyou") counts as both. Takes the larger
+ * of two passes: the text layer as is, and with its line breaks glued (`glueLines`). Gluing also fuses two
+ * unrelated words at every line end, which can break a real run, so the first pass stays.
  */
 export function longestSharedRun(text: string, ocr: string): number {
   const a = normWords(text);
-  const b = normWords(ocr);
+  return Math.max(runOf(a, normWords(ocr)), runOf(a, normWords(glueLines(ocr))));
+}
+
+function runOf(a: string[], b: string[]): number {
   let best = 0;
   let prev2 = new Array<number>(b.length + 1).fill(0);
   let prev = new Array<number>(b.length + 1).fill(0);

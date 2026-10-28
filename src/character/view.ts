@@ -2,15 +2,15 @@ import { DATA } from '../data';
 import type { ClassId, Feature, Route, Spell } from '../data/types';
 import { genericRows } from '../logic/menu';
 import type { MenuRow } from '../logic/menu';
-import { genericSections, joinTag } from '../logic/sections';
+import { genericSections, joinTag, tagOptional } from '../logic/sections';
 import type { Section } from '../logic/sections';
-import { extraListTag, listSpells } from '../logic/rules';
+import { extraListTag, listSpells, listTag } from '../logic/rules';
 import { effectiveSub } from '../logic/subclass';
 import type { SpellView } from '../settings/settings';
-import { castingInfo, raceChain } from './derive';
+import { castingInfo, patronSpells, raceChain } from './derive';
 import { autoSpells, grantSources, unlockText } from './grants';
 import type { GrantSource } from './grants';
-import { optionSlots } from './options';
+import { hasExpandedList, optionSlots, replaced } from './options';
 import type { OptionSlot } from './options';
 import type { CharClass, Character } from './types';
 
@@ -32,24 +32,30 @@ function classPlace(ch: Character, i: number, view: SpellView): Place | undefine
   if (!c || !info) return undefined;
   const sub = effectiveSub(cc.cls, cc.level, cc.sub);
   const table = c.caster === 'none' ? sub?.casting?.maxSpellLevel : c.maxSpellLevel;
-  const list = listSpells(c, sub);
-  const patron = sub?.bonusSpells?.kind === 'patron'
-    ? sub.bonusSpells.grants.flatMap(g => DATA.spells.find(s => s.id === g.spell) ?? []) : [];
+  const list = listSpells(c, sub, hasExpandedList(ch, cc.cls));
+  // a patron grant tied to an option (Genie kind) counts only with that option chosen
+  const patron = patronSpells(sub, ch.options);
   const entries: Entry[] = [];
   for (const p of ch.spells) {
     const spell = p.cls === cc.cls && DATA.spells.find(s => s.id === p.id);
     if (!spell) continue;
     const extra = extraListTag(c, sub, spell);
+    // a pick from the expanded list keeps its Optional tag, ticked or not
+    const optional = !extra && listTag(c, sub, spell);
     const arcanum = cc.cls === 'warlock' && spell.level >= 6;
-    const tag = arcanum ? 'Mystic Arcanum'
+    const tag = arcanum ? joinTag('Mystic Arcanum', optional || undefined)
       : extra ? extra
       : p.extra ? (cc.cls === 'bard' ? 'Magical Secrets' : 'Other list')
-      : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school' : undefined;
-    entries.push({ spell, tag, listTag: !arcanum && !!extra, mine: true, locked: false, atLevel: 1 });
+      : optional ? optional
+      : list.includes(spell) ? undefined : patron.includes(spell) ? 'Patron' : c.caster === 'none' ? 'Any school'
+      // a pick on none of the character's lists (another genie kind chosen since), worded as in the editor
+      : 'Off list';
+    const offList = tag === 'Off list';
+    entries.push({ spell, tag, listTag: offList || (!arcanum && !p.extra && !!(extra || optional)), mine: true, locked: false, atLevel: 1 });
   }
   if (view === 'all') {
     // the whole list up to the ceiling, so levels not reached yet show dimmed
-    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, tag: extraListTag(c, sub, spell), listTag: true, mine: false, locked: false, atLevel: 1 });
+    for (const spell of list) if (spell.level <= info.ceiling) entries.push({ spell, tag: listTag(c, sub, spell), listTag: true, mine: false, locked: false, atLevel: 1 });
     for (const spell of patron) if (spell.level <= info.ceiling) entries.push({ spell, tag: 'Patron', mine: false, locked: false, atLevel: 1 });
   }
   return {
@@ -138,21 +144,29 @@ const chosenActions = (slot: OptionSlot): Feature[] => slot.chosen
   .filter(f => f.cost !== 'passive' && (f.prereq?.level ?? 0) <= slot.level);
 
 /** Class, subclass (when it has cards) and option sections of one class. */
-function classActions(cc: CharClass, slots: OptionSlot[]): Section[] {
+function classActions(cc: CharClass, slots: OptionSlot[], gone: Set<string>): Section[] {
   const c = DATA.classes.find(x => x.id === cc.cls);
   if (!c) return [];
   const s = effectiveSub(cc.cls, cc.level, cc.sub);
   // a feature tied to an option (Storm Herald's Raging Storm reactions) shows only with that option chosen
   const chosen = new Set(slots.flatMap(x => x.chosen));
-  const features = (kind: 'class' | 'subclass', id: string) =>
-    DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive'
-      && (!f.prereq?.option || chosen.has(f.prereq.option)));
-  const out: Section[] = [{ id: `class-${cc.cls}`, title: `${c.name} Actions`, motif: cc.cls, items: features('class', cc.cls) }];
+  const mine = slots.filter(x => x.cls === cc.cls);
+  // chosen options of an optional group join their owner's section; a feature they replace drops out
+  const features = (kind: 'class' | 'subclass', id: string) => [
+    ...DATA.features.filter(f => f.source.kind === kind && f.source.id === id && f.level <= cc.level && f.cost !== 'passive'
+      && (!f.prereq?.option || chosen.has(f.prereq.option)) && !gone.has(f.id)),
+    ...mine.filter(x => x.group.optional && x.group.owner.kind === kind && x.group.owner.id === id).flatMap(chosenActions),
+  ];
+  const section = (sid: string, title: string, items: Feature[]): Section => {
+    const tags = tagOptional(items);
+    return { id: sid, title, motif: cc.cls, items, ...(tags && { tags }) };
+  };
+  const out: Section[] = [section(`class-${cc.cls}`, `${c.name} Actions`, features('class', cc.cls))];
   const subItems = s ? features('subclass', s.id) : [];
-  if (s && subItems.length) out.push({ id: `subclass-${cc.cls}`, title: s.name, motif: cc.cls, items: subItems });
-  for (const slot of slots) {
-    const items = slot.cls === cc.cls ? chosenActions(slot) : [];
-    if (items.length) out.push({ id: `opt-${slot.group.id}`, title: slot.group.name, motif: cc.cls, items });
+  if (s && subItems.length) out.push(section(`subclass-${cc.cls}`, s.name, subItems));
+  for (const slot of mine) {
+    const items = slot.group.optional ? [] : chosenActions(slot);
+    if (items.length) out.push(section(`opt-${slot.group.id}`, slot.group.name, items));
   }
   return out;
 }
@@ -163,17 +177,21 @@ function otherActions(ch: Character, slots: OptionSlot[]): Section[] {
   const chain = raceChain(ch.race);
   const race = [
     ...DATA.features.filter(f => f.source.kind === 'race' && chain.some(r => r.id === f.source.id) && f.cost !== 'passive'),
-    ...slots.filter(s => !s.cls).flatMap(chosenActions),
+    ...slots.filter(s => !s.cls && s.group.owner.kind !== 'feat').flatMap(chosenActions),
   ];
   if (race.length) out.push({ id: 'race', title: `${chain[0].name} Actions`, items: race });
-  const feats = [...new Set(ch.feats)].flatMap(id => DATA.features.filter(f => f.source.kind === 'feat' && f.source.id === id && f.cost !== 'passive'));
+  const feats = [
+    ...[...new Set(ch.feats)].flatMap(id => DATA.features.filter(f => f.source.kind === 'feat' && f.source.id === id && f.cost !== 'passive')),
+    ...slots.filter(s => s.group.owner.kind === 'feat').flatMap(chosenActions),
+  ];
   if (feats.length) out.push({ id: 'feats', title: 'Feats', items: feats });
   return out;
 }
 
 export function charActionSections(ch: Character): Section[] {
   const slots = optionSlots(ch);
-  return [...genericSections(), ...ch.classes.flatMap(cc => classActions(cc, slots)), ...otherActions(ch, slots)];
+  const gone = replaced(ch);
+  return [...genericSections(), ...ch.classes.flatMap(cc => classActions(cc, slots, gone)), ...otherActions(ch, slots)];
 }
 
 function sourceIcon(s: GrantSource): MenuRow['icon'] {
@@ -187,12 +205,13 @@ export function charMenuRows(ch: Character): MenuRow[] {
   const actions = (section: string): Route => ({ page: 'me-actions', section });
   const spells = (section: string): Route => ({ page: 'me-spells', section });
   const slots = optionSlots(ch);
+  const gone = replaced(ch);
   const rows = genericRows(actions);
   for (const cc of ch.classes) {
     const c = DATA.classes.find(x => x.id === cc.cls);
     if (!c) continue;
     // the class row lands on the first class, subclass or option section that has cards
-    const first = classActions(cc, slots).find(x => x.items.length > 0)?.id ?? `class-${cc.cls}`;
+    const first = classActions(cc, slots, gone).find(x => x.items.length > 0)?.id ?? `class-${cc.cls}`;
     const icon = effectiveSub(cc.cls, cc.level, cc.sub)?.hotbarIcon ?? c.hotbarIcon;
     rows.push({ kind: 'class', label: `${c.name} Actions`, icon: { type: 'img', src: icon }, target: actions(first) });
   }

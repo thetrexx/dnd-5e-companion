@@ -479,5 +479,152 @@
     "page": 75,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "chef",
+    "name": "Chef",
+    "source": {
+      "kind": "feat",
+      "id": "chef"
+    },
+    "level": 1,
+    "cost": "other",
+    "trigger": "You take a short rest with ingredients and cook's utensils",
+    "description": [
+      "Cook during the rest for as many as 4 + your proficiency bonus creatures.",
+      "When the rest is over, each one who ate and then spends one or more Hit Dice heals an extra 1d8."
+    ],
+    "page": 79,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "chef-treat",
+    "name": "Chef: Treats",
+    "source": {
+      "kind": "feat",
+      "id": "chef"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "Treats (proficiency bonus per batch)",
+    "description": [
+      "Any creature, you included, can eat one of your treats as a bonus action and gains your proficiency bonus as temporary hit points.",
+      "A batch takes 1 hour of work or comes with the end of a long rest. Treats spoil 8 hours after you make them."
+    ],
+    "page": 79,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "crusher",
+    "name": "Crusher",
+    "source": {
+      "kind": "feat",
+      "id": "crusher"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "An attack of yours hits a creature and deals bludgeoning damage",
+    "uses": "Once per turn",
+    "description": [
+      "Move the creature 5 ft into an unoccupied space (no check). It can be at most one size larger than you.",
+      "On a critical hit, attack rolls against it also have advantage until your next turn begins. That part is not limited to once per turn."
+    ],
+    "page": 79,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "metamagic-adept",
+    "name": "Metamagic Adept",
+    "source": {
+      "kind": "feat",
+      "id": "metamagic-adept"
+    },
+    "level": 1,
+    "cost": "free",
+    "resource": "2 sorcery points (Metamagic only)",
+    "uses": "Refill on long rest",
+    "description": [
+      "You know 2 Metamagic options from the sorcerer list and have 2 sorcery points that can only pay for Metamagic. They add to any sorcery points you already have.",
+      "One Metamagic option per spell, unless the option itself allows more."
+    ],
+    "page": 80,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "piercer",
+    "name": "Piercer",
+    "source": {
+      "kind": "feat",
+      "id": "piercer"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "An attack of yours hits a creature and deals piercing damage",
+    "uses": "Once per turn",
+    "description": [
+      "Roll one damage die of that attack again. You must keep the new number, even if it is lower.",
+      "On a critical hit, also roll one more damage die for the extra piercing damage. That part is not limited to once per turn."
+    ],
+    "page": 80,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "poisoner",
+    "name": "Poisoner",
+    "source": {
+      "kind": "feat",
+      "id": "poisoner"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "resource": "One dose of poison",
+    "description": [
+      "Coat a weapon or a piece of ammunition with poison using a bonus action, not an action.",
+      "Your own doses (1 hour with a poisoner's kit and 50 gp of materials make as many as your proficiency bonus) last 1 minute or until a hit. A creature damaged by the coated weapon or ammunition passes a DC 14 Constitution save or takes 2d8 poison damage and is poisoned until your next turn ends."
+    ],
+    "page": 80,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "slasher",
+    "name": "Slasher",
+    "source": {
+      "kind": "feat",
+      "id": "slasher"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "An attack of yours hits a creature and deals slashing damage",
+    "uses": "Once per turn",
+    "description": [
+      "The creature loses 10 ft of speed until your next turn begins.",
+      "On a critical hit, it also has disadvantage on all its attack rolls until your next turn begins. That part is not limited to once per turn."
+    ],
+    "page": 81,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "telekinetic",
+    "name": "Telekinetic",
+    "source": {
+      "kind": "feat",
+      "id": "telekinetic"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "description": [
+      "Pick a creature you can see no more than 30 ft away. Unless it passes a Strength save (DC 8 + proficiency bonus + the modifier of the ability this feat raised), you slide it 5 ft, either closer to you or farther off.",
+      "A creature can choose to fail the save."
+    ],
+    "page": 81,
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

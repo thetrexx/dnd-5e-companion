@@ -1037,5 +1037,376 @@
     "page": 43,
     "book": "xge",
     "textSource": "summary"
+  },
+  {
+    "id": "optional-ranger-favored-foe",
+    "source": {
+      "kind": "option",
+      "id": "optional-ranger"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "name": "Favored Foe",
+    "cost": "free",
+    "trigger": "Your attack roll hits a creature",
+    "uses": "Proficiency bonus times per long rest",
+    "replaces": [
+      "favored-enemy"
+    ],
+    "scaling": [
+      {
+        "label": "Extra damage",
+        "values": [
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8",
+          "1d8"
+        ]
+      }
+    ],
+    "description": [
+      "When an attack roll of yours hits a creature, you can mark it as a favored enemy; the mark lasts 1 minute. Holding the mark takes concentration, like a spell.",
+      "Once on each of your turns, when you damage the marked creature (the hit that marks it included), add 1d4 to that damage: 1d6 from ranger level 6, 1d8 from level 14.",
+      "Marks per long rest: your proficiency bonus. A marked creature counts as a favored enemy for Foe Slayer."
+    ],
+    "page": 56,
+    "textSource": "summary",
+    "book": "tce",
+    "optional": true
+  },
+  {
+    "id": "optional-ranger-deft-explorer",
+    "source": {
+      "kind": "option",
+      "id": "optional-ranger"
+    },
+    "level": 1,
+    "prereq": {
+      "level": 1
+    },
+    "name": "Deft Explorer",
+    "cost": "passive",
+    "replaces": [
+      "natural-explorer"
+    ],
+    "description": [
+      "Canny (level 1): pick one skill you are proficient in; your proficiency bonus is doubled on checks with it. You also learn 2 extra languages to speak, read and write.",
+      "Roving (level 6): your walking speed rises by 5 ft, and you get climbing and swimming speeds equal to it.",
+      "Tireless (level 10): temporary hit points as an action, and short rests ease exhaustion (its own card)."
+    ],
+    "page": 56,
+    "textSource": "summary",
+    "book": "tce",
+    "optional": true
+  },
+  {
+    "id": "optional-ranger-additional-spells",
+    "name": "Additional Ranger Spells",
+    "source": {
+      "kind": "option",
+      "id": "optional-ranger"
+    },
+    "level": 2,
+    "prereq": {
+      "level": 2
+    },
+    "cost": "passive",
+    "expandsList": "ranger",
+    "description": [
+      "Adds Tasha's extra spells to the Ranger list, so you can learn them as ranger spells.",
+      "They carry an Optional tag wherever they show."
+    ],
+    "page": 57,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "optional-ranger-primal-awareness",
+    "source": {
+      "kind": "option",
+      "id": "optional-ranger"
+    },
+    "level": 3,
+    "prereq": {
+      "level": 3
+    },
+    "name": "Primal Awareness",
+    "cost": "other",
+    "uses": "Each spell once per long rest without a slot",
+    "replaces": [
+      "primeval-awareness"
+    ],
+    "spells": [
+      {
+        "spell": "speak-with-animals",
+        "atLevel": 3,
+        "uses": "Once per long rest without a spell slot"
+      },
+      {
+        "spell": "beast-sense",
+        "atLevel": 5,
+        "uses": "Once per long rest without a spell slot"
+      },
+      {
+        "spell": "speak-with-plants",
+        "atLevel": 9,
+        "uses": "Once per long rest without a spell slot"
+      },
+      {
+        "spell": "locate-creature",
+        "atLevel": 13,
+        "uses": "Once per long rest without a spell slot"
+      },
+      {
+        "spell": "commune-with-nature",
+        "atLevel": 17,
+        "uses": "Once per long rest without a spell slot"
+      }
+    ],
+    "description": [
+      "You learn speak with animals at ranger level 3, beast sense at 5, speak with plants at 9, locate creature at 13 and commune with nature at 17, each only if you don't know it already. They don't count against your ranger spells known.",
+      "Each of them can be cast once without spending a spell slot; that free cast comes back when you finish a long rest."
+    ],
+    "page": 57,
+    "textSource": "summary",
+    "book": "tce",
+    "optional": true
+  },
+  {
+    "id": "optional-ranger-natures-veil",
+    "source": {
+      "kind": "option",
+      "id": "optional-ranger"
+    },
+    "level": 10,
+    "prereq": {
+      "level": 10
+    },
+    "name": "Nature's Veil",
+    "cost": "bonus",
+    "uses": "Proficiency bonus times per long rest",
+    "replaces": [
+      "hide-in-plain-sight"
+    ],
+    "description": [
+      "Turn invisible, along with what you wear and carry, until your next turn starts.",
+      "Uses equal your proficiency bonus; all of them return on a long rest."
+    ],
+    "page": 57,
+    "textSource": "summary",
+    "book": "tce",
+    "optional": true
+  },
+  {
+    "id": "optional-beast-master-primal-companion",
+    "name": "Primal Companion",
+    "source": {
+      "kind": "option",
+      "id": "optional-beast-master"
+    },
+    "level": 3,
+    "prereq": {
+      "level": 3
+    },
+    "cost": "bonus",
+    "replaces": [
+      "rangers-companion",
+      "companion-commands"
+    ],
+    "scaling": [
+      {
+        "label": "Beast attacks",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ],
+    "description": [
+      "You summon a primal beast that is friendly to you and your allies and follows your orders. Pick its stat block (Land, Sea or Sky beast; it uses your proficiency bonus) and what animal it looks like.",
+      "It acts on your turn. It moves and reacts on its own but only takes the Dodge action, unless you spend a bonus action to give it another action. Using the Attack action, you can trade one of your own attacks for an order that makes it Attack. While you are incapacitated it acts as it likes.",
+      "If it died less than 1 hour ago, touch it as an action and spend a spell slot of level 1 or higher: it comes back after 1 minute at full hit points.",
+      "Finishing a long rest lets you swap in a new beast, which appears within 5 ft of you; the old one vanishes. It also vanishes if you die.",
+      "Bestial Fury still applies (Player's Handbook p. 93): from ranger level 11, the beast makes two attacks whenever it takes the Attack action.",
+      "Share Spells still applies (Player's Handbook p. 93): from ranger level 15, a spell you cast on yourself can also affect the beast if it is within 30 ft of you.",
+      "Stat block: Tasha's p. 61."
+    ],
+    "page": 61,
+    "book": "tce",
+    "textSource": "summary",
+    "optional": true
+  },
+  {
+    "id": "deft-explorer-tireless",
+    "name": "Tireless",
+    "source": {
+      "kind": "class",
+      "id": "ranger"
+    },
+    "level": 10,
+    "cost": "action",
+    "uses": "Proficiency bonus times per long rest",
+    "prereq": {
+      "option": "optional-ranger-deft-explorer"
+    },
+    "description": [
+      "Give yourself 1d8 + your Wisdom modifier temporary hit points (at least 1).",
+      "Uses equal your proficiency bonus; all of them return on a long rest. Each short rest you finish also lowers your exhaustion level by 1, if you have any."
+    ],
+    "page": 56,
+    "textSource": "summary",
+    "book": "tce",
+    "optional": true
+  },
+  {
+    "id": "dreadful-strikes",
+    "name": "Dreadful Strikes",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "Your weapon hits a creature",
+    "uses": "Once per turn per target",
+    "scaling": [
+      {
+        "label": "Psychic damage",
+        "values": [
+          "",
+          "",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d4",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6",
+          "1d6"
+        ]
+      }
+    ],
+    "page": 58,
+    "description": [
+      "Add 1d4 psychic damage. A given creature takes this bonus no more than once per turn.",
+      "Level 11: the extra damage becomes 1d6."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "beguiling-twist",
+    "name": "Beguiling Twist",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 7,
+    "cost": "reaction",
+    "trigger": "A save against being charmed or frightened succeeds for you or for a creature in sight within 120 ft",
+    "page": 59,
+    "description": [
+      "Choose another creature in sight, no more than 120 ft away: it makes a Wisdom save against your spell save DC. On a failure you make it charmed or frightened (your pick) for 1 minute. It saves again as each of its turns ends; one success frees it.",
+      "Always on: advantage on saves against being charmed or frightened."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "fey-reinforcements",
+    "name": "Fey Reinforcements",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 11,
+    "cost": "action",
+    "uses": "Once per long rest without a spell slot",
+    "spells": [
+      {
+        "spell": "summon-fey",
+        "atLevel": 11,
+        "uses": "Once per long rest without a spell slot"
+      }
+    ],
+    "page": 59,
+    "description": [
+      "Cast summon fey with no material component; once per long rest you can cast it without a spell slot. You always know it, and it doesn't count against your ranger spells known.",
+      "When you begin casting it, you may drop the need for concentration; that casting then lasts 1 minute."
+    ],
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "misty-wanderer",
+    "name": "Misty Wanderer",
+    "source": {
+      "kind": "subclass",
+      "id": "fey-wanderer"
+    },
+    "level": 15,
+    "cost": "bonus",
+    "uses": "Wisdom modifier (minimum 1) per long rest",
+    "spells": [
+      {
+        "spell": "misty-step",
+        "atLevel": 15,
+        "uses": "Wisdom modifier (minimum 1) per long rest, no slot"
+      }
+    ],
+    "page": 59,
+    "description": [
+      "Cast misty step without a spell slot.",
+      "Each time you cast misty step, you can take a willing creature within 5 ft that you can see along. It lands in an empty space you pick, no more than 5 ft from where you arrive."
+    ],
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

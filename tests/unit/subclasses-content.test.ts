@@ -1,6 +1,10 @@
 import { DATA } from '../../src/data';
 import { autoSpells } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
+import type { Character } from '../../src/character/types';
+import { optionSlots } from '../../src/character/options';
+import { pickableSpells } from '../../src/character/derive';
+import { charSpellSections } from '../../src/character/view';
 import { actionSections, spellSections } from '../../src/logic/sections';
 
 const sub = (id: string) => DATA.subclasses.find(x => x.id === id)!;
@@ -36,7 +40,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('80 subclasses', () => expect(DATA.subclasses).toHaveLength(80));
+test('101 subclasses', () => expect(DATA.subclasses).toHaveLength(101));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -299,4 +303,335 @@ test('healing light pool is 1 + warlock level', () => {
   const pool = feature('healing-light').scaling!.find(s => /pool/i.test(s.label))!;
   expect([pool.values[0], pool.values[19]]).toEqual(['2', '21']);
   expect(feature('healing-light')).toMatchObject({ cost: 'bonus', level: 1, page: 54 });
+});
+
+// Plan 7 (batch 3), Task 7: Tasha's subclasses, barbarian to druid
+const TCE7 = ['path-of-the-beast', 'college-of-creation', 'college-of-eloquence', 'order-domain', 'peace-domain', 'twilight-domain', 'circle-of-wildfire'];
+test('tasha subclasses (task 7)', () => { for (const id of TCE7) expect(sub(id), id).toMatchObject({ book: 'tce' }); });
+test('every tasha task 7 feature and option names its book', () => {
+  const ids = new Set(TCE7);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('tce');
+  for (const id of TCE7) expect(sub(id).options, id).toEqual([]);
+});
+test('twilight domain spells', () => expect(sub('twilight-domain').bonusSpells).toMatchObject({ kind: 'domain' }));
+test('tasha task 7 domain and circle spell tables', () => {
+  const at = (id: string, lvl: number) => sub(id).bonusSpells!.grants.filter(g => g.atLevel === lvl).map(g => g.spell).sort();
+  expect(sub('order-domain').bonusSpells!.kind).toBe('domain');
+  expect(sub('peace-domain').bonusSpells!.kind).toBe('domain');
+  expect(sub('circle-of-wildfire').bonusSpells!.kind).toBe('circle');
+  expect(at('order-domain', 1)).toEqual(['command', 'heroism']);
+  expect(at('order-domain', 5)).toEqual(['mass-healing-word', 'slow']);
+  expect(at('order-domain', 9)).toEqual(['commune', 'dominate-person']);
+  expect(at('peace-domain', 7)).toEqual(['aura-of-purity', 'otilukes-resilient-sphere']);
+  expect(at('peace-domain', 9)).toEqual(['greater-restoration', 'rarys-telepathic-bond']);
+  expect(at('twilight-domain', 5)).toEqual(['aura-of-vitality', 'leomunds-tiny-hut']);
+  expect(at('twilight-domain', 9)).toEqual(['circle-of-power', 'mislead']);
+  expect(at('circle-of-wildfire', 2)).toEqual(['burning-hands', 'cure-wounds']);
+  expect(at('circle-of-wildfire', 3)).toEqual(['flaming-sphere', 'scorching-ray']);
+  expect(at('circle-of-wildfire', 9)).toEqual(['flame-strike', 'mass-cure-wounds']);
+  expect(sub('circle-of-wildfire').bonusSpells!.grants.map(g => g.atLevel).sort((a, b) => a - b)).toEqual([2, 2, 3, 3, 5, 5, 7, 7, 9, 9]);
+});
+test('tasha task 7 must-have features', () => {
+  for (const id of ['form-of-the-beast', 'form-of-the-beast-tail', 'bestial-soul', 'infectious-fury', 'call-the-hunt',
+    'mote-of-potential', 'performance-of-creation', 'animating-performance',
+    'unsettling-words', 'universal-speech', 'infectious-inspiration',
+    'voice-of-authority', 'orders-demand', 'embodiment-of-the-law', 'order-domain-divine-strike', 'orders-wrath',
+    'emboldening-bond', 'balm-of-peace', 'protective-bond',
+    'eyes-of-night', 'vigilant-blessing', 'twilight-sanctuary', 'steps-of-night', 'twilight-domain-divine-strike',
+    'summon-wildfire-spirit', 'enhanced-bond', 'cauterizing-flames', 'blazing-revival'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('tasha task 7 reactions are reaction cards with a trigger', () => {
+  for (const id of ['form-of-the-beast-tail', 'infectious-inspiration', 'protective-bond', 'cauterizing-flames']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('tasha task 7 channel divinity options cost a Channel Divinity', () => {
+  for (const id of ['orders-demand', 'balm-of-peace', 'twilight-sanctuary'])
+    expect(feature(id), id).toMatchObject({ cost: 'action', resource: '1 Channel Divinity', level: 2 });
+});
+test('order and twilight divine strike: prefixed ids, hidden by blessed strikes', () => {
+  expect(feature('order-domain-divine-strike')).toMatchObject({ name: 'Divine Strike', level: 8, cost: 'free', page: 32, source: { kind: 'subclass', id: 'order-domain' } });
+  expect(feature('twilight-domain-divine-strike')).toMatchObject({ name: 'Divine Strike', level: 8, cost: 'free', page: 35, source: { kind: 'subclass', id: 'twilight-domain' } });
+  const bs = feature('optional-cleric-blessed-strikes').replaces!;
+  expect(bs).toContain('order-domain-divine-strike');
+  expect(bs).toContain('twilight-domain-divine-strike');
+});
+test('tasha summons cite their stat block page', () => {
+  expect(feature('animating-performance')).toMatchObject({ cost: 'action', level: 6, page: 29 });
+  expect(feature('animating-performance').description.join(' ')).toContain("Stat block: Tasha's p. 29");
+  expect(feature('summon-wildfire-spirit')).toMatchObject({ cost: 'action', level: 2, page: 40, resource: '1 Wild Shape use' });
+  expect(feature('summon-wildfire-spirit').description.join(' ')).toContain("Stat block: Tasha's p. 40");
+});
+test('blazing revival is a free once-per-long-rest trigger', () => {
+  expect(feature('blazing-revival')).toMatchObject({ cost: 'free', uses: 'Once per long rest', level: 14, page: 40 });
+  expect(feature('blazing-revival').trigger).toMatch(/0 hit points/i);
+});
+test('tasha task 7 riders are free cards with a trigger', () => {
+  for (const id of ['form-of-the-beast', 'infectious-fury', 'call-the-hunt', 'mote-of-potential', 'voice-of-authority',
+    'embodiment-of-the-law', 'orders-wrath', 'enhanced-bond']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+
+// Plan 7 (batch 3), Task 8: Tasha's subclasses, fighter to ranger
+const TCE8 = ['psi-warrior', 'rune-knight', 'way-of-mercy', 'way-of-the-astral-self', 'oath-of-glory', 'oath-of-the-watchers', 'fey-wanderer'];
+test('tasha subclasses (task 8)', () => { for (const id of TCE8) expect(sub(id), id).toMatchObject({ book: 'tce' }); });
+test('every tasha task 8 feature and option names its book', () => {
+  const ids = new Set(TCE8);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  expect([...groups]).toEqual(['runes']);
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('tce');
+  for (const id of TCE8) expect(sub(id).options, id).toEqual(id === 'rune-knight' ? ['runes'] : []);
+});
+test('tasha task 8 oath and fey wanderer spell tables', () => {
+  const at = (id: string, lvl: number) => sub(id).bonusSpells!.grants.filter(g => g.atLevel === lvl).map(g => g.spell).sort();
+  const levels = (id: string) => sub(id).bonusSpells!.grants.map(g => g.atLevel).sort((a, b) => a - b);
+  expect(sub('oath-of-glory').bonusSpells!.kind).toBe('oath');
+  expect(sub('oath-of-the-watchers').bonusSpells!.kind).toBe('oath');
+  expect(sub('fey-wanderer').bonusSpells!.kind).toBe('subclass');
+  expect(at('oath-of-glory', 3)).toEqual(['guiding-bolt', 'heroism']);
+  expect(at('oath-of-glory', 5)).toEqual(['enhance-ability', 'magic-weapon']);
+  expect(at('oath-of-glory', 9)).toEqual(['haste', 'protection-from-energy']);
+  expect(at('oath-of-glory', 13)).toEqual(['compulsion', 'freedom-of-movement']);
+  expect(at('oath-of-glory', 17)).toEqual(['commune', 'flame-strike']);
+  expect(at('oath-of-the-watchers', 3)).toEqual(['alarm', 'detect-magic']);
+  expect(at('oath-of-the-watchers', 5)).toEqual(['moonbeam', 'see-invisibility']);
+  expect(at('oath-of-the-watchers', 9)).toEqual(['counterspell', 'nondetection']);
+  expect(at('oath-of-the-watchers', 13)).toEqual(['aura-of-purity', 'banishment']);
+  expect(at('oath-of-the-watchers', 17)).toEqual(['hold-monster', 'scrying']);
+  expect(levels('oath-of-glory')).toEqual([3, 3, 5, 5, 9, 9, 13, 13, 17, 17]);
+  expect(levels('oath-of-the-watchers')).toEqual([3, 3, 5, 5, 9, 9, 13, 13, 17, 17]);
+  expect(sub('fey-wanderer').bonusSpells!.grants.map(g => [g.atLevel, g.spell]))
+    .toEqual([[3, 'charm-person'], [5, 'misty-step'], [9, 'dispel-magic'], [13, 'dimension-door'], [17, 'mislead']]);
+});
+test('tasha task 8 must-have features', () => {
+  for (const id of ['psi-warrior-psionic-power', 'psi-warrior-psionic-regain', 'protective-field', 'psionic-strike', 'telekinetic-movement',
+    'psi-powered-leap', 'guarded-mind', 'bulwark-of-force', 'telekinetic-master', 'telekinetic-master-attack',
+    'rune-carver', 'giants-might', 'runic-shield',
+    'hand-of-healing', 'hand-of-harm', 'hand-of-ultimate-mercy',
+    'arms-of-the-astral-self', 'visage-of-the-astral-self', 'body-of-the-astral-self', 'body-of-the-astral-self-deflect-energy', 'awakened-astral-self',
+    'peerless-athlete', 'inspiring-smite', 'glorious-defense', 'living-legend',
+    'watchers-will', 'abjure-the-extraplanar', 'vigilant-rebuke', 'mortal-bulwark',
+    'dreadful-strikes', 'beguiling-twist', 'fey-reinforcements', 'misty-wanderer'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('psionic energy dice: a pool card with count and die size, and every power names the resource', () => {
+  const pool = feature('psi-warrior-psionic-power');
+  expect(pool).toMatchObject({ level: 3, page: 43, source: { kind: 'subclass', id: 'psi-warrior' } });
+  const die = pool.scaling!.find(s => s.label === 'Die size')!.values;
+  expect([die[2], die[3], die[4], die[9], die[10], die[15], die[16], die[19]]).toEqual(['d6', 'd6', 'd8', 'd8', 'd10', 'd10', 'd12', 'd12']);
+  const count = pool.scaling!.find(s => s.label === 'Psionic Energy dice')!.values;
+  expect([count[2], count[4], count[8], count[12], count[16]]).toEqual(['4', '6', '8', '10', '12']);
+  for (const id of ['protective-field', 'psionic-strike', 'telekinetic-movement', 'psi-powered-leap', 'guarded-mind', 'bulwark-of-force', 'telekinetic-master'])
+    expect(feature(id).resource, id).toMatch(/^1 Psionic Energy die/);
+  expect(feature('psi-warrior-psionic-regain')).toMatchObject({ cost: 'bonus', uses: 'Once per short or long rest' });
+  expect(feature('protective-field')).toMatchObject({ cost: 'reaction', level: 3 });
+  expect(feature('telekinetic-master').spells).toEqual([expect.objectContaining({ spell: 'telekinesis', atLevel: 18 })]);
+});
+test('runes slot: 2 picks at fighter 3, hill rune only from 7', () => {
+  const runes = DATA.optionGroups.find(g => g.id === 'runes')!;
+  expect(runes.owner).toEqual({ kind: 'subclass', id: 'rune-knight' });
+  expect(runes.picks).toEqual([0, 0, 2, 2, 2, 2, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5]);
+  const rk = (level: number) => ({ ...emptyCharacter(), classes: [{ cls: 'fighter', level, sub: 'rune-knight' }] }) as Character;
+  const at3 = optionSlots(rk(3)).find(s => s.group.id === 'runes')!;
+  expect(at3.count).toBe(2);
+  expect(at3.choices.map(f => f.id).sort()).toEqual(['runes-cloud-rune', 'runes-fire-rune', 'runes-frost-rune', 'runes-stone-rune']);
+  const at7 = optionSlots(rk(7)).find(s => s.group.id === 'runes')!;
+  expect(at7.count).toBe(3);
+  expect(at7.choices.map(f => f.id)).toEqual(expect.arrayContaining(['runes-hill-rune', 'runes-storm-rune']));
+  for (const id of ['runes-hill-rune', 'runes-storm-rune']) expect(feature(id).prereq, id).toEqual({ level: 7 });
+});
+test('rune invoke costs', () => {
+  const cost = (id: string) => feature(`runes-${id}-rune`).cost;
+  expect([cost('cloud'), cost('fire'), cost('frost'), cost('stone'), cost('hill'), cost('storm')])
+    .toEqual(['reaction', 'free', 'bonus', 'reaction', 'bonus', 'bonus']);
+  for (const id of ['cloud', 'fire', 'frost', 'stone', 'hill', 'storm'])
+    expect(feature(`runes-${id}-rune`).uses, id).toMatch(/short or long rest/);
+});
+test('tasha task 8 reactions are reaction cards with a trigger', () => {
+  for (const id of ['protective-field', 'runic-shield', 'runes-cloud-rune', 'runes-stone-rune', 'body-of-the-astral-self-deflect-energy',
+    'glorious-defense', 'vigilant-rebuke', 'beguiling-twist']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('vigilant rebuke prints no use limit', () => {
+  expect(feature('vigilant-rebuke')).toMatchObject({ cost: 'reaction', level: 15, page: 55 });
+  expect(feature('vigilant-rebuke').uses).toBeUndefined();
+});
+test('tasha task 8 channel divinity options cost a Channel Divinity', () => {
+  for (const [id, cost] of [['peerless-athlete', 'bonus'], ['inspiring-smite', 'bonus'], ['watchers-will', 'action'], ['abjure-the-extraplanar', 'action']])
+    expect(feature(id), id).toMatchObject({ cost, resource: '1 Channel Divinity', level: 3 });
+});
+test('fey wanderer feature spells are fixed grants with uses', () => {
+  expect(feature('fey-reinforcements')).toMatchObject({ level: 11, page: 59 });
+  expect(feature('fey-reinforcements').spells).toEqual([expect.objectContaining({ spell: 'summon-fey', atLevel: 11, uses: expect.any(String) })]);
+  expect(feature('misty-wanderer')).toMatchObject({ level: 15, page: 59 });
+  expect(feature('misty-wanderer').spells).toEqual([expect.objectContaining({ spell: 'misty-step', atLevel: 15, uses: expect.any(String) })]);
+});
+test('tasha task 8 riders are free cards with a trigger', () => {
+  for (const id of ['psionic-strike', 'guarded-mind', 'runes-fire-rune', 'hand-of-harm', 'body-of-the-astral-self', 'dreadful-strikes']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('scaling dice: giants might and dreadful strikes', () => {
+  const v = (id: string, label: string) => feature(id).scaling!.find(s => s.label === label)!.values;
+  const gm = v('giants-might', 'Extra damage');
+  expect([gm[2], gm[8], gm[9], gm[16], gm[17]]).toEqual(['1d6', '1d6', '1d8', '1d8', '1d10']);
+  const ds = v('dreadful-strikes', 'Psychic damage');
+  expect([ds[1], ds[2], ds[9], ds[10]]).toEqual(['', '1d4', '1d4', '1d6']);
+});
+
+// Plan 7 (batch 3), Task 9: Tasha's subclasses, rogue to wizard
+const TCE9 = ['phantom', 'soulknife', 'aberrant-mind', 'clockwork-soul', 'the-fathomless', 'the-genie', 'order-of-scribes'];
+test('tasha subclasses (task 9)', () => { for (const id of TCE9) expect(sub(id), id).toMatchObject({ book: 'tce' }); });
+test('every tasha task 9 feature and option names its book', () => {
+  const ids = new Set(TCE9);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  expect([...groups]).toEqual(['genie-kind']);
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  expect(fs.length).toBeGreaterThan(0);
+  for (const f of fs) expect(f.book, f.id).toBe('tce');
+  for (const id of TCE9) expect(sub(id).options, id).toEqual(id === 'the-genie' ? ['genie-kind'] : []);
+});
+test('tasha task 9 sorcerer spell tables', () => {
+  const pairs = (id: string) => sub(id).bonusSpells!.grants.map(g => [g.atLevel, g.spell]);
+  expect(sub('aberrant-mind').bonusSpells!.kind).toBe('subclass');
+  expect(sub('clockwork-soul').bonusSpells!.kind).toBe('subclass');
+  expect(pairs('aberrant-mind')).toEqual([[1, 'arms-of-hadar'], [1, 'dissonant-whispers'], [1, 'mind-sliver'], [3, 'calm-emotions'], [3, 'detect-thoughts'],
+    [5, 'hunger-of-hadar'], [5, 'sending'], [7, 'evards-black-tentacles'], [7, 'summon-aberration'], [9, 'rarys-telepathic-bond'], [9, 'telekinesis']]);
+  expect(pairs('clockwork-soul')).toEqual([[1, 'alarm'], [1, 'protection-from-evil-and-good'], [3, 'aid'], [3, 'lesser-restoration'],
+    [5, 'dispel-magic'], [5, 'protection-from-energy'], [7, 'freedom-of-movement'], [7, 'summon-construct'], [9, 'greater-restoration'], [9, 'wall-of-force']]);
+});
+test('tasha task 9 patron spell tables', () => {
+  const pairs = (id: string, option?: string) => sub(id).bonusSpells!.grants.filter(g => g.option === option).map(g => [g.atLevel, g.spell]);
+  expect(sub('the-fathomless').bonusSpells!.kind).toBe('patron');
+  expect(sub('the-genie').bonusSpells!.kind).toBe('patron');
+  expect(pairs('the-fathomless')).toEqual([[1, 'create-or-destroy-water'], [1, 'thunderwave'], [3, 'gust-of-wind'], [3, 'silence'],
+    [5, 'lightning-bolt'], [5, 'sleet-storm'], [7, 'control-water'], [7, 'summon-elemental'], [9, 'bigbys-hand'], [9, 'cone-of-cold']]);
+  expect(pairs('the-genie')).toEqual([[1, 'detect-evil-and-good'], [3, 'phantasmal-force'], [5, 'create-food-and-water'], [7, 'phantasmal-killer'], [9, 'creation'], [17, 'wish']]);
+  const kind = (k: string) => pairs('the-genie', `genie-kind-${k}`).map(p => p[1]);
+  expect(kind('dao')).toEqual(['sanctuary', 'spike-growth', 'meld-into-stone', 'stone-shape', 'wall-of-stone']);
+  expect(kind('djinni')).toEqual(['thunderwave', 'gust-of-wind', 'wind-wall', 'greater-invisibility', 'seeming']);
+  expect(kind('efreeti')).toEqual(['burning-hands', 'scorching-ray', 'fireball', 'fire-shield', 'flame-strike']);
+  expect(kind('marid')).toEqual(['fog-cloud', 'blur', 'sleet-storm', 'control-water', 'cone-of-cold']);
+  for (const k of ['dao', 'djinni', 'efreeti', 'marid'])
+    expect(pairs('the-genie', `genie-kind-${k}`).map(p => p[0]), k).toEqual([1, 3, 5, 7, 9]);
+  expect(sub('the-genie').bonusSpells!.grants).toHaveLength(26);
+});
+test('genie kind: one pick from warlock 1, four kinds', () => {
+  const g = DATA.optionGroups.find(x => x.id === 'genie-kind')!;
+  expect(g.owner).toEqual({ kind: 'subclass', id: 'the-genie' });
+  expect(g.picks).toEqual(Array(20).fill(1));
+  const opts = DATA.features.filter(f => f.source.kind === 'option' && f.source.id === 'genie-kind');
+  expect(opts.map(f => [f.id, f.name])).toEqual([['genie-kind-dao', 'Dao'], ['genie-kind-djinni', 'Djinni'], ['genie-kind-efreeti', 'Efreeti'], ['genie-kind-marid', 'Marid']]);
+  for (const f of opts) expect(f, f.id).toMatchObject({ level: 1, page: 73, cost: 'passive' });
+});
+test('genie spells follow the kind', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 5, sub: 'the-genie' }], options: ['genie-kind-dao'] } as Character;
+  const ids = pickableSpells(ch.classes[0], false, ch.options).map(p => p.spell.id);
+  expect(ids).toContain('spike-growth');
+  expect(ids).toContain('phantasmal-force');
+  expect(ids).not.toContain('scorching-ray');
+  expect(pickableSpells(ch.classes[0], false, ch.options).find(p => p.spell.id === 'spike-growth')!.tag).toBe('Patron');
+  // no kind chosen yet: only the shared genie spells
+  const none = pickableSpells(ch.classes[0]).map(p => p.spell.id);
+  expect(none).toContain('phantasmal-force');
+  expect(none).not.toContain('spike-growth');
+});
+test('genie: the all view lists the chosen kind only; browse lists every kind, tagged', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'warlock', level: 5, sub: 'the-genie' }], options: ['genie-kind-dao'] } as Character;
+  const ids = charSpellSections(ch, 'all').flatMap(s => s.items.map(i => i.id));
+  expect(ids).toContain('spike-growth');
+  expect(ids).toContain('phantasmal-force');
+  expect(ids).not.toContain('scorching-ray');
+  const browse = spellSections('warlock', 5, 'the-genie');
+  const lvl2 = browse.find(s => s.id === 'lvl-2')!;
+  expect(lvl2.tags!['scorching-ray']).toBe('Patron · Efreeti');
+  expect(lvl2.tags!['spike-growth']).toBe('Patron · Dao');
+  expect(lvl2.tags!['phantasmal-force']).toBe('Patron');
+});
+test('tasha task 9 must-have features', () => {
+  for (const id of ['whispers-of-the-dead', 'wails-from-the-grave', 'tokens-of-the-departed', 'tokens-of-the-departed-question', 'ghost-walk',
+    'soulknife-psionic-power', 'soulknife-psionic-regain', 'psi-bolstered-knack', 'psychic-whispers', 'soulknife-psychic-blades', 'soulknife-psychic-blades-bonus',
+    'homing-strikes', 'psychic-teleportation', 'psychic-veil', 'rend-mind',
+    'telepathic-speech', 'psionic-sorcery', 'revelation-in-flesh', 'warping-implosion',
+    'restore-balance', 'bastion-of-law', 'trance-of-order', 'clockwork-cavalcade',
+    'tentacle-of-the-deeps', 'tentacle-of-the-deeps-move', 'guardian-coil', 'grasping-tentacles', 'fathomless-plunge',
+    'genies-wrath', 'bottled-respite', 'bottled-respite-leave', 'elemental-gift', 'limited-wish',
+    'wizardly-quill', 'awakened-spellbook', 'awakened-spellbook-ritual', 'manifest-mind', 'manifest-mind-move', 'manifest-mind-cast', 'master-scrivener', 'one-with-the-word'])
+    expect(DATA.features.find(x => x.id === id), id).toBeTruthy();
+});
+test('soulknife psionic energy dice: same pool shape as psi warrior', () => {
+  const pool = feature('soulknife-psionic-power');
+  expect(pool).toMatchObject({ level: 3, page: 64, source: { kind: 'subclass', id: 'soulknife' } });
+  expect(pool.scaling).toEqual(feature('psi-warrior-psionic-power').scaling);
+  for (const id of ['psi-bolstered-knack', 'psychic-whispers', 'homing-strikes', 'psychic-teleportation', 'psychic-veil'])
+    expect(feature(id).resource, id).toMatch(/^1 Psionic Energy die/);
+  expect(feature('rend-mind').resource).toMatch(/^3 Psionic Energy dice/);
+  expect(feature('soulknife-psionic-regain')).toMatchObject({ cost: 'bonus', uses: 'Once per short or long rest' });
+  expect(feature('psychic-teleportation')).toMatchObject({ cost: 'bonus', level: 9, page: 65 });
+  expect(feature('soulknife-psychic-blades-bonus')).toMatchObject({ cost: 'bonus', level: 3 });
+});
+test('tasha task 9 costs, uses and pages', () => {
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject(x);
+  m('wails-from-the-grave', { cost: 'free', level: 3, page: 62, uses: 'Proficiency bonus per long rest' });
+  m('ghost-walk', { cost: 'bonus', level: 13, page: 63 });
+  m('telepathic-speech', { cost: 'bonus', level: 1, page: 67 });
+  m('revelation-in-flesh', { cost: 'bonus', level: 14, page: 68 });
+  m('warping-implosion', { cost: 'action', level: 18, page: 68, uses: 'Once per long rest', resource: '5 sorcery points (after the free use)' });
+  m('restore-balance', { cost: 'reaction', level: 1, page: 69, uses: 'Proficiency bonus per long rest' });
+  m('bastion-of-law', { cost: 'action', level: 6, page: 69 });
+  m('trance-of-order', { cost: 'bonus', level: 14, page: 69, uses: 'Once per long rest', resource: '5 sorcery points (after the free use)' });
+  m('clockwork-cavalcade', { cost: 'action', level: 18, page: 69, uses: 'Once per long rest', resource: '7 sorcery points (after the free use)' });
+  m('tentacle-of-the-deeps', { cost: 'bonus', level: 1, page: 72, uses: 'Proficiency bonus per long rest' });
+  m('guardian-coil', { cost: 'reaction', level: 6, page: 73 });
+  m('fathomless-plunge', { cost: 'action', level: 14, page: 73, uses: 'Once per short or long rest' });
+  m('genies-wrath', { cost: 'free', level: 1, page: 74, uses: 'Once on each of your turns' });
+  m('bottled-respite', { cost: 'action', level: 1, page: 74, uses: 'Once per long rest' });
+  m('elemental-gift', { cost: 'bonus', level: 6, page: 75, uses: 'Proficiency bonus per long rest' });
+  m('limited-wish', { cost: 'action', level: 14, page: 75 });
+  m('wizardly-quill', { cost: 'bonus', level: 2, page: 77 });
+  m('manifest-mind', { cost: 'bonus', level: 6, page: 78, uses: 'Once per long rest, or spend a spell slot of any level' });
+  m('manifest-mind-cast', { cost: 'free', level: 6, page: 78, uses: 'Proficiency bonus per long rest' });
+  m('one-with-the-word', { cost: 'reaction', level: 14, page: 78, uses: 'Once per long rest' });
+});
+test('genies wrath names every kind and its damage type', () => {
+  const text = feature('genies-wrath').description.join(' ');
+  for (const t of ['Dao', 'bludgeoning', 'Djinni', 'thunder', 'Efreeti', 'fire', 'Marid', 'cold']) expect(text, t).toContain(t);
+});
+test('grasping tentacles is a fixed grant with uses', () => {
+  expect(feature('grasping-tentacles')).toMatchObject({ level: 10, page: 73 });
+  expect(feature('grasping-tentacles').spells).toEqual([expect.objectContaining({ spell: 'evards-black-tentacles', atLevel: 10, uses: expect.any(String) })]);
+});
+test('tasha task 9 reactions are reaction cards with a trigger', () => {
+  for (const id of ['tokens-of-the-departed', 'restore-balance', 'guardian-coil', 'one-with-the-word']) {
+    expect(feature(id).cost, id).toBe('reaction');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('tasha task 9 riders are free cards with a trigger', () => {
+  for (const id of ['whispers-of-the-dead', 'wails-from-the-grave', 'psi-bolstered-knack', 'soulknife-psychic-blades', 'homing-strikes', 'rend-mind',
+    'psionic-sorcery', 'genies-wrath', 'awakened-spellbook', 'awakened-spellbook-ritual', 'manifest-mind-cast']) {
+    expect(feature(id).cost, id).toBe('free');
+    expect(feature(id).trigger, id).toBeTruthy();
+  }
+});
+test('scaling dice: wails, tentacle and guardian coil', () => {
+  const v = (id: string, label: string) => feature(id).scaling!.find(s => s.label === label)!.values;
+  const w = v('wails-from-the-grave', 'Necrotic damage');
+  expect([w[1], w[2], w[3], w[4], w[8], w[12], w[16], w[19]]).toEqual(['', '1d6', '1d6', '2d6', '3d6', '4d6', '5d6', '5d6']);
+  const t = v('tentacle-of-the-deeps', 'Cold damage');
+  expect([t[0], t[8], t[9], t[19]]).toEqual(['1d8', '1d8', '2d8', '2d8']);
+  const g = v('guardian-coil', 'Damage reduced');
+  expect([g[4], g[5], g[8], g[9]]).toEqual(['', '1d8', '1d8', '2d8']);
 });
