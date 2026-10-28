@@ -320,6 +320,24 @@ test('superior technique opens a one-maneuver slot', () => {
   expect(stSlot(ch)!.choices.map(x => x.id)).toEqual(poolOptions('maneuvers').map(x => x.id));
   expect(stSlot({ ...ch, options: ['fighting-style-defense'] })).toBeUndefined();
 });
+test('superior technique slot sits right after the fighting style slot holding it', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 3, sub: 'battle-master' }], options: [st] } as Character;
+  const slots = optionSlots(ch);
+  const home = slots.findIndex(s => s.chosen.includes(st));
+  expect(slots[home].group.id).toBe('fighting-style');
+  expect(slots.findIndex(s => s.group.id === 'superior-technique')).toBe(home + 1);
+});
+test('superior technique follows the fighter slot in a fighter/paladin multiclass', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }, { cls: 'paladin', level: 2 }],
+    options: ['fighting-style-defense', st] } as Character;
+  const slots = optionSlots(ch);
+  const fs = slots.filter(s => (s.group.from ?? s.group.id) === 'fighting-style');
+  expect(fs.find(s => s.cls === 'fighter')!.chosen).toEqual([st]);
+  expect(fs.find(s => s.cls === 'paladin')!.chosen).toEqual(['fighting-style-defense']);
+  const i = slots.findIndex(s => s.group.id === 'superior-technique');
+  expect(slots[i].cls).toBe('fighter');
+  expect(slots[i - 1]).toBe(fs.find(s => s.cls === 'fighter'));
+});
 test('superior technique through fighting initiate', () => {
   const ch = { ...emptyCharacter(), race: 'human', classes: [{ cls: 'wizard', level: 4 }], feats: ['fighting-initiate'], options: [st, 'maneuvers-parry'] } as Character;
   expect(stSlot(ch)).toMatchObject({ count: 1, chosen: ['maneuvers-parry'] });

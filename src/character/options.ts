@@ -39,15 +39,21 @@ export function optionSlots(ch: Character): OptionSlot[] {
   const gone = replaced(ch);
   // a chosen option's own group (Superior Technique's maneuver) opens beside the slot holding it, at its level and class
   const base = out.length;
+  const homeOf = new Map<OptionSlot, OptionSlot>();
   for (const g of DATA.optionGroups.filter(x => x.owner.kind === 'option')) {
     const home = out.slice(0, base).find(s => !gone.has(s.group.id) && s.chosen.includes(g.owner.id));
-    if (home) add(g, home.level, home.cls);
+    if (!home) continue;
+    const n = out.length;
+    add(g, home.level, home.cls);
+    if (out.length > n) homeOf.set(out[n], home);
   }
   if (out.length > base) {
     for (const s of out) { s.chosen = []; s.taken = []; }
     assign(out, ch.options);
   }
-  return out.filter(s => !gone.has(s.group.id));
+  // matched in data order above; now each option-owned slot moves to sit right under its home slot
+  const placed = out.slice(0, base).flatMap(s => [s, ...out.slice(base).filter(x => homeOf.get(x) === s)]);
+  return placed.filter(s => !gone.has(s.group.id));
 }
 
 /**
