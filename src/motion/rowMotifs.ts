@@ -1,8 +1,8 @@
 import type { ClassId } from '../data/types';
 import { ROW_TIMING, type Gen, type Part, type Shape } from './types';
 import { range } from './rand';
-import { circ, curl, heading, wander, type Pt } from './geom';
-import { f1, line, pop, r1, shape, sign } from './parts';
+import { circ, curl, heading, UP, wander, xf, type Pt } from './geom';
+import { f1, gear, gogglesD, hammerLocal, line, pop, r1, shape, sign } from './parts';
 
 const G = ROW_TIMING.G;
 
@@ -119,6 +119,28 @@ export const ROW_MOTIFS: Partial<Record<ClassId, Gen>> = {
     for (let k = 0; k < 4; k++) {
       const x = range(rnd, .05, .65) * W, at = x / W * .7;
       for (const b of [-1, 0, 1]) P.push(line(`M${f1(x + b * 1.5)} ${H}Q${f1(x + b * 2)} ${f1(H - 4)} ${f1(x + b * 4 + range(rnd, -1, 1))} ${f1(H - range(rnd, 6, 9))}`, at, 700, 'thin'));
+    }
+    return P;
+  },
+
+  // Artificer: a train of meshing gears along a faint shaft, each turning against its neighbour;
+  // at most one hammer and one pair of goggles sit in the line
+  artificer(W, H, rnd) {
+    const P: Part[] = [], end = W * .72, mid = H / 2; P.push(line([[-2, mid], [end, mid]], 0, G * .7, 'thin faint'));
+    const extras = rnd() < .5 ? ['hammer', 'goggles'] : ['goggles', 'hammer'];
+    let x = range(rnd, 8, 14), y = mid, r = range(rnd, 6, 8), dir = 1;
+    while (x < W * .64) {
+      P.push(gear(x, y, r, x / end * .7, dir));
+      if (extras.length && x > W * .12 && rnd() < .4) {
+        const gx = x + r + range(rnd, 13, 17), at = gx / end * .7;
+        if (extras.pop() === 'hammer') P.push(line(xf(hammerLocal(range(rnd, 14, 17)), gx, mid, UP + range(rnd, -.5, .5), 1), at, 1000));
+        else P.push(line(gogglesD(gx, mid, range(rnd, 3.6, 4.2), 5), at, 1300));
+        x = gx + range(rnd, 13, 17); y = mid; r = range(rnd, 5.5, 8); dir = 1; continue;
+      }
+      // the next gear meshes at a random angle, flipped if it would leave the row
+      const r2 = range(rnd, 4.5, 8), d = r + r2 + 1.9; let a = range(rnd, -.7, .7), ny = y + Math.sin(a) * d;
+      if (ny < r2 * .5 || ny > H - r2 * .5) { a = -a; ny = y + Math.sin(a) * d; }
+      x += Math.cos(a) * d; y = ny; r = r2; dir = -dir;
     }
     return P;
   },

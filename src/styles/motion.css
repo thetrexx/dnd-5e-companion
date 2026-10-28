@@ -14,6 +14,8 @@
 .fx-row .fill,.fx-bg .fill{fill:currentColor;stroke:none}
 .fx-row .leaf,.fx-bg .leaf{fill:var(--druid-leaf);stroke:none}
 .fx-row .bloom,.fx-bg .bloom{fill:var(--druid-bloom);stroke:none}
+.fx-row .acc,.fx-bg .acc{stroke:var(--artificer-accent)}
+.fx-row .accf,.fx-bg .accf{fill:var(--artificer-accent);stroke:none}
 .fx-row .pop,.fx-bg .pop{transform-box:fill-box;transform-origin:center}
 .fx-mist,.fx-blood{position:fixed;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);z-index:-1;pointer-events:none}
 .fx-mist{opacity:calc(var(--motion-i, 1) * var(--mist-o));filter:blur(var(--mist-blur))}

@@ -2,7 +2,7 @@ import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { onScreen, renderParts, runLoop } from '../../src/motion/engine';
 import { ROW_MOTIFS } from '../../src/motion/rowMotifs';
 import { seeded } from '../../src/motion/rand';
-import { ROW_TIMING } from '../../src/motion/types';
+import { ROW_TIMING, type Part } from '../../src/motion/types';
 
 const NS = 'http://www.w3.org/2000/svg';
 const proto = SVGElement.prototype as unknown as Record<string, unknown>;
@@ -115,6 +115,68 @@ test('renderParts: pop transform and scale, move group, shape attrs', () => {
   expect(move!.querySelector('g.pop > path.fill')!.getAttribute('d')).toBe('M0 0L1 1');
   expect(r[0]!.el).toBe(pop!.querySelector('g.pop'));
   expect(r[1]!.el).toBe(move!.querySelector('g.pop'));
+});
+const SPIN: Part = { kind: 'spin', cx: 5, cy: 6, deg: 90, parts: [
+  { kind: 'line', d: 'M0 0L5 5', at: 0, dur: 1000 },
+  { kind: 'pop', x: 5, y: 6, rot: 0, at: .1, shapes: [{ tag: 'circle', attrs: { r: 1 }, cls: 'accf' }] },
+] };
+const SPARK: Part = { kind: 'spark', x: 10, y: 12, r: 1.2, at: 1.2, dur: 900, frames: [{ opacity: 0 }, { opacity: 1 }] };
+const kf = (k: unknown) => JSON.stringify(k);
+test('renderParts: a spin puts its children inside one group', () => {
+  const r = renderParts(svg, [SPIN]);
+  expect(svg.children).toHaveLength(1);
+  const g = svg.children[0]!;
+  expect(g.tagName).toBe('g');
+  expect(g.querySelector(':scope > path')!.getAttribute('d')).toBe('M0 0L5 5');
+  expect(g.querySelector('g.pop circle.accf')).toBeTruthy();
+  expect(r.map(x => x.part.kind)).toEqual(['spin', 'line', 'pop']);
+  expect(r[0]!.el).toBe(g);
+});
+test('still: a spin is drawn but never turns, sparks are not rendered', async () => {
+  const over = mkSvg(), anim = vi.spyOn(Element.prototype, 'animate');
+  over.appendChild(document.createElementNS(NS, 'circle'));
+  await runLoop(host, svg, () => [SPIN, SPARK], ROW_TIMING, { animate: false, alive: () => true, rnd: seeded(1), over });
+  expect(anim).not.toHaveBeenCalled();
+  const g = svg.children[0] as SVGGElement;
+  expect(g.querySelector('path')).toBeTruthy();
+  expect(g.style.opacity).toBe('');
+  expect(g.style.transformOrigin).toBe('');
+  expect(svg.querySelector('circle:not(.accf)')).toBeNull();
+  expect(over.querySelector('circle')).toBeNull();
+});
+test('animated: a spin turns over the whole cycle and adds nothing to the grow time', async () => {
+  let n = 0;
+  await runLoop(host, svg, () => [SPIN], ROW_TIMING, { animate: true, alive: () => n++ < 3, rnd: seeded(1) });
+  const g = svg.children[0] as SVGGElement, calls = vi.mocked(Element.prototype.animate).mock.calls;
+  expect(g.style.opacity).toBe('');
+  expect(g.style.transformBox).toBe('view-box');
+  expect(g.style.transformOrigin).toBe('5px 6px');
+  const turn = calls.find(([k]) => kf(k).includes('rotate'))!;
+  expect(turn[0]).toEqual([{ transform: 'rotate(0deg)' }, { transform: 'rotate(90deg)' }]);
+  // the line child ends at 1000; the hold follows it
+  const { HOLD, WITHER } = ROW_TIMING;
+  expect(turn[1]).toMatchObject({ duration: 1000 + HOLD + WITHER + 1500 });
+  expect(calls.some(([k, o]) => kf(k) === '[]' && (o as KeyframeAnimationOptions).duration === 1000 + HOLD)).toBe(true);
+  // children grow and wither like top-level parts
+  expect(calls.some(([k]) => kf(k) === kf([{ strokeDashoffset: 100 }, { strokeDashoffset: 0 }]))).toBe(true);
+  expect(calls.some(([k]) => kf(k) === kf([{ strokeDashoffset: 0 }, { strokeDashoffset: -100 }]))).toBe(true);
+});
+test('animated: sparks land in o.over and play their frames', async () => {
+  const over = mkSvg();
+  let n = 0;
+  await runLoop(host, svg, () => [SPARK], ROW_TIMING, { animate: true, alive: () => n++ < 3, rnd: seeded(1), over });
+  const c = over.querySelector('circle.spark')!;
+  expect(c).toBeTruthy();
+  expect([c.getAttribute('cx'), c.getAttribute('cy'), c.getAttribute('r')]).toEqual(['10.0', '12.0', '1.2']);
+  expect(svg.querySelector('circle')).toBeNull();
+  expect(over.getAttribute('viewBox')).toBe('0 0 320 38');
+  const calls = vi.mocked(Element.prototype.animate).mock.calls;
+  expect(calls.find(([k]) => kf(k) === kf(SPARK.kind === 'spark' && SPARK.frames))![1]).toMatchObject({ duration: 900, delay: 1.2 * ROW_TIMING.G });
+});
+test('animated: without o.over, sparks are dropped', async () => {
+  let n = 0;
+  await runLoop(host, svg, () => [SPARK], ROW_TIMING, { animate: true, alive: () => n++ < 3, rnd: seeded(1) });
+  expect(svg.querySelector('circle')).toBeNull();
 });
 test('abort mid-grow cancels running animations and returns promptly', async () => {
   const pending: ReturnType<typeof vi.fn>[] = [];

@@ -9,6 +9,7 @@ describe('background motifs', () => {
     const parts = BG_MOTIFS[k](390, 844, seeded(11));
     expect(parts.length).toBeGreaterThan(2);
     for (const p of parts) {
+      if (p.kind === 'spin') continue; // no timing of its own
       expect(p.at).toBeGreaterThanOrEqual(0);
       expect(p.at).toBeLessThanOrEqual(1);
       if (p.kind === 'line') expect(p.d).not.toMatch(/NaN|Infinity/);

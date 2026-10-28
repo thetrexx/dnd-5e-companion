@@ -4,7 +4,8 @@ import { range } from './rand';
 
 const NS = 'http://www.w3.org/2000/svg';
 export interface Rendered { part: Part; el: SVGElement; len?: number }
-export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal; gate?(sig?: AbortSignal): Promise<void> }
+// over: an unmasked layer for sparks; without it sparks are dropped
+export interface LoopOptions { animate: boolean; alive(): boolean; rnd?: Rnd; startDelay?: number; signal?: AbortSignal; gate?(sig?: AbortSignal): Promise<void>; over?: SVGSVGElement }
 
 function el(tag: string, attrs: Record<string, string | number>, parent: Element, cls?: string): SVGElement {
   const e = document.createElementNS(NS, tag) as SVGElement;
@@ -20,11 +21,21 @@ function group(svg: Element, transform: string, shapes: Shape[], scale?: number)
   for (const s of shapes) el(s.tag, s.attrs, box, s.cls);
   return g;
 }
-export function renderParts(svg: SVGSVGElement, parts: Part[]): Rendered[] {
-  return parts.map(part => ({ part, el:
-    part.kind === 'line' ? el('path', { d: part.d }, svg, part.cls)
-    : part.kind === 'pop' ? group(svg, `translate(${f1(part.x)} ${f1(part.y)}) rotate(${part.rot.toFixed(0)})`, part.shapes, part.scale)
-    : group(svg, `translate(${f1(part.x)} ${f1(part.y)})`, part.shapes) }));
+// a spin's group is listed before its children; sparks go to `over`, or nowhere without one
+export function renderParts(svg: SVGSVGElement, parts: Part[], over?: SVGSVGElement): Rendered[] {
+  const out: Rendered[] = [];
+  const put = (parent: Element, ps: Part[]) => {
+    for (const part of ps) {
+      if (part.kind === 'spin') { const g = el('g', {}, parent); out.push({ part, el: g }); put(g, part.parts); }
+      else if (part.kind === 'spark') { if (over) out.push({ part, el: el('circle', { cx: f1(part.x), cy: f1(part.y), r: f1(part.r) }, over, 'spark') }); }
+      else out.push({ part, el:
+        part.kind === 'line' ? el('path', { d: part.d }, parent, part.cls)
+        : part.kind === 'pop' ? group(parent, `translate(${f1(part.x)} ${f1(part.y)}) rotate(${part.rot.toFixed(0)})`, part.shapes, part.scale)
+        : group(parent, `translate(${f1(part.x)} ${f1(part.y)})`, part.shapes) });
+    }
+  };
+  put(svg, parts);
+  return out;
 }
 
 const canAnimate = () => typeof Element.prototype.animate === 'function'
@@ -38,7 +49,7 @@ function arm(rs: Rendered[], still: boolean): void {
       const L = r.len = path.getTotalLength();
       path.style.strokeDasharray = `${L} ${L + 1}`;
       path.style.strokeDashoffset = still ? '0' : `${L}`;
-    } else if (!still) r.el.style.opacity = '0';
+    } else if (!still && r.part.kind !== 'spin') r.el.style.opacity = '0';
   }
 }
 
@@ -78,10 +89,13 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
   const alive = () => !sig?.aborted && o.alive();
   if (sig?.aborted) return;
   const draw = () => {
-    const { width: W, height: H } = host.getBoundingClientRect();
-    svg.setAttribute('viewBox', `0 0 ${W} ${H}`);
+    const { width: W, height: H } = host.getBoundingClientRect(), box = `0 0 ${W} ${H}`;
+    svg.setAttribute('viewBox', box);
     svg.replaceChildren();
-    const rs = renderParts(svg, gen(W, H, rnd));
+    o.over?.setAttribute('viewBox', box);
+    o.over?.replaceChildren();
+    // the still frame shows no sparks
+    const rs = renderParts(svg, gen(W, H, rnd), still ? undefined : o.over);
     arm(rs, still);
     return rs;
   };
@@ -98,30 +112,42 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
       stop();
       const rs = draw();
       let end = 0;
-      const grow = rs.map(({ part: p, el: e, len: L = 0 }) => {
+      // a spin's group only turns; its children grow on their own, so it adds nothing to `end`
+      const grow = rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
+        if (p.kind === 'spin' || p.kind === 'spark') return [];
         const delay = p.at * T.G;
         if (p.kind === 'line') {
           end = Math.max(end, delay + p.dur);
-          return e.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }],
-            { duration: p.dur, delay, easing: p.dur >= T.G * .7 ? 'linear' : 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' });
+          return [e.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }],
+            { duration: p.dur, delay, easing: p.dur >= T.G * .7 ? 'linear' : 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' })];
         }
-        if (p.kind === 'move') { end = Math.max(end, delay + p.dur); return e.animate(p.frames, { duration: p.dur, delay, fill: 'forwards' }); }
+        if (p.kind === 'move') { end = Math.max(end, delay + p.dur); return [e.animate(p.frames, { duration: p.dur, delay, fill: 'forwards' })]; }
         end = Math.max(end, delay + T.POP);
-        return e.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }],
-          { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' });
+        return [e.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }],
+          { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' })];
       });
-      live = [...grow, svg.animate([], { duration: end + T.HOLD })];
-      await settle(live, sig);
+      // spins turn through the whole cycle and sparks fly when they fly: neither is waited for
+      const total = end + T.HOLD + T.WITHER + 1500;
+      const side = rs.flatMap(({ part: p, el: e }) => {
+        if (p.kind === 'spark') return [e.animate(p.frames, { duration: p.dur, delay: p.at * T.G, easing: 'linear', fill: 'forwards' })];
+        if (p.kind !== 'spin') return [];
+        e.style.transformBox = 'view-box';
+        e.style.transformOrigin = `${p.cx}px ${p.cy}px`;
+        return [e.animate([{ transform: 'rotate(0deg)' }, { transform: `rotate(${p.deg}deg)` }], { duration: total, fill: 'forwards' })];
+      });
+      const hold = svg.animate([], { duration: end + T.HOLD });
+      live = [...grow, ...side, hold];
+      await settle([...grow, hold], sig);
       if (!alive()) return;
       // wither: a second wave erases everything in the order it grew (movers have already played out)
       const wither = rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
+        if (p.kind === 'move' || p.kind === 'spin' || p.kind === 'spark') return [];
         const delay = p.at * T.WITHER;
         if (p.kind === 'line') return [e.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -L }], { duration: p.dur * .8, delay, easing: 'ease-in', fill: 'forwards' })];
-        if (p.kind === 'move') return [];
         return [e.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.6)' }], { duration: T.POP * .8, delay, fill: 'forwards' })];
       });
       const pause = svg.animate([], { duration: range(rnd, 400, 1200) });
-      live = [...grow, ...wither, pause];
+      live = [...grow, ...side, ...wither, pause];
       await settle([...wither, pause], sig);
     }
   } finally { stop(); }
