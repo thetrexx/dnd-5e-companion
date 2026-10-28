@@ -488,5 +488,312 @@
     "page": 23,
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "experimental-elixir",
+    "name": "Experimental Elixir",
+    "source": {
+      "kind": "subclass",
+      "id": "alchemist"
+    },
+    "level": 3,
+    "cost": "action",
+    "scaling": [
+      {
+        "label": "Free elixirs per long rest",
+        "values": [
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3",
+          "3"
+        ]
+      }
+    ],
+    "description": [
+      "As each long rest ends, you can make the free elixirs shown below, each in its own empty flask you touch. Roll a d6 per elixir for its effect.",
+      "Action: brew one more in an empty flask by spending any spell slot (1st level or above). You choose its effect rather than rolling.",
+      "You need alchemist's supplies on you to make one. Drinking an elixir, or feeding it to an incapacitated creature, takes an action. Unused, it spoils when your next long rest ends.",
+      "1 Healing: the drinker heals 2d4 + your Intelligence modifier.",
+      "2 Swiftness: walking speed +10 ft, 1 hour.",
+      "3 Resilience: +1 AC, 10 minutes.",
+      "4 Boldness: 1 minute of adding a d4 to each attack roll and save.",
+      "5 Flight: fly speed 10 ft, 10 minutes.",
+      "6 Transformation: alter self (the drinker picks the change), 10 minutes."
+    ],
+    "page": 14,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "alchemical-savant",
+    "name": "Alchemical Savant",
+    "source": {
+      "kind": "subclass",
+      "id": "alchemist"
+    },
+    "level": 5,
+    "cost": "free",
+    "trigger": "You cast a spell with alchemist's supplies as your focus",
+    "description": [
+      "Add your Intelligence modifier (at least +1) to one roll of that spell: a roll that heals, or a damage roll for acid, fire, necrotic or poison damage."
+    ],
+    "page": 15,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "restorative-reagents",
+    "name": "Restorative Reagents",
+    "source": {
+      "kind": "subclass",
+      "id": "alchemist"
+    },
+    "level": 9,
+    "cost": "action",
+    "uses": "Intelligence modifier (minimum 1) per long rest",
+    "spells": [
+      {
+        "spell": "lesser-restoration",
+        "atLevel": 9,
+        "uses": "Intelligence modifier (minimum 1) per long rest, no slot"
+      }
+    ],
+    "description": [
+      "Cast lesser restoration with no spell slot, even if you haven't prepared it, using alchemist's supplies as your focus.",
+      "Always on: whoever drinks one of your experimental elixirs also gains 2d6 + your Intelligence modifier temporary hit points (at least 1)."
+    ],
+    "page": 15,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "chemical-mastery",
+    "name": "Chemical Mastery",
+    "source": {
+      "kind": "subclass",
+      "id": "alchemist"
+    },
+    "level": 15,
+    "cost": "action",
+    "uses": "Each spell once per long rest",
+    "spells": [
+      {
+        "spell": "greater-restoration",
+        "atLevel": 15,
+        "uses": "Once per long rest, no slot"
+      },
+      {
+        "spell": "heal",
+        "atLevel": 15,
+        "uses": "Once per long rest, no slot"
+      }
+    ],
+    "description": [
+      "Cast greater restoration or heal with no spell slot, no preparation and no material components, using alchemist's supplies as your focus.",
+      "Always on: you resist acid and poison damage and are immune to the poisoned condition."
+    ],
+    "page": 15,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-armor",
+    "name": "Arcane Armor",
+    "source": {
+      "kind": "subclass",
+      "id": "armorer"
+    },
+    "level": 3,
+    "cost": "action",
+    "description": [
+      "With smith's tools in hand, turn a suit of armor you have on into Arcane Armor.",
+      "While you wear it, it has no Strength requirement for you, it is a focus for your artificer spells, nobody can take it off you against your will, and it covers your whole body, standing in for any missing limbs.",
+      "Bonus action: retract or deploy the helmet. Action: don or doff the armor.",
+      "It keeps this state until you put on different armor, or until you die. Pick its model (Guardian or Infiltrator) with Armor Model."
+    ],
+    "page": 15,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "thunder-gauntlets",
+    "name": "Thunder Gauntlets",
+    "source": {
+      "kind": "subclass",
+      "id": "armorer"
+    },
+    "level": 3,
+    "cost": "action",
+    "prereq": {
+      "option": "armor-model-guardian"
+    },
+    "description": [
+      "Attack (as part of the Attack action) with a gauntlet, a simple melee weapon while that hand is empty: 1d8 thunder damage on a hit. Use your Intelligence modifier for its attack and damage rolls.",
+      "A creature you hit has disadvantage on attack rolls against anyone but you until your next turn starts."
+    ],
+    "page": 16,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "defensive-field",
+    "name": "Defensive Field",
+    "source": {
+      "kind": "subclass",
+      "id": "armorer"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "uses": "Proficiency bonus per long rest",
+    "prereq": {
+      "option": "armor-model-guardian"
+    },
+    "scaling": [
+      {
+        "label": "Temporary hit points",
+        "values": [
+          "",
+          "",
+          "3",
+          "4",
+          "5",
+          "6",
+          "7",
+          "8",
+          "9",
+          "10",
+          "11",
+          "12",
+          "13",
+          "14",
+          "15",
+          "16",
+          "17",
+          "18",
+          "19",
+          "20"
+        ]
+      }
+    ],
+    "description": [
+      "Gain temporary hit points equal to your artificer level. They replace any you already have, and you lose them if you take the armor off."
+    ],
+    "page": 16,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "perfected-armor-guardian",
+    "name": "Perfected Armor (Guardian)",
+    "source": {
+      "kind": "subclass",
+      "id": "armorer"
+    },
+    "level": 15,
+    "cost": "reaction",
+    "trigger": "A creature you can see, of size Huge or smaller, finishes its turn no more than 30 ft away",
+    "uses": "Proficiency bonus per long rest",
+    "prereq": {
+      "option": "armor-model-guardian"
+    },
+    "description": [
+      "It makes a Strength save against your spell save DC. On a failure you pull it as far as 30 ft toward you, into an empty space.",
+      "If that leaves it within 5 ft of you, you may also attack it once with a melee weapon, still within this reaction."
+    ],
+    "page": 17,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "lightning-launcher",
+    "name": "Lightning Launcher",
+    "source": {
+      "kind": "subclass",
+      "id": "armorer"
+    },
+    "level": 3,
+    "cost": "action",
+    "prereq": {
+      "option": "armor-model-infiltrator"
+    },
+    "description": [
+      "Attack (as part of the Attack action) with the gemlike node on a gauntlet or your chest, a simple ranged weapon: range 90/300 ft, 1d6 lightning damage on a hit. Use your Intelligence modifier for its attack and damage rolls.",
+      "Once on each of your turns, when it hits a creature, add 1d6 lightning damage."
+    ],
+    "page": 16,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "perfected-armor-infiltrator",
+    "name": "Perfected Armor (Infiltrator)",
+    "source": {
+      "kind": "subclass",
+      "id": "armorer"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "Your Lightning Launcher deals lightning damage to a creature",
+    "prereq": {
+      "option": "armor-model-infiltrator"
+    },
+    "description": [
+      "Until your next turn starts, it sheds a faint glow (dim light, radius 5 ft), and its attacks against you have disadvantage.",
+      "The next attack roll on it gains advantage; on a hit, that attack also deals 1d6 extra lightning damage."
+    ],
+    "page": 17,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "armor-model-guardian",
+    "name": "Guardian",
+    "source": {
+      "kind": "option",
+      "id": "armor-model"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "A front-line build: your Arcane Armor gets Thunder Gauntlets and Defensive Field (and Perfected Armor at 15).",
+      "You can switch models when you finish a short or long rest, with smith's tools in hand."
+    ],
+    "page": 16,
+    "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "armor-model-infiltrator",
+    "name": "Infiltrator",
+    "source": {
+      "kind": "option",
+      "id": "armor-model"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "A stealth build: your Arcane Armor gets Lightning Launcher (and Perfected Armor at 15).",
+      "Always on while you wear it: +5 ft walking speed, and Stealth checks have advantage (any disadvantage the armor imposes on them cancels it).",
+      "You can switch models when you finish a short or long rest, with smith's tools in hand."
+    ],
+    "page": 16,
+    "book": "tce",
+    "textSource": "summary"
   }
 ]

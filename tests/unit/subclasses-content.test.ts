@@ -40,7 +40,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('101 subclasses', () => expect(DATA.subclasses).toHaveLength(101));
+test('103 subclasses', () => expect(DATA.subclasses).toHaveLength(103));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -634,4 +634,70 @@ test('scaling dice: wails, tentacle and guardian coil', () => {
   expect([t[0], t[8], t[9], t[19]]).toEqual(['1d8', '1d8', '2d8', '2d8']);
   const g = v('guardian-coil', 'Damage reduced');
   expect([g[4], g[5], g[8], g[9]]).toEqual(['', '1d8', '1d8', '2d8']);
+});
+
+// Plan 8 (batch 4), Task 3: Alchemist and Armorer (Tasha's pp. 14-17)
+const ART3 = ['alchemist', 'armorer'];
+test('alchemist and armorer: artificer subclasses from tasha', () => {
+  expect(sub('alchemist')).toMatchObject({ cls: 'artificer', name: 'Alchemist', page: 14, book: 'tce', options: [] });
+  expect(sub('armorer')).toMatchObject({ cls: 'artificer', name: 'Armorer', page: 15, book: 'tce', options: ['armor-model'] });
+  const ids = new Set(ART3);
+  const groups = new Set(DATA.optionGroups.filter(g => g.owner.kind === 'subclass' && ids.has(g.owner.id)).map(g => g.id));
+  expect([...groups]).toEqual(['armor-model']);
+  const fs = DATA.features.filter(x => (x.source.kind === 'subclass' && ids.has(x.source.id)) || (x.source.kind === 'option' && groups.has(x.source.id)));
+  for (const f of fs) expect(f.book, f.id).toBe('tce');
+});
+test('alchemist and armorer spell tables', () => {
+  const pairs = (id: string) => sub(id).bonusSpells!.grants.map(g => [g.atLevel, g.spell]);
+  for (const id of ART3) expect(sub(id).bonusSpells!.kind, id).toBe('subclass');
+  expect(pairs('alchemist')).toEqual([[3, 'healing-word'], [3, 'ray-of-sickness'], [5, 'flaming-sphere'], [5, 'melfs-acid-arrow'],
+    [9, 'gaseous-form'], [9, 'mass-healing-word'], [13, 'blight'], [13, 'death-ward'], [17, 'cloudkill'], [17, 'raise-dead']]);
+  expect(pairs('armorer')).toEqual([[3, 'magic-missile'], [3, 'thunderwave'], [5, 'mirror-image'], [5, 'shatter'],
+    [9, 'hypnotic-pattern'], [9, 'lightning-bolt'], [13, 'fire-shield'], [13, 'greater-invisibility'], [17, 'passwall'], [17, 'wall-of-force']]);
+});
+test('alchemist features', () => {
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject({ source: { kind: 'subclass', id: 'alchemist' }, book: 'tce', ...x });
+  m('experimental-elixir', { level: 3, cost: 'action', page: 14 });
+  m('alchemical-savant', { level: 5, cost: 'free', page: 15 });
+  m('restorative-reagents', { level: 9, cost: 'action', page: 15 });
+  m('chemical-mastery', { level: 15, cost: 'action', page: 15 });
+  expect(feature('alchemical-savant').trigger).toBeTruthy();
+  const free = feature('experimental-elixir').scaling!.find(s => /elixir/i.test(s.label))!.values;
+  expect([free[2], free[4], free[5], free[13], free[14], free[19]]).toEqual(['1', '1', '2', '2', '3', '3']);
+  const text = feature('experimental-elixir').description.join(' ');
+  for (const e of ['Healing', 'Swiftness', 'Resilience', 'Boldness', 'Flight', 'Transformation', '2d4', '10 ft', '+1 AC', 'd4', 'alter self']) expect(text, e).toContain(e);
+  expect(feature('restorative-reagents').spells).toEqual([{ spell: 'lesser-restoration', atLevel: 9, uses: 'Intelligence modifier (minimum 1) per long rest, no slot' }]);
+  expect(feature('restorative-reagents').description.join(' ')).toContain('2d6');
+  expect(feature('chemical-mastery').spells).toEqual([
+    { spell: 'greater-restoration', atLevel: 15, uses: 'Once per long rest, no slot' },
+    { spell: 'heal', atLevel: 15, uses: 'Once per long rest, no slot' }]);
+});
+test('armor model: one pick from artificer 3, two passive models', () => {
+  const g = DATA.optionGroups.find(x => x.id === 'armor-model')!;
+  expect(g).toMatchObject({ name: 'Armor Model', owner: { kind: 'subclass', id: 'armorer' } });
+  expect(g.picks).toEqual([0, 0, ...Array(18).fill(1)]);
+  const opts = DATA.features.filter(f => f.source.kind === 'option' && f.source.id === 'armor-model');
+  expect(opts.map(f => [f.id, f.name])).toEqual([['armor-model-guardian', 'Guardian'], ['armor-model-infiltrator', 'Infiltrator']]);
+  for (const f of opts) expect(f, f.id).toMatchObject({ level: 3, page: 16, cost: 'passive', book: 'tce' });
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'artificer', level: 3, sub: 'armorer' }] } as Character;
+  expect(optionSlots(ch).find(s => s.group.id === 'armor-model')!.count).toBe(1);
+});
+test('armorer features gated by the model', () => {
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject({ source: { kind: 'subclass', id: 'armorer' }, book: 'tce', ...x });
+  m('arcane-armor', { level: 3, cost: 'action', page: 15 });
+  expect(feature('arcane-armor').prereq).toBeUndefined();
+  const guardian = { prereq: { option: 'armor-model-guardian' } };
+  const infiltrator = { prereq: { option: 'armor-model-infiltrator' } };
+  m('thunder-gauntlets', { level: 3, cost: 'action', page: 16, ...guardian });
+  m('defensive-field', { level: 3, cost: 'bonus', page: 16, uses: 'Proficiency bonus per long rest', ...guardian });
+  m('perfected-armor-guardian', { level: 15, cost: 'reaction', page: 17, uses: 'Proficiency bonus per long rest', ...guardian });
+  m('lightning-launcher', { level: 3, cost: 'action', page: 16, ...infiltrator });
+  m('perfected-armor-infiltrator', { level: 15, cost: 'free', page: 17, ...infiltrator });
+  expect(feature('perfected-armor-guardian').trigger).toBeTruthy();
+  expect(feature('perfected-armor-infiltrator').trigger).toBeTruthy();
+  const hp = feature('defensive-field').scaling!.find(s => /temporary/i.test(s.label))!.values;
+  expect(hp).toEqual(Array.from({ length: 20 }, (_, i) => i < 2 ? '' : String(i + 1)));
+  expect(feature('thunder-gauntlets').description.join(' ')).toContain('1d8 thunder');
+  expect(feature('lightning-launcher').description.join(' ')).toContain('90/300 ft');
+  expect(feature('lightning-launcher').description.join(' ')).toContain('1d6 lightning');
 });

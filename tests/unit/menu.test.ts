@@ -60,6 +60,19 @@ test('artificer 1 casts: cantrips and level 1 lit, level 2 dimmed', () => {
   expect(menuRows('artificer', 20).filter(r => r.kind === 'spells').map(r => r.dimmed)).toEqual([false, false, false, false, false, true, true, true, true]);
 });
 
+test('alchemist 15 has heal on level 6', () => {
+  expect(menuRows('artificer', 15, 'alchemist').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(false);
+  expect(menuRows('artificer', 15, 'armorer').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(true);
+  // not before Chemical Mastery
+  expect(menuRows('artificer', 14, 'alchemist').find(r => r.label === 'Level 6 Spells')!.dimmed).toBe(true);
+  // the rows above stay dimmed
+  expect(menuRows('artificer', 15, 'alchemist').find(r => r.label === 'Level 7 Spells')!.dimmed).toBe(true);
+});
+test('patron spells are pickable, not granted: they light no row', () => {
+  // a warlock's patron rows never reach above its slots; the rule is per level and excludes patron grants
+  expect(menuRows('warlock', 1, 'the-fiend').filter(r => r.kind === 'spells').map(r => r.dimmed)).toEqual([false, true, true, true, true, true, true, true, true]);
+});
+
 test('a granted cantrip lights the Cantrips row of a class with none', () => {
   expect(menuRows('ranger', 3, 'swarmkeeper').find(r => r.kind === 'cantrips')!.dimmed).toBe(false);
   expect(menuRows('ranger', 3, 'hunter').find(r => r.kind === 'cantrips')!.dimmed).toBe(true);
