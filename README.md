@@ -1,6 +1,6 @@
 # D&D 5E Cheat Sheet — a D&D 5e companion
 
-> **Work in progress.** All 13 classes, 40 PHB subclasses plus 65 more, 477 spells, class options, Tasha's optional features, artificer infusions, races and 43 feats are in. Every card is a short summary in our own words with the book page for the full rules.
+> **Work in progress.** All 13 classes, 40 PHB subclasses plus 70 more (110 in all), 477 spells, class options, Tasha's optional features, artificer infusions, 31 races and subraces and 52 feats are in. Batch 5 finishes the "more books" list. Every card is a short summary in our own words with the book page for the full rules.
 
 Books covered: Player's Handbook, Xanathar's Guide to Everything, Tasha's Cauldron of Everything, Sword Coast Adventurer's Guide, Dungeon Master's Guide, and Bigby Presents: Glory of the Giants.
 
