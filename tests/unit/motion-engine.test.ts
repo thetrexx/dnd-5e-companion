@@ -2,6 +2,7 @@ import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { onScreen, renderParts, runLoop, watchScreen } from '../../src/motion/engine';
 import { ROW_MOTIFS } from '../../src/motion/rowMotifs';
 import { seeded } from '../../src/motion/rand';
+import { mover, shape } from '../../src/motion/parts';
 import { ROW_TIMING, type Part } from '../../src/motion/types';
 
 const NS = 'http://www.w3.org/2000/svg';
@@ -343,4 +344,23 @@ test('watchScreen reports on and off screen, and disconnects', () => {
   expect(io!.disconnect).toHaveBeenCalled();
   vi.stubGlobal('IntersectionObserver', undefined);
   expect(() => watchScreen(host)(() => {})()).not.toThrow();
+});
+
+const FLY: Keyframe[] = Array.from({ length: 11 }, (_, k) => ({ offset: k / 10, transform: `translate(${k * 10}px, 0px)`, opacity: k === 0 || k === 10 ? 0 : 1 }));
+const flier = (still?: number) => () => [mover(0, 0, 0, 1000, FLY, [shape('circle', { r: 2 })], still)];
+test('static frame: a mover with still shows its nearest keyframe', async () => {
+  await runLoop(host, svg, flier(.45), ROW_TIMING, { animate: false, alive: () => true, rnd: seeded(1) });
+  const g = svg.querySelector<SVGGElement>('g.pop')!;
+  expect(g.style.transform).toBe('translate(40px, 0px)');
+  expect(g.style.opacity).toBe('1');
+});
+test('static frame: a mover without still stays at its start', async () => {
+  await runLoop(host, svg, flier(), ROW_TIMING, { animate: false, alive: () => true, rnd: seeded(1) });
+  expect(svg.querySelector<SVGGElement>('g.pop')!.style.transform).toBe('');
+});
+test('animated: still is ignored', async () => {
+  let n = 0;
+  await runLoop(host, svg, flier(.45), ROW_TIMING, { animate: true, alive: () => n++ < 3, rnd: seeded(1) });
+  expect(svg.querySelector<SVGGElement>('g.pop')!.style.transform).toBe('');
+  expect(vi.mocked(Element.prototype.animate).mock.calls.some(([k]) => kf(k) === kf(FLY))).toBe(true);
 });

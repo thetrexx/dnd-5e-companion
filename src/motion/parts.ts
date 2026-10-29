@@ -8,8 +8,8 @@ export const line = (shape: string | Pt[], at: number, dur: number, cls?: string
 export const pop = (x: number, y: number, rot: number, at: number, shapes: Shape[], scale?: number): Part =>
   scale === undefined ? { kind: 'pop', x, y, rot, at, shapes } : { kind: 'pop', x, y, rot, scale, at, shapes };
 // a small shape that travels along keyframes (falling loot, flying arrows)
-export const mover = (x: number, y: number, at: number, dur: number, frames: Keyframe[], shapes: Shape[]): Part =>
-  ({ kind: 'move', x, y, at, dur, frames, shapes });
+export const mover = (x: number, y: number, at: number, dur: number, frames: Keyframe[], shapes: Shape[], still?: number): Part =>
+  still === undefined ? { kind: 'move', x, y, at, dur, frames, shapes } : { kind: 'move', x, y, at, dur, frames, shapes, still };
 // parts that turn `deg` degrees about (cx, cy) over the whole cycle
 export const spin = (cx: number, cy: number, deg: number, parts: Part[]): Part => ({ kind: 'spin', cx, cy, deg, parts });
 // a dot on the spark layer, flying along its keyframes
