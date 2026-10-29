@@ -30,6 +30,12 @@ test('1280px: strands span past the column, no sideways scroll', async ({ page }
   const need = Math.min(r.col + 480, r.win);
   for (const w of r.widths) expect(w).toBeGreaterThanOrEqual(need - 1);
   expect(await noSideways(page)).toBe(true);
+  const g = await page.locator('svg.strands').first().evaluate((svg) => {
+    const w = svg.getBoundingClientRect().width;
+    return { w, gr: [...svg.querySelectorAll('linearGradient')].map((l) => [+l.getAttribute('x1')!, +l.getAttribute('x2')!]) };
+  });
+  expect(g.gr).toHaveLength(2);
+  for (const [x1, x2] of g.gr) { expect(x1).toBeGreaterThan(0); expect(x2).toBeLessThan(g.w); }
 });
 
 test('reduced motion: strands still, no shine animation', async ({ page }) => {
@@ -55,6 +61,11 @@ test('Off then Medium: class animations and shine go and come back, strands stay
   await expect(page.locator('button.start-me.shine')).toHaveCount(0);
   await expect(page.locator('svg.strands')).toHaveCount(13);
   await expect(page.locator('svg.strands').first().locator('path')).toHaveCount(2);
+  const sp = page.locator('svg.strands').first().locator('path').first();
+  await expect.poll(async () => (await sp.getAttribute('d')) ?? '').not.toBe('');
+  const d0 = await sp.getAttribute('d');
+  await page.waitForTimeout(1000);
+  expect(await sp.getAttribute('d')).toBe(d0);
   expect(await page.locator('button.start-me').evaluate((el) => el.getAnimations().length)).toBe(0);
   await page.goto('./#/settings');
   await page.getByText('Medium', { exact: true }).click();
