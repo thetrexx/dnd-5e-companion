@@ -6,14 +6,21 @@
 .empty{text-align:center;color:var(--text-dim);padding:32px 0}
 
 .start-title{font-size:34px;text-align:center;margin:24px 0 20px;color:var(--accent)}
-.tiles{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.tile{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:84px;padding:10px;font:inherit;font-size:13px;color:var(--text);text-shadow:var(--text-shadow);background:var(--surface);border:1px solid var(--tile,var(--border));border-radius:6px;cursor:pointer;overflow-wrap:anywhere}
-.tile.wide{grid-column:1/-1}
-/* the wide tile is child 1, so class tiles pair up from child 2; an odd one out (the 13th, Artificer) sits centred on its own row at one column's width */
-.tiles>.tile:not(.wide):last-child:nth-child(even){grid-column:1/-1;justify-self:center;width:calc((100% - 10px)/2)}
-.tile small{color:var(--text-dim);font-size:10px}
-.tile:disabled{opacity:var(--disabled-opacity);cursor:default}
-.tile img{border-radius:6px}
+.start-list{display:flex;flex-direction:column;gap:4px}
+.start-me,.start-cls{position:relative;display:flex;align-items:center;justify-content:center;width:100%;font:inherit;font-size:17px;color:var(--text);text-shadow:var(--text-shadow);background:none;border:0;padding:0;cursor:pointer}
+/* a class button has no outline or fill: its strands and class art are its whole shape */
+.start-cls{min-height:58px}
+.start-cls-l{position:relative;z-index:2;display:flex;align-items:center;gap:12px}
+.start-cls-l img{width:38px;height:38px;object-fit:contain;filter:var(--icon-shadow)}
+.start-cls .fx-row{z-index:1;-webkit-mask:var(--start-motif-mask);mask:var(--start-motif-mask)}
+/* my character sheet: a gold bar; thin lines top and bottom and a faint wash, all fading out at both ends, and a shine sweeping across */
+.start-me{gap:12px;min-height:74px;margin-bottom:10px;padding:6px 12px;overflow:hidden;background:linear-gradient(90deg,transparent,var(--me-wash) 22%,var(--me-wash) 78%,transparent)}
+.start-me::before{content:'';position:absolute;inset:0;pointer-events:none;opacity:var(--me-line-o);background:var(--me-rule) top/100% 1px no-repeat,var(--me-rule) bottom/100% 1px no-repeat;--me-rule:linear-gradient(90deg,transparent,var(--me-line) 18%,var(--me-line) 82%,transparent)}
+.start-me.shine::after{content:'';position:absolute;top:-20%;bottom:-20%;left:0;width:34%;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent,color-mix(in srgb,var(--me-shine) 5%,transparent) 30%,color-mix(in srgb,var(--me-shine) 28%,transparent) 50%,color-mix(in srgb,var(--me-shine) 5%,transparent) 70%,transparent);transform:translateX(-120%) skewX(-22deg);animation:start-shine 4.8s ease-in-out 1s infinite}
+@keyframes start-shine{0%{transform:translateX(-120%) skewX(-22deg)}32%,100%{transform:translateX(320%) skewX(-22deg)}}
+.start-me-icon{position:relative;z-index:2;flex:none;width:40px;height:40px;filter:var(--icon-shadow)}
+.start-me-text{position:relative;z-index:2;min-width:0;display:flex;flex-direction:column;align-items:flex-start;line-height:1.25;text-align:left;overflow-wrap:anywhere}
+.start-me small{font-size:11px;color:var(--text-dim);font-weight:300}
 
 .levels{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
 .lvl{font:inherit;font-size:16px;padding:12px 0;color:var(--text);text-shadow:var(--text-shadow);background:var(--surface);border:1px solid var(--border);border-radius:6px;cursor:pointer}

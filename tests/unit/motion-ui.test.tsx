@@ -6,6 +6,7 @@ import { DEFAULT_SETTINGS, saveSettings } from '../../src/settings/settings';
 import { Background } from '../../src/ui/Background';
 import { App } from '../../src/app';
 import { Strands } from '../../src/ui/Strands';
+import { Start } from '../../src/ui/screens/Start';
 
 const proto = SVGElement.prototype as unknown as Record<string, unknown>;
 const eproto = Element.prototype as unknown as Record<string, unknown>;
@@ -348,5 +349,24 @@ describe('strands', () => {
     expect(c.querySelectorAll('svg.strands path')).toHaveLength(2);
     expect(ds(c)).toEqual([null, null]);
     expect(raf).not.toHaveBeenCalled();
+  });
+});
+
+describe('start', () => {
+  const me = (c: Element) => c.querySelector('button.start-me')!;
+  test('start, Animation Off: strands stay, no class animation, no shine', () => {
+    saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
+    const c = render(<Start />).container;
+    expect(c.querySelectorAll('svg.strands')).toHaveLength(13);
+    expect(c.querySelectorAll('svg.fx-row')).toHaveLength(0);
+    expect(me(c).classList.contains('shine')).toBe(false);
+  });
+  test('start, reduced motion: no shine', () => {
+    expect(me(render(<Start />).container).classList.contains('shine')).toBe(true);
+    cleanup();
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    const c = render(<Start />).container;
+    expect(me(c).classList.contains('shine')).toBe(false);
+    expect(c.querySelectorAll('svg.strands')).toHaveLength(13);
   });
 });

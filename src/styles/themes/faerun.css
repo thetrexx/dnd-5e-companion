@@ -64,9 +64,12 @@
   --artificer:#a7acb2;--artificer-line:#d8dde2;--artificer-row-o:.5;--artificer-bg-o:.26;--artificer-accent:#d9a441;--artificer-spark:#ffd27a;--artificer-spark-glow:#ffb347;
   --sorcerer-cell-core:#6a0d17;
   --strand-a-o:.22;--strand-b-o:.1;
+  --barbarian-blood:var(--sorcerer-blood-hi);
+  --me-line:var(--accent);--me-line-o:.75;--me-wash:color-mix(in srgb,var(--accent) 8%,transparent);--me-shine:#fff0cd;
   --mist-o:.42;--mist-blur:5px;--blood-o:.5;--blood-blur:3px;--cells-o:.55;--sparks-o:.85;
   --none-line:var(--accent);--none-bg-o:.2;
   --row-motif-mask:linear-gradient(90deg,#000 40%,transparent 92%);
+  --start-motif-mask:linear-gradient(90deg,transparent 2%,#000 24%,#000 76%,transparent 98%);
   --bg-motif-mask:radial-gradient(ellipse 70% 60% at 50% 50%,#0006 30%,#000 100%);
 }
 :root[data-theme="faerun"][data-strength="off"]{--motion-i:1}

@@ -36,6 +36,13 @@ test('classes: add, level, subclass, remove prunes spells', () => {
   expect(loadCharacter()).toMatchObject({ classes: [{ cls: 'wizard', level: 2, sub: 'school-of-evocation' }], spells: [] });
   expect(r.getByText('Character level 2')).toBeTruthy();
 });
+test('class step offers classes A-Z', () => {
+  const r = render(<Editor step="classes" />);
+  const names = [...(r.getByLabelText('Add a class') as HTMLSelectElement).options].map(o => o.textContent!);
+  expect(names[0]).toBe('Artificer');
+  expect(names).toHaveLength(13);
+  expect(names).toEqual([...names].sort((a, b) => a.localeCompare(b, 'en')));
+});
 test('level above 20 warns', () => {
   saveCharacter({ ...emptyCharacter(), classes: [{ cls: 'fighter', level: 20 }] });
   const r = render(<Editor step="classes" />);

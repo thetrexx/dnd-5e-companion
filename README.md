@@ -41,4 +41,4 @@ Spell rows and class backgrounds carry animated patterns; the Animation setting 
 
 ## Credits
 
-Spell icons are hotlinked from [bg3.wiki](https://bg3.wiki/). Fallback icons are from [game-icons.net](https://game-icons.net/) by Lorc (CC BY 3.0, see `public/icons/fallback/CREDITS.txt`). Fonts (Inknut Antiqua, IM Fell English, Noto Serif, EB Garamond, Noto Sans Symbols 2) are under the SIL Open Font License. Design docs are in `docs/superpowers/`.
+Spell icons are hotlinked from [bg3.wiki](https://bg3.wiki/). Fallback icons are from [game-icons.net](https://game-icons.net/) by Lorc (CC BY 3.0, see `public/icons/fallback/CREDITS.txt`). The My Character Sheet icon is Material Symbols `person_edit` by Google (Apache License 2.0). Fonts (Inknut Antiqua, IM Fell English, Noto Serif, EB Garamond, Noto Sans Symbols 2) are under the SIL Open Font License. Design docs are in `docs/superpowers/`.

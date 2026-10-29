@@ -3,12 +3,13 @@ import type { ClassId } from '../data/types';
 import { onScreen, runLoop, watchScreen } from '../motion/engine';
 import { motionMode } from '../motion/mode';
 import { ROW_MOTIFS } from '../motion/rowMotifs';
-import { ROW_TIMING } from '../motion/types';
+import { ROW_TIMING, type Gen } from '../motion/types';
 import { useResized } from './useResized';
 
 // off or no motif for this class: nothing rendered, no effect work
-export function RowMotif(p: { cls: ClassId }) {
-  const gen = ROW_MOTIFS[p.cls], mode = motionMode(), ref = useRef<SVGSVGElement>(null);
+// gen and tone (a token name, no var()) override the class's row art and its line colour
+export function RowMotif(p: { cls: ClassId; gen?: Gen; tone?: string }) {
+  const gen = p.gen ?? ROW_MOTIFS[p.cls], tone = p.tone ?? `--${p.cls}-line`, mode = motionMode(), ref = useRef<SVGSVGElement>(null);
   const on = !!gen && mode !== 'off';
   // the static frame redraws at the new size; an animated row redraws every cycle anyway
   const size = useResized(on && mode === 'static');
@@ -22,7 +23,7 @@ export function RowMotif(p: { cls: ClassId }) {
       gate: onScreen(row), seen: watchScreen(row),
     });
     return () => ctrl.abort();
-  }, [p.cls, on, mode, size]);
+  }, [p.cls, gen, on, mode, size]);
   if (!on) return null;
-  return <svg ref={ref} class="fx-row" aria-hidden="true" style={`--fx-c: var(--${p.cls}-line); --fx-o: var(--${p.cls}-row-o)`} />;
+  return <svg ref={ref} class="fx-row" aria-hidden="true" style={`--fx-c: var(${tone}); --fx-o: var(--${p.cls}-row-o)`} />;
 }
