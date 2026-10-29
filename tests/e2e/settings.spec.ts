@@ -13,13 +13,13 @@ test('gear opens settings and back returns to start', async ({ page }) => {
   await page.getByRole('link', { name: 'Settings' }).click();
   await expect(page).toHaveURL(/#\/settings$/);
   await page.getByText('‹ Back').click();
-  await expect(page.getByRole('heading', { name: 'Spellbook & Steel' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'D&D 5E Cheat Sheet' })).toBeVisible();
 });
 
 test('back from directly opened settings goes to start, not out of the app', async ({ page }) => {
   await page.goto('./#/settings');
   await page.getByText('‹ Back').click();
-  await expect(page.getByRole('heading', { name: 'Spellbook & Steel' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'D&D 5E Cheat Sheet' })).toBeVisible();
 });
 
 test('back from settings returns to the screen it was opened from', async ({ page }) => {

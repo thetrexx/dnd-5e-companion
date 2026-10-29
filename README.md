@@ -1,4 +1,4 @@
-# Spellbook & Steel — a D&D 5e companion
+# D&D 5E Cheat Sheet — a D&D 5e companion
 
 > **Work in progress.** All 13 classes, 40 PHB subclasses plus 65 more, 477 spells, class options, Tasha's optional features, artificer infusions, races and 43 feats are in. Every card is a short summary in our own words with the book page for the full rules.
 
