@@ -1,14 +1,15 @@
 import { classLine } from '../../character/derive';
 import { loadCharacter } from '../../character/store';
-import { DATA } from '../../data';
-import { CLASS_IDS } from '../../data/validate';
+import { classesAZ } from '../../data';
+import { menuMotif, menuTone } from '../../motion/menuMotifs';
+import { motionMode } from '../../motion/mode';
 import { toHash } from '../../router';
 import { GearButton } from '../GearButton';
 import { Icon } from '../Icon';
 import { IosTip } from '../IosTip';
-import type { ClassId } from '../../data/types';
-
-const cap = (s: string) => s.charAt(0).toUpperCase() + s.slice(1);
+import { PersonEditIcon } from '../PersonEditIcon';
+import { RowMotif } from '../RowMotif';
+import { Strands } from '../Strands';
 
 export function Start() {
   const ch = loadCharacter();
@@ -16,23 +17,26 @@ export function Start() {
   return (
     <div class="screen start">
       <GearButton />
-      <h1 class="start-title">Spellbook &amp; Steel</h1>
-      <div class="tiles">
-        <button type="button" class="tile wide"
+      <h1 class="start-title">D&amp;D 5E Cheat Sheet</h1>
+      <div class="start-list">
+        {/* no strands: gold lines, a faint wash and, when animated, a shine sweeping across */}
+        <button type="button" class={`start-me${motionMode() === 'animated' ? ' shine' : ''}`}
           onClick={() => { location.hash = ready ? '#/me' : '#/edit/basics'; }}>
-          <span>My Character Sheet</span>
-          <small>{ch?.name || (ready ? classLine(ch) : 'Create your character')}</small>
+          <PersonEditIcon class="start-me-icon" />
+          <span class="start-me-text">
+            <span>My Character Sheet</span>
+            <small>{ch?.name || (ready ? classLine(ch) : 'Create your character')}</small>
+          </span>
         </button>
-        {CLASS_IDS.map((id) => {
-          const c = DATA.classes.find((x) => x.id === id);
-          return (
-            <button type="button" key={id} class="tile" disabled={!c} style={{ '--tile': `var(--${id}-line)` }}
-              onClick={() => { location.hash = toHash({ page: 'level', cls: id as ClassId }); }}>
-              {c && <Icon src={c.plainIcon} fallback="spell" alt="" size={36} />}
-              <span>{c ? c.name : cap(id)}</span>
-            </button>
-          );
-        })}
+        {/* back to front: the strands, the class art, then icon and name */}
+        {classesAZ().map((c) => (
+          <button type="button" key={c.id} class="start-cls"
+            onClick={() => { location.hash = toHash({ page: 'level', cls: c.id }); }}>
+            <Strands cls={c.id} />
+            <RowMotif cls={c.id} gen={menuMotif(c.id)} tone={menuTone(c.id)} />
+            <span class="start-cls-l"><Icon src={c.plainIcon} fallback="spell" alt="" size={38} />{c.name}</span>
+          </button>
+        ))}
       </div>
       <IosTip />
     </div>

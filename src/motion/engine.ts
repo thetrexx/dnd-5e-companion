@@ -54,7 +54,21 @@ function arm(rs: Rendered[], still: boolean): void {
       path.style.strokeDasharray = `${L} ${L + 1}`;
       path.style.strokeDashoffset = still ? '0' : `${L}`;
     } else if (!still && r.part.kind !== 'spin') r.el.style.opacity = '0';
+    else if (still && r.part.kind === 'move' && r.part.still !== undefined) {
+      const f = nearest(r.part.frames, r.part.still);
+      if (f?.transform != null) r.el.style.transform = String(f.transform);
+      if (f?.opacity != null) r.el.style.opacity = String(f.opacity);
+    }
   }
+}
+// the keyframe whose offset is closest to `at` (the lower one on a tie); frames without an offset are evenly spaced
+function nearest(frames: Keyframe[], at: number): Keyframe | undefined {
+  let best: Keyframe | undefined, gap = Infinity;
+  frames.forEach((f, i) => {
+    const d = Math.abs((f.offset ?? (frames.length > 1 ? i / (frames.length - 1) : 0)) - at);
+    if (d < gap - 1e-9) { best = f; gap = d; }
+  });
+  return best;
 }
 
 // resolves once start() calls done or the signal aborts, whichever is first; start's cleanup always runs

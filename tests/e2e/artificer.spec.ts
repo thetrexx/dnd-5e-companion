@@ -1,18 +1,6 @@
 import { test, expect } from '@playwright/test';
 import type { Page } from '@playwright/test';
 
-test('start: 13 tiles at 320px, Artificer last, opens its level picker', async ({ page }) => {
-  await page.setViewportSize({ width: 320, height: 640 });
-  await page.goto('./');
-  const tiles = page.locator('.tiles button.tile:not(.wide)');
-  await expect(tiles).toHaveCount(13);
-  await expect(tiles.last()).toContainText('Artificer');
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-  await tiles.last().click();
-  await expect(page).toHaveURL(/#\/level\/artificer/);
-  await expect(page.getByRole('button', { name: '3', exact: true })).toBeVisible();
-});
-
 test("browse: Battle Smith Steel Defender card cites Tasha's p. 19", async ({ page }) => {
   await page.goto('./');
   await page.getByText('Artificer', { exact: true }).click();

@@ -4,7 +4,7 @@ import optionGroups from '../../data/options.json';
 import races from '../../data/races.json';
 import feats from '../../data/feats.json';
 import spells from '../../data/spells.json';
-import type { Dataset, Feature } from './types';
+import type { ClassDef, Dataset, Feature } from './types';
 import { validateDataset } from './validate';
 
 const files = import.meta.glob('../../data/features/*.json', { eager: true, import: 'default' }) as Record<string, Feature[]>;
@@ -16,6 +16,11 @@ export const DATA = { classes, subclasses, optionGroups, races, feats, spells, f
 export function poolOptions(pool: string): Feature[] {
   return DATA.features.filter(f => f.source.kind === 'option' && f.source.id === pool)
     .sort((a, b) => a.name.localeCompare(b.name, 'en'));
+}
+
+/** The classes A-Z by name (Artificer first), whatever order classes.json holds them in. */
+export function classesAZ(): ClassDef[] {
+  return [...DATA.classes].sort((a, b) => a.name.localeCompare(b.name, 'en'));
 }
 
 const errors = validateDataset(DATA);

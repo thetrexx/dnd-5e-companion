@@ -1,7 +1,7 @@
 import { parseCharacter, type ParseResult } from './parse';
 import type { Character } from './types';
 
-export const ERR_NOT_CODE = "That isn't a Spellbook & Steel backup code.";
+export const ERR_NOT_CODE = "That isn't a D&D 5E Cheat Sheet backup code.";
 export const ERR_DAMAGED = 'This code is damaged or cut short. Copy the whole code and try again.';
 
 const toBase64Url = (b: Uint8Array) => btoa(String.fromCharCode(...b)).replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');

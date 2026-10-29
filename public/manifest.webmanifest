@@ -1,6 +1,6 @@
 {
-  "name": "Spellbook & Steel",
-  "short_name": "Spellbook",
+  "name": "D&D 5E Cheat Sheet",
+  "short_name": "D&D 5E",
   "display": "standalone",
   "start_url": "./",
   "background_color": "#1b1712",

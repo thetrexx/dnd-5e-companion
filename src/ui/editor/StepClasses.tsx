@@ -1,5 +1,5 @@
 import { useState } from 'preact/hooks';
-import { DATA } from '../../data';
+import { classesAZ, DATA } from '../../data';
 import { totalLevel } from '../../character/derive';
 import type { CharClass } from '../../character/types';
 import type { ClassId } from '../../data/types';
@@ -10,7 +10,7 @@ const ORN = '☙';
 const LEVELS = Array.from({ length: 20 }, (_, i) => i + 1);
 
 export function StepClasses({ ch, update }: StepProps) {
-  const free = DATA.classes.filter((c) => !ch.classes.some((x) => x.cls === c.id));
+  const free = classesAZ().filter((c) => !ch.classes.some((x) => x.cls === c.id));
   const [pick, setPick] = useState('');
   const [removing, setRemoving] = useState<ClassId | null>(null);
   const chosen = free.some((c) => c.id === pick) ? pick : free[0]?.id ?? '';

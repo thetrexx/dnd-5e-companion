@@ -1,4 +1,4 @@
-# Spellbook & Steel — a D&D 5e companion
+# D&D 5E Cheat Sheet — a D&D 5e companion
 
 > **Work in progress.** All 13 classes, 40 PHB subclasses plus 65 more, 477 spells, class options, Tasha's optional features, artificer infusions, races and 43 feats are in. Every card is a short summary in our own words with the book page for the full rules.
 
@@ -37,8 +37,8 @@ Colours live only in `src/styles/themes/`. To add a theme, copy `faerun.css` to 
 
 ## Motion
 
-Spell rows and class backgrounds carry animated patterns; the Animation setting scales them (Faint, Medium, Strong), and Off removes the patterns entirely to save battery. The phone's reduced-motion setting shows them still.
+Spell rows and class backgrounds carry animated patterns, and the start menu has soft strands drifting behind each class button; the Animation setting scales them (Faint, Medium, Strong). Off removes the patterns and the button shine to save battery, but the start-menu strands stay, standing still. The phone's reduced-motion setting shows everything still.
 
 ## Credits
 
-Spell icons are hotlinked from [bg3.wiki](https://bg3.wiki/). Fallback icons are from [game-icons.net](https://game-icons.net/) by Lorc (CC BY 3.0, see `public/icons/fallback/CREDITS.txt`). Fonts (Inknut Antiqua, IM Fell English, Noto Serif, EB Garamond, Noto Sans Symbols 2) are under the SIL Open Font License. Design docs are in `docs/superpowers/`.
+Spell icons are hotlinked from [bg3.wiki](https://bg3.wiki/). Fallback icons are from [game-icons.net](https://game-icons.net/) by Lorc (CC BY 3.0, see `public/icons/fallback/CREDITS.txt`). The My Character Sheet icon is Material Symbols `person_edit` by Google (Apache License 2.0). Fonts (Inknut Antiqua, IM Fell English, Noto Serif, EB Garamond, Noto Sans Symbols 2) are under the SIL Open Font License. Design docs are in `docs/superpowers/`.

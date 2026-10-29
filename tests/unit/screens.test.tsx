@@ -74,24 +74,41 @@ test('Menu row icons and slot icon survive a failed load', () => {
   expect(r.container.querySelector('.slot b')).toBeTruthy();
 });
 
-test('Start tile icon falls back on error', () => {
+test('Start class icon falls back on error', () => {
   const r = render(<Start />);
-  const img = r.container.querySelector('.tile img')!;
+  const img = r.container.querySelector('.start-cls img')!;
   fireEvent.error(img);
-  expect(r.container.querySelector('.tile img')!.getAttribute('src')).toContain('/icons/fallback/');
+  expect(r.container.querySelector('.start-cls img')!.getAttribute('src')).toContain('/icons/fallback/');
 });
 
-test('Start shows 13 class tiles, PHB order kept, Artificer last with its own icon', () => {
+test('Start lists 13 classes A-Z, Artificer first, Artificer with its own icon', () => {
   const r = render(<Start />);
-  const tiles = [...r.container.querySelectorAll('.tiles > .tile:not(.wide)')];
-  expect(tiles).toHaveLength(13);
-  expect(tiles[0].textContent).toBe('Barbarian');
-  expect(tiles[11].textContent).toBe('Wizard');
-  expect(tiles[12].textContent).toBe('Artificer');
-  expect((tiles[12] as HTMLButtonElement).disabled).toBe(false);
-  expect(tiles[12].querySelector('img')!.getAttribute('src')).toBe('icons/class-artificer.svg');
-  // jsdom has no layout: pin the rule that centres the odd 13th tile at one column's width (checked in a browser by e2e)
-  expect(readFileSync('src/styles/screens.css', 'utf8')).toContain('.tiles>.tile:not(.wide):last-child:nth-child(even){grid-column:1/-1;justify-self:center;');
+  const btns = [...r.container.querySelectorAll('.start-list > button.start-cls')];
+  expect(btns.map(b => b.textContent)).toEqual(['Artificer', 'Barbarian', 'Bard', 'Cleric', 'Druid', 'Fighter', 'Monk', 'Paladin', 'Ranger', 'Rogue', 'Sorcerer', 'Warlock', 'Wizard']);
+  expect(btns[0].querySelector('img')!.getAttribute('src')).toBe('icons/class-artificer.svg');
+  expect(r.container.querySelector('.start-title')!.textContent).toBe('D&D 5E Cheat Sheet');
+});
+
+test('My Character Sheet: person_edit icon, no strands, today\'s subtitle', () => {
+  const r = render(<Start />);
+  const me = r.container.querySelector('.start-list > button.start-me:first-child')!;
+  expect(me.querySelector('svg path')!.getAttribute('d')!.startsWith('M493.33-226.67Z')).toBe(true);
+  expect(me.querySelector('svg.strands')).toBeNull();
+  expect(me.querySelector('.start-me-text > span')!.textContent).toBe('My Character Sheet');
+  expect(me.querySelector('small')!.textContent).toBe('Create your character');
+});
+
+test('every class button has strands and a motif layer; Barbarian bleeds blood red', () => {
+  const r = render(<Start />);
+  const btns = [...r.container.querySelectorAll('button.start-cls')];
+  expect(r.container.querySelectorAll('svg.strands')).toHaveLength(13);
+  expect(r.container.querySelectorAll('svg.fx-row')).toHaveLength(13);
+  expect(btns.every(b => b.querySelector('svg.strands') && b.querySelector('svg.fx-row'))).toBe(true);
+  const barb = btns.find(b => b.textContent === 'Barbarian')!;
+  expect(barb.querySelector('svg.fx-row')!.getAttribute('style')).toContain('--barbarian-blood');
+  expect(btns.find(b => b.textContent === 'Bard')!.querySelector('svg.fx-row')!.getAttribute('style')).toContain('--bard-line');
+  // jsdom has no layout: pin the rule that fades the class art at both ends (checked in a browser by e2e)
+  expect(readFileSync('src/styles/screens.css', 'utf8')).toMatch(/\.start-cls \.fx-row\{[^}]*;mask:var\(--start-motif-mask\)/);
 });
 test('every card ends with the PHB page line', () => {
   const wb = render(<Card kind="feature" id="weapon-bond" cls="fighter" level={3} sub="eldritch-knight" />);

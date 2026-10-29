@@ -26,3 +26,5 @@
 .fx-sparks .spark{fill:var(--artificer-spark);stroke:none;filter:drop-shadow(0 0 2px var(--artificer-spark-glow));opacity:0}
 .fx-cells .cell{fill:var(--sorcerer-cell)}
 .fx-cells .cell-core{fill:var(--sorcerer-cell-core)}
+.strands{position:absolute;left:calc(50% - 50vw);width:100vw;top:-8px;height:calc(100% + 16px);z-index:0;pointer-events:none}
+.strands path{mix-blend-mode:screen}
