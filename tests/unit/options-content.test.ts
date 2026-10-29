@@ -32,7 +32,7 @@ test('group sizes and ownership', () => {
   expect(opts('eldritch-invocations')).toHaveLength(54);   // 46 + 8 Tasha's
   expect(opts('pact-boon')).toHaveLength(4);   // + Pact of the Talisman
   expect(opts('elemental-disciplines')).toHaveLength(16);
-  for (const id of ['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement']) expect(opts(id)).toHaveLength(3);
+  for (const id of ['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement']) expect(opts(id)).toHaveLength(5);
   expect(opts('favored-enemy')).toHaveLength(14);
   expect(opts('natural-explorer')).toHaveLength(8);
   expect(g('favored-enemy').picks[13]).toBe(3);
@@ -420,4 +420,10 @@ test('artificer 2 offers level-2 infusions only', () => {
   expect(slot.count).toBe(4);
   for (const x of slot.choices) expect(x.level, x.id).toBe(2);
   expect(slot.choices).toHaveLength(9);
+});
+
+test('elk and tiger totems', () => {
+  for (const pool of ['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement'])
+    expect(poolOptions(pool).map(f => f.id)).toEqual(expect.arrayContaining([`${pool}-elk`, `${pool}-tiger`]));
+  expect(DATA.features.find(f => f.id === 'totemic-attunement-tiger')).toMatchObject({ level: 14, cost: 'bonus', book: 'scag' });
 });

@@ -1474,5 +1474,74 @@
     ],
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "way-of-the-long-death-touch-of-death",
+    "name": "Touch of Death",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-long-death"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You reduce a creature within 5 ft to 0 HP",
+    "description": [
+      "Whenever you drop a creature within 5 ft to 0 HP, you gain temp HP: your Wisdom modifier plus your monk level, minimum 1."
+    ],
+    "page": 130,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "hour-of-reaping",
+    "name": "Hour of Reaping",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-long-death"
+    },
+    "level": 6,
+    "cost": "action",
+    "description": [
+      "Creatures within 30 ft that see you each roll a Wisdom save (your ki save DC). Failures are frightened of you until your next turn ends."
+    ],
+    "page": 130,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "mastery-of-death",
+    "name": "Mastery of Death",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-long-death"
+    },
+    "level": 11,
+    "cost": "free",
+    "trigger": "You are reduced to 0 HP",
+    "resource": "1 ki point",
+    "description": [
+      "Spend 1 ki point, with no action needed, to drop to 1 HP instead of 0."
+    ],
+    "page": 131,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "touch-of-the-long-death",
+    "name": "Touch of the Long Death",
+    "source": {
+      "kind": "subclass",
+      "id": "way-of-the-long-death"
+    },
+    "level": 17,
+    "cost": "action",
+    "resource": "1 to 10 ki points",
+    "description": [
+      "Touch one creature within 5 ft and spend 1 to 10 ki. The target rolls a Constitution save (your ki save DC).",
+      "Damage is 2d10 necrotic per ki spent; a successful save halves it."
+    ],
+    "page": 131,
+    "book": "scag",
+    "textSource": "summary"
   }
 ]

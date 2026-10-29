@@ -161,6 +161,14 @@
     ]
   },
   {
+    "id": "purple-dragon-knight",
+    "cls": "fighter",
+    "name": "Purple Dragon Knight (Banneret)",
+    "page": 128,
+    "book": "scag",
+    "options": []
+  },
+  {
     "id": "circle-of-the-land",
     "cls": "druid",
     "name": "Circle of the Land",
@@ -594,6 +602,14 @@
     "name": "Path of the Zealot",
     "page": 11,
     "book": "xge",
+    "options": []
+  },
+  {
+    "id": "path-of-the-battlerager",
+    "cls": "barbarian",
+    "name": "Path of the Battlerager",
+    "page": 121,
+    "book": "scag",
     "options": []
   },
   {
@@ -1575,6 +1591,14 @@
     "name": "Way of the Astral Self",
     "page": 50,
     "book": "tce",
+    "options": []
+  },
+  {
+    "id": "way-of-the-long-death",
+    "cls": "monk",
+    "name": "Way of the Long Death",
+    "page": 130,
+    "book": "scag",
     "options": []
   },
   {

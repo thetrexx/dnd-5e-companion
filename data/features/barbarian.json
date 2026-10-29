@@ -297,6 +297,38 @@
     "textSource": "summary"
   },
   {
+    "id": "totem-spirit-elk",
+    "name": "Elk",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "While you rage without heavy armor on, your walking speed rises by 15 ft."
+    ],
+    "page": 122,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "totem-spirit-tiger",
+    "name": "Tiger",
+    "source": {
+      "kind": "option",
+      "id": "totem-spirit"
+    },
+    "level": 3,
+    "cost": "passive",
+    "description": [
+      "While you rage, your long jump grows by 10 ft and your high jump by 3 ft."
+    ],
+    "page": 122,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
     "id": "aspect-of-the-beast-bear",
     "name": "Bear",
     "source": {
@@ -339,6 +371,38 @@
       "You get a wolf's hunting senses. You can track creatures while moving at a fast pace, and you can sneak at a normal pace while traveling."
     ],
     "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-elk",
+    "name": "Elk",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "Your travel pace doubles, mounted or on foot, as does the pace of up to ten companions within 60 ft of you while you are not incapacitated."
+    ],
+    "page": 122,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "aspect-of-the-beast-tiger",
+    "name": "Tiger",
+    "source": {
+      "kind": "option",
+      "id": "aspect-of-the-beast"
+    },
+    "level": 6,
+    "cost": "passive",
+    "description": [
+      "Gain proficiency in two skills of your choice from Athletics, Acrobatics, Stealth and Survival."
+    ],
+    "page": 122,
+    "book": "scag",
     "textSource": "summary"
   },
   {
@@ -385,6 +449,40 @@
       "A rage-only takedown: once your melee weapon attack connects with a Large or smaller creature, a bonus action that same turn drops it prone."
     ],
     "page": 50,
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-elk",
+    "name": "Elk",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "Raging, moving through a Large or smaller creature",
+    "description": [
+      "Raging, you can spend a bonus action mid-move to run through a Large or smaller creature. It rolls a Strength save, DC 8 + Strength modifier + proficiency bonus. Failing, it drops prone and takes 1d12 + your Strength modifier bludgeoning."
+    ],
+    "page": 122,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "totemic-attunement-tiger",
+    "name": "Tiger",
+    "source": {
+      "kind": "option",
+      "id": "totemic-attunement"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "trigger": "Raging, after a 20 ft straight charge",
+    "description": [
+      "Raging, after you charge 20 ft or more straight at a Large or smaller target and just before you swing at it, a bonus action buys one extra melee weapon attack on it."
+    ],
+    "page": 122,
+    "book": "scag",
     "textSource": "summary"
   },
   {
@@ -1097,6 +1195,79 @@
       "Until the rage ends, each chosen creature, once on each of its turns, can roll a d6 and add it to the damage when its attack roll hits and damages a target."
     ],
     "book": "tce",
+    "textSource": "summary"
+  },
+  {
+    "id": "battlerager-armor",
+    "name": "Battlerager Armor",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-battlerager"
+    },
+    "level": 3,
+    "cost": "bonus",
+    "trigger": "Raging in spiked armor",
+    "description": [
+      "Spiked armor counts as a weapon in your hands.",
+      "While you rage in spiked armor, use a bonus action for one melee attack with the spikes against a target within 5 ft. Roll with Strength; a hit deals 1d4 piercing.",
+      "Rider: when your grapple check succeeds on a grapple made with the Attack action, the target also takes 3 piercing.",
+      "Needs spiked armor (rare medium armor, 75 gp). The book limits this path to dwarves unless your DM lifts that."
+    ],
+    "page": 121,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "reckless-abandon",
+    "name": "Reckless Abandon",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-battlerager"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You use Reckless Attack while raging",
+    "description": [
+      "Using Reckless Attack during a rage also grants temporary HP equal to your Constitution modifier (at least 1).",
+      "Any that remain vanish when the rage ends."
+    ],
+    "page": 121,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "battlerager-charge",
+    "name": "Battlerager Charge",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-battlerager"
+    },
+    "level": 10,
+    "cost": "bonus",
+    "trigger": "Raging",
+    "description": [
+      "While you rage, Dash costs you a bonus action instead of your action."
+    ],
+    "page": 121,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "spiked-retribution",
+    "name": "Spiked Retribution",
+    "source": {
+      "kind": "subclass",
+      "id": "path-of-the-battlerager"
+    },
+    "level": 14,
+    "cost": "free",
+    "trigger": "A creature within 5 ft hits you in melee",
+    "description": [
+      "A creature within 5 ft that hits you with a melee attack takes 3 piercing damage.",
+      "Works only while you rage, are not incapacitated, and wear spiked armor."
+    ],
+    "page": 121,
+    "book": "scag",
     "textSource": "summary"
   }
 ]

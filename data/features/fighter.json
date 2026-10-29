@@ -2166,5 +2166,84 @@
     ],
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "rallying-cry",
+    "name": "Rallying Cry",
+    "source": {
+      "kind": "subclass",
+      "id": "purple-dragon-knight"
+    },
+    "level": 3,
+    "cost": "free",
+    "trigger": "You use Second Wind",
+    "description": [
+      "Using Second Wind, you can also heal up to three allies within 60 ft. Each regains HP equal to your fighter level, if it can see or hear you."
+    ],
+    "page": 128,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "inspiring-surge",
+    "name": "Inspiring Surge",
+    "source": {
+      "kind": "subclass",
+      "id": "purple-dragon-knight"
+    },
+    "level": 10,
+    "cost": "free",
+    "trigger": "You use Action Surge",
+    "scaling": [
+      {
+        "label": "Allies",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ],
+    "description": [
+      "Using Action Surge, you can pick an ally within 60 ft (see Allies). Each one can make a melee or ranged weapon attack as its reaction, if it can see or hear you."
+    ],
+    "page": 128,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "purple-dragon-knight-bulwark",
+    "name": "Bulwark",
+    "source": {
+      "kind": "subclass",
+      "id": "purple-dragon-knight"
+    },
+    "level": 15,
+    "cost": "free",
+    "trigger": "You use Indomitable on an Int, Wis or Cha save",
+    "description": [
+      "When you use Indomitable on an Intelligence, Wisdom or Charisma save and are not incapacitated, pick one ally within 60 ft that failed a save against the same effect.",
+      "If it can see or hear you, it rerolls the save and must keep the new roll."
+    ],
+    "page": 128,
+    "book": "scag",
+    "textSource": "summary"
   }
 ]

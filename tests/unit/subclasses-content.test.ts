@@ -40,7 +40,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('105 subclasses', () => expect(DATA.subclasses).toHaveLength(105));
+test('108 subclasses', () => expect(DATA.subclasses).toHaveLength(108));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -706,7 +706,7 @@ test('armorer features gated by the model', () => {
 test('tasha artificer subclasses', () => {
   for (const id of ['alchemist', 'armorer', 'artillerist', 'battle-smith'])
     expect(sub(id), id).toMatchObject({ cls: 'artificer', book: 'tce', bonusSpells: { kind: 'subclass' } });
-  expect(DATA.subclasses).toHaveLength(105);
+  expect(DATA.subclasses).toHaveLength(108);
   expect(sub('artillerist')).toMatchObject({ name: 'Artillerist', page: 17, options: [] });
   expect(sub('battle-smith')).toMatchObject({ name: 'Battle Smith', page: 18, options: [] });
 });
@@ -747,4 +747,12 @@ test('battle smith features', () => {
   expect(feature('arcane-jolt').trigger).toBeTruthy();
   const jolt = feature('arcane-jolt').scaling!.find(s => /2d6|jolt|damage|healing/i.test(s.label))!.values;
   expect([jolt[7], jolt[8], jolt[13], jolt[14], jolt[19]]).toEqual(['', '2d6', '2d6', '4d6', '4d6']);
+});
+
+test('scag martial subclasses', () => {
+  for (const [id, cls] of [['path-of-the-battlerager', 'barbarian'], ['purple-dragon-knight', 'fighter'], ['way-of-the-long-death', 'monk']] as const)
+    expect(sub(id), id).toMatchObject({ cls, book: 'scag' });
+  expect(DATA.subclasses).toHaveLength(108);
+  expect(DATA.features.find(f => f.id === 'inspiring-surge')!.scaling![0]!.values[16]).toBe('2');
+  expect(DATA.features.find(f => f.id === 'way-of-the-long-death-touch-of-death')).toMatchObject({ level: 3, cost: 'free', source: { kind: 'subclass', id: 'way-of-the-long-death' } });
 });
