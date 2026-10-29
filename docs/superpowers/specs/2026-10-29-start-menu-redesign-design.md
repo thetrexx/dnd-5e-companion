@@ -99,6 +99,7 @@ Base spec 7.5 still rules: Animation "Off" removes the moving patterns (old phon
   - The strands are painted once, blurred, into half-resolution canvas strips one wave wider than the window, and slid sideways by a CSS transform the compositor runs alone. The strength fade across the window is a still mask on the frame. Look changes: the twist drifts with the wave, the thickness is even across the window (no swell at the centre), and the `screen` blend is gone.
   - On the start menu the class art shows its still frame even when animated. Spell lists keep their animated rows.
   - Measured (busy ms per second, phone pixel density, CPU 4x): main thread about 360 before, about 160 after; drawing about 45 before, about 10 after.
+- **Class menus, the same day.** The spell-level rows (up to ten, all animating at once) were the main cost, then the Sorcerer and Warlock noise layers. Now, approved by the owner as a trial: every row stands fully drawn, and the rows take turns (one at a time, down the list in page order, skipping rows off screen) to wither and grow a new drawing. The noise layers are blurred on their small canvas before the browser scales them up, instead of a CSS blur on the screen-sized layer (older Safari without canvas filters keeps the CSS blur). Main thread at level 20: wizard 285 to 100, druid 734 to 181, artificer 643 to 178, sorcerer 479 to 333, warlock 450 to 282; compositor work for sorcerer and warlock about 355 to about 100.
 
 ## 7. Rename
 

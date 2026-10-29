@@ -18,6 +18,29 @@ test('spell rows animate, actions row has no motif, taps still navigate', async 
   await expect(page).toHaveURL(/#\/spells\/sorcerer\/5.*lvl-1/);
 });
 
+// every row animating at once was too slow on phones: rows stand drawn and take turns
+test('spell rows take turns: never more than one row animating', async ({ page }) => {
+  await page.goto('./#/menu/druid/20');
+  await expect(page.locator('a.row svg.fx-row path').first()).toBeAttached();
+  const busy = () => page.evaluate(() => [...document.querySelectorAll('a.row')]
+    .filter((r) => r.querySelector('svg.fx-row')?.getAnimations({ subtree: true }).some((a) => a.playState === 'running')).length);
+  let seen = 0;
+  for (let i = 0; i < 12; i++) {
+    const n = await busy();
+    expect(n).toBeLessThanOrEqual(1);
+    seen += n;
+    await page.waitForTimeout(500);
+  }
+  expect(seen).toBeGreaterThan(0);
+});
+
+test('mist is blurred on its small canvas, not as a screen-sized filter', async ({ page }) => {
+  await page.goto('./#/menu/warlock/5');
+  const mist = page.locator('canvas.fx-mist');
+  await expect(mist).toHaveCount(1);
+  expect(await mist.evaluate((c) => getComputedStyle(c).filter)).toBe('none');
+});
+
 test('backgrounds per screen', async ({ page }) => {
   await page.goto('./#/menu/warlock/5');
   await expect(page.locator('svg.fx-bg')).toBeVisible();

@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, expect, test, vi } from 'vitest';
-import { onScreen, renderParts, runLoop, watchScreen } from '../../src/motion/engine';
+import { drawStill, onScreen, playTurn, renderParts, runLoop, watchScreen } from '../../src/motion/engine';
 import { ROW_MOTIFS } from '../../src/motion/rowMotifs';
 import { seeded } from '../../src/motion/rand';
 import { mover, shape } from '../../src/motion/parts';
@@ -363,4 +363,60 @@ test('animated: still is ignored', async () => {
   await runLoop(host, svg, flier(.45), ROW_TIMING, { animate: true, alive: () => n++ < 3, rnd: seeded(1) });
   expect(svg.querySelector<SVGGElement>('g.pop')!.style.transform).toBe('');
   expect(vi.mocked(Element.prototype.animate).mock.calls.some(([k]) => kf(k) === kf(FLY))).toBe(true);
+});
+
+// a spell row stands still and takes a turn now and then
+const LINE: Part = { kind: 'line', d: 'M0 0L5 5', at: 0, dur: 1000 };
+const POP: Part = { kind: 'pop', x: 1, y: 2, rot: 0, at: 0, shapes: [{ tag: 'circle', attrs: { r: 1 } }] };
+const two = () => [LINE, POP];
+test('drawStill: the whole drawing at once, nothing animated', () => {
+  const d = drawStill(host, svg, ROW_MOTIFS.wizard!, seeded(1));
+  expect(d.rs.length).toBeGreaterThan(0);
+  expect(d.anims).toEqual([]);
+  expect(svg.getAttribute('viewBox')).toBe('0 0 320 38');
+  expect([...svg.querySelectorAll('path')].every(p => (p as SVGPathElement).style.strokeDashoffset === '0')).toBe(true);
+  expect(Element.prototype.animate).not.toHaveBeenCalled();
+});
+test('playTurn: the old drawing withers, a new one grows in its place and stays', async () => {
+  const calls: { el: Element; keys: Keyframe[] }[] = [];
+  eproto.animate = vi.fn(function (this: Element, keys: Keyframe[]) {
+    calls.push({ el: this, keys }); const cancel = vi.fn(); cancels.push(cancel); return { finished: Promise.resolve(), cancel };
+  });
+  const d = drawStill(host, svg, () => [LINE], seeded(1)), old = svg.querySelector('path')!;
+  const next = await playTurn(host, svg, () => [LINE], ROW_TIMING, d, { signal: new AbortController().signal, rnd: seeded(2) });
+  const now = svg.querySelector('path')!;
+  expect(svg.contains(old)).toBe(false);
+  expect(calls.find(c => c.el === old)!.keys).toEqual([{ strokeDashoffset: 0 }, { strokeDashoffset: -100 }]);
+  expect(calls.find(c => c.el === now)!.keys).toEqual([{ strokeDashoffset: 100 }, { strokeDashoffset: 0 }]);
+  // the grown drawing keeps its finished animations, so it stays drawn
+  expect(next.rs[0]!.el).toBe(now);
+  expect(next.anims).toHaveLength(1);
+  expect(next.anims[0]!.cancel).not.toHaveBeenCalled();
+});
+test('playTurn aborted mid-wither: the old drawing stands whole again', async () => {
+  eproto.animate = vi.fn(() => { const cancel = vi.fn(); cancels.push(cancel); return { finished: new Promise(() => {}), cancel }; });
+  const ac = new AbortController(), d = drawStill(host, svg, two, seeded(1)), old = svg.querySelector('path')!;
+  const p = playTurn(host, svg, two, ROW_TIMING, d, { signal: ac.signal, rnd: seeded(2) });
+  await new Promise(r => setTimeout(r, 5));
+  ac.abort();
+  expect(await p).toBe(d);
+  expect(svg.contains(old)).toBe(true);
+  expect(cancels.length).toBe(3); // the line, the pop and the pause
+  expect(cancels.every(c => c.mock.calls.length === 1)).toBe(true);
+});
+test('playTurn aborted mid-grow: the new drawing shows whole and still', async () => {
+  let n = 0;
+  eproto.animate = vi.fn(() => {
+    const cancel = vi.fn(); cancels.push(cancel);
+    return { finished: ++n <= 3 ? Promise.resolve() : new Promise(() => {}), cancel };
+  });
+  const ac = new AbortController();
+  const p = playTurn(host, svg, two, ROW_TIMING, drawStill(host, svg, two, seeded(1)), { signal: ac.signal, rnd: seeded(2) });
+  await vi.waitFor(() => expect(n).toBe(5));
+  ac.abort();
+  const d = await p;
+  expect(d.anims).toEqual([]);
+  expect(cancels.slice(3).every(c => c.mock.calls.length === 1)).toBe(true);
+  expect((svg.querySelector('path') as SVGPathElement).style.strokeDashoffset).toBe('0');
+  expect(svg.querySelector<SVGGElement>('g.pop')!.style.opacity).toBe('');
 });

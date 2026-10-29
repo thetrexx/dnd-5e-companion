@@ -42,7 +42,7 @@ export function renderParts(svg: SVGSVGElement, parts: Part[], over?: SVGSVGElem
   return out;
 }
 
-const canAnimate = () => typeof Element.prototype.animate === 'function'
+export const canAnimate = () => typeof Element.prototype.animate === 'function'
   && typeof (document.createElementNS(NS, 'path') as SVGPathElement).getTotalLength === 'function';
 
 function arm(rs: Rendered[], still: boolean): void {
@@ -59,6 +59,8 @@ function arm(rs: Rendered[], still: boolean): void {
       if (f?.transform != null) r.el.style.transform = String(f.transform);
       if (f?.opacity != null) r.el.style.opacity = String(f.opacity);
     }
+    // shown whole: a part that was hidden for its grow (a turn cut short) appears at once
+    else if (still) r.el.style.opacity = '';
   }
 }
 // the keyframe whose offset is closest to `at` (the lower one on a tie); frames without an offset are evenly spaced
@@ -107,23 +109,85 @@ const settle = (as: Animation[], sig?: AbortSignal) => wait(sig, done => {
   return () => {};
 });
 
+// the drawing for the host's current size; sparks go to over, and the still frame shows none
+function drawParts(host: Element, svg: SVGSVGElement, gen: Gen, rnd: Rnd, still: boolean, over?: SVGSVGElement): Rendered[] {
+  const { width: W, height: H } = host.getBoundingClientRect(), box = `0 0 ${W} ${H}`;
+  svg.setAttribute('viewBox', box);
+  svg.replaceChildren();
+  over?.setAttribute('viewBox', box);
+  over?.replaceChildren();
+  const rs = renderParts(svg, gen(W, H, rnd), still ? undefined : over);
+  arm(rs, still);
+  return rs;
+}
+// the grow wave; end is when its last part is done
+function growAnims(rs: Rendered[], T: Timing): { anims: Animation[]; end: number } {
+  let end = 0;
+  // a spin's group only turns; its children grow on their own, so it adds nothing to `end`
+  const anims = rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
+    if (p.kind === 'spin' || p.kind === 'spark') return [];
+    const delay = p.at * T.G;
+    if (p.kind === 'line') {
+      end = Math.max(end, delay + p.dur);
+      return [e.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }],
+        { duration: p.dur, delay, easing: p.dur >= T.G * .7 ? 'linear' : 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' })];
+    }
+    if (p.kind === 'move') { end = Math.max(end, delay + p.dur); return [e.animate(p.frames, { duration: p.dur, delay, fill: 'forwards' })]; }
+    end = Math.max(end, delay + T.POP);
+    return [e.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }],
+      { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' })];
+  });
+  return { anims, end };
+}
+// spins turn for `turn` ms and sparks fly when they fly: neither is waited for
+function sideAnims(rs: Rendered[], T: Timing, turn: number): Animation[] {
+  return rs.flatMap(({ part: p, el: e }) => {
+    if (p.kind === 'spark') return [e.animate(p.frames, { duration: p.dur, delay: p.at * T.G, easing: 'linear', fill: 'forwards' })];
+    if (p.kind !== 'spin') return [];
+    e.style.transformBox = 'view-box';
+    e.style.transformOrigin = `${p.cx}px ${p.cy}px`;
+    return [e.animate([{ transform: 'rotate(0deg)' }, { transform: `rotate(${p.deg}deg)` }], { duration: turn, fill: 'forwards' })];
+  });
+}
+// the wither wave: it erases everything in the order it grew (movers have already played out)
+function witherAnims(rs: Rendered[], T: Timing): Animation[] {
+  return rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
+    if (p.kind === 'move' || p.kind === 'spin' || p.kind === 'spark') return [];
+    const delay = p.at * T.WITHER;
+    if (p.kind === 'line') return [e.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -L }], { duration: p.dur * .8, delay, easing: 'ease-in', fill: 'forwards' })];
+    return [e.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.6)' }], { duration: T.POP * .8, delay, fill: 'forwards' })];
+  });
+}
+
+// a drawing on screen and the finished animations that hold it drawn
+export interface Drawing { rs: Rendered[]; anims: Animation[] }
+export function drawStill(host: Element, svg: SVGSVGElement, gen: Gen, rnd: Rnd = Math.random): Drawing {
+  return { rs: drawParts(host, svg, gen, rnd, true), anims: [] };
+}
+// one turn of a drawing that otherwise stands still: it withers, and a new one grows in its place and stays.
+// Aborted (its row left the screen or the page), whatever is drawn shows whole and still at once
+export async function playTurn(host: Element, svg: SVGSVGElement, gen: Gen, T: Timing, d: Drawing, o: { signal: AbortSignal; rnd?: Rnd }): Promise<Drawing> {
+  const rnd = o.rnd ?? Math.random, sig = o.signal;
+  if (sig.aborted) return d;
+  const wither = [...witherAnims(d.rs, T), svg.animate([], { duration: range(rnd, 400, 1200) })];
+  await settle(wither, sig);
+  // cut short, the wither lets go and the old drawing (held by its own animations, if any) is whole again
+  if (sig.aborted) { for (const a of wither) a.cancel(); return d; }
+  for (const a of [...d.anims, ...wither]) a.cancel();
+  const rs = drawParts(host, svg, gen, rnd, false), { anims: grow, end } = growAnims(rs, T);
+  const anims = [...grow, ...sideAnims(rs, T, end)];
+  await settle(grow, sig);
+  if (sig.aborted) { for (const a of anims) a.cancel(); arm(rs, true); return { rs, anims: [] }; }
+  return { rs, anims };
+}
+
 // one grow / hold / wither loop; T holds the timings, alive() lets a newer loop take over
 export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Timing, o: LoopOptions): Promise<void> {
   const rnd = o.rnd ?? Math.random, still = !o.animate || !canAnimate(), sig = o.signal;
   // alive() is polled between phases; the signal also cuts every wait short
   const alive = () => !sig?.aborted && o.alive();
   if (sig?.aborted) return;
-  const draw = () => {
-    const { width: W, height: H } = host.getBoundingClientRect(), box = `0 0 ${W} ${H}`;
-    svg.setAttribute('viewBox', box);
-    svg.replaceChildren();
-    o.over?.setAttribute('viewBox', box);
-    o.over?.replaceChildren();
-    // the still frame shows no sparks
-    const rs = renderParts(svg, gen(W, H, rnd), still ? undefined : o.over);
-    arm(rs, still);
-    return rs;
-  };
+  const draw = () => drawParts(host, svg, gen, rnd, still, o.over);
   if (still) { draw(); return; }
   if (o.startDelay) await sleep(o.startDelay, sig);
   if (sig?.aborted) return;
@@ -147,43 +211,15 @@ export async function runLoop(host: Element, svg: SVGSVGElement, gen: Gen, T: Ti
       await visible(sig);
       if (!alive()) return;
       stop();
-      const rs = draw();
-      let end = 0;
-      // a spin's group only turns; its children grow on their own, so it adds nothing to `end`
-      const grow = rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
-        if (p.kind === 'spin' || p.kind === 'spark') return [];
-        const delay = p.at * T.G;
-        if (p.kind === 'line') {
-          end = Math.max(end, delay + p.dur);
-          return [e.animate([{ strokeDashoffset: L }, { strokeDashoffset: 0 }],
-            { duration: p.dur, delay, easing: p.dur >= T.G * .7 ? 'linear' : 'cubic-bezier(.2,.7,.3,1)', fill: 'forwards' })];
-        }
-        if (p.kind === 'move') { end = Math.max(end, delay + p.dur); return [e.animate(p.frames, { duration: p.dur, delay, fill: 'forwards' })]; }
-        end = Math.max(end, delay + T.POP);
-        return [e.animate([{ opacity: 0, transform: 'scale(0)' }, { opacity: 1, transform: 'scale(1)' }],
-          { duration: T.POP, delay, easing: 'cubic-bezier(.3,1.4,.5,1)', fill: 'forwards' })];
-      });
-      // spins turn through the whole cycle and sparks fly when they fly: neither is waited for
-      const total = end + T.HOLD + T.WITHER + 1500;
-      const side = rs.flatMap(({ part: p, el: e }) => {
-        if (p.kind === 'spark') return [e.animate(p.frames, { duration: p.dur, delay: p.at * T.G, easing: 'linear', fill: 'forwards' })];
-        if (p.kind !== 'spin') return [];
-        e.style.transformBox = 'view-box';
-        e.style.transformOrigin = `${p.cx}px ${p.cy}px`;
-        return [e.animate([{ transform: 'rotate(0deg)' }, { transform: `rotate(${p.deg}deg)` }], { duration: total, fill: 'forwards' })];
-      });
+      const rs = draw(), { anims: grow, end } = growAnims(rs, T);
+      // spins turn through the whole cycle
+      const side = sideAnims(rs, T, end + T.HOLD + T.WITHER + 1500);
       const hold = svg.animate([], { duration: end + T.HOLD });
       live = [...grow, ...side, hold];
       if (off) freeze();
       await settle([...grow, hold], sig);
       if (!alive()) return;
-      // wither: a second wave erases everything in the order it grew (movers have already played out)
-      const wither = rs.flatMap(({ part: p, el: e, len: L = 0 }) => {
-        if (p.kind === 'move' || p.kind === 'spin' || p.kind === 'spark') return [];
-        const delay = p.at * T.WITHER;
-        if (p.kind === 'line') return [e.animate([{ strokeDashoffset: 0 }, { strokeDashoffset: -L }], { duration: p.dur * .8, delay, easing: 'ease-in', fill: 'forwards' })];
-        return [e.animate([{ opacity: 1, transform: 'scale(1)' }, { opacity: 0, transform: 'scale(.6)' }], { duration: T.POP * .8, delay, fill: 'forwards' })];
-      });
+      const wither = witherAnims(rs, T);
       const pause = svg.animate([], { duration: range(rnd, 400, 1200) });
       live = [...grow, ...side, ...wither, pause];
       // the row may have left between the grow ending and the wither starting

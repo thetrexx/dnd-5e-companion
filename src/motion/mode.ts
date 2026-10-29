@@ -11,3 +11,6 @@ export function motionMode(): MotionMode {
 export function themeRgb(token: string): Rgb | null {
   return parseRgb(getComputedStyle(document.documentElement).getPropertyValue(token));
 }
+
+// a theme length token in px (as a number), 0 when unset
+export const themePx = (token: string): number => parseFloat(getComputedStyle(document.documentElement).getPropertyValue(token)) || 0;

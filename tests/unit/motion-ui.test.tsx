@@ -12,7 +12,7 @@ import { Start } from '../../src/ui/screens/Start';
 
 const proto = SVGElement.prototype as unknown as Record<string, unknown>;
 const eproto = Element.prototype as unknown as Record<string, unknown>;
-const TOKENS = ['--warlock-mist', '--sorcerer-blood', '--sorcerer-blood-hi'];
+const TOKENS = ['--warlock-mist', '--sorcerer-blood', '--sorcerer-blood-hi', '--mist-blur'];
 // let fake time pass inside act, so re-renders it triggers are applied
 const pass = (ms: number) => act(async () => { await vi.advanceTimersByTimeAsync(ms); });
 const fakeCtx = () => ({ createImageData: (w: number, h: number) => ({ data: new Uint8ClampedArray(w * h * 4) }), putImageData: vi.fn() });
@@ -84,7 +84,7 @@ test('reduced motion: a resize redraws the row motifs after a short pause', asyn
   expect(first.isConnected).toBe(false);
   expect(r.container.querySelector('svg.fx-row path')).toBeTruthy();
 });
-test('rows off screen hold their next cycle until they scroll into view', async () => {
+test('rows off screen take no turn until they scroll into view', async () => {
   vi.useFakeTimers();
   const ios: { cb(es: { isIntersecting: boolean }[]): void; disconnect: ReturnType<typeof vi.fn> }[] = [];
   vi.stubGlobal('IntersectionObserver', class { observe = vi.fn(); disconnect = vi.fn(); constructor(public cb: () => void) { ios.push(this); } });
@@ -114,29 +114,57 @@ class TimedAnim {
   }
   arm() { this.since = Date.now(); this.t = setTimeout(() => { this.playState = 'finished'; this.res(); }, this.left); }
 }
-test('a row scrolled off screen pauses its running cycle and resumes it on return', async () => {
+// every animate call with its row, on fake time
+const rowAnims = () => {
+  const log: { row: Element | null; a: TimedAnim }[] = [];
+  eproto.animate = vi.fn(function (this: Element, _k: unknown, o?: KeyframeAnimationOptions) {
+    const a = new TimedAnim(o); log.push({ row: this.closest('a.row'), a }); return a;
+  });
+  return log;
+};
+const playing = (log: { row: Element | null; a: TimedAnim }[]) => new Set(log.filter(x => x.a.playState === 'running').map(x => x.row));
+// every row animating at once was too slow on phones: they stand still and take turns
+test('spell rows stand drawn and still, then take turns one at a time down the list', async () => {
   vi.useFakeTimers();
-  const ios: { cb(es: { isIntersecting: boolean }[]): void; disconnect: ReturnType<typeof vi.fn> }[] = [];
-  vi.stubGlobal('IntersectionObserver', class { observe = vi.fn(); disconnect = vi.fn(); constructor(public cb: () => void) { ios.push(this); } });
-  const anims: TimedAnim[] = [];
-  eproto.animate = vi.fn((_k: unknown, o?: KeyframeAnimationOptions) => { const a = new TimedAnim(o); anims.push(a); return a; });
+  const log = rowAnims();
   const r = render(<Menu cls="wizard" level={3} />);
-  await vi.advanceTimersByTimeAsync(4000);
-  ios.forEach(io => io.cb([{ isIntersecting: true }]));
-  await vi.advanceTimersByTimeAsync(0);
-  const started = anims.length;
-  expect(started).toBeGreaterThan(0);
-  ios.forEach(io => io.cb([{ isIntersecting: false }]));
-  expect(anims.every(a => a.pause.mock.calls.length === 1)).toBe(true);
-  // off screen: nothing ends, so no wither and no next cycle
-  await vi.advanceTimersByTimeAsync(60000);
-  expect(anims).toHaveLength(started);
-  ios.forEach(io => io.cb([{ isIntersecting: true }]));
-  expect(anims.every(a => a.play.mock.calls.length === 1)).toBe(true);
-  await vi.advanceTimersByTimeAsync(60000);
-  expect(anims.length).toBeGreaterThan(started);
+  const rows = [...r.container.querySelectorAll('a.row')].filter(a => a.querySelector('svg.fx-row'));
+  expect(rows).toHaveLength(10);
+  expect(rows.every(a => a.querySelector('svg.fx-row path'))).toBe(true);
+  await vi.advanceTimersByTimeAsync(1000);
+  expect(log).toHaveLength(0);
+  const order: Element[] = [];
+  for (let t = 0; t < 240; t++) {
+    await vi.advanceTimersByTimeAsync(500);
+    const now = playing(log);
+    expect(now.size).toBeLessThanOrEqual(1);
+    for (const row of now) if (row && order[order.length - 1] !== row) order.push(row);
+  }
+  expect(order.slice(0, 11)).toEqual([...rows, rows[0]]);
   act(() => { r.unmount(); }); // inside act, so the deferred effect cleanups run
-  expect(ios.every(io => io.disconnect.mock.calls.length > 0)).toBe(true);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(log.every(x => x.a.playState !== 'running')).toBe(true);
+});
+test('a row that scrolls off mid-turn shows its drawing whole at once, and the next row on screen goes', async () => {
+  vi.useFakeTimers();
+  const cbs = new Map<Element, (es: { isIntersecting: boolean }[]) => void>();
+  vi.stubGlobal('IntersectionObserver', class {
+    constructor(public cb: (es: { isIntersecting: boolean }[]) => void) {}
+    observe(el: Element) { cbs.set(el, this.cb); } disconnect() {}
+  });
+  const log = rowAnims();
+  const r = render(<Menu cls="wizard" level={3} />);
+  const rows = [...r.container.querySelectorAll('a.row')].filter(a => a.querySelector('svg.fx-row'));
+  rows.forEach(row => cbs.get(row)!([{ isIntersecting: true }]));
+  await vi.advanceTimersByTimeAsync(1300);
+  expect([...playing(log)]).toEqual([rows[0]]);
+  cbs.get(rows[0]!)!([{ isIntersecting: false }]);
+  await vi.advanceTimersByTimeAsync(0);
+  expect(log.filter(x => x.row === rows[0]).every(x => x.a.playState !== 'running')).toBe(true);
+  expect([...rows[0]!.querySelectorAll<SVGPathElement>('svg.fx-row path')].every(p => p.style.strokeDashoffset === '0')).toBe(true);
+  await vi.advanceTimersByTimeAsync(400);
+  expect([...playing(log)]).toEqual([rows[1]]);
+  act(() => { r.unmount(); });
 });
 test('reduced motion: no screen watching for a still row', async () => {
   const io = vi.fn();
@@ -171,6 +199,32 @@ describe('backgrounds', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
     document.documentElement.style.setProperty('--warlock-mist', '#a77be0');
     render(<Background kind="warlock" theme="faerun" />);
+    expect(ctx.putImageData).toHaveBeenCalledTimes(1);
+  });
+  // blurring the full-screen layer every frame was slow on phones: the small canvas is blurred before it is scaled up
+  test('mist and blood blur their small canvas, not the screen-sized layer', () => {
+    const ctx = { ...fakeCtx(), filter: 'none', clearRect: vi.fn(), drawImage: vi.fn() };
+    vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation((() => ctx) as never);
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    document.documentElement.style.setProperty('--warlock-mist', '#a77be0');
+    document.documentElement.style.setProperty('--mist-blur', '5px');
+    const cv = render(<Background kind="warlock" theme="faerun" />).container.querySelector<HTMLCanvasElement>('canvas.fx-mist')!;
+    expect(ctx.filter).toBe('blur(1px)'); // 5px over a canvas 5 times coarser than the screen
+    expect(ctx.putImageData).toHaveBeenCalledTimes(1);
+    expect(ctx.drawImage).toHaveBeenCalledTimes(1);
+    expect(cv.style.filter).toBe('');
+    const css = readFileSync('src/styles/motion.css', 'utf8');
+    expect(css).not.toMatch(/\.fx-mist\{[^}]*filter/);
+    expect(css).not.toMatch(/\.fx-blood\{[^}]*filter/);
+  });
+  test('no canvas filters (older Safari): the browser blurs the layer instead', () => {
+    const ctx = fakeCtx();
+    vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation((() => ctx) as never);
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    document.documentElement.style.setProperty('--warlock-mist', '#a77be0');
+    document.documentElement.style.setProperty('--mist-blur', '5px');
+    const cv = render(<Background kind="warlock" theme="faerun" />).container.querySelector<HTMLCanvasElement>('canvas.fx-mist')!;
+    expect(cv.style.filter).toBe('blur(5px)');
     expect(ctx.putImageData).toHaveBeenCalledTimes(1);
   });
   test('a resize restarts the background after a short pause', async () => {

@@ -1,7 +1,8 @@
 import { useEffect, useRef } from 'preact/hooks';
 import type { ClassId } from '../data/types';
-import { onScreen, runLoop, watchScreen } from '../motion/engine';
+import { canAnimate, drawStill, playTurn } from '../motion/engine';
 import { motionMode } from '../motion/mode';
+import { joinRelay } from '../motion/relay';
 import { ROW_MOTIFS } from '../motion/rowMotifs';
 import { ROW_TIMING, type Gen } from '../motion/types';
 import { useResized } from './useResized';
@@ -13,18 +14,15 @@ export function RowMotif(p: { cls: ClassId; gen?: Gen; tone?: string; still?: bo
   const gen = p.gen ?? ROW_MOTIFS[p.cls], tone = p.tone ?? `--${p.cls}-line`, ref = useRef<SVGSVGElement>(null);
   const mode = p.still && motionMode() === 'animated' ? 'static' : motionMode();
   const on = !!gen && mode !== 'off';
-  // the static frame redraws at the new size; an animated row redraws every cycle anyway
-  const size = useResized(on && mode === 'static');
+  // drawn still, and redrawn at the new size after a resize
+  const size = useResized(on);
   useEffect(() => {
     const svg = ref.current, row = svg?.parentElement;
     if (!on || !row) return;
-    const ctrl = new AbortController();
-    void runLoop(row, svg, gen, ROW_TIMING, {
-      animate: mode === 'animated', alive: () => !ctrl.signal.aborted, signal: ctrl.signal, startDelay: Math.random() * 3500,
-      // a new cycle waits for the row to be on screen; a running one pauses while it is off
-      gate: onScreen(row), seen: watchScreen(row),
-    });
-    return () => ctrl.abort();
+    let d = drawStill(row, svg, gen);
+    if (mode !== 'animated' || !canAnimate()) return;
+    // animated, the rows take turns redrawing (see relay.ts)
+    return joinRelay(row, async sig => { d = await playTurn(row, svg, gen, ROW_TIMING, d, { signal: sig }); });
   }, [p.cls, gen, on, mode, size]);
   if (!on) return null;
   return <svg ref={ref} class="fx-row" aria-hidden="true" style={`--fx-c: var(${tone}); --fx-o: var(--${p.cls}-row-o)`} />;

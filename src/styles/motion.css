@@ -18,8 +18,8 @@
 .fx-row .accf,.fx-bg .accf{fill:var(--artificer-accent);stroke:none}
 .fx-row .pop,.fx-bg .pop{transform-box:fill-box;transform-origin:center}
 .fx-mist,.fx-blood{position:fixed;inset:-12px;width:calc(100% + 24px);height:calc(100% + 24px);z-index:-1;pointer-events:none}
-.fx-mist{opacity:calc(var(--motion-i, 1) * var(--mist-o));filter:blur(var(--mist-blur))}
-.fx-blood{opacity:calc(var(--motion-i, 1) * var(--blood-o));filter:blur(var(--blood-blur))}
+.fx-mist{opacity:calc(var(--motion-i, 1) * var(--mist-o))}
+.fx-blood{opacity:calc(var(--motion-i, 1) * var(--blood-o))}
 .fx-cells{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--cells-o))}
 .fx-bg-wrap{position:fixed;inset:0;pointer-events:none}
 .fx-sparks{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:calc(var(--motion-i, 1) * var(--sparks-o))}

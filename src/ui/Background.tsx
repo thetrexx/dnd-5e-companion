@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'preact/hooks';
 import { BG_MOTIFS, type BgKey } from '../motion/bgMotifs';
 import { runLoop } from '../motion/engine';
-import { motionMode, themeRgb } from '../motion/mode';
+import { motionMode, themePx, themeRgb } from '../motion/mode';
 import { makeCells, makeNoise, paintBlood, paintMist, stepCells } from '../motion/noise';
 import { runNoise } from '../motion/noiseLayer';
 import { f1 } from '../motion/parts';
@@ -17,7 +17,7 @@ function mist(cv: HTMLCanvasElement, host: Element, o: Layer): () => void {
   const rgb = themeRgb('--warlock-mist');
   if (!rgb) return none;
   const { fbm } = makeNoise(Math.random);
-  return runNoise(cv, host, { scale: 5, period: 17000, ...o, paint: (px, w, h, t, e, _W, _H, k) => paintMist(px, w, h, t, e, fbm, rgb, k) });
+  return runNoise(cv, host, { scale: 5, period: 17000, blur: themePx('--mist-blur'), ...o, paint: (px, w, h, t, e, _W, _H, k) => paintMist(px, w, h, t, e, fbm, rgb, k) });
 }
 
 // Sorcerer: a vein of blood with cells riding it, tumbling as they go
@@ -35,7 +35,7 @@ function blood(cv: HTMLCanvasElement, cellSvg: SVGSVGElement, host: Element, o: 
     return g;
   });
   const stop = runNoise(cv, host, {
-    scale: 4, period: 15000, ...o, paint: (px, w, h, t, e) => paintBlood(px, w, h, t, e, W, H, fbm, base, hi),
+    scale: 4, period: 15000, blur: themePx('--blood-blur'), ...o, paint: (px, w, h, t, e) => paintBlood(px, w, h, t, e, W, H, fbm, base, hi),
     tick: (t, e, dt) => stepCells(cells, dt, t, W, H).forEach((c, i) => {
       gs[i].setAttribute('transform', `translate(${f1(c.x)} ${f1(c.y)}) rotate(${c.rot}) scale(1 ${f1(c.sy)})`);
       gs[i].setAttribute('opacity', f1(e * .85));
