@@ -673,7 +673,7 @@
     },
     "level": 1,
     "cost": "reaction",
-    "trigger": "A creature you see within 30 ft hits you with an attack roll and deals damage",
+    "trigger": "A creature you can see within 30 ft damages you with an attack",
     "uses": "Proficiency bonus times per long rest",
     "description": [
       "The attacker makes a Con save, DC 8 + proficiency bonus + the feat's ability modifier.",
@@ -782,7 +782,7 @@
     "cost": "free",
     "description": [
       "Extra 1d4 thunder damage to the target.",
-      "If the target is a creature, it makes a Wis save; fail: you are invisible to it until your next turn starts, or until right after you make an attack roll or cast a spell.",
+      "If the target is a creature, it makes a Wis save; fail: you are invisible to it until your next turn starts, or until you next attack or cast a spell.",
       "DC 8 + proficiency bonus + Strength or Constitution modifier. Uses the Giant Strike limit."
     ],
     "page": 19,
