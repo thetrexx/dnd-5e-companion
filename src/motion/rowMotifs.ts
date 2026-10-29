@@ -2,7 +2,7 @@ import type { ClassId } from '../data/types';
 import { ROW_TIMING, type Gen, type Part, type Shape } from './types';
 import { range } from './rand';
 import { circ, curl, heading, UP, wander, xf, type Pt } from './geom';
-import { f1, gear, GEAR_TOOTH, gogglesD, hammerLocal, line, pop, r1, shape, sign } from './parts';
+import { f1, gearParts, GEAR_TOOTH, gogglesD, hammerLocal, line, pop, r1, shape, sign } from './parts';
 
 const G = ROW_TIMING.G;
 
@@ -123,28 +123,45 @@ export const ROW_MOTIFS: Partial<Record<ClassId, Gen>> = {
     return P;
   },
 
-  // Artificer: a train of meshing gears along a faint shaft, each turning against its neighbour;
-  // at most one hammer and one pair of goggles sit in the line
+  // Artificer: a tinker's line runs across and draws a gear (sometimes with a second meshing one),
+  // a hammer and goggles in a random order; the gears stay still
   artificer(W, H, rnd) {
-    const P: Part[] = [], end = W * .72, mid = H / 2; P.push(line([[-2, mid], [end, mid]], 0, G * .7, 'thin faint'));
-    const extras = rnd() < .5 ? ['hammer', 'goggles'] : ['goggles', 'hammer'];
-    let x = range(rnd, 8, 14), y = mid, r = range(rnd, 6, 8), dir = 1;
-    while (x < W * .64) {
-      P.push(gear(x, y, r, x / end * .7, dir));
-      if (extras.length && x > W * .12 && rnd() < .4) {
-        const gx = x + r + range(rnd, 13, 17), at = gx / end * .7;
-        if (extras.pop() === 'hammer') P.push(line(xf(hammerLocal(range(rnd, 14, 17)), gx, mid, UP + range(rnd, -.5, .5), 1), at, 1000));
-        else P.push(line(gogglesD(gx, mid, range(rnd, 3.6, 4.2), 5), at, 1300));
-        x = gx + range(rnd, 13, 17); y = mid; r = range(rnd, 5.5, 8); dir = 1; continue;
+    const P: Part[] = [], order = ['gear', 'hammer', 'goggles'], xs = [range(rnd, .11, .17), range(rnd, .34, .41), range(rnd, .57, .64)].map(f => f * W);
+    for (let k = 2; k > 0; k--) { const j = Math.floor(rnd() * (k + 1)); [order[k], order[j]] = [order[j]!, order[k]!]; }
+    // a slightly sagging wire between two points
+    const wire = (a: Pt, b: Pt): Pt[] => {
+      const pts: Pt[] = [], n = Math.max(4, Math.round(Math.hypot(b[0] - a[0], b[1] - a[1]) / 3)), sag = range(rnd, -3.5, 3.5), ph = range(rnd, 0, 6);
+      for (let k = 0; k <= n; k++) { const u = k / n; pts.push([a[0] + (b[0] - a[0]) * u, a[1] + (b[1] - a[1]) * u + Math.sin(Math.PI * u) * sag + Math.sin(u * 9 + ph) * .5]); }
+      return pts;
+    };
+    // keeps a gear of radius r, teeth included, 1px inside the row
+    const inRow = (y: number, r: number) => { const m = r + GEAR_TOOTH + 1; return Math.min(Math.max(y, m), Math.max(m, H - m)); };
+    let cur: Pt = [-2, H * range(rnd, .4, .6)];
+    order.forEach((kind, i) => {
+      const cx = xs[i]!, at = i * .27;
+      let cy = H * range(rnd, .42, .58), entry: Pt, exit: Pt;
+      if (kind === 'gear') {
+        const r = range(rnd, 5.5, 7.5); cy = inRow(cy, r); entry = [cx - r, cy]; exit = [cx + r, cy];
+        P.push(line(wire(cur, entry), at, G * .14), ...gearParts(cx, cy, r, at + .1));
+        if (rnd() < .5) {
+          // a smaller gear meshes up or down the right side, flipped (then flattened) if it would leave the row
+          const r2 = range(rnd, 3.2, 4.5), d = r + r2 + 2.2; let a = range(rnd, .55, .95) * sign(rnd), ny = cy + Math.sin(a) * d;
+          if (ny !== inRow(ny, r2)) { a = -a; ny = cy + Math.sin(a) * d; }
+          ny = inRow(ny, r2);
+          P.push(...gearParts(cx + Math.sqrt(Math.max(d * d - (ny - cy) ** 2, 0)), ny, r2, at + .2));
+        }
+      } else if (kind === 'hammer') {
+        const outline = xf(hammerLocal(range(rnd, 15, 18)), cx, cy, UP + range(rnd, -.6, .6), 1); entry = exit = outline[0]!;
+        P.push(line(wire(cur, entry), at, G * .14), line(outline, at + .1, 1100));
+      } else {
+        const r = range(rnd, 3.8, 4.6); entry = [cx - 2.3 * r - 5, cy]; exit = [cx + 2.3 * r + 5, cy];
+        P.push(line(wire(cur, entry), at, G * .14), line(gogglesD(cx, cy, r, 5), at + .1, 1300));
+        // a glint on each lens
+        for (const lx of [cx - 1.3 * r, cx + 1.3 * r]) P.push(pop(lx, cy, 0, at + .2, [shape('path', { d: `M${f1(-r * .45)} ${f1(-r * .1)}A${f1(r * .5)} ${f1(r * .5)} 0 0 1 ${f1(r * .1)} ${f1(-r * .5)}` }, 'acc')]));
       }
-      // the next gear meshes at a random angle, flipped if it would leave the row
-      // (the whole gear, teeth included, plus 1px stays inside; a clamped centre keeps the mesh distance)
-      const r2 = range(rnd, 4.5, 8), d = r + r2 + 1.9, m = r2 + GEAR_TOOTH + 1; let a = range(rnd, -.7, .7), ny = y + Math.sin(a) * d;
-      if (ny < m || ny > H - m) { a = -a; ny = y + Math.sin(a) * d; }
-      if (ny < m || ny > H - m) { ny = Math.min(Math.max(ny, m), Math.max(m, H - m)); x += Math.sqrt(Math.max(d * d - (ny - y) ** 2, d * d * .5)); }
-      else x += Math.cos(a) * d;
-      y = ny; r = r2; dir = -dir;
-    }
+      cur = exit;
+    });
+    P.push(line(wire(cur, [W * .85, H * range(rnd, .35, .65)]), .82, G * .16));
     return P;
   },
 };

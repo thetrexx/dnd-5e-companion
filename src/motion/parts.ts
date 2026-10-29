@@ -29,16 +29,20 @@ export function gearPts(cx: number, cy: number, r: number, teeth: number, tooth:
   pts.push(a0 ? [cx - Math.cos(a0) * r, cy - Math.sin(a0) * r] : [cx - r, cy]);
   return pts;
 }
-// a turning gear: outline, then a brass hub ring and hub dot; dir is +1 or -1, small gears turn faster
+// a still gear: outline, then a brass hub ring and hub dot
 export const GEAR_TOOTH = 1.6;
-export function gear(cx: number, cy: number, r: number, at: number, dir: number, o: { tooth?: number; dur?: number; dense?: number; a0?: number } = {}): Part {
+type GearOpts = { tooth?: number; dur?: number; dense?: number; a0?: number };
+export function gearParts(cx: number, cy: number, r: number, at: number, o: GearOpts = {}): Part[] {
   const { tooth = GEAR_TOOTH, dur = 1100, dense = 1.3, a0 = 0 } = o, teeth = Math.max(8, Math.round(r * dense / 2) * 2);
-  return spin(cx, cy, dir * 700 / r, [
+  return [
     line(gearPts(cx, cy, r, teeth, tooth, a0), at, dur),
     line(circ(cx, cy, r1(r * .4)), at + .1, dur * .45, 'acc'),
     pop(cx, cy, 0, at + .14, [shape('circle', { r: r1(Math.max(.9, r * .1)) }, 'accf')]),
-  ]);
+  ];
 }
+// the same gear, turning; dir is +1 or -1, small gears turn faster
+export const gear = (cx: number, cy: number, r: number, at: number, dir: number, o: GearOpts = {}): Part =>
+  spin(cx, cy, dir * 700 / r, gearParts(cx, cy, r, at, o));
 // hammer outline of size s around the origin, handle along +x, head at the far end
 export const hammerLocal = (s: number): Pt[] =>
   [[-s * .5, 0], [s * .25, 0], [s * .25, -s * .38], [s * .5, -s * .38], [s * .5, s * .3], [s * .42, s * .38], [s * .25, s * .38], [s * .25, 0]];
