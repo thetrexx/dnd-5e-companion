@@ -28,12 +28,13 @@ export function Start() {
             <small>{ch?.name || (ready ? classLine(ch) : 'Create your character')}</small>
           </span>
         </button>
-        {/* back to front: the strands, the class art, then icon and name */}
+        {/* back to front: the strands, the class art, then icon and name. The art holds still here: thirteen animated
+            rows were too slow on phones, and the sliding strands carry the motion */}
         {classesAZ().map((c) => (
           <button type="button" key={c.id} class="start-cls"
             onClick={() => { location.hash = toHash({ page: 'level', cls: c.id }); }}>
             <Strands cls={c.id} />
-            <RowMotif cls={c.id} gen={menuMotif(c.id)} tone={menuTone(c.id)} />
+            <RowMotif cls={c.id} gen={menuMotif(c.id)} tone={menuTone(c.id)} still />
             <span class="start-cls-l"><Icon src={c.plainIcon} fallback="spell" alt="" size={38} />{c.name}</span>
           </button>
         ))}

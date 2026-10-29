@@ -1,6 +1,6 @@
 import { describe, expect, test } from 'vitest';
 import { seeded } from '../../src/motion/rand';
-import { STRAND_SPAN, makeStrands, strandAt, strandD, strandStops } from '../../src/motion/strands';
+import { STRAND_TILE, makeStrands, strandAt, strandMask, strandOutline, strandSpeed, strandStops } from '../../src/motion/strands';
 
 describe('strands', () => {
   test('makeStrands: approved shapes, strands move against each other', () => {
@@ -8,31 +8,39 @@ describe('strands', () => {
     expect(Math.sign(b.sp)).toBe(-Math.sign(a.sp));
     expect(b.ph).toBe(a.ph + Math.PI);
     expect([a.w, b.w]).toEqual([.17, .13]);
-    expect([a.floor, b.floor]).toEqual([.75, .75]);
     expect(makeStrands(seeded(3))).toEqual([a, b]);
     expect(makeStrands(seeded(4))).not.toEqual([a, b]);
   });
-  test('strandD on a 390 phone: edge to edge, finite, within the approved thickness', () => {
-    const [a] = makeStrands(seeded(1));
-    const d = strandD(390, 74, 390, 2, a);
-    expect(d).toMatch(/^M0\.0[ ,]/);
-    expect(d).toContain('390.0');
-    expect(d).not.toMatch(/NaN|Infinity/);
-    for (let x = 0; x <= 390; x++) {
-      const { half } = strandAt(x, 390, 74, 390, 2, a);
-      expect(half).toBeLessThanOrEqual(.17 * 74);
-      expect(half).toBeGreaterThanOrEqual(.17 * 74 * .75 * .25 - 1e-9);
+  test('a strand repeats every tile, so a strip one tile wider than the window slides without a seam', () => {
+    const [a, b] = makeStrands(seeded(1));
+    for (const s of [a, b]) for (const x of [0, 37, 200, 390]) {
+      expect(strandAt(x + STRAND_TILE, 74, s).cy).toBeCloseTo(strandAt(x, 74, s).cy, 9);
+      expect(strandAt(x + STRAND_TILE, 74, s).half).toBeCloseTo(strandAt(x, 74, s).half, 9);
     }
   });
-  test('wavelength is fixed in px: a wide window shows the same waves at the same column position', () => {
+  test('even thickness: within the approved width everywhere, never thinner than its pinch', () => {
     const [a] = makeStrands(seeded(1));
-    expect(strandAt(400 + 100, 1280, 74, 480, 3, a).cy).toBeCloseTo(strandAt(100, 480, 74, 480, 3, a).cy, 9);
+    for (let x = 0; x <= STRAND_TILE; x++) {
+      const { half } = strandAt(x, 74, a);
+      expect(half).toBeLessThanOrEqual(.17 * 74);
+      expect(half).toBeGreaterThanOrEqual(.17 * 74 * .88 * .25 - 1e-9);
+    }
   });
-  test('outside the column the strand keeps its edge thickness', () => {
+  test('strandOutline covers the strip past both ends, finite, top above bottom', () => {
     const [a] = makeStrands(seeded(1));
-    const t = 3, q = (50 - 400) / STRAND_SPAN;
-    const want = a.w * 74 * a.floor * (a.pinch + (1 - a.pinch) * Math.abs(Math.cos(a.k2 * 2 * Math.PI * q - t * a.sp2 + a.ph2)));
-    expect(strandAt(50, 1280, 74, 480, t, a).half).toBeCloseTo(want, 9);
+    const pts = strandOutline(390 + STRAND_TILE, 74, a);
+    expect(pts[0]!.x).toBeLessThan(0);
+    expect(pts[pts.length - 1]!.x).toBeGreaterThan(390 + STRAND_TILE);
+    for (const p of pts) {
+      expect(Number.isFinite(p.top) && Number.isFinite(p.bot)).toBe(true);
+      expect(p.top).toBeLessThan(p.bot);
+    }
+  });
+  test('strandSpeed: the two strands slide opposite ways, the second a little slower', () => {
+    const [a, b] = makeStrands(seeded(2));
+    expect(Math.sign(strandSpeed(a))).toBe(-Math.sign(strandSpeed(b)));
+    expect(Math.abs(strandSpeed(b))).toBeCloseTo(Math.abs(strandSpeed(a)) * .9, 9);
+    expect(strandSpeed(a)).toBeCloseTo(a.sp * STRAND_TILE / (2 * Math.PI), 9);
   });
   test('strandStops: fade to zero 240px past the column, full strength at the centre', () => {
     const st = strandStops(480);
@@ -50,5 +58,14 @@ describe('strands', () => {
     expect(st.find(s => s[0] === .5)![1]).toBe(1);
     expect(st.find(s => Math.abs(s[0] - 120 / 960) < 1e-9)![1]).toBe(.85);
     expect(st.find(s => Math.abs(s[0] - 240 / 960) < 1e-9)![1]).toBe(.85);
+  });
+  test('strandMask: the stops in px across the window, gone 240px past the column, full at its centre', () => {
+    const m = strandMask(1280, 480);
+    expect(m.startsWith('linear-gradient(90deg,')).toBe(true);
+    const stops = [...m.matchAll(/black (\d+)%,transparent\) (-?\d+)px/g)].map(s => [+s[2]!, +s[1]!]);
+    expect(stops).toHaveLength(strandStops(480).length);
+    expect(stops[0]).toEqual([400 - 240, 0]);
+    expect(stops[stops.length - 1]).toEqual([400 + 480 + 240, 0]);
+    expect(stops.find(([x]) => x === 640)![1]).toBe(100);
   });
 });

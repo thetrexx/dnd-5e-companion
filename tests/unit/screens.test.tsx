@@ -93,7 +93,7 @@ test('My Character Sheet: person_edit icon, no strands, today\'s subtitle', () =
   const r = render(<Start />);
   const me = r.container.querySelector('.start-list > button.start-me:first-child')!;
   expect(me.querySelector('svg path')!.getAttribute('d')!.startsWith('M493.33-226.67Z')).toBe(true);
-  expect(me.querySelector('svg.strands')).toBeNull();
+  expect(me.querySelector('.strands')).toBeNull();
   expect(me.querySelector('.start-me-text > span')!.textContent).toBe('My Character Sheet');
   expect(me.querySelector('small')!.textContent).toBe('Create your character');
 });
@@ -101,9 +101,9 @@ test('My Character Sheet: person_edit icon, no strands, today\'s subtitle', () =
 test('every class button has strands and a motif layer; Barbarian bleeds blood red', () => {
   const r = render(<Start />);
   const btns = [...r.container.querySelectorAll('button.start-cls')];
-  expect(r.container.querySelectorAll('svg.strands')).toHaveLength(13);
+  expect(r.container.querySelectorAll('.strands')).toHaveLength(13);
   expect(r.container.querySelectorAll('svg.fx-row')).toHaveLength(13);
-  expect(btns.every(b => b.querySelector('svg.strands') && b.querySelector('svg.fx-row'))).toBe(true);
+  expect(btns.every(b => b.querySelector('.strands') && b.querySelector('svg.fx-row'))).toBe(true);
   const barb = btns.find(b => b.textContent === 'Barbarian')!;
   expect(barb.querySelector('svg.fx-row')!.getAttribute('style')).toContain('--barbarian-blood');
   expect(btns.find(b => b.textContent === 'Bard')!.querySelector('svg.fx-row')!.getAttribute('style')).toContain('--bard-line');

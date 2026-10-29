@@ -95,6 +95,10 @@ Base spec 7.5 still rules: Animation "Off" removes the moving patterns (old phon
   2. Use fewer points per strand path.
   3. Drop the `screen` blend.
   4. Only then touch the blur, which is most of the soft look.
+- **Phone performance, after launch (2026-10-29).** On two real phones (a Xiaomi and a Poco) the animated menu ran slowly. Profiled at phone pixel density, the cost was redrawing 26 blurred full-width paths every frame, plus 13 animated class rows on the main thread; the bar above, measured at desktop pixel density, had missed it. What ships instead, approved by the owner as a trial:
+  - The strands are painted once, blurred, into half-resolution canvas strips one wave wider than the window, and slid sideways by a CSS transform the compositor runs alone. The strength fade across the window is a still mask on the frame. Look changes: the twist drifts with the wave, the thickness is even across the window (no swell at the centre), and the `screen` blend is gone.
+  - On the start menu the class art shows its still frame even when animated. Spell lists keep their animated rows.
+  - Measured (busy ms per second, phone pixel density, CPU 4x): main thread about 360 before, about 160 after; drawing about 45 before, about 10 after.
 
 ## 7. Rename
 

@@ -1,41 +1,49 @@
 import type { Rnd } from './types';
 import { range } from './rand';
-import { f1 } from './parts';
 
 // twin-strand ribbons for the start menu; pure geometry, no DOM
-export interface Strand { p: number; amp: number; k: number; sp: number; ph: number; k2: number; sp2: number; ph2: number; w: number; pinch: number; floor: number }
+export interface Strand { amp: number; sp: number; ph: number; ph2: number; w: number; pinch: number }
 
 export const STRAND_SPAN = 390; // px one wave pattern spans: fixes the wavelength
-export const STRAND_HOLD = 120;
-export const STRAND_FADE = 120;
+// a strand repeats every tile (one wave, two twists), so a strip one tile wider than the window can slide forever
+export const STRAND_TILE = STRAND_SPAN / 1.05;
+const ENV = .88; // even thickness across the window: the strip slides, so it cannot swell at the centre
 
 export function makeStrands(rnd: Rnd): [Strand, Strand] {
   const sp = range(rnd, .5, .75);
-  const a: Strand = { p: 1.1, amp: .2, k: 1.05, sp, ph: range(rnd, 0, 6), k2: .9, sp2: sp, ph2: range(rnd, 0, 6), w: .17, pinch: .25, floor: .75 };
+  const a: Strand = { amp: .2, sp, ph: range(rnd, 0, 6), ph2: range(rnd, 0, 6), w: .17, pinch: .25 };
   const b: Strand = { ...a, sp: -a.sp * .9, ph: a.ph + Math.PI, ph2: range(rnd, 0, 6), w: .13 };
   return [a, b];
 }
 
-// x px in the layer, W layer width, col content column centred in W, t seconds
-export function strandAt(x: number, W: number, H: number, col: number, t: number, s: Strand): { cy: number; half: number } {
-  const cl = (W - col) / 2, u = Math.min(1, Math.max(0, (x - cl) / col)), q = (x - cl) / STRAND_SPAN;
-  const env = s.floor + (1 - s.floor) * Math.pow(Math.sin(Math.PI * u), s.p);
-  const cy = H / 2 + s.amp * H * Math.sin(s.k * 2 * Math.PI * q + t * s.sp + s.ph) * (.35 + .65 * env);
-  const half = s.w * H * env * (s.pinch + (1 - s.pinch) * Math.abs(Math.cos(s.k2 * 2 * Math.PI * q - t * s.sp2 + s.ph2)));
+// x px along the strip (0 is a tile start), H strip height
+export function strandAt(x: number, H: number, s: Strand): { cy: number; half: number } {
+  const q = 2 * Math.PI * x / STRAND_TILE;
+  const cy = H / 2 + s.amp * H * Math.sin(q + s.ph) * (.35 + .65 * ENV);
+  const half = s.w * H * ENV * (s.pinch + (1 - s.pinch) * Math.abs(Math.cos(q + s.ph2)));
   return { cy, half };
 }
 
-export function strandD(W: number, H: number, col: number, t: number, s: Strand): string {
-  const n = Math.max(8, Math.ceil(W / 7));
-  const pts = Array.from({ length: n + 1 }, (_, i) => { const x = W * i / n; return { x, ...strandAt(x, W, H, col, t, s) }; });
-  const top = pts.map((p, i) => `${i ? 'L' : 'M'}${f1(p.x)},${f1(p.cy - p.half)}`);
-  const bot = pts.reverse().map(p => `L${f1(p.x)},${f1(p.cy + p.half)}`);
-  return `${top.join(' ')} ${bot.join(' ')} Z`;
+// top and bottom edge every 6px, from just before 0 to just past w, so the blur never fades the strip's ends
+export function strandOutline(w: number, H: number, s: Strand): { x: number; top: number; bot: number }[] {
+  const pts = [];
+  for (let x = -6; x < w + 12; x += 6) { const { cy, half } = strandAt(x, H, s); pts.push({ x, top: cy - half, bot: cy + half }); }
+  return pts;
 }
+
+// px per second the strip slides; positive slides left
+export const strandSpeed = (s: Strand) => s.sp * STRAND_TILE / (2 * Math.PI);
 
 // gradient stops over cl-240 .. cl+col+240, as [offset, factor of peak]
 export function strandStops(col: number, edge = .85): [number, number][] {
   const S = col + 480;
   const half: [number, number][] = [[0, 0], [120 / S, edge], [240 / S, edge], [(240 + .225 * col) / S, (edge + 1) / 2]];
   return [...half, [.5, 1], ...half.map(([o, f]): [number, number] => [1 - o, f]).reverse()];
+}
+
+// the strength fade across a W px window with col centred in it, as a CSS mask (only its alpha counts)
+export function strandMask(W: number, col: number): string {
+  const x0 = (W - col) / 2 - 240, S = col + 480;
+  const stops = strandStops(col).map(([o, f]) => `color-mix(in srgb,black ${Math.round(f * 100)}%,transparent) ${(x0 + o * S).toFixed(0)}px`);
+  return `linear-gradient(90deg,${stops.join(',')})`;
 }

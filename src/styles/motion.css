@@ -26,5 +26,12 @@
 .fx-sparks .spark{fill:var(--artificer-spark);stroke:none;filter:drop-shadow(0 0 2px var(--artificer-spark-glow));opacity:0}
 .fx-cells .cell{fill:var(--sorcerer-cell)}
 .fx-cells .cell-core{fill:var(--sorcerer-cell-core)}
-.strands{position:absolute;left:calc(50% - 50vw);width:100vw;top:-8px;height:calc(100% + 16px);z-index:0;pointer-events:none}
-.strands path{mix-blend-mode:screen}
+.strands{position:absolute;left:calc(50% - 50vw);width:100vw;top:-8px;height:calc(100% + 16px);z-index:0;pointer-events:none;overflow:hidden;-webkit-mask:var(--strand-mask);mask:var(--strand-mask)}
+/* each strand is a strip one tile wider than the window; sliding it one tile per cycle loops without a seam */
+.strands canvas{position:absolute;left:0;top:0;width:calc(100% + var(--strand-tile));height:100%}
+.strand-a{opacity:calc(var(--strand-a-o) * var(--motion-i, 1))}
+.strand-b{opacity:calc(var(--strand-b-o) * var(--motion-i, 1))}
+.strand-l{animation:strand-l linear infinite}
+.strand-r{animation:strand-r linear infinite}
+@keyframes strand-l{to{transform:translateX(calc(-1 * var(--strand-tile)))}}
+@keyframes strand-r{from{transform:translateX(calc(-1 * var(--strand-tile)))}}

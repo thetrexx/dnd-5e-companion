@@ -1,10 +1,12 @@
 import { act, cleanup, fireEvent, render, waitFor } from '@testing-library/preact';
+import { readFileSync } from 'node:fs';
 import { Menu } from '../../src/ui/screens/Menu';
 import { afterEach, beforeEach, describe, expect, test, vi } from 'vitest';
 import { motionMode } from '../../src/motion/mode';
 import { DEFAULT_SETTINGS, saveSettings } from '../../src/settings/settings';
 import { Background } from '../../src/ui/Background';
 import { App } from '../../src/app';
+import { STRAND_TILE, strandMask } from '../../src/motion/strands';
 import { Strands } from '../../src/ui/Strands';
 import { Start } from '../../src/ui/screens/Start';
 
@@ -271,82 +273,108 @@ describe('backgrounds', () => {
 });
 
 describe('strands', () => {
-  let queue: FrameRequestCallback[], raf: ReturnType<typeof vi.fn>;
-  const run = (t: number) => queue.splice(0).forEach(f => f(t));
-  const rects = (svg: [number, number], screen: number) => vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
-    const [w, h] = this.matches('svg.strands') ? svg : this.matches('.screen') ? [screen, 0] : [0, 0];
+  const rects = (box: [number, number], screen: number) => vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+    const [w, h] = this.matches('.strands') ? box : this.matches('.screen') ? [screen, 0] : [0, 0];
     return { width: w, height: h, top: 0, left: 0, right: w, bottom: h, x: 0, y: 0, toJSON: () => ({}) };
   });
+  // a pen per canvas that records what it was painted with
+  let pens: { fill: string; filter: string; fills: number }[];
   const view = () => render(<div class="screen"><Strands cls="bard" /></div>);
-  const ds = (c: Element) => [...c.querySelectorAll('svg.strands path')].map(p => p.getAttribute('d'));
+  const canvases = (c: Element) => [...c.querySelectorAll<HTMLCanvasElement>('.strands canvas')];
+  const slide = (cv: Element) => [...cv.classList].filter(k => k === 'strand-l' || k === 'strand-r');
+  const secs = (cv: Element) => +/animation-duration:\s*([\d.]+)s/.exec(cv.getAttribute('style') ?? '')![1]!;
   beforeEach(() => {
-    queue = []; raf = vi.fn((cb: FrameRequestCallback) => queue.push(cb));
-    vi.stubGlobal('requestAnimationFrame', raf);
-    vi.stubGlobal('cancelAnimationFrame', (id: number) => { queue[id - 1] = () => {}; });
+    pens = [];
+    vi.spyOn(HTMLCanvasElement.prototype, 'getContext').mockImplementation(() => {
+      const pen = { fill: '', filter: '', fills: 0 };
+      pens.push(pen);
+      return {
+        scale: vi.fn(), beginPath: vi.fn(), moveTo: vi.fn(), lineTo: vi.fn(), closePath: vi.fn(), fill: () => { pen.fills++; },
+        set fillStyle(v: string) { pen.fill = v; }, set filter(v: string) { pen.filter = v; },
+      } as unknown as CanvasRenderingContext2D;
+    });
+    document.documentElement.style.setProperty('--bard', 'tan');
+    document.documentElement.style.setProperty('--bard-line', 'teal');
     rects([390, 74], 390);
   });
-  // redrawing the blurred strands every frame was too slow on phones: they are drawn once and stay still
-  test('animated: strands drawn once, never animated', () => {
-    const c = view().container, first = ds(c);
-    expect(first).toHaveLength(2);
-    expect(first.every(d => !!d)).toBe(true);
-    run(1000); run(2000);
-    expect(ds(c)).toEqual(first);
-    expect(raf).not.toHaveBeenCalled();
+  afterEach(() => { for (const t of ['--bard', '--bard-line']) document.documentElement.style.removeProperty(t); });
+  // redrawing the blurred strands every frame was too slow on phones: each is painted once and slid by CSS
+  test('animated: each strand painted once, into a half-resolution strip one tile wider, then slid', () => {
+    const c = view().container, [a, b] = canvases(c);
+    expect(pens.map(p => p.fills)).toEqual([1, 1]);
+    expect([a!.width, a!.height]).toEqual([Math.ceil((390 + STRAND_TILE) / 2), 37]);
+    expect(pens[0]!.filter).toBe('blur(1.1px)');
+    expect(slide(a!)).toHaveLength(1); expect(slide(b!)).toHaveLength(1);
+    expect(slide(a!)).not.toEqual(slide(b!));
+    expect(secs(b!)).toBeCloseTo(secs(a!) / .9, 0);
+    expect(Element.prototype.animate).not.toHaveBeenCalled();
   });
-  test('the svg stretches a stale frame: viewBox from the measured size', () => {
-    const svg = view().container.querySelector('svg.strands')!;
-    expect(svg.getAttribute('viewBox')).toBe('0 0 390 74');
-    expect(svg.getAttribute('preserveAspectRatio')).toBe('none');
-  });
-  test('reduced motion: drawn once, never animated', () => {
+  test('reduced motion: painted once, never slid', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
-    const c = view().container;
-    expect(ds(c).every(d => !!d)).toBe(true);
-    expect(raf).not.toHaveBeenCalled();
+    const cs = canvases(view().container);
+    expect(pens.map(p => p.fills)).toEqual([1, 1]);
+    expect(cs.flatMap(slide)).toEqual([]);
   });
-  test('Animation Off: strands still drawn, never animated', () => {
+  test('Animation Off: strands still painted, never slid', () => {
     saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
-    const c = view().container;
-    expect(ds(c).every(d => !!d)).toBe(true);
-    expect(raf).not.toHaveBeenCalled();
+    const cs = canvases(view().container);
+    expect(pens.map(p => p.fills)).toEqual([1, 1]);
+    expect(cs.flatMap(slide)).toEqual([]);
   });
-  test('a resize redraws the strands after a short pause', async () => {
+  test('a resize repaints the strands after a short pause', async () => {
     vi.useFakeTimers();
-    vi.stubGlobal('matchMedia', () => ({ matches: true }));
     const c = view().container;
-    const first = ds(c);
+    expect(pens).toHaveLength(2);
     rects([300, 74], 300);
     vi.stubGlobal('innerWidth', innerWidth - 300);
     dispatchEvent(new Event('resize'));
     await pass(200);
-    expect(ds(c)).toEqual(first);
+    expect(pens).toHaveLength(2);
     await pass(100);
-    expect(ds(c)).not.toEqual(first);
+    expect(pens).toHaveLength(4);
+    expect(canvases(c)[0]!.width).toBe(Math.ceil((300 + STRAND_TILE) / 2));
   });
-  test('stop colours and strength come from tokens', () => {
-    const c = view().container, [a, b] = [...c.querySelectorAll('linearGradient')];
-    const st = (g: Element) => g.querySelector('stop')!.getAttribute('style')!;
-    expect(a.getAttribute('gradientUnits')).toBe('userSpaceOnUse');
-    expect(st(a)).toContain('var(--bard)'); expect(st(a)).toContain('var(--strand-a-o)'); expect(st(a)).toContain('var(--motion-i, 1)');
-    expect(st(b)).toContain('var(--bard-line)'); expect(st(b)).toContain('var(--strand-b-o)'); expect(st(b)).toContain('var(--motion-i, 1)');
-    expect(c.querySelector('feGaussianBlur')!.getAttribute('stdDeviation')).toBe('2.2');
+  test('colours come from tokens, strength from the strand classes', () => {
+    const [a, b] = canvases(view().container);
+    expect(pens.map(p => p.fill)).toEqual(['tan', 'teal']);
+    expect(a!.classList.contains('strand-a')).toBe(true);
+    expect(b!.classList.contains('strand-b')).toBe(true);
+    const css = readFileSync('src/styles/motion.css', 'utf8');
+    expect(css).toContain('.strand-a{opacity:calc(var(--strand-a-o) * var(--motion-i, 1))}');
+    expect(css).toContain('.strand-b{opacity:calc(var(--strand-b-o) * var(--motion-i, 1))}');
   });
-  test('no layout: nothing drawn, no loop', () => {
+  test('the fade is a still mask on the frame, from the measured window and column', () => {
+    rects([1280, 74], 480);
+    const el = view().container.querySelector<HTMLElement>('.strands')!;
+    expect(el.style.getPropertyValue('--strand-mask')).toBe(strandMask(1280, 480));
+    expect(el.style.getPropertyValue('--strand-tile')).toBe(`${STRAND_TILE}px`);
+  });
+  test('no layout: nothing painted', () => {
     rects([0, 0], 0);
-    const c = view().container;
-    expect(c.querySelectorAll('svg.strands path')).toHaveLength(2);
-    expect(ds(c)).toEqual([null, null]);
-    expect(raf).not.toHaveBeenCalled();
+    expect(canvases(view().container)).toHaveLength(2);
+    expect(pens).toEqual([]);
   });
 });
 
 describe('start', () => {
   const me = (c: Element) => c.querySelector('button.start-me')!;
+  // thirteen animated class rows were too slow on phones: the start menu shows each one's still frame
+  test('start, animated: class art holds still, while a spell list animates', async () => {
+    vi.useFakeTimers();
+    const c = render(<Start />).container;
+    await pass(5000);
+    expect(c.querySelectorAll('svg.fx-row')).toHaveLength(13);
+    expect(me(c).classList.contains('shine')).toBe(true);
+    expect(Element.prototype.animate).not.toHaveBeenCalled();
+    cleanup();
+    render(<Menu cls="wizard" level={3} />);
+    await pass(5000);
+    expect(Element.prototype.animate).toHaveBeenCalled();
+  });
   test('start, Animation Off: strands stay, no class animation, no shine', () => {
     saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
     const c = render(<Start />).container;
-    expect(c.querySelectorAll('svg.strands')).toHaveLength(13);
+    expect(c.querySelectorAll('.strands')).toHaveLength(13);
     expect(c.querySelectorAll('svg.fx-row')).toHaveLength(0);
     expect(me(c).classList.contains('shine')).toBe(false);
   });
@@ -356,6 +384,6 @@ describe('start', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
     const c = render(<Start />).container;
     expect(me(c).classList.contains('shine')).toBe(false);
-    expect(c.querySelectorAll('svg.strands')).toHaveLength(13);
+    expect(c.querySelectorAll('.strands')).toHaveLength(13);
   });
 });

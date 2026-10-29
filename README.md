@@ -37,7 +37,7 @@ Colours live only in `src/styles/themes/`. To add a theme, copy `faerun.css` to 
 
 ## Motion
 
-Spell rows and class backgrounds carry animated patterns, and the start menu has soft strands behind each class button (drawn once and still: redrawing them every frame was too slow on phones); the Animation setting scales them (Faint, Medium, Strong). Off removes the patterns and the button shine to save battery, but the start-menu strands stay. The phone's reduced-motion setting shows everything still.
+Spell rows and class backgrounds carry animated patterns, and the start menu has soft strands sliding behind each class button. To stay smooth on phones, each strand is painted once and slid by the browser's compositor, and the start menu shows each class's art still. The Animation setting scales the patterns (Faint, Medium, Strong). Off removes the patterns and the button shine to save battery, but the start-menu strands stay, standing still. The phone's reduced-motion setting shows everything still.
 
 ## Credits
 

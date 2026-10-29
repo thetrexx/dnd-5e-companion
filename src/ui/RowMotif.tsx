@@ -7,9 +7,11 @@ import { ROW_TIMING, type Gen } from '../motion/types';
 import { useResized } from './useResized';
 
 // off or no motif for this class: nothing rendered, no effect work
-// gen and tone (a token name, no var()) override the class's row art and its line colour
-export function RowMotif(p: { cls: ClassId; gen?: Gen; tone?: string }) {
-  const gen = p.gen ?? ROW_MOTIFS[p.cls], tone = p.tone ?? `--${p.cls}-line`, mode = motionMode(), ref = useRef<SVGSVGElement>(null);
+// gen and tone (a token name, no var()) override the class's row art and its line colour; still shows the still frame
+// even when animated
+export function RowMotif(p: { cls: ClassId; gen?: Gen; tone?: string; still?: boolean }) {
+  const gen = p.gen ?? ROW_MOTIFS[p.cls], tone = p.tone ?? `--${p.cls}-line`, ref = useRef<SVGSVGElement>(null);
+  const mode = p.still && motionMode() === 'animated' ? 'static' : motionMode();
   const on = !!gen && mode !== 'off';
   // the static frame redraws at the new size; an animated row redraws every cycle anyway
   const size = useResized(on && mode === 'static');

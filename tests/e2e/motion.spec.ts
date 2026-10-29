@@ -1,6 +1,8 @@
 import { test, expect, type Page } from '@playwright/test';
 
 const anims = (page: Page) => page.evaluate(() => document.getAnimations().length);
+// background canvases; the start menu's strand strips are canvases too, and stay in every mode
+const BG_CANVAS = 'canvas:not(.strand-a, .strand-b)';
 
 test('spell rows animate, actions row has no motif, taps still navigate', async ({ page }) => {
   await page.goto('./#/menu/sorcerer/5');
@@ -24,7 +26,7 @@ test('backgrounds per screen', async ({ page }) => {
   await expect(page.locator('canvas.fx-blood')).toHaveCount(1);
   await page.goto('./');
   await expect(page.locator('svg.fx-bg')).toBeVisible();
-  await expect(page.locator('canvas')).toHaveCount(0);
+  await expect(page.locator(BG_CANVAS)).toHaveCount(0);
 });
 
 test('reduced motion: patterns drawn but still', async ({ page }) => {
@@ -46,7 +48,7 @@ test('Off removes every pattern; Medium brings them back', async ({ page }) => {
     await expect(page.locator('svg.fx-row'), hash).toHaveCount(0);
     await expect(page.locator('svg.fx-bg'), hash).toHaveCount(0);
     await expect(page.locator('svg.fx-sparks'), hash).toHaveCount(0);
-    await expect(page.locator('canvas'), hash).toHaveCount(0);
+    await expect(page.locator(BG_CANVAS), hash).toHaveCount(0);
     expect(await anims(page), hash).toBe(0);
   }
   await page.goto('./#/settings');
