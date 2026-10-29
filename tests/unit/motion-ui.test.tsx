@@ -5,6 +5,7 @@ import { motionMode } from '../../src/motion/mode';
 import { DEFAULT_SETTINGS, saveSettings } from '../../src/settings/settings';
 import { Background } from '../../src/ui/Background';
 import { App } from '../../src/app';
+import { Strands } from '../../src/ui/Strands';
 
 const proto = SVGElement.prototype as unknown as Record<string, unknown>;
 const eproto = Element.prototype as unknown as Record<string, unknown>;
@@ -265,5 +266,87 @@ describe('backgrounds', () => {
     expect(Element.prototype.animate).toHaveBeenCalledTimes(calls);
     fireEvent.click(r.getByLabelText('Medium'));
     await waitFor(() => expect(r.container.querySelector('svg.fx-bg')).toBeTruthy());
+  });
+});
+
+describe('strands', () => {
+  let queue: FrameRequestCallback[], raf: ReturnType<typeof vi.fn>;
+  const run = (t: number) => queue.splice(0).forEach(f => f(t));
+  const rects = (svg: [number, number], screen: number) => vi.spyOn(Element.prototype, 'getBoundingClientRect').mockImplementation(function (this: Element) {
+    const [w, h] = this.matches('svg.strands') ? svg : this.matches('.screen') ? [screen, 0] : [0, 0];
+    return { width: w, height: h, top: 0, left: 0, right: w, bottom: h, x: 0, y: 0, toJSON: () => ({}) };
+  });
+  const view = () => render(<div class="screen"><Strands cls="bard" /></div>);
+  const ds = (c: Element) => [...c.querySelectorAll('svg.strands path')].map(p => p.getAttribute('d'));
+  beforeEach(() => {
+    queue = []; raf = vi.fn((cb: FrameRequestCallback) => queue.push(cb));
+    vi.stubGlobal('requestAnimationFrame', raf);
+    vi.stubGlobal('cancelAnimationFrame', (id: number) => { queue[id - 1] = () => {}; });
+    rects([390, 74], 390);
+  });
+  test('animated: strands draw, then animate through the shared loop', () => {
+    const c = view().container, first = ds(c);
+    expect(first).toHaveLength(2);
+    expect(first.every(d => !!d)).toBe(true);
+    run(1000);
+    expect(ds(c)).not.toEqual(first);
+  });
+  test('the loop throttles to 30 updates a second', () => {
+    const c = view().container;
+    run(1000);
+    const a = ds(c);
+    run(1010);
+    expect(ds(c)).toEqual(a);
+    run(1040);
+    expect(ds(c)).not.toEqual(a);
+  });
+  test('unmount stops the loop', () => {
+    const r = view(), c = r.container;
+    act(() => { r.unmount(); });
+    const calls = raf.mock.calls.length;
+    run(1000); run(2000);
+    expect(raf).toHaveBeenCalledTimes(calls);
+    expect(ds(c)).toEqual([]);
+    expect(queue).toHaveLength(0);
+  });
+  test('reduced motion: drawn once, never animated', () => {
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    const c = view().container;
+    expect(ds(c).every(d => !!d)).toBe(true);
+    expect(raf).not.toHaveBeenCalled();
+  });
+  test('Animation Off: strands still drawn, never animated', () => {
+    saveSettings({ ...DEFAULT_SETTINGS, strength: 'off' });
+    const c = view().container;
+    expect(ds(c).every(d => !!d)).toBe(true);
+    expect(raf).not.toHaveBeenCalled();
+  });
+  test('a resize redraws the strands after a short pause', async () => {
+    vi.useFakeTimers();
+    vi.stubGlobal('matchMedia', () => ({ matches: true }));
+    const c = view().container;
+    const first = ds(c);
+    rects([300, 74], 300);
+    vi.stubGlobal('innerWidth', innerWidth - 300);
+    dispatchEvent(new Event('resize'));
+    await pass(200);
+    expect(ds(c)).toEqual(first);
+    await pass(100);
+    expect(ds(c)).not.toEqual(first);
+  });
+  test('stop colours and strength come from tokens', () => {
+    const c = view().container, [a, b] = [...c.querySelectorAll('linearGradient')];
+    const st = (g: Element) => g.querySelector('stop')!.getAttribute('style')!;
+    expect(a.getAttribute('gradientUnits')).toBe('userSpaceOnUse');
+    expect(st(a)).toContain('var(--bard)'); expect(st(a)).toContain('var(--strand-a-o)'); expect(st(a)).toContain('var(--motion-i, 1)');
+    expect(st(b)).toContain('var(--bard-line)'); expect(st(b)).toContain('var(--strand-b-o)'); expect(st(b)).toContain('var(--motion-i, 1)');
+    expect(c.querySelector('feGaussianBlur')!.getAttribute('stdDeviation')).toBe('2.2');
+  });
+  test('no layout: nothing drawn, no loop', () => {
+    rects([0, 0], 0);
+    const c = view().container;
+    expect(c.querySelectorAll('svg.strands path')).toHaveLength(2);
+    expect(ds(c)).toEqual([null, null]);
+    expect(raf).not.toHaveBeenCalled();
   });
 });
