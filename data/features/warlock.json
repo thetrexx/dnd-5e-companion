@@ -2023,5 +2023,66 @@
     ],
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "among-the-dead",
+    "name": "Among the Dead",
+    "source": {
+      "kind": "subclass",
+      "id": "the-undying"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "An undead aims an attack or harmful spell at you alone",
+    "spells": [
+      {
+        "spell": "spare-the-dying",
+        "atLevel": 1
+      }
+    ],
+    "description": [
+      "You learn spare the dying. It counts as a warlock cantrip and does not use up your cantrips known. You also have advantage on saves against disease.",
+      "Before such an undead can go through with it, it makes a Wisdom save against your spell save DC. On a failure it picks a new target or loses the effect. Area effects that merely catch you are exempt.",
+      "After a passed save, or after you target the undead yourself, it is immune to this ward for 24 hours."
+    ],
+    "page": 139,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "defy-death",
+    "name": "Defy Death",
+    "source": {
+      "kind": "subclass",
+      "id": "the-undying"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "You pass a death save, or you stabilize someone with spare the dying",
+    "uses": "Once per long rest",
+    "description": [
+      "You heal 1d8 + your Constitution modifier (minimum 1 hit point)."
+    ],
+    "page": 140,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "indestructible-life",
+    "name": "Indestructible Life",
+    "source": {
+      "kind": "subclass",
+      "id": "the-undying"
+    },
+    "level": 14,
+    "cost": "bonus",
+    "uses": "Once per short or long rest",
+    "description": [
+      "On your turn, use a bonus action to heal 1d8 + your warlock level.",
+      "A severed part of your body that you hold in place as you use this reattaches."
+    ],
+    "page": 140,
+    "book": "scag",
+    "textSource": "summary"
   }
 ]

@@ -138,3 +138,9 @@ test('a pool group may narrow its own pool with only', () => {
   bad.optionGroups.find(g => g.id === 'fighting-style')!.only!.push('maneuvers-parry');
   expect(validateDataset(bad)).toContain('option group "fighting-style": only has "maneuvers-parry" which is not an option of "fighting-style"');
 });
+
+test('replacesSpells needs a parent', () => {
+  const bad = structuredClone(DATA);
+  bad.races.find(x => x.id === 'tiefling')!.replacesSpells = true;
+  expect(validateDataset(bad)).toContain('race "tiefling": replacesSpells needs a parent');
+});

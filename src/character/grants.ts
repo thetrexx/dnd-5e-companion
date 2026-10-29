@@ -39,7 +39,13 @@ export function grantSources(ch: Character): GrantSource[] {
     const grants = all.map((grant, index) => ({ grant, index })).filter(g => !g.grant.option || ch.options.includes(g.grant.option));
     if (grants.length) out.push({ ...s, grants });
   };
-  for (const r of raceChain(ch.race)) add({ key: `race:${r.id}`, title: r.name, level: total, step: 'basics' }, r.spells);
+  const chain = raceChain(ch.race);
+  // a subrace flagged replacesSpells drops its parent's spells
+  const skipParents = chain[chain.length - 1]?.replacesSpells;
+  for (const r of chain) {
+    if (skipParents && r !== chain[chain.length - 1]) continue;
+    add({ key: `race:${r.id}`, title: r.name, level: total, step: 'basics' }, r.spells);
+  }
   for (const id of new Set(ch.feats)) {
     const f = DATA.feats.find(x => x.id === id);
     if (f) add({ key: `feat:${f.id}`, title: f.name, level: total, step: 'feats' }, f.spells);

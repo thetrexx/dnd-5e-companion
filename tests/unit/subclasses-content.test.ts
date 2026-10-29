@@ -1,9 +1,9 @@
 import { DATA } from '../../src/data';
-import { autoSpells } from '../../src/character/grants';
+import { autoSpells, grantSlots, grantSources } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
 import type { Character } from '../../src/character/types';
 import { optionSlots } from '../../src/character/options';
-import { pickableSpells } from '../../src/character/derive';
+import { castingInfo, pickCounts, pickableSpells } from '../../src/character/derive';
 import { charSpellSections } from '../../src/character/view';
 import { actionSections, spellSections } from '../../src/logic/sections';
 
@@ -40,7 +40,7 @@ test('domain channel divinity options cost a Channel Divinity', () => {
   expect(DATA.features.find(x => x.id === 'guided-strike')!.resource).toBe('1 Channel Divinity');
 });
 
-test('105 subclasses', () => expect(DATA.subclasses).toHaveLength(105));
+test('110 subclasses', () => expect(DATA.subclasses).toHaveLength(110));
 test('oath and patron spells', () => {
   expect(sub('oath-of-vengeance').bonusSpells!.grants.filter(g => g.atLevel === 3).map(g => g.spell).sort()).toEqual(['bane', 'hunters-mark']);
   expect(sub('the-fiend').bonusSpells).toMatchObject({ kind: 'patron' });
@@ -706,7 +706,7 @@ test('armorer features gated by the model', () => {
 test('tasha artificer subclasses', () => {
   for (const id of ['alchemist', 'armorer', 'artillerist', 'battle-smith'])
     expect(sub(id), id).toMatchObject({ cls: 'artificer', book: 'tce', bonusSpells: { kind: 'subclass' } });
-  expect(DATA.subclasses).toHaveLength(105);
+  expect(DATA.subclasses).toHaveLength(110);
   expect(sub('artillerist')).toMatchObject({ name: 'Artillerist', page: 17, options: [] });
   expect(sub('battle-smith')).toMatchObject({ name: 'Battle Smith', page: 18, options: [] });
 });
@@ -747,4 +747,74 @@ test('battle smith features', () => {
   expect(feature('arcane-jolt').trigger).toBeTruthy();
   const jolt = feature('arcane-jolt').scaling!.find(s => /2d6|jolt|damage|healing/i.test(s.label))!.values;
   expect([jolt[7], jolt[8], jolt[13], jolt[14], jolt[19]]).toEqual(['', '2d6', '2d6', '4d6', '4d6']);
+});
+
+test('scag martial subclasses', () => {
+  for (const [id, cls] of [['path-of-the-battlerager', 'barbarian'], ['purple-dragon-knight', 'fighter'], ['way-of-the-long-death', 'monk']] as const)
+    expect(sub(id), id).toMatchObject({ cls, book: 'scag' });
+  expect(DATA.subclasses).toHaveLength(110);
+  expect(DATA.features.find(f => f.id === 'inspiring-surge')!.scaling![0]!.values[16]).toBe('2');
+  expect(DATA.features.find(f => f.id === 'way-of-the-long-death-touch-of-death')).toMatchObject({ level: 3, cost: 'free', source: { kind: 'subclass', id: 'way-of-the-long-death' } });
+});
+
+// Plan 10 (batch 5), Task 3: Arcana Domain and The Undying (SCAG pp. 125-126, 139-140)
+test('arcana domain: domain spells plus arcane mastery picks at 17', () => {
+  const b = sub('arcana-domain').bonusSpells!;
+  expect(b.kind).toBe('domain');
+  expect(b.grants.filter(g => g.choose).map(g => [g.choose!.level, g.atLevel])).toEqual([[6, 17], [7, 17], [8, 17], [9, 17]]);
+  expect(b.grants.filter(g => g.spell).map(g => [g.atLevel, g.spell])).toEqual([
+    [1, 'detect-magic'], [1, 'magic-missile'], [3, 'magic-weapon'], [3, 'nystuls-magic-aura'], [5, 'dispel-magic'], [5, 'magic-circle'],
+    [7, 'arcane-eye'], [7, 'leomunds-secret-chest'], [9, 'planar-binding'], [9, 'teleportation-circle']]);
+  expect(sub('arcana-domain')).toMatchObject({ cls: 'cleric', book: 'scag', page: 125 });
+  expect(DATA.subclasses).toHaveLength(110);
+});
+test('arcane mastery slots lock below cleric 17', () => {
+  const at = (level: number) => grantSlots({ ...emptyCharacter(), classes: [{ cls: 'cleric', level, sub: 'arcana-domain' }] } as Character)
+    .filter(s => s.source.key === 'sub:arcana-domain');
+  expect(at(16).every(s => !s.unlocked)).toBe(true);
+  expect(at(17).every(s => s.unlocked)).toBe(true);
+  expect(at(17)).toHaveLength(4);
+});
+test('arcane initiate cantrips sit outside the cleric cantrip count', () => {
+  const cc = { cls: 'cleric' as const, level: 1, sub: 'arcana-domain' };
+  const ch = {
+    ...emptyCharacter(), classes: [cc],
+    spells: [
+      ...['guidance', 'light', 'sacred-flame'].map(id => ({ id, cls: 'cleric' as const })),
+      ...['fire-bolt', 'mage-hand'].map(id => ({ id, grant: 'feature:arcane-initiate:0' })),
+    ],
+  } as Character;
+  expect(pickCounts(ch, 'cleric').cantrips).toBe(3);
+  expect(castingInfo(cc)!.cantrips).toBe(3);
+  const slot = grantSlots(ch).find(s => s.key === 'feature:arcane-initiate:0')!;
+  expect(slot).toMatchObject({ unlocked: true, choose: { lists: ['wizard'], level: 0, count: 2 } });
+  expect(feature('arcane-initiate')).toMatchObject({ level: 1, cost: 'passive', book: 'scag', page: 125 });
+});
+test('arcana domain cards', () => {
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject({ source: { kind: 'subclass', id: 'arcana-domain' }, book: 'scag', textSource: 'summary', ...x });
+  m('arcane-abjuration', { level: 2, cost: 'action', resource: '1 Channel Divinity', page: 125 });
+  m('spell-breaker', { level: 6, cost: 'free', page: 126 });
+  expect(feature('spell-breaker').trigger).toBeTruthy();
+  const cr = feature('arcane-abjuration').scaling!.find(s => /banish/i.test(s.label))!.values;
+  expect([cr[3], cr[4], cr[6], cr[7], cr[9], cr[10], cr[12], cr[13], cr[15], cr[16], cr[19]]).toEqual(['', '1/2', '1/2', '1', '1', '2', '2', '3', '3', '4', '4']);
+});
+test('the undying patron spells and cards', () => {
+  const b = sub('the-undying').bonusSpells!;
+  expect(sub('the-undying')).toMatchObject({ cls: 'warlock', book: 'scag', page: 139 });
+  expect(b.kind).toBe('patron');
+  expect(b.grants.map(g => [g.atLevel, g.spell])).toEqual([
+    [1, 'false-life'], [1, 'ray-of-sickness'], [3, 'blindness-deafness'], [3, 'silence'], [5, 'feign-death'], [5, 'speak-with-dead'],
+    [7, 'aura-of-life'], [7, 'death-ward'], [9, 'contagion'], [9, 'legend-lore']]);
+  const m = (id: string, x: object) => expect(feature(id), id).toMatchObject({ source: { kind: 'subclass', id: 'the-undying' }, book: 'scag', textSource: 'summary', ...x });
+  m('among-the-dead', { level: 1, cost: 'free', page: 139, spells: [{ spell: 'spare-the-dying', atLevel: 1 }] });
+  m('defy-death', { level: 6, cost: 'free', uses: 'Once per long rest', page: 140 });
+  m('indestructible-life', { level: 14, cost: 'bonus', uses: 'Once per short or long rest', page: 140 });
+  expect(feature('defy-death').trigger).toBeTruthy();
+});
+test('the undying spare the dying reaches the warlock grants', () => {
+  const c = { ...emptyCharacter(), classes: [{ cls: 'warlock' as const, level: 1, sub: 'the-undying' }] } as Character;
+  expect(grantSources(c).find(s => s.key === 'feature:among-the-dead')).toMatchObject({ cls: 'warlock' });
+  const auto = autoSpells(c).map(a => a.spell.id);
+  expect(auto).toContain('spare-the-dying');
+  expect(auto).not.toContain('false-life');
 });

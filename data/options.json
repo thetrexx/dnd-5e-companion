@@ -1486,5 +1486,65 @@
       1,
       1
     ]
+  },
+  {
+    "id": "strike-of-the-giants",
+    "name": "Giant Strike",
+    "owner": {
+      "kind": "feat",
+      "id": "strike-of-the-giants"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ]
+  },
+  {
+    "id": "rune-shaper-runes",
+    "name": "Runes",
+    "owner": {
+      "kind": "feat",
+      "id": "rune-shaper"
+    },
+    "picks": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      2,
+      3,
+      3,
+      3,
+      3
+    ]
   }
 ]

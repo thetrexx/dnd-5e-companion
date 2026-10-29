@@ -644,5 +644,538 @@
     "page": 81,
     "book": "tce",
     "textSource": "summary"
+  },
+  {
+    "id": "ember-of-the-fire-giant",
+    "name": "Searing Ignition",
+    "source": {
+      "kind": "feat",
+      "id": "ember-of-the-fire-giant"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You take the Attack action; this replaces one attack",
+    "uses": "Proficiency bonus times per long rest, once per turn",
+    "description": [
+      "Burst of flame in a 15-ft radius around you, hitting creatures you choose. Dex save, DC 8 + proficiency bonus + the feat's ability modifier.",
+      "Fail: 1d8 + proficiency bonus fire damage and blinded until your next turn starts. Success: half damage, no blinding."
+    ],
+    "page": 17,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "fury-of-the-frost-giant",
+    "name": "Frigid Retaliation",
+    "source": {
+      "kind": "feat",
+      "id": "fury-of-the-frost-giant"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "Damaged by an attack from a creature in sight, 30 ft or closer",
+    "uses": "Proficiency bonus times per long rest",
+    "description": [
+      "Attacker's Con save: DC 8 + proficiency bonus + the feat's ability modifier.",
+      "Save failed: cold damage of 1d8 + proficiency bonus; its speed is 0 until its next turn ends."
+    ],
+    "page": 17,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "guile-of-the-cloud-giant",
+    "name": "Cloudy Escape",
+    "source": {
+      "kind": "feat",
+      "id": "guile-of-the-cloud-giant"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "A creature you see hits you with an attack roll",
+    "uses": "Proficiency bonus times per long rest",
+    "description": [
+      "You resist that attack's damage, then teleport up to 30 ft to an unoccupied space you can see."
+    ],
+    "page": 18,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "keenness-of-the-stone-giant",
+    "name": "Stone Throw",
+    "source": {
+      "kind": "feat",
+      "id": "keenness-of-the-stone-giant"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "uses": "Proficiency bonus times per long rest",
+    "description": [
+      "Ranged spell attack, 60 ft, using the feat's ability as spellcasting ability. Hit: 1d10 force damage and a Str save (DC 8 + proficiency bonus + that modifier) or the target is knocked prone."
+    ],
+    "page": 18,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "soul-of-the-storm-giant",
+    "name": "Maelstrom Aura",
+    "source": {
+      "kind": "feat",
+      "id": "soul-of-the-storm-giant"
+    },
+    "level": 1,
+    "cost": "bonus",
+    "uses": "Proficiency bonus times per long rest",
+    "description": [
+      "Aura: 10 ft in every direction, stopped by total cover. Lasts until your next turn starts or you are incapacitated.",
+      "While it lasts: resistance to lightning and thunder; attacks against you have disadvantage.",
+      "Optional, per creature that starts its turn in the aura: you force a Str save, DC 8 + proficiency bonus + the feat's ability modifier. Save failed: its speed is halved until its next turn starts."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "vigor-of-the-hill-giant",
+    "name": "Bulwark",
+    "source": {
+      "kind": "feat",
+      "id": "vigor-of-the-hill-giant"
+    },
+    "level": 1,
+    "cost": "reaction",
+    "trigger": "An effect would move you 5 ft or more, or knock you prone",
+    "description": [
+      "You steady yourself: you are not moved and do not fall prone."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants",
+    "name": "Giant Strike",
+    "source": {
+      "kind": "feat",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "trigger": "You hit with a melee weapon attack or a thrown-weapon ranged attack",
+    "uses": "Proficiency bonus times per long rest, once per turn",
+    "description": [
+      "Add the effect of the strike you picked for this feat (see the chosen strike card). Save DC is 8 + proficiency bonus + Strength or Constitution modifier."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants-cloud-strike",
+    "name": "Cloud Strike",
+    "source": {
+      "kind": "option",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Extra 1d4 thunder damage to the target.",
+      "If the target is a creature, it makes a Wis save; fail: you are invisible to it until your next turn starts, or until you next attack or cast a spell.",
+      "DC 8 + proficiency bonus + Strength or Constitution modifier. Uses the Giant Strike limit."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants-fire-strike",
+    "name": "Fire Strike",
+    "source": {
+      "kind": "option",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Extra 1d10 fire damage to the target.",
+      "Uses the Giant Strike limit."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants-frost-strike",
+    "name": "Frost Strike",
+    "source": {
+      "kind": "option",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Extra 1d6 cold damage to the target.",
+      "If the target is a creature, it makes a Con save; fail: its speed is 0 until your next turn starts.",
+      "DC 8 + proficiency bonus + Strength or Constitution modifier. Uses the Giant Strike limit."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants-hill-strike",
+    "name": "Hill Strike",
+    "source": {
+      "kind": "option",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Extra 1d6 damage of the weapon's type, to the target.",
+      "If the target is a creature, it makes a Str save; fail: it is knocked prone.",
+      "DC 8 + proficiency bonus + Strength or Constitution modifier. Uses the Giant Strike limit."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants-stone-strike",
+    "name": "Stone Strike",
+    "source": {
+      "kind": "option",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Extra 1d6 force damage to the target.",
+      "If the target is a creature, it makes a Str save; fail: it is pushed 10 ft straight away from you.",
+      "DC 8 + proficiency bonus + Strength or Constitution modifier. Uses the Giant Strike limit."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants-storm-strike",
+    "name": "Storm Strike",
+    "source": {
+      "kind": "option",
+      "id": "strike-of-the-giants"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Extra 1d6 lightning damage to the target.",
+      "If the target is a creature, it makes a Con save; fail: it has disadvantage on attack rolls until your next turn starts.",
+      "DC 8 + proficiency bonus + Strength or Constitution modifier. Uses the Giant Strike limit."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-cloud-rune",
+    "name": "Cloud Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "fog-cloud",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know fog cloud until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-death-rune",
+    "name": "Death Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "inflict-wounds",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know inflict wounds until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-dragon-rune",
+    "name": "Dragon Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "chromatic-orb",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know chromatic orb until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-enemy-rune",
+    "name": "Enemy Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "disguise-self",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know disguise self until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-fire-rune",
+    "name": "Fire Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "burning-hands",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know burning hands until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-friend-rune",
+    "name": "Friend Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "speak-with-animals",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know speak with animals until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-frost-rune",
+    "name": "Frost Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "armor-of-agathys",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know armor of agathys until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-hill-rune",
+    "name": "Hill Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "goodberry",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know goodberry until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-journey-rune",
+    "name": "Journey Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "longstrider",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know longstrider until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-king-rune",
+    "name": "King Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "command",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know command until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-mountain-rune",
+    "name": "Mountain Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "entangle",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know entangle until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-stone-rune",
+    "name": "Stone Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "sanctuary",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know sanctuary until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper-runes-storm-rune",
+    "name": "Storm Rune",
+    "source": {
+      "kind": "option",
+      "id": "rune-shaper-runes"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "spell": "thunderwave",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "description": [
+      "Inscribe it on an object each long rest to know thunderwave until the next one. Cast it with slots while the object is worn or carried, or once per long rest with no slot or material components."
+    ],
+    "page": 19,
+    "book": "bgg",
+    "textSource": "summary"
   }
 ]

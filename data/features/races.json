@@ -309,5 +309,20 @@
     ],
     "page": 34,
     "textSource": "summary"
+  },
+  {
+    "id": "half-elf-mask-of-the-wild",
+    "name": "Mask of the Wild",
+    "source": {
+      "kind": "race",
+      "id": "half-elf-mask-of-the-wild"
+    },
+    "level": 1,
+    "cost": "free",
+    "description": [
+      "Natural cover is enough for you to try hiding while only lightly obscured. Foliage, heavy rain, falling snow, mist and similar natural effects all count."
+    ],
+    "page": 24,
+    "textSource": "summary"
   }
 ]
