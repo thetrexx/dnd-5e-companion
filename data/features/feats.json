@@ -677,7 +677,7 @@
     "uses": "Proficiency bonus times per long rest",
     "description": [
       "The attacker makes a Con save, DC 8 + proficiency bonus + the feat's ability modifier.",
-      "Fail: 1d8 + proficiency bonus cold damage and its speed is 0 until the end of its next turn."
+      "Fail: 1d8 + proficiency bonus cold damage and its speed drops to 0 through the end of its next turn."
     ],
     "page": 17,
     "book": "bgg",
@@ -730,7 +730,7 @@
     "uses": "Proficiency bonus times per long rest",
     "description": [
       "A 10-ft aura lasts until your next turn starts or you are incapacitated. You resist lightning and thunder damage, and attacks against you have disadvantage.",
-      "A creature that starts its turn inside makes a Str save, DC 8 + proficiency bonus + the feat's ability modifier, or has its speed halved until the start of its next turn."
+      "A creature that starts its turn inside makes a Str save, DC 8 + proficiency bonus + the feat's ability modifier, or its speed is halved through the start of its own next turn."
     ],
     "page": 19,
     "book": "bgg",
