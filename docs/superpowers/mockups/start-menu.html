@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html data-theme="faerun" data-strength="medium">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Start menu flares</title>
+<link rel="stylesheet" href="/files/faerun.css">
+<link rel="stylesheet" href="/files/motion.css">
+<style>
+@font-face{font-family:'Inknut Antiqua';src:url(/files/inknut-medium.woff2) format('woff2');font-weight:500}
+@font-face{font-family:'Inknut Antiqua';src:url(/files/inknut-light.woff2) format('woff2');font-weight:300}
+@font-face{font-family:'Inknut Antiqua';src:url(/files/noto-digits-medium.woff2) format('woff2');font-weight:500;unicode-range:U+0030-0039}
+@font-face{font-family:'IM Fell English';src:url(/files/fell-english.woff2) format('woff2')}
+@font-face{font-family:'IM Fell English';src:url(/files/noto-digits-medium.woff2) format('woff2');unicode-range:U+0030-0039}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:#0b0a08;color:var(--text);font-family:var(--font-body);font-weight:500}
+.intro{max-width:1200px;margin:18px auto 4px;padding:0 16px;font-family:var(--font-title);color:var(--accent)}
+.intro h2{margin:0 0 4px;font-weight:400;font-size:26px}
+.intro p{margin:0;font-family:var(--font-body);font-size:13px;color:var(--text-dim);font-weight:300}
+.phones{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;padding:16px}
+.opt{display:flex;flex-direction:column;align-items:center;gap:8px;cursor:pointer}
+.opt h3{margin:0;font-family:var(--font-title);font-weight:400;font-size:20px;color:var(--accent)}
+.opt p{margin:0;max-width:370px;font-size:11.5px;font-weight:300;color:var(--text-dim);text-align:center}
+.opt.selected .phone{box-shadow:0 0 0 2px var(--accent),0 0 18px 2px rgba(217,180,95,.35)}
+.phone{position:relative;width:390px;height:844px;overflow:hidden;background:var(--bg);border:1px solid #3a3226;border-radius:26px;isolation:isolate}
+.phone .fx-bg-wrap{position:absolute;inset:0;pointer-events:none}
+.phone .fx-bg{position:absolute}
+.scroll{position:absolute;inset:0;overflow-y:auto;overflow-x:hidden;scrollbar-width:none}
+.screen{position:relative;padding:10px 16px 28px}
+.gear{position:absolute;top:12px;right:14px;font-size:22px;color:var(--text-dim);opacity:.8}
+.start-title{font-family:var(--font-title);font-weight:400;font-size:32px;text-align:center;margin:26px 0 16px;color:var(--accent);text-shadow:var(--text-shadow)}
+.menu{display:flex;flex-direction:column;gap:4px}
+.phone{--mb-h:58px;--mb-fs:17px;--mb-ic:38px}
+.phone.big{--mb-h:64px;--mb-fs:19px;--mb-ic:44px}
+.mb{position:relative;display:flex;align-items:center;justify-content:center;height:var(--mb-h);width:100%;font:inherit;font-size:var(--mb-fs);color:var(--text);text-shadow:var(--text-shadow);background:none;border:0;padding:0;cursor:pointer}
+.lbl{position:relative;z-index:2;display:flex;align-items:center;gap:12px}
+.lbl img{width:var(--mb-ic);height:var(--mb-ic);object-fit:contain;filter:var(--icon-shadow)}
+/* character sheet: no ribbon; thin gold lines above and below, a faint gold wash, and a shine sweeping across */
+.mb.me{height:74px;margin-bottom:10px;overflow:hidden;background:linear-gradient(90deg,transparent,rgba(217,180,95,.08) 22%,rgba(217,180,95,.08) 78%,transparent)}
+.mb.me::before,.mb.me .bot{content:'';position:absolute;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent) 18%,var(--accent) 82%,transparent);opacity:.75}
+.mb.me::before{top:0}.mb.me .bot{bottom:0}
+.short .mb.me::before,.short .mb.me .bot{left:18%;right:18%;background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--accent) 70%,transparent)}
+.mb.me::after{content:'';position:absolute;top:-20%;bottom:-20%;left:0;width:34%;z-index:1;pointer-events:none;background:linear-gradient(90deg,transparent,rgba(255,236,190,.05) 30%,rgba(255,240,205,.28) 50%,rgba(255,236,190,.05) 70%,transparent);transform:translateX(-120%) skewX(-22deg);animation:shine 4.8s ease-in-out infinite;animation-delay:1s}
+@keyframes shine{0%{transform:translateX(-120%) skewX(-22deg)}32%,100%{transform:translateX(320%) skewX(-22deg)}}
+.mb.me .lbl{gap:12px}
+.mb.me svg.pi{width:40px;height:40px;fill:currentColor;filter:var(--icon-shadow)}
+.mb.me .txt{display:flex;flex-direction:column;align-items:flex-start;line-height:1.25}
+.mb.me small{font-size:11px;color:var(--text-dim);font-weight:300}
+.flare{position:absolute;left:-16px;top:-8px;width:calc(100% + 32px);height:calc(100% + 16px);z-index:0;pointer-events:none;overflow:visible}
+.mb .fx-row{z-index:1;-webkit-mask:linear-gradient(90deg,transparent 2%,#000 24%,#000 76%,transparent 98%);mask:linear-gradient(90deg,transparent 2%,#000 24%,#000 76%,transparent 98%)}
+</style>
+</head>
+<body>
+<div class="intro">
+  <h2>Round 4: Barbarian blood spray</h2>
+  <p>D1 layout. Only the Barbarian button differs between the phones: a slow-motion spray of blood drifting left to right. Click a phone to pick it.</p>
+</div>
+<div class="phones" id="phones"></div>
+<script src="/files/mx.js"></script>
+<script>
+const NS = 'http://www.w3.org/2000/svg';
+const BG3 = 'https://bg3.wiki/w/images/';
+const CLASSES = [
+  ['artificer', 'Artificer', '/files/class-artificer.svg'],
+  ['barbarian', 'Barbarian', BG3 + 'e/e9/Class_Barbarian_Plain_Icon.png'],
+  ['bard', 'Bard', BG3 + 'e/ea/Class_Bard_Plain_Icon.png'],
+  ['cleric', 'Cleric', BG3 + 'b/b0/Class_Cleric_Plain_Icon.png'],
+  ['druid', 'Druid', BG3 + '8/88/Class_Druid_Plain_Icon.png'],
+  ['fighter', 'Fighter', BG3 + 'e/e4/Class_Fighter_Plain_Icon.png'],
+  ['monk', 'Monk', BG3 + '0/02/Class_Monk_Plain_Icon.png'],
+  ['paladin', 'Paladin', BG3 + '8/82/Class_Paladin_Plain_Icon.png'],
+  ['ranger', 'Ranger', BG3 + '2/27/Class_Ranger_Plain_Icon.png'],
+  ['rogue', 'Rogue', BG3 + 'f/f0/Class_Rogue_Plain_Icon.png'],
+  ['sorcerer', 'Sorcerer', BG3 + '2/2b/Class_Sorcerer_Plain_Icon.png'],
+  ['warlock', 'Warlock', BG3 + 'b/ba/Class_Warlock_Plain_Icon.png'],
+  ['wizard', 'Wizard', BG3 + '5/55/Class_Wizard_Plain_Icon.png'],
+];
+let uid = 0;
+const mk = (tag, attrs, parent) => { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); parent && parent.appendChild(e); return e; };
+
+// a ribbon band: centre line waves, thickness swells to a max at the middle and pinches where it "twists"
+function ribbon(W, H, t, o) {
+  const N = 56, top = [], bot = [];
+  for (let i = 0; i <= N; i++) {
+    const u = i / N, x = u * W, env = (o.floor || 0) + (1 - (o.floor || 0)) * Math.pow(Math.sin(Math.PI * u), o.p);
+    const cy = H / 2 + o.amp * H * Math.sin(o.k * 2 * Math.PI * u + t * o.sp + o.ph) * (.35 + .65 * env);
+    const tw = Math.cos(o.k2 * 2 * Math.PI * u - t * o.sp2 + o.ph2);
+    const w = o.w * H * env * (o.pinch + (1 - o.pinch) * Math.abs(tw));
+    top.push(x.toFixed(1) + ' ' + (cy - w).toFixed(1)); bot.push(x.toFixed(1) + ' ' + (cy + w).toFixed(1));
+  }
+  return 'M' + top.join('L') + 'L' + bot.reverse().join('L') + 'Z';
+}
+function hGrad(defs, W, colour, peak, mid = .5, edge = 0) {
+  const id = 'g' + (uid++), g = mk('linearGradient', { id, gradientUnits: 'userSpaceOnUse', x1: 0, x2: W, y1: 0, y2: 0 }, defs);
+  const side = edge ? (edge + 1) / 2 : .35;
+  for (const [off, op] of [[0, peak * edge], [mid * .45, peak * side], [mid, peak], [1 - (1 - mid) * .45, peak * side], [1, peak * edge]])
+    mk('stop', { offset: off, style: `stop-color:${colour};stop-opacity:${op}` }, g);
+  return `url(#${id})`;
+}
+function blur(defs, sd) { const id = 'f' + (uid++), f = mk('filter', { id, x: '-20%', y: '-60%', width: '140%', height: '220%' }, defs); mk('feGaussianBlur', { stdDeviation: sd }, f); return `url(#${id})`; }
+const R = (a, b) => a + Math.random() * (b - a);
+
+// each style returns a tick(t) that redraws its layers
+const STYLES = {
+  // A: one soft silk band, brighter thin edge riding on it
+  silk(svg, W, H, base, line) {
+    const defs = mk('defs', {}, svg), ph = R(0, 6), ph2 = R(0, 6), sp = R(.45, .7);
+    const body = mk('path', { fill: hGrad(defs, W, base, .85), filter: blur(defs, 3.5) }, svg);
+    const edge = mk('path', { fill: hGrad(defs, W, line, .55), filter: blur(defs, .9) }, svg);
+    const ob = { p: 1.25, amp: .1, k: .85, sp, ph, k2: .7, sp2: sp * .8, ph2, w: .3, pinch: .35 };
+    const oe = { ...ob, w: .045, pinch: .2, amp: .12, ph: ph + .5 };
+    return t => { body.setAttribute('d', ribbon(W, H, t, ob)); edge.setAttribute('d', ribbon(W, H, t, oe)); };
+  },
+  // B: two thinner strands flowing against each other, brightest where they cross
+  twin(svg, W, H, base, line, c = { pa: .8, pb: .45, edge: 0, floor: 0 }) {
+    const defs = mk('defs', {}, svg), ph = R(0, 6), sp = R(.5, .75);
+    const fa = hGrad(defs, W, base, c.pa, .5, c.edge), fb = hGrad(defs, W, line, c.pb, .5, c.edge), bl = blur(defs, 2.2);
+    const a = mk('path', { fill: fa, filter: bl, style: 'mix-blend-mode:screen' }, svg);
+    const b = mk('path', { fill: fb, filter: bl, style: 'mix-blend-mode:screen' }, svg);
+    const oa = { p: 1.1, amp: .2, k: 1.05, sp, ph, k2: .9, sp2: sp, ph2: R(0, 6), w: .17, pinch: .25, floor: c.floor };
+    const ob = { ...oa, sp: -sp * .9, ph: ph + Math.PI, ph2: R(0, 6), w: .13 };
+    return t => { a.setAttribute('d', ribbon(W, H, t, oa)); b.setAttribute('d', ribbon(W, H, t, ob)); };
+  },
+  // C: a light flare: soft glow at the centre with a thin bright streak waving through it
+  flare(svg, W, H, base, line) {
+    const defs = mk('defs', {}, svg), ph = R(0, 6), sp = R(.5, .75);
+    const rg = mk('radialGradient', { id: 'r' + uid, cx: .5, cy: .5, r: .5 }, defs);
+    for (const [off, op] of [[0, .7], [.45, .28], [1, 0]]) mk('stop', { offset: off, style: `stop-color:${base};stop-opacity:${op}` }, rg);
+    const glow = mk('ellipse', { cx: W / 2, cy: H / 2, rx: W * .42, ry: H * .42, fill: `url(#r${uid++})` }, svg);
+    const streak = mk('path', { fill: hGrad(defs, W, line, .9), filter: blur(defs, 1.1) }, svg);
+    const halo = mk('path', { fill: hGrad(defs, W, base, .6), filter: blur(defs, 4) }, svg);
+    const os = { p: 1.6, amp: .13, k: .9, sp, ph, k2: .6, sp2: sp * .7, ph2: R(0, 6), w: .035, pinch: .3 };
+    const oh = { ...os, w: .14, pinch: .5 };
+    return t => {
+      const pulse = 1 + .06 * Math.sin(t * .9 + ph);
+      glow.setAttribute('rx', (W * .42 * pulse).toFixed(1));
+      streak.setAttribute('d', ribbon(W, H, t, os)); halo.setAttribute('d', ribbon(W, H, t, oh));
+    };
+  },
+};
+const OPTIONS = [
+  ['e1', 'E1 · Barbarian orange', 'The spray in the Barbarian line colour, like the rest of its art.', 'twin', { pa: .22, pb: .1, edge: .85, floor: .75 }, '', 'var(--barbarian-line)'],
+  ['e2', 'E2 · Blood red', 'The spray in a deep blood red, so it reads as blood, not paint.', 'twin', { pa: .22, pb: .1, edge: .85, floor: .75 }, '', 'var(--sorcerer-blood-hi)'],
+];
+// Barbarian: a slow-motion spray of blood crossing the row left to right; big drops stretch into
+// teardrops, small ones scatter wider, and a few drops leave spatter marks where they pass
+function bloodSpray(W, H, rnd) {
+  const R = (a, b) => a + rnd() * (b - a), P = [], y0 = H * R(.4, .6), G = MX.ROW_TIMING.G;
+  const drop = r => `M ${r} 0 C ${r} ${r * 1.15} ${-r * .8} ${r * .85} ${-r * 3.2} 0 C ${-r * .8} ${-r * .85} ${r} ${-r * 1.15} ${r} 0 Z`;
+  for (let i = 0; i < 28; i++) {
+    const big = i < 7, r = big ? R(3.2, 5) : R(1.1, 2.4), at = big ? R(0, .35) : R(0, .6);
+    const dur = big ? R(10500, 12500) : R(8500, 11000), x0 = -R(10, 30), dx = W + 60;
+    const spread = (big ? R(-.18, .18) : R(-.45, .45)) * H, sag = R(.04, .2) * H, wob = R(0, 6.28), frames = [];
+    for (let k = 0; k <= 10; k++) {
+      const t = k / 10, x = dx * t, y = spread * t + sag * t * t + Math.sin(t * 7 + wob) * r * .6;
+      const ang = Math.atan2(spread + 2 * sag * t, dx) * 180 / Math.PI;
+      const st = 1 + (big ? 1.1 : .6) * Math.sin(Math.PI * Math.min(1, t * 1.4));
+      const op = t < .06 ? t / .06 : t > .82 ? (1 - t) / .18 : 1;
+      frames.push({ offset: t, opacity: op, transform: `translate(${x.toFixed(1)}px, ${y.toFixed(1)}px) rotate(${ang.toFixed(1)}deg) scale(${st.toFixed(2)}, ${(1 / Math.sqrt(st)).toFixed(2)})` });
+    }
+    P.push({ kind: 'move', x: x0, y: y0, at, dur, frames, shapes: [{ tag: 'path', attrs: { d: drop(r) }, cls: 'fill' }] });
+    // spatter left behind: a few dots pop where a big drop has just passed
+    if (big) for (let s = 0; s < 3; s++) {
+      const t = R(.25, .75), sx = x0 + dx * t, sy = y0 + spread * t + sag * t * t + R(-4, 4);
+      P.push({ kind: 'pop', x: sx, y: sy, rot: 0, at: at + t * dur / G, shapes: [{ tag: 'circle', attrs: { cx: 0, cy: 0, r: (r * R(.35, .6)).toFixed(1) }, cls: 'fill faint' }] });
+    }
+  }
+  return P;
+}
+const PERSON_EDIT = '<svg class="pi" viewBox="0 -960 960 960" aria-hidden="true"><path d="M493.33-226.67ZM160-160v-100q0-36.67 18.5-64.17T226.67-366q65.33-30.33 127.66-45.5 62.34-15.17 125.67-15.17 37.68 0 74.34 5.5 36.66 5.5 73.99 16.17L574-351q-24-4.33-46.93-6.67Q504.14-360 480-360q-56.67 0-111 12.17-54.33 12.16-114.33 41.83-12.34 6.33-20.17 19-7.83 12.67-7.83 27v33.33h266.66V-160H160Zm400 40v-123l221-220q9-9 20-13t22-4q12 0 23 4.5t20 13.5l37 37q8.67 9 12.83 20 4.17 11 4.17 22t-4.33 22.5q-4.34 11.5-13.28 20.5L683-120H560Zm300-263-37-37 37 37ZM620-180h38l121-122-18-19-19-18-122 121v38Zm141-141-19-18 37 37-18-19ZM371.33-525.33Q326.67-570 326.67-634t44.66-108.67Q416-787.33 480-787.33t108.67 44.66Q633.33-698 633.33-634t-44.66 108.67Q544-480.67 480-480.67t-108.67-44.66ZM541.5-572.5q25.17-25.17 25.17-61.5t-25.17-61.5q-25.17-25.17-61.5-25.17t-61.5 25.17q-25.17 25.17-25.17 61.5t25.17 61.5q25.17 25.17 61.5 25.17t61.5-25.17ZM480-634Z"/></svg>';
+const ticks = [];
+for (const [choice, title, desc, style, cfg, mods, blood] of OPTIONS) {
+  const opt = document.createElement('div');
+  opt.className = 'opt'; opt.dataset.choice = choice; opt.setAttribute('onclick', 'toggleSelect(this)');
+  opt.innerHTML = `<h3>${title}</h3><p>${desc}</p><div class="phone ${mods}"><div class="fx-bg-wrap"><svg class="fx-bg" style="--fx-c: var(--none-line); --fx-o: var(--none-bg-o)"></svg></div><div class="scroll"><div class="screen"><span class="gear">&#9881;</span><h1 class="start-title">D&amp;D 5E Cheat Sheet</h1><div class="menu"></div></div></div></div>`;
+  document.getElementById('phones').appendChild(opt);
+  const menu = opt.querySelector('.menu'), wrap = opt.querySelector('.fx-bg-wrap');
+  MX.runLoop(wrap, wrap.querySelector('svg'), MX.BG_MOTIFS.none, MX.BG_TIMING, { animate: true, alive: () => true });
+  const rows = [['none', 'My Character Sheet', null]].concat(CLASSES);
+  for (const [id, name, icon] of rows) {
+    const b = document.createElement('button');
+    b.type = 'button'; b.className = 'mb' + (id === 'none' ? ' me' : '');
+    if (id === 'none') {
+      b.innerHTML = `<span class="bot"></span><span class="lbl">${PERSON_EDIT}<span class="txt"><span>${name}</span><small>Create your character</small></span></span>`;
+      menu.appendChild(b);
+      continue;
+    }
+    b.innerHTML = `<svg class="flare"></svg><svg class="fx-row" style="--fx-c: ${id === 'barbarian' ? blood : `var(--${id}-line)`}; --fx-o: var(--${id}-row-o)"></svg><span class="lbl"><img src="${icon}" alt=""><span>${name}</span></span>`;
+    menu.appendChild(b);
+    const svg = b.querySelector('.flare'), W = 390, H = b.getBoundingClientRect().height + 16;
+    svg.setAttribute('viewBox', `0 0 ${W} ${H}`); svg.setAttribute('preserveAspectRatio', 'none');
+    ticks.push(STYLES[style](svg, W, H, `var(--${id})`, `var(--${id}-line)`, cfg));
+    MX.runLoop(b, b.querySelector(".fx-row"), id === 'barbarian' ? bloodSpray : MX.ROW_MOTIFS[id] || MX.BG_MOTIFS[id], MX.ROW_TIMING, { animate: true, alive: () => true, startDelay: id === 'barbarian' ? 300 : Math.random() * 3500 });
+  }
+}
+const frame = now => { const t = now / 1000; for (const f of ticks) f(t); requestAnimationFrame(frame); };
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
