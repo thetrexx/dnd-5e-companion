@@ -1391,6 +1391,99 @@
     "options": []
   },
   {
+    "id": "arcana-domain",
+    "cls": "cleric",
+    "name": "Arcana Domain",
+    "page": 125,
+    "book": "scag",
+    "bonusSpells": {
+      "kind": "domain",
+      "grants": [
+        {
+          "spell": "detect-magic",
+          "atLevel": 1
+        },
+        {
+          "spell": "magic-missile",
+          "atLevel": 1
+        },
+        {
+          "spell": "magic-weapon",
+          "atLevel": 3
+        },
+        {
+          "spell": "nystuls-magic-aura",
+          "atLevel": 3
+        },
+        {
+          "spell": "dispel-magic",
+          "atLevel": 5
+        },
+        {
+          "spell": "magic-circle",
+          "atLevel": 5
+        },
+        {
+          "spell": "arcane-eye",
+          "atLevel": 7
+        },
+        {
+          "spell": "leomunds-secret-chest",
+          "atLevel": 7
+        },
+        {
+          "spell": "planar-binding",
+          "atLevel": 9
+        },
+        {
+          "spell": "teleportation-circle",
+          "atLevel": 9
+        },
+        {
+          "choose": {
+            "lists": [
+              "wizard"
+            ],
+            "level": 6,
+            "count": 1
+          },
+          "atLevel": 17
+        },
+        {
+          "choose": {
+            "lists": [
+              "wizard"
+            ],
+            "level": 7,
+            "count": 1
+          },
+          "atLevel": 17
+        },
+        {
+          "choose": {
+            "lists": [
+              "wizard"
+            ],
+            "level": 8,
+            "count": 1
+          },
+          "atLevel": 17
+        },
+        {
+          "choose": {
+            "lists": [
+              "wizard"
+            ],
+            "level": 9,
+            "count": 1
+          },
+          "atLevel": 17
+        }
+      ]
+    },
+    "options": []
+  },
+  {
     "id": "circle-of-the-moon",
     "cls": "druid",
     "name": "Circle of the Moon",
@@ -3151,6 +3244,59 @@
     "options": [
       "genie-kind"
     ]
+  },
+  {
+    "id": "the-undying",
+    "cls": "warlock",
+    "name": "The Undying",
+    "page": 139,
+    "book": "scag",
+    "bonusSpells": {
+      "kind": "patron",
+      "grants": [
+        {
+          "spell": "false-life",
+          "atLevel": 1
+        },
+        {
+          "spell": "ray-of-sickness",
+          "atLevel": 1
+        },
+        {
+          "spell": "blindness-deafness",
+          "atLevel": 3
+        },
+        {
+          "spell": "silence",
+          "atLevel": 3
+        },
+        {
+          "spell": "feign-death",
+          "atLevel": 5
+        },
+        {
+          "spell": "speak-with-dead",
+          "atLevel": 5
+        },
+        {
+          "spell": "aura-of-life",
+          "atLevel": 7
+        },
+        {
+          "spell": "death-ward",
+          "atLevel": 7
+        },
+        {
+          "spell": "contagion",
+          "atLevel": 9
+        },
+        {
+          "spell": "legend-lore",
+          "atLevel": 9
+        }
+      ]
+    },
+    "options": []
   },
   {
     "id": "war-magic",

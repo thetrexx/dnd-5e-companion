@@ -1404,5 +1404,98 @@
     "book": "tce",
     "textSource": "summary",
     "icon": "https://bg3.wiki/w/images/6/65/Divine_Strike_Melee_Icon.webp"
+  },
+  {
+    "id": "arcane-initiate",
+    "name": "Arcane Initiate",
+    "source": {
+      "kind": "subclass",
+      "id": "arcana-domain"
+    },
+    "level": 1,
+    "cost": "passive",
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "wizard"
+          ],
+          "level": 0,
+          "count": 2
+        },
+        "atLevel": 1,
+        "ability": "wis"
+      }
+    ],
+    "description": [
+      "You gain proficiency in Arcana and pick two wizard cantrips. They are cleric cantrips for you and do not use up your cantrips known."
+    ],
+    "page": 125,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "arcane-abjuration",
+    "name": "Channel Divinity: Arcane Abjuration",
+    "source": {
+      "kind": "subclass",
+      "id": "arcana-domain"
+    },
+    "level": 2,
+    "cost": "action",
+    "resource": "1 Channel Divinity",
+    "scaling": [
+      {
+        "label": "Banish CR",
+        "values": [
+          "",
+          "",
+          "",
+          "",
+          "1/2",
+          "1/2",
+          "1/2",
+          "1",
+          "1",
+          "1",
+          "2",
+          "2",
+          "2",
+          "3",
+          "3",
+          "3",
+          "4",
+          "4",
+          "4",
+          "4"
+        ]
+      }
+    ],
+    "description": [
+      "Action: present your holy symbol to one celestial, elemental, fey or fiend within 30 ft that sees or hears you. Wisdom save or it is turned for 1 minute (ends if it is damaged).",
+      "While turned it runs from you as far as it can, will not finish a move within 30 ft, takes no reactions, and can only Dash or try to break free of whatever holds it (or Dodge if stuck).",
+      "From cleric level 5 a failed save also banishes it for 1 minute, no concentration, provided it is off its home plane and its CR is at or under the table value."
+    ],
+    "page": 125,
+    "book": "scag",
+    "textSource": "summary"
+  },
+  {
+    "id": "spell-breaker",
+    "name": "Spell Breaker",
+    "source": {
+      "kind": "subclass",
+      "id": "arcana-domain"
+    },
+    "level": 6,
+    "cost": "free",
+    "trigger": "Your healing spell (1st level or higher) restores hit points to an ally",
+    "description": [
+      "You may also shut down one spell currently affecting that ally.",
+      "The spell you shut down can be no higher level than the slot spent on the healing."
+    ],
+    "page": 126,
+    "book": "scag",
+    "textSource": "summary"
   }
 ]
