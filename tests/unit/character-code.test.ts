@@ -8,7 +8,7 @@ const lyra: Character = { v: 1, name: 'Lyra', race: 'tiefling', classes: [{ cls:
   spells: [{ id: 'fire-bolt', cls: 'sorcerer' }, { id: 'shield', cls: 'sorcerer' }] };
 
 test('the not-a-code error names the app', () => expect(ERR_NOT_CODE).toBe("That isn't a D&D 5E Cheat Sheet backup code."));
-test('round trip',async () => expect(await decodeCharacter(await encodeCharacter(lyra))).toEqual({ ok: true, ch: lyra, dropped: [] }));
+test('round trip', async () => expect(await decodeCharacter(await encodeCharacter(lyra))).toEqual({ ok: true, ch: lyra, dropped: [] }));
 test('a level 5 sorcerer fits in 400 characters', async () => {
   const full = { ...lyra, spells: ['fire-bolt', 'mage-hand', 'prestidigitation', 'light', 'minor-illusion', 'shield', 'magic-missile', 'chromatic-orb', 'misty-step', 'scorching-ray', 'fireball'].map(id => ({ id, cls: 'sorcerer' as const })) };
   const code = await encodeCharacter(full);

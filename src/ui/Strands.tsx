@@ -27,18 +27,23 @@ export function Strands(p: { cls: ClassId }) {
     if (!dims || !a.current || !b.current) return;
     const { W, H, col } = dims, [sa, sb] = strands.current ??= makeStrands(Math.random), pa = a.current, pb = b.current;
     const draw = (t: number) => { pa.setAttribute('d', strandD(W, H, col, t, sa)); pb.setAttribute('d', strandD(W, H, col, t, sb)); };
-    draw(0);
+    // rAF timestamps share performance.now()'s origin, so the first frame matches what the loop would draw next
+    draw(mode === 'animated' ? performance.now() / 1000 : 0);
     if (mode !== 'animated') return;
-    let stop: (() => void) | undefined;
-    const run = (shown: boolean) => { if (shown) stop ??= onStrandFrame(draw); else { stop?.(); stop = undefined; } };
+    let stop: (() => void) | undefined, live = true;
+    const run = (shown: boolean) => {
+      if (!live) return;
+      if (shown) { if (!stop) { draw(performance.now() / 1000); stop = onStrandFrame(draw); } } else { stop?.(); stop = undefined; }
+    };
     if (typeof IntersectionObserver !== 'function') run(true);
     const unwatch = watchScreen(ref.current!)(run);
-    return () => { unwatch(); stop?.(); };
+    return () => { live = false; unwatch(); stop?.(); };
   }, [dims, mode, p.cls]);
   const cl = dims ? (dims.W - dims.col) / 2 : 0, x1 = cl - 240, x2 = dims ? cl + dims.col + 240 : 0;
   const stops = (c: string, o: string) => dims && strandStops(dims.col).map(([off, f]) =>
     <stop key={off} offset={off} style={`stop-color:var(${c});stop-opacity:calc(${f} * var(${o}) * var(--motion-i, 1))`} />);
-  return <svg ref={ref} class="strands" aria-hidden="true">
+  // viewBox stretches a stale frame over the new size until the debounced resize redraw lands
+  return <svg ref={ref} class="strands" aria-hidden="true" viewBox={dims ? `0 0 ${dims.W} ${dims.H}` : undefined} preserveAspectRatio="none">
     <defs>
       <linearGradient id={`sa-${p.cls}`} gradientUnits="userSpaceOnUse" x1={x1} x2={x2} y1="0" y2="0">{stops(`--${p.cls}`, '--strand-a-o')}</linearGradient>
       <linearGradient id={`sb-${p.cls}`} gradientUnits="userSpaceOnUse" x1={x1} x2={x2} y1="0" y2="0">{stops(`--${p.cls}-line`, '--strand-b-o')}</linearGradient>

@@ -47,7 +47,7 @@ test('reduced motion: strands still, no shine animation', async ({ page }) => {
   const d0 = await path.getAttribute('d');
   await page.waitForTimeout(1000);
   expect(await path.getAttribute('d')).toBe(d0);
-  expect(await page.locator('button.start-me').evaluate((el) => el.getAnimations().length)).toBe(0);
+  expect(await page.locator('button.start-me').evaluate((el) => el.getAnimations({ subtree: true }).length)).toBe(0);
 });
 
 test('Off then Medium: class animations and shine go and come back, strands stay', async ({ page }) => {
@@ -66,13 +66,14 @@ test('Off then Medium: class animations and shine go and come back, strands stay
   const d0 = await sp.getAttribute('d');
   await page.waitForTimeout(1000);
   expect(await sp.getAttribute('d')).toBe(d0);
-  expect(await page.locator('button.start-me').evaluate((el) => el.getAnimations().length)).toBe(0);
+  expect(await page.locator('button.start-me').evaluate((el) => el.getAnimations({ subtree: true }).length)).toBe(0);
   await page.goto('./#/settings');
   await page.getByText('Medium', { exact: true }).click();
   await expect(page.getByRole('radio', { name: 'Medium' })).toBeChecked();
   await page.goto('./');
   await expect(page.locator('svg.fx-row').first()).toBeAttached();
   await expect(page.locator('button.start-me.shine')).toHaveCount(1);
+  await expect.poll(() => page.locator('button.start-me').evaluate((el) => el.getAnimations({ subtree: true }).length)).toBeGreaterThan(0);
   await expect(page.locator('svg.strands')).toHaveCount(13);
 });
 

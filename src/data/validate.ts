@@ -1,6 +1,6 @@
 import type { Dataset, SpellGrant } from './types';
 
-/** The 12 PHB classes in alphabetical order, then the Artificer (Tasha's) last so the PHB tiles keep their places. */
+/** The 12 PHB classes in alphabetical order, then the Artificer (Tasha's). Saved data and validation depend on the ids, not this order. */
 export const CLASS_IDS: string[] = ['barbarian', 'bard', 'cleric', 'druid', 'fighter', 'monk', 'paladin', 'ranger', 'rogue', 'sorcerer', 'warlock', 'wizard', 'artificer'];
 const COSTS = ['action', 'bonus', 'reaction', 'other'];
 const FEATURE_COSTS = [...COSTS, 'free', 'passive'];
