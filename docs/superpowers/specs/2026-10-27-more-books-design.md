@@ -113,6 +113,8 @@ Approved by the owner on 2026-10-27 against live mockups: `docs/superpowers/mock
 
 **Colour: silver and brass** (option B in `artificer-look.html`). New theme tokens alongside the other classes: class colour `#a7acb2`, line `#d8dde2`, accent `#d9a441` (gear hubs, goggle lens glints), row opacity .5, background opacity .26. Spark colours `#ffd27a` with a `#ffb347` glow. The Cleric's grey-silver sits close to the base silver; the brass accent is what tells them apart.
 
+**Changed 2026-10-29 (owner):** the spell rows now use option A, the tinker's line (one wire draws a gear, a hammer and goggles in a random order; the gears stay still). Live at 18f3770. The original choice follows.
+
 **Spell-row motif: Gear train** (option B). A faint shaft line across the row; a chain of meshing gears of random sizes draws in left to right, each gear turning slowly in the opposite direction to its neighbour (speed inversely proportional to its radius); now and then the chain breaks for a hammer or a pair of goggles, each at most once per row. Gears carry a brass hub ring and dot.
 
 **Background: Tinker's line with sparks from the screen edges** (option A in `artificer-bg.html`). One line runs around the screen edges, inside the faded centre, starting at a random point and direction. Along it, it draws a large gear (which turns), a hammer and a pair of goggles, in random order. When each shape completes, a shower of sparks shoots in from a random side of the screen, arcing under gravity and fading in about a second. The sparks sit on their own layer above the background mask, so they aren't dimmed with the centre fade. Background timing as the other classes (`BG_TIMING`).
