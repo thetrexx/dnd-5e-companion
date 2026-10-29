@@ -285,41 +285,19 @@ describe('strands', () => {
     vi.stubGlobal('cancelAnimationFrame', (id: number) => { queue[id - 1] = () => {}; });
     rects([390, 74], 390);
   });
-  test('animated: strands draw, then animate through the shared loop', () => {
+  // redrawing the blurred strands every frame was too slow on phones: they are drawn once and stay still
+  test('animated: strands drawn once, never animated', () => {
     const c = view().container, first = ds(c);
     expect(first).toHaveLength(2);
     expect(first.every(d => !!d)).toBe(true);
-    run(1000);
-    expect(ds(c)).not.toEqual(first);
-  });
-  test('the first draw is at the current phase, so the first loop frame does not jump', () => {
-    vi.spyOn(performance, 'now').mockReturnValue(5_000_000);
-    const c = view().container, first = ds(c);
-    run(5_000_000);
+    run(1000); run(2000);
     expect(ds(c)).toEqual(first);
+    expect(raf).not.toHaveBeenCalled();
   });
   test('the svg stretches a stale frame: viewBox from the measured size', () => {
     const svg = view().container.querySelector('svg.strands')!;
     expect(svg.getAttribute('viewBox')).toBe('0 0 390 74');
     expect(svg.getAttribute('preserveAspectRatio')).toBe('none');
-  });
-  test('the loop throttles to 30 updates a second', () => {
-    const c = view().container;
-    run(1000);
-    const a = ds(c);
-    run(1010);
-    expect(ds(c)).toEqual(a);
-    run(1040);
-    expect(ds(c)).not.toEqual(a);
-  });
-  test('unmount stops the loop', () => {
-    const r = view(), c = r.container;
-    act(() => { r.unmount(); });
-    const calls = raf.mock.calls.length;
-    run(1000); run(2000);
-    expect(raf).toHaveBeenCalledTimes(calls);
-    expect(ds(c)).toEqual([]);
-    expect(queue).toHaveLength(0);
   });
   test('reduced motion: drawn once, never animated', () => {
     vi.stubGlobal('matchMedia', () => ({ matches: true }));
