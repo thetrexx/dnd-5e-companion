@@ -799,7 +799,7 @@
   {
     "id": "ember-of-the-fire-giant",
     "name": "Ember of the Fire Giant",
-    "prereq": "4th level; Strike of the Giants (Fire Strike)",
+    "prereq": "4th level; Strike of the Giants (Fire)",
     "page": 17,
     "book": "bgg",
     "description": [
@@ -812,7 +812,7 @@
   {
     "id": "fury-of-the-frost-giant",
     "name": "Fury of the Frost Giant",
-    "prereq": "4th level; Strike of the Giants (Frost Strike)",
+    "prereq": "4th level; Strike of the Giants (Frost)",
     "page": 17,
     "book": "bgg",
     "description": [
@@ -825,7 +825,7 @@
   {
     "id": "guile-of-the-cloud-giant",
     "name": "Guile of the Cloud Giant",
-    "prereq": "4th level; Strike of the Giants (Cloud Strike)",
+    "prereq": "4th level; Strike of the Giants (Cloud)",
     "page": 18,
     "book": "bgg",
     "description": [
@@ -838,7 +838,7 @@
   {
     "id": "keenness-of-the-stone-giant",
     "name": "Keenness of the Stone Giant",
-    "prereq": "4th level; Strike of the Giants (Stone Strike)",
+    "prereq": "4th level; Strike of the Giants (Stone)",
     "page": 18,
     "book": "bgg",
     "description": [
@@ -856,7 +856,7 @@
     "book": "bgg",
     "description": [
       "Spellcasting ability for this feat: Intelligence, Wisdom or Charisma, picked when you take it. The Rune Carver background also qualifies.",
-      "You learn comprehend languages (once per long rest with no slot). You know runes equal to half your proficiency bonus, rounded down; each long rest, inscribe them on objects to learn their spells, and cast each rune spell once per long rest with no slot or material components."
+      "You learn comprehend languages (once per long rest with no slot). Rune count: proficiency bonus halved, round down. Each long rest: inscribe each rune on an object to learn its spell until the next long rest. Object must be worn or carried to cast; each rune spell also works once per long rest with no slot or material components."
     ],
     "spells": [
       {
@@ -873,7 +873,7 @@
   {
     "id": "soul-of-the-storm-giant",
     "name": "Soul of the Storm Giant",
-    "prereq": "4th level; Strike of the Giants (Storm Strike)",
+    "prereq": "4th level; Strike of the Giants (Storm)",
     "page": 19,
     "book": "bgg",
     "description": [
@@ -902,7 +902,7 @@
   {
     "id": "vigor-of-the-hill-giant",
     "name": "Vigor of the Hill Giant",
-    "prereq": "4th level; Strike of the Giants (Hill Strike)",
+    "prereq": "4th level; Strike of the Giants (Hill)",
     "page": 19,
     "book": "bgg",
     "description": [

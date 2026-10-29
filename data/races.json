@@ -217,13 +217,13 @@
         "spell": "enlarge-reduce",
         "atLevel": 3,
         "ability": "int",
-        "uses": "Once per long rest, enlarge only, on yourself only"
+        "uses": "Once per long rest, enlarge only, on yourself only, not in direct sunlight"
       },
       {
         "spell": "invisibility",
         "atLevel": 5,
         "ability": "int",
-        "uses": "Once per long rest, on yourself only"
+        "uses": "Once per long rest, on yourself only, not in direct sunlight"
       }
     ],
     "options": []
