@@ -795,5 +795,121 @@
       }
     ],
     "textSource": "summary"
+  },
+  {
+    "id": "ember-of-the-fire-giant",
+    "name": "Ember of the Fire Giant",
+    "prereq": "4th level; Strike of the Giants (Fire Strike)",
+    "page": 17,
+    "book": "bgg",
+    "description": [
+      "+1 to Strength, Constitution or Wisdom (max 20).",
+      "You resist fire damage. Searing Ignition is its own card."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "fury-of-the-frost-giant",
+    "name": "Fury of the Frost Giant",
+    "prereq": "4th level; Strike of the Giants (Frost Strike)",
+    "page": 17,
+    "book": "bgg",
+    "description": [
+      "+1 to Strength, Constitution or Wisdom (max 20).",
+      "You resist cold damage. Frigid Retaliation is its own card."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "guile-of-the-cloud-giant",
+    "name": "Guile of the Cloud Giant",
+    "prereq": "4th level; Strike of the Giants (Cloud Strike)",
+    "page": 18,
+    "book": "bgg",
+    "description": [
+      "+1 to Strength, Constitution or Charisma (max 20).",
+      "Cloudy Escape is its own card."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "keenness-of-the-stone-giant",
+    "name": "Keenness of the Stone Giant",
+    "prereq": "4th level; Strike of the Giants (Stone Strike)",
+    "page": 18,
+    "book": "bgg",
+    "description": [
+      "+1 to Strength, Constitution or Wisdom (max 20).",
+      "You gain 60 ft of darkvision, or 60 ft more if you already have it. Stone Throw is its own card."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "rune-shaper",
+    "name": "Rune Shaper",
+    "prereq": "Spellcasting feature",
+    "page": 18,
+    "book": "bgg",
+    "description": [
+      "Spellcasting ability for this feat: Intelligence, Wisdom or Charisma, picked when you take it. The Rune Carver background also qualifies.",
+      "You learn comprehend languages (once per long rest with no slot). You know runes equal to half your proficiency bonus, rounded down; each long rest, inscribe them on objects to learn their spells, and cast each rune spell once per long rest with no slot or material components."
+    ],
+    "spells": [
+      {
+        "spell": "comprehend-languages",
+        "atLevel": 1,
+        "uses": "Once per long rest, no slot; spell slots work too"
+      }
+    ],
+    "textSource": "summary",
+    "options": [
+      "rune-shaper-runes"
+    ]
+  },
+  {
+    "id": "soul-of-the-storm-giant",
+    "name": "Soul of the Storm Giant",
+    "prereq": "4th level; Strike of the Giants (Storm Strike)",
+    "page": 19,
+    "book": "bgg",
+    "description": [
+      "+1 to Strength, Wisdom or Charisma (max 20).",
+      "Maelstrom Aura is its own card."
+    ],
+    "spells": [],
+    "textSource": "summary"
+  },
+  {
+    "id": "strike-of-the-giants",
+    "name": "Strike of the Giants",
+    "prereq": "Proficiency with a martial weapon",
+    "page": 19,
+    "book": "bgg",
+    "description": [
+      "Pick one giant strike when you take the feat. The Giant Foundling background also qualifies.",
+      "Once per turn, on a melee weapon hit or a thrown-weapon hit, add the strike effect. Uses equal your proficiency bonus per long rest."
+    ],
+    "spells": [],
+    "textSource": "summary",
+    "options": [
+      "strike-of-the-giants"
+    ]
+  },
+  {
+    "id": "vigor-of-the-hill-giant",
+    "name": "Vigor of the Hill Giant",
+    "prereq": "4th level; Strike of the Giants (Hill Strike)",
+    "page": 19,
+    "book": "bgg",
+    "description": [
+      "+1 to Strength, Constitution or Wisdom (max 20).",
+      "Eating during a short rest while spending Hit Dice heals you extra: Constitution modifier plus proficiency bonus. Bulwark is its own card."
+    ],
+    "spells": [],
+    "textSource": "summary"
   }
 ]

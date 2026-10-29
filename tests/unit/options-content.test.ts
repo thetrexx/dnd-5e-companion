@@ -2,7 +2,7 @@ import { DATA, poolOptions } from '../../src/data';
 import { actionSections } from '../../src/logic/sections';
 import { optionSlots, prune, replaced } from '../../src/character/options';
 import { charActionSections } from '../../src/character/view';
-import { grantSlots } from '../../src/character/grants';
+import { grantSlots, grantSources } from '../../src/character/grants';
 import { emptyCharacter } from '../../src/character/types';
 import type { Character } from '../../src/character/types';
 import type { ClassId } from '../../src/data/types';
@@ -426,4 +426,31 @@ test('elk and tiger totems', () => {
   for (const pool of ['totem-spirit', 'aspect-of-the-beast', 'totemic-attunement'])
     expect(poolOptions(pool).map(f => f.id)).toEqual(expect.arrayContaining([`${pool}-elk`, `${pool}-tiger`]));
   expect(DATA.features.find(f => f.id === 'totemic-attunement-tiger')).toMatchObject({ level: 14, cost: 'bonus', book: 'scag' });
+});
+
+// Plan 10 Task 4: Glory of the Giants feats
+test('giants feats', () => {
+  expect(DATA.feats.filter(f => f.book === 'bgg').map(f => f.id).sort()).toEqual(['ember-of-the-fire-giant', 'fury-of-the-frost-giant', 'guile-of-the-cloud-giant',
+    'keenness-of-the-stone-giant', 'rune-shaper', 'soul-of-the-storm-giant', 'strike-of-the-giants', 'vigor-of-the-hill-giant']);
+  expect(DATA.feats).toHaveLength(52);
+  expect(poolOptions('strike-of-the-giants')).toHaveLength(6);
+  expect(poolOptions('rune-shaper-runes')).toHaveLength(13);
+});
+test('rune shaper rune slots grow with character level', () => {
+  const slot = (level: number) => optionSlots({ ...emptyCharacter(), classes: [{ cls: 'wizard', level }], feats: ['rune-shaper'] } as Character)
+    .find(s => s.group.id === 'rune-shaper-runes')!.count;
+  expect([slot(8), slot(9), slot(17)]).toEqual([1, 2, 3]);
+});
+test('a chosen strike shows on the character', () => {
+  const base = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 4 }], feats: ['strike-of-the-giants'] } as Character;
+  const ids = (ch: Character) => charActionSections(ch).flatMap(s => s.items.map(i => i.id));
+  expect(ids({ ...base, options: ['strike-of-the-giants-fire-strike'] })).toContain('strike-of-the-giants-fire-strike');
+  expect(ids(base)).not.toContain('strike-of-the-giants-fire-strike');
+});
+test('a chosen rune grants its spell', () => {
+  const ch = { ...emptyCharacter(), classes: [{ cls: 'wizard', level: 9 }], feats: ['rune-shaper'], options: ['rune-shaper-runes-storm-rune'] } as Character;
+  const spells = grantSources(ch).flatMap(s => s.grants.map(x => x.grant.spell));
+  expect(spells).toContain('thunderwave');
+  expect(spells).toContain('comprehend-languages');
+  expect(grantSources({ ...ch, options: [] }).flatMap(s => s.grants.map(x => x.grant.spell))).not.toContain('thunderwave');
 });

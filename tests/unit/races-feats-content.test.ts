@@ -85,7 +85,7 @@ test('artificer initiate', () => {
     { choose: { lists: ['artificer'], level: 1, count: 1 }, atLevel: 1, ability: 'int', uses:DATA.feats.find(f => f.id === 'fey-touched')!.spells[1].uses },
   ]);
   expect(DATA.features.find(x => x.id === 'artificer-initiate')).toMatchObject({ source: { kind: 'feat', id: 'artificer-initiate' }, book: 'tce', page: 79 });
-  expect(DATA.feats).toHaveLength(44);
+  expect(DATA.feats).toHaveLength(52);
   const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], feats: ['artificer-initiate'] } as Character;
   const ids = (k: string) => grantSlots(ch).find(s => s.key === k)!.candidates.map(s => s.id);
   expect(ids('feat:artificer-initiate:0')).toEqual(expect.arrayContaining(['guidance', 'thorn-whip', 'booming-blade']));
@@ -147,7 +147,7 @@ test('batch 5 races', () => {
   expect(DATA.races.find(r => r.id === 'aasimar')!.parent).toBeUndefined();
   expect(DATA.races.find(r => r.id === 'duergar')).toMatchObject({ parent: 'dwarf', book: 'scag', page: 104 });
   expect(DATA.feats.find(f => f.id === 'svirfneblin-magic')).toMatchObject({ book: 'scag', page: 115 });
-  expect(DATA.feats).toHaveLength(44);
+  expect(DATA.feats).toHaveLength(52);
 });
 test('duergar magic unlocks by level', () => {
   const at = (level: number) => autoSpells({ ...emptyCharacter(), race: 'duergar', classes: [{ cls: 'fighter', level }] } as Character)
