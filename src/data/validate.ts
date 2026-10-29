@@ -229,6 +229,7 @@ export function validateDataset(d: Dataset): string[] {
     const at = `race "${r.id}"`;
     if (blank(r.name)) errs.push(`${at}: name is empty`);
     if (r.parent !== undefined && !raceIds.has(r.parent)) errs.push(`${at}: unknown parent race "${r.parent}"`);
+    if (r.replacesSpells && r.parent === undefined) errs.push(`${at}: replacesSpells needs a parent`);
     if (!isInt(r.page, 1, 1000)) errs.push(`${at}: page must be a positive integer`);
     checkBook(at, r.book, errs);
     grants(at, r.spells);

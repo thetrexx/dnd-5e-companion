@@ -68,7 +68,10 @@ export interface OptionGroup {
   /** tick-any: no count limit, the player ticks what their DM allows */
   optional?: true;
 }
-export interface RaceDef { id: string; name: string; parent?: string; page: number; book?: BookId; icon?: string; spells: SpellGrant[]; options: string[] }
+export interface RaceDef { id: string; name: string; parent?: string; page: number; book?: BookId; icon?: string;
+  /** this subrace's spells replace its parent's (tiefling variants) */
+  replacesSpells?: true;
+  spells: SpellGrant[]; options: string[] }
 export interface FeatDef { id: string; name: string; prereq?: string; page: number; book?: BookId; icon?: string; description: string[]; spells: SpellGrant[]; options?: string[]; textSource: TextSource }
 export interface Dataset {
   classes: ClassDef[]; subclasses: SubclassDef[]; optionGroups: OptionGroup[];

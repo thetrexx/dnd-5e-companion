@@ -757,5 +757,43 @@
       }
     ],
     "textSource": "summary"
+  },
+  {
+    "id": "svirfneblin-magic",
+    "name": "Svirfneblin Magic",
+    "prereq": "Gnome (deep gnome)",
+    "page": 115,
+    "book": "scag",
+    "description": [
+      "You learn nondetection and may cast it at will on yourself alone, never spending a spell slot or a material component.",
+      "Blindness/deafness, blur and disguise self join your spells too, and each can be cast once per long rest with no spell slot. All four use Intelligence as your spellcasting ability."
+    ],
+    "spells": [
+      {
+        "spell": "nondetection",
+        "atLevel": 1,
+        "ability": "int",
+        "uses": "At will, on yourself only, no slot"
+      },
+      {
+        "spell": "blindness-deafness",
+        "atLevel": 1,
+        "ability": "int",
+        "uses": "Once per long rest, no slot"
+      },
+      {
+        "spell": "blur",
+        "atLevel": 1,
+        "ability": "int",
+        "uses": "Once per long rest, no slot"
+      },
+      {
+        "spell": "disguise-self",
+        "atLevel": 1,
+        "ability": "int",
+        "uses": "Once per long rest, no slot"
+      }
+    ],
+    "textSource": "summary"
   }
 ]

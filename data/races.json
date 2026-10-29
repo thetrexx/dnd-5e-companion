@@ -205,5 +205,210 @@
     "book": "tce",
     "spells": [],
     "options": []
+  },
+  {
+    "id": "duergar",
+    "name": "Duergar",
+    "parent": "dwarf",
+    "page": 104,
+    "book": "scag",
+    "spells": [
+      {
+        "spell": "enlarge-reduce",
+        "atLevel": 3,
+        "ability": "int",
+        "uses": "Once per long rest, enlarge only, on yourself only"
+      },
+      {
+        "spell": "invisibility",
+        "atLevel": 5,
+        "ability": "int",
+        "uses": "Once per long rest, on yourself only"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "svirfneblin",
+    "name": "Svirfneblin",
+    "parent": "gnome",
+    "page": 115,
+    "book": "scag",
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "ghostwise-halfling",
+    "name": "Ghostwise Halfling",
+    "parent": "halfling",
+    "page": 110,
+    "book": "scag",
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "eladrin",
+    "name": "Eladrin",
+    "parent": "elf",
+    "page": 286,
+    "book": "dmg",
+    "spells": [
+      {
+        "spell": "misty-step",
+        "atLevel": 1,
+        "uses": "Once per short or long rest, no slot"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "aasimar",
+    "name": "Aasimar",
+    "page": 286,
+    "book": "dmg",
+    "icon": "icons/fallback/aasimar.svg",
+    "spells": [
+      {
+        "spell": "light",
+        "atLevel": 1,
+        "ability": "cha"
+      },
+      {
+        "spell": "lesser-restoration",
+        "atLevel": 3,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      },
+      {
+        "spell": "daylight",
+        "atLevel": 5,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "half-elf-drow-magic",
+    "name": "Drow Magic variant",
+    "parent": "half-elf",
+    "page": 116,
+    "book": "scag",
+    "spells": [
+      {
+        "spell": "dancing-lights",
+        "atLevel": 1,
+        "ability": "cha"
+      },
+      {
+        "spell": "faerie-fire",
+        "atLevel": 3,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      },
+      {
+        "spell": "darkness",
+        "atLevel": 5,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "half-elf-cantrip",
+    "name": "High elf cantrip variant",
+    "parent": "half-elf",
+    "page": 116,
+    "book": "scag",
+    "spells": [
+      {
+        "choose": {
+          "lists": [
+            "wizard"
+          ],
+          "level": 0,
+          "count": 1
+        },
+        "atLevel": 1,
+        "ability": "int"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "half-elf-mask-of-the-wild",
+    "name": "Mask of the Wild variant",
+    "parent": "half-elf",
+    "page": 116,
+    "book": "scag",
+    "spells": [],
+    "options": []
+  },
+  {
+    "id": "tiefling-devils-tongue",
+    "name": "Devil's Tongue variant",
+    "parent": "tiefling",
+    "page": 118,
+    "book": "scag",
+    "replacesSpells": true,
+    "spells": [
+      {
+        "spell": "vicious-mockery",
+        "atLevel": 1,
+        "ability": "cha"
+      },
+      {
+        "spell": "charm-person",
+        "atLevel": 3,
+        "ability": "cha",
+        "uses": "Once per long rest, cast as a 2nd-level spell"
+      },
+      {
+        "spell": "enthrall",
+        "atLevel": 5,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "tiefling-hellfire",
+    "name": "Hellfire variant",
+    "parent": "tiefling",
+    "page": 118,
+    "book": "scag",
+    "replacesSpells": true,
+    "spells": [
+      {
+        "spell": "thaumaturgy",
+        "atLevel": 1,
+        "ability": "cha"
+      },
+      {
+        "spell": "burning-hands",
+        "atLevel": 3,
+        "ability": "cha",
+        "uses": "Once per day, cast as a 2nd-level spell"
+      },
+      {
+        "spell": "darkness",
+        "atLevel": 5,
+        "ability": "cha",
+        "uses": "Once per long rest"
+      }
+    ],
+    "options": []
+  },
+  {
+    "id": "tiefling-winged",
+    "name": "Winged variant",
+    "parent": "tiefling",
+    "page": 118,
+    "book": "scag",
+    "replacesSpells": true,
+    "spells": [],
+    "options": []
   }
 ]

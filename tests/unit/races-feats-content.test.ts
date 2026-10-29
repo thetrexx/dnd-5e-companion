@@ -1,10 +1,10 @@
 import { DATA } from '../../src/data';
-import { grantSlots } from '../../src/character/grants';
+import { autoSpells, grantSlots, grantSources } from '../../src/character/grants';
 import { emptyCharacter, type Character } from '../../src/character/types';
 
 const r = (id: string) => DATA.races.find(x => x.id === id)!;
 test('races', () => {
-  expect(DATA.races).toHaveLength(20);   // 19 PHB + Custom Lineage
+  expect(DATA.races).toHaveLength(31);   // 19 PHB + Custom Lineage + 11 SCAG/DMG
   expect(r('drow').parent).toBe('elf');
   expect(r('tiefling').spells.map(x => [x.spell, x.atLevel])).toEqual([['thaumaturgy', 1], ['hellish-rebuke', 3], ['darkness', 5]]);
   expect(r('drow').spells.map(x => [x.spell, x.atLevel])).toEqual([['dancing-lights', 1], ['faerie-fire', 3], ['darkness', 5]]);
@@ -85,7 +85,7 @@ test('artificer initiate', () => {
     { choose: { lists: ['artificer'], level: 1, count: 1 }, atLevel: 1, ability: 'int', uses:DATA.feats.find(f => f.id === 'fey-touched')!.spells[1].uses },
   ]);
   expect(DATA.features.find(x => x.id === 'artificer-initiate')).toMatchObject({ source: { kind: 'feat', id: 'artificer-initiate' }, book: 'tce', page: 79 });
-  expect(DATA.feats).toHaveLength(43);
+  expect(DATA.feats).toHaveLength(44);
   const ch = { ...emptyCharacter(), classes: [{ cls: 'fighter', level: 1 }], feats: ['artificer-initiate'] } as Character;
   const ids = (k: string) => grantSlots(ch).find(s => s.key === k)!.candidates.map(s => s.id);
   expect(ids('feat:artificer-initiate:0')).toEqual(expect.arrayContaining(['guidance', 'thorn-whip', 'booming-blade']));
@@ -124,3 +124,57 @@ test('tasha feat cards', () => {
   expect(f('metamagic-adept')).toMatchObject({ cost: 'free', resource: expect.stringMatching(/2 sorcery points/), book: 'tce', page: 80 });
 });
 test('custom lineage', () => expect(DATA.races.find(r => r.id === 'custom-lineage')).toMatchObject({ book: 'tce', page: 8, spells: [], options: [] }));
+
+// Plan 10 Task 1: SCAG and DMG races, variants, Svirfneblin Magic
+const spellsOf = (race: string) => grantSources({ ...emptyCharacter(), race, classes: [{ cls: 'fighter', level: 5 }] } as Character)
+  .filter(s => s.key.startsWith('race:')).flatMap(s => s.grants.map(g => g.grant.spell));
+test('plain tiefling keeps infernal legacy', () => {
+  expect(spellsOf('tiefling').sort()).toEqual(['darkness', 'hellish-rebuke', 'thaumaturgy']);
+});
+test('tiefling variants replace infernal legacy', () => {
+  expect(spellsOf('tiefling-devils-tongue').sort()).toEqual(['charm-person', 'enthrall', 'vicious-mockery']);
+  expect(spellsOf('tiefling-hellfire').sort()).toEqual(['burning-hands', 'darkness', 'thaumaturgy']);
+  expect(spellsOf('tiefling-winged')).toEqual([]);
+});
+test('half-elf variants add elf magic', () => {
+  expect(spellsOf('half-elf')).toEqual([]);
+  expect(spellsOf('half-elf-drow-magic').sort()).toEqual(['dancing-lights', 'darkness', 'faerie-fire']);
+  expect(spellsOf('half-elf-mask-of-the-wild')).toEqual([]);
+});
+test('batch 5 races', () => {
+  expect(DATA.races).toHaveLength(31);
+  expect(DATA.races.find(r => r.id === 'aasimar')).toMatchObject({ book: 'dmg', page: 286 });
+  expect(DATA.races.find(r => r.id === 'aasimar')!.parent).toBeUndefined();
+  expect(DATA.races.find(r => r.id === 'duergar')).toMatchObject({ parent: 'dwarf', book: 'scag', page: 104 });
+  expect(DATA.feats.find(f => f.id === 'svirfneblin-magic')).toMatchObject({ book: 'scag', page: 115 });
+  expect(DATA.feats).toHaveLength(44);
+});
+test('duergar magic unlocks by level', () => {
+  const at = (level: number) => autoSpells({ ...emptyCharacter(), race: 'duergar', classes: [{ cls: 'fighter', level }] } as Character)
+    .map(a => [a.spell.id, a.unlocked]);
+  expect(at(2)).toEqual([['enlarge-reduce', false], ['invisibility', false]]);
+  expect(at(3)).toEqual([['enlarge-reduce', true], ['invisibility', false]]);
+});
+test('eladrin and aasimar spells', () => {
+  expect(r('eladrin').spells).toEqual([{ spell: 'misty-step', atLevel: 1, uses: 'Once per short or long rest, no slot' }]);
+  expect(r('aasimar').spells.map(g => [g.spell, g.atLevel, g.ability])).toEqual([['light', 1, 'cha'], ['lesser-restoration', 3, 'cha'], ['daylight', 5, 'cha']]);
+  expect(r('aasimar').icon).toBe('icons/fallback/aasimar.svg');
+  for (const id of ['svirfneblin', 'ghostwise-halfling', 'half-elf-mask-of-the-wild', 'tiefling-winged']) expect(r(id).spells, id).toEqual([]);
+  expect(r('half-elf-cantrip').spells[0].choose).toMatchObject({ lists: ['wizard'], level: 0, count: 1 });
+});
+test('half-elf mask of the wild card is PHB', () => {
+  const m = DATA.features.find(x => x.id === 'half-elf-mask-of-the-wild')!;
+  expect(m).toMatchObject({ source: { kind: 'race', id: 'half-elf-mask-of-the-wild' }, cost: 'free', page: 24 });
+  expect(m.book).toBeUndefined();
+});
+test('svirfneblin magic', () => {
+  const f = DATA.feats.find(x => x.id === 'svirfneblin-magic')!;
+  expect(f.prereq).toBe('Gnome (deep gnome)');
+  expect(f.spells.map(g => [g.spell, g.ability, g.uses])).toEqual([
+    ['nondetection', 'int', 'At will, on yourself only, no slot'],
+    ['blindness-deafness', 'int', 'Once per long rest, no slot'],
+    ['blur', 'int', 'Once per long rest, no slot'],
+    ['disguise-self', 'int', 'Once per long rest, no slot'],
+  ]);
+  expect(DATA.features.find(x => x.source.kind === 'feat' && x.source.id === 'svirfneblin-magic')).toBeUndefined();
+});
