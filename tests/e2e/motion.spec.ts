@@ -60,6 +60,9 @@ test('no console errors across menu, spells, card, back', async ({ page }) => {
   const errors: string[] = [];
   page.on('console', (m) => { if (m.type() === 'error' && !(m.text().startsWith('Failed to load resource') && /bg3\.wiki/.test(m.location().url))) errors.push(m.text()); });
   page.on('pageerror', (e) => errors.push(String(e)));
+  await page.goto('./');
+  await expect(page.locator('button.start-cls').first()).toBeVisible();
+  await page.waitForTimeout(1500);
   await page.goto('./#/menu/sorcerer/5');
   await page.waitForTimeout(1500);
   await page.getByRole('link', { name: /Level 1 Spells/ }).click();
